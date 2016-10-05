@@ -1,0 +1,143 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/> 
+<div class="buyProfile content">
+  <div class="navigation">
+    <div class="container">
+      <ul class="nav nav-justified masthead-nav">
+        <li role="presentation"><a href="__APP__/Home/Buyer/buyProfile">{$Think.lang.dashboard}</a></li>
+        <li role="presentation" class="active"><a href="__APP__/Home/Buyer/inbox">{$Think.lang.inbox}</a></li>
+        <li role="presentation"><a href="__APP__/Home/Buyer/supplier">{$Think.lang.supplier}</a></li>
+        <li role="presentation"><a href="__APP__/Home/Buyer/project">{$Think.lang.project}</a></li>
+      </ul>
+    </div><!-- container -->
+  </div><!-- navigation -->
+  <hr/>
+  <div class="content-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+         <div class="panel panel-default">        
+            <div class="panel-heading">{$Think.lang.admin}</div>
+            <div class="panel-body">
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <if condition="$user['face_url'] neq NULL">
+                        <img class="media-object img-thumbnail" src="/selectin/1/Public/uploads/buyer_pic/{$user['face_url']}" alt="头像" height="64" width="64">
+                      <else />
+                        <img class="media-object img-thumbnail" src="/selectin/1/Public/uploads/buyer_pic/temp.jpg" alt="头像" height="64" width="64">
+                      </if>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h5 class="media-heading">{$user['username']}</h5>
+                  <p><i class="fa fa-envelope-o fa-lg"></i> {$user['email']}</p>
+                  <p><i class="fa fa-phone fa-lg"></i> {$user['mobile_phone']}</p>
+                  <a class="btn btn-default" href="__APP__/Home/Buyer/buyerPersonalInfo" role="button">{$Think.lang.edit_personal_profile}</a>
+                </div>
+              </div><!-- media -->
+            </div><!-- panel-body -->
+            <div class="list-group">
+              <a href="?type=1" class="list-group-item ">{$Think.lang.inbox}<span class="badge">{$amount['receive']}</span></a>
+              <a href="?type=2" class="list-group-item">{$Think.lang.send_yet}<span class="badge">{$amount['send']}</span></a>
+            </div><!-- list-group -->
+          </div><!-- panel panel-default -->
+        </div><!-- col-md-4 -->
+        <div class="col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>{$Think.lang.type}</th>
+                    <th>
+                      <if condition="$pgtype neq '1'">{$Think.lang.receiver}
+                        <else />{$Think.lang.from}
+                      </if>
+                    </th>
+                    <th>{$Think.lang.subject}</th>
+                    <th>{$Think.lang.received_time}</th>
+                    <th>{$Think.lang.status}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <foreach name="msg" item="msg">
+                  <tr>
+                    <td>
+                      <switch name="msg['type']">
+                        <case value="1">{$Think.lang.rfi}</case>
+                        <case value="2">{$Think.lang.message}</case>
+                      </switch>
+                    </td>
+                    <td>
+                      <if condition="$pgtype eq 2">
+                        <a href="__APP__/Home/Buyer/viewsupplierPersonalInfo/id/{$msg['recipient_id']}">{$msg['user']}<i class="fa fa-user"></i></a>
+                      <else />
+                        <if condition="$msg['type'] eq 2">
+                          <a href="__APP__/Home/Buyer/viewsupplierPersonalInfo/id/{$msg['sender_id']}">{$msg['user']}<i class="fa fa-user"></i></a>
+                        <else />
+                          <a href="__APP__/Home/Buyer/viewsupplierPersonalInfo/id/{$msg['recipient_id']}">{$msg['user']}<i class="fa fa-user"></i></a>
+                        </if>
+                      </if>
+                    </td>
+                    <td>
+                    <switch name="msg['type']">
+                        <case value="1">{$Think.lang.rfi}</case>
+                        <case value="2">{$Think.lang.message}</case>
+                      </switch>
+                      <if condition="$msg['type'] eq 2">
+                        <i type="button" class="fa fa-envelope-o " data-toggle="modal" data-target="#normalModal"
+                        onclick="get_normalletter(this);" name="{$msg['id']}" id="{$pgtype}"></i>
+                      </if>
+                      <if condition="($msg['type'] eq 1) AND ($msg['state'] neq '0') AND ($pgtype neq 2)">
+                        <i type="button" class="fa fa-envelope-o " data-toggle="modal" data-target="#rfiModal"
+                        onclick="get_rfiletter(this);" name="{$msg['id']}"></i>
+                      </if>
+                    </td>
+                    <td>{$msg['time']}</td>
+                    <td>
+                      <switch name="msg['state']">
+                        <case value="已读">{$Think.lang.read}</case>
+                        <case value="未读">{$Think.lang.unread}</case>
+                        <case value="已发送">{$Think.lang.send_yet}</case>
+                        <case value="未确认">{$Think.lang.rfi_waiting_for_response}</case>
+                        <case value="已同意">{$Think.lang.rfi_accepted}</case>
+                        <case value="已拒绝">{$Think.lang.rfi_declined}</case>
+                      </switch>
+                    </td>
+                  </tr>
+                  </foreach>
+                </tbody>
+              </table>
+            </div><!-- panel-body -->
+          </div><!-- panel panel-default -->
+        </div><!-- col-md-8 -->
+      </div><!-- row -->
+    </div><!-- container -->
+  </div><!-- content-wrap -->
+</div><!-- content -->
+<div class="modal fade" id="rfiModal" role="dialog" aria-label aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id='rfi_letter'>
+      
+    </div><!-- modal-content -->
+  </div><!-- modal-dialog -->
+</div><!-- modal fade -->
+
+<div class="modal fade" id="normalModal" role="dialog" aria-label aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content" id='ordinary_letter'>
+
+    </div><!-- modal-content -->
+  </div><!-- modal-dialog -->
+</div><!-- modal fade -->
+
+<div class="modal fade" id="ReplyMessage" tabindex="-1" role="dialog" aria-labelledby="sendMessageLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" id='reply_letter'>
+        
+      </div>
+    </div>
+  </div><!-- modal fade -->
+<br/>
+<include file = "layout:footer"/>

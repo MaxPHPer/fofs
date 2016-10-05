@@ -1,0 +1,122 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/>
+<div class="content supplierCompanyInfo">
+  <div class="container">
+    <form action="__APP__/Home/Register/save_supplierCompanyInfo" method="post" enctype="multipart/form-data">
+      <div class="row">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+          <div class="panel panel-default panel3" style="margin-top: 20px;">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <i class="fa fa-check"></i>
+                  管理团队信息
+                  <i class="fa fa-angle-down pull-right"></i>
+                </a>
+              </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+              <div class="panel-body">
+                <div class="repeat_people ">
+                  <div class="borderBottom" style="margin-bottom:20px;">
+                    <div class="row" >
+                      <div class="col-sm-2">
+                        
+                          <label for="userName" class="col-sm-12 control-label"><span>*</span>姓名</label>
+    
+                      </div>
+
+                      <div class="col-sm-4">
+
+                            <input type="text" class="form-control" id="userName" name="username"  />
+
+                      </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:10px;">
+                      <div class="col-sm-2">
+                        
+                          <label for="userName" class="col-sm-12 control-label"><span>*</span>职务</label>
+    
+                      </div>
+
+                      <div class="col-sm-4">
+
+                            <input type="text" class="form-control" id="userName" name="username"  />
+
+                      </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-2 ">
+                          <label for="userName" class="col-sm-12 control-label"><b>从业经历</b></label>
+                        </div>
+                    </div>
+
+                    <div class="repeat">
+                      <div class="row" style="margin-top:10px;">
+                        
+                        <div class="col-sm-2 ">
+                          <label for="userName" class="col-sm-12 control-label">公司名称</label>
+                        </div>
+                        <div class="col-sm-2">
+                              <input type="text" class="col-sm-12 form-control" name="production[quantity][]"/>
+                            </div>
+                        <div class="col-sm-8">
+                            
+                            <div class="col-sm-2 ">
+                              <label for="userName" class="col-sm-12 control-label">职位</label>
+                            </div>
+                            <div class="col-sm-2">
+                              <input type="text" class="form-control" name="production[quantity][]"/>
+                            </div>
+                            <div class="col-sm-3 ">
+                              <label for="userName" class="col-sm-12 control-label">任职年月</label>
+                            </div>
+                            <div class="col-sm-2">
+                              <input type="text" class="form-control" name="production[quantity][]"/>
+                            </div>
+
+                            <div class="col-sm-1 ">
+                              <label for="userName" class="col-sm-12 control-label">至</label>
+                            </div>
+                            <div class="col-sm-2">
+                              <input type="text" class="form-control" name="production[quantity][]"/>
+                            </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-10"></div>
+                      <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary" id="addNew2">再添加从业经历</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                      <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary" id="addNew1">添加其它高管</button>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <!--高管团队-->
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4" style="margin-bottom:30px;">
+          <input type="hidden" name='user_id'  value="{$id}"/>
+          <input type="submit" class="btn btn-primary btn-block" id="submit" value="保存并前往完善基金产品信息"/>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<include file = "layout:footer"/>

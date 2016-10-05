@@ -1,0 +1,441 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/>
+<div class="content supplierCompanyInfo">
+  <div class="container">
+    <form action="__APP__/Home/Register/save_supplierCompanyInfo" method="post" enctype="multipart/form-data">
+      <div class="row">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+
+          <div class="panel panel-default panel4" style="margin-top: 20px;">
+            <div class="panel-heading" role="tab" id="headingFour">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                  <i class="fa fa-globe"></i>
+                  基金产品(数量>=0)
+                  <i class="fa fa-angle-down pull-right"></i>
+                </a>
+              </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+              <div class="panel-body">
+                <div class="repeat_fund ">
+                  <div class="borderBottom" style="margin-bottom:20px;">
+                    <div class="row" >
+                      <div class="col-sm-2">
+                        
+                          <label for="userName" class="col-sm-12 control-label"><span>*</span>管理基金数量</label>
+    
+                      </div>
+
+                      <div class="col-sm-4">
+
+                            <input type="text" class="form-control" id="userName" name="username"  />
+
+                      </div>
+
+                    </div>
+
+
+
+                    <div class="row" style="margin-top:10px;">
+                      <div class="col-sm-2">
+                        
+                          <label for="userName" class="col-sm-12 control-label"><span>*</span>管理基金总规模</label>
+    
+                      </div>
+
+                      <div class="col-sm-4">
+
+                            <input type="text" class="form-control" id="userName" name="username"  />
+                           
+
+                      </div>
+
+                      <div class='col-sm-2'>
+                            <label for="userName" class="col-sm-12 control-label">(万人民币)</label>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-2 ">
+                          <label for="userName" class="col-sm-12 control-label"><b>基金产品</b></label>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top:10px;">
+                        
+                        <div>
+                            <div class="col-sm-2">
+                              <label for="userName" class="col-sm-12 control-label">
+                                基金名称
+                              </label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" class="form-control" id="userName" name="username"  />                            
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:10px;">
+                        
+                        <div>
+                            <div class="col-sm-2">
+                              <label for="userName" class="col-sm-12 control-label">
+                                成立时间
+                              </label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" class="form-control" id="userName" name="username"  />                            
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:10px;">
+                        
+                        <div>
+                            <div class="col-sm-2">
+                              <label for="userName" class="col-sm-12 control-label">
+                                注册地点
+                              </label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" class="form-control" id="userName" name="username"  />                            
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:10px;">
+                        
+                        <div>
+                            <div class="col-sm-2">
+                              <label for="userName" class="col-sm-12 control-label">
+                                币种
+                              </label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" class="form-control" id="userName" name="username"  />                            
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:10px;">
+                        
+                        <div>
+                            <div class="col-sm-2">
+                              <label for="userName" class="col-sm-12 control-label">
+                                基金规模(万元)
+                              </label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" class="form-control" id="userName" name="username"  />                            
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:10px;">
+                        
+                        <div>
+                            <div class="col-sm-2">
+                              <label for="userName" class="col-sm-12 control-label">
+                                基金类型
+                              </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <select name="language" id="language" class="form-control">
+
+                                  <option value ="1">天使投资基金</option>
+                                  <option value ="2">VC基金</option>
+                                  <option value ="3">PE基金</option>
+                                  <option value ="4">其它基金</option>
+
+                                </select>                           
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:10px;">
+                        
+                        <div>
+                            <div class="col-sm-2">
+                              <label for="userName" class="col-sm-12 control-label">
+                                托管人名称
+                              </label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" class="form-control" id="userName" name="username"  />                            
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:10px;">
+                        
+                        <div>
+                            <div class="col-sm-2">
+                              <label for="userName" class="col-sm-12 control-label">
+                                主要投资领域
+                              </label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" class="form-control" id="userName" name="username"  />                            
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:10px;">
+                        
+                        <div>
+                            <div class="col-sm-2">
+                              <label for="userName" class="col-sm-12 control-label">
+                                投资地域
+                              </label>
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" class="form-control" id="userName" name="username"  placeholder='海外、全国范围、某省某市'/>                            
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:10px;">
+                        
+                        <div>
+                            <div class="col-sm-2">
+                              <label for="userName" class="col-sm-12 control-label">
+                                运作状态
+                              </label>
+                            </div>
+                            <div class="col-sm-10">
+                              <div class="col-sm-3 ">
+                                <input class="icheckbox_flat-blue" id="buyer" type="radio" name="userType" value="buyer" checked>
+                                <label for="buyer">封闭</label>
+                              </div>
+                              <div class="col-sm-3 ">
+                                <input class="icheckbox_flat-blue" id="supplier" type="radio" name="userType" value="supplier">
+                                <label for="supplier">募集期</label>
+                              </div>      
+                              <div class="col-sm-2 ">
+                                <label for="supplier">上传募集方案</label>
+                              </div>
+                              <div class="col-sm-4 ">
+                                <input type="file" class="form-control" id="personalLogo" name="personalLogo" >
+                              </div>  
+
+                                                   
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row" style="margin-top:10px;">
+                        
+                        <div>
+                            <div class="col-sm-2">
+                              <label for="userName" class="col-sm-12 control-label">
+                                中基协备案状况
+                              </label>
+                            </div>
+                            <div class="col-sm-10">
+                              <div class="col-sm-3 ">
+                                <input class="icheckbox_flat-blue" id="buyer" type="radio" name="userType" value="buyer" checked>
+                                <label for="buyer">未备案</label>
+                              </div>
+                              <div class="col-sm-3 ">
+                                <input class="icheckbox_flat-blue" id="supplier" type="radio" name="userType" value="supplier">
+                                <label for="supplier">已备案</label>
+                              </div>  
+                              <div class="col-sm-6 ">
+                                <label for="supplier">(若已备案则填写下面基金编号、备案时间)</label>
+                              </div>                       
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:10px;">
+                        
+                        <div>
+                            <div class="col-sm-2">
+                              <label for="userName" class="col-sm-12 control-label">
+                                基金编号
+                              </label>
+                            </div>
+    
+                            <div class="col-sm-4 ">
+                              <input type="text" class="form-control" id="userName" name="username"  />   
+                            </div>
+                            <div class="col-sm-2 ">
+                              <label for="supplier">备案时间</label>
+                            </div>  
+                            <div class="col-sm-4 ">
+                              <input type="text" class="form-control" id="userName" name="username"  />   
+                            </div>                       
+                          
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-sm-3 ">
+                          <label for="userName" class="col-sm-12 control-label"><b>该基金已投基金/项目</b></label>
+                        </div>
+                    </div>
+
+
+                    <div class="repeat">
+                      <div class="row" style="margin-top:10px;">
+                        
+                          <div>
+                              <div class="col-sm-2">
+                                <label for="userName" class="col-sm-12 control-label">
+                                  基金项目名称
+                                </label>
+                              </div>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="userName" name="username"  />                            
+                              </div>
+
+                          </div>
+
+                      </div>
+                      <div class="row" style="margin-top:10px;">
+                        
+                          <div>
+                              <div class="col-sm-2">
+                                <label for="userName" class="col-sm-12 control-label">
+                                  基金项目简介
+                                </label>
+                              </div>
+                              <div class="col-sm-4">
+                                <textarea class="form-control" id="userName" name="username" ></textarea>
+                              </div>
+
+                          </div>
+
+                      </div>
+                      <div class="row" style="margin-top:10px;">
+                        
+                          <div>
+                              <div class="col-sm-2">
+                                <label for="userName" class="col-sm-12 control-label">
+                                  投资额度
+                                </label>
+                              </div>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="userName" name="username"  />                            
+                              </div>
+
+                          </div>
+
+                      </div>
+                      <div class="row" style="margin-top:10px;">
+                        
+                          <div>
+                              <div class="col-sm-2">
+                                <label for="userName" class="col-sm-12 control-label">
+                                  项目投资轮次
+                                </label>
+                              </div>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="userName" name="username"  /> 
+                              </div>
+                              <div class="col-sm-2">
+                                <label for="userName" class="col-sm-12 control-label">
+                                  (基金无)
+                                </label>
+                              </div>
+
+                          </div>
+
+                      </div>
+                      <div class="row" style="margin-top:10px;">
+                        
+                          <div>
+                              <div class="col-sm-2">
+                                <label for="userName" class="col-sm-12 control-label">
+                                  投资时间
+                                </label>
+                              </div>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="userName" name="username"  />                            
+                              </div>
+
+                          </div>
+
+                      </div>
+                      <div class="row borderBottom" style="margin-top:10px;">
+                        
+                          <div>
+                              <div class="col-sm-2">
+                                <label for="userName" class="col-sm-12 control-label">
+                                  项目现状
+                                </label>
+                              </div>
+                              <div class="col-sm-4">
+                                  <select name="language" id="language" class="form-control">
+
+                                      <option value ="1">死亡</option>
+                                      <option value ="2">Pre-IPO</option>
+                                      <option value ="3">M&A</option>
+                                      <option value ="4">上市</option>
+
+                                  </select>  
+                              </div>
+
+                          </div>
+
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-9"></div>
+                      <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" id="addNew4">再添加该基金已投基金/项目</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                      <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary" id="addNew3">添加其它基金产品</button>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <!--主要检测设备-->
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4" style="margin-bottom:30px;">
+          <input type="hidden" name='user_id'  value="{$id}"/>
+          <input type="submit" class="btn btn-primary btn-block" id="submit" value="{$Think.lang.signup_complete}"/>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<include file = "layout:footer"/>

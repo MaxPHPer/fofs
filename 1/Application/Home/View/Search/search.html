@@ -1,0 +1,497 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/>
+<div class="content search">
+  <section class="conditon">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-4">
+              <h1>{$Think.lang.conditional_filtering}</h1>
+            </div>
+            <div class="col-sm-4 col-sm-offset-4">
+              <div class="form-group searchProduct">
+                <input type="text" name="search" class="form-control" placeholder="{$Think.lang.search_by_you_want}" id='representative_product'/>
+                <button class="glyphicon glyphicon-search" id='product_search'></button>
+              </div>
+            </div><!--产品-->
+          </div>
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default panel1">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fa fa-wrench"></i>{$Think.lang.manufacturing_capability}<i class="fa fa-angle-down pull-right"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-sm-6 borderRight">
+                      <div class="form-group clearfix">
+                        <label for="processing_technic_first_id" class="col-sm-2 control-label">{$Think.lang.category}</label>
+                        <div class="col-sm-10">
+                          <select name="processing_technic_first_id" id="processing_technic_first" class="form-control" onchange="search_by_condition(this);">
+                            <option value='0'>{$Think.lang.unlimited}</option>
+                            <foreach name='processing_technic_firsts' item='vo'>
+                              <option value="{$vo['id']}">{$vo['name']}</option>
+                            </foreach>
+                          </select>
+                        </div>
+                      </div><!--类别-->
+                      <div class="form-group clearfix">
+                        <label for="processing_technic_second_id" class="col-sm-2 control-label">{$Think.lang.manufacturing_technology}</label>
+                        <div class="col-sm-10">
+                          <select name="processing_technic_second_id" id="processing_technic_second" class="form-control" onchange="search_by_condition(this);">
+                              <option value='0'>{$Think.lang.unlimited}</option>
+                          </select>
+                        </div>
+                      </div><!--制造技术-->
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 control-label">{$Think.lang.fabrication_craftwork}</label>
+                        <div class="col-sm-9" id='processing_technic_third'>
+
+                        </div>
+                      </div><!--制造工艺-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!--制造能力-->
+            <div class="panel panel-default panel2">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <i class="fa fa-user"></i>{$Think.lang.customer_market}<i class="fa fa-angle-down pull-right"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-sm-6 borderRight">
+                      <div class="form-group clearfix">
+                        <label for="duns" class="col-sm-2 control-label">{$Think.lang.duns}</label>
+                        <div class="col-sm-10">
+                          <input class="icheckbox_flat-blue" id="duns" type="checkbox" name="duns" onclick="search_by_condition(this);">
+                          {$Think.lang.provided}
+                        </div>
+                      </div><!--邓白氏码-->
+                      <div class="form-group clearfix">
+                        <label for="cur_type_id" class="col-sm-2 control-label">{$Think.lang.turnover}</label>
+                        <div class="col-sm-3">
+                          <select name="cur_type_id" id="cur_type_id" class="form-control"  onchange="search_by_condition(this);">
+                            <foreach name='cur_type_list' item='cur_type'>
+                              <option value="{$cur_type['id']}">{$cur_type['name']}</option>
+                            </foreach>
+                          </select>
+                        </div>
+                        <div class="col-sm-3">
+                          <input type="number" name="startTurnover" id='startTurnover' class="form-control" placeholder="{$Think.lang.minimum_amount}" onchange="search_by_condition(this);"/>
+                        </div>
+                        <div class="col-sm-1">
+                          <span style="line-height: 30px;">~</span>
+                        </div>
+                        <div class="col-sm-3">
+                          <input type="number" name="overTurnover" id='overTurnover' class="form-control" placeholder="{$Think.lang.maximum_amount}" onchange="search_by_condition(this);"/>
+                        </div>
+                      </div><!--营业额-->
+                      <div class="form-group clearfix">
+                        <label for="customers_distribution_id" class="col-sm-2 control-label">{$Think.lang.customer_distribution}</label>
+                        <div class="col-sm-10">
+                          <select name="customers_distribution_id" id="distribution" class="form-control"  onchange="search_by_condition(this);">
+                              <option value='0'>{$Think.lang.unlimited}</option>
+                              <foreach name='ind_list' item='ind'>
+                                <option value="{$ind['id']}">{$ind['name']}</option>
+                              </foreach>
+                          </select>
+                        </div>
+                      </div><!--客户分布--><!--用于order排序-->
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 control-label">{$Think.lang.market_distribution}</label>
+                        <div class="col-sm-9">
+                          <input type="hidden" name='market_distribution_num' id='market_distribution_num' value="{$market_distribution_num}">
+                          <volist  name='are_list' id='are'>
+                            <div class="col-sm-4 select">
+                              <input type="checkbox" name="market_distribution_id_{$i}" value="{$are['id']}" /><span><span>{$are['name']}</span></span>
+                            </div>
+                          </volist >
+                        </div>
+                      </div><!--市场分布-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!--客户及市场-->
+            <div class="panel panel-default panel3">
+              <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <i class="fa fa-check"></i>{$Think.lang.management_product_certificate}<i class="fa fa-angle-down pull-right"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                  <div class="col-sm-7 borderRight">
+                    <div class="form-group row">
+                      <label class="col-sm-2 control-label">{$Think.lang.management_system_certificate}</label>
+                      <div class="col-sm-10">
+                        <input type="hidden" name='system_criterias_num' id='system_criterias_num' value="{$system_criterias_num}">
+                        <volist name='system_criterias' id='criteria'>
+                            <div class="col-sm-4 select">
+                              <input type="checkbox" name="system_criteria_id_{$i}" value="{$criteria['id']}"  /><span><span>{$criteria['name']}</span></span>
+                            </div>
+                        </volist>
+                      </div>
+                    </div><!--体系认证-->
+                  </div>
+                  <div class="col-sm-5">
+                    <div class="form-group row">
+                      <label class="col-sm-2 control-label">{$Think.lang.product_certificate}</label>
+                      <div class="col-sm-10">
+                        <input type="hidden" name='product_criterias_num' id='product_criterias_num' value="{$product_criterias_num}">
+                        <volist name='product_criterias' id='criteria'>
+                            <div class="col-sm-4 select">
+                              <input type="checkbox" name="product_criteria_id_{$i}" value="{$criteria['id']}" /><span><span>{$criteria['name']}</span></span>
+                            </div>
+                        </volist>
+                      </div>
+                    </div><!--产品认证-->
+                  </div>
+                </div>
+              </div>
+            </div><!--体系及产品认证-->
+            <div class="panel panel-default panel4">
+              <div class="panel-heading" role="tab" id="headingFour">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <i class="fa fa-globe"></i>{$Think.lang.location}<i class="fa fa-angle-down pull-right"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="form-group col-sm-12 clearfix">
+                      <div class="col-sm-3">
+                        <select name="country_id" id="country" class="form-control" onchange="search_by_condition(this);">
+                            <option value='0'>{$Think.lang.unlimited}</option>
+                            <foreach name='cou_list' item='cou'>
+                                  <option value="{$cou['id']}">{$cou['name']}</option>
+                            </foreach>
+                        </select>
+                      </div><!--国家-->
+                      <div class="col-sm-3">
+                        <select name="province_id" id="province" class="form-control"  onchange="search_by_condition(this);">
+                              <option value='0'>{$Think.lang.unlimited}</option>
+                        </select>
+                      </div><!--省州-->
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-sm-12 clearfix">
+                      <label for="turnover" class="col-sm-1 control-label">{$Think.lang.distance}</label>
+                      <div class="col-sm-3">
+                        <input type="text" name="city" class="form-control"/>
+                      </div>
+                      <div class="col-sm-3">
+                        <select class="form-control"  name='distance' onchange="search_by_condition(this);">
+                          <option value="100">100</option>
+                          <option value="400">400</option>
+                          <option value="800">800</option>
+                          <option value="1000">1000</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-2">
+                        <span style="line-height: 40px;">{$Think.lang.within_km}</span>
+                      </div>
+                    </div><!--距离-->
+                  </div>
+                </div>
+              </div>
+            </div><!--地址-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section class="searchForm">
+    <div class="container">
+      <div class="row" style="position: relative">
+        <div class="leftButton">
+            <input type='hidden' id='pre_page' value="0">
+            <i class="fa fa-angle-left" onclick='go_pre_page();'></i>
+        </div>
+        <input type="hidden" id='company_logo_base_url' value="/selectin/1/Public/uploads/supplier_company/">
+        <div class="table-responsive col-sm-12 table-search">
+          <table class="table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+              <th>{$Think.lang.corporation}</th>
+              <th id='company_name_1'></th>
+              <th id='company_name_2'></th>
+              <th id='company_name_3'></th>
+              <th id='company_name_4'></th>
+              <th id='company_name_5'></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>{$Think.lang.location}</td>
+              <td id='company_address_1'></td>
+              <td id='company_address_2'></td>
+              <td id='company_address_3'></td>
+              <td id='company_address_4'></td>
+              <td id='company_address_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.registered_capital}</td>
+              <td id='company_registered_capital_1'></td>
+              <td id='company_registered_capital_2'></td>
+              <td id='company_registered_capital_3'></td>
+              <td id='company_registered_capital_4'></td>
+              <td id='company_registered_capital_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.turnover}</td>
+              <td id='company_turnover_1'></td>
+              <td id='company_turnover_2'></td>
+              <td id='company_turnover_3'></td>
+              <td id='company_turnover_4'></td>
+              <td id='company_turnover_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.duns}</td>
+              <td id='company_duns_no_1'></td>
+              <td id='company_duns_no_2'></td>
+              <td id='company_duns_no_3'></td>
+              <td id='company_duns_no_4'></td>
+              <td id='company_duns_no_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.management_system_certificate}</td>
+              <td id='company_system_criterias_1'></td>
+              <td id='company_system_criterias_2'></td>
+              <td id='company_system_criterias_3'></td>
+              <td id='company_system_criterias_4'></td>
+              <td id='company_system_criterias_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.product_certificate}</td>
+              <td id='company_product_criterias_1'></td>
+              <td id='company_product_criterias_2'></td>
+              <td id='company_product_criterias_3'></td>
+              <td id='company_product_criterias_4'></td>
+              <td id='company_product_criterias_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.manufacturing_technology}</td>
+              <td id='company_processing_technic_second_1'></td>
+              <td id='company_processing_technic_second_2'></td>
+              <td id='company_processing_technic_second_3'></td>
+              <td id='company_processing_technic_second_4'></td>
+              <td id='company_processing_technic_second_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.customer_distribution}</td>
+              <td id='company_customers_distribution_1'></td>
+              <td id='company_customers_distribution_2'></td>
+              <td id='company_customers_distribution_3'></td>
+              <td id='company_customers_distribution_4'></td>
+              <td id='company_customers_distribution_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.market_distribution}</td>
+              <td id='company_market_distribution_1'></td>
+              <td id='company_market_distribution_2'></td>
+              <td id='company_market_distribution_3'></td>
+              <td id='company_market_distribution_4'></td>
+              <td id='company_market_distribution_5'></td>
+            </tr>
+            <tr>
+              <td class="text-center"><button class="btn btn-block btn-primary" data-toggle="modal" data-target=".compareModal" onclick="start_to_compare();">{$Think.lang.compare}</button></td>
+              <td class="text-center">
+                <div class="btn-group" role="group" >
+                  <button type="button" class="btn btn-primary" id='company_add_compare_1' value='0' onclick="add_to_compare_list(this);">{$Think.lang.add_to_compare}</button>
+                  <button type="button" class="btn btn-default" id='company_send_rfi_1' value='0' onclick="send_rfi(this);">{$Think.lang.rfi}</button>
+                </div>
+              </td>
+              <td class="text-center">
+                <div class="btn-group" role="group" >
+                  <button type="button" class="btn btn-primary" id='company_add_compare_2' value='0' onclick="add_to_compare_list(this);">{$Think.lang.add_to_compare}</button>
+                  <button type="button" class="btn btn-default" id='company_send_rfi_2' value='0' onclick="send_rfi(this);">{$Think.lang.rfi}</button>
+                </div>
+              </td>
+              <td class="text-center">
+                <div class="btn-group" role="group" >
+                  <button type="button" class="btn btn-primary" id='company_add_compare_3' value='0' onclick="add_to_compare_list(this);">{$Think.lang.add_to_compare}</button>
+                  <button type="button" class="btn btn-default" id='company_send_rfi_3' value='0' onclick="send_rfi(this);">{$Think.lang.rfi}</button>
+                </div>
+              </td>
+              <td class="text-center">
+                <div class="btn-group" role="group" >
+                  <button type="button" class="btn btn-primary" id='company_add_compare_4' value='0' onclick="add_to_compare_list(this);">{$Think.lang.add_to_compare}</button>
+                  <button type="button" class="btn btn-default" id='company_send_rfi_4' value='0' onclick="send_rfi(this);">{$Think.lang.rfi}</button>
+                </div>
+              </td>
+              <td class="text-center">
+                <div class="btn-group" role="group" >
+                  <button type="button" class="btn btn-primary" id='company_add_compare_5' value='0' onclick="add_to_compare_list(this);">{$Think.lang.add_to_compare}</button>
+                  <button type="button" class="btn btn-default" id='company_send_rfi_5' value='0' onclick="send_rfi(this);">{$Think.lang.rfi}</button>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <div style="float:right;">总共有<span id='total_num'>0</span>条记录符合,当前是第<span id='now_page'>0</span>页，总共有<span id='total_page'>0</span>页</div>
+        </div>
+        <div class="rightButton">
+            <input type='hidden' id='next_page' value="0">
+            <i class="fa fa-angle-right" onclick='go_next_page();'></i>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!--modal -->
+<div class="modal fade compareModal" tabindex="-1" role="dialog" aria-labelledby="compareModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title">比较(Comparation)</h4>
+    </div>
+    <div class="modal-content">
+      <div class="table-responsive">
+        <table class="table table-bordered table-search">
+            <thead>
+            <tr>
+              <th>{$Think.lang.corporation}</th>
+              <th id='compare_company_name_1'></th>
+              <th id='compare_company_name_2'></th>
+              <th id='compare_company_name_3'></th>
+              <th id='compare_company_name_4'></th>
+              <th id='compare_company_name_5'></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>{$Think.lang.location}</td>
+              <td id='compare_company_address_1'></td>
+              <td id='compare_company_address_2'></td>
+              <td id='compare_company_address_3'></td>
+              <td id='compare_company_address_4'></td>
+              <td id='compare_company_address_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.registered_capital}</td>
+              <td id='compare_company_registered_capital_1'></td>
+              <td id='compare_company_registered_capital_2'></td>
+              <td id='compare_company_registered_capital_3'></td>
+              <td id='compare_company_registered_capital_4'></td>
+              <td id='compare_company_registered_capital_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.turnover}</td>
+              <td id='compare_company_turnover_1'></td>
+              <td id='compare_company_turnover_2'></td>
+              <td id='compare_company_turnover_3'></td>
+              <td id='compare_company_turnover_4'></td>
+              <td id='compare_company_turnover_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.duns}</td>
+              <td id='compare_company_duns_no_1'></td>
+              <td id='compare_company_duns_no_2'></td>
+              <td id='compare_company_duns_no_3'></td>
+              <td id='compare_company_duns_no_4'></td>
+              <td id='compare_company_duns_no_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.management_system_certificate}</td>
+              <td id='compare_company_system_criterias_1'></td>
+              <td id='compare_company_system_criterias_2'></td>
+              <td id='compare_company_system_criterias_3'></td>
+              <td id='compare_company_system_criterias_4'></td>
+              <td id='compare_company_system_criterias_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.product_certificate}</td>
+              <td id='compare_company_product_criterias_1'></td>
+              <td id='compare_company_product_criterias_2'></td>
+              <td id='compare_company_product_criterias_3'></td>
+              <td id='compare_company_product_criterias_4'></td>
+              <td id='compare_company_product_criterias_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.manufacturing_technology}</td>
+              <td id='compare_company_processing_technic_second_1'></td>
+              <td id='compare_company_processing_technic_second_2'></td>
+              <td id='compare_company_processing_technic_second_3'></td>
+              <td id='compare_company_processing_technic_second_4'></td>
+              <td id='compare_company_processing_technic_second_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.customer_distribution}</td>
+              <td id='compare_company_customers_distribution_1'></td>
+              <td id='compare_company_customers_distribution_2'></td>
+              <td id='compare_company_customers_distribution_3'></td>
+              <td id='compare_company_customers_distribution_4'></td>
+              <td id='compare_company_customers_distribution_5'></td>
+            </tr>
+            <tr>
+              <td>{$Think.lang.market_distribution}</td>
+              <td id='compare_company_market_distribution_1'></td>
+              <td id='compare_company_market_distribution_2'></td>
+              <td id='compare_company_market_distribution_3'></td>
+              <td id='compare_company_market_distribution_4'></td>
+              <td id='compare_company_market_distribution_5'></td>
+            </tr>
+            <tr>
+              <td class="text-center"><button class="btn btn-block btn-primary" data-toggle="modal" data-target=".compareModal" >{$Think.lang.close_window}</button></td>
+              <td class="text-center">
+                <div class="btn-group" role="group" >
+                  <button type="button" class="btn btn-primary" id='compare_company_add_compare_1' value='0' onclick="move_from_compare_list(this);">{$Think.lang.move_from_compare}</button>
+                  <button type="button" class="btn btn-default" id='compare_company_send_rfi_1' value='0' onclick="send_rfi(this);">{$Think.lang.rfi}</button>
+                </div>
+              </td>
+              <td class="text-center">
+                <div class="btn-group" role="group" >
+                  <button type="button" class="btn btn-primary" id='compare_company_add_compare_2' value='0' onclick="move_from_compare_list(this);">{$Think.lang.move_from_compare}</button>
+                  <button type="button" class="btn btn-default" id='compare_company_send_rfi_2' value='0' onclick="send_rfi(this);">{$Think.lang.rfi}</button>
+                </div>
+              </td>
+              <td class="text-center">
+                <div class="btn-group" role="group" >
+                  <button type="button" class="btn btn-primary" id='compare_company_add_compare_3' value='0' onclick="move_from_compare_list(this);">{$Think.lang.move_from_compare}</button>
+                  <button type="button" class="btn btn-default" id='compare_company_send_rfi_3' value='0' onclick="send_rfi(this);">{$Think.lang.rfi}</button>
+                </div>
+              </td>
+              <td class="text-center">
+                <div class="btn-group" role="group" >
+                  <button type="button" class="btn btn-primary" id='compare_company_add_compare_4' value='0' onclick="move_from_compare_list(this);">{$Think.lang.move_from_compare}</button>
+                  <button type="button" class="btn btn-default" id='compare_company_send_rfi_4' value='0' onclick="send_rfi(this);">{$Think.lang.rfi}</button>
+                </div>
+              </td>
+              <td class="text-center">
+                <div class="btn-group" role="group" >
+                  <button type="button" class="btn btn-primary" id='compare_company_add_compare_5' value='0' onclick="move_from_compare_list(this);">{$Think.lang.move_from_compare}</button>
+                  <button type="button" class="btn btn-default" id='compare_company_send_rfi_5' value='0' onclick="send_rfi(this);">{$Think.lang.rfi}</button>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<include file = "layout:footer"/>

@@ -1,0 +1,742 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/> 
+<div class="content supplierCompanyInfo">
+  <div class="container">
+    <div class="nav">
+      <ul class="nav nav-justified masthead-nav">
+        <li role="presentation"><a href="__APP__/Home/Supplier/supplierProfile">{$Think.lang.dashboard}</a></li>
+        <li role="presentation" class="active"><a href="__APP__/Home/Supplier/supplierCompanyInfo">{$Think.lang.company_profile}</a></li>
+        <li role="presentation" ><a href="__APP__/Home/Supplier/inbox">{$Think.lang.inbox}</a></li>
+        <li role="presentation" ><a href="__APP__/Home/Supplier/client">{$Think.lang.leads_customers}</a></li>
+      </ul>
+    </div>   
+    <br/>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-default">        
+            <div class="panel-heading">{$Think.lang.admin}</div>
+            <div class="panel-body">
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                  <if condition="$user['face_url'] neq NULL">
+                        <img class="media-object img-thumbnail" src="/selectin/1/Public/uploads/supplier_pic/{$user['face_url']}" alt="头像" height="64" width="64">
+                      <else />
+                        <img class="media-object img-thumbnail" src="/selectin/1/Public/uploads/supplier_pic/temp.jpg" alt="头像" height="64" width="64">
+                      </if>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">{$user['username']}</h4>
+                  <p><i class="fa fa-envelope-o fa-lg"></i> {$user['email']}</p>
+                  <p><i class="fa fa-phone fa-lg"></i> {$user['mobile_phone']}</p>
+                  <a class="btn btn-default" href="supplierPersonalInfo" role="button">{$Think.lang.edit_personal_profile}</a>
+                </div><!-- media-body -->
+              </div><!-- media -->
+            </div><!-- panel-body -->   
+            <div class="list-group">
+              <a href="__APP__/Home/Supplier/supplierCompanyPublicInfo" class="list-group-item">{$Think.lang.public_profile}</a>
+              <a href="__APP__/Home/Supplier/supplierCompanyDetailedInfo" class="list-group-item">{$Think.lang.detailed_profile}</a>
+            </div>
+          </div><!-- panel panel-default -->
+        </div><!-- col-md-4 -->
+        <div class="col-md-8">   
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fa fa-wrench"></i>{$Think.lang.company_basic_info}<i class="fa fa-angle-down pull-right"></i>
+                  </a>
+                </h4>
+              </div>
+
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <form action="__APP__/Home/Supplier/update_base" method="post"  enctype="multipart/form-data">
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group clearfix">
+                        <label for="companyName" class="col-sm-3 control-label"><span>*</span>{$Think.lang.company_name}</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="companyName" name="name"  value="{$base['name']}" required/>
+                        </div>
+                      </div><!--公司名称-->
+                      <div class="form-group clearfix">
+                        <label for="companyNameEnglish" class="col-sm-3 control-label">{$Think.lang.company_name}({$Think.lang.lang_english})</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="companyNameEnglish" name="name_en" value="{$base['name_en']}" />
+                        </div>
+                      </div><!--公司名称（英文）-->
+                      <div class="form-group clearfix">
+                        <label for="address" class="col-sm-3 control-label">{$Think.lang.address_1}</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="address" name="address" value="{$base['address']}" />
+                        </div>
+                      </div><!--地址-->
+                      <div class="form-group clearfix">
+                        <label for="addressEnglish" class="col-sm-3 control-label">{$Think.lang.address_1}({$Think.lang.lang_english})</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="addressEnglish" name="address_en" value="{$base['address_en']}"/>
+                        </div>
+                      </div><!--地址（英文）-->
+                      <div class="form-group clearfix">
+                        <label for="startTime" class="col-sm-3 control-label"><span>*</span>{$Think.lang.year_of_establishment}</label>
+                        <div class="col-sm-8">
+                          <input type="date" class="form-control" id="startTime" name="established_time" value="{$base['established_time']}"required/>
+                        </div>
+                      </div><!--公司成立时间-->
+                      <div class="form-group clearfix">
+                        <label for="duns" class="col-sm-3 control-label">{$Think.lang.duns}</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="duns" name="duns_no"  value="{$base['duns_no']}" />
+                        </div>
+                      </div><!--邓白氏码-->
+                      <div class="form-group clearfix">
+                        <label for="startTime" class="col-sm-3 control-label"><span>*</span>{$Think.lang.city}</label>
+                        <div class="col-sm-3">
+                          <input type="text" class="form-control" name="city" required  value="{$base['city']}" />
+                        </div>
+                        <label for="duns" class="col-sm-2 control-label">{$Think.lang.city}({$Think.lang.lang_english})</label>
+                        <div class="col-sm-3">
+                          <input type="text" class="form-control" name="city_en"  value="{$base['city_en']}" />
+                        </div>
+                      </div><!--城市、城市（英文）-->
+                      <div class="form-group clearfix">
+                        <label for="startTime" class="col-sm-3 control-label"><span>*</span>{$Think.lang.country}</label>
+                        <div class="col-sm-3">
+                          <select id="country_1" class="form-control"  name="country_id" required>
+                              <foreach name='cou_list' item='cou'>
+                                <if condition="$base['country_id'] eq $cou['id']">
+                                  <option value="{$cou['id']}" selected>{$cou['name']}</option>
+                                <else />
+                                  <option value="{$cou['id']}">{$cou['name']}</option>
+                                </if>
+                              </foreach>
+                          </select>
+                        </div>
+                        <label for="duns" class="col-sm-2 control-label"><span>*</span>{$Think.lang.province}</label>
+                        <div class="col-sm-3">
+                          <select id="province_1" class="form-control"  name="province_id" required>
+                            <foreach name='pro_list' item='pro'>
+                              <if condition="$base['country_id'] eq $pro['country_id']">
+                                <if condition="$base['province_id'] eq $pro['id']">
+                                  <option value="{$pro['id']}" selected>{$pro['name']}</option>
+                                <else />
+                                  <option value="{$pro['id']}">{$pro['name']}</option>
+                                </if>
+                              </if>
+                            </foreach>
+                          </select>
+                        </div>
+                      </div><!--国家，省/州-->
+                      <div class="form-group clearfix">
+                        <label for="website" class="col-sm-3 control-label">{$Think.lang.company_website}</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="website" name="website" value="{$base['website']}" />
+                        </div>
+                      </div><!--公司网址-->
+                      <div class="form-group clearfix">
+                        <label for="industryType" class="col-sm-3 control-label">{$Think.lang.industry}</label>
+                        <div class="col-sm-8">
+                          <select name="industry_cate_id" id="industryType" class="form-control">
+                            <foreach name='ind_list' item='ind'>
+                              <if condition="$base['industry_cate_id'] eq $ind['id']">
+                                  <option value="{$ind['id']}" selected>{$ind['name']}</option>
+                                <else />
+                                  <option value="{$ind['id']}">{$ind['name']}</option>
+                              </if>
+                            </foreach>
+                          </select>
+                        </div>
+                      </div><!--行业类别-->
+                      <div class="form-group clearfix">
+                        <label for="companyType" class="col-sm-3 control-label"><span>*</span>{$Think.lang.company_type}</label>
+                        <div class="col-sm-3">
+                          <select name="company_cate_id" id="companyType" class="form-control" required>
+                            <foreach name='cate' item='cate'>
+                              <if condition="$base['company_cate_id'] eq $cate['id']">
+                                  <option value="{$cate['id']}" selected>{$cate['name']}</option>
+                                <else />
+                                  <option value="{$cate['id']}">{$cate['name']}</option>
+                              </if>
+                            </foreach>
+                          </select>
+                        </div>
+                        <label for="marketPlace" class="col-sm-2 control-label">{$Think.lang.stock_exchange}</label>
+                        <div class="col-sm-3">
+                          <select name="stock_market_id" id="marketPlace" class="form-control">
+                            <foreach name='sto_list' item='sto'>
+                              <if condition="$base['stock_market_id'] eq $sto['id']">
+                                  <option value="{$sto['id']}" selected>{$sto['name']}</option>
+                                <else />
+                                  <option value="{$sto['id']}">{$sto['name']}</option>
+                              </if>
+                            </foreach>
+                          </select>
+                        </div>
+                      </div><!--公司类型、上市地点-->
+                      <div class="form-group clearfix">
+                        <label for="registeredCapital" class="col-sm-3 control-label"><span>*</span>{$Think.lang.registered_capital}</label>
+                        <div class="col-sm-3">
+                          <select name="currency_type_id" id="registerCurrency" class="form-control" required>
+                            <foreach name='cur_type_list' item='cur_type'>
+                              <if condition="$base['currency_type_id'] eq $cur_type['id']">
+                                  <option value="{$cur_type['id']}" selected>{$cur_type['name']}</option>
+                                <else />
+                                  <option value="{$cur_type['id']}">{$cur_type['name']}</option>
+                              </if>
+                            </foreach>
+                          </select>
+                        </div>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" id="registeredCapital" name="registered_capital"  value="{$base['registered_capital']}" required/>
+                        </div>
+                      </div><!--注册资本-->
+                      <div class="form-group clearfix">
+                        <label class="col-sm-3 control-label">{$Think.lang.employee}</label>
+                        <div class="col-sm-8">
+                          <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover">
+                              <thead>
+                              <tr>
+                                <th style="min-width: 50px;">{$Think.lang.function}</th>
+                                <th>{$year-2}</th>
+                                <th>{$year-1}</th>
+                                <th>{$year}</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                <td>{$Think.lang.manufacture}</td>
+                                <td><input type="text" class="form-control" name="number[0][manufacture]" value="{$number[0][manufacture]}" /></td>
+                                <td><input type="text" class="form-control" name="number[1][manufacture]" value="{$number[1][manufacture]}"/></td>
+                                <td><input type="text" class="form-control" name="number[2][manufacture]" value="{$number[2][manufacture]}"/></td>
+                              </tr>
+                              <tr>
+                                <td>{$Think.lang.quality}</td>
+                                <td><input type="text" class="form-control" name="number[0][quality]" value="{$number[0][quality]}" /></td>
+                                <td><input type="text" class="form-control" name="number[1][quality]" value="{$number[1][quality]}" /></td>
+                                <td><input type="text" class="form-control" name="number[2][quality]" value="{$number[2][quality]}" /></td>
+                              </tr>
+                              <tr>
+                                <td>{$Think.lang.research}</td>
+                                <td><input type="text" class="form-control" name="number[0][research]" value="{$number[0][research]}"/></td>
+                                <td><input type="text" class="form-control" name="number[1][research]"  value="{$number[1][research]}"/></td>
+                                <td><input type="text" class="form-control" name="number[2][research]"  value="{$number[2][research]}"/></td>
+                              </tr>
+                              <tr>
+                                <td>{$Think.lang.other}</td>
+                                <td><input type="text" class="form-control" name="number[0][other]" value="{$number[0][other]}" /></td>
+                                <td><input type="text" class="form-control" name="number[1][other]" value="{$number[1][other]}" /></td>
+                                <td><input type="text" class="form-control" name="number[2][other]" value="{$number[2][other]}" /></td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                          <input type="hidden" name="number[0][year]" value="{$year-2}" />
+                          <input type="hidden" name="number[1][year]" value="{$year-1}" />
+                          <input type="hidden" name="number[2][year]" value="{$year}" />
+                      </div><!--员工人数-->
+                      <div class="form-group clearfix">
+                        <div class="col-sm-3">
+                          <label>{$Think.lang.upload_company_logo}</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="file" class="form-control" name="logo" />
+                        </div>
+                      </div>
+                      <div class="form-group clearfix">
+                        <div class="col-sm-3">
+                          <label>{$Think.lang.upload_company_logo}</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="file" class="form-control" name="logo" />
+                        </div>
+                      </div>
+                      <div class="form-group clearfix">
+                        <div class="col-sm-3">
+                          <label>{$Think.lang.upload_company_introduction}</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="file" class="form-control" name="introduction_pdf" />
+                        </div>
+                      </div>
+                      <div class="form-group clearfix">
+                        <div class="col-sm-3">
+                          <label>{$Think.lang.upload_company_introduction}{$Think.lang.lang_english}</label>
+                        </div>
+                        <div class="col-sm-8">
+                          <input type="file" class="form-control" name="introduction_pdf_en" />
+                        </div>
+                      </div>
+                    </div>
+                    <input type="hidden" name="id" value="{$base['id']}" />
+                    <div class="col-sm-10 col-sm-offset-1">
+                      <input type="submit" value="{$Think.lang.finish}" class="btn btn-block btn-primary"/>
+                    </div>
+
+                  </div>
+                </div>
+                </form>
+              </div>
+            </div><!--公司基本信息-->
+            <div class="panel panel-default panel2">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <i class="fa fa-user"></i>{$Think.lang.manufacturing_capability}<i class="fa fa-angle-down pull-right"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <form action="__APP__/Home/Supplier/update_ability" method="post">
+                <div class="panel-body">
+                  <div class="row borderBottom">
+                    <div class="col-sm-4">
+                      <h4><span>*</span>{$Think.lang.segment}</h4>
+                    </div>
+                    <div class="col-sm-4">
+                      <h4><span>*</span>{$Think.lang.manufacturing_technology}</h4>
+                    </div>
+                    <div class="col-sm-4">
+                      <h4>{$Think.lang.fabrication_craftwork}</h4>
+                    </div>
+                  </div>
+                  <div class="repeat">
+                    <foreach name="processlist2" item="pro2">
+                      <div class="row borderNo">
+                        <div class="col-sm-4 borderRight">
+                          <select class="form-control technic_first_level"  name="ability[technic_first_id][]" onclick="get_technic_second(this)" required>
+                            <foreach name='pro1_list' item='pro1'>
+                              <if condition="$pro2['technic_first_id'] eq $pro1['id']">
+                                <option value="{$pro1['id']}" selected>{$pro1['name']}</option>
+                                <else />
+                                <option value="{$pro1['id']}">{$pro1['name']}</option>
+                              </if>
+                            </foreach>
+                          </select>
+                        </div>
+                        <div class="col-sm-4 borderRight">
+                          <select class="form-control technic_second_level"   name="ability[technic_second_id][]" onclick="get_technic_third(this)"required>
+                            <foreach name='pro2_list' item='prolist2'>
+                              <if condition="$pro2['technic_first_id'] eq $prolist2['first_level_id']">
+                                <if condition="$pro2['technic_second_id'] eq $prolist2['id']">
+                                  <option value="{$prolist2['id']}" selected>{$prolist2['name']}</option>
+                                  <else />
+                                  <option value="{$prolist2['id']}">{$prolist2['name']}</option>
+                                </if>
+                              </if>
+                            </foreach>
+                          </select>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="multibox">
+                            <div class="row technic_third_level" >
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </foreach>
+                  </div>
+                  <div class="row borderBottom">
+                    <div class="col-sm-8">
+                      <h4>{$Think.lang.dimension_range}</h4>
+                    </div>
+                    <div class="col-sm-4">
+                      <h4>{$Think.lang.capacity}</h4>
+                    </div>
+                  </div>
+                  <div class="repeat">
+                    <foreach name="processlist2" item="pro2">
+                      <div class="row borderNo">
+                        <div class="col-sm-8 borderRight">
+                          <div class="col-sm-5">
+                            <select class="form-control"  name="ability[range_unit_id][]">
+                              <foreach name='uni_list' item='uni'>
+                                <if condition="$pro2['range_unit_id'] eq $uni['id']">
+                                  <option value="{$uni['id']}" selected>{$uni['name']}</option>
+                                  <else />
+                                  <option value="{$uni['id']}">{$uni['name']}</option>
+                                </if>
+                              </foreach>
+                            </select>
+                          </div>
+                          <div class="col-sm-3">
+                            <input type="number" class="form-control" name="ability[range_min][]" value="{$pro2['range_min']}" />
+                          </div>
+                          <div class="col-sm-1">
+                            {$Think.lang.to}
+                          </div>
+                          <div class="col-sm-3">
+                            <input type="number" class="form-control" name="ability[range_max][]" value="{$pro2['range_max']}"/>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="col-sm-6">
+                            <select class="form-control"  name="ability[capacity_unit_id][]">
+                              <foreach name='uni_list' item='uni'>
+                                <if condition="$pro2['capacity_unit_id'] eq $uni['id']">
+                                  <option value="{$uni['id']}" selected>{$uni['name']}</option>
+                                  <else />
+                                  <option value="{$uni['id']}">{$uni['name']}</option>
+                                </if>
+                              </foreach>
+                            </select>
+                          </div>
+                          <div class="col-sm-6">
+                            <input type="text" class="form-control" placeholder="{$Think.lang.max}"  name="ability[capacity_max][]" value="{$pro2['capacity_max']}" />
+                          </div>
+                        </div>
+                      </div>
+                      <input type="hidden" name="ability[id][]" value="{$pro2['id']}" />
+                    </foreach>
+                  </div>
+                  <input type="submit" value="{$Think.lang.finish}" class="btn btn-block btn-primary"/>
+                </div><!-- /.panel-body -->
+                </form>
+              </div><!-- /.collapseOne -->
+            </div><!--制造能力-->
+            <div class="panel panel-default panel3">
+              <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <i class="fa fa-check"></i>{$Think.lang.main_manufacturing_equipment}<i class="fa fa-angle-down pull-right"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                  <div class="row borderBottom">
+                    <div class="col-sm-2">
+                      <h4>{$Think.lang.manufacturing_technology}</h4>
+                    </div>
+                    <div class="col-sm-3">
+                      <h4>{$Think.lang.equipment}</h4>
+                    </div>
+                    <div class="col-sm-3">
+                      <h4>{$Think.lang.equipment}({$Think.lang.lang_english})</h4>
+                    </div>
+                    <div class="col-sm-2">
+                      <h4>{$Think.lang.brand}</h4>
+                    </div>
+                    <div class="col-sm-2">
+                      <h4>{$Think.lang.quantity}</h4>
+                    </div>
+                  </div>
+                  <form action="__APP__/Home/Supplier/update_production"  method="post">
+                    <div class="repeat">
+                      <foreach name="tionlist" item="profacility">
+                        <div class="row borderNo">
+                          <div class="col-sm-2 borderRight">
+                            <select name="production[processing_technic_second_id][]" class="form-control">
+                              <foreach name='pro2_list' item='pro2'>
+                                <if condition="$profacility['processing_technic_second_id'] eq $pro2['id']">
+                                  <option value="{$pro2['id']}" selected>{$pro2['name']}</option>
+                                <else />
+                                  <option value="{$pro2['id']}">{$pro2['name']}</option>
+                                </if>
+                              </foreach>
+                            </select>
+                          </div>
+                          <div class="col-sm-3 borderRight">
+                            <input type="text" class="form-control" name="production[name][]" value="{$profacility['name']}" />
+                          </div>
+                          <div class="col-sm-3 borderRight">
+                            <input type="text" class="form-control" name="production[name_en][]" value="{$profacility['name_en']}"/>
+                          </div>
+                          <div class="col-sm-2 borderRight">
+                            <input type="text" class="form-control" name="production[brand][]"  value="{$profacility['brand']}"/>
+                          </div>
+                          <div class="col-sm-2">
+                            <input type="number" class="form-control" name="production[quantity][]" value="{$profacility['quantity']}"/>
+                          </div>
+                          <input type="hidden"  name="production[id][]" value="{$profacility['id']}">
+                        </div>
+                      </foreach>
+                    </div>
+                    <input type="submit" value="{$Think.lang.finish}" class="btn btn-block btn-primary"/>
+                  </form>
+                </div><!-- /.panel-body -->
+              </div><!-- /.collapseOne -->
+            </div><!--主要生产设备-->
+            <div class="panel panel-default panel4">
+              <div class="panel-heading" role="tab" id="headingFour">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                    <i class="fa fa-globe"></i>{$Think.lang.measurement_equipment}<i class="fa fa-angle-down pull-right"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="panel-body">
+                  <div class="row borderBottom">
+                    <div class="col-sm-3">
+                      <h4>{$Think.lang.equipment}</h4>
+                    </div>
+                    <div class="col-sm-3">
+                      <h4>{$Think.lang.equipment}({$Think.lang.lang_english})</h4>
+                    </div>
+                    <div class="col-sm-2">
+                      <h4>{$Think.lang.brand}</h4>
+                    </div>
+                    <div class="col-sm-2">
+                      <h4>{$Think.lang.quantity}</h4>
+                    </div>
+                  </div>
+                  <form action="__APP__/Home/Supplier/update_detection" method="post">
+                    <div class="repeat">
+                      <foreach name="detection" item="detection">
+                        <div class="row borderNo">
+                          <div class="col-sm-3 borderRight">
+                            <input type="text" class="form-control" name="detection[name][]" value="{$detection['name']}"/>
+                          </div>
+                          <div class="col-sm-3 borderRight">
+                            <input type="text" class="form-control" name="detection[name_en][]" value="{$detection['name_en']}"/>
+                          </div>
+                          <div class="col-sm-2 borderRight">
+                            <input type="text" class="form-control" name="detection[brand][]" value="{$detection['brand']}"/>
+                          </div>
+                          <div class="col-sm-2">
+                            <input type="number" class="form-control" name="detection[quantity][]" value="{$detection['quantity']}"/>
+                          </div>
+                            <input type="hidden" name="detection[id][]" value="{$detection['id']}">
+                        </div>
+                      </foreach>
+                    </div>
+                    <input type="submit" value="{$Think.lang.finish}" class="btn btn-block btn-primary"/>
+                  </form>
+                </div><!-- /.panel-body -->
+                </div><!-- /.collapseOne -->
+            </div><!--主要检测设备-->
+            <div class="panel panel-default panel5">
+              <div class="panel-heading" role="tab" id="headingFive">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <i class="fa fa-globe"></i>{$Think.lang.market_customer}<i class="fa fa-angle-down pull-right"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+              <form action="__APP__/Home/Supplier/update_market"  method="post">
+                <div class="panel-body">
+                  <div class="row borderBottom">
+                    <div class="col-sm-6">
+                      <h4 class="text-center"><span>*</span>{$Think.lang.turnover}</h4>
+                    </div>
+                    <div class="col-sm-6">
+                      <h4 class="text-center"><span>*</span>{$Think.lang.customer_distribution}</h4>
+                    </div>
+                  </div>
+                  <div class="row borderNo">
+                    <div class="col-sm-6 borderRight">
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                          <thead>
+                          <tr>
+                            <th>{$Think.lang.year}</th>
+                            <th>{$Think.lang.currency}</th>
+                            <th>{$Think.lang.amount}</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                            <td>{$year-2}</td>
+                            <td>
+                              <select name="money[0][currency_type_id]" class="form-control" required>
+                                <foreach name='cur_type_list' item='cur_type'>
+                                  <if condition="$money[0]['currency_type_id'] eq $cur_type['id']">
+                                    <option value="{$cur_type['id']}" selected>{$cur_type['name']}</option>
+                                  <else />
+                                    <option value="{$cur_type['id']}">{$cur_type['name']}</option>
+                                  </if>
+                                </foreach>
+                              </select>
+                            </td>
+                            <td><input type="text" class="form-control" name="money[0][amount]" value="{$money[0][amount]}" required/></td>
+                          </tr>
+                          <tr>
+                            <td>{$year-1}</td>
+                            <td>
+                              <select class="form-control"  name="money[1][currency_type_id]" required>
+                                <foreach name='cur_type_list' item='cur_type'>
+                                  <if condition="$money[1]['currency_type_id'] eq $cur_type['id']">
+                                    <option value="{$cur_type['id']}" selected>{$cur_type['name']}</option>
+                                  <else />
+                                    <option value="{$cur_type['id']}">{$cur_type['name']}</option>
+                                  </if>
+                                </foreach>
+                              </select>
+                            </td>
+                            <td>
+                              <input type="text" class="form-control" name="money[1][amount]" value="{$money[1]['amount']}" required/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>{$year}</td>
+                            <td>
+                              <select name="money[2][currency_type_id]" class="form-control" required>
+                                <foreach name='cur_type_list' item='cur_type'>
+                                  <if condition="$money[2]['currency_type_id'] eq $cur_type['id']">
+                                    <option value="{$cur_type['id']}" selected>{$cur_type['name']}</option>
+                                  <else />
+                                    <option value="{$cur_type['id']}">{$cur_type['name']}</option>
+                                  </if>
+                                </foreach>
+                              </select>
+                            </td>
+                            <td>
+                              <input type="text" class="form-control" name="money[2][amount]" value="{$money[2]['amount']}" required/>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div><!--最近三年营业额-->
+                    <div class="col-sm-6">
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                          <thead>
+                          <tr>
+                            <th>{$Think.lang.industry}</th>
+                            <th>{$Think.lang.radio_turnover}</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                            <td>
+                              <select class="form-control"  name="customer[0][industry_cate_id]" required>
+                                <foreach name='ind_list' item='ind'>
+                                  <if condition="$customer[0]['industry_cate_id'] eq $ind['id']">
+                                    <option value="{$ind['id']}" selected>{$ind['name']}</option>
+                                  <else />
+                                    <option value="{$ind['id']}">{$ind['name']}</option>
+                                  </if>
+                                </foreach>
+                              </select>
+                            </td>
+                            <td><input type="text" class="form-control" name="customer[0][ratio]" value="{$customer[0]['ratio']}" required/></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <select class="form-control"  name="customer[1][industry_cate_id]" required>
+                                <foreach name='ind_list' item='ind'>
+                                  <if condition="$customer[1]['industry_cate_id'] eq $ind['id']">
+                                    <option value="{$ind['id']}" selected>{$ind['name']}</option>
+                                  <else />
+                                    <option value="{$ind['id']}">{$ind['name']}</option>
+                                  </if>
+                                </foreach>
+                              </select>
+                            </td>
+                            <td>
+                              <input type="text" class="form-control" name="customer[1][ratio]" value="{$customer[1]['ratio']}" required/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <select class="form-control"  name="customer[2][industry_cate_id]" required>
+                                <foreach name='ind_list' item='ind'>
+                                  <if condition="$customer[2]['industry_cate_id'] eq $ind['id']">
+                                    <option value="{$ind['id']}" selected>{$ind['name']}</option>
+                                  <else />
+                                    <option value="{$ind['id']}">{$ind['name']}</option>
+                                  </if>
+                                </foreach>
+                              </select>
+                            </td>
+                            <td>
+                              <input type="text" class="form-control" name="customer[2][ratio]"  value="{$customer[2]['ratio']}"  required/>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div><!--客户分布-->
+                  </div>
+                  <div class="row borderBottom">
+                    <div class="col-sm-6"><h4 class="text-center"><span>*</span>{$Think.lang.market_distribution}</h4></div>
+                  </div>
+                  <div class="row borderNo">
+                    <div class="col-sm-6">
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                          <thead>
+                          <tr>
+                            <th>{$Think.lang.region}</th>
+                            <th>{$Think.lang.radio_turnover}</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                            <td>
+                              <select class="form-control"  name="market[0][area_partition_id]">
+                                <foreach name='are_list' item='are'>
+                                  <if condition="$market[0]['area_partition_id'] eq $are['id']">
+                                    <option value="{$are['id']}" selected>{$are['name']}</option>
+                                    <else />
+                                    <option value="{$are['id']}">{$are['name']}</option>
+                                  </if>
+                                </foreach>
+                              </select>
+                            </td>
+                            <td><input type="text" class="form-control" name="market[0][ratio]" value="{$market[0]['ratio']}"/></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <select class="form-control"  name="market[1][area_partition_id]">
+                                <foreach name='are_list' item='are'>
+                                  <if condition="$market[1]['area_partition_id'] eq $are['id']">
+                                    <option value="{$are['id']}" selected>{$are['name']}</option>
+                                    <else />
+                                    <option value="{$are['id']}">{$are['name']}</option>
+                                  </if>
+                                </foreach>
+                              </select>
+                            </td>
+                            <td>
+                              <input type="text" class="form-control" name="market[1][ratio]" value="{$market[1]['ratio']}"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <select class="form-control"  name="market[2][area_partition_id]">
+                                <foreach name='are_list' item='are'>
+                                  <if condition="$market[2]['area_partition_id'] eq $are['id']">
+                                    <option value="{$are['id']}" selected>{$are['name']}</option>
+                                    <else />
+                                    <option value="{$are['id']}">{$are['name']}</option>
+                                  </if>
+                                </foreach>
+                              </select>
+                            </td>
+                            <td>
+                              <input type="text" class="form-control" name="market[2][ratio]" value="{$market[2]['ratio']}"/>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div><!--市场分布-->
+                  </div>
+                  <for start="0" end="3">
+                    <input type="hidden" name="money[{$i}][year]" value="{$money[$i]['year']}">
+                    <input type="hidden" name="customer[{$i}][id]" value="{$customer[$i]['id']}">
+                    <input type="hidden" name="market[{$i}][id]" value="{$market[$i]['id']}">
+                  </for>
+                  <input type="hidden" name="comid" value="{$com_id}">
+                  <input type="submit" value="{$Think.lang.finish}" class="btn btn-block btn-primary"/>
+                </div><!-- /.panel-body -->
+                </form>
+              </div><!-- /.collapseOne -->
+            </div><!--市场及客户-->
+          </div>
+        </div><!-- col-md-8 -->
+      </div><!-- /.row  -->      
+    </div><!-- content -->
+  </div><!-- container -->
+</div><!-- content supplierCompanyInfo-->
+<include file = "layout:footer"/>

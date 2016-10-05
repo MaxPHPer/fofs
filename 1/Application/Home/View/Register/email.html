@@ -1,0 +1,96 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/>
+<div class="content registerEmail">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3>
+                <a href="#personal_sign" data-toggle="tab" style="color:black;text-decoration:none;">个人注册</a>
+                |
+                <a href="#institution_sign" data-toggle="tab" style="color:black;text-decoration:none;">机构注册</a>
+            </h3>
+          </div>
+          <div class="panel-body">
+          <div id="myTabContent" class="tab-content">
+              <div class="tab-pane fade in active" id="personal_sign">
+                  <form action="__APP__/Home/Register/send_mail" method="post">
+                    <fieldset>
+
+                      <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="请输入邮箱" required/>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="{$Think.lang.enter_password}" required/>
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control" name="passwordTwice" placeholder="{$Think.lang.enter_repassword}" required/>
+                      </div>
+
+                    </fieldset>
+
+                    <fieldset>
+                      <div class="checkbox">
+                        <input type="checkbox" name="accepted" id="accepted" checked/>
+                        <label for="accepted">
+                           <a href="termOfUse" target="_Blank">我已阅读并同意《中国母基金联盟 用户协议》</a>
+                        </label>
+                      </div>
+                      <input type="submit" class="btn btn-block btn-primary" value="个人注册"/>
+                    </fieldset>
+                  </form>
+              </div>
+
+               <div class="tab-pane fade" id="institution_sign">
+                  <form action="__APP__/Home/Register/send_mail" method="post">
+                    <fieldset>
+
+                      <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="请输入邮箱" required/>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="{$Think.lang.enter_password}" required/>
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control" name="passwordTwice" placeholder="{$Think.lang.enter_repassword}" required/>
+                      </div>
+                      <div class="form-group">
+                          <select style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
+                            <option value ="0">请选择机构类型</option>
+                            <option value ="1">LP</option>
+                            <option value="2">GP</option>
+                            <option value="3">创业公司</option>
+                            <option value ="4">FA机构</option>
+                            <option value="5">法务机构</option>
+                            <option value="6">财务机构</option>
+                            <option value ="7">众创空间</option>
+                            <option value="8">其它(媒体、政府机构等)</option>
+                          </select>
+                      </div>
+                    </fieldset>
+
+                    <fieldset>
+                      <div class="checkbox">
+                        <input type="checkbox" name="accepted" id="accepted" checked/>
+                        <label for="accepted">
+                           <a href="termOfUse" target="_Blank">我已阅读并同意《中国母基金联盟 用户协议》</a>
+                        </label>
+                      </div>
+                      <input type="submit" class="btn btn-block btn-primary" value="机构注册"/>
+                    </fieldset>
+                  </form>
+               </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<include file = "layout:footer"/>

@@ -1,0 +1,94 @@
+<include file = "./Application/Home/View/layout/header.html"/>
+<div class="content supplierPersonalInfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h1>{$Think.lang.personal_profile}</h1>
+          </div>
+          <div class="panel-body">
+              <div class="row borderNo">
+                <div class="col-sm-8">
+                  <if condition="$info['face_url'] neq NULL">
+                    <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/supplier_pic/{$info['face_url']}" alt="头像">
+                  <else />
+                    <img class="media-object img-thumbnail" src="/selectin/1/Public/uploads/supplier_pic/temp.jpg" alt="头像">
+                  </if>
+                </div>
+              </div><!--上传头像-->
+              <div class="row borderNo">
+                <label class="col-sm-3 control-label">{$Think.lang.user_name}</label>
+                <div class="col-sm-8">
+                  <p>{$info['username']}</p>
+                </div>
+              </div><!--用户名-->
+              <div class="row borderNo">
+                <label class="col-sm-3 control-label">{$Think.lang.first_name}</label>
+                <div class="col-sm-3">
+                  <p>{$info['firstname']}</p>
+                </div>
+                <label class="col-sm-2 control-label">{$Think.lang.last_name}</label>
+                <div class="col-sm-3">
+                  <p>{$info['lastname']}</p>
+                </div>
+              </div><!--名、姓-->
+              <div class="row borderNo">
+                <label class="col-sm-3 control-label">{$Think.lang.first_name}({$Think.lang.lang_english})</label>
+                <div class="col-sm-3">
+                  <p>{$info['firstname_en']}</p>
+                </div>
+                <label class="col-sm-2 control-label">{$Think.lang.last_name}({$Think.lang.lang_english})</label>
+                <div class="col-sm-3">
+                  <p>{$info['lastname_en']}</p>
+                </div>
+              </div><!--名、姓(英文)-->
+              <div class="row borderNo">
+                <label class="col-sm-3 control-label">{$Think.lang.position}</label>
+                <div class="col-sm-3">
+                  <p>{$info['title']}</p>
+                </div>
+                <label class="col-sm-2 control-label">{$Think.lang.function}</label>
+                <div class="col-sm-3">
+                  <p>{$info['function']['name']}</p>
+                </div>
+              </div><!--职位、职能-->
+              <div class="row borderNo">
+                <label class="col-sm-3 control-label">{$Think.lang.email}</label>
+                <div class="col-sm-8">
+                  <p>{$info['email']}</p>
+                </div>
+              </div><!--电子邮件-->
+              <div class="row borderNo">
+                <label class="col-sm-3 control-label">{$Think.lang.telephone}</label>
+                <div class="col-sm-2">
+                  <p>{$info['tel']}</p>
+                </div>
+              </div><!--电话号码-->
+              <div class="row borderNo">
+                <label class="col-sm-3 control-label">{$Think.lang.mobile_phone}</label>
+                <div class="col-sm-2">
+                  <p>{$info['mobile']}</p>
+                </div>
+              </div><!--手机-->
+              <div class="row borderNo">
+                <label class="col-sm-3 control-label">{$Think.lang.fax}</label>
+                <div class="col-sm-2">
+                  <p>{$info['fax']}</p>
+                </div>
+              </div><!--传真-->
+            <div class="row" style="margin: 50px 0 20px">
+              <div class="col-sm-4 col-sm-offset-2">
+                <a href="__APP__/Admin/User/viewbuyerCompanyInfo/id/{$info['buyer_company_id']}" type="button" class="btn btn-block btn-primary">{$Think.lang.view_company}</a>
+              </div>
+              <div class="col-sm-4">
+                <a href="javascript:;" onClick="javascript:history.back(-1);" type="button" class="btn btn-primary btn-block">{$Think.lang.back}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<include file = "layout:footer"/>

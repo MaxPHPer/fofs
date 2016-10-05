@@ -1,0 +1,126 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/> 
+  <div class="content buyProfile">
+    <div class="container">
+      <ul class="nav nav-justified masthead-nav">
+        <li role="presentation"><a href="__APP__/Home/Buyer/buyProfile">{$Think.lang.dashboard}</a></li>
+        <li role="presentation"><a href="__APP__/Home/Buyer/inbox">{$Think.lang.inbox}</a></li>
+        <li role="presentation" class="active"><a href="__APP__/Home/Buyer/supplier">{$Think.lang.supplier}</a></li>
+        <li role="presentation"><a href="__APP__/Home/Buyer/project">{$Think.lang.project}</a></li>
+      </ul>
+    </div>
+    <hr/>
+    <div class="content-wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-sm-offset-4">
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">查询</button>
+            </form>
+          </div>
+        </div>
+        <br/>
+        <div class="row">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <table class="table table-hover">
+                <thead>
+                <tr>
+                  <th>{$Think.lang.supplier_name}</th>
+                  <th>{$Think.lang.status}</th>
+                  <th>{$Think.lang.manufacturing_technology}</th>
+                  <th>{$Think.lang.contact_person}</th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <foreach name="intlist" item="int">
+                  <tr>
+                    <td>{$int['name']}
+                      <a href="__APP__/Home/Buyer/CheckRifState/id/{$int['connect_id']}"><i class="fa fa-chain"></i></a>
+                    </td>
+                    <td>
+                      <switch name="int['state']">
+                        <case value="1">{$Think.lang.rfi_waiting_for_response}</case>
+                        <case value="2">{$Think.lang.rfi_accepted}</case>
+                        <case value="3">{$Think.lang.rfi_declined}</case>
+                      </switch>
+                    </td>
+                    <td>
+                      <foreach name="int['process']" item="vo">{$vo}、</foreach>
+                    </td>
+                    <td>{$int['connect']}<a href="__APP__/Home/Buyer/viewsupplierPersonalInfo/id/{$int['connect_id']}"><i class="fa fa-user"></i></a>
+                    </td>
+                    <td>
+                      <if condition="$int['state'] neq '1'">
+                        <a class="btn btn-danger" href="__APP__/Home/Buyer/del_interest/id/{$int['id']}" role="button">{$Think.lang.deleted}</a>
+                      </if>
+                      <button class="btn btn-success" type="button" data-toggle="modal" data-target="#sendMessage" onclick="sendmessage(this);" id="{$int['connect_id']}" name="{$int['connect']}">{$Think.lang.send_in_mail}</button>
+                    </td>
+                  </tr>
+                </foreach>
+                </tbody>
+              </table>
+            </div><!-- panel-body -->
+          </div><!-- panel panel-default -->
+        </div>
+        <div class="row">
+          <div class="col-md-9"></div>
+          <div class="col-md-3">
+            <!-- <a class="btn btn-primary" href="__APP__/Home/Buyer/inbox" role="button">{$Think.lang.send_in_mail}</a> -->
+            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#joinProject">{$Think.lang.add_to_project}</button>
+          </div><!-- col-md-3 -->
+        </div><!-- row -->
+      </div><!-- container -->
+    </div><!-- content-wrap -->
+    <br/>
+  </div><!-- content -->
+  <div class="modal fade" id="joinProject" role="dialog" aria-label aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form action="__APP__/Home/Buyer/addMember" method="post">
+        <div class="modal-body">
+          <div class="form-group clearfix">
+            <label for="chooseProject" class="control-label col-sm-4">{$Think.lang.select_project}</label>
+            <div class="col-sm-4">
+              <select id="chooseProject" class="form-control" name="project_id">
+                <foreach name="list" item="project">
+                  <option value="{$project['id']}">{$project['project_name']}</option>
+                </foreach>
+              </select>
+            </div>
+
+          </div>
+          <div class="form-group clearfix">
+            <label for="chooseProject" class="control-label col-sm-4">{$Think.lang.supplier}</label>
+            <div class="col-sm-8">
+              <foreach name="intlist" item="int">
+                <if condition="$int['state'] eq '2'">
+                  <input type="checkbox" name="member[{$int['connect_id']}]" value="{$int['name']}"/>{$int['name']}
+                </if>
+              </foreach>
+            </div>
+          </div>
+
+          <a href="__APP__/Home/Buyer/project" class="btn btn-success">{$Think.lang.create_new_project}</a>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">{$Think.lang.close_window}</button>
+          <button type="submit" class="btn btn-primary">{$Think.lang.finish}</button>
+        </div>
+      </form>
+      </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+  </div><!-- modal fade -->
+  <div class="modal fade" id="sendMessage" tabindex="-1" role="dialog" aria-labelledby="sendMessageLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content"  id="sendletter">
+        
+      </div>
+    </div>
+  </div><!-- modal fade -->
+<include file = "layout:footer"/>

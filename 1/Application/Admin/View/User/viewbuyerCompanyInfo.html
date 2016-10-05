@@ -1,0 +1,99 @@
+<include file = "./Application/Home/View/layout/header.html"/>
+<div class="content">
+  <div class="container buyerCompanyInfo">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h1>{$Think.lang.company_profile}</h1>
+          </div>
+          <div class="panel-body">
+            <div class="row borderNo">
+              <label  class="col-sm-3 control-label">{$Think.lang.company_logo}</label>
+              <div class="col-sm-8">
+                <img src="__PUBLIC__/uploads/buyer_logo/<php>echo $info['logo_url']?$info['logo_url']:'temp.jpg';</php>" width="200px">
+              </div>
+            </div>
+            <div class="row borderNo">
+              <label class="col-sm-3 control-label">{$Think.lang.company_name}</label>
+              <div class="col-sm-8">
+                <p>{$info['name']}</p>
+              </div>
+            </div>
+            <div class="row borderNo">
+              <label class="col-sm-3 control-label"><span>*</span>{$Think.lang.company_name}({$Think.lang.lang_english})</label>
+              <div class="col-sm-8">
+                <p>{$info['name_en']}</p>
+              </div>
+            </div>
+            <div class="row borderNo">
+              <label class="col-sm-3 control-label">{$Think.lang.company_website}</label>
+              <div class="col-sm-8">
+                <p>{$info['website']}</p>
+              </div>
+            </div>
+            <div class="row borderNo">
+              <label class="col-sm-3 control-label">{$Think.lang.industry}</label>
+              <div class="col-sm-8">
+                <p>{$info['industry']['name']}</p>
+              </div>
+            </div>
+            <div class="row borderNo">
+              <label class="col-sm-3 control-label">{$Think.lang.employee}</label>
+              <div class="col-sm-8">
+                <p>{$info['employees']}</p>
+              </div>
+            </div>
+            <div class="row borderNo">
+              <label class="col-sm-3 control-label">{$Think.lang.duns}</label>
+              <div class="col-sm-8">
+                <p>{$info['duns_no']}</p>
+              </div>
+            </div>
+            <div class="row borderNo">
+              <label class="col-sm-3 control-label">{$Think.lang.address_1}</label>
+              <div class="col-sm-8">
+                <p>{$info['address']}</p>
+              </div>
+            </div>
+            <div class="row borderNo">
+              <label class="col-sm-3 control-label">{$Think.lang.address_1}（{$Think.lang.lang_english}）</label>
+              <div class="col-sm-8">
+                <p>{$info['address_en']}</p>
+              </div>
+            </div>
+            <div class="row borderNo">
+              <label class="col-sm-3 control-label">{$Think.lang.city}</label>
+              <div class="col-sm-8">
+                <p>{$info['city']}</p>
+              </div>
+            </div>
+            <div class="row borderNo">
+              <label class="col-sm-3 control-label">{$Think.lang.city}（{$Think.lang.lang_english}）</label>
+              <div class="col-sm-8">
+                <p>{$info['city_en']}</p>
+              </div>
+            </div>
+            <div class="row borderNo">
+              <label class="col-sm-3 control-label">{$Think.lang.country}</label>
+              <div class="col-sm-8">
+                <p>{$info['country']['name']}</p>
+              </div>
+            </div>
+            <div class="row borderNo">
+              <label class="col-sm-3 control-label">{$Think.lang.province}</label>
+              <div class="col-sm-8">
+                <p>{$info['province']['name']}</p>
+              </div>
+            </div>
+
+            <a href="javascript:;" onClick="javascript:history.back(-1);" type="button" class="btn btn-primary btn-block">{$Think.lang.back}</a>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<include file = "layout:footer"/>

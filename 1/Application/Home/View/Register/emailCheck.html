@@ -1,0 +1,38 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/>
+<div class="content registerEmailCheck">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h1>{$Think.lang.email_verification}</h1>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-8">
+                <section class="verifyEmail">
+                  <h3>{$Think.lang.email_verify_to_complete}</h3>
+                  <p>{$Think.lang.email_verification_send}<span>{$email}</span></p>
+                  <p>{$Think.lang.click_email_url}</p>
+                  <a href="{$link}" target="_Blank" class="btn btn-primary">{$Think.lang.go_emailbox_check}</a>
+                </section>
+              </div>
+              <duv class="col-sm-4">
+                <section class="noVerify">
+                  <h4>{$Think.lang.not_receive_email}</h4>
+                  <p>{$Think.lang.wrong_email}<a href="__APP__/Home/Register/email">{$Think.lang.change_a_emailbox}</a></p>
+                  <p>{$Think.lang.check_junk_folder}</p>
+                  <p>{$Think.lang.wait_for_seconds}<a href="__APP__/Home/Register/resend_email">{$Think.lang.send_check_email_again}</a></p>
+                </section>
+              </duv>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<include file = "layout:footer"/>

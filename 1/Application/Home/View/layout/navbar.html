@@ -1,0 +1,230 @@
+<header class="header" role="navigation">
+  <nav class="navbar navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
+          <span class="sr-only">中国母基金联盟</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="__APP__/Home" id="logo">
+          <img src="__PUBLIC__/assets_1/img/logo.png" alt="select_in"/>
+        </a>
+
+      </div>
+
+      <div class="collapse navbar-collapse" id="collapse">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <div id="search_box">
+              <form id="search_form" method="post" action="#">
+                <input type="text" id="s" placeholder="文章/机构/用户" class="swap_value" />
+                <input type="image" src="__PUBLIC__/assets_1/img/search.png" width="20" height="20" id="go" alt="Search" title="Search" />
+              </form>
+            </div>
+          </li>
+          <!--未登录-->
+          <eq name="user_id" value="" >
+            <li>
+              <a href="#login" data-toggle="modal"> <i class="fa fa-sign-in"></i>
+                登录
+              </a>
+            </li>
+            <li>
+              <a href="__APP__/Home/Register/email.html"> <i class="fa fa-plus-square"></i>
+                注册
+              </a>
+            </li>
+
+            <li>
+              <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                微信
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="?l=zh-cn">
+                    <img src="__PUBLIC__/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <else />
+            <!--已登录之后的-->
+            <eq name="type" value="1">
+              <li>
+                <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  微信
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="?l=zh-cn">
+                      <img src="__PUBLIC__/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="__APP__/Home/Buyer/inbox">新消息</a>
+              </li>
+              <li>
+                <a href="__APP__/Home/Buyer/buyProfile">{$username}</a>
+              </li>
+            </eq>
+            <eq name="type" value="2">
+              <li>
+                <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  微信
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="?l=zh-cn">
+                      <img src="__PUBLIC__/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="__APP__/Home/supplier/inbox">新消息</a>
+              </li>
+              <li>
+                <a href="__APP__/Home/supplier/supplierProfile">{$username}</a>
+              </li>
+            </eq>
+            <li>
+              <a href="__APP__/Home/Index/logout">登出</a>
+            </li>
+          </eq>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse --> </div>
+    <!-- /.container-fluid --> </nav>
+
+</header>
+<div id='nav_bar'>
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <li role="presentation" >
+      <a href="#">首页</a>
+    </li>
+    <li role="presentation">
+      <a href="#">关于联盟</a>
+    </li>
+    <li role="presentation">
+      <a href="#">LP</a>
+    </li>
+    <li role="presentation">
+      <a href="#">GP</a>
+    </li>
+    <li role="presentation">
+      <a href="#">创业公司</a>
+    </li>
+    <li role="presentation">
+      <a href="#">服务机构</a>
+    </li>
+    <li role="presentation">
+      <a href="#">合作</a>
+    </li>
+  </ul>
+</div>
+
+<!--登录模态框-->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <h4 class="modal-title">
+          <a href="#personal_login" data-toggle="tab" style="color:white;text-decoration:none;">个人登录</a>
+          |
+          <a href="#institution_login" data-toggle="tab" style="color:white;text-decoration:none;">机构登录</a>
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+
+            <div id="myTabContent" class="tab-content">
+              <div class="tab-pane fade in active" id="personal_login">
+                <div class="col-sm-8">
+                  <form action="__APP__/Home/Index/login" method="post">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="user" placeholder="{$Think.lang.enter_email_address}"/>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control" name="password" placeholder="{$Think.lang.enter_password}"/>
+                    </div>
+                    <a href="__APP__/Home/Password/first.html" class="pull-right">忘记密码</a>
+                    <div class="row btnLogin">
+                      <div class="col-sm-6"></div>
+                      <div class="col-sm-6">
+                        <input type="submit" name='buyer' value="个人登录" class="btn btn-block btn-primary"/>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="institution_login">
+                <div class="col-sm-8">
+                  <form action="__APP__/Home/Index/login" method="post">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="user" placeholder="{$Think.lang.enter_email_address}"/>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control" name="password" placeholder="{$Think.lang.enter_password}"/>
+                    </div>
+                    <div class="form-group">
+                        <select style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
+                          <option value ="0">请选择机构类型</option>
+                          <option value ="1">LP</option>
+                          <option value="2">GP</option>
+                          <option value="3">创业公司</option>
+                          <option value ="4">FA机构</option>
+                          <option value="5">法务机构</option>
+                          <option value="6">财务机构</option>
+                          <option value ="7">众创空间</option>
+                          <option value="8">其它(媒体、政府机构等)</option>
+                        </select>
+                    </div>
+
+                    <a href="__APP__/Home/Password/first.html" class="pull-right">忘记密码</a>
+                    <div class="row btnLogin">
+                      <div class="col-sm-6"></div>
+                      <div class="col-sm-6">
+                        <input type="submit" name='supplier' value="机构登录" class="btn btn-block btn-primary"/>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="indexText">
+                  <h5>中国母基金联盟</h5>
+                  <p>还没有账号</p>
+                  <a href="__APP__/Home/Register/email.html">立即注册</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--登录模态框结束-->
