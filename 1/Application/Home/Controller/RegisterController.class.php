@@ -3279,4 +3279,49 @@ class RegisterController extends BaseController{
     public function startupCompanyInfo(){
       $this->display();
     }
+
+    //fa公司信息
+    public function faCompanyInfo(){
+      $this->display();
+    }
+
+    //fa公司信息
+    public function faSuccessCase(){
+      $this->display();
+    }
+
+    //法务公司信息
+    public function laCompanyInfo(){
+      $this->display();
+    }
+
+    //法务公司产品、服务信息
+    public function laServiceInfo(){
+      $this->display();
+    }
+
+    //财务公司信息
+    public function fiCompanyInfo(){
+      $this->display();
+    }
+
+    //财务公司产品、服务信息
+    public function fiServiceInfo(){
+      $this->display();
+    }
+
+    //众创空间信息
+    public function biCompanyInfo(){
+      $this->display();
+    }
+
+    //众创空间产品、服务信息
+    public function biServiceInfo(){
+      $this->display();
+    }
+
+    //其它机构公司信息
+    public function otherInstitutionInfo(){
+      $this->display();
+    }
 }

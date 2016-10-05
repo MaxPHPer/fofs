@@ -1,0 +1,110 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/>
+<div class="content supplierCompanyInfo">
+  <div class="container">
+    <form action="__APP__/Home/Register/save_supplierCompanyInfo" method="post" enctype="multipart/form-data">
+      <div class="row">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+
+          <div class="panel panel-default panel4" style="margin-top: 20px;">
+            <div class="panel-heading" role="tab" id="headingFour">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                  <i class="fa fa-globe"></i>
+                  产品或服务
+                  <i class="fa fa-angle-down pull-right"></i>
+                </a>
+              </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+              <div class="panel-body">
+                <div class="repeat_fund ">
+                  <div class="borderBottom" style="margin-bottom:20px;">
+                    
+
+
+                    <div class="row">
+                        <div class="col-sm-2 ">
+                          <label for="userName" class="col-sm-12 control-label"><b>填写产品/服务</b></label>
+                        </div>
+                    </div>
+
+
+                    <div class="repeat">
+                      <div class="row" style="margin-top:10px;">
+                        
+                          <div>
+                              <div class="col-sm-2">
+                                <label for="userName" class="col-sm-12 control-label">
+                                  名称
+                                </label>
+                              </div>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="userName" name="username"  />                            
+                              </div>
+
+                          </div>
+
+                      </div>
+                      <div class="row" style="margin-top:10px;">
+                        
+                          <div>
+                              <div class="col-sm-2">
+                                <label for="userName" class="col-sm-12 control-label">
+                                  详细内容
+                                </label>
+                              </div>
+                              <div class="col-sm-4">
+                                <textarea class="form-control" id="userName" name="username" ></textarea>
+                              </div>
+
+                          </div>
+
+                      </div>
+                      <div class="row borderBottom" style="margin-top:10px;">
+                        
+                          <div>
+                              <div class="col-sm-2">
+                                <label for="userName" class="col-sm-12 control-label">
+                                  价格
+                                </label>
+                              </div>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="userName" name="username"  />                            
+                              </div>
+
+                          </div>
+
+                      </div>
+                      
+                      
+                      
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-9"></div>
+                      <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" id="addNew4">再添加其它产品/服务</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
+              </div>
+            </div>
+          </div>
+          <!--主要检测设备-->
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4" style="margin-bottom:30px;">
+          <input type="hidden" name='user_id'  value="{$id}"/>
+          <input type="submit" class="btn btn-primary btn-block" id="submit" value="{$Think.lang.signup_complete}"/>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<include file = "layout:footer"/>
