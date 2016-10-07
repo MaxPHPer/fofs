@@ -3062,3 +3062,2698 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000819s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000928s ]
 
+[ 2016-10-07T18:50:00+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001176s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003806s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000134s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015211s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015308s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000587s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001045s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001146s ]
+
+[ 2016-10-07T18:50:30+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000658s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000729s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002014s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002852s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000156s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000236s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015742s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015854s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000807s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001059s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001190s ]
+
+[ 2016-10-07T18:51:14+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000942s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002840s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003940s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000146s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000222s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016019s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016091s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000978s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001074s ]
+
+[ 2016-10-07T18:51:49+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000666s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002818s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000129s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013946s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014022s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000666s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000806s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000892s ]
+
+[ 2016-10-07T18:52:11+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002138s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003035s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000134s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014350s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014425s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000623s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000967s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001068s ]
+
+[ 2016-10-07T18:52:48+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000743s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001964s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002782s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000225s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014105s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014182s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000543s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001815s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001940s ]
+
+[ 2016-10-07T18:53:28+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003033s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000188s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000300s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015017s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015093s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000678s ]
+
+[ 2016-10-07T18:57:18+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001820s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002681s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000206s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017616s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017716s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000653s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000715s ]
+
+[ 2016-10-07T18:57:36+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001070s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003693s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015895s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015985s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000832s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000907s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001015s ]
+
+[ 2016-10-07T18:57:56+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000989s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003404s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000229s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015729s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015809s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000755s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000862s ]
+
+[ 2016-10-07T18:58:21+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002228s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000221s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000339s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020730s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020831s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000924s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001021s ]
+
+[ 2016-10-07T18:58:40+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000842s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003244s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000143s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015409s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015482s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001273s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001390s ]
+
+[ 2016-10-07T18:59:03+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000713s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001764s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002477s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013888s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013959s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000599s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000662s ]
+
+[ 2016-10-07T18:59:18+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000611s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001132s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003624s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000204s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000314s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019498s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019573s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000672s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001073s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001158s ]
+
+[ 2016-10-07T19:00:41+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000902s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002349s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003366s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000216s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016698s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000718s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001155s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001287s ]
+
+[ 2016-10-07T19:01:20+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000870s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003213s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000209s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016104s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016180s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000840s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000917s ]
+
+[ 2016-10-07T19:01:40+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000750s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000842s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003479s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000196s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000265s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014928s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015043s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000697s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001125s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001231s ]
+
+[ 2016-10-07T19:02:02+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001178s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003925s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000218s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016528s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016616s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001126s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001218s ]
+
+[ 2016-10-07T19:02:39+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000837s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002984s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000209s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015014s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015085s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000673s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001073s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001153s ]
+
+[ 2016-10-07T19:03:10+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001892s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002704s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000170s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000243s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017141s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017220s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000781s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000850s ]
+
+[ 2016-10-07T19:04:07+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000696s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000958s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003102s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000211s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015304s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015382s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000769s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000857s ]
+
+[ 2016-10-07T19:04:35+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003634s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014152s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014223s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000757s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000847s ]
+
+[ 2016-10-07T19:16:39+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001722s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002486s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000240s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000360s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016388s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016461s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001344s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001448s ]
+
+[ 2016-10-07T19:16:45+08:00 ] ::1 /fofs/1/index.php/Home/Buyer/buyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003253s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000250s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009461s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009561s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000604s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000665s ]
+
+[ 2016-10-07T19:16:48+08:00 ] ::1 /fofs/1/index.php/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002094s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002988s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000380s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000520s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017831s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017956s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000889s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001237s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001358s ]
+
+[ 2016-10-07T19:16:55+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000866s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003322s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016015s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016092s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000719s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000931s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001003s ]
+
+[ 2016-10-07T19:17:55+08:00 ] ::1 /fofs/1/index.php/Home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000975s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001872s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002990s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000219s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000289s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017191s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017353s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000670s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000757s ]
+
+[ 2016-10-07T19:18:13+08:00 ] ::1 /fofs/1/index.php/Home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001691s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002362s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000208s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000278s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015712s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015818s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000766s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000870s ]
+
+[ 2016-10-07T19:18:22+08:00 ] ::1 /fofs/1/index.php/Home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002499s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000300s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000432s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023321s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023449s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000578s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000646s ]
+
+[ 2016-10-07T19:19:54+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002753s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000206s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015101s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015190s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000786s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000859s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001093s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001194s ]
+
+[ 2016-10-07T19:20:22+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002589s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000216s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018162s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018255s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000568s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001967s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002079s ]
+
+[ 2016-10-07T19:23:25+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000070s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000688s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001085s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003955s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000160s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014341s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014420s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000638s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000715s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000783s ]
+
+[ 2016-10-07T19:23:49+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000841s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002162s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003117s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000241s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014292s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014362s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000717s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000841s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000932s ]
+
+[ 2016-10-07T19:25:04+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000881s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001106s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003580s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000200s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000309s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017392s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017469s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000796s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000872s ]
+
+[ 2016-10-07T19:25:15+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000899s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002144s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003165s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000220s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014292s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014367s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000673s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000848s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000937s ]
+
+[ 2016-10-07T19:25:18+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000829s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001937s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002885s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015604s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015678s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000671s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000847s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000939s ]
+
+[ 2016-10-07T19:26:58+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000998s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003709s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 369 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 370 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018300s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018394s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000782s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000869s ]
+
+[ 2016-10-07T19:27:01+08:00 ] ::1 /fofs/1/index.php/Home/Buyer/supplier
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000826s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003283s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009033s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009157s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000702s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000759s ]
+
+[ 2016-10-07T19:28:42+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000631s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001017s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004131s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005342s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000216s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 370 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 371 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015997s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016072s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001110s ]
+
+[ 2016-10-07T19:28:44+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000834s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004352s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000224s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 370 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 371 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014848s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014931s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000791s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000870s ]
+
+[ 2016-10-07T19:29:49+08:00 ] ::1 /fofs/1/index.php/Home/Buyer/inbox
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001285s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002399s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003818s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008446s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008549s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000704s ]
+
+[ 2016-10-07T19:31:08+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000779s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003178s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004100s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000242s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 369 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 370 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017662s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017762s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000591s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000677s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000762s ]
+
+[ 2016-10-07T19:32:08+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000862s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001385s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003127s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004739s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000230s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 369 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 370 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019802s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019914s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000806s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001307s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001891s ]
+
+[ 2016-10-07T19:33:26+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000931s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001104s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004048s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000292s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000708s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016499s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016576s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001080s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001168s ]
+
+[ 2016-10-07T19:34:35+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002785s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003706s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015172s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015247s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000786s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000866s ]
+
+[ 2016-10-07T19:35:21+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000871s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001225s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004864s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000177s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000306s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014411s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014483s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000644s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000709s ]
+
+[ 2016-10-07T19:37:37+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000784s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001120s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003004s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004306s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000175s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000244s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017868s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017982s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000841s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000770s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000853s ]
+
+[ 2016-10-07T19:38:29+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000567s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001023s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003383s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014277s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014350s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000840s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000931s ]
+
+[ 2016-10-07T19:38:35+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000709s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000814s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001830s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002766s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014262s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014355s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000880s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001003s ]
+
+[ 2016-10-07T19:39:28+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000753s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001959s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002882s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000199s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014892s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014991s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000513s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000574s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000686s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000752s ]
+
+[ 2016-10-07T19:40:24+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002544s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000206s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014796s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014885s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000656s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000723s ]
+
+[ 2016-10-07T19:40:39+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001066s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002096s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003318s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017274s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017351s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000705s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000902s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000994s ]
+
+[ 2016-10-07T19:41:23+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002547s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000222s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014213s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014291s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001021s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001138s ]
+
+[ 2016-10-07T19:41:55+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001220s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003699s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000222s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014310s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014383s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000661s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000723s ]
+
+[ 2016-10-07T19:42:33+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000871s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001928s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002920s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000204s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000273s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015553s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015628s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000635s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001127s ]
+
+[ 2016-10-07T19:44:51+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000920s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000870s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001775s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002816s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000233s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016508s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016603s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000679s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000746s ]
+
+[ 2016-10-07T19:45:51+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001265s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004968s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000195s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000275s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015151s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015224s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000688s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000854s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000929s ]
+
+[ 2016-10-07T19:46:28+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000178s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000878s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000992s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002011s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003153s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014988s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015060s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000646s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000807s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000894s ]
+
+[ 2016-10-07T19:46:30+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000869s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001193s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003970s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000134s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016097s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016174s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000749s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000998s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001071s ]
+
+[ 2016-10-07T19:47:43+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000952s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000991s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004619s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000169s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000242s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015229s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015300s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001401s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001761s ]
+
+[ 2016-10-07T19:50:18+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001069s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000842s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001834s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002815s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000193s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000264s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016211s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016305s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000651s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000710s ]
+
+[ 2016-10-07T19:51:39+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000865s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001226s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004219s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000181s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020670s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020779s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000868s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000980s ]
+
+[ 2016-10-07T19:51:45+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollowing
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000717s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001254s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003912s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000200s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000287s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015570s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015644s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000730s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000994s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001130s ]
+
+[ 2016-10-07T19:52:35+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollowing
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000790s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003244s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000175s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000259s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015246s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015347s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000624s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000911s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001007s ]
+
+[ 2016-10-07T19:54:35+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollowing
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000909s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002096s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003159s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000175s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000255s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016520s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016602s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000734s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000804s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001064s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001219s ]
+
+[ 2016-10-07T19:54:36+08:00 ] ::1 /fofs/1/index.php/Home/Individual/U('Home/Individual/individualProfile')
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000653s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000846s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003062s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011160s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011296s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000830s ]
+
+[ 2016-10-07T19:54:40+08:00 ] ::1 /fofs/1/index.php/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000904s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003422s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000178s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000251s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017118s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017218s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000772s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000923s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001022s ]
+
+[ 2016-10-07T19:54:43+08:00 ] ::1 /fofs/1/index.php/Home/Individual/U('Home/Individual/individualProfile')
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001972s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002894s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000112s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008092s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008178s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000652s ]
+
+[ 2016-10-07T19:54:46+08:00 ] ::1 /fofs/1/index.php/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000978s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001466s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002869s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004543s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000305s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000458s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020646s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020756s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000855s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001277s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001403s ]
+
+[ 2016-10-07T19:55:00+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollowing
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000730s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001116s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003505s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000261s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000346s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016786s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016861s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000701s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000964s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001042s ]
+
+[ 2016-10-07T19:56:43+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollowing
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001134s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003657s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000232s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017516s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017588s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000728s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001124s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001206s ]
+
+[ 2016-10-07T19:56:46+08:00 ] ::1 /fofs/1/index.php/Home/Individual/individualProfile.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000859s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003326s ]
+SQL: SHOW COLUMNS FROM `saas_buyer` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `saas_buyer` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `saas_letter` [ RunTime:0.0082s ]
+SQL: SHOW COLUMNS FROM `saas_buyer_interest_list` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `saas_letter` WHERE (  `sender_id` = '19' AND `sender_type` = 1 AND `type` = 1 AND `state` <> 0 ) OR ( recipient_id=19 AND recipient_type=1 )  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `saas_buyer_interest_list` WHERE ( buyer_id=19 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `saas_project` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `saas_project` WHERE ( creator_id=19 ) LIMIT 3   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000338s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000465s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015974s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016054s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000758s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001054s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001154s ]
+
+[ 2016-10-07T19:58:30+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollowing
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000654s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001252s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003959s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005422s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000231s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018537s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018609s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000665s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001241s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001346s ]
+
+[ 2016-10-07T19:58:33+08:00 ] ::1 /fofs/1/index.php/Home/Individual/individualProfile.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000833s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002118s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003074s ]
+SQL: SHOW COLUMNS FROM `saas_buyer` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `saas_buyer` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `saas_letter` [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `saas_buyer_interest_list` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `saas_letter` WHERE (  `sender_id` = '19' AND `sender_type` = 1 AND `type` = 1 AND `state` <> 0 ) OR ( recipient_id=19 AND recipient_type=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `saas_buyer_interest_list` WHERE ( buyer_id=19 )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `saas_project` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `saas_project` WHERE ( creator_id=19 ) LIMIT 3   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000157s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000242s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017096s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017178s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000694s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001123s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001229s ]
+
+[ 2016-10-07T19:58:36+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myCompany.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000871s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003427s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\f4853f3fe82bf03a01ab6378f867d3ba.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\f4853f3fe82bf03a01ab6378f867d3ba.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\f4853f3fe82bf03a01ab6378f867d3ba.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\f4853f3fe82bf03a01ab6378f867d3ba.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\f4853f3fe82bf03a01ab6378f867d3ba.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\f4853f3fe82bf03a01ab6378f867d3ba.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\f4853f3fe82bf03a01ab6378f867d3ba.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014609s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014694s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000769s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001047s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001166s ]
+
+[ 2016-10-07T19:58:42+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000762s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000900s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003654s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000205s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015647s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015741s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000727s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002762s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002845s ]
+
+[ 2016-10-07T19:58:48+08:00 ] ::1 /fofs/1/index.php/Home/Individual/inbox.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000807s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001219s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002995s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004421s ]
+SQL: SHOW COLUMNS FROM `saas_buyer` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `saas_buyer` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `saas_letter` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `saas_letter` WHERE (  `sender_id` = '19' AND `sender_type` = 1 AND `type` = 1 AND `state` <> 0 ) OR ( recipient_id=19 AND recipient_type=1 ) ORDER BY time desc  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `saas_letter` WHERE `sender_id` = 19 AND `sender_type` = 1 ORDER BY time desc  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `saas_supplier` [ RunTime:0.0330s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `saas_supplier_company` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `saas_buyer_company` [ RunTime:0.0171s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `supplier_company_id` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `saas_supplier_company` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `supplier_company_id` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `saas_supplier_company` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0009s ]
+ERR: 模板不存在:./Application/Home/View/Individual/inbox.html
+
+[ 2016-10-07T19:58:53+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000836s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003518s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000319s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000448s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016541s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016615s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000712s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001574s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001681s ]
+
+[ 2016-10-07T19:58:57+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollowing.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000831s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002457s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003488s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000234s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015772s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015845s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000683s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000740s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001140s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001236s ]
+
+[ 2016-10-07T20:00:53+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollowing.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000954s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003595s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000178s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000259s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023109s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023216s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000778s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000862s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001026s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001137s ]
+
+[ 2016-10-07T20:00:55+08:00 ] ::1 /fofs/1/index.php/Home/Individual/individualProfile.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000635s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000995s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003487s ]
+SQL: SHOW COLUMNS FROM `saas_buyer` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `saas_buyer` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `saas_letter` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `saas_buyer_interest_list` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `saas_letter` WHERE (  `sender_id` = '19' AND `sender_type` = 1 AND `type` = 1 AND `state` <> 0 ) OR ( recipient_id=19 AND recipient_type=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `saas_buyer_interest_list` WHERE ( buyer_id=19 )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `saas_project` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `saas_project` WHERE ( creator_id=19 ) LIMIT 3   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000152s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000220s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016494s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016568s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000959s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001044s ]
+
+[ 2016-10-07T20:00:58+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myCompany.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000969s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002120s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003234s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000183s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000288s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\f4853f3fe82bf03a01ab6378f867d3ba.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\f4853f3fe82bf03a01ab6378f867d3ba.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\f4853f3fe82bf03a01ab6378f867d3ba.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\f4853f3fe82bf03a01ab6378f867d3ba.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\f4853f3fe82bf03a01ab6378f867d3ba.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\f4853f3fe82bf03a01ab6378f867d3ba.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\f4853f3fe82bf03a01ab6378f867d3ba.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015113s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015191s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001113s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001216s ]
+
+[ 2016-10-07T20:01:00+08:00 ] ::1 /fofs/1/index.php/Home/Individual/accountSetting.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000743s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001945s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002865s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\c1b683e422d728f4569b00a0bd1eb147.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015196s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015266s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000617s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000668s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000907s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000994s ]
+
+[ 2016-10-07T20:01:04+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollows.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000942s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000992s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001967s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003094s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000167s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000241s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\86b490cb72366fec75e7cfe469cfc7e9.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016422s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016496s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000714s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001818s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001910s ]
+
+[ 2016-10-07T20:01:07+08:00 ] ::1 /fofs/1/index.php/Home/Individual/myFollowing.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000898s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001988s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000231s ]
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 273 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 279 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 280 行.
+NOTIC: [8] Undefined variable: user D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 281 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 326 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 342 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\a524f4a83c62884b989dc38a0b69aeba.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015790s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015869s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000865s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000940s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000981s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001073s ]
+
+[ 2016-10-07T20:06:03+08:00 ] ::1 /fofs/1/index.php/Home/Individual/inbox.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000828s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000830s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001990s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002971s ]
+SQL: SHOW COLUMNS FROM `saas_buyer` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `saas_buyer` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `saas_letter` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `saas_letter` WHERE (  `sender_id` = '19' AND `sender_type` = 1 AND `type` = 1 AND `state` <> 0 ) OR ( recipient_id=19 AND recipient_type=1 ) ORDER BY time desc  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `saas_letter` WHERE `sender_id` = 19 AND `sender_type` = 1 ORDER BY time desc  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `saas_supplier` [ RunTime:0.0084s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `saas_supplier_company` [ RunTime:0.0087s ]
+SQL: SHOW COLUMNS FROM `saas_buyer_company` [ RunTime:0.0080s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `supplier_company_id` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `saas_supplier_company` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `supplier_company_id` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `saas_supplier_company` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0009s ]
+ERR: 模板不存在:./Application/Home/View/Individual/inbox.html
+
+[ 2016-10-07T20:11:05+08:00 ] ::1 /fofs/1/index.php/Home/Individual/inbox.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000543s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001043s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003585s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004843s ]
+SQL: SHOW COLUMNS FROM `saas_buyer` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `saas_buyer` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `saas_letter` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `saas_letter` WHERE (  `sender_id` = '19' AND `sender_type` = 1 AND `type` = 1 AND `state` <> 0 ) OR ( recipient_id=19 AND recipient_type=1 ) ORDER BY time desc  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `saas_letter` WHERE `sender_id` = 19 AND `sender_type` = 1 ORDER BY time desc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `saas_supplier` [ RunTime:0.0078s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `saas_supplier_company` [ RunTime:0.0084s ]
+SQL: SHOW COLUMNS FROM `saas_buyer_company` [ RunTime:0.0081s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `supplier_company_id` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `saas_supplier_company` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `supplier_company_id` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `saas_supplier_company` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0008s ]
+ERR: 模板不存在:./Application/Home/View/Individual/inbox.html
+
+[ 2016-10-07T20:19:02+08:00 ] ::1 /fofs/1/index.php/Home/Individual/inbox.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001024s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001137s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004045s ]
+SQL: SHOW COLUMNS FROM `saas_buyer` [ RunTime:0.0358s ]
+SQL: SELECT * FROM `saas_buyer` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `saas_letter` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `saas_letter` WHERE (  `sender_id` = '19' AND `sender_type` = 1 AND `type` = 1 AND `state` <> 0 ) OR ( recipient_id=19 AND recipient_type=1 ) ORDER BY time desc  [ RunTime:0.0013s ]
+SQL: SELECT * FROM `saas_letter` WHERE `sender_id` = 19 AND `sender_type` = 1 ORDER BY time desc  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `saas_supplier` [ RunTime:0.0088s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `saas_supplier_company` [ RunTime:0.0087s ]
+SQL: SHOW COLUMNS FROM `saas_buyer_company` [ RunTime:0.0096s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `supplier_company_id` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `saas_supplier_company` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `supplier_company_id` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `saas_supplier_company` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `username` FROM `saas_supplier` WHERE `id` = 23 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000155s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000224s ]
+NOTIC: [8] Undefined index: unread D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\dde57da6e1079244c3857ed2fd70ee30.php 第 326 行.
+NOTIC: [8] Undefined index: checking D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\dde57da6e1079244c3857ed2fd70ee30.php 第 342 行.
+NOTIC: [8] Undefined index: accepted D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\dde57da6e1079244c3857ed2fd70ee30.php 第 343 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016658s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016729s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000844s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000928s ]
+
+[ 2016-10-07T20:38:31+08:00 ] ::1 /fofs/1/index.php/Home/Buyer/buyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001027s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002392s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003591s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008648s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008752s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000530s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000580s ]
+
+[ 2016-10-07T20:38:34+08:00 ] ::1 /fofs/1/index.php/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000840s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002099s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002949s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000250s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018464s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018568s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000604s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001116s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001231s ]
+
+[ 2016-10-07T20:38:38+08:00 ] ::1 /fofs/1/index.php/Home/Individual/individualProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000735s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001096s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003900s ]
+SQL: SHOW COLUMNS FROM `saas_buyer` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `saas_buyer` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `saas_letter` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `saas_buyer_interest_list` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `saas_letter` WHERE (  `sender_id` = '19' AND `sender_type` = 1 AND `type` = 1 AND `state` <> 0 ) OR ( recipient_id=19 AND recipient_type=1 )  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `saas_buyer_interest_list` WHERE ( buyer_id=19 )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `saas_project` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `saas_project` WHERE ( creator_id=19 ) LIMIT 3   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000221s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016091s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000767s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000861s ]
+
+[ 2016-10-07T20:39:52+08:00 ] ::1 /fofs/1/index.php/Home/Individual/individualProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002006s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002860s ]
+SQL: SHOW COLUMNS FROM `saas_buyer` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `saas_buyer` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `saas_letter` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `saas_buyer_interest_list` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `saas_letter` WHERE (  `sender_id` = '19' AND `sender_type` = 1 AND `type` = 1 AND `state` <> 0 ) OR ( recipient_id=19 AND recipient_type=1 )  [ RunTime:0.0013s ]
+SQL: SELECT * FROM `saas_buyer_interest_list` WHERE ( buyer_id=19 )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `saas_project` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `saas_project` WHERE ( creator_id=19 ) LIMIT 3   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000225s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016563s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016653s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000611s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001809s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001976s ]
+
+[ 2016-10-07T20:39:54+08:00 ] ::1 /fofs/1/index.php/Home/Buyer/buyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000968s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003456s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000112s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008501s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008597s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000719s ]
+
+[ 2016-10-07T20:39:57+08:00 ] ::1 /fofs/1/index.php/Home/Individual/individualProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000872s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003820s ]
+SQL: SHOW COLUMNS FROM `saas_buyer` [ RunTime:0.0104s ]
+SQL: SELECT * FROM `saas_buyer` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `saas_letter` [ RunTime:0.0082s ]
+SQL: SHOW COLUMNS FROM `saas_buyer_interest_list` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `saas_letter` WHERE (  `sender_id` = '19' AND `sender_type` = 1 AND `type` = 1 AND `state` <> 0 ) OR ( recipient_id=19 AND recipient_type=1 )  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `saas_buyer_interest_list` WHERE ( buyer_id=19 )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `saas_project` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `saas_project` WHERE ( creator_id=19 ) LIMIT 3   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000240s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016201s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016284s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000901s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000985s ]
+
+[ 2016-10-07T20:40:01+08:00 ] ::1 /fofs/1/index.php/Home/Individual/individualProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000884s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003447s ]
+SQL: SHOW COLUMNS FROM `saas_buyer` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `saas_buyer` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `saas_letter` [ RunTime:0.0082s ]
+SQL: SHOW COLUMNS FROM `saas_buyer_interest_list` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `saas_letter` WHERE (  `sender_id` = '19' AND `sender_type` = 1 AND `type` = 1 AND `state` <> 0 ) OR ( recipient_id=19 AND recipient_type=1 )  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `saas_buyer_interest_list` WHERE ( buyer_id=19 )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `saas_project` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `saas_project` WHERE ( creator_id=19 ) LIMIT 3   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000191s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000263s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016775s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016862s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000718s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001099s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001305s ]
+
+[ 2016-10-07T20:40:03+08:00 ] ::1 /fofs/1/index.php/Home/Buyer/buyProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001055s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003454s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008617s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008727s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000573s ]
+
+[ 2016-10-07T20:40:06+08:00 ] ::1 /fofs/1/index.php/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000561s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000691s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002289s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003127s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000404s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000521s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018311s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018426s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000754s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000842s ]
+
+[ 2016-10-07T20:40:18+08:00 ] ::1 /fofs/1/index.php/Home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001262s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003872s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000187s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000276s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018027s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018142s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000838s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001348s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001468s ]
+
+[ 2016-10-07T20:40:19+08:00 ] ::1 /fofs/1/index.php/Home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000794s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002133s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003050s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000212s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000289s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017435s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017533s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000859s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000932s ]
+
+[ 2016-10-07T20:41:24+08:00 ] ::1 /fofs/1/index.php/Home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000565s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001035s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003305s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000284s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000379s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019315s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019433s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000903s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001004s ]
+
+[ 2016-10-07T20:41:27+08:00 ] ::1 /fofs/1/index.php/Home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001206s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002090s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003500s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000189s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000277s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016169s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016260s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000707s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000795s ]
+

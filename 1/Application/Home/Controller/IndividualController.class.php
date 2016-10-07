@@ -980,4 +980,21 @@ class IndividualController extends BaseController {
     public function myCompany(){
         $this->display();
     }
+
+
+    //账号设置
+    public function accountSetting(){
+        $this->display();
+    }
+
+    //我的粉丝
+    public function myFollows(){
+        $this->display();
+    }
+
+
+    //我关注的
+    public function myFollowing(){
+        $this->display();
+    }
 }

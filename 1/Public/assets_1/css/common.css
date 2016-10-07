@@ -702,3 +702,7 @@ input:-moz-placeholder {
 .text_right{
   text-align: right;
 }
+
+.margin_top_13{
+  margin-top:13px;
+}

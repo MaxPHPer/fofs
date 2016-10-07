@@ -128,10 +128,10 @@
                 </ul>
               </li>
               <li>
-                <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
+                <a href="/fofs/1/index.php/Home/supplier/inbox">新消息</a>
               </li>
               <li>
-                <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
+                <a href="/fofs/1/index.php/Home/supplier/supplierProfile"><?php echo ($username); ?></a>
               </li><?php endif; ?>
             <li>
               <a href="/fofs/1/index.php/Home/Index/logout">登出</a>
@@ -350,150 +350,145 @@
           </div>
           <div class="col-md-8">
             <div class="well">
-              <h3>个人主页</h3>
+              <h3>我关注的</h3>
               <hr/>
               
-              <div class="row">
-                  <div class='col-md-2'>
-                      <a href="#">
-                        <?php if($user['face_url'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100">
-                          <?php else: ?>
-                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
-                      </a>
-                  </div>
-
-
-                  <div class='col-md-10'>
-                      <div class="row">
-                          <div class='col-md-2 text_right'>
-                              姓名:
-                          </div>
-                          <div class='col-md-10'>
-                              张小凡(一蓑烟雨晴)
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class='col-md-2 text_right'>
-                              性别:
-                          </div>
-                          <div class='col-md-10'>
-                              男
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class='col-md-2 text_right'>
-                              简介:
-                          </div>
-                          <div class='col-md-10'>
-                              退一步，不一定是海阔天空，可能是万丈深渊
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class='col-md-2 text_right'>
-                              行业:
-                          </div>
-                          <div class='col-md-10'>
-                              创业公司
-                          </div>
-                      </div>
-
-                  </div>
-              </div>
-
               <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-tags"></span>从业简历</h3>
-                    <div class="panel panel-default">
-                      <div class="panel-body">
+                  <div class='col-md-12' >
+                      <!-- Nav tabs -->
+                      <ul class="nav nav-tabs" role="tablist" style="padding-left:15px; padding-right: 15px;">
+                        <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">我关注的个人用户</a></li>
+                        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">我关注的机构用户</a></li>
+                      </ul>
 
-                          <div class="col-md-12">
-                             
-                                  北京乐享奇迹信息科技有限公司
-                             
-                          </div>
-                          
+                      <!-- Tab panes -->
+                      <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                              <div class="panel-body">
+                                <div class="list-group">
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                          1
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >万剑一</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                         2
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >万剑一</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                          3
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >万剑一</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                          4
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >万剑一</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+                                  
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+
+                              <div class="panel-body">
+                                <div class="list-group">
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                          1
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >歌斐资产</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                         2
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >紫荆资本</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+                                  
+                                
+                                </div>
+                            </div>
+
+
+                        </div>
                       </div>
-                    </div>
                   </div>
               </div>
-              <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-home"></span>公司信息</h3>
-                    <div class="panel panel-default">
-                      <div class="panel-body">
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  名称:
-                              </div>
-                              <div class='col-md-8'>
-                                  北京乐享奇迹信息科技有限公司
-                              </div>
-                          </div>
-                          <div class="row">
-                            <div class='col-md-3 text_right'>职位:</div>
-                            <div class='col-md-8'>打杂的</div>
-                          </div>
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  认证情况:
-                              </div>
-                              <div class='col-md-8'>
-                                <span class="label label-default">未认证</span>(<a href='#'>申请认证</a>)
-                              </div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-
-
-              <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-earphone"></span>联系方式</h3>
-                    <div class="panel panel-default">
-                      <div class="panel-body">
-
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  手机:
-                              </div>
-                              <div class='col-md-8'>
-                                  18811593392
-                              </div>
-                          </div>
-                          <div class="row">
-                            <div class='col-md-3 text_right'>邮箱:</div>
-                            <div class='col-md-8'>shiningworld@foxmail.com</div>
-                          </div>
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  LinkedIn:
-                              </div>
-                              <div class='col-md-8'>
-                                  Romantic_Horizon
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  新浪微博:
-                              </div>
-                              <div class='col-md-8'>
-                                  Romantic_Horizon
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  微信:
-                              </div>
-                              <div class='col-md-8'>
-                                  Romantic_Horizon
-                              </div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
                &nbsp;
             </div>
           </div>

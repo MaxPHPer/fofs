@@ -288,7 +288,7 @@
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <div class="panel-title">
-                    <a href="/fofs/1/index.php/Home/Buyer/inbox">
+                    <a href="<?php echo U('Home/Individual/individualProfile');?>">
                       <span class="glyphicon glyphicon-user"></span>个人主页
                       
                     </a>
@@ -299,7 +299,7 @@
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <div class="panel-title">
-                    <a href="/fofs/1/index.php/Home/Buyer/inbox">
+                    <a href="<?php echo U('Home/Individual/myCompany');?>">
                       <span class="glyphicon glyphicon-home"></span>我的公司
                       
                     </a>
@@ -310,7 +310,7 @@
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <div class="panel-title">
-                    <a href="/fofs/1/index.php/Home/Buyer/inbox">
+                    <a href="<?php echo U('Home/Individual/accountSetting');?>">
                       <span class="glyphicon glyphicon-pencil"></span>账号设置
                       
                     </a>
@@ -321,7 +321,7 @@
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <div class="panel-title">
-                    <a href="/fofs/1/index.php/Home/Buyer/inbox">
+                    <a href="<?php echo U('Home/Individual/inbox');?>">
                       <span class="glyphicon glyphicon-envelope"></span>消息
                       <?php if($amount['unread'] != 0): ?><span class="badge"><?php echo ($amount['unread']); ?></span><?php endif; ?>
                     </a>
@@ -339,13 +339,13 @@
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
                     <div class="list-group">
-                      <a href="/fofs/1/index.php/Home/Buyer/supplier" class="list-group-item">关注我的<span class="badge"><?php echo ($amount['checking']); ?></span></a>
-                      <a href="/fofs/1/index.php/Home/Buyer/supplier" class="list-group-item ">我关注的<span class="badge"><?php echo ($amount['accepted']); ?></span></a>
+                      <a href="<?php echo U('Home/Individual/myFollows');?>" class="list-group-item">关注我的<span class="badge"><?php echo ($amount['checking']); ?></span></a>
+                      <a href="<?php echo U('Home/Individual/myFollowing');?>" class="list-group-item ">我关注的<span class="badge"><?php echo ($amount['accepted']); ?></span></a>
                       
                     </div>
                   </div>
                 </div>
-              </div><!--供应商信息邀请-->
+              </div><!--圈子-->
             </div>
           </div>
           <div class="col-md-8">
