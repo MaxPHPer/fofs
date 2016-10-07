@@ -70,4 +70,24 @@ class IndexController extends BaseController {
     	$this->success('退出成功',__APP__.'/Home/Index');
     }
 
+    //关于联盟
+    public function aboutAlliance(){
+        $this->display();
+    }
+
+    //联盟新闻列表
+    public function aboutAllianceNews(){
+        $this->display();
+    }
+
+    //文章详情
+    public function newsDetail(){
+        $this->display();
+    }
+
+    //文章列表
+    public function newsList(){
+        $this->display();
+    }
+
 }

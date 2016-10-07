@@ -341,7 +341,9 @@
 
           <div class="panel-heading">
 
-            <span class="glyphicon glyphicon-list-alt"></span> <b>News</b>
+            <span class="glyphicon glyphicon-list-alt"></span> 
+            <b>新闻资讯</b>
+            <a href="#" style ='float:right;'>更多</a>
           </div>
 
           <div class="panel-body">
@@ -432,7 +434,9 @@
 
           <div class="panel-heading">
 
-            <span class="glyphicon glyphicon-list-alt"></span> <b>Policies</b>
+            <span class="glyphicon glyphicon-list-alt"></span> 
+            <b>政策法规</b>
+            <a href="#" style ='float:right;'>更多</a>
           </div>
 
           <div class="panel-body">
@@ -526,7 +530,8 @@
           <div class="panel-heading">
 
             <span class="glyphicon glyphicon-list-alt"></span>
-            <b>Investments</b>
+            <b>投资事件</b>
+            <a href="#" style ='float:right;'>更多</a>
           </div>
 
           <div class="panel-body">
@@ -618,7 +623,8 @@
           <div class="panel-heading">
 
             <span class="glyphicon glyphicon-list-alt"></span>
-            <b>Alliance activities</b>
+            <b>联盟活动</b>
+            <a href="#" style ='float:right;'>更多</a>
           </div>
 
           <div class="panel-body">

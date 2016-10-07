@@ -674,10 +674,23 @@ input:-moz-placeholder {
 
 /*导航条*/
 #nav_bar{
-  margin-left:6%;
-  margin-right:6%;
+  padding-left:6%;
+  padding-right:6%;
+  background-color: white;
 }
 
 #nav_bar .active{
   background-color:#EFEDED;
+}
+
+/*文章样式*/
+.article_content{
+  margin:0 2%;
+}
+
+.center{
+  width: 100%;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
 }
