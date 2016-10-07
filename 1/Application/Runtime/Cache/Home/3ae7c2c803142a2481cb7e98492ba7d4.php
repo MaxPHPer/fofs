@@ -256,16 +256,8 @@
   </div>
 </div>
   <!--登录模态框结束-->
-  <div class="buyProfile content">
-    <div class="container">
-      <ul class="nav nav-justified masthead-nav">
-        <li role="presentation" class="active"><a href="/fofs/1/index.php/Home/Buyer/buyProfile"><?php echo (L("dashboard")); ?></a></li>
-        <li role="presentation"><a href="/fofs/1/index.php/Home/Buyer/inbox"><?php echo (L("inbox")); ?></a></li>
-        <li role="presentation"><a href="/fofs/1/index.php/Home/Buyer/supplier"><?php echo (L("supplier")); ?></a></li>
-        <li role="presentation"><a href="/fofs/1/index.php/Home/Buyer/project"><?php echo (L("project")); ?></a></li>
-      </ul>
-    </div><!--导航条-->
-    <hr/>
+  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+
     <section class="content-wrap">
       <div class="container">
         <div class="row">
@@ -273,49 +265,83 @@
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><?php echo (L("admin")); ?></div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span>北京乐享奇迹信息科技有限公司</div>
                 <div class="panel-body">
                   <div class="media">
                     <div class="media-left">
                       <a href="#">
-                        <?php if($user['face_url'] != NULL): ?><img class="media-object img-thumbnail" src="/selectin/1/Public/uploads/buyer_pic/<?php echo ($user['face_url']); ?>" alt="头像" height="64" width="64">
+                        <?php if($user['face_url'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100">
                         <?php else: ?>
-                          <img class="media-object img-thumbnail" src="/selectin/1/Public/uploads/buyer_pic/temp.jpg" alt="头像" height="64" width="64"><?php endif; ?>
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
                       </a>
                     </div>
-                    <div class="media-body">
+                    <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
                       <h5 class="media-heading"><?php echo ($user['username']); ?></h5>
-                      <p><i class="fa fa-envelope-o fa-lg"></i> <?php echo ($user['email']); ?></p>
-                      <p><i class="fa fa-phone fa-lg"></i> <?php echo ($user['mobile_phone']); ?></p>
+                      <p><i class="fa fa-envelope-o fa-md"></i> <?php echo ($user['email']); ?></p>
+                      <p><i class="fa fa-phone fa-md"></i> <?php echo ($user['mobile_phone']); ?></p>
                       <a class="btn btn-default" href="buyerPersonalInfo" role="button"><?php echo (L("edit_personal_profile")); ?></a>
                     </div>
                   </div>
                 </div>
-              </div><!--管理员-->
+              </div><!--头像-->
+
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <div class="panel-title">
                     <a href="/fofs/1/index.php/Home/Buyer/inbox">
-                      <?php echo (L("inbox")); ?>
+                      <span class="glyphicon glyphicon-user"></span>个人主页
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--个人主页-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="/fofs/1/index.php/Home/Buyer/inbox">
+                      <span class="glyphicon glyphicon-home"></span>我的公司
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--我的公司-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="/fofs/1/index.php/Home/Buyer/inbox">
+                      <span class="glyphicon glyphicon-pencil"></span>账号设置
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--账号设置-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="/fofs/1/index.php/Home/Buyer/inbox">
+                      <span class="glyphicon glyphicon-envelope"></span>消息
                       <?php if($amount['unread'] != 0): ?><span class="badge"><?php echo ($amount['unread']); ?></span><?php endif; ?>
                     </a>
                   </div>
                 </div>
-              </div><!--收件箱-->
+              </div><!--消息-->
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingTwo">
                   <div class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      <?php echo (L("rfi_to_supplier")); ?>
+                      <span class="glyphicon glyphicon-globe"></span>圈子
                     </a>
                   </div>
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
                     <div class="list-group">
-                      <a href="/fofs/1/index.php/Home/Buyer/supplier" class="list-group-item"><?php echo (L("rfi_waiting_for_response")); ?><span class="badge"><?php echo ($amount['checking']); ?></span></a>
-                      <a href="/fofs/1/index.php/Home/Buyer/supplier" class="list-group-item "><?php echo (L("rfi_accepted")); ?><span class="badge"><?php echo ($amount['accepted']); ?></span></a>
-                      <a href="/fofs/1/index.php/Home/Buyer/supplier" class="list-group-item"><?php echo (L("rfi_declined")); ?><span class="badge"><?php echo ($amount['rejected']); ?></span></a>
+                      <a href="/fofs/1/index.php/Home/Buyer/supplier" class="list-group-item">关注我的<span class="badge"><?php echo ($amount['checking']); ?></span></a>
+                      <a href="/fofs/1/index.php/Home/Buyer/supplier" class="list-group-item ">我关注的<span class="badge"><?php echo ($amount['accepted']); ?></span></a>
+                      
                     </div>
                   </div>
                 </div>
@@ -323,37 +349,153 @@
             </div>
           </div>
           <div class="col-md-8">
-            <div class="row">
-              <?php $__FOR_START_17546__=0;$__FOR_END_17546__=3;for($i=$__FOR_START_17546__;$i < $__FOR_END_17546__;$i+=1){ ?><div class="col-md-4">
-                  <div class="well">
-                    <?php if($project[$i] != NULL): ?><h4><?php echo ($project[$i]['project_name']); ?></h4>
-                      <a class="btn btn-primary" href="/fofs/1/index.php/Home/Buyer/alternateName/id/<?php echo ($project[$i]['id']); ?>" role="button"><?php echo (L("candidate_list")); ?></a>
-                    <?php else: ?>
-                      <h4><?php echo (L("no_project")); ?></h4>
-                     <a class="btn btn-primary" href="/fofs/1/index.php/Home/Buyer/project" role="button"><?php echo (L("create_new_project")); ?></a><?php endif; ?>
-                  </div>
-                </div><?php } ?>
-            </div>
             <div class="well">
-              <h3><?php echo (L("discovering_your_right_suppliers")); ?></h3>
+              <h3>个人主页</h3>
+              <hr/>
+              
               <div class="row">
-                <div class="col-md-4">
-                  <a href="/fofs/1/index.php/Home/Search/search" class="thumbnail">
-                  <img src="/fofs/1/Public/assets_2/img/01.jpg" alt="<?php echo (L("industrial_manufacturing")); ?>">
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="/fofs/1/index.php/Home/Search/search" class="thumbnail">
-                  <img src="/fofs/1/Public/assets_2/img/02.jpg" alt="<?php echo (L("industrial_service")); ?>">
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="/fofs/1/index.php/Home/Search/search" class="thumbnail">
-                  <img src="/fofs/1/Public/assets_2/img/03.jpg" alt="<?php echo (L("electronic_manufacturing")); ?>">
-                  </a>
-                </div>
+                  <div class='col-md-2'>
+                      <a href="#">
+                        <?php if($user['face_url'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100">
+                          <?php else: ?>
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
+                      </a>
+                  </div>
+
+
+                  <div class='col-md-10'>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              姓名:
+                          </div>
+                          <div class='col-md-10'>
+                              张小凡(一蓑烟雨晴)
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              性别:
+                          </div>
+                          <div class='col-md-10'>
+                              男
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              简介:
+                          </div>
+                          <div class='col-md-10'>
+                              退一步，不一定是海阔天空，可能是万丈深渊
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              行业:
+                          </div>
+                          <div class='col-md-10'>
+                              创业公司
+                          </div>
+                      </div>
+
+                  </div>
               </div>
-          </div>
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-tags"></span>从业简历</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="col-md-12">
+                             
+                                  北京乐享奇迹信息科技有限公司
+                             
+                          </div>
+                          
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-home"></span>公司信息</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  名称:
+                              </div>
+                              <div class='col-md-8'>
+                                  北京乐享奇迹信息科技有限公司
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class='col-md-3 text_right'>职位:</div>
+                            <div class='col-md-8'>打杂的</div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  认证情况:
+                              </div>
+                              <div class='col-md-8'>
+                                <span class="label label-default">未认证</span>(<a href='#'>申请认证</a>)
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-earphone"></span>联系方式</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  手机:
+                              </div>
+                              <div class='col-md-8'>
+                                  18811593392
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class='col-md-3 text_right'>邮箱:</div>
+                            <div class='col-md-8'>shiningworld@foxmail.com</div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  LinkedIn:
+                              </div>
+                              <div class='col-md-8'>
+                                  Romantic_Horizon
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  新浪微博:
+                              </div>
+                              <div class='col-md-8'>
+                                  Romantic_Horizon
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  微信:
+                              </div>
+                              <div class='col-md-8'>
+                                  Romantic_Horizon
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+               &nbsp;
+            </div>
           </div>
         </div>
       </div>

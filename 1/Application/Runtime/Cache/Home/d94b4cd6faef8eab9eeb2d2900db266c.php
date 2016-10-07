@@ -256,110 +256,110 @@
   </div>
 </div>
   <!--登录模态框结束-->
-  <div class="buyProfile content">
-    <div class="container">
-      <ul class="nav nav-justified masthead-nav">
-        <li role="presentation" class="active"><a href="/fofs/1/index.php/Home/Buyer/buyProfile"><?php echo (L("dashboard")); ?></a></li>
-        <li role="presentation"><a href="/fofs/1/index.php/Home/Buyer/inbox"><?php echo (L("inbox")); ?></a></li>
-        <li role="presentation"><a href="/fofs/1/index.php/Home/Buyer/supplier"><?php echo (L("supplier")); ?></a></li>
-        <li role="presentation"><a href="/fofs/1/index.php/Home/Buyer/project"><?php echo (L("project")); ?></a></li>
-      </ul>
-    </div><!--导航条-->
-    <hr/>
-    <section class="content-wrap">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 main-content">
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading"><?php echo (L("admin")); ?></div>
-                <div class="panel-body">
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#">
-                        <?php if($user['face_url'] != NULL): ?><img class="media-object img-thumbnail" src="/selectin/1/Public/uploads/buyer_pic/<?php echo ($user['face_url']); ?>" alt="头像" height="64" width="64">
-                        <?php else: ?>
-                          <img class="media-object img-thumbnail" src="/selectin/1/Public/uploads/buyer_pic/temp.jpg" alt="头像" height="64" width="64"><?php endif; ?>
-                      </a>
-                    </div>
-                    <div class="media-body">
-                      <h5 class="media-heading"><?php echo ($user['username']); ?></h5>
-                      <p><i class="fa fa-envelope-o fa-lg"></i> <?php echo ($user['email']); ?></p>
-                      <p><i class="fa fa-phone fa-lg"></i> <?php echo ($user['mobile_phone']); ?></p>
-                      <a class="btn btn-default" href="buyerPersonalInfo" role="button"><?php echo (L("edit_personal_profile")); ?></a>
-                    </div>
-                  </div>
+<div class="content supplierPersonalInfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 style="margin-left:-40px;">完善账号管理人个人信息</h2>
+          </div>
+          <div class="panel-body">
+            <form class="form-horizontal" action="/fofs/1/index.php/Home/Register/save_supplierPersonalInfo" enctype="multipart/form-data" method="post" >
+              
+                            <div class="form-group">
+                <label for="userName" class="col-sm-3 control-label"><span>*</span>机构简称</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="userName" name="username" required/>
                 </div>
-              </div><!--管理员-->
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="/fofs/1/index.php/Home/Buyer/inbox">
-                      <?php echo (L("inbox")); ?>
-                      <?php if($amount['unread'] != 0): ?><span class="badge"><?php echo ($amount['unread']); ?></span><?php endif; ?>
-                    </a>
-                  </div>
+              </div><!--用户名-->
+
+
+              <div class="form-group">
+                <label for="language" class="col-sm-3 control-label"><span>*</span>机构类型</label>
+                <div class="col-sm-8">
+                  <select name="language" id="language" class="form-control">
+
+                          <option value ="0">请选择机构类型</option>
+                          <option value ="1">母基金</option>
+                          <option value="2">基金</option>
+                          <option value="3">创业公司</option>
+                          <option value ="4">FA机构</option>
+                          <option value="5">法务机构</option>
+                          <option value="6">财务机构</option>
+                          <option value ="7">众创空间</option>
+                          <option value="8">其它(媒体、政府机构等)</option>
+
+                  </select>
                 </div>
-              </div><!--收件箱-->
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <div class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      <?php echo (L("rfi_to_supplier")); ?>
-                    </a>
-                  </div>
+              </div><!--所属行业-->
+              
+              <div class="form-group">
+                <label for="email" class="col-sm-3 control-label"><span>*</span>公司邮箱账号</label>
+                <div class="col-sm-8">
+                  <input type="email" class="form-control" id="email" disabled="disabled" value="<?php echo ($data['email']); ?>" required/>
                 </div>
-                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body">
-                    <div class="list-group">
-                      <a href="/fofs/1/index.php/Home/Buyer/supplier" class="list-group-item"><?php echo (L("rfi_waiting_for_response")); ?><span class="badge"><?php echo ($amount['checking']); ?></span></a>
-                      <a href="/fofs/1/index.php/Home/Buyer/supplier" class="list-group-item "><?php echo (L("rfi_accepted")); ?><span class="badge"><?php echo ($amount['accepted']); ?></span></a>
-                      <a href="/fofs/1/index.php/Home/Buyer/supplier" class="list-group-item"><?php echo (L("rfi_declined")); ?><span class="badge"><?php echo ($amount['rejected']); ?></span></a>
-                    </div>
-                  </div>
+              </div><!--电子邮件-->
+            
+    
+              <div class="form-group">
+                <label for="userName" class="col-sm-3 control-label"><span>*</span>账号管理人姓名</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="userName" name="username" required/>
                 </div>
-              </div><!--供应商信息邀请-->
+              </div><!--姓名-->
+
+
+              <div class="form-group">
+                <label for="userName" class="col-sm-3 control-label">公司职务</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="userName" name="username" />
+                </div>
+              </div><!--公司职务-->
+
+
+              <div class="form-group">
+                <label for="userName" class="col-sm-3 control-label">电话</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="userName" name="username" />
+                </div>
+              </div><!--电话-->
+
+              <div class="form-group">
+                <label for="userName" class="col-sm-3 control-label">手机</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="userName" name="username" />
+                </div>
+              </div><!--手机-->
+
+
+              <div class="form-group">
+                <label for="userName" class="col-sm-3 control-label">邮箱</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="userName" name="username" />
+                </div>
+              </div><!--邮箱-->
+              
+
+              <div class="form-group">
+                <label for="userName" class="col-sm-3 control-label">身份证号码</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="userName" name="username" />
+                </div>
+              </div><!--身份证号码-->
+              
+              <input type="hidden" name="id" value="<?php echo ($data['id']); ?>">
+            <div class="alert alert-warning" role="alert">
+              <span>*</span>必填
             </div>
+            <input type="submit" value="继续完善机构信息" class="btn btn-block btn-primary"/>
           </div>
-          <div class="col-md-8">
-            <div class="row">
-              <?php $__FOR_START_17546__=0;$__FOR_END_17546__=3;for($i=$__FOR_START_17546__;$i < $__FOR_END_17546__;$i+=1){ ?><div class="col-md-4">
-                  <div class="well">
-                    <?php if($project[$i] != NULL): ?><h4><?php echo ($project[$i]['project_name']); ?></h4>
-                      <a class="btn btn-primary" href="/fofs/1/index.php/Home/Buyer/alternateName/id/<?php echo ($project[$i]['id']); ?>" role="button"><?php echo (L("candidate_list")); ?></a>
-                    <?php else: ?>
-                      <h4><?php echo (L("no_project")); ?></h4>
-                     <a class="btn btn-primary" href="/fofs/1/index.php/Home/Buyer/project" role="button"><?php echo (L("create_new_project")); ?></a><?php endif; ?>
-                  </div>
-                </div><?php } ?>
-            </div>
-            <div class="well">
-              <h3><?php echo (L("discovering_your_right_suppliers")); ?></h3>
-              <div class="row">
-                <div class="col-md-4">
-                  <a href="/fofs/1/index.php/Home/Search/search" class="thumbnail">
-                  <img src="/fofs/1/Public/assets_2/img/01.jpg" alt="<?php echo (L("industrial_manufacturing")); ?>">
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="/fofs/1/index.php/Home/Search/search" class="thumbnail">
-                  <img src="/fofs/1/Public/assets_2/img/02.jpg" alt="<?php echo (L("industrial_service")); ?>">
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="/fofs/1/index.php/Home/Search/search" class="thumbnail">
-                  <img src="/fofs/1/Public/assets_2/img/03.jpg" alt="<?php echo (L("electronic_manufacturing")); ?>">
-                  </a>
-                </div>
-              </div>
-          </div>
-          </div>
+          </form>
         </div>
       </div>
-    </section>
+    </div>
   </div>
-
+</div>
 <footer class="footer">
   <div class="footerLink">
     <a href="#">关于我们</a>

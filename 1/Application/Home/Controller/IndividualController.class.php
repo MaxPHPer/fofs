@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 use Home\Controller;
-class BuyerController extends BaseController {
+class IndividualController extends BaseController {
     public function _initialize() {
         parent::_initialize();
         //if(session('type')!=1)  $this->error('非法访问',__APP__.'/Home/Index');
@@ -536,7 +536,7 @@ class BuyerController extends BaseController {
                 }
                 if($res2!==false){
                     session('username',$data['username']);
-                    $this->success('信息更新成功',__APP__.'/Home/Buyer/buyProfile');
+                    $this->success('信息更新成功',__APP__.'/Home/Buyer/individualProfile');
                 }
                 else{
                     $this->error($User->getError());
@@ -551,8 +551,8 @@ class BuyerController extends BaseController {
         }
     }
 
-    //采购商业务看板
-    public function buyProfile(){
+    //个人主页
+    public function individualProfile(){
         
 
         $id=session('user_id');
@@ -974,5 +974,10 @@ class BuyerController extends BaseController {
 
         $data['status']=0;
         $this->ajaxReturn($data);
+    }
+
+    //我的公司
+    public function myCompany(){
+        $this->display();
     }
 }

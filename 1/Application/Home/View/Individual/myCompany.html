@@ -1,0 +1,152 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/>
+  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+
+    <section class="content-wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 main-content">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span>北京乐享奇迹信息科技有限公司</div>
+                <div class="panel-body">
+                  <div class="media">
+                    <div class="media-left">
+                      <a href="#">
+                        <if condition="$user['face_url'] neq NULL">
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100">
+                        <else />
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100">
+                        </if>
+                      </a>
+                    </div>
+                    <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                      <h5 class="media-heading">{$user['username']}</h5>
+                      <p><i class="fa fa-envelope-o fa-md"></i> {$user['email']}</p>
+                      <p><i class="fa fa-phone fa-md"></i> {$user['mobile_phone']}</p>
+                      <a class="btn btn-default" href="buyerPersonalInfo" role="button">{$Think.lang.edit_personal_profile}</a>
+                    </div>
+                  </div>
+                </div>
+              </div><!--头像-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="__APP__/Home/Buyer/inbox">
+                      <span class="glyphicon glyphicon-user"></span>个人主页
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--个人主页-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="__APP__/Home/Buyer/inbox">
+                      <span class="glyphicon glyphicon-home"></span>我的公司
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--我的公司-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="__APP__/Home/Buyer/inbox">
+                      <span class="glyphicon glyphicon-pencil"></span>账号设置
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--账号设置-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="__APP__/Home/Buyer/inbox">
+                      <span class="glyphicon glyphicon-envelope"></span>消息
+                      <if condition="$amount['unread'] neq 0">
+                        <span class="badge">{$amount['unread']}</span>
+                      </if>
+                    </a>
+                  </div>
+                </div>
+              </div><!--消息-->
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <span class="glyphicon glyphicon-globe"></span>圈子
+                    </a>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <div class="list-group">
+                      <a href="__APP__/Home/Buyer/supplier" class="list-group-item">关注我的<span class="badge">{$amount['checking']}</span></a>
+                      <a href="__APP__/Home/Buyer/supplier" class="list-group-item ">我关注的<span class="badge">{$amount['accepted']}</span></a>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div><!--供应商信息邀请-->
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="well">
+              <h3>我的公司</h3>
+              <hr/>
+              
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-home"></span>公司信息</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  名称:
+                              </div>
+                              <div class='col-md-8'>
+                                  北京乐享奇迹信息科技有限公司
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class='col-md-3 text_right'>职位:</div>
+                            <div class='col-md-8'>打杂的</div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  认证情况:
+                              </div>
+                              <div class='col-md-8'>
+                                <span class="label label-default">未认证</span>(<a href='#'>申请认证</a>)
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-check"></span>申请认证</h3>
+                    <div class="alert alert-info" role="alert">系统已经检测到你公司已在本网站注册，可发送员工身份请求进行公司认证！<input type="button" class="btn btn-info margin_top_20" value="发送请求验证"/></div>
+                      
+                        <div class="alert alert-danger" role="alert">系统尚未检测到你公司在本网站进行注册，请联系公司先在本网站进行注册！</div>
+                  </div>
+              </div>
+               &nbsp;
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<include file = "layout:footer"/>

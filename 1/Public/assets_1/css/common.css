@@ -694,3 +694,11 @@ input:-moz-placeholder {
   margin-left: auto;
   margin-right: auto;
 }
+
+.margin_top_20{
+  margin-top: 20px;
+}
+
+.text_right{
+  text-align: right;
+}

@@ -1242,7 +1242,7 @@ class RegisterController extends BaseController{
                 if($res){
                     cookie(null);
                     cookie('user_id',$data['user_id']);
-                    $this->success('邮箱确认成功！请继续填写相关信息',__APP__.'/Home/Register/buyerPersonalInfo');
+                    $this->success('邮箱确认成功！请继续填写相关信息',__APP__.'/Home/Register/individualInfo');
                 }
                 else $this->error($User->getError());
                 
@@ -1263,7 +1263,9 @@ class RegisterController extends BaseController{
 
 
     //采购商个人信息
-    public function buyerPersonalInfo(){
+    public function individualInfo(){
+        $this->display();
+        die();
 
         $User=M('Buyer');
         $id=cookie('user_id');
@@ -1299,7 +1301,7 @@ class RegisterController extends BaseController{
     }
 
     //储存个人信息
-    public function save_buyerPersonalInfo(){
+    public function save_individualInfo(){
       //电话与传真的区域代码为用户自行输入，非区域ID
         $User=M('Buyer');
         $data=I('post.');

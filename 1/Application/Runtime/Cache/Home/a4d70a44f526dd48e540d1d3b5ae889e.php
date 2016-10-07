@@ -255,111 +255,128 @@
     </div>
   </div>
 </div>
-  <!--登录模态框结束-->
-  <div class="buyProfile content">
+  <!--登录模态框结束--> 
+<div class="buyProfile content">
+  <div class="navigation">
     <div class="container">
       <ul class="nav nav-justified masthead-nav">
-        <li role="presentation" class="active"><a href="/fofs/1/index.php/Home/Buyer/buyProfile"><?php echo (L("dashboard")); ?></a></li>
-        <li role="presentation"><a href="/fofs/1/index.php/Home/Buyer/inbox"><?php echo (L("inbox")); ?></a></li>
+        <li role="presentation"><a href="/fofs/1/index.php/Home/Buyer/buyProfile"><?php echo (L("dashboard")); ?></a></li>
+        <li role="presentation" class="active"><a href="/fofs/1/index.php/Home/Buyer/inbox"><?php echo (L("inbox")); ?></a></li>
         <li role="presentation"><a href="/fofs/1/index.php/Home/Buyer/supplier"><?php echo (L("supplier")); ?></a></li>
         <li role="presentation"><a href="/fofs/1/index.php/Home/Buyer/project"><?php echo (L("project")); ?></a></li>
       </ul>
-    </div><!--导航条-->
-    <hr/>
-    <section class="content-wrap">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 main-content">
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading"><?php echo (L("admin")); ?></div>
-                <div class="panel-body">
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#">
-                        <?php if($user['face_url'] != NULL): ?><img class="media-object img-thumbnail" src="/selectin/1/Public/uploads/buyer_pic/<?php echo ($user['face_url']); ?>" alt="头像" height="64" width="64">
+    </div><!-- container -->
+  </div><!-- navigation -->
+  <hr/>
+  <div class="content-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+         <div class="panel panel-default">        
+            <div class="panel-heading"><?php echo (L("admin")); ?></div>
+            <div class="panel-body">
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <?php if($user['face_url'] != NULL): ?><img class="media-object img-thumbnail" src="/selectin/1/Public/uploads/buyer_pic/<?php echo ($user['face_url']); ?>" alt="头像" height="64" width="64">
+                      <?php else: ?>
+                        <img class="media-object img-thumbnail" src="/selectin/1/Public/uploads/buyer_pic/temp.jpg" alt="头像" height="64" width="64"><?php endif; ?>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h5 class="media-heading"><?php echo ($user['username']); ?></h5>
+                  <p><i class="fa fa-envelope-o fa-lg"></i> <?php echo ($user['email']); ?></p>
+                  <p><i class="fa fa-phone fa-lg"></i> <?php echo ($user['mobile_phone']); ?></p>
+                  <a class="btn btn-default" href="/fofs/1/index.php/Home/Buyer/buyerPersonalInfo" role="button"><?php echo (L("edit_personal_profile")); ?></a>
+                </div>
+              </div><!-- media -->
+            </div><!-- panel-body -->
+            <div class="list-group">
+              <a href="?type=1" class="list-group-item "><?php echo (L("inbox")); ?><span class="badge"><?php echo ($amount['receive']); ?></span></a>
+              <a href="?type=2" class="list-group-item"><?php echo (L("send_yet")); ?><span class="badge"><?php echo ($amount['send']); ?></span></a>
+            </div><!-- list-group -->
+          </div><!-- panel panel-default -->
+        </div><!-- col-md-4 -->
+        <div class="col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th><?php echo (L("type")); ?></th>
+                    <th>
+                      <?php if($pgtype != '1'): echo (L("receiver")); ?>
+                        <?php else: echo (L("from")); endif; ?>
+                    </th>
+                    <th><?php echo (L("subject")); ?></th>
+                    <th><?php echo (L("received_time")); ?></th>
+                    <th><?php echo (L("status")); ?></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php if(is_array($msg)): foreach($msg as $key=>$msg): ?><tr>
+                    <td>
+                      <?php switch($msg['type']): case "1": echo (L("rfi")); break;?>
+                        <?php case "2": echo (L("message")); break; endswitch;?>
+                    </td>
+                    <td>
+                      <?php if($pgtype == 2): ?><a href="/fofs/1/index.php/Home/Buyer/viewsupplierPersonalInfo/id/<?php echo ($msg['recipient_id']); ?>"><?php echo ($msg['user']); ?><i class="fa fa-user"></i></a>
+                      <?php else: ?>
+                        <?php if($msg['type'] == 2): ?><a href="/fofs/1/index.php/Home/Buyer/viewsupplierPersonalInfo/id/<?php echo ($msg['sender_id']); ?>"><?php echo ($msg['user']); ?><i class="fa fa-user"></i></a>
                         <?php else: ?>
-                          <img class="media-object img-thumbnail" src="/selectin/1/Public/uploads/buyer_pic/temp.jpg" alt="头像" height="64" width="64"><?php endif; ?>
-                      </a>
-                    </div>
-                    <div class="media-body">
-                      <h5 class="media-heading"><?php echo ($user['username']); ?></h5>
-                      <p><i class="fa fa-envelope-o fa-lg"></i> <?php echo ($user['email']); ?></p>
-                      <p><i class="fa fa-phone fa-lg"></i> <?php echo ($user['mobile_phone']); ?></p>
-                      <a class="btn btn-default" href="buyerPersonalInfo" role="button"><?php echo (L("edit_personal_profile")); ?></a>
-                    </div>
-                  </div>
-                </div>
-              </div><!--管理员-->
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="/fofs/1/index.php/Home/Buyer/inbox">
-                      <?php echo (L("inbox")); ?>
-                      <?php if($amount['unread'] != 0): ?><span class="badge"><?php echo ($amount['unread']); ?></span><?php endif; ?>
-                    </a>
-                  </div>
-                </div>
-              </div><!--收件箱-->
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <div class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      <?php echo (L("rfi_to_supplier")); ?>
-                    </a>
-                  </div>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body">
-                    <div class="list-group">
-                      <a href="/fofs/1/index.php/Home/Buyer/supplier" class="list-group-item"><?php echo (L("rfi_waiting_for_response")); ?><span class="badge"><?php echo ($amount['checking']); ?></span></a>
-                      <a href="/fofs/1/index.php/Home/Buyer/supplier" class="list-group-item "><?php echo (L("rfi_accepted")); ?><span class="badge"><?php echo ($amount['accepted']); ?></span></a>
-                      <a href="/fofs/1/index.php/Home/Buyer/supplier" class="list-group-item"><?php echo (L("rfi_declined")); ?><span class="badge"><?php echo ($amount['rejected']); ?></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div><!--供应商信息邀请-->
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="row">
-              <?php $__FOR_START_17546__=0;$__FOR_END_17546__=3;for($i=$__FOR_START_17546__;$i < $__FOR_END_17546__;$i+=1){ ?><div class="col-md-4">
-                  <div class="well">
-                    <?php if($project[$i] != NULL): ?><h4><?php echo ($project[$i]['project_name']); ?></h4>
-                      <a class="btn btn-primary" href="/fofs/1/index.php/Home/Buyer/alternateName/id/<?php echo ($project[$i]['id']); ?>" role="button"><?php echo (L("candidate_list")); ?></a>
-                    <?php else: ?>
-                      <h4><?php echo (L("no_project")); ?></h4>
-                     <a class="btn btn-primary" href="/fofs/1/index.php/Home/Buyer/project" role="button"><?php echo (L("create_new_project")); ?></a><?php endif; ?>
-                  </div>
-                </div><?php } ?>
-            </div>
-            <div class="well">
-              <h3><?php echo (L("discovering_your_right_suppliers")); ?></h3>
-              <div class="row">
-                <div class="col-md-4">
-                  <a href="/fofs/1/index.php/Home/Search/search" class="thumbnail">
-                  <img src="/fofs/1/Public/assets_2/img/01.jpg" alt="<?php echo (L("industrial_manufacturing")); ?>">
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="/fofs/1/index.php/Home/Search/search" class="thumbnail">
-                  <img src="/fofs/1/Public/assets_2/img/02.jpg" alt="<?php echo (L("industrial_service")); ?>">
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="/fofs/1/index.php/Home/Search/search" class="thumbnail">
-                  <img src="/fofs/1/Public/assets_2/img/03.jpg" alt="<?php echo (L("electronic_manufacturing")); ?>">
-                  </a>
-                </div>
-              </div>
-          </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+                          <a href="/fofs/1/index.php/Home/Buyer/viewsupplierPersonalInfo/id/<?php echo ($msg['recipient_id']); ?>"><?php echo ($msg['user']); ?><i class="fa fa-user"></i></a><?php endif; endif; ?>
+                    </td>
+                    <td>
+                    <?php switch($msg['type']): case "1": echo (L("rfi")); break;?>
+                        <?php case "2": echo (L("message")); break; endswitch;?>
+                      <?php if($msg['type'] == 2): ?><i type="button" class="fa fa-envelope-o " data-toggle="modal" data-target="#normalModal"
+                        onclick="get_normalletter(this);" name="<?php echo ($msg['id']); ?>" id="<?php echo ($pgtype); ?>"></i><?php endif; ?>
+                      <?php if(($msg['type'] == 1) AND ($msg['state'] != '0') AND ($pgtype != 2)): ?><i type="button" class="fa fa-envelope-o " data-toggle="modal" data-target="#rfiModal"
+                        onclick="get_rfiletter(this);" name="<?php echo ($msg['id']); ?>"></i><?php endif; ?>
+                    </td>
+                    <td><?php echo ($msg['time']); ?></td>
+                    <td>
+                      <?php switch($msg['state']): case "已读": echo (L("read")); break;?>
+                        <?php case "未读": echo (L("unread")); break;?>
+                        <?php case "已发送": echo (L("send_yet")); break;?>
+                        <?php case "未确认": echo (L("rfi_waiting_for_response")); break;?>
+                        <?php case "已同意": echo (L("rfi_accepted")); break;?>
+                        <?php case "已拒绝": echo (L("rfi_declined")); break; endswitch;?>
+                    </td>
+                  </tr><?php endforeach; endif; ?>
+                </tbody>
+              </table>
+            </div><!-- panel-body -->
+          </div><!-- panel panel-default -->
+        </div><!-- col-md-8 -->
+      </div><!-- row -->
+    </div><!-- container -->
+  </div><!-- content-wrap -->
+</div><!-- content -->
+<div class="modal fade" id="rfiModal" role="dialog" aria-label aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id='rfi_letter'>
+      
+    </div><!-- modal-content -->
+  </div><!-- modal-dialog -->
+</div><!-- modal fade -->
 
+<div class="modal fade" id="normalModal" role="dialog" aria-label aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content" id='ordinary_letter'>
+
+    </div><!-- modal-content -->
+  </div><!-- modal-dialog -->
+</div><!-- modal fade -->
+
+<div class="modal fade" id="ReplyMessage" tabindex="-1" role="dialog" aria-labelledby="sendMessageLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" id='reply_letter'>
+        
+      </div>
+    </div>
+  </div><!-- modal fade -->
+<br/>
 <footer class="footer">
   <div class="footerLink">
     <a href="#">关于我们</a>
