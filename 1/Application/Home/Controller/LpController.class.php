@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 use Home\Controller;
-class IndividualController extends BaseController {
+class LpController extends BaseController {
     public function _initialize() {
         parent::_initialize();
         //if(session('type')!=1)  $this->error('非法访问',__APP__.'/Home/Index');
@@ -114,9 +114,6 @@ class IndividualController extends BaseController {
 
     //采购商收件箱
     public function inbox(){
-
-        $this->display();
-        die();
         
 
         $user=$this->getInfo(session('user_id'));
@@ -323,11 +320,6 @@ class IndividualController extends BaseController {
 
     //我关注的
     public function myFollowing(){
-        $this->display();
-    }
-
-    //发送信件
-    public function sendLetter(){
         $this->display();
     }
 }

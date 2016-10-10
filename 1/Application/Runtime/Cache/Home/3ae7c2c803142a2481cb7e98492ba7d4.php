@@ -163,7 +163,7 @@
       <a href="#">服务机构</a>
     </li>
     <li role="presentation">
-      <a href="#">合作</a>
+      <a href="<?php echo U('Home/Cooperations/cooperations');?>">合作</a>
     </li>
   </ul>
 </div>
@@ -350,7 +350,7 @@
           </div>
           <div class="col-md-8">
             <div class="well">
-              <h3>个人主页</h3>
+              <h3>个人主页<a href="#"><span class="label label-info margin_left_20">加关注</span></a></h3>
               <hr/>
               
               <div class="row">
@@ -504,10 +504,10 @@
 
 <footer class="footer">
   <div class="footerLink">
-    <a href="#">关于我们</a>
-    <a href="#">法律声明</a>
-    <a href="#">联系我们</a>
-    <a href="#">加入我们</a>
+    <a href="<?php echo U('Home/Index/aboutUs');?>">关于我们</a>
+    <a href="<?php echo U('Home/Index/notices');?>">法律声明</a>
+    <a href="<?php echo U('Home/Index/contactUs');?>">联系我们</a>
+    <a href="<?php echo U('Home/Index/links');?>">加入我们</a>
   </div>
 </footer>
 <!--jquery-->

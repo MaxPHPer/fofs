@@ -350,142 +350,60 @@
           </div>
           <div class="col-md-8">
             <div class="well">
-              <h3>关注我的</h3>
+              <h3>发送信件</h3>
               <hr/>
               
               <div class="row margin_top_20">
                   <div class='col-md-12' >
-                      <!-- Nav tabs -->
-                      <ul class="nav nav-tabs" role="tablist" style="padding-left:15px; padding-right: 15px;">
-                        <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">关注我的个人用户</a></li>
-                        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">关注我的机构用户</a></li>
-                      </ul>
 
-                      <!-- Tab panes -->
-                      <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="home">
-                              <div class="panel-body">
-                                <div class="list-group">
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          1
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
+                      <div class="panel-body">
+                        
+
+                          <form class="form-horizontal" action="#"  method="post" >
+
+                                <div class="form-group">
+                                  <label for="userName" class="col-sm-3 control-label">
+                                    <span>*</span>
+                                    收件人
+                                  </label>
+                                  <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="userName" name="username" required/>    
                                   </div>
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                         2
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          3
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          4
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  
-                                
                                 </div>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="profile">
 
-                              <div class="panel-body">
-                                <div class="list-group">
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          1
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >歌斐资产</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
+                                <div class="form-group">
+                                  <label for="userName" class="col-sm-3 control-label">
+                                    <span>*</span>
+                                    标题
+                                  </label>
+                                  <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="userName" name="username" required/>    
                                   </div>
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                         2
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >紫荆资本</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  
-                                
                                 </div>
-                            </div>
+                                <!--标题-->
+                                <div class="form-group">
+                                  <label for="userName" class="col-sm-3 control-label">
+                                    <span>*</span>
+                                    内容
+                                  </label>
+                                  <div class="col-sm-8">
+                                    <textarea class="form-control"></textarea>
+                                  </div>
+                                </div>
+                                <!--内容-->    
 
+                                <div class="row">
+                                  <div class="col-sm-3"></div>
+                                  <div class="col-sm-8"> 
+                                    <button type="button" class="btn btn-primary" style="float:right;">发送</button>
+                                  </div>
+                                </div> 
+                      
+                          </form>
 
-                        </div>
+                       
                       </div>
+                       
                   </div>
               </div>
 

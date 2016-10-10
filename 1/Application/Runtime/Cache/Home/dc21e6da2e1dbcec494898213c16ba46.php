@@ -163,7 +163,7 @@
       <a href="#">服务机构</a>
     </li>
     <li role="presentation">
-      <a href="#">合作</a>
+      <a href="<?php echo U('Home/Cooperations/cooperations');?>">合作</a>
     </li>
   </ul>
 </div>
