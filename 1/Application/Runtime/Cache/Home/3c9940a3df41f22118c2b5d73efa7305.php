@@ -53,7 +53,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li>
             <div id="search_box">
-              <form id="search_form" method="post" action="#">
+              <form id="search_form" method="post" action="<?php echo U('Home/Search/search');?>">
                 <input type="text" id="s" placeholder="文章/机构/用户" class="swap_value" />
                 <input type="image" src="/fofs/1/Public/assets_1/img/search.png" width="20" height="20" id="go" alt="Search" title="Search" />
               </form>
@@ -260,249 +260,37 @@
 
     <section class="content-wrap">
       <div class="container">
-        <div class="row">
-          <div class="col-md-4 main-content">
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span>北京乐享奇迹信息科技有限公司</div>
-                <div class="panel-body">
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#">
-                        <?php if($user['face_url'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100">
-                        <?php else: ?>
-                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
-                      </a>
-                    </div>
-                    <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                      <h5 class="media-heading"><?php echo ($user['username']); ?></h5>
-                      <p><i class="fa fa-envelope-o fa-md"></i> <?php echo ($user['email']); ?></p>
-                      <p><i class="fa fa-phone fa-md"></i> <?php echo ($user['mobile_phone']); ?></p>
-                      <a class="btn btn-default" href="buyerPersonalInfo" role="button"><?php echo (L("edit_personal_profile")); ?></a>
-                    </div>
-                  </div>
-                </div>
-              </div><!--头像-->
 
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="<?php echo U('Home/Individual/individualProfile');?>">
-                      <span class="glyphicon glyphicon-user"></span>个人主页
-                      
-                    </a>
-                  </div>
-                </div>
-              </div><!--个人主页-->
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="<?php echo U('Home/Individual/myCompany');?>">
-                      <span class="glyphicon glyphicon-home"></span>我的公司
-                      
-                    </a>
-                  </div>
-                </div>
-              </div><!--我的公司-->
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="<?php echo U('Home/Individual/accountSetting');?>">
-                      <span class="glyphicon glyphicon-pencil"></span>账号设置
-                      
-                    </a>
-                  </div>
-                </div>
-              </div><!--账号设置-->
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="<?php echo U('Home/Individual/inbox');?>">
-                      <span class="glyphicon glyphicon-envelope"></span>消息
-                      <?php if($amount['unread'] != 0): ?><span class="badge"><?php echo ($amount['unread']); ?></span><?php endif; ?>
-                    </a>
-                  </div>
-                </div>
-              </div><!--消息-->
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <div class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      <span class="glyphicon glyphicon-globe"></span>圈子
-                    </a>
-                  </div>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body">
-                    <div class="list-group">
-                      <a href="<?php echo U('Home/Individual/myFollows');?>" class="list-group-item">关注我的<span class="badge"><?php echo ($amount['checking']); ?></span></a>
-                      <a href="<?php echo U('Home/Individual/myFollowing');?>" class="list-group-item ">我关注的<span class="badge"><?php echo ($amount['accepted']); ?></span></a>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div><!--圈子-->
-            </div>
-          </div>
-          <div class="col-md-8">
+          <div class="col-md-10 col-md-offset-1">
             <div class="well">
-              <h3>关注我的</h3>
-              <hr/>
-              
-              <div class="row margin_top_20">
-                  <div class='col-md-12' >
-                      <!-- Nav tabs -->
-                      <ul class="nav nav-tabs" role="tablist" style="padding-left:15px; padding-right: 15px;">
-                        <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">关注我的个人用户</a></li>
-                        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">关注我的机构用户</a></li>
-                      </ul>
-
-                      <!-- Tab panes -->
-                      <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="home">
-                              <div class="panel-body">
-                                <div class="list-group">
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          1
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                         2
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          3
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          4
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  
-                                
-                                </div>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="profile">
-
-                              <div class="panel-body">
-                                <div class="list-group">
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          1
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >歌斐资产</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                         2
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >紫荆资本</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  
-                                
-                                </div>
-                            </div>
-
-
-                        </div>
-                      </div>
-                  </div>
+              <div style="margin-left: auto;margin-right: auto; display: table;">
+                  <h2>联盟简介</h2>
               </div>
-
-               &nbsp;
+              <div style="float: right;">
+                <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-calendar"></span>2016年10月6日</div>
+                <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-user"></span>中国母基金联盟</div>
+              </div>
+              
+              <hr/>
+              <div class="row panel-body">
+                <div class='col-md-10 col-md-offset-1'>
+dfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadf
+adfadfadfadfadfadfadfadfadfadfaadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfa
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+
       </div>
     </section>
   </div>
 
 <footer class="footer">
   <div class="footerLink">
-    <a href="#">关于我们</a>
-    <a href="#">法律声明</a>
-    <a href="#">联系我们</a>
-    <a href="#">加入我们</a>
+    <a href="<?php echo U('Home/Index/aboutUs');?>">关于我们</a>
+    <a href="<?php echo U('Home/Index/notices');?>">法律声明</a>
+    <a href="<?php echo U('Home/Index/contactUs');?>">联系我们</a>
+    <a href="<?php echo U('Home/Index/links');?>">加入我们</a>
   </div>
 </footer>
 <!--jquery-->

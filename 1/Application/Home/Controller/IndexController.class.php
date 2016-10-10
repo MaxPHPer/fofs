@@ -90,4 +90,23 @@ class IndexController extends BaseController {
         $this->display();
     }
 
+    //文章列表
+    public function aboutUs(){
+        $this->display();
+    }
+
+    //文章列表
+    public function notices(){
+        $this->display();
+    }
+
+    //文章列表
+    public function contactUs(){
+        $this->display();
+    }
+
+    //文章列表
+    public function links(){
+        $this->display();
+    }
 }

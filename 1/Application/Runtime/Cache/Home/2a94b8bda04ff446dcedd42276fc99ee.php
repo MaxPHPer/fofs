@@ -53,7 +53,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li>
             <div id="search_box">
-              <form id="search_form" method="post" action="#">
+              <form id="search_form" method="post" action="<?php echo U('Home/Search/search');?>">
                 <input type="text" id="s" placeholder="文章/机构/用户" class="swap_value" />
                 <input type="image" src="/fofs/1/Public/assets_1/img/search.png" width="20" height="20" id="go" alt="Search" title="Search" />
               </form>
@@ -145,10 +145,10 @@
 <div id='nav_bar'>
   <ul class="nav nav-tabs nav-justified" role="tablist">
     <li role="presentation" >
-      <a href="#">首页</a>
+      <a href="<?php echo U('Home/Index/index');?>">首页</a>
     </li>
     <li role="presentation">
-      <a href="#">关于联盟</a>
+      <a href="<?php echo U('Home/Index/aboutAlliance');?>">关于联盟</a>
     </li>
     <li role="presentation">
       <a href="#">LP</a>
@@ -343,7 +343,7 @@
 
             <span class="glyphicon glyphicon-list-alt"></span> 
             <b>新闻资讯</b>
-            <a href="#" style ='float:right;'>更多</a>
+            <a href="<?php echo U('Home/Index/newsList');?>" style ='float:right;'>更多</a>
           </div>
 
           <div class="panel-body">
@@ -716,10 +716,10 @@
 
 <footer class="footer">
   <div class="footerLink">
-    <a href="#">关于我们</a>
-    <a href="#">法律声明</a>
-    <a href="#">联系我们</a>
-    <a href="#">加入我们</a>
+    <a href="<?php echo U('Home/Index/aboutUs');?>">关于我们</a>
+    <a href="<?php echo U('Home/Index/notices');?>">法律声明</a>
+    <a href="<?php echo U('Home/Index/contactUs');?>">联系我们</a>
+    <a href="<?php echo U('Home/Index/links');?>">加入我们</a>
   </div>
 </footer>
 <!--jquery-->

@@ -106,10 +106,10 @@
                 </ul>
               </li>
               <li>
-                <a href="/fofs/1/index.php/Home/Buyer/inbox">新消息</a>
+                <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
               </li>
               <li>
-                <a href="/fofs/1/index.php/Home/Buyer/buyProfile"><?php echo ($username); ?></a>
+                <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
               </li><?php endif; ?>
             <?php if(($type) == "2"): ?><li>
                 <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
@@ -128,10 +128,10 @@
                 </ul>
               </li>
               <li>
-                <a href="/fofs/1/index.php/Home/supplier/inbox">新消息</a>
+                <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
               </li>
               <li>
-                <a href="/fofs/1/index.php/Home/supplier/supplierProfile"><?php echo ($username); ?></a>
+                <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
               </li><?php endif; ?>
             <li>
               <a href="/fofs/1/index.php/Home/Index/logout">登出</a>
@@ -145,10 +145,10 @@
 <div id='nav_bar'>
   <ul class="nav nav-tabs nav-justified" role="tablist">
     <li role="presentation" >
-      <a href="#">首页</a>
+      <a href="<?php echo U('Home/Index/index');?>">首页</a>
     </li>
     <li role="presentation">
-      <a href="#">关于联盟</a>
+      <a href="<?php echo U('Home/Index/aboutAlliance');?>">关于联盟</a>
     </li>
     <li role="presentation">
       <a href="#">LP</a>

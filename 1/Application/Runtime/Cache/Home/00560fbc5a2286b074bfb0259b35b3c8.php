@@ -256,246 +256,124 @@
   </div>
 </div>
   <!--登录模态框结束-->
-  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+<div class="content supplierCompanyInfo">
+  <div class="container">
+    <form action="/fofs/1/index.php/Home/Register/save_supplierCompanyInfo" method="post" enctype="multipart/form-data">
+      <div class="row">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-    <section class="content-wrap">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 main-content">
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span>北京乐享奇迹信息科技有限公司</div>
-                <div class="panel-body">
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#">
-                        <?php if($user['face_url'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100">
-                        <?php else: ?>
-                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
-                      </a>
-                    </div>
-                    <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                      <h5 class="media-heading"><?php echo ($user['username']); ?></h5>
-                      <p><i class="fa fa-envelope-o fa-md"></i> <?php echo ($user['email']); ?></p>
-                      <p><i class="fa fa-phone fa-md"></i> <?php echo ($user['mobile_phone']); ?></p>
-                      <a class="btn btn-default" href="buyerPersonalInfo" role="button"><?php echo (L("edit_personal_profile")); ?></a>
-                    </div>
-                  </div>
-                </div>
-              </div><!--头像-->
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="<?php echo U('Home/Individual/individualProfile');?>">
-                      <span class="glyphicon glyphicon-user"></span>个人主页
-                      
-                    </a>
-                  </div>
-                </div>
-              </div><!--个人主页-->
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="<?php echo U('Home/Individual/myCompany');?>">
-                      <span class="glyphicon glyphicon-home"></span>我的公司
-                      
-                    </a>
-                  </div>
-                </div>
-              </div><!--我的公司-->
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="<?php echo U('Home/Individual/accountSetting');?>">
-                      <span class="glyphicon glyphicon-pencil"></span>账号设置
-                      
-                    </a>
-                  </div>
-                </div>
-              </div><!--账号设置-->
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="<?php echo U('Home/Individual/inbox');?>">
-                      <span class="glyphicon glyphicon-envelope"></span>消息
-                      <?php if($amount['unread'] != 0): ?><span class="badge"><?php echo ($amount['unread']); ?></span><?php endif; ?>
-                    </a>
-                  </div>
-                </div>
-              </div><!--消息-->
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <div class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      <span class="glyphicon glyphicon-globe"></span>圈子
-                    </a>
-                  </div>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body">
-                    <div class="list-group">
-                      <a href="<?php echo U('Home/Individual/myFollows');?>" class="list-group-item">关注我的<span class="badge"><?php echo ($amount['checking']); ?></span></a>
-                      <a href="<?php echo U('Home/Individual/myFollowing');?>" class="list-group-item ">我关注的<span class="badge"><?php echo ($amount['accepted']); ?></span></a>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div><!--圈子-->
+          <div class="panel panel-default panel3" style="margin-top: 20px;">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <i class="fa fa-check"></i>
+                  管理团队信息
+                  <i class="fa fa-angle-down pull-right"></i>
+                </a>
+              </h4>
             </div>
-          </div>
-          <div class="col-md-8">
-            <div class="well">
-              <h3>关注我的</h3>
-              <hr/>
-              
-              <div class="row margin_top_20">
-                  <div class='col-md-12' >
-                      <!-- Nav tabs -->
-                      <ul class="nav nav-tabs" role="tablist" style="padding-left:15px; padding-right: 15px;">
-                        <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">关注我的个人用户</a></li>
-                        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">关注我的机构用户</a></li>
-                      </ul>
-
-                      <!-- Tab panes -->
-                      <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="home">
-                              <div class="panel-body">
-                                <div class="list-group">
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          1
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                         2
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          3
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          4
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  
-                                
-                                </div>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="profile">
-
-                              <div class="panel-body">
-                                <div class="list-group">
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          1
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >歌斐资产</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                         2
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >紫荆资本</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  
-                                
-                                </div>
-                            </div>
-
-
-                        </div>
+            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+              <div class="panel-body">
+                <div class="repeat_people ">
+                  <div class="borderBottom" style="margin-bottom:20px;">
+                    <div class="row" >
+                      <div class="col-sm-2">
+                        
+                          <label for="userName" class="col-sm-12 control-label"><span>*</span>姓名</label>
+    
                       </div>
-                  </div>
-              </div>
 
-               &nbsp;
+                      <div class="col-sm-4">
+
+                            <input type="text" class="form-control" id="userName" name="username"  />
+
+                      </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:10px;">
+                      <div class="col-sm-2">
+                        
+                          <label for="userName" class="col-sm-12 control-label"><span>*</span>职务</label>
+    
+                      </div>
+
+                      <div class="col-sm-4">
+
+                            <input type="text" class="form-control" id="userName" name="username"  />
+
+                      </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-2 ">
+                          <label for="userName" class="col-sm-12 control-label"><b>从业经历</b></label>
+                        </div>
+                    </div>
+
+                    <div class="repeat">
+                      <div class="row" style="margin-top:10px;">
+                        
+                        <div class="col-sm-2 ">
+                          <label for="userName" class="col-sm-12 control-label">公司名称</label>
+                        </div>
+                        <div class="col-sm-2">
+                              <input type="text" class="col-sm-12 form-control" name="production[quantity][]"/>
+                            </div>
+                        <div class="col-sm-8">
+                            
+                            <div class="col-sm-2 ">
+                              <label for="userName" class="col-sm-12 control-label">职位</label>
+                            </div>
+                            <div class="col-sm-2">
+                              <input type="text" class="form-control" name="production[quantity][]"/>
+                            </div>
+                            <div class="col-sm-3 ">
+                              <label for="userName" class="col-sm-12 control-label">任职年月</label>
+                            </div>
+                            <div class="col-sm-2">
+                              <input type="text" class="form-control" name="production[quantity][]"/>
+                            </div>
+
+                            <div class="col-sm-1 ">
+                              <label for="userName" class="col-sm-12 control-label">至</label>
+                            </div>
+                            <div class="col-sm-2">
+                              <input type="text" class="form-control" name="production[quantity][]"/>
+                            </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-10"></div>
+                      <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary" id="addNew2">再添加从业经历</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                      <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary" id="addNew1">添加其它高管</button>
+                      </div>
+                    </div>
+              </div>
             </div>
           </div>
+          <!--高管团队-->
+
         </div>
       </div>
-    </section>
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4" style="margin-bottom:30px;">
+          <input type="hidden" name='user_id'  value="<?php echo ($id); ?>"/>
+          <input type="submit" class="btn btn-primary btn-block" id="submit" value="保存并前往完善基金产品信息"/>
+        </div>
+      </div>
+    </form>
   </div>
+</div>
 
 <footer class="footer">
   <div class="footerLink">

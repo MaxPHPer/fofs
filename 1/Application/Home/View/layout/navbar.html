@@ -19,7 +19,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li>
             <div id="search_box">
-              <form id="search_form" method="post" action="#">
+              <form id="search_form" method="post" action="{:U('Home/Search/search')}">
                 <input type="text" id="s" placeholder="文章/机构/用户" class="swap_value" />
                 <input type="image" src="__PUBLIC__/assets_1/img/search.png" width="20" height="20" id="go" alt="Search" title="Search" />
               </form>
@@ -117,10 +117,10 @@
 <div id='nav_bar'>
   <ul class="nav nav-tabs nav-justified" role="tablist">
     <li role="presentation" >
-      <a href="#">首页</a>
+      <a href="{:U('Home/Index/index')}">首页</a>
     </li>
     <li role="presentation">
-      <a href="#">关于联盟</a>
+      <a href="{:U('Home/Index/aboutAlliance')}">关于联盟</a>
     </li>
     <li role="presentation">
       <a href="#">LP</a>

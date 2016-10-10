@@ -53,7 +53,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li>
             <div id="search_box">
-              <form id="search_form" method="post" action="#">
+              <form id="search_form" method="post" action="<?php echo U('Home/Search/search');?>">
                 <input type="text" id="s" placeholder="文章/机构/用户" class="swap_value" />
                 <input type="image" src="/fofs/1/Public/assets_1/img/search.png" width="20" height="20" id="go" alt="Search" title="Search" />
               </form>
@@ -106,10 +106,10 @@
                 </ul>
               </li>
               <li>
-                <a href="/fofs/1/index.php/Home/Buyer/inbox">新消息</a>
+                <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
               </li>
               <li>
-                <a href="/fofs/1/index.php/Home/Buyer/buyProfile"><?php echo ($username); ?></a>
+                <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
               </li><?php endif; ?>
             <?php if(($type) == "2"): ?><li>
                 <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
@@ -128,10 +128,10 @@
                 </ul>
               </li>
               <li>
-                <a href="/fofs/1/index.php/Home/supplier/inbox">新消息</a>
+                <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
               </li>
               <li>
-                <a href="/fofs/1/index.php/Home/supplier/supplierProfile"><?php echo ($username); ?></a>
+                <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
               </li><?php endif; ?>
             <li>
               <a href="/fofs/1/index.php/Home/Index/logout">登出</a>
@@ -145,10 +145,10 @@
 <div id='nav_bar'>
   <ul class="nav nav-tabs nav-justified" role="tablist">
     <li role="presentation" >
-      <a href="#">首页</a>
+      <a href="<?php echo U('Home/Index/index');?>">首页</a>
     </li>
     <li role="presentation">
-      <a href="#">关于联盟</a>
+      <a href="<?php echo U('Home/Index/aboutAlliance');?>">关于联盟</a>
     </li>
     <li role="presentation">
       <a href="#">LP</a>
@@ -269,7 +269,7 @@
                 <a href="#" class="list-group-item "><span class="glyphicon glyphicon-user"></span>联盟成员</a>
                 <a href="#" class="list-group-item"><span class="glyphicon glyphicon-list-alt"></span>秘书长</a>
                 <a href="#" class="list-group-item"><span class="glyphicon glyphicon-globe"></span>合作伙伴</a>
-                <a href="#" class="list-group-item active"><span class="glyphicon glyphicon-paperclip"></span>相关新闻</a>
+                <a href="<?php echo U('Home/Index/aboutAllianceNews');?>" class="list-group-item"><span class="glyphicon glyphicon-paperclip"></span>相关新闻</a>
                 <a href="#" class="list-group-item"><span class="glyphicon glyphicon-check"></span>加入联盟</a>
               </div>
   
@@ -281,7 +281,7 @@
 
               <div class="panel-body" style="padding:0;">
                 <div class="list-group">
-                  <a href="#" class="list-group-item">
+                  <a href="<?php echo U('Home/Index/aboutAlliance');?>" class="list-group-item">
                     祝贺中国母基金联盟成立了
                     <div style="float: right;">
                       <div style="float: right; margin-right:25px;">
@@ -447,10 +447,10 @@
 
 <footer class="footer">
   <div class="footerLink">
-    <a href="#">关于我们</a>
-    <a href="#">法律声明</a>
-    <a href="#">联系我们</a>
-    <a href="#">加入我们</a>
+    <a href="<?php echo U('Home/Index/aboutUs');?>">关于我们</a>
+    <a href="<?php echo U('Home/Index/notices');?>">法律声明</a>
+    <a href="<?php echo U('Home/Index/contactUs');?>">联系我们</a>
+    <a href="<?php echo U('Home/Index/links');?>">加入我们</a>
   </div>
 </footer>
 <!--jquery-->

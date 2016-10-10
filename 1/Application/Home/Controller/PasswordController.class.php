@@ -709,6 +709,8 @@ class PasswordController extends BaseController {
 
     //忘记密码第三步
     public function third(){
+        $this->display();
+        die();
         $id=cookie('user_id');
         $type=cookie('type');
         switch ($type) {
