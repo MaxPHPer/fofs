@@ -6,107 +6,19 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4 main-content">
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span>北京乐享奇迹信息科技有限公司</div>
-                <div class="panel-body">
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#">
-                        <if condition="$user['face_url'] neq NULL">
-                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100">
-                        <else />
-                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100">
-                        </if>
-                      </a>
-                    </div>
-                    <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                      <h5 class="media-heading">{$user['username']}</h5>
-                      <p><i class="fa fa-envelope-o fa-md"></i> {$user['email']}</p>
-                      <p><i class="fa fa-phone fa-md"></i> {$user['mobile_phone']}</p>
-                      <a class="btn btn-default" href="buyerPersonalInfo" role="button">{$Think.lang.edit_personal_profile}</a>
-                    </div>
-                  </div>
-                </div>
-              </div><!--头像-->
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="{:U('Home/Individual/individualProfile')}">
-                      <span class="glyphicon glyphicon-user"></span>个人主页
-                      
-                    </a>
-                  </div>
-                </div>
-              </div><!--个人主页-->
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="{:U('Home/Individual/myCompany')}">
-                      <span class="glyphicon glyphicon-home"></span>我的公司
-                      
-                    </a>
-                  </div>
-                </div>
-              </div><!--我的公司-->
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="{:U('Home/Individual/accountSetting')}">
-                      <span class="glyphicon glyphicon-pencil"></span>账号设置
-                      
-                    </a>
-                  </div>
-                </div>
-              </div><!--账号设置-->
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="{:U('Home/Individual/inbox')}">
-                      <span class="glyphicon glyphicon-envelope"></span>消息
-                      <if condition="$amount['unread'] neq 0">
-                        <span class="badge">{$amount['unread']}</span>
-                      </if>
-                    </a>
-                  </div>
-                </div>
-              </div><!--消息-->
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <div class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      <span class="glyphicon glyphicon-globe"></span>圈子
-                    </a>
-                  </div>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body">
-                    <div class="list-group">
-                      <a href="{:U('Home/Individual/myFollows')}" class="list-group-item">关注我的<span class="badge">{$amount['checking']}</span></a>
-                      <a href="{:U('Home/Individual/myFollowing')}" class="list-group-item ">我关注的<span class="badge">{$amount['accepted']}</span></a>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div><!--圈子-->
-            </div>
+              <include file = "individual:individualBar"/>
           </div>
           <div class="col-md-8">
             <div class="well">
-              <h3>关注我的</h3>
+              <h3>所有消息</h3>
               <hr/>
               
               <div class="row margin_top_20">
                   <div class='col-md-12' >
                       <!-- Nav tabs -->
                       <ul class="nav nav-tabs" role="tablist" style="padding-left:15px; padding-right: 15px;">
-                        <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">关注我的个人用户</a></li>
-                        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">关注我的机构用户</a></li>
+                        <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">已收件</a></li>
+                        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">已发件</a></li>
                       </ul>
 
                       <!-- Tab panes -->
@@ -114,71 +26,59 @@
                         <div role="tabpanel" class="tab-pane active" id="home">
                               <div class="panel-body">
                                 <div class="list-group">
+
                                   <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          1
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
+   
+                                      <div class="col-sm-2">
                                         <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
                                       </div>
                                       <div class="col-sm-2 margin_top_13">
                                            <a href="#" >万剑一</a>
                                       </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
+                                      <div class="col-sm-5 margin_top_13" >
+                                           <a href="#" data-toggle="modal" data-target="#myModal">请问能给我一下你们公司联系方式吗</a>
+                                           <!-- Modal -->
+                                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                    <h4 class="modal-title " id="myModalLabel" style="  padding-left: 28px;margin: 0;">发信人:张小凡</h4>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <span class="label label-info">主题</span>&nbsp;&nbsp;吃饭
+                                                    <br/>
+                                                    <br/>
+                                                    <span class="label label-info">内容</span>&nbsp;&nbsp;明天去不去吃饭呢，风渡嘉荷
+                                                    <br/>
+                                                    <div class="text_right">2016年10月7日 10:30</div>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    <a href="{:U('Home/Individual/sendLetter')}"><button type="button" class="btn btn-primary">回复</button></a>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                      </div>
+                                      <div class="col-sm-3 text_right margin_top_13 font_14">
+                                          2016年10月7日<span class="label label-default">已读</span>
                                       </div>
                               
                                   </div>
-
                                   <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                         2
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
+   
+                                      <div class="col-sm-2">
                                         <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
                                       </div>
                                       <div class="col-sm-2 margin_top_13">
                                            <a href="#" >万剑一</a>
                                       </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
+                                      <div class="col-sm-5 margin_top_13">
+                                           <a href="#" >请问能给我一下你们公司联系方式吗</a>
                                       </div>
-                              
-                                  </div>
-
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          3
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          4
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
+                                      <div class="col-sm-3 text_right margin_top_13 font_14">
+                                          2016年10月7日<span class="label label-default">已读</span>
                                       </div>
                               
                                   </div>
@@ -193,35 +93,18 @@
                               <div class="panel-body">
                                 <div class="list-group">
                                   <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          1
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
+   
+                                      <div class="col-sm-2">
                                         <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
                                       </div>
                                       <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >歌斐资产</a>
+                                           <a href="#" >万剑一</a>
                                       </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
+                                      <div class="col-sm-5 margin_top_13">
+                                           <a href="#" >请问能给我一下你们公司联系方式吗</a>
                                       </div>
-                              
-                                  </div>
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                         2
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >紫荆资本</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
+                                      <div class="col-sm-3 text_right margin_top_13 font_14">
+                                          2016年10月7日<span class="label label-default">已读</span>
                                       </div>
                               
                                   </div>

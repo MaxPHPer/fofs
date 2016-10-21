@@ -1,0 +1,126 @@
+<include file = "Common:header"/>
+<!--新添加新闻-->
+    <script type="text/javascript" charset="utf-8" src="__ROOT__/Data/Ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__ROOT__/Data/Ueditor/ueditor.all.min.js"></script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->  
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->  
+    <script type="text/javascript" charset="utf-8" src="__ROOT__/Data/Ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript">
+
+        //实例化编辑器
+        //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+        var ue = UE.getEditor('editor');
+
+    </script>
+<div id="wrapper">
+
+  <include file = "Common:navbar"/>
+
+  <div id="page-wrapper">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">修改                      
+              <switch name="article_type" >
+                    <case value="1">新闻资讯</case>
+                    <case value="2">政策法规</case>
+                    <case value="3">投资事件</case>
+                    <case value="4">联盟活动</case>
+                    <case value="5">关于我们</case>
+                    <case value="6">法律声明</case>
+                    <case value="7">联系我们</case>
+                    <case value="8">加入我们</case>
+                    <case value="9">联盟介绍</case>
+                    <case value="10">组织架构</case>
+                    <case value="11">联盟成员</case>
+                    <case value="12">秘书长</case>
+                    <case value="13">合作伙伴</case>
+                    <case value="14">加入联盟</case>
+                    <case value="15">合作</case>
+              </switch>
+        </h1>
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <section id='content' style="margin-top:20px">
+        <form action="{:U('Admin/Article/do_edit_article')}" method='post'>
+          <div class='container-fluid'>
+            <div class='row-fluid' id='content-wrapper'>
+              <div class='span12'>
+                <div class='row-fluid'>
+                  <div class='span12 box'>
+                    <input type="hidden" name="article_id" value="{$article['id']}">
+                    <div class='box-content'>
+                      <table class='table table-striped table-bordered' id='inplaceediting-user' style='margin-top: 20px'>
+                        <tbody>
+                        <tr>
+                          <td style='width:10%'>标题</td>
+                          <td style='width:90%'>
+                            <input type='text' name='title' placeholder='标题' value="{$article['title']}" />
+                          </td>
+                        </tr><!--帮助标题-->
+                        <tr>
+                          <td style='width:10%'>类别</td>
+                          <td style='width:90%'>
+                            <switch name="article_type" >
+                                    <case value="1">新闻资讯</case>
+                                    <case value="2">政策法规</case>
+                                    <case value="3">投资事件</case>
+                                    <case value="4">联盟活动</case>
+                                    <case value="5">关于我们</case>
+                                    <case value="6">法律声明</case>
+                                    <case value="7">联系我们</case>
+                                    <case value="8">加入我们</case>
+                                    <case value="9">联盟介绍</case>
+                                    <case value="10">组织架构</case>
+                                    <case value="11">联盟成员</case>
+                                    <case value="12">秘书长</case>
+                                    <case value="13">合作伙伴</case>
+                                    <case value="14">加入联盟</case>
+                                    <case value="15">合作</case>
+                              </switch>
+                              <input type="hidden" name="article_type" value="{$article_type}">
+                          </td>
+                        </tr><!--帮助类别-->
+                       
+                        <tr  >
+                          <td >内容</td>
+                          <!-- <td>
+                            <a href='#' id='inplaceediting-pencil'>
+                              <i class='icon-pencil'></i>
+                              [编辑]
+                            </a>
+                            <div class='editable' data-original-title='Enter notes' data-pk='1' data-toggle='manual' data-type='wysihtml5' id='inplaceediting-note' tabindex='-1'>
+                            </div>
+                          </td> -->
+                          <td >
+                             <script id="editor" name='content' type="text/plain" style="width:900px;height:500px;">{$article['content']}</script>
+                          </td>
+                        </tr><!--内容-->
+                        <tr>
+                        </tr>
+                        </tbody>
+                      </table>
+                      <div style="margin-left: 90%">
+                        <button class='btn btn-primary'>提交</button>
+                      </div>
+                      <div class='clearfix'></div>
+                      <hr class='hr-normal' />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        </section>
+
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+<include file = "Common:footer"/>

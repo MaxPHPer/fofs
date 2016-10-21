@@ -163,7 +163,7 @@
       <a href="#">服务机构</a>
     </li>
     <li role="presentation">
-      <a href="#">合作</a>
+      <a href="<?php echo U('Home/Cooperations/cooperations');?>">合作</a>
     </li>
   </ul>
 </div>
@@ -178,9 +178,9 @@
         </button>
 
         <h4 class="modal-title">
-          <a href="#personal_login" data-toggle="tab" style="color:white;text-decoration:none;">个人登录</a>
+          <a href="#personal_login" data-toggle="tab" id="personal_login_title" style="color:white;text-decoration:none;">个人登录</a>
           |
-          <a href="#institution_login" data-toggle="tab" style="color:white;text-decoration:none;">机构登录</a>
+          <a href="#institution_login" data-toggle="tab" id="institution_login_title" style="color:#AFACAC;text-decoration:none;">机构登录</a>
         </h4>
       </div>
       <div class="modal-body">
@@ -287,10 +287,10 @@ adfadfadfadfadfadfadfadfadfadfaadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfa
 
 <footer class="footer">
   <div class="footerLink">
-    <a href="#">关于我们</a>
-    <a href="#">法律声明</a>
-    <a href="#">联系我们</a>
-    <a href="#">加入我们</a>
+    <a href="<?php echo U('Home/Index/aboutUs');?>">关于我们</a>
+    <a href="<?php echo U('Home/Index/notices');?>">法律声明</a>
+    <a href="<?php echo U('Home/Index/contactUs');?>">联系我们</a>
+    <a href="<?php echo U('Home/Index/links');?>">加入我们</a>
   </div>
 </footer>
 <!--jquery-->

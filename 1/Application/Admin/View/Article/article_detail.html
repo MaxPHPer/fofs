@@ -1,0 +1,73 @@
+<include file = "Common:header"/>
+
+<div id="wrapper">
+
+  <include file = "Common:navbar"/>
+
+  <div id="page-wrapper">
+
+    <div class="row">
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="margin-top: 20px;">
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      文章详情
+                    </a>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <div class="col-md-12">
+                      <div class="well">
+                        <div style="margin-left: auto;margin-right: auto; display: table;">
+                            <h2>{$article['title']}</h2>
+                        </div>
+                        <div style="float: right;">
+                          <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-calendar"></span><php>echo date('Y-m-d H:i:s',$article['pub_time'])</php></div>
+                          <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-user"></span>
+                            <switch name="article['institution_type']" >
+                                    <case value="1">LP</case>
+                                    <case value="2">GP</case>
+                                    <case value="3">创业公司</case>
+                                    <case value="4">FA</case>
+                                    <case value="5">法务服务机构</case>
+                                    <case value="6">财务服务机构</case>
+                                    <case value="7">众创空间</case>
+                                    <case value="8">其它机构</case>
+                                    <case value="9">个人</case>
+                                    <case value="10">中国母基金联盟</case>
+                              </switch>
+                              &nbsp;&nbsp;
+                              {$article['author_name']}
+
+                          </div>
+                        </div>
+                        
+                        <hr/>
+                        <div class="row panel-body">
+                          <div class='col-md-10 col-md-offset-1'>
+                            <div id="content">
+                                {$article['content']}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div><!--新闻列表-->
+
+
+            </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+<include file = "Common:footer"/>

@@ -546,3 +546,27 @@ $("#btnSubmit").click(function() {
 });
 
 /*忘记密码end*/
+
+/*切换登录注册的小标题*/
+$("#personal_sign_title").click(function() {
+    $("#personal_sign_title").css("color","black");
+    $("#institution_sign_title").css("color","#A2A0A0");
+});
+
+
+$("#institution_sign_title").click(function() {
+    $("#personal_sign_title").css("color","#A2A0A0");
+    $("#institution_sign_title").css("color","black");
+});
+
+$("#personal_login_title").click(function() {
+    $("#personal_login_title").css("color","white");
+    $("#institution_login_title").css("color","#AFACAC");
+});
+
+
+$("#institution_login_title").click(function() {
+    $("#personal_login_title").css("color","#AFACAC");
+    $("#institution_login_title").css("color","white");
+});
+/*切换登录注册的小标题end*/

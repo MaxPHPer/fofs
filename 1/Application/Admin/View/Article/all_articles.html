@@ -1,0 +1,112 @@
+<include file = "Common:header"/>
+<div id="wrapper">
+
+  <include file = "Common:navbar"/>
+
+  <div id="page-wrapper">
+
+    <div class="row">
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="margin-top: 20px;">
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                    <div class="collapsed">
+                      所有
+                      <switch name="article_type" >
+                                <case value="1">新闻资讯</case>
+                                <case value="2">政策法规</case>
+                                <case value="3">投资事件</case>
+                                <case value="4">联盟活动</case>
+                                <case value="5">关于我们</case>
+                                <case value="6">法律声明</case>
+                                <case value="7">联系我们</case>
+                                <case value="8">加入我们</case>
+                                <case value="9">联盟介绍</case>
+                                <case value="10">组织架构</case>
+                                <case value="11">联盟成员</case>
+                                <case value="12">秘书长</case>
+                                <case value="13">合作伙伴</case>
+                                <case value="14">加入联盟</case>
+                                <case value="15">合作</case>
+                      </switch>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <div class="list-group">
+                      <foreach name="news" item="vo" >
+                          <div class="list-group-item">
+                          <a href="{:U('Admin/Article/article_detail')}?article_id={$vo['id']}" >
+                            {$vo['title']}
+                          </a>
+                            <div style="float: right;">
+                              <div style="float: right; margin-right:25px;">
+                                <a href="{:U('Admin/Article/delete_article')}?article_id={$vo['id']}&article_type={$article_type}" >
+                                  <span class="glyphicon glyphicon-remove"></span>
+                                  删除
+                                </a>
+                              </div>
+                              <div style="float: right; margin-right:25px;">
+                                <a href="{:U('Admin/Article/edit_article')}?article_id={$vo['id']}&article_type={$article_type}" >
+                                  <span class="glyphicon glyphicon-pencil"></span>
+                                  修改
+                                </a>
+                              </div>
+                              
+                              <div style="float: right; margin-right:25px;">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                                <php>echo date('Y-m-d H:i:s',$vo['pub_time'])</php>
+                              </div>
+                              <div style="float: right; margin-right:25px;">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <switch name="vo['institution_type']" >
+                                    <case value="1">LP</case>
+                                    <case value="2">GP</case>
+                                    <case value="3">创业公司</case>
+                                    <case value="4">FA</case>
+                                    <case value="5">法务服务机构</case>
+                                    <case value="6">财务服务机构</case>
+                                    <case value="7">众创空间</case>
+                                    <case value="8">其它机构</case>
+                                    <case value="9">个人</case>
+                                    <case value="10">中国母基金联盟</case>
+                                </switch>
+                                &nbsp;&nbsp;
+                                {$vo['author_name']}
+                     
+                              </div>
+
+                            </div>
+
+                   
+                          </div>
+
+                      </foreach>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body center">
+                    
+                      {$page}
+                 
+                  </div>
+                </div>
+              </div><!--新闻列表-->
+
+
+            </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+<include file = "Common:footer"/>

@@ -13,12 +13,12 @@ return array(
     //在本地测试时
     
 	'DB_HOST'=>'127.0.0.1',// 服务器地址
-	'DB_NAME'=>'saas_selectedin',// 数据库名
+	'DB_NAME'=>'fofs',// 数据库名
 	'DB_USER'=>'root',// 用户名
 	'DB_PWD'=>'root',// 密码
 	
 	'DB_PORT'=>3306,// 端口
-	'DB_PREFIX'=>'saas_',// 数据库表前缀
+	'DB_PREFIX'=>'fofs_',// 数据库表前缀
 	'DB_CHARSET'=>'utf8',// 数据库字符集
 	'SESSION_AUTO_START' => true, //是否开启session
 

@@ -262,7 +262,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4 main-content">
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading"><span class="glyphicon glyphicon-home"></span>北京乐享奇迹信息科技有限公司</div>
@@ -350,7 +350,7 @@
           </div>
           <div class="col-md-8">
             <div class="well">
-              <h3>个人主页<a href="#"><span class="label label-info margin_left_20">加关注</span></a></h3>
+              <h3>个人主页<a href="#"><span class="label label-info margin_left_20">+加关注</span></a></h3>
               <hr/>
               
               <div class="row">

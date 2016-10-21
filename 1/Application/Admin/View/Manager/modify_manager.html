@@ -48,13 +48,13 @@
                                                       </switch>
                                                   </td>
                                                   <td>
-                                                      <switch name='vo["group_id"]'>
-                                                          <case value="1">超级管理员</case>
-                                                          <case value="2">普通管理员</case>
+                                                      <switch name='vo["is_admin"]'>
+                                                          <case value="2">超级管理员</case>
+                                                          <case value="1">普通管理员</case>
                                                           <default />default
                                                       </switch>
                                                   </td>
-                                                  <td>{$vo["title"]}</td>
+                                                  <td>{$vo["function"]}</td>
                                                   <td>{$vo["reg_time"]}</td>
                                                   <td>
                                                     <a class='btn btn-primary' href="__APP__/Admin/Manager/edit_manager/id/{$vo['id']}">编辑</a>

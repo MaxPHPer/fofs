@@ -15,13 +15,7 @@ class IndexController extends BaseController {
     }
 
     public function admin_login(){
-    	 $User=M('Admin');
-		 
-		 // var_dump($count);
-		 // echo $count[0]['password'];
-		 // echo '<br>'.md5($_POST['loginpassword']);
-		 // echo '<br>'.md5('123456');
-		 // exit;
+    	$User=M('Admin');
 		 
         $map['email'] = array('eq',$_POST['email']);
         $count = $User->where($map)->select();
@@ -32,17 +26,19 @@ class IndexController extends BaseController {
 
                 session('email',$count[0]['email']);
                 session('username',$count[0]['username']);
-                session('group',$count[0]['group_id']);
+                session('is_admin',$count[0]['is_admin']);
                 session('user_id',$count[0]['id']);
+                session('institution_type',$count[0]['institution_type']);
+                // var_dump($_SESSION);
+                // die();
+                
 
             if($count[0]['face_url'])
                 session('face_url',$count[0]['face_url']);
             else
-                session('face_url','user2-160x160.jpg');
-                // var_dump($count);
-                // var_dump($_SESSION);
-                // die();
-		 		if($count[0]['group_id']==1||$count[0]['group_id']==2){
+                session('face_url','default.jpg');
+
+		 		if($count[0]['is_admin']==1||$count[0]['is_admin']==2){
 		 			// 成功后跳转到管理员界面
     				$this->success('管理员登陆成功', __APP__.'/Admin/Index/index');
 		 		}

@@ -263,8 +263,8 @@
         <div class="row">
           <div class="col-md-3 main-content">
         
-              <div class="list-group">
-                <a href="#" class="list-group-item "><span class="glyphicon glyphicon-globe"></span>联盟简介</a>
+                          <div class="list-group">
+                <a href="<?php echo U('Home/Index/aboutAlliance');?>" class="list-group-item"><span class="glyphicon glyphicon-globe"></span>联盟简介</a>
                 <a href="#" class="list-group-item"><span class="glyphicon glyphicon-sort-by-attributes"></span>组织架构</a>
                 <a href="#" class="list-group-item "><span class="glyphicon glyphicon-user"></span>联盟成员</a>
                 <a href="#" class="list-group-item"><span class="glyphicon glyphicon-list-alt"></span>秘书长</a>

@@ -4,14 +4,10 @@ use Admin\Controller;
 class ManagerController extends BaseController {
 	public function modify_manager(){
 		$User = M('Admin');
-		$map['group_id'] = array('elt','2');
-		$list = $User->where($map)->select();
-
-		$Group=M('Group');		//获取群组
+		$list = $User->select();
 
 		foreach ($list as $key => $value) {
 			$list[$key]['reg_time']=date('Y-m-d H:i:s',$value["reg_time"]);		//获取注册时间
-			$list[$key]['group']=$Group->where('priority='.$value['group_id'])->getField('name');	//获取群组名称
 		}
 
 		$this->assign('list',$list);
@@ -24,12 +20,6 @@ class ManagerController extends BaseController {
 	public function new_manager(){
 		$username=session('username');
         $this->assign('username',$username);
-
-        $Group=M('Group');
-        $list=$Group->select();
-        if(!$list)
-			$this->error('请先设置群组权限表','group_manager');
-		$this->assign('list',$list);
     	$this->display();
 	}
 
@@ -70,8 +60,9 @@ class ManagerController extends BaseController {
 			                 }
 			             }
 			        }
-
+			        $data['institution_type']=10; //代表管理员组类型
 	        		$data['reg_time']=time();
+
 		            $result =   $User->add($data);
 		            if($result) {
 		            	$new_name=$result.$info['savename'];
@@ -109,13 +100,10 @@ class ManagerController extends BaseController {
     public function edit_manager(){
         $User=M('Admin');
 
-        $Group=M('Group');		//获取群组
-    	$Group_list=$Group->select();
-    	$this->assign('list',$Group_list);
-
         $id=I('get.id');
         $list=$User->where("id=$id ")->find();
         $this->assign('data',$list);
+
         $username=session('username');
         $this->assign('username',$username);
         $this->display();   
@@ -157,7 +145,7 @@ class ManagerController extends BaseController {
 				        }
 
 			        	$User->password=md5($data['password']);		        		
-		        		$User->reg_time=time();
+
 			            if($insertid=$User->save()){
 			                $this->success('更新成功','modify_manager');
 			            }
@@ -173,77 +161,29 @@ class ManagerController extends BaseController {
         }
     }
 
-    //群组管理
-    public function group_manager(){
-    	$Group = M('group');
-		$list = $Group->select();
-		$this->assign('list',$list);
-		$username=session('username');
-		$this->assign('username',$username);
-		
-		$this->display();
-    }
+    //修改密码
+    public function update_manager_password(){
+        $User=M('Admin');
+        $data=I('post.');
 
-    public function new_group(){
-		$username=session('username');
-        $this->assign('username',$username);
+        if($User->create()){
 
-    	$this->display();
-	}
+        	if((md5($data['password'])==md5($data['repassword']))&&$data['password']){
 
-	//添加群组
-	public function add_new_group(){
-		$group = D('group');
+	        	$User->password=md5($data['password']);		        		
 
-        if($group->create()) {
-        	$data=I('post.');
-		    $result = $group->add($data);
-		    if($result) {
-		       $this->success('数据添加成功！',"group_manager");
-		    }else{
-		       $this->error('数据添加错误！');
-		    }
+	            if($insertid=$User->save()){
+	                $this->success('更新成功','modify_manager');
+	            }
+	            else{
+	                $this->error($User->getError());
+	            }
+	        }
+	        else $this->error('两次密码不一致！');
         }
         else{
-            $this->error($group->getError());
-        }
-	}
-
-	//编辑群组
-	public function edit_group(){
-        $Group=M('Group');
-        $id=I('get.id');
-        $list=$Group->where("id=$id ")->find();
-        $this->assign('data',$list);
-        $username=session('username');
-        $this->assign('username',$username);
-        $this->display();   
-    }
-
-    //提交编辑
-    public function update_group(){
-		$Group = M('Group');
-
-        if($Group->create()) {
-		    $result = $Group->save();
-		    if($result) {
-		       $this->success('数据更新成功！',"group_manager");
-		    }else{
-		       $this->error('数据更新错误！');
-		    }
-        }
-        else{
-            $this->error($Group->getError());
-        }
-	}
-
-	//删除群组
-	public function delete_group(){      
-        $Group=M('Group');
-        if($Group->delete(I('get.id'))){
-            $this->success('删除成功');
-        }else{
-            $this->error($Group->getError());
+            $this->error($User->getError());
         }
     }
+
 }
