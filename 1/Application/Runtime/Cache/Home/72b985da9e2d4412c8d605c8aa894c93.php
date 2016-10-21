@@ -148,7 +148,7 @@
       <a href="<?php echo U('Home/Index/index');?>">首页</a>
     </li>
     <li role="presentation">
-      <a href="<?php echo U('Home/Index/aboutAlliance');?>">关于联盟</a>
+      <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=9">关于联盟</a>
     </li>
     <li role="presentation">
       <a href="#">LP</a>
@@ -178,9 +178,9 @@
         </button>
 
         <h4 class="modal-title">
-          <a href="#personal_login" data-toggle="tab" style="color:white;text-decoration:none;">个人登录</a>
+          <a href="#personal_login" data-toggle="tab" id="personal_login_title" style="color:white;text-decoration:none;">个人登录</a>
           |
-          <a href="#institution_login" data-toggle="tab" style="color:white;text-decoration:none;">机构登录</a>
+          <a href="#institution_login" data-toggle="tab" id="institution_login_title" style="color:#AFACAC;text-decoration:none;">机构登录</a>
         </h4>
       </div>
       <div class="modal-body">
@@ -264,13 +264,13 @@
           <div class="col-md-3 main-content">
         
                           <div class="list-group">
-                <a href="<?php echo U('Home/Index/aboutAlliance');?>" class="list-group-item"><span class="glyphicon glyphicon-globe"></span>联盟简介</a>
-                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-sort-by-attributes"></span>组织架构</a>
-                <a href="#" class="list-group-item "><span class="glyphicon glyphicon-user"></span>联盟成员</a>
-                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-list-alt"></span>秘书长</a>
-                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-globe"></span>合作伙伴</a>
-                <a href="<?php echo U('Home/Index/aboutAllianceNews');?>" class="list-group-item"><span class="glyphicon glyphicon-paperclip"></span>相关新闻</a>
-                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-check"></span>加入联盟</a>
+                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=9" class="list-group-item"><span class="glyphicon glyphicon-globe"></span>联盟简介</a>
+                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=10" class="list-group-item"><span class="glyphicon glyphicon-sort-by-attributes"></span>组织架构</a>
+                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=11" class="list-group-item "><span class="glyphicon glyphicon-user"></span>联盟成员</a>
+                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=12" class="list-group-item"><span class="glyphicon glyphicon-list-alt"></span>秘书长</a>
+                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=13" class="list-group-item"><span class="glyphicon glyphicon-globe"></span>合作伙伴</a>
+                <a href="<?php echo U('Home/Index/aboutAllianceNews?article_type=1');?>" class="list-group-item"><span class="glyphicon glyphicon-paperclip"></span>相关新闻</a>
+                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=14" class="list-group-item"><span class="glyphicon glyphicon-check"></span>加入联盟</a>
               </div>
   
           </div>
@@ -281,163 +281,49 @@
 
               <div class="panel-body" style="padding:0;">
                 <div class="list-group">
-                  <a href="<?php echo U('Home/Index/aboutAlliance');?>" class="list-group-item">
-                    祝贺中国母基金联盟成立了
-                    <div style="float: right;">
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                        2016年10月6日
-                      </div>
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-user"></span>
-                        中国母基金联盟
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#" class="list-group-item">
-                    祝贺中国母基金联盟成立了
-                    <div style="float: right;">
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                        2016年10月6日
-                      </div>
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-user"></span>
-                        中国母基金联盟
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#" class="list-group-item">
-                    祝贺中国母基金联盟成立了
-                    <div style="float: right;">
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                        2016年10月6日
-                      </div>
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-user"></span>
-                        中国母基金联盟
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#" class="list-group-item">
-                    祝贺中国母基金联盟成立了
-                    <div style="float: right;">
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                        2016年10月6日
-                      </div>
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-user"></span>
-                        中国母基金联盟
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#" class="list-group-item">
-                    祝贺中国母基金联盟成立了
-                    <div style="float: right;">
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                        2016年10月6日
-                      </div>
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-user"></span>
-                        中国母基金联盟
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#" class="list-group-item">
-                    祝贺中国母基金联盟成立了
-                    <div style="float: right;">
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                        2016年10月6日
-                      </div>
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-user"></span>
-                        中国母基金联盟
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#" class="list-group-item">
-                    祝贺中国母基金联盟成立了
-                    <div style="float: right;">
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                        2016年10月6日
-                      </div>
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-user"></span>
-                        中国母基金联盟
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#" class="list-group-item">
-                    祝贺中国母基金联盟成立了
-                    <div style="float: right;">
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                        2016年10月6日
-                      </div>
-                      <div style="float: right; margin-right:25px;">
-                        <span class="glyphicon glyphicon-user"></span>
-                        中国母基金联盟
-                      </div>
-                    </div>
-                  </a>
+                      <?php if(is_array($news)): foreach($news as $key=>$vo): ?><div class="list-group-item">
+                          <a href="<?php echo U('Home/Index/articleDetail');?>?article_id=<?php echo ($vo['id']); ?>" >
+                            <?php echo ($vo['title']); ?>
+                          </a>
+                            <div style="float: right;">
+                              
+                              <div style="float: right; margin-right:25px;">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                                <?php echo date('Y-m-d H:i:s',$vo['pub_time']) ?>
+                              </div>
+                              <div style="float: right; margin-right:25px;">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <?php switch($vo['institution_type']): case "1": ?>LP<?php break;?>
+                                    <?php case "2": ?>GP<?php break;?>
+                                    <?php case "3": ?>创业公司<?php break;?>
+                                    <?php case "4": ?>FA<?php break;?>
+                                    <?php case "5": ?>法务服务机构<?php break;?>
+                                    <?php case "6": ?>财务服务机构<?php break;?>
+                                    <?php case "7": ?>众创空间<?php break;?>
+                                    <?php case "8": ?>其它机构<?php break;?>
+                                    <?php case "9": ?>个人<?php break;?>
+                                    <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
+                                &nbsp;&nbsp;
+                                <?php echo ($vo['author_name']); ?>
+                     
+                              </div>
+
+                            </div>
+
+                   
+                          </div><?php endforeach; endif; ?>
+                  
 
                 </div>
               </div>
 
-              <div class="panel-body center">
-                <ul class="pagination">
-                  <li class="disabled">
-                    <a href="#">上一页</a>
-                  </li>
-                  <li >
-                    <a href="#">
-                      1
-                      <span class="sr-only">(current)</span>
-                    </a>
-                  </li>
-                  <li >
-                    <a href="#">
-                      2
-                      <span class="sr-only">(current)</span>
-                    </a>
-                  </li>
-                  <li class="active">
-                    <a href="#">
-                      3
-                      <span class="sr-only">(current)</span>
-                    </a>
-                  </li>
-                  <li >
-                    <a href="#">
-                      4
-                      <span class="sr-only">(current)</span>
-                    </a>
-                  </li>
-                  <li >
-                    <a href="#">
-                      5
-                      <span class="sr-only">(current)</span>
-                    </a>
-                  </li>
-                  <li >
-                    <a href="#">
-                      6
-                      <span class="sr-only">(current)</span>
-                    </a>
-                  </li>
-                  <li >
-                    <a href="#">
-                      下一页
-                      <span class="sr-only">(current)</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body center">
+                    
+                      <?php echo ($page); ?>
+                 
+                  </div>
+                </div>
           </div>
           </div>
         </div>

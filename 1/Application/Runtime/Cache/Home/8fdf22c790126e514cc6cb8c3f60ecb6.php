@@ -148,7 +148,7 @@
       <a href="<?php echo U('Home/Index/index');?>">首页</a>
     </li>
     <li role="presentation">
-      <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=9">关于联盟</a>
+      <a href="<?php echo U('Home/Index/aboutAlliance');?>">关于联盟</a>
     </li>
     <li role="presentation">
       <a href="#">LP</a>
@@ -256,78 +256,90 @@
   </div>
 </div>
   <!--登录模态框结束-->
-  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+ <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
 
     <section class="content-wrap">
       <div class="container">
         <div class="row">
-          <div class="col-md-3 main-content">
-        
-                          <div class="list-group">
-                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=9" class="list-group-item"><span class="glyphicon glyphicon-globe"></span>联盟简介</a>
-                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=10" class="list-group-item"><span class="glyphicon glyphicon-sort-by-attributes"></span>组织架构</a>
-                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=11" class="list-group-item "><span class="glyphicon glyphicon-user"></span>联盟成员</a>
-                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=12" class="list-group-item"><span class="glyphicon glyphicon-list-alt"></span>秘书长</a>
-                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=13" class="list-group-item"><span class="glyphicon glyphicon-globe"></span>合作伙伴</a>
-                <a href="<?php echo U('Home/Index/aboutAllianceNews?article_type=1');?>" class="list-group-item"><span class="glyphicon glyphicon-paperclip"></span>相关新闻</a>
-                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=14" class="list-group-item"><span class="glyphicon glyphicon-check"></span>加入联盟</a>
-              </div>
-  
-          </div>
-          <div class="col-md-9">
-            <div class="well">
-              <h3>
-                  <?php switch($article_type): case "1": ?>新闻资讯<?php break;?>
-                        <?php case "2": ?>政策法规<?php break;?>
-                        <?php case "3": ?>投资事件<?php break;?>
-                        <?php case "4": ?>联盟活动<?php break;?>
-                        <?php case "5": ?>关于我们<?php break;?>
-                        <?php case "6": ?>法律声明<?php break;?>
-                        <?php case "7": ?>联系我们<?php break;?>
-                        <?php case "8": ?>加入我们<?php break;?>
-                        <?php case "9": ?>联盟介绍<?php break;?>
-                        <?php case "10": ?>组织架构<?php break;?>
-                        <?php case "11": ?>联盟成员<?php break;?>
-                        <?php case "12": ?>秘书长<?php break;?>
-                        <?php case "13": ?>合作伙伴<?php break;?>
-                        <?php case "14": ?>加入联盟<?php break;?>
-                        <?php case "15": ?>合作<?php break; endswitch;?>
-              </h3>
-              <hr/>
-              <div class="col-md-12">
-                  
-                    <div style="margin-left: auto;margin-right: auto; display: table;">
-                        <h2><?php echo ($article['title']); ?></h2>
-                    </div>
-                    <div style="float: right;">
-                      <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-calendar"></span><?php echo date('Y-m-d H:i:s',$article['pub_time']) ?></div>
-                      <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-user"></span>
-                          <?php switch($article['institution_type']): case "1": ?>LP<?php break;?>
-                            <?php case "2": ?>GP<?php break;?>
-                            <?php case "3": ?>创业公司<?php break;?>
-                            <?php case "4": ?>FA<?php break;?>
-                            <?php case "5": ?>法务服务机构<?php break;?>
-                            <?php case "6": ?>财务服务机构<?php break;?>
-                            <?php case "7": ?>众创空间<?php break;?>
-                            <?php case "8": ?>其它机构<?php break;?>
-                            <?php case "9": ?>个人<?php break;?>
-                            <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
-                          &nbsp;&nbsp;
-                          <?php echo ($article['author_name']); ?>
+          <div class="col-md-10 main-content col-md-offset-1">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-                      </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                    <div class="collapsed">
+                      所有
+                      <?php switch($article_type): case "1": ?>新闻资讯<?php break;?>
+                                <?php case "2": ?>政策法规<?php break;?>
+                                <?php case "3": ?>投资事件<?php break;?>
+                                <?php case "4": ?>联盟活动<?php break;?>
+                                <?php case "5": ?>关于我们<?php break;?>
+                                <?php case "6": ?>法律声明<?php break;?>
+                                <?php case "7": ?>联系我们<?php break;?>
+                                <?php case "8": ?>加入我们<?php break;?>
+                                <?php case "9": ?>联盟介绍<?php break;?>
+                                <?php case "10": ?>组织架构<?php break;?>
+                                <?php case "11": ?>联盟成员<?php break;?>
+                                <?php case "12": ?>秘书长<?php break;?>
+                                <?php case "13": ?>合作伙伴<?php break;?>
+                                <?php case "14": ?>加入联盟<?php break;?>
+                                <?php case "15": ?>合作<?php break; endswitch;?>
                     </div>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <div class="list-group">
+
+                                            <?php if(is_array($news)): foreach($news as $key=>$vo): ?><div class="list-group-item">
+                          <a href="<?php echo U('Home/Index/articleDetail');?>?article_id=<?php echo ($vo['id']); ?>" >
+                            <?php echo ($vo['title']); ?>
+                          </a>
+                            <div style="float: right;">
+                              
+                              
+                              <div style="float: right; margin-right:25px;">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                                <?php echo date('Y-m-d H:i:s',$vo['pub_time']) ?>
+                              </div>
+                              <div style="float: right; margin-right:25px;">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <?php switch($vo['institution_type']): case "1": ?>LP<?php break;?>
+                                    <?php case "2": ?>GP<?php break;?>
+                                    <?php case "3": ?>创业公司<?php break;?>
+                                    <?php case "4": ?>FA<?php break;?>
+                                    <?php case "5": ?>法务服务机构<?php break;?>
+                                    <?php case "6": ?>财务服务机构<?php break;?>
+                                    <?php case "7": ?>众创空间<?php break;?>
+                                    <?php case "8": ?>其它机构<?php break;?>
+                                    <?php case "9": ?>个人<?php break;?>
+                                    <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
+                                &nbsp;&nbsp;
+                                <?php echo ($vo['author_name']); ?>
+                     
+                              </div>
+
+                            </div>
+
+                   
+                          </div><?php endforeach; endif; ?>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body center">
                     
-                    <hr/>
-                    <div class="row panel-body">
-                      <div class='col-md-10 col-md-offset-1'>
-                          <?php echo ($article['content']); ?>
-                      </div>
-                    </div>
-              </div>
-               &nbsp;
+                      <?php echo ($page); ?>
+                 
+                  </div>
+                </div>
+              </div><!--新闻列表-->
+
+
             </div>
           </div>
+
         </div>
       </div>
     </section>

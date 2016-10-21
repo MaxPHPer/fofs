@@ -143,7 +143,7 @@
           <!-- /.nav-second-level -->
         </li>
 
-                <li>
+        <li>
           <a href="#"><i class="fa fa-edit fa-fw"></i>新闻资讯<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
             <li>
@@ -156,6 +156,203 @@
           <!-- /.nav-second-level -->
         </li>
         <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>政策法规<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=2">新添政策法规</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=2">查看所有政策法规</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>投资事件<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=3">新添投资事件</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=3">查看所有投资事件</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>联盟活动<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=4">新添联盟活动</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=4">查看所有联盟活动</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>关于我们<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=5">新添关于我们</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=5">查看所有关于我们</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>法律声明<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=6">新添法律声明</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=6">查看所有法律声明</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>联系我们<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=7">新添联系我们</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=7">查看所有联系我们</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>加入我们<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=8">新添加入我们</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=8">查看所有加入我们</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>联盟介绍<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=9">新添联盟介绍</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=9">查看所有联盟介绍</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>组织架构<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=10">新添组织架构</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=10">查看所有组织架构</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>联盟成员<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=11">新添联盟成员</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=11">查看所有联盟成员</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>秘书长<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=12">新添秘书长</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=12">查看所有秘书长</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>合作伙伴<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=13">新添合作伙伴</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=13">查看所有合作伙伴</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>加入联盟<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=14">新添加入联盟</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=14">查看所有加入联盟</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>合作<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=15">新添合作</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=15">查看所有合作</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
 
 
       </ul>

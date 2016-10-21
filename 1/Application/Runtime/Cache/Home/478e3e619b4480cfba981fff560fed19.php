@@ -148,7 +148,7 @@
       <a href="<?php echo U('Home/Index/index');?>">首页</a>
     </li>
     <li role="presentation">
-      <a href="<?php echo U('Home/Index/aboutAlliance');?>">关于联盟</a>
+      <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=9">关于联盟</a>
     </li>
     <li role="presentation">
       <a href="#">LP</a>
@@ -178,9 +178,9 @@
         </button>
 
         <h4 class="modal-title">
-          <a href="#personal_login" data-toggle="tab" style="color:white;text-decoration:none;">个人登录</a>
+          <a href="#personal_login" data-toggle="tab" id="personal_login_title" style="color:white;text-decoration:none;">个人登录</a>
           |
-          <a href="#institution_login" data-toggle="tab" style="color:white;text-decoration:none;">机构登录</a>
+          <a href="#institution_login" data-toggle="tab" id="institution_login_title" style="color:#AFACAC;text-decoration:none;">机构登录</a>
         </h4>
       </div>
       <div class="modal-body">
@@ -264,18 +264,31 @@
           <div class="col-md-10 col-md-offset-1">
             <div class="well">
               <div style="margin-left: auto;margin-right: auto; display: table;">
-                  <h2>联盟简介</h2>
+                  <h2><?php echo ($article['title']); ?></h2>
               </div>
               <div style="float: right;">
-                <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-calendar"></span>2016年10月6日</div>
-                <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-user"></span>中国母基金联盟</div>
+                <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-calendar"></span><?php echo date('Y-m-d H:i:s',$article['pub_time']) ?></div>
+                <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-user"></span>
+                    <?php switch($article['institution_type']): case "1": ?>LP<?php break;?>
+                      <?php case "2": ?>GP<?php break;?>
+                      <?php case "3": ?>创业公司<?php break;?>
+                      <?php case "4": ?>FA<?php break;?>
+                      <?php case "5": ?>法务服务机构<?php break;?>
+                      <?php case "6": ?>财务服务机构<?php break;?>
+                      <?php case "7": ?>众创空间<?php break;?>
+                      <?php case "8": ?>其它机构<?php break;?>
+                      <?php case "9": ?>个人<?php break;?>
+                      <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
+                    &nbsp;&nbsp;
+                    <?php echo ($article['author_name']); ?>
+
+                </div>
               </div>
               
               <hr/>
               <div class="row panel-body">
                 <div class='col-md-10 col-md-offset-1'>
-dfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadf
-adfadfadfadfadfadfadfadfadfadfaadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfadfa
+                    <?php echo ($article['content']); ?>
                 </div>
               </div>
             </div>

@@ -1,28 +1,49 @@
 <include file = "layout:header"/>
 <include file = "layout:navbar"/>
-  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+ <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
 
     <section class="content-wrap">
       <div class="container">
         <div class="row">
-          <div class="col-md-3 main-content">
-        
-            <include file = "index:aboutBar"/>
-  
-          </div>
-          <div class="col-md-9">
-            <div class="well">
-              <h3>相关新闻</h3>
-              <hr/>
+          <div class="col-md-10 main-content col-md-offset-1">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-              <div class="panel-body" style="padding:0;">
-                <div class="list-group">
-                      <foreach name="news" item="vo" >
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                    <div class="collapsed">
+                      所有
+                      <switch name="article_type" >
+                                <case value="1">新闻资讯</case>
+                                <case value="2">政策法规</case>
+                                <case value="3">投资事件</case>
+                                <case value="4">联盟活动</case>
+                                <case value="5">关于我们</case>
+                                <case value="6">法律声明</case>
+                                <case value="7">联系我们</case>
+                                <case value="8">加入我们</case>
+                                <case value="9">联盟介绍</case>
+                                <case value="10">组织架构</case>
+                                <case value="11">联盟成员</case>
+                                <case value="12">秘书长</case>
+                                <case value="13">合作伙伴</case>
+                                <case value="14">加入联盟</case>
+                                <case value="15">合作</case>
+                      </switch>
+                    </div>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <div class="list-group">
+
+                                            <foreach name="news" item="vo" >
                           <div class="list-group-item">
                           <a href="{:U('Home/Index/articleDetail')}?article_id={$vo['id']}" >
                             {$vo['title']}
                           </a>
                             <div style="float: right;">
+                              
                               
                               <div style="float: right; margin-right:25px;">
                                 <span class="glyphicon glyphicon-calendar"></span>
@@ -53,11 +74,10 @@
                           </div>
 
                       </foreach>
-                  
-
+                      
+                    </div>
+                  </div>
                 </div>
-              </div>
-
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body center">
                     
@@ -65,8 +85,12 @@
                  
                   </div>
                 </div>
+              </div><!--新闻列表-->
+
+
+            </div>
           </div>
-          </div>
+
         </div>
       </div>
     </section>

@@ -87,7 +87,7 @@
 
             <span class="glyphicon glyphicon-list-alt"></span> 
             <b>新闻资讯</b>
-            <a href="{:U('Home/Index/newsList')}" style ='float:right;'>更多</a>
+            <a href="{:U('Home/Index/articleList')}?article_type=1" style ='float:right;'>更多</a>
           </div>
 
           <div class="panel-body">
@@ -97,70 +97,36 @@
               <div class="col-xs-12">
 
                 <ul id="demo1">
-
+                <foreach name="news" item="vo">
                   <li class="news-item">
                     <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
+                        {$vo['title']}
                     </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
 
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <php>echo date('Y-m-d H:i:s',$vo['pub_time'])</php>
+              
+                 
+                    <span class="glyphicon glyphicon-user"></span>
+                    <switch name="vo['institution_type']" >
+                        <case value="1">LP</case>
+                        <case value="2">GP</case>
+                        <case value="3">创业公司</case>
+                        <case value="4">FA</case>
+                        <case value="5">法务服务机构</case>
+                        <case value="6">财务服务机构</case>
+                        <case value="7">众创空间</case>
+                        <case value="8">其它机构</case>
+                        <case value="9">个人</case>
+                        <case value="10">中国母基金联盟</case>
+                    </switch>
+                    &nbsp;&nbsp;
+                    {$vo['author_name']}
 
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
+                    <a href="{:U('Home/Index/ArticleDetail')}?article_id={$vo['id']}">详情</a>
                   </li>
+                </foreach>
 
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
 
                 </ul>
 
@@ -180,7 +146,7 @@
 
             <span class="glyphicon glyphicon-list-alt"></span> 
             <b>政策法规</b>
-            <a href="#" style ='float:right;'>更多</a>
+            <a href="{:U('Home/Index/articleList')}?article_type=2" style ='float:right;'>更多</a>
           </div>
 
           <div class="panel-body">
@@ -191,69 +157,35 @@
 
                 <ul id="demo2">
 
+                <foreach name="policies" item="vo">
                   <li class="news-item">
                     <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
+                        {$vo['title']}
                     </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
 
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <php>echo date('Y-m-d H:i:s',$vo['pub_time'])</php>
+              
+                 
+                    <span class="glyphicon glyphicon-user"></span>
+                    <switch name="vo['institution_type']" >
+                        <case value="1">LP</case>
+                        <case value="2">GP</case>
+                        <case value="3">创业公司</case>
+                        <case value="4">FA</case>
+                        <case value="5">法务服务机构</case>
+                        <case value="6">财务服务机构</case>
+                        <case value="7">众创空间</case>
+                        <case value="8">其它机构</case>
+                        <case value="9">个人</case>
+                        <case value="10">中国母基金联盟</case>
+                    </switch>
+                    &nbsp;&nbsp;
+                    {$vo['author_name']}
 
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
+                    <a href="{:U('Home/Index/ArticleDetail')}?article_id={$vo['id']}">详情</a>
                   </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
+                </foreach>
 
                 </ul>
 
@@ -275,7 +207,7 @@
 
             <span class="glyphicon glyphicon-list-alt"></span>
             <b>投资事件</b>
-            <a href="#" style ='float:right;'>更多</a>
+            <a href="{:U('Home/Index/articleList')}?article_type=3" style ='float:right;'>更多</a>
           </div>
 
           <div class="panel-body">
@@ -286,69 +218,35 @@
 
                 <ul id="demo3">
 
+                <foreach name="investments" item="vo">
                   <li class="news-item">
                     <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
+                        {$vo['title']}
                     </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
 
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <php>echo date('Y-m-d H:i:s',$vo['pub_time'])</php>
+              
+                 
+                    <span class="glyphicon glyphicon-user"></span>
+                    <switch name="vo['institution_type']" >
+                        <case value="1">LP</case>
+                        <case value="2">GP</case>
+                        <case value="3">创业公司</case>
+                        <case value="4">FA</case>
+                        <case value="5">法务服务机构</case>
+                        <case value="6">财务服务机构</case>
+                        <case value="7">众创空间</case>
+                        <case value="8">其它机构</case>
+                        <case value="9">个人</case>
+                        <case value="10">中国母基金联盟</case>
+                    </switch>
+                    &nbsp;&nbsp;
+                    {$vo['author_name']}
 
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
+                    <a href="{:U('Home/Index/ArticleDetail')}?article_id={$vo['id']}">详情</a>
                   </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
+                </foreach>
 
                 </ul>
 
@@ -368,7 +266,7 @@
 
             <span class="glyphicon glyphicon-list-alt"></span>
             <b>联盟活动</b>
-            <a href="#" style ='float:right;'>更多</a>
+            <a href="{:U('Home/Index/articleList')}?article_type=4" style ='float:right;'>更多</a>
           </div>
 
           <div class="panel-body">
@@ -379,69 +277,35 @@
 
                 <ul id="demo4">
 
+                <foreach name="allianceActivities" item="vo">
                   <li class="news-item">
                     <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
+                        {$vo['title']}
                     </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
 
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    <php>echo date('Y-m-d H:i:s',$vo['pub_time'])</php>
+              
+                 
+                    <span class="glyphicon glyphicon-user"></span>
+                    <switch name="vo['institution_type']" >
+                        <case value="1">LP</case>
+                        <case value="2">GP</case>
+                        <case value="3">创业公司</case>
+                        <case value="4">FA</case>
+                        <case value="5">法务服务机构</case>
+                        <case value="6">财务服务机构</case>
+                        <case value="7">众创空间</case>
+                        <case value="8">其它机构</case>
+                        <case value="9">个人</case>
+                        <case value="10">中国母基金联盟</case>
+                    </switch>
+                    &nbsp;&nbsp;
+                    {$vo['author_name']}
 
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
+                    <a href="{:U('Home/Index/ArticleDetail')}?article_id={$vo['id']}">详情</a>
                   </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
-
-                  <li class="news-item">
-                    <div class='news_title'>
-                        Curabitur porttitor ante eget hendrerit adipiscing
-                    </div> 
-                     Maecenas at magna accumsan,rhoncus neque id, fringilla dolor.
-                    <a href="#">Read more...</a>
-                  </li>
+                </foreach>
 
                 </ul>
 

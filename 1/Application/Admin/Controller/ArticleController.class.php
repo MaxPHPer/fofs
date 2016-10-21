@@ -3,6 +3,16 @@ namespace Admin\Controller;
 use Admin\Controller;
 class ArticleController extends BaseController {
     public function add_article(){
+        //文章类型只能有一篇的情况
+        if(I('article_type')>=4){
+            $Article=M('Article');
+            $article=$Article->getByArticle_type(I('article_type'));
+            //已经存在该类型文章了
+            if($article){
+                $this->error('已经添加过了,可以点击修改',"all_articles?article_type=".I('article_type'));
+            }
+        }
+
         //文章类型
         $this->assign('article_type',I('article_type'));
 
