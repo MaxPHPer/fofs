@@ -37,41 +37,24 @@ class IndexController extends BaseController {
     }
 
     //登陆
-    public function login(){
+    public function personal_login(){
         session(null);
 
         $data['email']=I('post.user');              //获得用户名
         $data['password']=md5(I('post.password'));  //获得密码
 
-        if(I('post.buyer')){                        //确定用户类型
-            $User=M('Buyer');
-            $key='buyer';
-        }
-        else{
-            $User=M('Supplier');
-            $key='supplier';
-        }
-        
+        //确定用户类型
+        $User=M('User');
+
         $list=$User->getbyEmail($data['email']);    //读取用户数据
 
         if($list){
             if($list['password']==$data['password']){
-            	session('username',$list['username']);
+            	session('nickname',$list['nickname']);
                 session('user_id',$list['id']);
-                session('group_id',$list['group_id']);
-                if($list[$key.'_company_id']==null){
-                    session(null);
-                    cookie('user_id',$list['id']);
-                    $this->error('未填写公司信息，请完善',__APP__.'/Home/Register/'.$key.'CompanyInfo');
-                }
-                if(I('post.buyer')){
-                	session('type',1);
-                    $this->success('采购商登陆成功',__APP__.'/Home/Search/search');
-                }else{
-                	session('type',2);
-                    $this->success('供应商登陆成功',__APP__.'/Home/Supplier/supplierProfile');
-                }
+                session('institution_type',$list['institution_type']);
                 
+                $this->success('登陆成功',__APP__.'/Home/Individual/individualProfile');            
             }
             else{
                 $this->error('用户名或密码错误');

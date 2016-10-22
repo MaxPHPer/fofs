@@ -1,13 +1,13 @@
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span>北京乐享奇迹信息科技有限公司</div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span>{$user['company_name']}</div>
                 <div class="panel-body">
                   <div class="media">
                     <div class="media-left">
                       <a href="#">
-                        <if condition="$user['face_url'] neq NULL">
-                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100">
+                        <if condition="$user['head_portrait_url'] neq NULL">
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/{$user['head_portrait_url']}" alt="头像" height="100" width="100">
                         <else />
                           <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100">
                         </if>
@@ -16,8 +16,8 @@
                     <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
                       <h5 class="media-heading">{$user['username']}</h5>
                       <p><i class="fa fa-envelope-o fa-md"></i> {$user['email']}</p>
-                      <p><i class="fa fa-phone fa-md"></i> {$user['mobile_phone']}</p>
-                      <a class="btn btn-default" href="buyerPersonalInfo" role="button">{$Think.lang.edit_personal_profile}</a>
+                      <p><i class="fa fa-phone fa-md"></i> {$user['phone']}</p>
+                      <a class="btn btn-default" href="modifyPersonalInfo" role="button">{$Think.lang.edit_personal_profile}</a>
                     </div>
                   </div>
                 </div>

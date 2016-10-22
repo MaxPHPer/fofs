@@ -353,6 +353,20 @@
         </li>
         <!--文章管理-->
 
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>用户协议<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=16">新添用户协议</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=16">查看所有用户协议</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
 
 
       </ul>
@@ -381,7 +395,8 @@
             <?php case "12": ?>秘书长<?php break;?>
             <?php case "13": ?>合作伙伴<?php break;?>
             <?php case "14": ?>加入联盟<?php break;?>
-            <?php case "15": ?>合作<?php break; endswitch;?>
+            <?php case "15": ?>合作<?php break;?>
+            <?php case "16": ?>用户协议<?php break; endswitch;?>
         </h1>
       </div>
       <!-- /.col-lg-12 -->
@@ -402,7 +417,7 @@
                         <tr>
                           <td style='width:10%'>标题</td>
                           <td style='width:90%'>
-                          <?php if($article_type<=4){ echo "<input type='text' name='title' placeholder='标题'/>"; }else{ switch($article_type){ case 5: $title='关于我们'; break; case 6: $title='法律声明'; break; case 7: $title='联系我们'; break; case 8: $title='加入我们'; break; case 9: $title='联盟介绍'; break; case 10: $title='组织架构'; break; case 11: $title='联盟成员'; break; case 12: $title='秘书长'; break; case 13: $title='合作伙伴'; break; case 14: $title='加入联盟'; break; case 15: $title='合作'; break; } echo $title; echo "<input type='hidden' name='title' value='".$title."' />"; } ?>
+                          <?php if($article_type<=4){ echo "<input type='text' name='title' placeholder='标题'/>"; }else{ switch($article_type){ case 5: $title='关于我们'; break; case 6: $title='法律声明'; break; case 7: $title='联系我们'; break; case 8: $title='加入我们'; break; case 9: $title='联盟介绍'; break; case 10: $title='组织架构'; break; case 11: $title='联盟成员'; break; case 12: $title='秘书长'; break; case 13: $title='合作伙伴'; break; case 14: $title='加入联盟'; break; case 15: $title='合作'; break; case 16: $title='用户协议'; break; } echo $title; echo "<input type='hidden' name='title' value='".$title."' />"; } ?>
                             
                           </td>
                         </tr><!--帮助标题-->
@@ -423,7 +438,8 @@
                                     <?php case "12": ?>秘书长<?php break;?>
                                     <?php case "13": ?>合作伙伴<?php break;?>
                                     <?php case "14": ?>加入联盟<?php break;?>
-                                    <?php case "15": ?>合作<?php break; endswitch;?>
+                                    <?php case "15": ?>合作<?php break;?>
+                                    <?php case "16": ?>用户协议<?php break; endswitch;?>
                               <input type="hidden" name="article_type" value="<?php echo ($article_type); ?>">
                           </td>
                         </tr><!--帮助类别-->

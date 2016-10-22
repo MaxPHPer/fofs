@@ -256,72 +256,35 @@
   </div>
 </div>
   <!--登录模态框结束-->
-<div class="content forget">
+<div class="content registerEmailCheck">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col-sm-8 col-sm-offset-2">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <div class="col-sm-6">
-              <h1>
-                <a href="#personal_forgetpassword" data-toggle="tab" style="color:black;text-decoration:none;">个人找回</a>
-                |
-                <a href="#institution_forgetpassword" data-toggle="tab" style="color:black;text-decoration:none;">机构找回</a>
-                密码
-              </h1>
-            </div>
-            <div class="col-sm-2">
-              <div class="step active">
-                01
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="step">
-                02
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="step">
-                03
-              </div>
-            </div>
+            <h1><?php echo (L("email_verification")); ?></h1>
           </div>
           <div class="panel-body">
-            <form action="/fofs/1/index.php/Home/Password/send_mail" method="post">
-            <div id="myTabContent" class="tab-content">
-              <div class="tab-pane fade in active" id="personal_forgetpassword">
-                  <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder="<?php echo (L("enter_your_registered_email_address")); ?>"/>
-                  </div>
-                  <div class="form-group">
-                    <input type="submit" class="btn btn-primary btn-block" name="submit" value="个人找回密码"/>
-                  </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <section class="verifyEmail">
+                  <h3><?php echo (L("email_verify_to_complete")); ?></h3>
+                  <p><?php echo (L("email_verification_send")); ?><span><?php echo ($email); ?></span></p>
+                  <p><?php echo (L("click_email_url")); ?></p>
+                  <a href="<?php echo ($link); ?>" target="_Blank" class="btn btn-primary"><?php echo (L("go_emailbox_check")); ?></a>
+                </section>
               </div>
-
-              <div class="tab-pane fade" id="institution_forgetpassword">
-                  <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder="<?php echo (L("enter_your_registered_email_address")); ?>"/>
-                  </div>
-                  <div class="form-group">
-                    <select style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
-                      <option value ="0">请选择机构类型</option>
-                      <option value ="1">LP</option>
-                      <option value="2">GP</option>
-                      <option value="3">创业公司</option>
-                      <option value ="4">FA机构</option>
-                      <option value="5">法务机构</option>
-                      <option value="6">财务机构</option>
-                      <option value ="7">众创空间</option>
-                      <option value="8">其它(媒体、政府机构等)</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <input type="submit" class="btn btn-primary btn-block" name="submit" value="机构找回密码"/>
-                  </div>
-              </div>
+              <duv class="col-sm-4">
+                <section class="noVerify">
+                  <h4><?php echo (L("not_receive_email")); ?></h4>
+                  <p><?php echo (L("wrong_email")); ?><a href="/fofs/1/index.php/Home/Register/email"><?php echo (L("change_a_emailbox")); ?></a></p>
+                  <p><?php echo (L("check_junk_folder")); ?></p>
+                  <p><?php echo (L("wait_for_seconds")); ?><a href="/fofs/1/index.php/Home/Register/resend_email"><?php echo (L("send_check_email_again")); ?></a></p>
+                </section>
+              </duv>
             </div>
-            </form>
           </div>
+
         </div>
       </div>
     </div>

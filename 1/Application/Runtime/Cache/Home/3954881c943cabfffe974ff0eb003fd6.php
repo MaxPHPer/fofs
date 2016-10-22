@@ -151,16 +151,16 @@
       <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=9">关于联盟</a>
     </li>
     <li role="presentation">
-      <a href="#">LP</a>
+      <a href="<?php echo U('Home/Search/lpSearch');?>">LP</a>
     </li>
     <li role="presentation">
-      <a href="#">GP</a>
+      <a href="<?php echo U('Home/Search/gpSearch');?>">GP</a>
     </li>
     <li role="presentation">
-      <a href="#">创业公司</a>
+      <a href="<?php echo U('Home/Search/startUpSearch');?>">创业公司</a>
     </li>
     <li role="presentation">
-      <a href="#">服务机构</a>
+      <a href="<?php echo U('Home/Search/saSearch');?>">服务机构</a>
     </li>
     <li role="presentation">
       <a href="<?php echo U('Home/Cooperations/cooperations');?>">合作</a>
@@ -190,7 +190,7 @@
             <div id="myTabContent" class="tab-content">
               <div class="tab-pane fade in active" id="personal_login">
                 <div class="col-sm-8">
-                  <form action="/fofs/1/index.php/Home/Index/login" method="post">
+                  <form action="/fofs/1/index.php/Home/Index/personal_login" method="post">
                     <div class="form-group">
                       <input type="text" class="form-control" name="user" placeholder="<?php echo (L("enter_email_address")); ?>"/>
                     </div>
@@ -295,6 +295,7 @@
                            <a href="termOfUse" target="_Blank">我已阅读并同意《中国母基金联盟 用户协议》</a>
                         </label>
                       </div>
+                      <input type="hidden" name="is_personal_sign" value="1">
                       <input type="submit" class="btn btn-block btn-primary" value="个人注册"/>
                     </fieldset>
                   </form>
@@ -337,6 +338,7 @@
                            <a href="termOfUse" target="_Blank">我已阅读并同意《中国母基金联盟 用户协议》</a>
                         </label>
                       </div>
+                      <input type="hidden" name="is_personal_sign" value="0">
                       <input type="submit" class="btn btn-block btn-primary" value="机构注册"/>
                     </fieldset>
                   </form>

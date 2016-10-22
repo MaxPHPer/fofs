@@ -340,6 +340,20 @@
         </li>
         <!--文章管理-->
 
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>用户协议<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=16">新添用户协议</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=16">查看所有用户协议</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
 
 
       </ul>
@@ -374,7 +388,8 @@
                                 <?php case "12": ?>秘书长<?php break;?>
                                 <?php case "13": ?>合作伙伴<?php break;?>
                                 <?php case "14": ?>加入联盟<?php break;?>
-                                <?php case "15": ?>合作<?php break; endswitch;?>
+                                <?php case "15": ?>合作<?php break;?>
+                                <?php case "16": ?>用户协议<?php break; endswitch;?>
                       
                     </div>
                   </div>

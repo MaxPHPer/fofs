@@ -1,0 +1,24 @@
+[ 2016-10-22T16:45:25+08:00 ] ::1 /fofs/1/index.php/fofs/1/index.php/Home/Register/emailCheck.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+ERR: Module can't be loaded:Fofs
+
+[ 2016-10-22T16:47:56+08:00 ] ::1 /fofs/1/index.php/fofs/1/index.php/Home/Register/emailCheck.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000647s ]
+ERR: Module can't be loaded:Fofs
+
+[ 2016-10-22T16:47:58+08:00 ] ::1 /fofs/1/index.php/fofs/1/index.php/Home/Register/emailCheck.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000768s ]
+ERR: Module can't be loaded:Fofs
+
+[ 2016-10-22T16:49:05+08:00 ] ::1 /fofs/1/index.php/fofs/1/index.php/Home/Register/emailCheck.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000655s ]
+ERR: Module can't be loaded:Fofs
+

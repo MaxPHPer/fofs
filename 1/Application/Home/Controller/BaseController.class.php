@@ -9,10 +9,22 @@ class BaseController extends Controller{
 	public function _initialize() {
 
         //$this->checklogin();
-        if(session('type')){
-            $this->assign('username',session('username'));
+        if(session('institution_type')){
+            $this->assign('username',session('nickname'));
             $this->assign('user_id',session('user_id'));
-            $this->assign('type',session('type'));
+            $this->assign('institution_type',session('institution_type'));
+            switch(session('institution_type')){
+                  case 1: $base_url='Lp'; break;
+                  case 2: $base_url='Gp'; break;
+                  case 3: $base_url='Startups'; break;
+                  case 4: $base_url='Sa'; break;
+                  case 5: $base_url='Sa'; break;
+                  case 6: $base_url='Sa'; break;
+                  case 7: $base_url='Sa'; break;
+                  case 8: $base_url='Sa'; break;
+                  case 9: $base_url='Individual'; break;
+            }
+            $this->assign('base_url',$base_url);
         }
 
         //设置语言选项

@@ -24,19 +24,22 @@
                                   名称:
                               </div>
                               <div class='col-md-8'>
-                                  北京乐享奇迹信息科技有限公司
+                                  {$user['company_name']}
                               </div>
                           </div>
                           <div class="row">
                             <div class='col-md-3 text_right'>职位:</div>
-                            <div class='col-md-8'>打杂的</div>
+                            <div class='col-md-8'>{$user['company_function']}</div>
                           </div>
                           <div class="row">
                               <div class='col-md-3 text_right'>
                                   认证情况:
                               </div>
                               <div class='col-md-8'>
-                                <span class="label label-default">未认证</span>(<a href='#'>申请认证</a>)
+                              <switch name="user['is_authenticated']">
+                                  <case value ="1"><span class="label label-info">已认证</span></case>
+                                  <default/><span class="label label-default">未认证</span>(<a href='#'>申请认证</a>)
+                              </switch>
                               </div>
                           </div>
                       </div>
@@ -44,15 +47,17 @@
                   </div>
               </div>
 
-
-              <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-check"></span>申请认证</h3>
-                    <div class="alert alert-info" role="alert">系统已经检测到你公司已在本网站注册，可发送员工身份请求进行公司认证！<input type="button" class="btn btn-info margin_top_20" value="发送请求验证"/></div>
-                      
-                        <div class="alert alert-danger" role="alert">系统尚未检测到你公司在本网站进行注册，请联系公司先在本网站进行注册！</div>
-                  </div>
-              </div>
+              <if condition="$user['is_authenticated'] eq 0">
+                <div class="row margin_top_20">
+                    <div class='col-md-12'>
+                      <h3><span class="glyphicon glyphicon-check"></span>申请认证</h3>
+                      <switch name="user['my_company_exist']">
+                        <case value='1'><div class="alert alert-info" role="alert">系统已经检测到你公司已在本网站注册，可发送员工身份请求进行公司认证！<input type="button" class="btn btn-info margin_top_20" value="发送请求验证"/></div></case>
+                        <default/><div class="alert alert-danger" role="alert">系统尚未检测到你公司在本网站进行注册，请联系公司先在本网站进行注册！</div>
+                      </switch>
+                    </div>
+                </div>
+              </if>
                &nbsp;
             </div>
           </div>

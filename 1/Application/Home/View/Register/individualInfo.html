@@ -9,25 +9,25 @@
             <h2 style="margin-left:-40px;">个人信息</h2>
           </div>
           <div class="panel-body">
-            <form class="form-horizontal" action="__APP__/Home/Register/save_buyerPersonalInfo" enctype="multipart/form-data" method="post" >
+            <form class="form-horizontal" action="__APP__/Home/Register/save_individualInfo" enctype="multipart/form-data" method="post" >
               <div class="form-group">
-                <label for="userName" class="col-sm-3 control-label"><span>*</span>昵称</label>
+                <label for="nickname" class="col-sm-3 control-label"><span>*</span>昵称</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="userName" name="username" required/>
+                  <input type="text" class="form-control" id="nickname" name="nickname" required/>
                 </div>
               </div><!--用户名-->
 
               <div class="form-group">
-                <label for="personalLogo" class="col-sm-3 control-label">上传头像(上传限制:500k)</label>
+                <label for="head_portrait_url" class="col-sm-3 control-label">上传头像(上传限制:500k)</label>
                 <div class="col-sm-8">
                   <a href=""></a>
-                  <input type="file" class="form-control" id="personalLogo" name="personalLogo" >
+                  <input type="file" class="form-control" id="head_portrait_url" name="head_portrait_url" >
                 </div>
               </div><!--上传头像-->
               <div class="form-group">
-                <label for="language" class="col-sm-3 control-label"><span>*</span>所属行业</label>
+                <label for="profession" class="col-sm-3 control-label"><span>*</span>所属行业</label>
                 <div class="col-sm-8">
-                  <select name="language" id="language" class="form-control">
+                  <select name="profession" id="profession" class="form-control">
 
                           <option value ="0">请选择机构类型</option>
                           <option value ="1">母基金</option>
@@ -47,50 +47,50 @@
             
               <div class="form-group">
                 <if condition="$pgtype eq 'zh-cn'">
-                <label for="position" class="col-sm-3 control-label"><span>*</span>公司</label>
+                <label for="company_name" class="col-sm-3 control-label"><span>*</span>公司</label>
                 <div class="col-sm-3">
-                  <input type="text" class="form-control" id="position" name="title" required/>
+                  <input type="text" class="form-control" id="company_name" name="company_name" required/>
                 </div>
                 </if>
                 <if condition="$pgtype eq 'en-us'"><div class="col-sm-1"></div></if>
-                <label for="function" class="col-sm-2 control-label"><span>*</span>职务</label>
+                <label for="company_function" class="col-sm-2 control-label"><span>*</span>职务</label>
                 <div class="col-sm-3">
-                  <input type="text" class="form-control" id="position" name="title_en" required/>
+                  <input type="text" class="form-control" id="company_function" name="company_function" required/>
                 </div>
               </div><!--职位-->
     
               <div class="form-group">
-                <label for="userName" class="col-sm-3 control-label"><span>*</span>姓名</label>
+                <label for="username" class="col-sm-3 control-label"><span>*</span>姓名</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="userName" name="username" required/>
+                  <input type="text" class="form-control" id="username" name="username" required/>
                 </div>
               </div><!--姓名-->
 
               <div class="form-group">
-                <label for="language" class="col-sm-3 control-label">性别</label>
+                <label for="sex" class="col-sm-3 control-label">性别</label>
                 <div class="col-sm-8">
-                  <select name="language" id="language" class="form-control">
+                  <select name="sex" id="sex" class="form-control">
 
-                          <option value ="0">请选择性别</option>
-                          <option value ="1">男</option>
-                          <option value="2">女</option>
+                          <option value ="secret">请选择性别</option>
+                          <option value ="male">男</option>
+                          <option value="female">女</option>
 
                   </select>
                 </div>
               </div><!--性别-->
 
               <div class="form-group">
-                <label for="userName" class="col-sm-3 control-label">简介</label>
+                <label for="abstract" class="col-sm-3 control-label">简介</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="userName" name="username" />
+                  <input type="text" class="form-control" id="abstract" name="abstract" />
                 </div>
               </div><!--简介-->
 
 
               <div class="form-group">
-                <label for="userName" class="col-sm-3 control-label">手机</label>
+                <label for="phone" class="col-sm-3 control-label">手机</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="userName" name="username" />
+                  <input type="text" class="form-control" id="phone" name="phone" />
                 </div>
               </div><!--手机-->
 
@@ -105,32 +105,32 @@
 
 
               <div class="form-group">
-                <label for="userName" class="col-sm-3 control-label">LinkedIn</label>
+                <label for="linkedin" class="col-sm-3 control-label">LinkedIn</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="userName" name="username" />
+                  <input type="text" class="form-control" id="linkedin" name="linkedin" />
                 </div>
               </div><!--LinkedIn-->
 
 
               <div class="form-group">
-                <label for="userName" class="col-sm-3 control-label">新浪微博</label>
+                <label for="weibo" class="col-sm-3 control-label">新浪微博</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="userName" name="username" />
+                  <input type="text" class="form-control" id="weibo" name="weibo" />
                 </div>
               </div><!--新浪微博-->
               
 
               <div class="form-group">
-                <label for="userName" class="col-sm-3 control-label">微信</label>
+                <label for="wechat" class="col-sm-3 control-label">微信</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="userName" name="username" />
+                  <input type="text" class="form-control" id="wechat" name="wechat" />
                 </div>
               </div><!--微信-->
 
               <div class="form-group">
-                <label for="userName" class="col-sm-3 control-label">从业经历</label>
+                <label for="business_experience" class="col-sm-3 control-label">从业经历</label>
                 <div class="col-sm-8">
-                  <textarea class="form-control" id="userName" name="username" ></textarea>
+                  <textarea class="form-control" id="business_experience" name="business_experience" ></textarea>
                 </div>
               </div><!--从业经历-->
 

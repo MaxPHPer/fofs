@@ -53,7 +53,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li>
             <div id="search_box">
-              <form id="search_form" method="post" action="#">
+              <form id="search_form" method="post" action="<?php echo U('Home/Search/search');?>">
                 <input type="text" id="s" placeholder="文章/机构/用户" class="swap_value" />
                 <input type="image" src="/fofs/1/Public/assets_1/img/search.png" width="20" height="20" id="go" alt="Search" title="Search" />
               </form>
@@ -148,22 +148,22 @@
       <a href="<?php echo U('Home/Index/index');?>">首页</a>
     </li>
     <li role="presentation">
-      <a href="<?php echo U('Home/Index/aboutAlliance');?>">关于联盟</a>
+      <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=9">关于联盟</a>
     </li>
     <li role="presentation">
-      <a href="#">LP</a>
+      <a href="<?php echo U('Home/Search/lpSearch');?>">LP</a>
     </li>
     <li role="presentation">
-      <a href="#">GP</a>
+      <a href="<?php echo U('Home/Search/gpSearch');?>">GP</a>
     </li>
     <li role="presentation">
-      <a href="#">创业公司</a>
+      <a href="<?php echo U('Home/Search/startUpSearch');?>">创业公司</a>
     </li>
     <li role="presentation">
-      <a href="#">服务机构</a>
+      <a href="<?php echo U('Home/Search/saSearch');?>">服务机构</a>
     </li>
     <li role="presentation">
-      <a href="#">合作</a>
+      <a href="<?php echo U('Home/Cooperations/cooperations');?>">合作</a>
     </li>
   </ul>
 </div>
@@ -178,9 +178,9 @@
         </button>
 
         <h4 class="modal-title">
-          <a href="#personal_login" data-toggle="tab" style="color:white;text-decoration:none;">个人登录</a>
+          <a href="#personal_login" data-toggle="tab" id="personal_login_title" style="color:white;text-decoration:none;">个人登录</a>
           |
-          <a href="#institution_login" data-toggle="tab" style="color:white;text-decoration:none;">机构登录</a>
+          <a href="#institution_login" data-toggle="tab" id="institution_login_title" style="color:#AFACAC;text-decoration:none;">机构登录</a>
         </h4>
       </div>
       <div class="modal-body">
@@ -267,12 +267,12 @@
           <div class="panel-body">
             <form class="form-horizontal" action="/fofs/1/index.php/Home/Register/save_supplierPersonalInfo" enctype="multipart/form-data" method="post" >
               
-                            <div class="form-group">
+              <div class="form-group">
                 <label for="userName" class="col-sm-3 control-label"><span>*</span>机构简称</label>
                 <div class="col-sm-8">
                   <input type="text" class="form-control" id="userName" name="username" required/>
                 </div>
-              </div><!--用户名-->
+              </div><!--机构简称-->
 
 
               <div class="form-group">
@@ -362,10 +362,10 @@
 </div>
 <footer class="footer">
   <div class="footerLink">
-    <a href="#">关于我们</a>
-    <a href="#">法律声明</a>
-    <a href="#">联系我们</a>
-    <a href="#">加入我们</a>
+    <a href="<?php echo U('Home/Index/aboutUs');?>">关于我们</a>
+    <a href="<?php echo U('Home/Index/notices');?>">法律声明</a>
+    <a href="<?php echo U('Home/Index/contactUs');?>">联系我们</a>
+    <a href="<?php echo U('Home/Index/links');?>">加入我们</a>
   </div>
 </footer>
 <!--jquery-->

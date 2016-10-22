@@ -329,162 +329,218 @@
           </div>
           <div class="col-md-8">
             <div class="well">
-              <h3>个人主页<a href="#"><span class="label label-info margin_left_20">+关注</span></a></h3>
+              <h3>修改个人信息</h3>
               <hr/>
+          <div class="panel-body">
+            <form class="form-horizontal" action="/fofs/1/index.php/Home/Individual/save_individualInfo" enctype="multipart/form-data" method="post" >
+              <div class="form-group">
+                <label for="nickname" class="col-sm-3 control-label"><span>*</span>昵称</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="nickname" name="nickname" value="<?php echo ($user['nickname']); ?>" required/>
+                </div>
+              </div><!--用户名-->
+
+              <div class="form-group">
+                <label for="head_portrait_url" class="col-sm-3 control-label">上传头像(上传限制:500k)</label>
+                <div class="col-sm-8">
+                  <a href=""></a>
+                  <input type="file" class="form-control" id="head_portrait_url" name="head_portrait_url" >
+                </div>
+              </div><!--上传头像-->
+              <div class="form-group">
+                <label for="profession" class="col-sm-3 control-label"><span>*</span>所属行业</label>
+                <div class="col-sm-8">
+                  <select name="profession" id="profession" class="form-control">
+                      <?php switch($user['profession']): case "1": ?><option value ="0">请选择机构类型</option>
+                          <option value ="1" selected>母基金</option>
+                          <option value="2">基金</option>
+                          <option value="3">创业公司</option>
+                          <option value ="4">FA机构</option>
+                          <option value="5">法务机构</option>
+                          <option value="6">财务机构</option>
+                          <option value ="7">众创空间</option>
+                          <option value="8">其它(媒体、政府机构等)</option><?php break;?>
+                        <?php case "2": ?><option value ="0">请选择机构类型</option>
+                          <option value ="1">母基金</option>
+                          <option value="2" selected>基金</option>
+                          <option value="3">创业公司</option>
+                          <option value ="4">FA机构</option>
+                          <option value="5">法务机构</option>
+                          <option value="6">财务机构</option>
+                          <option value ="7">众创空间</option>
+                          <option value="8">其它(媒体、政府机构等)</option><?php break;?>
+                        <?php case "3": ?><option value ="0">请选择机构类型</option>
+                          <option value ="1">母基金</option>
+                          <option value="2">基金</option>
+                          <option value="3" selected>创业公司</option>
+                          <option value ="4">FA机构</option>
+                          <option value="5">法务机构</option>
+                          <option value="6">财务机构</option>
+                          <option value ="7">众创空间</option>
+                          <option value="8">其它(媒体、政府机构等)</option><?php break;?>
+                        <?php case "4": ?><option value ="0">请选择机构类型</option>
+                          <option value ="1">母基金</option>
+                          <option value="2">基金</option>
+                          <option value="3">创业公司</option>
+                          <option value ="4" selected>FA机构</option>
+                          <option value="5">法务机构</option>
+                          <option value="6">财务机构</option>
+                          <option value ="7">众创空间</option>
+                          <option value="8">其它(媒体、政府机构等)</option><?php break;?>
+                        <?php case "5": ?><option value ="0">请选择机构类型</option>
+                          <option value ="1">母基金</option>
+                          <option value="2">基金</option>
+                          <option value="3">创业公司</option>
+                          <option value ="4">FA机构</option>
+                          <option value="5" selected>法务机构</option>
+                          <option value="6">财务机构</option>
+                          <option value ="7">众创空间</option>
+                          <option value="8">其它(媒体、政府机构等)</option><?php break;?>
+                        <?php case "6": ?><option value ="0">请选择机构类型</option>
+                          <option value ="1">母基金</option>
+                          <option value="2">基金</option>
+                          <option value="3">创业公司</option>
+                          <option value ="4">FA机构</option>
+                          <option value="5">法务机构</option>
+                          <option value="6" selected>财务机构</option>
+                          <option value ="7">众创空间</option>
+                          <option value="8">其它(媒体、政府机构等)</option><?php break;?>
+                        <?php case "7": ?><option value ="0">请选择机构类型</option>
+                          <option value ="1">母基金</option>
+                          <option value="2">基金</option>
+                          <option value="3">创业公司</option>
+                          <option value ="4">FA机构</option>
+                          <option value="5">法务机构</option>
+                          <option value="6">财务机构</option>
+                          <option value ="7" selected>众创空间</option>
+                          <option value="8">其它(媒体、政府机构等)</option><?php break;?>
+                        <?php case "8": ?><option value ="0">请选择机构类型</option>
+                          <option value ="1">母基金</option>
+                          <option value="2">基金</option>
+                          <option value="3">创业公司</option>
+                          <option value ="4">FA机构</option>
+                          <option value="5">法务机构</option>
+                          <option value="6">财务机构</option>
+                          <option value ="7">众创空间</option>
+                          <option value="8" selected>其它(媒体、政府机构等)</option><?php break;?>
+
+                        <?php default: ?>
+                          <option value ="0">请选择机构类型</option>
+                          <option value ="1">母基金</option>
+                          <option value="2">基金</option>
+                          <option value="3">创业公司</option>
+                          <option value ="4">FA机构</option>
+                          <option value="5">法务机构</option>
+                          <option value="6">财务机构</option>
+                          <option value ="7">众创空间</option>
+                          <option value="8">其它(媒体、政府机构等)</option><?php endswitch;?>
+
+                  </select>
+                </div>
+              </div><!--所属行业-->
               
-              <div class="row">
-                  <div class='col-md-2'>
-                      <a href="#">
-                        <?php if($user['head_portrait_url'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/<?php echo ($user['head_portrait_url']); ?>" alt="头像" height="100" width="100">
-                          <?php else: ?>
-                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
-                      </a>
-                  </div>
+              
+            
+              <div class="form-group">
+
+                <label for="company_name" class="col-sm-3 control-label"><span>*</span>公司</label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control" id="company_name" name="company_name" value="<?php echo ($user['company_name']); ?>" required/>
+                </div>
+  
+                <label for="company_function" class="col-sm-2 control-label"><span>*</span>职务</label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control" id="company_function" name="company_function" value="<?php echo ($user['company_function']); ?>" required/>
+                </div>
+              </div><!--职位-->
+    
+              <div class="form-group">
+                <label for="username" class="col-sm-3 control-label"><span>*</span>姓名</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="username" name="username" value="<?php echo ($user['username']); ?>" required/>
+                </div>
+              </div><!--姓名-->
+
+              <div class="form-group">
+                <label for="sex" class="col-sm-3 control-label">性别</label>
+                <div class="col-sm-8">
+                  <select name="sex" id="sex" class="form-control">
+                      <?php switch($user['sex']): case "male": ?><option value ="secret">请选择性别</option>
+                          <option value ="male" selected>男</option>
+                          <option value="female">女</option><?php break;?>
+                        <?php case "female": ?><option value ="secret">请选择性别</option>
+                          <option value ="male" >男</option>
+                          <option value="female" selected>女</option><?php break;?>
+                        <?php default: ?>
+                          <option value ="secret" selected>请选择性别</option>
+                          <option value ="male" >男</option>
+                          <option value="female" >女</option><?php endswitch;?>
+                  </select>
+                </div>
+              </div><!--性别-->
+
+              <div class="form-group">
+                <label for="abstract" class="col-sm-3 control-label">简介</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="abstract" name="abstract" value="<?php echo ($user['abstract']); ?>"/>
+                </div>
+              </div><!--简介-->
 
 
-                  <div class='col-md-10'>
-                      <div class="row">
-                          <div class='col-md-2 text_right'>
-                              姓名:
-                          </div>
-                          <div class='col-md-10'>
-                              <?php echo ($user['username']); ?>(<?php echo ($user['nickname']); ?>)
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class='col-md-2 text_right'>
-                              性别:
-                          </div>
-                          <div class='col-md-10'>
-                            <?php switch($user['sex']): case "male": ?>男<?php break;?>
-                              <?php case "female": ?>女<?php break;?>
-                              <?php default: ?>保密<?php endswitch;?>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class='col-md-2 text_right'>
-                              简介:
-                          </div>
-                          <div class='col-md-10'>
-                              <?php echo ($user['abstract']); ?>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class='col-md-2 text_right'>
-                              行业:
-                          </div>
-                          <div class='col-md-10'>
-                             
-                              <?php switch($user['profession']): case "0": ?>请选择机构类型<?php break;?>
-                                <?php case "1": ?>母基金<?php break;?>
-                                <?php case "2": ?>基金<?php break;?>
-                                <?php case "3": ?>创业公司<?php break;?>
-                                <?php case "4": ?>FA机构<?php break;?>
-                                <?php case "5": ?>法务机构<?php break;?>
-                                <?php case "6": ?>财务机构<?php break;?>
-                                <?php case "7": ?>众创空间<?php break;?>
-                                <?php case "8": ?>其它(媒体、政府机构等)<?php break; endswitch;?>
-                          </div>
-                      </div>
-
-                  </div>
-              </div>
-
-              <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-tags"></span>从业简历</h3>
-                    <div class="panel panel-default">
-                      <div class="panel-body">
-
-                          <div class="col-md-12">
-                             
-                                  <?php echo ($user['business_experience']); ?>
-                             
-                          </div>
-                          
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-home"></span>公司信息</h3>
-                    <div class="panel panel-default">
-                      <div class="panel-body">
-
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  名称:
-                              </div>
-                              <div class='col-md-8'>
-                                  <?php echo ($user['company_name']); ?>
-                              </div>
-                          </div>
-                          <div class="row">
-                            <div class='col-md-3 text_right'>职位:</div>
-                            <div class='col-md-8'><?php echo ($user['company_function']); ?></div>
-                          </div>
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  认证情况:
-                              </div>
-                              <div class='col-md-8'>
-                              <?php switch($user['is_authenticated']): case "1": ?><span class="label label-info">已认证</span><?php break;?>
-                                  <?php default: ?><span class="label label-default">未认证</span>(<a href='#'>申请认证</a>)<?php endswitch;?>
-                              </div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
+              <div class="form-group">
+                <label for="phone" class="col-sm-3 control-label">手机</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="phone" name="phone" value="<?php echo ($user['phone']); ?>"/>
+                </div>
+              </div><!--手机-->
 
 
-              <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-earphone"></span>联系方式</h3>
-                    <div class="panel panel-default">
-                      <div class="panel-body">
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  手机:
-                              </div>
-                              <div class='col-md-8'>
-                                  <?php echo ($user['phone']); ?>
-                              </div>
-                          </div>
-                          <div class="row">
-                            <div class='col-md-3 text_right'>邮箱:</div>
-                            <div class='col-md-8'><?php echo ($user['email']); ?></div>
-                          </div>
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  LinkedIn:
-                              </div>
-                              <div class='col-md-8'>
-                                  <?php echo ($user['linkedin']); ?>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  新浪微博:
-                              </div>
-                              <div class='col-md-8'>
-                                  <?php echo ($user['weibo']); ?>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  微信:
-                              </div>
-                              <div class='col-md-8'>
-                                  <?php echo ($user['wechat']); ?>
-                              </div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
+              <div class="form-group">
+                <label for="email" class="col-sm-3 control-label"><span>*</span><?php echo (L("email")); ?></label>
+                <div class="col-sm-8">
+                  <input type="email" class="form-control" id="email" disabled="disabled" value="<?php echo ($user['email']); ?>" required/>
+                </div>
+              </div><!--电子邮件-->
+
+
+              <div class="form-group">
+                <label for="linkedin" class="col-sm-3 control-label">LinkedIn</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="linkedin" name="linkedin" value="<?php echo ($user['linkedin']); ?>"/>
+                </div>
+              </div><!--LinkedIn-->
+
+
+              <div class="form-group">
+                <label for="weibo" class="col-sm-3 control-label">新浪微博</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="weibo" name="weibo" value="<?php echo ($user['weibo']); ?>"/>
+                </div>
+              </div><!--新浪微博-->
+              
+
+              <div class="form-group">
+                <label for="wechat" class="col-sm-3 control-label">微信</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="wechat" name="wechat" value="<?php echo ($user['wechat']); ?>"/>
+                </div>
+              </div><!--微信-->
+
+              <div class="form-group">
+                <label for="business_experience" class="col-sm-3 control-label">从业经历</label>
+                <div class="col-sm-8">
+                  <textarea class="form-control" id="business_experience" name="business_experience" ><?php echo ($user['business_experience']); ?></textarea>
+                </div>
+              </div><!--从业经历-->
+
+              <input type="hidden" name="id" value="<?php echo ($user['id']); ?>">
+            <div class="alert alert-warning" role="alert">
+              <span>*</span>必填
+            </div>
+            <input type="submit" value="保存修改" class="btn btn-block btn-primary"/> 
+          </div>
+          </form>
                &nbsp;
             </div>
           </div>

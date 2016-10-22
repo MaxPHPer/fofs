@@ -87,52 +87,31 @@
                 </li>
               </ul>
             </li>
-            <?php else: ?>
+          <?php else: ?>
             <!--已登录之后的-->
-            <?php if(($type) == "1"): ?><li>
-                <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  微信
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="?l=zh-cn">
-                      <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
-              </li><?php endif; ?>
-            <?php if(($type) == "2"): ?><li>
-                <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  微信
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="?l=zh-cn">
-                      <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
-              </li><?php endif; ?>
+
+            <li>
+              <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                微信
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="?l=zh-cn">
+                    <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Home/<?php echo ($base_url); ?>/inbox">新消息</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Home/<?php echo ($base_url); ?>/individualProfile"><?php echo ($username); ?></a>
+            </li>
             <li>
               <a href="/fofs/1/index.php/Home/Index/logout">登出</a>
             </li><?php endif; ?>
@@ -148,19 +127,19 @@
       <a href="<?php echo U('Home/Index/index');?>">首页</a>
     </li>
     <li role="presentation">
-      <a href="<?php echo U('Home/Index/aboutAlliance');?>">关于联盟</a>
+      <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=9">关于联盟</a>
     </li>
     <li role="presentation">
-      <a href="#">LP</a>
+      <a href="<?php echo U('Home/Search/lpSearch');?>">LP</a>
     </li>
     <li role="presentation">
-      <a href="#">GP</a>
+      <a href="<?php echo U('Home/Search/gpSearch');?>">GP</a>
     </li>
     <li role="presentation">
-      <a href="#">创业公司</a>
+      <a href="<?php echo U('Home/Search/startUpSearch');?>">创业公司</a>
     </li>
     <li role="presentation">
-      <a href="#">服务机构</a>
+      <a href="<?php echo U('Home/Search/saSearch');?>">服务机构</a>
     </li>
     <li role="presentation">
       <a href="<?php echo U('Home/Cooperations/cooperations');?>">合作</a>
@@ -178,9 +157,9 @@
         </button>
 
         <h4 class="modal-title">
-          <a href="#personal_login" data-toggle="tab" style="color:white;text-decoration:none;">个人登录</a>
+          <a href="#personal_login" data-toggle="tab" id="personal_login_title" style="color:white;text-decoration:none;">个人登录</a>
           |
-          <a href="#institution_login" data-toggle="tab" style="color:white;text-decoration:none;">机构登录</a>
+          <a href="#institution_login" data-toggle="tab" id="institution_login_title" style="color:#AFACAC;text-decoration:none;">机构登录</a>
         </h4>
       </div>
       <div class="modal-body">
@@ -190,7 +169,7 @@
             <div id="myTabContent" class="tab-content">
               <div class="tab-pane fade in active" id="personal_login">
                 <div class="col-sm-8">
-                  <form action="/fofs/1/index.php/Home/Index/login" method="post">
+                  <form action="/fofs/1/index.php/Home/Index/personal_login" method="post">
                     <div class="form-group">
                       <input type="text" class="form-control" name="user" placeholder="<?php echo (L("enter_email_address")); ?>"/>
                     </div>
@@ -265,12 +244,12 @@
                           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span>北京乐享奇迹信息科技有限公司</div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span><?php echo ($user['company_name']); ?></div>
                 <div class="panel-body">
                   <div class="media">
                     <div class="media-left">
                       <a href="#">
-                        <?php if($user['face_url'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100">
+                        <?php if($user['head_portrait_url'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/<?php echo ($user['head_portrait_url']); ?>" alt="头像" height="100" width="100">
                         <?php else: ?>
                           <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
                       </a>
@@ -278,8 +257,8 @@
                     <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
                       <h5 class="media-heading"><?php echo ($user['username']); ?></h5>
                       <p><i class="fa fa-envelope-o fa-md"></i> <?php echo ($user['email']); ?></p>
-                      <p><i class="fa fa-phone fa-md"></i> <?php echo ($user['mobile_phone']); ?></p>
-                      <a class="btn btn-default" href="buyerPersonalInfo" role="button"><?php echo (L("edit_personal_profile")); ?></a>
+                      <p><i class="fa fa-phone fa-md"></i> <?php echo ($user['phone']); ?></p>
+                      <a class="btn btn-default" href="modifyPersonalInfo" role="button"><?php echo (L("edit_personal_profile")); ?></a>
                     </div>
                   </div>
                 </div>
@@ -364,19 +343,20 @@
                                   名称:
                               </div>
                               <div class='col-md-8'>
-                                  北京乐享奇迹信息科技有限公司
+                                  <?php echo ($user['company_name']); ?>
                               </div>
                           </div>
                           <div class="row">
                             <div class='col-md-3 text_right'>职位:</div>
-                            <div class='col-md-8'>打杂的</div>
+                            <div class='col-md-8'><?php echo ($user['company_function']); ?></div>
                           </div>
                           <div class="row">
                               <div class='col-md-3 text_right'>
                                   认证情况:
                               </div>
                               <div class='col-md-8'>
-                                <span class="label label-default">未认证</span>(<a href='#'>申请认证</a>)
+                              <?php switch($user['is_authenticated']): case "1": ?><span class="label label-info">已认证</span><?php break;?>
+                                  <?php default: ?><span class="label label-default">未认证</span>(<a href='#'>申请认证</a>)<?php endswitch;?>
                               </div>
                           </div>
                       </div>
@@ -384,15 +364,13 @@
                   </div>
               </div>
 
-
-              <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-check"></span>申请认证</h3>
-                    <div class="alert alert-info" role="alert">系统已经检测到你公司已在本网站注册，可发送员工身份请求进行公司认证！<input type="button" class="btn btn-info margin_top_20" value="发送请求验证"/></div>
-                      
-                        <div class="alert alert-danger" role="alert">系统尚未检测到你公司在本网站进行注册，请联系公司先在本网站进行注册！</div>
-                  </div>
-              </div>
+              <?php if($user['is_authenticated'] == 0): ?><div class="row margin_top_20">
+                    <div class='col-md-12'>
+                      <h3><span class="glyphicon glyphicon-check"></span>申请认证</h3>
+                      <?php switch($user['my_company_exist']): case "1": ?><div class="alert alert-info" role="alert">系统已经检测到你公司已在本网站注册，可发送员工身份请求进行公司认证！<input type="button" class="btn btn-info margin_top_20" value="发送请求验证"/></div><?php break;?>
+                        <?php default: ?><div class="alert alert-danger" role="alert">系统尚未检测到你公司在本网站进行注册，请联系公司先在本网站进行注册！</div><?php endswitch;?>
+                    </div>
+                </div><?php endif; ?>
                &nbsp;
             </div>
           </div>

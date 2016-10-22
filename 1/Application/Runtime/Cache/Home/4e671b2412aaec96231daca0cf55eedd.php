@@ -256,77 +256,47 @@
   </div>
 </div>
   <!--登录模态框结束-->
-<div class="content forget">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <div class="col-sm-6">
-              <h1>
-                <a href="#personal_forgetpassword" data-toggle="tab" style="color:black;text-decoration:none;">个人找回</a>
-                |
-                <a href="#institution_forgetpassword" data-toggle="tab" style="color:black;text-decoration:none;">机构找回</a>
-                密码
-              </h1>
-            </div>
-            <div class="col-sm-2">
-              <div class="step active">
-                01
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="step">
-                02
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="step">
-                03
-              </div>
-            </div>
-          </div>
-          <div class="panel-body">
-            <form action="/fofs/1/index.php/Home/Password/send_mail" method="post">
-            <div id="myTabContent" class="tab-content">
-              <div class="tab-pane fade in active" id="personal_forgetpassword">
-                  <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder="<?php echo (L("enter_your_registered_email_address")); ?>"/>
-                  </div>
-                  <div class="form-group">
-                    <input type="submit" class="btn btn-primary btn-block" name="submit" value="个人找回密码"/>
-                  </div>
-              </div>
+  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
 
-              <div class="tab-pane fade" id="institution_forgetpassword">
-                  <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder="<?php echo (L("enter_your_registered_email_address")); ?>"/>
-                  </div>
-                  <div class="form-group">
-                    <select style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
-                      <option value ="0">请选择机构类型</option>
-                      <option value ="1">LP</option>
-                      <option value="2">GP</option>
-                      <option value="3">创业公司</option>
-                      <option value ="4">FA机构</option>
-                      <option value="5">法务机构</option>
-                      <option value="6">财务机构</option>
-                      <option value ="7">众创空间</option>
-                      <option value="8">其它(媒体、政府机构等)</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <input type="submit" class="btn btn-primary btn-block" name="submit" value="机构找回密码"/>
-                  </div>
+    <section class="content-wrap">
+      <div class="container">
+
+          <div class="col-md-10 col-md-offset-1">
+            <div class="well">
+              <div style="margin-left: auto;margin-right: auto; display: table;">
+                  <h2><?php echo ($article['title']); ?></h2>
+              </div>
+              <div style="float: right;">
+                <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-calendar"></span><?php echo date('Y-m-d H:i:s',$article['pub_time']) ?></div>
+                <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-user"></span>
+                    <?php switch($article['institution_type']): case "1": ?>LP<?php break;?>
+                      <?php case "2": ?>GP<?php break;?>
+                      <?php case "3": ?>创业公司<?php break;?>
+                      <?php case "4": ?>FA<?php break;?>
+                      <?php case "5": ?>法务服务机构<?php break;?>
+                      <?php case "6": ?>财务服务机构<?php break;?>
+                      <?php case "7": ?>众创空间<?php break;?>
+                      <?php case "8": ?>其它机构<?php break;?>
+                      <?php case "9": ?>个人<?php break;?>
+                      <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
+                    &nbsp;&nbsp;
+                    <?php echo ($article['author_name']); ?>
+
+                </div>
+              </div>
+              
+              <hr/>
+              <div class="row panel-body">
+                <div class='col-md-10 col-md-offset-1'>
+                    <?php echo ($article['content']); ?>
+                </div>
               </div>
             </div>
-            </form>
           </div>
-        </div>
+
       </div>
-    </div>
+    </section>
   </div>
-</div>
 
 <footer class="footer">
   <div class="footerLink">
