@@ -65,6 +65,133 @@ class IndexController extends BaseController {
         }
     }
 
+    //机构登陆
+    public function institution_login(){
+        session(null);
+
+        $data['email']=I('post.email');              //获得用户名
+        $data['password']=md5(I('post.password'));  //获得密码
+
+        $data['institution_type']=I('post.institution_type');
+
+        //确定用户类型
+        switch ($data['institution_type']) {
+            /*LP(母基金管理机构)*/
+            case '1':  $User=M('Lp');  
+                       $success_url='/Lp/individualProfile'; 
+                       $second_sign_url='/Register/lpCompanyInfo';
+                       $third_sign_url='/Register/membersInfo';
+                       $fourth_sign_url='/Register/lpFundsInfo';
+                       break;
+            /*LP(母基金管理机构)end*/
+
+            /*GP(私募股权基金管理机构)*/
+            case '2':  $User=M('Gp');  
+                       $success_url='/Gp/individualProfile'; 
+                       $second_sign_url='/Register/gpCompanyInfo';
+                       $third_sign_url='/Register/membersInfo';
+                       $fourth_sign_url='/Register/gpFundsInfo';
+                       break;
+            /*GP(私募股权基金管理机构)end*/
+
+            /*创业公司*/
+            case '3':  $User=M('Startup_company');  
+                       $success_url='/Startups/individualProfile'; 
+                       $second_sign_url='/Register/startupCompanyInfo';
+                       $third_sign_url='/Register/membersInfo';
+                       break;
+            /*创业公司end*/
+
+            /*fa服务机构*/
+            case '4':  $User=M('Fa');  
+                       $success_url='/Sa/individualProfile'; 
+                       $second_sign_url='/Register/faCompanyInfo';
+                       $third_sign_url='/Register/membersInfo';
+                       $fourth_sign_url='/Register/faSuccessCase';
+                       break;
+            /*fa服务机构end*/
+
+            /*法务服务机构*/
+            case '5':  $User=M('Legal_agency');  
+                       $success_url='/Sa/individualProfile'; 
+                       $second_sign_url='/Register/laCompanyInfo';
+                       $third_sign_url='/Register/membersInfo';
+                       $fourth_sign_url='/Register/laServiceInfo';
+                       break;
+            /*法务服务机构end*/
+
+            /*财务服务机构*/
+            case '6':  $User=M('Financial_institution');  
+                       $success_url='/Sa/individualProfile'; 
+                       $second_sign_url='/Register/fiCompanyInfo';
+                       $third_sign_url='/Register/membersInfo';
+                       $fourth_sign_url='/Register/fiServiceInfo';
+                       break;
+            /*财务服务机构end*/
+
+            /*众创空间*/
+            case '7':  $User=M('Business_incubator');  
+                       $success_url='/Sa/individualProfile'; 
+                       $second_sign_url='/Register/biCompanyInfo';
+                       $third_sign_url='/Register/membersInfo';
+                       $fourth_sign_url='/Register/biServiceInfo';
+                       break;
+            /*众创空间end*/
+
+            /*其它机构*/
+            case '8':  $User=M('Other_institution');  
+                       $success_url='/Sa/individualProfile'; 
+                       $second_sign_url='/Register/otherInstitutionInfo';
+                       $third_sign_url='/Register/membersInfo';
+                       break;
+            /*其它机构*/
+
+            /*个人*/
+            case '9':  $User=M('User');  
+                       $success_url='/Individual/individualProfile'; 
+                       break;
+                    
+            default:break;
+        }
+
+
+
+        $list=$User->getbyEmail($data['email']);    //读取用户数据
+
+        if($list){
+            if($list['password']==$data['password']){
+                session('nickname',$list['nickname']);
+                session('user_id',$list['id']);
+                session('institution_type',$list['institution_type']);
+
+                if($list['state']==1){  //账号正常，未完成全部注册
+                    switch($list['reg_step']){
+                        case 2: $this->success('登陆成功,你的信息尚未填写完全,请继续填写',__APP__.'/Home'.$second_sign_url); break;
+                        case 3: $this->success('登陆成功,你的信息尚未填写完全,请继续填写',__APP__.'/Home'.$third_sign_url); break;
+                        case 4: $this->success('登陆成功,你的信息尚未填写完全,请继续填写',__APP__.'/Home'.$fourth_sign_url); break;
+                    }
+                }else if($list['state']==2){  //账号死锁
+                    session(null);
+                    cookie(null);
+                    $this->success('该账号已被后台锁死，请联系管理员',__APP__.'/Home/Index/index');    
+                }else if($list['state']==200){  //账号已完成注册，且正常
+                    $this->success('登陆成功',__APP__.'/Home'.$success_url);    
+                }else{
+                    cookie('institution_type',$list['institution_type']);
+                    cookie('email',$list['email']);
+                    $this->error('账号尚未被激活，已经发送邮件至你邮箱，请登录邮箱点击确认',__APP__.'/Home/Register/resend_email');
+                }
+        
+            }
+            else{
+                $this->error('用户名或密码错误');
+            }
+        }
+        else{
+            $this->error('用户名或密码错误');
+        }
+    }
+
     //登出
     public function logout(){
     	session(null);

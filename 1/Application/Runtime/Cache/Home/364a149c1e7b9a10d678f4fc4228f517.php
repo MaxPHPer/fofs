@@ -87,52 +87,31 @@
                 </li>
               </ul>
             </li>
-            <?php else: ?>
+          <?php else: ?>
             <!--已登录之后的-->
-            <?php if(($type) == "1"): ?><li>
-                <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  微信
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="?l=zh-cn">
-                      <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
-              </li><?php endif; ?>
-            <?php if(($type) == "2"): ?><li>
-                <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  微信
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="?l=zh-cn">
-                      <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
-              </li><?php endif; ?>
+
+            <li>
+              <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                微信
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="?l=zh-cn">
+                    <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Home/<?php echo ($base_url); ?>/inbox">新消息</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Home/<?php echo ($base_url); ?>/individualProfile"><?php echo ($username); ?></a>
+            </li>
             <li>
               <a href="/fofs/1/index.php/Home/Index/logout">登出</a>
             </li><?php endif; ?>
@@ -190,7 +169,7 @@
             <div id="myTabContent" class="tab-content">
               <div class="tab-pane fade in active" id="personal_login">
                 <div class="col-sm-8">
-                  <form action="/fofs/1/index.php/Home/Index/login" method="post">
+                  <form action="/fofs/1/index.php/Home/Index/personal_login" method="post">
                     <div class="form-group">
                       <input type="text" class="form-control" name="user" placeholder="<?php echo (L("enter_email_address")); ?>"/>
                     </div>

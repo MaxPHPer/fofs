@@ -87,52 +87,31 @@
                 </li>
               </ul>
             </li>
-            <?php else: ?>
+          <?php else: ?>
             <!--已登录之后的-->
-            <?php if(($type) == "1"): ?><li>
-                <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  微信
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="?l=zh-cn">
-                      <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
-              </li><?php endif; ?>
-            <?php if(($type) == "2"): ?><li>
-                <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  微信
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="?l=zh-cn">
-                      <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
-              </li><?php endif; ?>
+
+            <li>
+              <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                微信
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="?l=zh-cn">
+                    <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Home/<?php echo ($base_url); ?>/inbox">新消息</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Home/<?php echo ($base_url); ?>/individualProfile"><?php echo ($username); ?></a>
+            </li>
             <li>
               <a href="/fofs/1/index.php/Home/Index/logout">登出</a>
             </li><?php endif; ?>
@@ -209,7 +188,7 @@
               </div>
               <div class="tab-pane fade" id="institution_login">
                 <div class="col-sm-8">
-                  <form action="/fofs/1/index.php/Home/Index/login" method="post">
+                  <form action="/fofs/1/index.php/Home/Index/institution_login" method="post">
                     <div class="form-group">
                       <input type="text" class="form-control" name="user" placeholder="<?php echo (L("enter_email_address")); ?>"/>
                     </div>
@@ -295,7 +274,7 @@
                            <a href="termOfUse" target="_Blank">我已阅读并同意《中国母基金联盟 用户协议》</a>
                         </label>
                       </div>
-                      <input type="hidden" name="is_personal_sign" value="1">
+                      <input type="hidden" name="is_personal_sign" value="9">
                       <input type="submit" class="btn btn-block btn-primary" value="个人注册"/>
                     </fieldset>
                   </form>
@@ -317,7 +296,7 @@
                         <input type="password" class="form-control" name="passwordTwice" placeholder="<?php echo (L("enter_repassword")); ?>" required/>
                       </div>
                       <div class="form-group">
-                          <select style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
+                          <select name='institution_type' style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
                             <option value ="0">请选择机构类型</option>
                             <option value ="1">LP</option>
                             <option value="2">GP</option>

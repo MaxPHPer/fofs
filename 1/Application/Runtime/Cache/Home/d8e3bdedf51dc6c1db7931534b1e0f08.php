@@ -107,10 +107,10 @@
               </ul>
             </li>
             <li>
-              <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
+              <a href="/fofs/1/index.php/Home/<?php echo ($base_url); ?>/inbox">新消息</a>
             </li>
             <li>
-              <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
+              <a href="/fofs/1/index.php/Home/<?php echo ($base_url); ?>/individualProfile"><?php echo ($username); ?></a>
             </li>
             <li>
               <a href="/fofs/1/index.php/Home/Index/logout">登出</a>

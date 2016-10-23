@@ -53,7 +53,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li>
             <div id="search_box">
-              <form id="search_form" method="post" action="#">
+              <form id="search_form" method="post" action="<?php echo U('Home/Search/search');?>">
                 <input type="text" id="s" placeholder="文章/机构/用户" class="swap_value" />
                 <input type="image" src="/fofs/1/Public/assets_1/img/search.png" width="20" height="20" id="go" alt="Search" title="Search" />
               </form>
@@ -87,52 +87,31 @@
                 </li>
               </ul>
             </li>
-            <?php else: ?>
+          <?php else: ?>
             <!--已登录之后的-->
-            <?php if(($type) == "1"): ?><li>
-                <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  微信
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="?l=zh-cn">
-                      <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
-              </li><?php endif; ?>
-            <?php if(($type) == "2"): ?><li>
-                <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  微信
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="?l=zh-cn">
-                      <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
-              </li><?php endif; ?>
+
+            <li>
+              <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                微信
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="?l=zh-cn">
+                    <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Home/<?php echo ($base_url); ?>/inbox">新消息</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Home/<?php echo ($base_url); ?>/individualProfile"><?php echo ($username); ?></a>
+            </li>
             <li>
               <a href="/fofs/1/index.php/Home/Index/logout">登出</a>
             </li><?php endif; ?>
@@ -148,22 +127,22 @@
       <a href="<?php echo U('Home/Index/index');?>">首页</a>
     </li>
     <li role="presentation">
-      <a href="<?php echo U('Home/Index/aboutAlliance');?>">关于联盟</a>
+      <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=9">关于联盟</a>
     </li>
     <li role="presentation">
-      <a href="#">LP</a>
+      <a href="<?php echo U('Home/Search/lpSearch');?>">LP</a>
     </li>
     <li role="presentation">
-      <a href="#">GP</a>
+      <a href="<?php echo U('Home/Search/gpSearch');?>">GP</a>
     </li>
     <li role="presentation">
-      <a href="#">创业公司</a>
+      <a href="<?php echo U('Home/Search/startUpSearch');?>">创业公司</a>
     </li>
     <li role="presentation">
-      <a href="#">服务机构</a>
+      <a href="<?php echo U('Home/Search/saSearch');?>">服务机构</a>
     </li>
     <li role="presentation">
-      <a href="#">合作</a>
+      <a href="<?php echo U('Home/Cooperations/cooperations');?>">合作</a>
     </li>
   </ul>
 </div>
@@ -178,9 +157,9 @@
         </button>
 
         <h4 class="modal-title">
-          <a href="#personal_login" data-toggle="tab" style="color:white;text-decoration:none;">个人登录</a>
+          <a href="#personal_login" data-toggle="tab" id="personal_login_title" style="color:white;text-decoration:none;">个人登录</a>
           |
-          <a href="#institution_login" data-toggle="tab" style="color:white;text-decoration:none;">机构登录</a>
+          <a href="#institution_login" data-toggle="tab" id="institution_login_title" style="color:#AFACAC;text-decoration:none;">机构登录</a>
         </h4>
       </div>
       <div class="modal-body">
@@ -190,7 +169,7 @@
             <div id="myTabContent" class="tab-content">
               <div class="tab-pane fade in active" id="personal_login">
                 <div class="col-sm-8">
-                  <form action="/fofs/1/index.php/Home/Index/login" method="post">
+                  <form action="/fofs/1/index.php/Home/Index/personal_login" method="post">
                     <div class="form-group">
                       <input type="text" class="form-control" name="user" placeholder="<?php echo (L("enter_email_address")); ?>"/>
                     </div>
@@ -209,15 +188,15 @@
               </div>
               <div class="tab-pane fade" id="institution_login">
                 <div class="col-sm-8">
-                  <form action="/fofs/1/index.php/Home/Index/login" method="post">
+                  <form action="/fofs/1/index.php/Home/Index/institution_login" method="post">
                     <div class="form-group">
-                      <input type="text" class="form-control" name="user" placeholder="<?php echo (L("enter_email_address")); ?>"/>
+                      <input type="text" class="form-control" name="email" placeholder="<?php echo (L("enter_email_address")); ?>"/>
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control" name="password" placeholder="<?php echo (L("enter_password")); ?>"/>
                     </div>
                     <div class="form-group">
-                        <select style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
+                        <select name="institution_type" style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
                           <option value ="0">请选择机构类型</option>
                           <option value ="1">LP</option>
                           <option value="2">GP</option>
@@ -710,10 +689,10 @@
 
 <footer class="footer">
   <div class="footerLink">
-    <a href="#">关于我们</a>
-    <a href="#">法律声明</a>
-    <a href="#">联系我们</a>
-    <a href="#">加入我们</a>
+    <a href="<?php echo U('Home/Index/aboutUs');?>">关于我们</a>
+    <a href="<?php echo U('Home/Index/notices');?>">法律声明</a>
+    <a href="<?php echo U('Home/Index/contactUs');?>">联系我们</a>
+    <a href="<?php echo U('Home/Index/links');?>">加入我们</a>
   </div>
 </footer>
 <!--jquery-->

@@ -8,28 +8,6 @@ class RegisterController extends BaseController{
         $this->assign('pgtype',$pgtype);
     }
 
-    protected function DeleteRegisteredInfo($supid){
-        $Company1=M('Supplier_company');
-        $Company2=M('Staffs_number');
-        $Company3=M('Company_processing_technic_second');
-        $Company4=M('Company_processing_technic_third');
-        $Company5=M('Company_production_facility');
-        $Company6=M('Company_detection_device');
-        $Company7=M('Turnover');
-        $Company8=M('Customers_distribution');
-        $Company9=M('Market_distribution');
-        $Company10=M('Representative_product');
-        $Company11=M('System_authentication_item');
-        $Company12=M('Product_authentication_item');
-        $Company13=M('Company_ability_question_choice');
-        $Company14=M('Company_business_compliance');
-
-        $Company1->delete($supid);
-        for($i=2;$i<=14;$i++){
-          $string='Company'.$i;
-          $$string->where('supplier_company_id='.$supid)->delete();
-        }
-    }
 
     //个人注册者邮件确认内容
     public function personalmailcontent($link){
@@ -556,28 +534,21 @@ class RegisterController extends BaseController{
     }
 
     //发送邮件
-    public function do_send_mail($type,$id,$state){
+    public function do_send_mail($institution_type,$id,$state){
         $email=cookie('email');
         $title=session('lang')=='en'?"Fofs Verify":"中国母基金联盟 验证邮件";
-        switch ($type) {
-            case 1: //个人
-                $link=U('Home/Register/personal_inf_confirm',array('user_id'=>$id,'state'=>$state),'',true);
-                $content=$this->personalmailcontent($link);
-            break;
+        if ($institution_type) {
 
-            case 0: //机构
-                $link=U('Home/Register/supplier_inf_confirm',array('user_id'=>$id,'state'=>$state),'',true);
-                $content=$this->suppliermailcontent($link);
-            break;
+            $link=U('Home/Register/personal_inf_confirm',array('user_id'=>$id,'state'=>$state,'institution_type'=>$institution_type),'',true);
+            $content=$this->personalmailcontent($link);
 
-            default:
-                $this->error('参数非法',__APP__.'/Home/Index');
-            break;
+        }else{
+            $this->error('参数非法',__APP__.'/Home/Index');
         }
 
         if(SUPPORTsendMail($email,$title,$content)) {
-            cookie('type',null);
-            cookie('type',$type);
+            cookie('institution_type',null);
+            cookie('institution_type',$institution_type);
             return 1;
         }
         else return 0;
@@ -585,16 +556,48 @@ class RegisterController extends BaseController{
 
     //重新发送
     public function resend_email(){
-        $type=cookie('type');
+        $institution_type=cookie('institution_type');
         $data['email']=cookie('email');
-        switch ($type) {
-            case 1:   $User=M('User'); //个人注册者
-                break;
-            case 2:   $User=M('Supplier');  //供应商
-                break;
-            default:  $this->error('参数非法',__APP__.'/Home/Index');
-                break;
+        $data['institution_type']=cookie('institution_type');
+        switch ($data['institution_type']) {
+            /*LP(母基金管理机构)*/
+            case '1':  $User=M('Lp');   break;
+            /*LP(母基金管理机构)end*/
+
+            /*GP(私募股权基金管理机构)*/
+            case '2':  $User=M('Gp');  break;
+            /*GP(私募股权基金管理机构)end*/
+
+            /*创业公司*/
+            case '3':  $User=M('Startup_company');  break;
+            /*创业公司end*/
+
+            /*fa服务机构*/
+            case '4':  $User=M('Fa');  break;
+            /*fa服务机构end*/
+
+            /*法务服务机构*/
+            case '5':  $User=M('Legal_agency');  break;
+            /*法务服务机构end*/
+
+            /*财务服务机构*/
+            case '6':  $User=M('Financial_institution');  break;
+            /*财务服务机构end*/
+
+            /*众创空间*/
+            case '7':  $User=M('Business_incubator');  break;
+            /*众创空间end*/
+
+            /*其它机构*/
+            case '8':  $User=M('Other_institution'); break;
+            /*其它机构*/
+
+            /*个人*/
+            case '9':  $User=M('User'); break;
+                    
+            default:break;
         }
+
         $id=$User->where($data)->getField('id');
 
         $check=md5(time().$data['email']);  //创建验证码
@@ -602,7 +605,7 @@ class RegisterController extends BaseController{
         $res=$User->where($data)->setField('state',$state);
 
         if($res){
-            $this->do_send_mail($type,$id,$state);
+            $this->do_send_mail($institution_type,$id,$state);
             $this->redirect('/Home/Register/emailCheck',0);
         }
         else $this->error($User->getError());
@@ -630,69 +633,78 @@ class RegisterController extends BaseController{
         if(md5($data['password'])!=md5($data['passwordTwice']))
             $this->error('两次密码不一致!');
         else{
-            switch ($data['is_personal_sign']) {
-            /*个人注册者*/
-            case '1':           
+            //个人注册者
+            if($data['is_personal_sign']){
                 $User=M('User');
+            }else{
+                switch ($data['institution_type']) {
+                    /*LP(母基金管理机构)*/
+                    case '1':  $User=M('Lp');  break;
+                    /*LP(母基金管理机构)end*/
 
-                $check=md5(time().$data['email']);  //创建验证码
-                $data['state']=substr($check,0,20);
-                $data['password']=md5($data['password']);
+                    /*GP(私募股权基金管理机构)*/
+                    case '2':  $User=M('Gp');  break;
+                    /*GP(私募股权基金管理机构)end*/
 
-                if($User->create($data)){
-                    try{
-                        $res=$User->add();
-                    }catch(\Exception $e){      //错误处理
-                        $code=$e->getCode();
-                        if($code=='23000')  $this->error('该用户已存在');
-                    }
-                    if($res){
-                        cookie(null);
-                        cookie('email',$data['email']);
-                        if($this->do_send_mail(1,$res,$data['state']))
-                            $this->redirect('emailCheck');
-                        else $this->error('邮件发送错误!');
-                    }
+                    /*创业公司*/
+                    case '3':  $User=M('Startup_company');  break;
+                    /*创业公司end*/
+
+                    /*fa服务机构*/
+                    case '4':  $User=M('Fa');  break;
+                    /*fa服务机构end*/
+
+                    /*法务服务机构*/
+                    case '5':  $User=M('Legal_agency');  break;
+                    /*法务服务机构end*/
+
+                    /*财务服务机构*/
+                    case '6':  $User=M('Financial_institution');  break;
+                    /*财务服务机构end*/
+
+                    /*众创空间*/
+                    case '7':  $User=M('Business_incubator');  break;
+                    /*众创空间end*/
+
+                    /*其它机构*/
+                    case '8':  $User=M('Other_institution');  break;
+                    /*其它机构*/
+
+
+                    default:break;
+                }              
+            }
+
+
+            $check=md5(time().$data['email']);  //创建验证码
+            $data['state']=substr($check,0,20); //存储验证码
+            $data['reg_step']=1;
+            $data['password']=md5($data['password']);
+
+            if($User->create($data)){
+                try{
+                    $res=$User->add();
+                }catch(\Exception $e){      //错误处理
+                    $code=$e->getCode();
+                    if($code=='23000')  $this->error('该用户已存在');
                 }
-                else $this->error($User->getError());
-                
-            break;
-            /*个人注册者end*/
-
-
-            /*供应商*/
-            case '0':
-                $Supplier=D('Supplier');
-
-                $check=md5(time().$data['email']);  //创建验证码
-                $data['state']=substr($check,0,20);
-                $data['password']=md5($data['password']);
-
-                if($Supplier->create($data)){
-                    try{
-                        $res=$Supplier->add();
-                    }catch(\Exception $e){      //错误处理
-                        $code=$e->getCode();
-                        if($code=='23000')  $this->error('该用户已存在');
-                    }
-                    if($res){
-                        cookie(null);
-                        cookie('email',$data['email']);
-                        if($this->do_send_mail(2,$res,$data['state']))
-                            $this->redirect('emailCheck',0);
-                        else $this->error('邮件发送错误!');
-                    }
+                if($res){
+                    cookie(null);
+                    cookie('email',$data['email']);
+                    if($this->do_send_mail($data['is_personal_sign']?$data['is_personal_sign']:$data['institution_type'],$res,$data['state'])){
+                        $this->redirect('emailCheck');
+                    }else{
+                        $this->error('邮件发送错误!');
+                    } 
                 }
-                else $this->error($Supplier->getError());
-            break;
-            /*供应商end*/
-
-            default:break;
+            }
+            else {
+              $this->error($User->getError());
             }
         }   
     }
 
-	//注册后验证邮箱提示页
+	  //注册后验证邮箱提示页
     public function emailCheck(){
         $email=cookie('email');
         $this->assign('email',$email);
@@ -704,10 +716,49 @@ class RegisterController extends BaseController{
         $this->display();
     }
 
-    //个人注册者邮件信息确认
+    //注册者邮件信息确认
     public function personal_inf_confirm(){
-        $User=M('User');
+
         $data=I('get.');
+
+        switch ($data['institution_type']) {
+            /*LP(母基金管理机构)*/
+            case '1':  $User=M('Lp');  $success_url='personalInfo'; break;
+            /*LP(母基金管理机构)end*/
+
+            /*GP(私募股权基金管理机构)*/
+            case '2':  $User=M('Gp');  $success_url='personalInfo'; break;
+            /*GP(私募股权基金管理机构)end*/
+
+            /*创业公司*/
+            case '3':  $User=M('Startup_company');  $success_url='personalInfo'; break;
+            /*创业公司end*/
+
+            /*fa服务机构*/
+            case '4':  $User=M('Fa');  $success_url='personalInfo'; break;
+            /*fa服务机构end*/
+
+            /*法务服务机构*/
+            case '5':  $User=M('Legal_agency');  $success_url='personalInfo'; break;
+            /*法务服务机构end*/
+
+            /*财务服务机构*/
+            case '6':  $User=M('Financial_institution');  $success_url='personalInfo'; break;
+            /*财务服务机构end*/
+
+            /*众创空间*/
+            case '7':  $User=M('Business_incubator');  $success_url='personalInfo'; break;
+            /*众创空间end*/
+
+            /*其它机构*/
+            case '8':  $User=M('Other_institution');  $success_url='personalInfo'; break;
+            /*其它机构*/
+
+            /*个人*/
+            case '9':  $User=M('User');  $success_url='individualInfo'; break;
+                    
+            default:break;
+        }
         
         if(!$data)  $this->error('非法访问',__APP__."/Home/Index/");
 
@@ -715,20 +766,26 @@ class RegisterController extends BaseController{
         $email=$User->where('id='.$data['user_id'])->getField('email');
 
         if($state=='1'){
-            $this->success('该用户已激活',__APP__."/Home/Index");
+            $this->success('该用户已激活,请登录',__APP__."/Home/Index");
         }
         else if($state=='2'){
-            $this->error('该用户已停用',__APP__."/Home/Index");
+            $this->error('该用户已停用,请联系管理员',__APP__."/Home/Index");
         }
         else{
             if($state==$data['state']){
                 $res=$User->where('id='.$data['user_id'])->setField('state',1);
+                $res=$User->where('id='.$data['user_id'])->setField('reg_step',2);
+                $res=$User->where('id='.$data['user_id'])->setField('reg_time',time());
+
                 if($res){
                     cookie(null);
                     cookie('user_id',$data['user_id']);
-                    $this->success('邮箱确认成功！请继续填写相关信息',__APP__.'/Home/Register/individualInfo');
+                    cookie('institution_type',$data['institution_type']);
+                    $this->success('邮箱确认成功！请继续填写相关信息',__APP__.'/Home/Register/'.$success_url);
                 }
-                else $this->error($User->getError());
+                else{
+                    $this->error($User->getError());
+                } 
                 
             }
             else {
@@ -738,7 +795,7 @@ class RegisterController extends BaseController{
                 if($res){
                     cookie(null);
                     cookie('email',$data['email']);
-                    $this->do_send_mail(1,$data['user_id'],$state);
+                    $this->do_send_mail($data['institution_type'],$data['user_id'],$state);
                     $this->error('邮箱验证有误！请重新验证',__APP__."/Home/Register/emailCheck");
                 }
             }
@@ -768,6 +825,7 @@ class RegisterController extends BaseController{
       //电话与传真的区域代码为用户自行输入，非区域ID
         $User=M('User');
         $data=I('post.');
+        $data['state']=200;  //表示已经注册完成
 
         $upload = new \Think\Upload();// 实例化上传类
         $upload->maxSize   =     3145728 ;// 设置附件上传大小
@@ -915,6 +973,7 @@ class RegisterController extends BaseController{
         }
         else $this->error('非法访问',__APP__."/Home/Index/");
     }
+
     public function upload(){
       $this->display();
     }
@@ -965,7 +1024,7 @@ class RegisterController extends BaseController{
     }
 
 
-    //采购商发送注册成功邮件
+    //发送注册成功邮件
     private function finishedemail($email,$name){
       $title='注册成功';
       switch (cookie('think_language')) {
