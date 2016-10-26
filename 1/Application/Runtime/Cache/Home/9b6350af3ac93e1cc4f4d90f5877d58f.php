@@ -331,7 +331,7 @@
             <div class="well">
               <h3>修改成员信息</h3>
               <hr/>
-              <form class="form-horizontal" action="/fofs/1/index.php/Home/Lp/do_modifyMember"  method="post" >
+              <form class="form-horizontal" action=""  method="post" >
                 <div class="panel-body">
                     <!--已有团队成员-->
                     <?php if(is_array($members)): foreach($members as $key=>$vo): ?><div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
@@ -348,7 +348,7 @@
                                   <div class="col-sm-4">
 
                                         <input type="text" class="form-control" id="username" name="username" value="<?php echo ($vo['username']); ?>" />
-
+                                        <input type="hidden" name="id" value="<?php echo ($vo['id']); ?>">
                                   </div>
 
                                 </div>
@@ -430,7 +430,7 @@
                             </div>
                             <div class="row">
                                   <div class="col-sm-4">
-                                    <input type="submit" class="btn btn-primary btn-block"  value="保存修改" onclick="form1.action='/fofs/1/index.php/Home/Register/add_membersInfo';form1.submit();"/>
+                                    <input type="submit" class="btn btn-primary btn-block"  value="保存修改" onclick="form1.action='/fofs/1/index.php/Home/Lp/do_modifyMember';form1.submit();"/>
                                   </div>
                             </div>
                           </div>

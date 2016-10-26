@@ -327,7 +327,49 @@ class LpController extends BaseController {
 
     //保存成员信息
     public function do_modifyMember(){
-        $this->display();
+        $User=M('Senior_executive');
+
+        $data['username']=I('post.username');
+        $data['function']=I('post.function');
+        $data['id']=I('post.id');
+
+        if($User->create($data)){
+            //保存个人基本信息
+            $user_id=$User->save();
+            $where['institution_id']=session('user_id');
+            //设置第一位为法人或代表
+            if($User->where($where)->count()==1){
+                $User->where('id='.(int)$user_id)->setField('is_representative',1);
+            }
+
+            if(I('post.business_experience')){
+                //保存工作经历
+                $Business_experience=M('Business_experience');
+                // 批量添加数据
+                $experience=I('post.business_experience');
+                for($i=0;$i<count($experience['company_name']);$i++){
+                    $dataList[] = array('senior_executive_id'=>(int)$user_id,'company_name'=>$experience['company_name'][$i],'function'=>$experience['function'][$i],'start_time'=>$experience['start_time'][$i],'end_time'=>$experience['end_time'][$i]);
+                }
+
+                $result=$Business_experience->addAll($dataList);    
+                
+                if($result){
+                    $this->success('Success！保存成功');
+                }else{
+                    $this->error($Business_experience->getError());
+                }      
+            }else{
+                if($user_id){
+                    $this->success('Success！保存成功',__APP__.'/Home/Lp/membersInfo');
+                }
+            }
+
+
+
+        }
+        else{
+            $this->error($User->getError());
+        }
     }
 
     //删除成员信息
