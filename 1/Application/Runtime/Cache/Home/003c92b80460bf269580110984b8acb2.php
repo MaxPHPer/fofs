@@ -239,40 +239,190 @@
 
     <section class="content-wrap">
       <div class="container">
+        <div class="row">
+          <div class="col-md-4 main-content">
+                          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span><?php echo ($user['institution_fullname_cn']); ?></div>
+                <div class="panel-body">
+                  <div class="media">
+                    <div class="media-left">
+                      <a href="#">
+                        <?php if($user['institution_logo_img'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/<?php echo ($user['institution_logo_img']); ?>" alt="头像" height="100" width="100">
+                        <?php else: ?>
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
+                      </a>
+                    </div>
+                    <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
 
-          <div class="col-md-10 col-md-offset-1">
-            <div class="well">
-              <div style="margin-left: auto;margin-right: auto; display: table;">
-                  <h2><?php echo ($article['title']); ?></h2>
-              </div>
-              <div style="float: right;">
-                <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-calendar"></span><?php echo date('Y-m-d H:i:s',$article['pub_time']) ?></div>
-                <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-user"></span>
-                    <?php switch($article['institution_type']): case "1": ?>LP<?php break;?>
-                      <?php case "2": ?>GP<?php break;?>
-                      <?php case "3": ?>创业公司<?php break;?>
-                      <?php case "4": ?>FA<?php break;?>
-                      <?php case "5": ?>法务服务机构<?php break;?>
-                      <?php case "6": ?>财务服务机构<?php break;?>
-                      <?php case "7": ?>众创空间<?php break;?>
-                      <?php case "8": ?>其它机构<?php break;?>
-                      <?php case "9": ?>个人<?php break;?>
-                      <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
-                    &nbsp;&nbsp;
-                    <?php echo ($article['author_name']); ?>
+                      <p><i class="fa fa-envelope-o fa-md"></i> <?php echo ($user['email']); ?></p>
+                      <p><i class="glyphicon glyphicon-th-list"></i>LP</p>
+                      <a class="btn btn-default" href="modifyPersonalInfo" role="button">修改相关信息</a>
+                    </div>
+                  </div>
+                </div>
+              </div><!--头像-->
 
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/individualProfile');?>">
+                      <span class="glyphicon glyphicon-home"></span>机构主页
+                      
+                    </a>
+                  </div>
                 </div>
-              </div>
-              
-              <hr/>
-              <div class="row panel-body">
-                <div class='col-md-10 col-md-offset-1'>
-                    <?php echo ($article['content']); ?>
+              </div><!--机构主页-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/myCompany');?>">
+                      <span class="glyphicon glyphicon-user"></span>机构成员
+                      
+                    </a>
+                  </div>
                 </div>
-              </div>
+              </div><!--机构成员-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/accountSetting');?>">
+                      <span class="glyphicon glyphicon-pencil"></span>账号设置
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--账号设置-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/inbox');?>">
+                      <span class="glyphicon glyphicon-envelope"></span>消息
+                      <?php if($amount['unread'] != 0): ?><span class="badge"><?php echo ($amount['unread']); ?></span><?php endif; ?>
+                    </a>
+                  </div>
+                </div>
+              </div><!--消息-->
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <span class="glyphicon glyphicon-globe"></span>圈子
+                    </a>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <div class="list-group">
+                      <a href="<?php echo U('Home/Lp/myFollows');?>" class="list-group-item">关注我的<span class="badge"><?php echo ($amount['checking']); ?></span></a>
+                      <a href="<?php echo U('Home/Lp/myFollowing');?>" class="list-group-item ">我关注的<span class="badge"><?php echo ($amount['accepted']); ?></span></a>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div><!--圈子-->
             </div>
           </div>
+          <div class="col-md-8">
+            <div class="well">
+              <h3>修改管理员信息</h3>
+              <hr/>
+          <div class="panel-body">
+            <form class="form-horizontal" action="/fofs/1/index.php/Home/Lp/save_personalInfo" enctype="multipart/form-data" method="post" >
+              
+              <div class="form-group">
+                <label for="institution_abbr" class="col-sm-3 control-label"><span>*</span>机构简称</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="institution_abbr" name="institution_abbr" value="<?php echo ($user['institution_abbr']); ?>" disabled required/>
+                </div>
+              </div><!--机构简称-->
 
+
+              <div class="form-group">
+                <label for="institution_type" class="col-sm-3 control-label"><span>*</span>机构类型</label>
+                <div class="col-sm-8">
+                  <select name="institution_type" id="institution_type" class="form-control" disabled>
+                        <?php switch($user['institution_type']): case "1": ?><option value ="1">母基金</option><?php break;?>
+                            <?php case "2": ?><option value="2">基金</option><?php break;?>
+                            <?php case "3": ?><option value="3">创业公司</option><?php break;?>
+                            <?php case "4": ?><option value ="4">FA机构</option><?php break;?>
+                            <?php case "5": ?><option value="5">法务机构</option><?php break;?>
+                            <?php case "6": ?><option value="6">财务机构</option><?php break;?>
+                            <?php case "7": ?><option value ="7">众创空间</option><?php break;?>
+                            <?php case "8": ?><option value="8">其它(媒体、政府机构等)</option><?php break; endswitch;?>
+                  </select>
+                </div>
+              </div><!--所属行业-->
+              
+              <div class="form-group">
+                <label for="email" class="col-sm-3 control-label"><span>*</span>公司邮箱账号</label>
+                <div class="col-sm-8">
+                  <input type="email" class="form-control" id="email" disabled="disabled" value="<?php echo ($user['email']); ?>" required/>
+                </div>
+              </div><!--电子邮件-->
+            
+    
+              <div class="form-group">
+                <label for="admin_name" class="col-sm-3 control-label"><span>*</span>账号管理人姓名</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="admin_name" name="admin_name" value="<?php echo ($user['admin_name']); ?>" required/>
+                </div>
+              </div><!--姓名-->
+
+
+              <div class="form-group">
+                <label for="admin_function" class="col-sm-3 control-label">公司职务</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="admin_function" name="admin_function" value="<?php echo ($user['admin_function']); ?>"/>
+                </div>
+              </div><!--公司职务-->
+
+
+              <div class="form-group">
+                <label for="admin_telephone" class="col-sm-3 control-label">电话</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="admin_telephone" name="admin_telephone" value="<?php echo ($user['admin_telephone']); ?>"/>
+                </div>
+              </div><!--电话-->
+
+              <div class="form-group">
+                <label for="admin_mobilephone" class="col-sm-3 control-label">手机</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="admin_mobilephone" name="admin_mobilephone" value="<?php echo ($user['admin_mobilephone']); ?>"/>
+                </div>
+              </div><!--手机-->
+
+
+              <div class="form-group">
+                <label for="admin_email" class="col-sm-3 control-label">邮箱</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="admin_email" name="admin_email" value="<?php echo ($user['admin_email']); ?>"/>
+                </div>
+              </div><!--邮箱-->
+              
+
+              <div class="form-group">
+                <label for="admin_idcard" class="col-sm-3 control-label">身份证号码</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="admin_idcard" name="admin_idcard" value="<?php echo ($user['admin_idcard']); ?>"/>
+                </div>
+              </div><!--身份证号码-->
+              
+            
+            <div class="alert alert-warning" role="alert">
+              <span>*</span>必填
+            </div>
+            <input type="submit" value="保存修改" class="btn btn-block btn-primary"/>
+          </div>
+          </form>
+               &nbsp;
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>

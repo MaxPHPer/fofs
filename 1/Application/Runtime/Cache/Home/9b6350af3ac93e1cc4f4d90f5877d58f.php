@@ -235,90 +235,211 @@
   </div>
 </div>
   <!--登录模态框结束-->
- <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
 
     <section class="content-wrap">
       <div class="container">
         <div class="row">
-          <div class="col-md-10 main-content col-md-offset-1">
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="col-md-4 main-content">
+                          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span><?php echo ($user['institution_fullname_cn']); ?></div>
+                <div class="panel-body">
+                  <div class="media">
+                    <div class="media-left">
+                      <a href="#">
+                        <?php if($user['institution_logo_img'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/<?php echo ($user['institution_logo_img']); ?>" alt="头像" height="100" width="100">
+                        <?php else: ?>
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
+                      </a>
+                    </div>
+                    <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
 
+                      <p><i class="fa fa-envelope-o fa-md"></i> <?php echo ($user['email']); ?></p>
+                      <p><i class="glyphicon glyphicon-th-list"></i>LP</p>
+                      <a class="btn btn-default" href="modifyPersonalInfo" role="button">修改相关信息</a>
+                    </div>
+                  </div>
+                </div>
+              </div><!--头像-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/individualProfile');?>">
+                      <span class="glyphicon glyphicon-home"></span>机构主页
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--机构主页-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/myCompany');?>">
+                      <span class="glyphicon glyphicon-user"></span>机构成员
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--机构成员-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/accountSetting');?>">
+                      <span class="glyphicon glyphicon-pencil"></span>账号设置
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--账号设置-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/inbox');?>">
+                      <span class="glyphicon glyphicon-envelope"></span>消息
+                      <?php if($amount['unread'] != 0): ?><span class="badge"><?php echo ($amount['unread']); ?></span><?php endif; ?>
+                    </a>
+                  </div>
+                </div>
+              </div><!--消息-->
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingTwo">
                   <div class="panel-title">
-                    <div class="collapsed">
-                      所有
-                      <?php switch($article_type): case "1": ?>新闻资讯<?php break;?>
-                                <?php case "2": ?>政策法规<?php break;?>
-                                <?php case "3": ?>投资事件<?php break;?>
-                                <?php case "4": ?>联盟活动<?php break;?>
-                                <?php case "5": ?>关于我们<?php break;?>
-                                <?php case "6": ?>法律声明<?php break;?>
-                                <?php case "7": ?>联系我们<?php break;?>
-                                <?php case "8": ?>加入我们<?php break;?>
-                                <?php case "9": ?>联盟介绍<?php break;?>
-                                <?php case "10": ?>组织架构<?php break;?>
-                                <?php case "11": ?>联盟成员<?php break;?>
-                                <?php case "12": ?>秘书长<?php break;?>
-                                <?php case "13": ?>合作伙伴<?php break;?>
-                                <?php case "14": ?>加入联盟<?php break;?>
-                                <?php case "15": ?>合作<?php break; endswitch;?>
-                    </div>
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <span class="glyphicon glyphicon-globe"></span>圈子
+                    </a>
                   </div>
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
                     <div class="list-group">
-
-                                            <?php if(is_array($news)): foreach($news as $key=>$vo): ?><div class="list-group-item">
-                          <a href="<?php echo U('Home/Index/articleDetail');?>?article_id=<?php echo ($vo['id']); ?>" >
-                            <?php echo ($vo['title']); ?>
-                          </a>
-                            <div style="float: right;">
-                              
-                              
-                              <div style="float: right; margin-right:25px;">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                                <?php echo date('Y-m-d H:i:s',$vo['pub_time']) ?>
-                              </div>
-                              <div style="float: right; margin-right:25px;">
-                                <span class="glyphicon glyphicon-user"></span>
-                                <?php switch($vo['institution_type']): case "1": ?>LP<?php break;?>
-                                    <?php case "2": ?>GP<?php break;?>
-                                    <?php case "3": ?>创业公司<?php break;?>
-                                    <?php case "4": ?>FA<?php break;?>
-                                    <?php case "5": ?>法务服务机构<?php break;?>
-                                    <?php case "6": ?>财务服务机构<?php break;?>
-                                    <?php case "7": ?>众创空间<?php break;?>
-                                    <?php case "8": ?>其它机构<?php break;?>
-                                    <?php case "9": ?>个人<?php break;?>
-                                    <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
-                                &nbsp;&nbsp;
-                                <?php echo ($vo['author_name']); ?>
-                     
-                              </div>
-
-                            </div>
-
-                   
-                          </div><?php endforeach; endif; ?>
+                      <a href="<?php echo U('Home/Lp/myFollows');?>" class="list-group-item">关注我的<span class="badge"><?php echo ($amount['checking']); ?></span></a>
+                      <a href="<?php echo U('Home/Lp/myFollowing');?>" class="list-group-item ">我关注的<span class="badge"><?php echo ($amount['accepted']); ?></span></a>
                       
                     </div>
                   </div>
                 </div>
-                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body center">
-                    
-                      <?php echo ($page); ?>
-                 
-                  </div>
-                </div>
-              </div><!--新闻列表-->
-
-
+              </div><!--圈子-->
             </div>
           </div>
+          <div class="col-md-8">
+            <div class="well">
+              <h3>修改成员信息</h3>
+              <hr/>
+              <form class="form-horizontal" action="/fofs/1/index.php/Home/Lp/do_modifyMember"  method="post" >
+                <div class="panel-body">
+                    <!--已有团队成员-->
+                    <?php if(is_array($members)): foreach($members as $key=>$vo): ?><div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                          <div class="panel-body">
+                            <div class="repeat_people ">
+                              <div class="borderBottom" style="margin-bottom:20px;">
+                                <div class="row" >
+                                  <div class="col-sm-3">
+                                    
+                                      <label for="username" class="col-sm-12 control-label"><span>*</span>姓名</label>
+                
+                                  </div>
 
+                                  <div class="col-sm-4">
+
+                                        <input type="text" class="form-control" id="username" name="username" value="<?php echo ($vo['username']); ?>" />
+
+                                  </div>
+
+                                </div>
+
+                                <div class="row" style="margin-top:10px;">
+                                  <div class="col-sm-3">
+                                    
+                                      <label for="function" class="col-sm-12 control-label"><span>*</span>职务</label>
+                
+                                  </div>
+
+                                  <div class="col-sm-4">
+
+                                        <input type="text" class="form-control" id="function" name="function"  value="<?php echo ($vo['function']); ?>"/>
+
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-3 ">
+                                      <label for="userName" class="col-sm-12 control-label"><b>从业经历</b></label>
+                                    </div>
+                                </div>
+
+                                <div class="repeat">
+                                  <div class="row" style="margin-top:10px;">
+                                    
+                                    <div class="col-sm-4 ">
+                                      公司名称<input type="text" class="col-sm-12 form-control" name="business_experience[company_name][]"/>
+                                    </div>
+
+                                    <div class="col-sm-4 ">
+                                      职位<input type="text" class="form-control" name="business_experience[function][]"/>
+                                    </div>
+                                   
+                                    <div class="col-sm-4 ">
+                                      任职年月<input type="text" class="form-control" name="business_experience[start_time][]"/>
+                                      至<input type="text" class="form-control" name="business_experience[end_time][]"/>
+                                    </div>
+
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-sm-10"></div>
+                                  <div class="col-sm-2">
+                                    <button type="button" class="btn btn-primary " style="margin-top:10px;" id="addNew2">再添加从业经历</button>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-3 text_right">
+                                      已有从业经历:
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                  <?php if(is_array($vo['business_experience'])): foreach($vo['business_experience'] as $key=>$business_experience): ?><div class="row" style="margin-top:10px;">
+                                        
+                                        <div class="col-sm-3 text_right">
+                                              <?php echo ($business_experience['company_name']); ?>
+                                        </div>
+                                       
+                                          
+                                        <div class="col-sm-3">
+                                              <?php echo ($business_experience['function']); ?>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                          <?php echo ($business_experience['start_time']); ?>-<?php echo ($business_experience['end_time']); ?>
+                                        </div>
+
+                                        <div class="col-sm-2 text_right">
+                                            <span class="glyphicon glyphicon-trash"></span><a href="<?php echo U('Home/Lp/deleteExperience');?>?id=<?php echo ($business_experience['id']); ?>">删除</a>
+                                        </div>
+                              
+                                      </div><?php endforeach; endif; ?>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                                  <div class="col-sm-4">
+                                    <input type="submit" class="btn btn-primary btn-block"  value="保存修改" onclick="form1.action='/fofs/1/index.php/Home/Register/add_membersInfo';form1.submit();"/>
+                                  </div>
+                            </div>
+                          </div>
+                        </div><?php endforeach; endif; ?>
+                </div>
+              </form>
+               &nbsp;
+            </div>
+          </div>
         </div>
       </div>
     </section>

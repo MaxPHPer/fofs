@@ -87,52 +87,31 @@
                 </li>
               </ul>
             </li>
-            <?php else: ?>
+          <?php else: ?>
             <!--已登录之后的-->
-            <?php if(($type) == "1"): ?><li>
-                <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  微信
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="?l=zh-cn">
-                      <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
-              </li><?php endif; ?>
-            <?php if(($type) == "2"): ?><li>
-                <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  微信
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="?l=zh-cn">
-                      <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/inbox');?>">新消息</a>
-              </li>
-              <li>
-                <a href="<?php echo U('Home/Individual/individualProfile');?>"><?php echo ($username); ?></a>
-              </li><?php endif; ?>
+
+            <li>
+              <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                微信
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="?l=zh-cn">
+                    <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Home/<?php echo ($base_url); ?>/inbox">新消息</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Home/<?php echo ($base_url); ?>/individualProfile"><?php echo ($username); ?></a>
+            </li>
             <li>
               <a href="/fofs/1/index.php/Home/Index/logout">登出</a>
             </li><?php endif; ?>
@@ -151,16 +130,16 @@
       <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=9">关于联盟</a>
     </li>
     <li role="presentation">
-      <a href="#">LP</a>
+      <a href="<?php echo U('Home/Search/lpSearch');?>">LP</a>
     </li>
     <li role="presentation">
-      <a href="#">GP</a>
+      <a href="<?php echo U('Home/Search/gpSearch');?>">GP</a>
     </li>
     <li role="presentation">
-      <a href="#">创业公司</a>
+      <a href="<?php echo U('Home/Search/startUpSearch');?>">创业公司</a>
     </li>
     <li role="presentation">
-      <a href="#">服务机构</a>
+      <a href="<?php echo U('Home/Search/saSearch');?>">服务机构</a>
     </li>
     <li role="presentation">
       <a href="<?php echo U('Home/Cooperations/cooperations');?>">合作</a>
@@ -190,7 +169,7 @@
             <div id="myTabContent" class="tab-content">
               <div class="tab-pane fade in active" id="personal_login">
                 <div class="col-sm-8">
-                  <form action="/fofs/1/index.php/Home/Index/login" method="post">
+                  <form action="/fofs/1/index.php/Home/Index/personal_login" method="post">
                     <div class="form-group">
                       <input type="text" class="form-control" name="user" placeholder="<?php echo (L("enter_email_address")); ?>"/>
                     </div>
@@ -209,15 +188,15 @@
               </div>
               <div class="tab-pane fade" id="institution_login">
                 <div class="col-sm-8">
-                  <form action="/fofs/1/index.php/Home/Index/login" method="post">
+                  <form action="/fofs/1/index.php/Home/Index/institution_login" method="post">
                     <div class="form-group">
-                      <input type="text" class="form-control" name="user" placeholder="<?php echo (L("enter_email_address")); ?>"/>
+                      <input type="text" class="form-control" name="email" placeholder="<?php echo (L("enter_email_address")); ?>"/>
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control" name="password" placeholder="<?php echo (L("enter_password")); ?>"/>
                     </div>
                     <div class="form-group">
-                        <select style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
+                        <select name="institution_type" style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
                           <option value ="0">请选择机构类型</option>
                           <option value ="1">LP</option>
                           <option value="2">GP</option>
@@ -260,40 +239,203 @@
 
     <section class="content-wrap">
       <div class="container">
+        <div class="row">
+          <div class="col-md-4 main-content">
+                          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span><?php echo ($user['institution_fullname_cn']); ?></div>
+                <div class="panel-body">
+                  <div class="media">
+                    <div class="media-left">
+                      <a href="#">
+                        <?php if($user['institution_logo_img'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/<?php echo ($user['institution_logo_img']); ?>" alt="头像" height="100" width="100">
+                        <?php else: ?>
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
+                      </a>
+                    </div>
+                    <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
 
-          <div class="col-md-10 col-md-offset-1">
-            <div class="well">
-              <div style="margin-left: auto;margin-right: auto; display: table;">
-                  <h2><?php echo ($article['title']); ?></h2>
-              </div>
-              <div style="float: right;">
-                <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-calendar"></span><?php echo date('Y-m-d H:i:s',$article['pub_time']) ?></div>
-                <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-user"></span>
-                    <?php switch($article['institution_type']): case "1": ?>LP<?php break;?>
-                      <?php case "2": ?>GP<?php break;?>
-                      <?php case "3": ?>创业公司<?php break;?>
-                      <?php case "4": ?>FA<?php break;?>
-                      <?php case "5": ?>法务服务机构<?php break;?>
-                      <?php case "6": ?>财务服务机构<?php break;?>
-                      <?php case "7": ?>众创空间<?php break;?>
-                      <?php case "8": ?>其它机构<?php break;?>
-                      <?php case "9": ?>个人<?php break;?>
-                      <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
-                    &nbsp;&nbsp;
-                    <?php echo ($article['author_name']); ?>
+                      <p><i class="fa fa-envelope-o fa-md"></i> <?php echo ($user['email']); ?></p>
+                      <p><i class="glyphicon glyphicon-th-list"></i>LP</p>
+                      <a class="btn btn-default" href="modifyPersonalInfo" role="button">修改相关信息</a>
+                    </div>
+                  </div>
+                </div>
+              </div><!--头像-->
 
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/individualProfile');?>">
+                      <span class="glyphicon glyphicon-home"></span>机构主页
+                      
+                    </a>
+                  </div>
                 </div>
-              </div>
-              
-              <hr/>
-              <div class="row panel-body">
-                <div class='col-md-10 col-md-offset-1'>
-                    <?php echo ($article['content']); ?>
+              </div><!--机构主页-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/myCompany');?>">
+                      <span class="glyphicon glyphicon-user"></span>机构成员
+                      
+                    </a>
+                  </div>
                 </div>
-              </div>
+              </div><!--机构成员-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/accountSetting');?>">
+                      <span class="glyphicon glyphicon-pencil"></span>账号设置
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--账号设置-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/inbox');?>">
+                      <span class="glyphicon glyphicon-envelope"></span>消息
+                      <?php if($amount['unread'] != 0): ?><span class="badge"><?php echo ($amount['unread']); ?></span><?php endif; ?>
+                    </a>
+                  </div>
+                </div>
+              </div><!--消息-->
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <span class="glyphicon glyphicon-globe"></span>圈子
+                    </a>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <div class="list-group">
+                      <a href="<?php echo U('Home/Lp/myFollows');?>" class="list-group-item">关注我的<span class="badge"><?php echo ($amount['checking']); ?></span></a>
+                      <a href="<?php echo U('Home/Lp/myFollowing');?>" class="list-group-item ">我关注的<span class="badge"><?php echo ($amount['accepted']); ?></span></a>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div><!--圈子-->
             </div>
           </div>
+          <div class="col-md-8">
+            <div class="well">
+              <h3>账号设置</h3>
+              <hr/>
+              
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                  <h3><span class="glyphicon glyphicon-home"></span>账号信息(<a href="<?php echo U('Home/Lp/modifyPersonalInfo');?>">修改</a>)</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
 
+                         <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  管理员姓名:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['admin_name']); ?>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  登录邮箱账号:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['admin_email']); ?>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  管理员电话:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['admin_telephone']); ?>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  管理员手机:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['admin_mobilephone']); ?>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  管理员身份证号:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['admin_idcard']); ?>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  管理员职务:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['admin_function']); ?>
+                              </div>
+                          </div>
+                          
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-check"></span>修改密码</h3>
+                        <div class="alert alert-danger" role="alert">
+                            <form method="post" action="<?php echo U('Home/Lp/set_password');?>">
+                                <div class='row form-group' >
+                                    <div class="col-md-4 text_right">
+                                        原密码
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="password" class="form-control" name="oldpassword" placeholder="请填写原密码" required/>
+                                    </div>
+                                </div>
+                                <div class='row form-group' >
+                                    <div class="col-md-4 text_right">
+                                        新密码
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="password" class="form-control" name="newpassword" placeholder="请填写新密码" required/>
+                                    </div>
+                                </div>
+                                <div class='row form-group' >
+                                    <div class="col-md-4 text_right">
+                                        重复新密码
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="password" class="form-control" name="renewpassword" placeholder="请再次填写新密码" required/>
+                                    </div>
+                                </div>
+                                <input type="submit" class="btn btn-info " style="float:right;" value="确认修改"/>
+                            </form>
+                        </div>
+                  </div>
+              </div>
+               &nbsp;
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>

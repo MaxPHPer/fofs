@@ -188,15 +188,15 @@
               </div>
               <div class="tab-pane fade" id="institution_login">
                 <div class="col-sm-8">
-                  <form action="/fofs/1/index.php/Home/Index/login" method="post">
+                  <form action="/fofs/1/index.php/Home/Index/institution_login" method="post">
                     <div class="form-group">
-                      <input type="text" class="form-control" name="user" placeholder="<?php echo (L("enter_email_address")); ?>"/>
+                      <input type="text" class="form-control" name="email" placeholder="<?php echo (L("enter_email_address")); ?>"/>
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control" name="password" placeholder="<?php echo (L("enter_password")); ?>"/>
                     </div>
                     <div class="form-group">
-                        <select style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
+                        <select name="institution_type" style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
                           <option value ="0">请选择机构类型</option>
                           <option value ="1">LP</option>
                           <option value="2">GP</option>
@@ -244,21 +244,21 @@
                           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span><?php echo ($user['company_name']); ?></div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span><?php echo ($user['institution_fullname_cn']); ?></div>
                 <div class="panel-body">
                   <div class="media">
                     <div class="media-left">
                       <a href="#">
-                        <?php if($user['head_portrait_url'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/<?php echo ($user['head_portrait_url']); ?>" alt="头像" height="100" width="100">
+                        <?php if($user['institution_logo_img'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/<?php echo ($user['institution_logo_img']); ?>" alt="头像" height="100" width="100">
                         <?php else: ?>
-                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
                       </a>
                     </div>
                     <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                      <h5 class="media-heading"><?php echo ($user['username']); ?></h5>
+
                       <p><i class="fa fa-envelope-o fa-md"></i> <?php echo ($user['email']); ?></p>
-                      <p><i class="fa fa-phone fa-md"></i> <?php echo ($user['phone']); ?></p>
-                      <a class="btn btn-default" href="modifyPersonalInfo" role="button"><?php echo (L("edit_personal_profile")); ?></a>
+                      <p><i class="glyphicon glyphicon-th-list"></i>LP</p>
+                      <a class="btn btn-default" href="modifyPersonalInfo" role="button">修改相关信息</a>
                     </div>
                   </div>
                 </div>
@@ -267,29 +267,29 @@
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <div class="panel-title">
-                    <a href="<?php echo U('Home/Individual/individualProfile');?>">
-                      <span class="glyphicon glyphicon-user"></span>个人主页
+                    <a href="<?php echo U('Home/Lp/individualProfile');?>">
+                      <span class="glyphicon glyphicon-home"></span>机构主页
                       
                     </a>
                   </div>
                 </div>
-              </div><!--个人主页-->
+              </div><!--机构主页-->
 
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <div class="panel-title">
-                    <a href="<?php echo U('Home/Individual/myCompany');?>">
-                      <span class="glyphicon glyphicon-home"></span>我的公司
+                    <a href="<?php echo U('Home/Lp/myCompany');?>">
+                      <span class="glyphicon glyphicon-user"></span>机构成员
                       
                     </a>
                   </div>
                 </div>
-              </div><!--我的公司-->
+              </div><!--机构成员-->
 
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <div class="panel-title">
-                    <a href="<?php echo U('Home/Individual/accountSetting');?>">
+                    <a href="<?php echo U('Home/Lp/accountSetting');?>">
                       <span class="glyphicon glyphicon-pencil"></span>账号设置
                       
                     </a>
@@ -300,7 +300,7 @@
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <div class="panel-title">
-                    <a href="<?php echo U('Home/Individual/inbox');?>">
+                    <a href="<?php echo U('Home/Lp/inbox');?>">
                       <span class="glyphicon glyphicon-envelope"></span>消息
                       <?php if($amount['unread'] != 0): ?><span class="badge"><?php echo ($amount['unread']); ?></span><?php endif; ?>
                     </a>
@@ -318,8 +318,8 @@
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
                     <div class="list-group">
-                      <a href="<?php echo U('Home/Individual/myFollows');?>" class="list-group-item">关注我的<span class="badge"><?php echo ($amount['checking']); ?></span></a>
-                      <a href="<?php echo U('Home/Individual/myFollowing');?>" class="list-group-item ">我关注的<span class="badge"><?php echo ($amount['accepted']); ?></span></a>
+                      <a href="<?php echo U('Home/Lp/myFollows');?>" class="list-group-item">关注我的<span class="badge"><?php echo ($amount['checking']); ?></span></a>
+                      <a href="<?php echo U('Home/Lp/myFollowing');?>" class="list-group-item ">我关注的<span class="badge"><?php echo ($amount['accepted']); ?></span></a>
                       
                     </div>
                   </div>
@@ -329,218 +329,161 @@
           </div>
           <div class="col-md-8">
             <div class="well">
-              <h3>修改个人信息</h3>
+              <h3>机构成员</h3>
               <hr/>
-          <div class="panel-body">
-            <form class="form-horizontal" action="/fofs/1/index.php/Home/Individual/save_individualInfo" enctype="multipart/form-data" method="post" >
-              <div class="form-group">
-                <label for="nickname" class="col-sm-3 control-label"><span>*</span>昵称</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="nickname" name="nickname" value="<?php echo ($user['nickname']); ?>" required/>
-                </div>
-              </div><!--用户名-->
-
-              <div class="form-group">
-                <label for="head_portrait_url" class="col-sm-3 control-label">上传头像(上传限制:500k)</label>
-                <div class="col-sm-8">
-                  <a href=""></a>
-                  <input type="file" class="form-control" id="head_portrait_url" name="head_portrait_url" >
-                </div>
-              </div><!--上传头像-->
-              <div class="form-group">
-                <label for="profession" class="col-sm-3 control-label"><span>*</span>所属行业</label>
-                <div class="col-sm-8">
-                  <select name="profession" id="profession" class="form-control">
-                      <?php switch($user['profession']): case "1": ?><option value ="0">请选择机构类型</option>
-                          <option value ="1" selected>母基金</option>
-                          <option value="2">基金</option>
-                          <option value="3">创业公司</option>
-                          <option value ="4">FA机构</option>
-                          <option value="5">法务机构</option>
-                          <option value="6">财务机构</option>
-                          <option value ="7">众创空间</option>
-                          <option value="8">其它(媒体、政府机构等)</option><?php break;?>
-                        <?php case "2": ?><option value ="0">请选择机构类型</option>
-                          <option value ="1">母基金</option>
-                          <option value="2" selected>基金</option>
-                          <option value="3">创业公司</option>
-                          <option value ="4">FA机构</option>
-                          <option value="5">法务机构</option>
-                          <option value="6">财务机构</option>
-                          <option value ="7">众创空间</option>
-                          <option value="8">其它(媒体、政府机构等)</option><?php break;?>
-                        <?php case "3": ?><option value ="0">请选择机构类型</option>
-                          <option value ="1">母基金</option>
-                          <option value="2">基金</option>
-                          <option value="3" selected>创业公司</option>
-                          <option value ="4">FA机构</option>
-                          <option value="5">法务机构</option>
-                          <option value="6">财务机构</option>
-                          <option value ="7">众创空间</option>
-                          <option value="8">其它(媒体、政府机构等)</option><?php break;?>
-                        <?php case "4": ?><option value ="0">请选择机构类型</option>
-                          <option value ="1">母基金</option>
-                          <option value="2">基金</option>
-                          <option value="3">创业公司</option>
-                          <option value ="4" selected>FA机构</option>
-                          <option value="5">法务机构</option>
-                          <option value="6">财务机构</option>
-                          <option value ="7">众创空间</option>
-                          <option value="8">其它(媒体、政府机构等)</option><?php break;?>
-                        <?php case "5": ?><option value ="0">请选择机构类型</option>
-                          <option value ="1">母基金</option>
-                          <option value="2">基金</option>
-                          <option value="3">创业公司</option>
-                          <option value ="4">FA机构</option>
-                          <option value="5" selected>法务机构</option>
-                          <option value="6">财务机构</option>
-                          <option value ="7">众创空间</option>
-                          <option value="8">其它(媒体、政府机构等)</option><?php break;?>
-                        <?php case "6": ?><option value ="0">请选择机构类型</option>
-                          <option value ="1">母基金</option>
-                          <option value="2">基金</option>
-                          <option value="3">创业公司</option>
-                          <option value ="4">FA机构</option>
-                          <option value="5">法务机构</option>
-                          <option value="6" selected>财务机构</option>
-                          <option value ="7">众创空间</option>
-                          <option value="8">其它(媒体、政府机构等)</option><?php break;?>
-                        <?php case "7": ?><option value ="0">请选择机构类型</option>
-                          <option value ="1">母基金</option>
-                          <option value="2">基金</option>
-                          <option value="3">创业公司</option>
-                          <option value ="4">FA机构</option>
-                          <option value="5">法务机构</option>
-                          <option value="6">财务机构</option>
-                          <option value ="7" selected>众创空间</option>
-                          <option value="8">其它(媒体、政府机构等)</option><?php break;?>
-                        <?php case "8": ?><option value ="0">请选择机构类型</option>
-                          <option value ="1">母基金</option>
-                          <option value="2">基金</option>
-                          <option value="3">创业公司</option>
-                          <option value ="4">FA机构</option>
-                          <option value="5">法务机构</option>
-                          <option value="6">财务机构</option>
-                          <option value ="7">众创空间</option>
-                          <option value="8" selected>其它(媒体、政府机构等)</option><?php break;?>
-
-                        <?php default: ?>
-                          <option value ="0">请选择机构类型</option>
-                          <option value ="1">母基金</option>
-                          <option value="2">基金</option>
-                          <option value="3">创业公司</option>
-                          <option value ="4">FA机构</option>
-                          <option value="5">法务机构</option>
-                          <option value="6">财务机构</option>
-                          <option value ="7">众创空间</option>
-                          <option value="8">其它(媒体、政府机构等)</option><?php endswitch;?>
-
-                  </select>
-                </div>
-              </div><!--所属行业-->
               
-              
-            
-              <div class="form-group">
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-user"></span>管理团队</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                          <!--已有团队成员-->
+                          <?php if(is_array($members)): foreach($members as $key=>$vo): ?><div id="" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="">
+                                <div class="panel-body">
+                                  <div class="repeat_people ">
+                                    <div class="borderBottom" style="margin-bottom:20px;">
+                                      <div class="row" >
+                                        <div class="col-sm-3 text_right">
+                                          
+                                            姓名:
+                      
+                                        </div>
 
-                <label for="company_name" class="col-sm-3 control-label"><span>*</span>公司</label>
-                <div class="col-sm-3">
-                  <input type="text" class="form-control" id="company_name" name="company_name" value="<?php echo ($user['company_name']); ?>" required/>
-                </div>
-  
-                <label for="company_function" class="col-sm-2 control-label"><span>*</span>职务</label>
-                <div class="col-sm-3">
-                  <input type="text" class="form-control" id="company_function" name="company_function" value="<?php echo ($user['company_function']); ?>" required/>
-                </div>
-              </div><!--职位-->
-    
-              <div class="form-group">
-                <label for="username" class="col-sm-3 control-label"><span>*</span>姓名</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="username" name="username" value="<?php echo ($user['username']); ?>" required/>
-                </div>
-              </div><!--姓名-->
+                                        <div class="col-sm-4">
 
-              <div class="form-group">
-                <label for="sex" class="col-sm-3 control-label">性别</label>
-                <div class="col-sm-8">
-                  <select name="sex" id="sex" class="form-control">
-                      <?php switch($user['sex']): case "male": ?><option value ="secret">请选择性别</option>
-                          <option value ="male" selected>男</option>
-                          <option value="female">女</option><?php break;?>
-                        <?php case "female": ?><option value ="secret">请选择性别</option>
-                          <option value ="male" >男</option>
-                          <option value="female" selected>女</option><?php break;?>
-                        <?php default: ?>
-                          <option value ="secret" selected>请选择性别</option>
-                          <option value ="male" >男</option>
-                          <option value="female" >女</option><?php endswitch;?>
-                  </select>
-                </div>
-              </div><!--性别-->
+                                              <?php echo ($vo['username']); ?>
 
-              <div class="form-group">
-                <label for="abstract" class="col-sm-3 control-label">简介</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="abstract" name="abstract" value="<?php echo ($user['abstract']); ?>"/>
-                </div>
-              </div><!--简介-->
+                                        </div>
 
+                                        <div class="col-sm-5 text_right">
+                                            <span class="glyphicon glyphicon-pencil"></span><a href="<?php echo U('Home/Lp/modifyMember');?>?id=<?php echo ($vo['id']); ?>">修改</a>&nbsp;<span class="glyphicon glyphicon-trash"></span><a href="<?php echo U('Home/Lp/deleteMember');?>?id=<?php echo ($vo['id']); ?>">删除</a>
+                                        </div>
 
-              <div class="form-group">
-                <label for="phone" class="col-sm-3 control-label">手机</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="phone" name="phone" value="<?php echo ($user['phone']); ?>"/>
-                </div>
-              </div><!--手机-->
+                                      </div>
 
+                                      <div class="row" style="margin-top:10px;">
+                                        <div class="col-sm-3 text_right">
+                                          
+                                            职务:
+                      
+                                        </div>
 
+                                        <div class="col-sm-8">
 
-              <div class="form-group">
-                <label for="email" class="col-sm-3 control-label"><span>*</span><?php echo (L("email")); ?></label>
-                <div class="col-sm-8">
-                  <input type="email" class="form-control" id="email" disabled="disabled" value="<?php echo ($user['email']); ?>" required/>
-                </div>
-              </div><!--电子邮件-->
+                                              <?php echo ($vo['function']); ?>
 
+                                        </div>
+                                      </div>
 
-              <div class="form-group">
-                <label for="linkedin" class="col-sm-3 control-label">LinkedIn</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="linkedin" name="linkedin" value="<?php echo ($user['linkedin']); ?>"/>
-                </div>
-              </div><!--LinkedIn-->
+                                      <div class="row">
+                                          <div class="col-sm-3 text_right">
+                                            从业经历:
+                                          </div>
+                                      </div>
 
+                                      <div class="repeat">
+                                        <?php if(is_array($vo['business_experience'])): foreach($vo['business_experience'] as $key=>$business_experience): ?><div class="row" style="margin-top:10px;">
+                                              
+                                              <div class="col-sm-3 text_right">
+                                                    <?php echo ($business_experience['company_name']); ?>
+                                              </div>
+                                             
+                                                
+                                              <div class="col-sm-3">
+                                                    <?php echo ($business_experience['function']); ?>
+                                              </div>
 
-              <div class="form-group">
-                <label for="weibo" class="col-sm-3 control-label">新浪微博</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="weibo" name="weibo" value="<?php echo ($user['weibo']); ?>"/>
-                </div>
-              </div><!--新浪微博-->
-              
+                                              <div class="col-sm-6">
+                                                <?php echo ($business_experience['start_time']); ?>-<?php echo ($business_experience['end_time']); ?>
+                                              </div>
+                                    
+                                            </div><?php endforeach; endif; ?>
+                                      </div>
 
-              <div class="form-group">
-                <label for="wechat" class="col-sm-3 control-label">微信</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="wechat" name="wechat" value="<?php echo ($user['wechat']); ?>"/>
-                </div>
-              </div><!--微信-->
+                                    </div>
+                                  </div>
 
-              <div class="form-group">
-                <label for="business_experience" class="col-sm-3 control-label">从业经历</label>
-                <div class="col-sm-8">
-                  <textarea class="form-control" id="business_experience" name="business_experience" ><?php echo ($user['business_experience']); ?></textarea>
-                </div>
-              </div><!--从业经历-->
+                                </div>
+                              </div><?php endforeach; endif; ?>
+                      </div>
+                    </div>
+                  </div>
+              </div>
 
-              <input type="hidden" name="id" value="<?php echo ($user['id']); ?>">
-            <div class="alert alert-warning" role="alert">
-              <span>*</span>必填
-            </div>
-            <input type="submit" value="保存修改" class="btn btn-block btn-primary"/> 
-          </div>
-          </form>
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-globe"></span>其它通过认证的公司成员</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                          <!--已有团队成员-->
+                          <?php if(is_array($members)): foreach($members as $key=>$vo): ?><div id="" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="">
+                                <div class="panel-body">
+                                  <div class="repeat_people ">
+                                    <div class="borderBottom" style="margin-bottom:20px;">
+                                      <div class="row" >
+                                        <div class="col-sm-3 text_right">
+                                          
+                                            姓名:
+                      
+                                        </div>
+
+                                        <div class="col-sm-8">
+
+                                              <?php echo ($vo['username']); ?>
+
+                                        </div>
+
+                                      </div>
+
+                                      <div class="row" style="margin-top:10px;">
+                                        <div class="col-sm-3 text_right">
+                                          
+                                            职务:
+                      
+                                        </div>
+
+                                        <div class="col-sm-8">
+
+                                              <?php echo ($vo['function']); ?>
+
+                                        </div>
+                                      </div>
+
+                                      <div class="row">
+                                          <div class="col-sm-3 text_right">
+                                            从业经历:
+                                          </div>
+                                      </div>
+
+                                      <div class="repeat">
+                                        <?php if(is_array($vo['business_experience'])): foreach($vo['business_experience'] as $key=>$business_experience): ?><div class="row" style="margin-top:10px;">
+                                              
+                                              <div class="col-sm-3 text_right">
+                                                    <?php echo ($business_experience['company_name']); ?>
+                                              </div>
+                                             
+                                                
+                                              <div class="col-sm-3">
+                                                    <?php echo ($business_experience['function']); ?>
+                                              </div>
+
+                                              <div class="col-sm-6">
+                                                <?php echo ($business_experience['start_time']); ?>-<?php echo ($business_experience['end_time']); ?>
+                                              </div>
+                                    
+                                            </div><?php endforeach; endif; ?>
+                                      </div>
+
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div><?php endforeach; endif; ?>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
                &nbsp;
             </div>
           </div>

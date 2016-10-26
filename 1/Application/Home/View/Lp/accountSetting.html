@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4 main-content">
-              <include file = "individual:individualBar"/>
+              <include file = "Lp:individualBar"/>
           </div>
           <div class="col-md-8">
             <div class="well">
@@ -15,16 +15,16 @@
               
               <div class="row margin_top_20">
                   <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-home"></span>账号信息</h3>
+                  <h3><span class="glyphicon glyphicon-home"></span>账号信息(<a href="{:U('Home/Lp/modifyPersonalInfo')}">修改</a>)</h3>
                     <div class="panel panel-default">
                       <div class="panel-body">
 
                          <div class="row">
                               <div class='col-md-3 text_right'>
-                                  昵称:
+                                  管理员姓名:
                               </div>
                               <div class='col-md-8'>
-                                  shiningworld
+                                  {$user['admin_name']}
                               </div>
                           </div>
 
@@ -33,7 +33,43 @@
                                   登录邮箱账号:
                               </div>
                               <div class='col-md-8'>
-                                  shiningworld@foxmail.com
+                                  {$user['admin_email']}
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  管理员电话:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['admin_telephone']}
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  管理员手机:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['admin_mobilephone']}
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  管理员身份证号:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['admin_idcard']}
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  管理员职务:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['admin_function']}
                               </div>
                           </div>
                           
@@ -47,13 +83,13 @@
                   <div class='col-md-12'>
                     <h3><span class="glyphicon glyphicon-check"></span>修改密码</h3>
                         <div class="alert alert-danger" role="alert">
-                            <form method="post">
+                            <form method="post" action="{:U('Home/Lp/set_password')}">
                                 <div class='row form-group' >
                                     <div class="col-md-4 text_right">
                                         原密码
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="password" class="form-control" name="password" placeholder="请填写原密码" required/>
+                                        <input type="password" class="form-control" name="oldpassword" placeholder="请填写原密码" required/>
                                     </div>
                                 </div>
                                 <div class='row form-group' >
@@ -61,7 +97,7 @@
                                         新密码
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="password" class="form-control" name="password" placeholder="请填写新密码" required/>
+                                        <input type="password" class="form-control" name="newpassword" placeholder="请填写新密码" required/>
                                     </div>
                                 </div>
                                 <div class='row form-group' >
@@ -69,10 +105,10 @@
                                         重复新密码
                                     </div>
                                     <div class="col-md-8">
-                                        <input type="password" class="form-control" name="password" placeholder="请再次填写新密码" required/>
+                                        <input type="password" class="form-control" name="renewpassword" placeholder="请再次填写新密码" required/>
                                     </div>
                                 </div>
-                                <input type="button" class="btn btn-info " style="float:right;" value="确认修改"/>
+                                <input type="submit" class="btn btn-info " style="float:right;" value="确认修改"/>
                             </form>
                         </div>
                   </div>

@@ -168,7 +168,7 @@ class IndexController extends BaseController {
 
         if($list){
             if($list['password']==$data['password']){
-                session('nickname',$list['nickname']?$list['nickname']:$list['email']);
+                session('nickname',$list['admin_name']?$list['admin_name']:$list['email']);
                 session('email',$list['email']);
                 session('user_id',$list['id']);
                 session('institution_type',$list['institution_type']);

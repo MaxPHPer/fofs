@@ -9,11 +9,12 @@ class LpController extends BaseController {
         $id=session('user_id');
         $user=$this->getInfo($id);       
         $this->assign('user',$user);
+
     }
 
     //获取用户信息
     public function getInfo($id){
-        $User=M('User');
+        $User=M('Lp');
         $list=$User->getById($id);
         return $list;
     }
@@ -23,8 +24,45 @@ class LpController extends BaseController {
     //个人主页
     public function individualProfile(){
 
+      //成员信息
+      $Senior_executive=M('Senior_executive');
+      $where['institution_type']=session('institution_type');
+      $where['institution_id']=session('user_id');
+      $members=$Senior_executive->where($where)->select();
 
-        $this->display();
+      $Business_experience=M('Business_experience');
+      foreach($members as $key => $value){
+          $where2['senior_executive_id']=$value['id'];
+          $members[$key]['business_experience']=$Business_experience->where($where2)->select();
+      }
+
+      $this->assign('members',$members);
+
+      //基金信息
+      $Lp_fund_product=M('Lp_fund_product');
+      $where['institution_type']=session('institution_type');
+      $where['institution_id']=session('user_id');
+      $funds=$Lp_fund_product->where($where)->select();
+
+      $Investment_project=M('Investment_project');
+      $total_funds_size=0;
+
+      foreach($funds as $key => $value){
+          $where2['fund_id']=$value['id'];
+          $funds[$key]['investment_projects']=$Investment_project->where($where2)->select();
+
+          //计算管理基金总规模
+          $total_funds_size+=$funds[$key]['fund_size'];
+
+      }
+
+      $this->assign('funds',$funds);
+      $this->assign('total_funds_size',$total_funds_size);
+      $this->assign('total_funds_num',count($funds));
+
+
+      $this->display();
+
     }
 
     //修改个人信息
@@ -34,50 +72,18 @@ class LpController extends BaseController {
         $this->display();
     }
     
-    //更新个人信息
-    public function save_individualInfo(){
-        
+    //更新机构管理员信息
+    public function save_personalInfo(){
 
-        $User=M('User');
+        $User=M('Lp');
         $data=I('post.');
+        $data['id']=session('user_id');
 
-        $img=$User->getFieldById($data['id'],'head_portrait_url');   //头像名
-        $path='./Public/uploads/individual_pic/';             //头像路径
-
-        $upload = new \Think\Upload();// 实例化上传类
-        $upload->maxSize   =     3145728 ;// 设置附件上传大小
-        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-        $upload->rootPath  =     $path ; // 设置附件上传根目录
-        $upload->savePath  =      ''; // 设置附件上传（子）目录
-        $upload->autoSub   =     false;    //不使用子目录
-        $upload->replace   =     true;      //覆盖文件
-
-        if($User->create()){        //更新信息
+        if($User->create($data)){        //更新信息
             $res=$User->save();
-            if($res!==false){
-                //上传新头像
-                foreach($_FILES as $key =>$file){
-                    if(!empty($file['name'])) {
-                        $upload->saveName  =   $data['id'].'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
-                             // 上传单个文件 
-                        $info   =   $upload->uploadOne($file);
-                        if(!$info) {// 上传错误提示错误信息
-                            $this->error($upload->getError());
-                        }else{// 上传成功 获取上传文件信息
-                            unlink($path.$img);  //删除原文件
-                            //新浪云删除文件
-                            //sae_unlink('./Public/Uploads/xxx.jpg');
-                            $res2=$User->where('id='.$data['id'])->setField('head_portrait_url',$info['savename']);
-                        }
-                    }
-                }
-                if($res2!==false){
-                    session('username',$data['nickname']);
-                    $this->success('信息更新成功',__APP__.'/Home/Individual/individualProfile');
-                }
-                else{
-                    $this->error($User->getError());
-                }
+            if($res){
+                session('username',$data['admin_name']);
+                $this->success('信息更新成功',__APP__.'/Home/Lp/accountSetting');
             }
             else{
                 $this->error($User->getError());
@@ -283,6 +289,49 @@ class LpController extends BaseController {
 
     //我的公司
     public function myCompany(){
+          //成员信息
+          $Senior_executive=M('Senior_executive');
+          $where['institution_type']=session('institution_type');
+          $where['institution_id']=session('user_id');
+          $members=$Senior_executive->where($where)->select();
+
+          $Business_experience=M('Business_experience');
+          foreach($members as $key => $value){
+              $where2['senior_executive_id']=$value['id'];
+              $members[$key]['business_experience']=$Business_experience->where($where2)->select();
+          }
+
+          $this->assign('members',$members);
+          $this->display();
+    }
+
+    //修改成员信息
+    public function modifyMember(){
+           //成员信息
+          $Senior_executive=M('Senior_executive');
+          $where['institution_type']=session('institution_type');
+          $where['institution_id']=session('user_id');
+          $where['id']=I('get.id');
+          $members=$Senior_executive->where($where)->select();
+
+          $Business_experience=M('Business_experience');
+          foreach($members as $key => $value){
+              $where2['senior_executive_id']=$value['id'];
+              $members[$key]['business_experience']=$Business_experience->where($where2)->select();
+          }
+
+          $this->assign('members',$members);
+
+          $this->display();
+    }
+
+    //保存成员信息
+    public function do_modifyMember(){
+        $this->display();
+    }
+
+    //删除成员信息
+    public function deleteMember(){
         $this->display();
     }
 
@@ -312,7 +361,7 @@ class LpController extends BaseController {
     public function set_password(){
         if(I('post.newpassword')==I('post.renewpassword')){
             //确定用户类型
-            $User=M('User');
+            $User=M('Lp');
 
             $user=$User->getbyId(session('user_id'));    //读取用户数据
 
