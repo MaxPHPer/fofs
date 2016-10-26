@@ -2,7 +2,7 @@
 <include file = "layout:navbar"/>
 <div class="content supplierCompanyInfo">
   <div class="container">
-    <form action="__APP__/Home/Register/save_supplierCompanyInfo" method="post" enctype="multipart/form-data">
+    <form action="__APP__/Home/Register/save_lpCompanyInfo" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -20,55 +20,55 @@
                   <div class="col-sm-10 col-sm-offset-1">
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">
+                      <label for="institution_fullname_cn" class="col-sm-3 control-label">
                         <span>*</span>
                         全称(中文)
                       </label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}"  />
+                        <input type="text" class="form-control" id="institution_fullname_cn" name="institution_fullname_cn"  value="{$data['institution_fullname_cn']}"  />
                       </div>
                     </div>
                     <!--全称(中文)-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">全称(英文)</label>
+                      <label for="institution_fullname_en" class="col-sm-3 control-label">全称(英文)</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="institution_fullname_en"  name="institution_fullname_en" value="{$data['institution_fullname_en']}" />
                       </div>
                     </div>
                     <!--全称(英文)-->
 
                     <div class="form-group clearfix">
-                      <label for="personalLogo" class="col-sm-3 control-label">公司logo(上传限制:500k)</label>
+                      <label for="institution_logo_img" class="col-sm-3 control-label">公司logo(上传限制:500k)</label>
                       <div class="col-sm-8">
                         <a href=""></a>
-                        <input type="file" class="form-control" id="personalLogo" name="personalLogo" ></div>
+                        <input type="file" class="form-control" id="institution_logo_img" name="institution_logo_img" ></div>
                     </div>
                     <!--公司logo-->
 
                     <div class="form-group clearfix">
-                      <label for="userName" class="col-sm-3 control-label">机构简介</label>
+                      <label for="institution_abstract" class="col-sm-3 control-label">机构简介</label>
                       <div class="col-sm-8">
-                        <textarea class="form-control" id="userName" name="username" ></textarea>
+                        <textarea class="form-control" id="institution_abstract" name="institution_abstract" ></textarea>
                       </div>
                     </div>
                     <!--机构简介-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">组织机构代码</label>
+                      <label for="organization_code" class="col-sm-3 control-label">组织机构代码</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="organization_code"  name="organization_code"  value="{$data['organization_code']}" />
                       </div>
                     </div>
                     <!--组织机构代码-->
 
                     <div class="form-group clearfix">
-                      <label for="language" class="col-sm-3 control-label">
+                      <label for="is_fofs_member" class="col-sm-3 control-label">
                         <span>*</span>
                         是否为母基金联盟成员单位
                       </label>
                       <div class="col-sm-8">
-                        <select name="language" id="language" class="form-control">
+                        <select name="is_fofs_member" id="is_fofs_member" class="form-control">
 
                           <option value ="0">否</option>
                           <option value ="1">是</option>
@@ -79,52 +79,44 @@
                     <!--是否为母基金联盟成员单位-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">注册地址</label>
+                      <label for="registered_addr" class="col-sm-3 control-label">注册地址</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="registered_addr" name="registered_addr"  value="{$data['registered_addr']}" />
                       </div>
                     </div>
                     <!--注册地址-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">办公地址</label>
+                      <label for="office_addr" class="col-sm-3 control-label">办公地址</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="office_addr"  name="office_addr" value="{$data['office_addr']}" />
                       </div>
                     </div>
                     <!--注册地址-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">注册资本(万元)</label>
+                      <label for="registered_capital" class="col-sm-3 control-label">注册资本(万元)</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="registered_capital" name="registered_capital"  value="{$data['registered_capital']}" />
                       </div>
                     </div>
                     <!--注册资本-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">实缴资本(万元)</label>
+                      <label for="contributed_capital" class="col-sm-3 control-label">实缴资本(万元)</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="number" class="form-control" id="contributed_capital"  name="contributed_capital" value="{$data['contributed_capital']}" />
                       </div>
                     </div>
                     <!--实缴资本-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">实缴资本(万元)</label>
-                      <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
-                      </div>
-                    </div>
-                    <!--实缴资本-->
-
-                    <div class="form-group clearfix">
-                      <label for="language" class="col-sm-3 control-label">
+                      <label for="fund_type" class="col-sm-3 control-label">
                         <span>*</span>
                         管理基金类型
                       </label>
                       <div class="col-sm-8">
-                        <select name="language" id="language" class="form-control">
+                        <select name="fund_type" id="fund_type" class="form-control">
 
                           <option value ="0">证券投资基金</option>
                           <option value ="1">股权投资基金</option>
@@ -137,22 +129,22 @@
                     <!--管理基金类型-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">员工人数</label>
+                      <label for="number_of_employees" class="col-sm-3 control-label">员工人数</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="number_of_employees" name="number_of_employees"  value="{$data['number_of_employees']}" />
                       </div>
                     </div>
                     <!--员工人数--> 
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">是否在中国证券投资基金行业协会登记信息</label>
+                      <label for="is_association_registration" class="col-sm-3 control-label">是否在中国证券投资基金行业协会登记信息</label>
                       <div class="col-sm-8">
                           <div class="col-sm-4 col-sm-offset-1">
-                            <input class="icheckbox_flat-blue" id="is_association_registration_0" type="radio" name="is_association_registration" value="0" checked>                                          
+                            <input class="icheckbox_flat-blue" id="is_association_registration" type="radio" name="is_association_registration" value="0" checked>                                          
                             <label for="buyer">否</label>
                           </div>
                           <div class="col-sm-4 col-sm-offset-1">
-                            <input class="icheckbox_flat-blue" id="is_association_registration_1" type="radio" name="is_association_registration" value="1">                                          
+                            <input class="icheckbox_flat-blue" id="is_association_registration" type="radio" name="is_association_registration" value="1">                                          
                             <label for="supplier">是</label>
                           </div>
                       </div>
@@ -161,17 +153,17 @@
 
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">登记编号</label>
+                      <label for="association_registration_number" class="col-sm-3 control-label">登记编号</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="association_registration_number" name="association_registration_number"  value="{$data['association_registration_number']}" />
                       </div>
                     </div>
                     <!--登记编号--> 
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">登记时间</label>
+                      <label for="association_registration_time" class="col-sm-3 control-label">登记时间</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="date" class="form-control" id="association_registration_time"  name="association_registration_time" value="{$data['association_registration_time']}" />
                       </div>
                     </div>
                     <!--登记时间--> 
@@ -201,20 +193,20 @@
                   <div class="col-sm-10 col-sm-offset-1">
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">
+                      <label for="contact_username" class="col-sm-3 control-label">
                         <span>*</span>
                         联系人
                       </label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}"  />
+                        <input type="text" class="form-control" id="contact_username" name="contact_username"  value="{$data['contact_username']}"  />
                       </div>
                     </div>
                     <!--联系人-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">传真</label>
+                      <label for="contact_fax" class="col-sm-3 control-label">传真</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="contact_fax" name="contact_fax"  value="{$data['contact_fax']}" />
                       </div>
                     </div>
                     <!--传真-->
@@ -222,9 +214,9 @@
     
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">电话</label>
+                      <label for="contact_phone" class="col-sm-3 control-label">电话</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="contact_phone"  name="contact_phone" value="{$data['contact_phone']}" />
                       </div>
                     </div>
                     <!--电话-->
@@ -232,25 +224,25 @@
                   
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">邮箱</label>
+                      <label for="contact_email" class="col-sm-3 control-label">邮箱</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="email" class="form-control" id="contact_email" name="contact_email"  value="{$data['contact_email']}" />
                       </div>
                     </div>
                     <!--邮箱-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">机构微信</label>
+                      <label for="contact_institution_wechat" class="col-sm-3 control-label">机构微信</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="contact_institution_wechat"  name="contact_institution_wechat" value="{$data['contact_institution_wechat']}" />
                       </div>
                     </div>
                     <!--机构微信-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">机构网址</label>
+                      <label for="contact_institution_web" class="col-sm-3 control-label">机构网址</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="contact_institution_web"  name="contact_institution_web" value="{$data['contact_institution_web']}" />
                       </div>
                     </div>
                     <!--机构网址-->
@@ -266,7 +258,6 @@
       </div>
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4" style="margin-bottom:30px;">
-          <input type="hidden" name='user_id'  value="{$id}"/>
           <input type="submit" class="btn btn-primary btn-block" id="submit" value="保存并前往完善管理团队信息"/>
         </div>
       </div>

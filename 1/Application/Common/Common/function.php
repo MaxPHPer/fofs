@@ -141,3 +141,9 @@ substr($result, 10, 16) == substr(md5(substr($result, 26).$keyb), 0, 16)) {
         $vo[$name]=$vo[$name_en];
         return $vo;
     }
+
+    //格式化打印
+    function p($arr){
+        print_r("<pre>");
+        print_r($arr);
+    }

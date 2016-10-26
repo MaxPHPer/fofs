@@ -237,7 +237,7 @@
   <!--登录模态框结束-->
 <div class="content supplierCompanyInfo">
   <div class="container">
-    <form action="/fofs/1/index.php/Home/Register/save_supplierCompanyInfo" method="post" enctype="multipart/form-data">
+
       <div class="row">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -251,6 +251,88 @@
                 </a>
               </h4>
             </div>
+            <!--已有团队成员-->
+            <?php if(is_array($members)): foreach($members as $key=>$vo): ?><div id="" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="">
+                  <div class="panel-body">
+                    <div class="repeat_people ">
+                      <div class="borderBottom" style="margin-bottom:20px;">
+                        <div class="row" >
+                          <div class="col-sm-2">
+                            
+                              <label for="username" class="col-sm-12 control-label"><span>*</span>姓名</label>
+        
+                          </div>
+
+                          <div class="col-sm-4">
+
+                                <input type="text" class="form-control" id="username" name="username" value="<?php echo ($vo['username']); ?>" disabled/>
+
+                          </div>
+
+                        </div>
+
+                        <div class="row" style="margin-top:10px;">
+                          <div class="col-sm-2">
+                            
+                              <label for="function" class="col-sm-12 control-label"><span>*</span>职务</label>
+        
+                          </div>
+
+                          <div class="col-sm-4">
+
+                                <input type="text" class="form-control" id="function" name="function" value="<?php echo ($vo['function']); ?>" disabled/>
+
+                          </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2 ">
+                              <label for="userName" class="col-sm-12 control-label"><b>从业经历</b></label>
+                            </div>
+                        </div>
+
+                        <div class="repeat">
+                          <?php if(is_array($vo['business_experience'])): foreach($vo['business_experience'] as $key=>$business_experience): ?><div class="row" style="margin-top:10px;">
+                                
+                                <div class="col-sm-2 ">
+                                  <label for="" class="col-sm-12 control-label">公司名称</label>
+                                </div>
+                                <div class="col-sm-2">
+                                      <input type="text" class="col-sm-12 form-control" name="business_experience[company_name][]" value="<?php echo ($business_experience['company_name']); ?>" disabled/>
+                                    </div>
+                                <div class="col-sm-8">
+                                    
+                                    <div class="col-sm-2 ">
+                                      <label for="" class="col-sm-12 control-label">职位</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                      <input type="text" class="form-control" name="business_experience[function][]" value="<?php echo ($business_experience['function']); ?>" disabled/>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                      <label for="" class="col-sm-12 control-label">任职年月</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                      <input type="text" class="form-control" name="business_experience[start_time][]" value="<?php echo ($business_experience['start_time']); ?>" disabled/>
+                                    </div>
+
+                                    <div class="col-sm-1 ">
+                                      <label for="" class="col-sm-12 control-label">至</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                      <input type="text" class="form-control" name="business_experience[end_time][]" value="<?php echo ($business_experience['end_time']); ?>" disabled/>
+                                    </div>
+                                </div>
+
+                              </div><?php endforeach; endif; ?>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div><?php endforeach; endif; ?>
+
+    <form action="" method="post" enctype="multipart/form-data" name='form1'>
             <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
               <div class="panel-body">
                 <div class="repeat_people ">
@@ -258,13 +340,13 @@
                     <div class="row" >
                       <div class="col-sm-2">
                         
-                          <label for="userName" class="col-sm-12 control-label"><span>*</span>姓名</label>
+                          <label for="username" class="col-sm-12 control-label"><span>*</span>姓名</label>
     
                       </div>
 
                       <div class="col-sm-4">
 
-                            <input type="text" class="form-control" id="userName" name="username"  />
+                            <input type="text" class="form-control" id="username" name="username"  />
 
                       </div>
 
@@ -273,13 +355,13 @@
                     <div class="row" style="margin-top:10px;">
                       <div class="col-sm-2">
                         
-                          <label for="userName" class="col-sm-12 control-label"><span>*</span>职务</label>
+                          <label for="function" class="col-sm-12 control-label"><span>*</span>职务</label>
     
                       </div>
 
                       <div class="col-sm-4">
 
-                            <input type="text" class="form-control" id="userName" name="username"  />
+                            <input type="text" class="form-control" id="function" name="function"  />
 
                       </div>
                     </div>
@@ -294,31 +376,31 @@
                       <div class="row" style="margin-top:10px;">
                         
                         <div class="col-sm-2 ">
-                          <label for="userName" class="col-sm-12 control-label">公司名称</label>
+                          <label for="" class="col-sm-12 control-label">公司名称</label>
                         </div>
                         <div class="col-sm-2">
-                              <input type="text" class="col-sm-12 form-control" name="production[quantity][]"/>
+                              <input type="text" class="col-sm-12 form-control" name="business_experience[company_name][]"/>
                             </div>
                         <div class="col-sm-8">
                             
                             <div class="col-sm-2 ">
-                              <label for="userName" class="col-sm-12 control-label">职位</label>
+                              <label for="" class="col-sm-12 control-label">职位</label>
                             </div>
                             <div class="col-sm-2">
-                              <input type="text" class="form-control" name="production[quantity][]"/>
+                              <input type="text" class="form-control" name="business_experience[function][]"/>
                             </div>
                             <div class="col-sm-3 ">
-                              <label for="userName" class="col-sm-12 control-label">任职年月</label>
+                              <label for="" class="col-sm-12 control-label">任职年月</label>
                             </div>
                             <div class="col-sm-2">
-                              <input type="text" class="form-control" name="production[quantity][]"/>
+                              <input type="text" class="form-control" name="business_experience[start_time][]"/>
                             </div>
 
                             <div class="col-sm-1 ">
-                              <label for="userName" class="col-sm-12 control-label">至</label>
+                              <label for="" class="col-sm-12 control-label">至</label>
                             </div>
                             <div class="col-sm-2">
-                              <input type="text" class="form-control" name="production[quantity][]"/>
+                              <input type="text" class="form-control" name="business_experience[end_time][]"/>
                             </div>
                         </div>
 
@@ -334,9 +416,9 @@
                 </div>
                 <div class="row">
                       <div class="col-sm-2">
-                        <button type="button" class="btn btn-primary" id="addNew1">添加其它高管</button>
+                        <input type="submit" class="btn btn-primary btn-block"  value="添加其它高管" onclick="form1.action='/fofs/1/index.php/Home/Register/add_membersInfo';form1.submit();"/>
                       </div>
-                    </div>
+                </div>
               </div>
             </div>
           </div>
@@ -346,8 +428,7 @@
       </div>
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4" style="margin-bottom:30px;">
-          <input type="hidden" name='user_id'  value="<?php echo ($id); ?>"/>
-          <input type="submit" class="btn btn-primary btn-block" id="submit" value="保存并前往完善基金产品信息"/>
+          <input type="submit" class="btn btn-primary btn-block"  value="保存并前往完善基金产品信息" onclick="form1.action='/fofs/1/index.php/Home/Register/save_membersInfo';form1.submit();"/>
         </div>
       </div>
     </form>

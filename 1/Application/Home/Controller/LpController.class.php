@@ -4,25 +4,45 @@ use Home\Controller;
 class LpController extends BaseController {
     public function _initialize() {
         parent::_initialize();
-        //if(session('type')!=1)  $this->error('非法访问',__APP__.'/Home/Index');
+
+        //获取用户信息
+        $id=session('user_id');
+        $user=$this->getInfo($id);       
+        $this->assign('user',$user);
     }
 
     //获取用户信息
     public function getInfo($id){
-        $User=M('Buyer');
+        $User=M('User');
         $list=$User->getById($id);
         return $list;
     }
 
+
+
+    //个人主页
+    public function individualProfile(){
+
+
+        $this->display();
+    }
+
+    //修改个人信息
+    public function modifyPersonalInfo(){
+
+
+        $this->display();
+    }
+    
     //更新个人信息
-    public function update_PersonalInfo(){
+    public function save_individualInfo(){
         
 
-        $User=M('Buyer');
+        $User=M('User');
         $data=I('post.');
 
-        $img=$User->getFieldById($data['id'],'face_url');   //头像名
-        $path='./Public/uploads/buyer_pic/';             //头像路径
+        $img=$User->getFieldById($data['id'],'head_portrait_url');   //头像名
+        $path='./Public/uploads/individual_pic/';             //头像路径
 
         $upload = new \Think\Upload();// 实例化上传类
         $upload->maxSize   =     3145728 ;// 设置附件上传大小
@@ -47,13 +67,13 @@ class LpController extends BaseController {
                             unlink($path.$img);  //删除原文件
                             //新浪云删除文件
                             //sae_unlink('./Public/Uploads/xxx.jpg');
-                            $res2=$User->where('id='.$data['id'])->setField('face_url',$info['savename']);
+                            $res2=$User->where('id='.$data['id'])->setField('head_portrait_url',$info['savename']);
                         }
                     }
                 }
                 if($res2!==false){
-                    session('username',$data['username']);
-                    $this->success('信息更新成功',__APP__.'/Home/Buyer/individualProfile');
+                    session('username',$data['nickname']);
+                    $this->success('信息更新成功',__APP__.'/Home/Individual/individualProfile');
                 }
                 else{
                     $this->error($User->getError());
@@ -68,52 +88,12 @@ class LpController extends BaseController {
         }
     }
 
-    //个人主页
-    public function individualProfile(){
-        
-
-        $id=session('user_id');
-        $user=$this->getInfo($id);       //获取用户信息
-        $this->assign('user',$user);
-
-        $Inbox=M('Letter');             //获取邮件
-        $Interest=M('Buyer_interest_list');
-        $amount=array('unread'=>0,      //计数器
-                      'accepted'=>0,
-                      'rejected'=>0,
-                      'checking'=>0,);
-
-        $rec_map=array(array('sender_id'=>$user['id'],     //Rfi查询条件
-                    'sender_type'=>1,
-                    'type'=>1,
-                    'state'=>array('neq',0)),
-                    '_string'=>'recipient_id='.$user['id'].' AND recipient_type=1',                                 //普通信息查询条件
-                    '_logic'=>'OR');  
-        $msg=$Inbox->where($rec_map)->select();
-        $amount['unread']=count($msg);
-
-        $list=$Interest->where('buyer_id='.$user['id'])->select();  //邀请列表
-        foreach ($list as $key) {
-            switch ($key['is_send_rfi']) {
-                case '1':  $amount['checking']++;  break;
-                case '3':  $amount['rejected']++;  break;
-                case '2':  $amount['accepted']++;  break;
-            }
-        }
-
-        $this->assign('amount',$amount);
-
-        //项目
-        $Project=M('Project');
-        $project_list=$Project->where('creator_id='.$user['id'])->limit(3)->select();
-        $this->assign('project',$project_list);
-
-
-        $this->display();
-    }
 
     //采购商收件箱
     public function inbox(){
+
+        $this->display();
+        die();
         
 
         $user=$this->getInfo(session('user_id'));
@@ -322,4 +302,42 @@ class LpController extends BaseController {
     public function myFollowing(){
         $this->display();
     }
+
+    //发送信件
+    public function sendLetter(){
+        $this->display();
+    }
+
+    //修改密码
+    public function set_password(){
+        if(I('post.newpassword')==I('post.renewpassword')){
+            //确定用户类型
+            $User=M('User');
+
+            $user=$User->getbyId(session('user_id'));    //读取用户数据
+
+            if($user){
+                if(md5(I('post.oldpassword'))==$user['password']){
+                    $data['id']=session('user_id');
+                    $data['password']=md5(I('post.newpassword'));
+
+                    $result=$User->save($data);
+                    if($result){
+                        session(null);
+                        $this->success('修改成功,请重新登录',__APP__.'/Home/Index/index');  
+                    }else{
+                        $this->error('密码修改失败');
+                    }
+                }
+                else{
+                    $this->error('原密码错误');
+                }
+            }else{
+                $this->error('用户不存在');
+            }
+        }else{
+            $this->error('新密码两次输入不一致');
+        }
+    }
+
 }

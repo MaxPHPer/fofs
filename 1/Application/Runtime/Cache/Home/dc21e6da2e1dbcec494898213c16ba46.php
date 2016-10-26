@@ -188,15 +188,15 @@
               </div>
               <div class="tab-pane fade" id="institution_login">
                 <div class="col-sm-8">
-                  <form action="/fofs/1/index.php/Home/Index/login" method="post">
+                  <form action="/fofs/1/index.php/Home/Index/institution_login" method="post">
                     <div class="form-group">
-                      <input type="text" class="form-control" name="user" placeholder="<?php echo (L("enter_email_address")); ?>"/>
+                      <input type="text" class="form-control" name="email" placeholder="<?php echo (L("enter_email_address")); ?>"/>
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control" name="password" placeholder="<?php echo (L("enter_password")); ?>"/>
                     </div>
                     <div class="form-group">
-                        <select style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
+                        <select name="institution_type" style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
                           <option value ="0">请选择机构类型</option>
                           <option value ="1">LP</option>
                           <option value="2">GP</option>

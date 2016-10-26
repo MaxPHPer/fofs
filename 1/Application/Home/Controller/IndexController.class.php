@@ -79,6 +79,7 @@ class IndexController extends BaseController {
             /*LP(母基金管理机构)*/
             case '1':  $User=M('Lp');  
                        $success_url='/Lp/individualProfile'; 
+                       $first_sign_url='/Register/personalInfo';
                        $second_sign_url='/Register/lpCompanyInfo';
                        $third_sign_url='/Register/membersInfo';
                        $fourth_sign_url='/Register/lpFundsInfo';
@@ -88,6 +89,7 @@ class IndexController extends BaseController {
             /*GP(私募股权基金管理机构)*/
             case '2':  $User=M('Gp');  
                        $success_url='/Gp/individualProfile'; 
+                       $first_sign_url='/Register/personalInfo';
                        $second_sign_url='/Register/gpCompanyInfo';
                        $third_sign_url='/Register/membersInfo';
                        $fourth_sign_url='/Register/gpFundsInfo';
@@ -97,6 +99,7 @@ class IndexController extends BaseController {
             /*创业公司*/
             case '3':  $User=M('Startup_company');  
                        $success_url='/Startups/individualProfile'; 
+                       $first_sign_url='/Register/personalInfo';
                        $second_sign_url='/Register/startupCompanyInfo';
                        $third_sign_url='/Register/membersInfo';
                        break;
@@ -105,6 +108,7 @@ class IndexController extends BaseController {
             /*fa服务机构*/
             case '4':  $User=M('Fa');  
                        $success_url='/Sa/individualProfile'; 
+                       $first_sign_url='/Register/personalInfo';
                        $second_sign_url='/Register/faCompanyInfo';
                        $third_sign_url='/Register/membersInfo';
                        $fourth_sign_url='/Register/faSuccessCase';
@@ -114,6 +118,7 @@ class IndexController extends BaseController {
             /*法务服务机构*/
             case '5':  $User=M('Legal_agency');  
                        $success_url='/Sa/individualProfile'; 
+                       $first_sign_url='/Register/personalInfo';
                        $second_sign_url='/Register/laCompanyInfo';
                        $third_sign_url='/Register/membersInfo';
                        $fourth_sign_url='/Register/laServiceInfo';
@@ -123,6 +128,7 @@ class IndexController extends BaseController {
             /*财务服务机构*/
             case '6':  $User=M('Financial_institution');  
                        $success_url='/Sa/individualProfile'; 
+                       $first_sign_url='/Register/personalInfo';
                        $second_sign_url='/Register/fiCompanyInfo';
                        $third_sign_url='/Register/membersInfo';
                        $fourth_sign_url='/Register/fiServiceInfo';
@@ -132,6 +138,7 @@ class IndexController extends BaseController {
             /*众创空间*/
             case '7':  $User=M('Business_incubator');  
                        $success_url='/Sa/individualProfile'; 
+                       $first_sign_url='/Register/personalInfo';
                        $second_sign_url='/Register/biCompanyInfo';
                        $third_sign_url='/Register/membersInfo';
                        $fourth_sign_url='/Register/biServiceInfo';
@@ -141,6 +148,7 @@ class IndexController extends BaseController {
             /*其它机构*/
             case '8':  $User=M('Other_institution');  
                        $success_url='/Sa/individualProfile'; 
+                       $first_sign_url='/Register/personalInfo';
                        $second_sign_url='/Register/otherInstitutionInfo';
                        $third_sign_url='/Register/membersInfo';
                        break;
@@ -160,12 +168,14 @@ class IndexController extends BaseController {
 
         if($list){
             if($list['password']==$data['password']){
-                session('nickname',$list['nickname']);
+                session('nickname',$list['nickname']?$list['nickname']:$list['email']);
+                session('email',$list['email']);
                 session('user_id',$list['id']);
                 session('institution_type',$list['institution_type']);
 
                 if($list['state']==1){  //账号正常，未完成全部注册
                     switch($list['reg_step']){
+                        case 1: $this->success('登陆成功,你的信息尚未填写完全,请继续填写',__APP__.'/Home'.$first_sign_url); break;
                         case 2: $this->success('登陆成功,你的信息尚未填写完全,请继续填写',__APP__.'/Home'.$second_sign_url); break;
                         case 3: $this->success('登陆成功,你的信息尚未填写完全,请继续填写',__APP__.'/Home'.$third_sign_url); break;
                         case 4: $this->success('登陆成功,你的信息尚未填写完全,请继续填写',__APP__.'/Home'.$fourth_sign_url); break;

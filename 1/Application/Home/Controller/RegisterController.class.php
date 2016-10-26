@@ -528,7 +528,7 @@ class RegisterController extends BaseController{
     }
 
 
-	//注册页
+	  //注册页
     public function email(){
         $this->display();
     }
@@ -774,7 +774,7 @@ class RegisterController extends BaseController{
         else{
             if($state==$data['state']){
                 $res=$User->where('id='.$data['user_id'])->setField('state',1);
-                $res=$User->where('id='.$data['user_id'])->setField('reg_step',2);
+                $res=$User->where('id='.$data['user_id'])->setField('reg_step',1);  //激活成功
                 $res=$User->where('id='.$data['user_id'])->setField('reg_time',time());
 
                 if($res){
@@ -870,145 +870,174 @@ class RegisterController extends BaseController{
 
     //lp公司信息
     public function lpCompanyInfo(){
-        $this->display();
-        die();
-        $User=M('Supplier');
-        $id=cookie('user_id');
-        if(!$id) $this->error('非法访问',__APP__."/Home/Index/");
-
-        $state=$User->where('id='.$id)->getField('state');
-        $supplier_company_id=$User->where('id='.$id)->getField('supplier_company_id');
-
-        if($supplier_company_id) $this->error('已填写公司信息！',__APP__."/Home/Index/");
-        
-        if($state=='1'){
-            $Year=date('Y');        //获取年份
-            $this->assign('year',$Year);
-
-            $Industry=M('Industry_cate');   //行业
-            $Ind_list=$Industry->select();
-            if(session('lang')=='en') $Ind_list=zh_to_en($Ind_list);
-            $this->assign('ind_list',$Ind_list);
-
-            $Cate=M('Company_cate');    //公司类型
-            $Cate=$Cate->select();
-            if(session('lang')=='en') $Cate=zh_to_en($Cate);
-            $this->assign('cate',$Cate);
-
-            $Stock=M('Stock_market');     //上市地点
-            $Sto_list=$Stock->select();
-            if(session('lang')=='en') $Sto_list=zh_to_en($Sto_list);
-            $this->assign('sto_list',$Sto_list);
-
-            $Cur_type=M('Currency_type');     //货币类型
-            $Cur_type_list=$Cur_type->select();
-            if(session('lang')=='en') $Cur_type_list=zh_to_en($Cur_type_list);
-            $this->assign('cur_list',$Cur_type_list);
-
-            $Unit=M('Unit');     //单位
-            $Unit_list=$Unit->select();
-            if(session('lang')=='en') $Unit_list=zh_to_en($Unit_list);
-            $this->assign('uni_list',$Unit_list);
-
-            $Process_First=M('Processing_technic_first');    //加工工艺一级
-            $Process_First_list=$Process_First->select();
-            if(session('lang')=='en') $Process_First_list=zh_to_en($Process_First_list);
-            $this->assign('pro1_list',$Process_First_list);
-
-            $Process_Second=M('Processing_technic_second');    //加工工艺二级
-            $Process_Second_list=$Process_Second->select();
-            if(session('lang')=='en') $Process_Second_list=zh_to_en($Process_Second_list);
-            $this->assign('pro2_list',$Process_Second_list);
-
-            $Process_Third=M('Processing_technic_third');    //加工工艺三级
-            $Process_Third_list=$Process_Third->select();
-            if(session('lang')=='en') $Process_Third_list=zh_to_en($Process_Third_list);
-            $this->assign('pro3_list',$Process_Third_list);
-
-            $Country=M('Country_code');     //国家
-            $Cou_list=$Country->select();
-            if(session('lang')=='en') $Cou_list=zh_to_en($Cou_list);
-            $this->assign('cou_list',$Cou_list);
-
-            $Province=M('Province_code');   //省份
-            $Pro_list=$Province->select();
-            if(session('lang')=='en') $Pro_list=zh_to_en($Pro_list);
-            $this->assign('pro_list',$Pro_list);
-
-            $Area=M('Area_partition');  //区域
-            $area_list=$Area->select();
-            if(session('lang')=='en') $area_list=zh_to_en($area_list);
-            $this->assign('are_list',$area_list);
-
-            $Ability=M('Ability_question'); //信息能力及回答
-            $Ability_Ans=M('Ability_question_choice');
-            $Ability_list=$Ability->select();
-            if(session('lang')=='en') $Ability_list=zh_to_en($Ability_list,'question','question_en');
-            foreach ($Ability_list as $key => $value) {
-                $Ability_list[$key]['answer']=$Ability_Ans->where('question_id='.$value['id'])->select();
-                if(session('lang')=='en') $Ability_list[$key]['answer']=zh_to_en($Ability_list[$key]['answer'],'content','content_en');
-            }
-            $this->assign('abi_list',$Ability_list);
-
-            $Compliance=M('Business_compliance'); //业务合规
-            $Compliance_Ans=M('Business_compliance_question_choice');
-            $Compliance_list=$Compliance->select();
-            if(session('lang')=='en') $Compliance_list=zh_to_en($Compliance_list,'question','question_en');
-            foreach ($Compliance_list as $key => $value) {
-                $Compliance_list[$key]['answer']=$Compliance_Ans->where('question_id='.$value['id'])->select();
-                if(session('lang')=='en') $Compliance_list[$key]['answer']=zh_to_en($Compliance_list[$key]['answer'],'content','content_en');
-            }
-            $this->assign('com_list',$Compliance_list);
-
-            $System=M('System_criteria');  //体系认证标准
-            $System_list=$System->select();
-            $this->assign('sys_list',$System_list);
-
-            $Body=M('Certification_body');  //认证机构
-            $Body_list=$Body->select();
-            $this->assign('bod_list',$Body_list);
-
-            $this->assign('id',$id);
+        if(session('institution_type')!=1){
+            $this->error('非法访问',__APP__."/Home/Index/");
+        }else{
             $this->display();
         }
-        else $this->error('非法访问',__APP__."/Home/Index/");
-    }
-
-    public function upload(){
-      $this->display();
+            
     }
 
     //个人信息
     public function personalInfo(){
-        $this->display();
-        die();
-        $Supplier=M('Supplier');
-        $id=cookie('user_id');
-        if(!$id)    $this->error('非法访问',__APP__."/Home/Index/");
+        if(session('user_id')){
+            switch (session('institution_type')) {
+                /*LP(母基金管理机构)*/
+                case '1':  $User=M('Lp');  break;
+                /*LP(母基金管理机构)end*/
 
-        $data=$Supplier->find($id);
+                /*GP(私募股权基金管理机构)*/
+                case '2':  $User=M('Gp');  break;
+                /*GP(私募股权基金管理机构)end*/
 
-        if($data['state']=='1'){
-            $Function=M('Function');   //行业
-            $Fun_list=$Function->select();
-            $this->assign('fun_list',$Fun_list);
+                /*创业公司*/
+                case '3':  $User=M('Startup_company');  break;
+                /*创业公司end*/
 
-            $Country=M('Country_code');     //国家
-            $Cou_list=$Country->select();
-            $this->assign('cou_list',$Cou_list);
+                /*fa服务机构*/
+                case '4':  $User=M('Fa');  break;
+                /*fa服务机构end*/
 
-            $Province=M('Province_code');   //省份
-            $Pro_list=$Province->select();
-            $this->assign('pro_list',$Pro_list);
+                /*法务服务机构*/
+                case '5':  $User=M('Legal_agency');  break;
+                /*法务服务机构end*/
 
-            $Recommand=M('Recommended_channel'); //推荐渠道
-            $Rec_list=$Recommand->select();
-            $this->assign('rec_list',$Rec_list);
+                /*财务服务机构*/
+                case '6':  $User=M('Financial_institution');  break;
+                /*财务服务机构end*/
 
-            $this->assign('data',$data);
+                /*众创空间*/
+                case '7':  $User=M('Business_incubator');  break;
+                /*众创空间end*/
+
+                /*其它机构*/
+                case '8':  $User=M('Other_institution');  break;
+                /*其它机构*/
+
+
+                default:break;
+            }
+            $this->assign('user',$User->getById(session('user_id')));    
             $this->display();
         }
-        else $this->error('非法访问',__APP__."/Home/Index/");
+        else{
+           $this->error('非法访问',__APP__."/Home/Index/");
+        } 
+    }
+
+    //储存个人注册者信息
+    public function save_personalInfo(){
+        if(session('user_id')){
+
+            //确定用户类型
+            switch (session('institution_type')) {
+                /*LP(母基金管理机构)*/
+                case '1':  $User=M('Lp');  
+                           $success_url='/Lp/individualProfile'; 
+                           $first_sign_url='/Register/personalInfo';
+                           $second_sign_url='/Register/lpCompanyInfo';
+                           $third_sign_url='/Register/membersInfo';
+                           $fourth_sign_url='/Register/lpFundsInfo';
+                           break;
+                /*LP(母基金管理机构)end*/
+
+                /*GP(私募股权基金管理机构)*/
+                case '2':  $User=M('Gp');  
+                           $success_url='/Gp/individualProfile'; 
+                           $first_sign_url='/Register/personalInfo';
+                           $second_sign_url='/Register/gpCompanyInfo';
+                           $third_sign_url='/Register/membersInfo';
+                           $fourth_sign_url='/Register/gpFundsInfo';
+                           break;
+                /*GP(私募股权基金管理机构)end*/
+
+                /*创业公司*/
+                case '3':  $User=M('Startup_company');  
+                           $success_url='/Startups/individualProfile'; 
+                           $first_sign_url='/Register/personalInfo';
+                           $second_sign_url='/Register/startupCompanyInfo';
+                           $third_sign_url='/Register/membersInfo';
+                           break;
+                /*创业公司end*/
+
+                /*fa服务机构*/
+                case '4':  $User=M('Fa');  
+                           $success_url='/Sa/individualProfile'; 
+                           $first_sign_url='/Register/personalInfo';
+                           $second_sign_url='/Register/faCompanyInfo';
+                           $third_sign_url='/Register/membersInfo';
+                           $fourth_sign_url='/Register/faSuccessCase';
+                           break;
+                /*fa服务机构end*/
+
+                /*法务服务机构*/
+                case '5':  $User=M('Legal_agency');  
+                           $success_url='/Sa/individualProfile'; 
+                           $first_sign_url='/Register/personalInfo';
+                           $second_sign_url='/Register/laCompanyInfo';
+                           $third_sign_url='/Register/membersInfo';
+                           $fourth_sign_url='/Register/laServiceInfo';
+                           break;
+                /*法务服务机构end*/
+
+                /*财务服务机构*/
+                case '6':  $User=M('Financial_institution');  
+                           $success_url='/Sa/individualProfile'; 
+                           $first_sign_url='/Register/personalInfo';
+                           $second_sign_url='/Register/fiCompanyInfo';
+                           $third_sign_url='/Register/membersInfo';
+                           $fourth_sign_url='/Register/fiServiceInfo';
+                           break;
+                /*财务服务机构end*/
+
+                /*众创空间*/
+                case '7':  $User=M('Business_incubator');  
+                           $success_url='/Sa/individualProfile'; 
+                           $first_sign_url='/Register/personalInfo';
+                           $second_sign_url='/Register/biCompanyInfo';
+                           $third_sign_url='/Register/membersInfo';
+                           $fourth_sign_url='/Register/biServiceInfo';
+                           break;
+                /*众创空间end*/
+
+                /*其它机构*/
+                case '8':  $User=M('Other_institution');  
+                           $success_url='/Sa/individualProfile'; 
+                           $first_sign_url='/Register/personalInfo';
+                           $second_sign_url='/Register/otherInstitutionInfo';
+                           $third_sign_url='/Register/membersInfo';
+                           break;
+                /*其它机构*/
+
+                /*个人*/
+                case '9':  $User=M('User');  
+                           $success_url='/Individual/individualProfile'; 
+                           break;
+                        
+                default:break;
+            }
+        }
+        else{
+           $this->error('非法访问',__APP__."/Home/Index/");
+        } 
+
+        $data=I('post.');
+        $data['reg_step']=2;
+        $data['id']=session('user_id');
+
+        if($User->create($data)){
+            $User->reg_time=time();
+            $result=$User->save();
+            if($result){
+                $this->success('Success！保存成功，请继续完善机构信息',__APP__.'/Home'.$second_sign_url);
+            }
+            else{
+                $this->error($User->getError());
+            } 
+        }
+        else{
+            $this->error($User->getError());
+        }
     }
 
 
@@ -1533,14 +1562,488 @@ class RegisterController extends BaseController{
       SUPPORTsendMail($email,$title,$content);
     }
 
-    
+    //储存lp公司信息
+    public function save_lpCompanyInfo(){
+        //电话与传真的区域代码为用户自行输入，非区域ID
+        $User=M('Lp');
+        $data['institution_fullname_cn']=I('post.institution_fullname_cn');
+        $data['institution_fullname_en']=I('post.institution_fullname_en');
+        $data['institution_abstract']=I('post.institution_abstract');
+        $data['organization_code']=I('post.organization_code');
+        $data['is_fofs_member']=I('post.is_fofs_member');
+        $data['registered_addr']=I('post.registered_addr');
+        $data['office_addr']=I('post.office_addr');
+        $data['registered_capital']=I('post.registered_capital');
+        $data['contributed_capital']=I('post.contributed_capital');
+        switch (I('post.fund_type')) {
+          case '0':
+            $data['is_securities_fund']=1;
+            break;
+          
+          case '1':
+            $data['is_stock_fund']=1;
+            break;
 
+          case '2':
+            $data['is_startup_fund']=1;
+            break;
+
+           case '3':
+            $data['is_other_fund']=1;
+            break;
+        }
+        $data['number_of_employees']=I('post.number_of_employees');
+        $data['contact_username']=I('post.contact_username');
+        $data['contact_fax']=I('post.contact_fax');
+        $data['contact_phone']=I('post.contact_phone');
+        $data['contact_email']=I('post.contact_email');
+        $data['contact_institution_wechat']=I('post.contact_institution_wechat');
+        $data['contact_institution_web']=I('post.contact_institution_web');
+        $data['is_association_registration']=I('post.is_association_registration');
+        $data['association_registration_number']=I('post.association_registration_number');
+        $data['association_registration_time']=strtotime(I('post.association_registration_time'));
+
+        $data['id']=session('user_id');
+        $data['reg_step']=3;
+
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     3145728 ;// 设置附件上传大小
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+        $upload->rootPath  =     './Public/uploads/lp_pic/'; // 设置附件上传根目录
+        $upload->savePath  =      ''; // 设置附件上传（子）目录
+        $upload->autoSub   =     false;    //不使用子目录
+        $upload->replace   =     true;      //覆盖文件
+
+        if(!file_exists($upload->rootPath))
+            $test1=mkdir('Public/uploads/lp_pic', 0777 ,1);
+
+        if($User->create($data)){
+
+            $result=$User->save();
+            if($result){
+                /*上传头像*/
+                foreach($_FILES as $key =>$file){
+                     if(!empty($file['name'])) {
+                        $upload->saveName  =   $result.'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
+                         // 上传单个文件 
+                         $info   =   $upload->uploadOne($file);
+                         if(!$info) {// 上传错误提示错误信息
+                            $this->error($upload->getError());
+                         }else{// 上传成功 获取上传文件信息
+                            $User->where('id='.$data['id'])->setField('institution_logo_img',$info['savename']);
+                         }
+                     }
+                }
+
+                $this->success('Success！保存成功，请继续管理团队信息',__APP__.'/Home/Register/membersInfo');
+            }
+            else{
+                $this->error($User->getError());
+            } 
+        }
+        else{
+            $this->error($User->getError());
+        }
+    }
+
+
+    //保存团队信息，再添加其它成员
+    public function add_membersInfo(){
+
+        $User=M('Senior_executive');
+
+        $data['username']=I('post.username');
+        $data['function']=I('post.function');
+        $data['institution_type']=session('institution_type');
+        $data['institution_id']=session('user_id');
+        $data['reg_time']=time();
+
+        if($User->create($data)){
+            //保存个人基本信息
+            $user_id=$User->add();
+            $where['institution_id']=session('user_id');
+            //设置第一位为法人或代表
+            if($User->where($where)->count()==1){
+                $User->where('id='.(int)$user_id)->setField('is_representative',1);
+            }
+
+            //保存工作经历
+            $Business_experience=M('Business_experience');
+            // 批量添加数据
+            $experience=I('post.business_experience');
+            for($i=0;$i<count($experience['company_name']);$i++){
+                $dataList[] = array('senior_executive_id'=>(int)$user_id,'company_name'=>$experience['company_name'][$i],'function'=>$experience['function'][$i],'start_time'=>$experience['start_time'][$i],'end_time'=>$experience['end_time'][$i]);
+            }
+
+            $result=$Business_experience->addAll($dataList);
+
+            if($result){
+                $this->success('Success！保存成功，请继续添加管理团队信息',__APP__.'/Home/Register/membersInfo');
+            }else{
+                $this->error($Business_experience->getError());
+            }
+        }
+        else{
+            $this->error($User->getError());
+        }
+        
+    }
+
+
+    //保存团队信息，并跳转下一步
+    public function save_membersInfo(){
+        $User=M('Senior_executive');
+
+        $data['username']=I('post.username');
+        $data['function']=I('post.function');
+        $data['institution_type']=session('institution_type');
+        $data['institution_id']=session('user_id');
+        $data['reg_time']=time();
+
+        if($User->create($data)){
+            //保存个人基本信息
+            $user_id=$User->add();
+            $where['institution_id']=session('user_id');
+            //设置第一位为法人或代表
+            if($User->where($where)->count()==1){
+                $User->where('id='.(int)$user_id)->setField('is_representative',1);
+            }
+
+            //保存工作经历
+            $Business_experience=M('Business_experience');
+            // 批量添加数据
+            $experience=I('post.business_experience');
+            for($i=0;$i<count($experience['company_name']);$i++){
+                $dataList[] = array('senior_executive_id'=>(int)$user_id,'company_name'=>$experience['company_name'][$i],'function'=>$experience['function'][$i],'start_time'=>$experience['start_time'][$i],'end_time'=>$experience['end_time'][$i]);
+            }
+
+            $result=$Business_experience->addAll($dataList);
+
+
+            if($result){
+                //确定用户类型
+                switch (session('institution_type')) {
+                    /*LP(母基金管理机构)*/
+                    case '1':  $User=M('Lp');  
+                               $success_url='/Lp/individualProfile'; 
+                               $first_sign_url='/Register/personalInfo';
+                               $second_sign_url='/Register/lpCompanyInfo';
+                               $third_sign_url='/Register/membersInfo';
+                               $fourth_sign_url='/Register/lpFundsInfo';
+                               break;
+                    /*LP(母基金管理机构)end*/
+
+                    /*GP(私募股权基金管理机构)*/
+                    case '2':  $User=M('Gp');  
+                               $success_url='/Gp/individualProfile'; 
+                               $first_sign_url='/Register/personalInfo';
+                               $second_sign_url='/Register/gpCompanyInfo';
+                               $third_sign_url='/Register/membersInfo';
+                               $fourth_sign_url='/Register/gpFundsInfo';
+                               break;
+                    /*GP(私募股权基金管理机构)end*/
+
+                    /*创业公司*/
+                    case '3':  $User=M('Startup_company');  
+                               $success_url='/Startups/individualProfile'; 
+                               $first_sign_url='/Register/personalInfo';
+                               $second_sign_url='/Register/startupCompanyInfo';
+                               $third_sign_url='/Register/membersInfo';
+                               break;
+                    /*创业公司end*/
+
+                    /*fa服务机构*/
+                    case '4':  $User=M('Fa');  
+                               $success_url='/Sa/individualProfile'; 
+                               $first_sign_url='/Register/personalInfo';
+                               $second_sign_url='/Register/faCompanyInfo';
+                               $third_sign_url='/Register/membersInfo';
+                               $fourth_sign_url='/Register/faSuccessCase';
+                               break;
+                    /*fa服务机构end*/
+
+                    /*法务服务机构*/
+                    case '5':  $User=M('Legal_agency');  
+                               $success_url='/Sa/individualProfile'; 
+                               $first_sign_url='/Register/personalInfo';
+                               $second_sign_url='/Register/laCompanyInfo';
+                               $third_sign_url='/Register/membersInfo';
+                               $fourth_sign_url='/Register/laServiceInfo';
+                               break;
+                    /*法务服务机构end*/
+
+                    /*财务服务机构*/
+                    case '6':  $User=M('Financial_institution');  
+                               $success_url='/Sa/individualProfile'; 
+                               $first_sign_url='/Register/personalInfo';
+                               $second_sign_url='/Register/fiCompanyInfo';
+                               $third_sign_url='/Register/membersInfo';
+                               $fourth_sign_url='/Register/fiServiceInfo';
+                               break;
+                    /*财务服务机构end*/
+
+                    /*众创空间*/
+                    case '7':  $User=M('Business_incubator');  
+                               $success_url='/Sa/individualProfile'; 
+                               $first_sign_url='/Register/personalInfo';
+                               $second_sign_url='/Register/biCompanyInfo';
+                               $third_sign_url='/Register/membersInfo';
+                               $fourth_sign_url='/Register/biServiceInfo';
+                               break;
+                    /*众创空间end*/
+
+                    /*其它机构*/
+                    case '8':  $User=M('Other_institution');  
+                               $success_url='/Sa/individualProfile'; 
+                               $first_sign_url='/Register/personalInfo';
+                               $second_sign_url='/Register/otherInstitutionInfo';
+                               $third_sign_url='/Register/membersInfo';
+                               break;
+                    /*其它机构*/
+
+                    /*个人*/
+                    case '9':  $User=M('User');  
+                               $success_url='/Individual/individualProfile'; 
+                               break;
+                            
+                    default:break;
+                }
+
+                $data['id']=session('user_id');
+                $data['reg_step']=4;
+                $User->save($data);
+
+                if(session('institution_type')==3||session('institution_type')==8||session('institution_type')==9){
+                    $this->success('Success！保存成功，完成注册',__APP__.'/Home'.$success_url);
+                }else{
+                    $this->success('Success！保存成功，请继续添加其它信息',__APP__.'/Home'.$fourth_sign_url);
+                }
+                    
+            }else{
+                $this->error($Business_experience->getError());
+            }
+        }
+        else{
+            $this->error($User->getError());
+        }
+    }      
+
+    //lp基金信息
     public function lpFundsInfo(){
+      $Lp_fund_product=M('Lp_fund_product');
+      $where['institution_type']=session('institution_type');
+      $where['institution_id']=session('user_id');
+      $funds=$Lp_fund_product->where($where)->select();
+
+      $Investment_project=M('Investment_project');
+      $total_funds_size=0;
+
+      foreach($funds as $key => $value){
+          $where2['fund_id']=$value['id'];
+          $funds[$key]['investment_projects']=$Investment_project->where($where2)->select();
+
+          //计算管理基金总规模
+          $total_funds_size+=$funds[$key]['fund_size'];
+
+      }
+
+      $this->assign('funds',$funds);
+      $this->assign('total_funds_size',$total_funds_size);
+      $this->assign('total_funds_num',count($funds));
       $this->display();
+    }
+
+    //保存lp基金，并再添加
+    public function add_lpFundsInfo(){
+        $Lp_fund_product=M('Lp_fund_product');
+
+        $data['institution_type']=session('institution_type');
+        $data['institution_id']=session('user_id');
+        $data['name']=I('post.name');
+        $data['founded_time']=strtotime(I('post.founded_time'));
+        $data['registered_address']=I('post.registered_address');
+        $data['currency_type_id']=I('post.currency_type_id');
+        $data['fund_size']=I('post.fund_size');
+        switch(I('post.fund_property')){
+            case 1: $data['is_government_guidance']=1; break;
+            case 2: $data['is_private_capital']=1; break;
+            case 3: $data['is_state_owned']=1; break;
+        }
+
+        foreach(I('post.fund_type') as $value){
+            $data[$value]=1;
+        }
+
+        $data['trustee_name']=I('post.trustee_name');
+        $data['investment_field']=I('post.investment_field');
+        $data['is_recruitment_period']=I('post.is_recruitment_period');
+
+        $data['is_recorded']=I('post.is_recorded');
+        $data['fund_number']=I('post.fund_number');
+        $data['recorded_time']=strtotime(I('post.recorded_time'));
+
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     10145728 ;// 设置附件上传大小,10M
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->rootPath  =     './Public/uploads/lp_recruitment/'; // 设置附件上传根目录
+        $upload->savePath  =      ''; // 设置附件上传（子）目录
+        $upload->autoSub   =     false;    //不使用子目录
+        $upload->replace   =     true;      //覆盖文件
+
+        if(!file_exists($upload->rootPath))
+            $test1=mkdir('Public/uploads/lp_recruitment', 0777 ,1);
+
+
+        if($Lp_fund_product->create($data)){
+            //保存个人基本信息
+            $fund_id=$Lp_fund_product->add();
+
+            if($fund_id){
+                /*上传募集方案*/
+                foreach($_FILES as $key =>$file){
+                     if(!empty($file['name'])) {
+                        $upload->saveName  =   $fund_id.'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
+                         // 上传单个文件 
+                         $info   =   $upload->uploadOne($file);
+                         if(!$info) {// 上传错误提示错误信息
+                            $this->error($upload->getError());
+                         }else{// 上传成功 获取上传文件信息
+                            $Lp_fund_product->where('id='.$fund_id)->setField('recruitment_plan_url',$info['savename']);
+                         }
+                     }
+                }
+            }
+
+
+            $where['fund_id']=$fund_id;
+
+            //保存已投项目/基金
+            $Investment_project=M('Investment_project');
+            // 批量添加数据
+            $investment_projects=I('post.investment_project');
+            for($i=0;$i<count($investment_projects['project_name']);$i++){
+                $dataList[] = array('fund_id'=>(int)$fund_id,'project_name'=>$investment_projects['project_name'][$i],'project_abstract'=>$investment_projects['project_abstract'][$i],'investment_quota'=>$investment_projects['investment_quota'][$i],'investment_round'=>$investment_projects['investment_round'][$i],'investment_time'=>strtotime($investment_projects['investment_time'][$i]),'project_state_type'=>$investment_projects['project_state_type'][$i]);
+            }
+
+            $result=$Investment_project->addAll($dataList);
+
+            if($result){
+                $this->success('Success！保存成功，请继续添加其它基金产品信息',__APP__.'/Home/Register/lpFundsInfo');
+            }else{
+                $this->error($Investment_project->getError());
+            }
+        }
+        else{
+            $this->error($Lp_fund_product->getError());
+        }
+    }
+
+    //保存lp基金，完成注册
+    public function save_lpFundsInfo(){
+        $Lp_fund_product=M('Lp_fund_product');
+
+        $data['institution_type']=session('institution_type');
+        $data['institution_id']=session('user_id');
+        $data['name']=I('post.name');
+        $data['founded_time']=strtotime(I('post.founded_time'));
+        $data['registered_address']=I('post.registered_address');
+        $data['currency_type_id']=I('post.currency_type_id');
+        $data['fund_size']=I('post.fund_size');
+        switch(I('post.fund_property')){
+            case 1: $data['is_government_guidance']=1; break;
+            case 2: $data['is_private_capital']=1; break;
+            case 3: $data['is_state_owned']=1; break;
+        }
+
+        foreach(I('post.fund_type') as $value){
+            $data[$value]=1;
+        }
+
+        $data['trustee_name']=I('post.trustee_name');
+        $data['investment_field']=I('post.investment_field');
+        $data['is_recruitment_period']=I('post.is_recruitment_period');
+
+        $data['is_recorded']=I('post.is_recorded');
+        $data['fund_number']=I('post.fund_number');
+        $data['recorded_time']=strtotime(I('post.recorded_time'));
+
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     10145728 ;// 设置附件上传大小,10M
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->rootPath  =     './Public/uploads/lp_recruitment/'; // 设置附件上传根目录
+        $upload->savePath  =      ''; // 设置附件上传（子）目录
+        $upload->autoSub   =     false;    //不使用子目录
+        $upload->replace   =     true;      //覆盖文件
+
+        if(!file_exists($upload->rootPath))
+            $test1=mkdir('Public/uploads/lp_recruitment', 0777 ,1);
+
+
+        if($Lp_fund_product->create($data)){
+            //保存个人基本信息
+            $fund_id=$Lp_fund_product->add();
+
+            if($fund_id){
+                /*上传募集方案*/
+                foreach($_FILES as $key =>$file){
+                     if(!empty($file['name'])) {
+                        $upload->saveName  =   $fund_id.'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
+                         // 上传单个文件 
+                         $info   =   $upload->uploadOne($file);
+                         if(!$info) {// 上传错误提示错误信息
+                            $this->error($upload->getError());
+                         }else{// 上传成功 获取上传文件信息
+                            $Lp_fund_product->where('id='.$fund_id)->setField('recruitment_plan_url',$info['savename']);
+                         }
+                     }
+                }
+            }
+
+
+            $where['fund_id']=$fund_id;
+
+            //保存已投项目/基金
+            $Investment_project=M('Investment_project');
+            // 批量添加数据
+            $investment_projects=I('post.investment_project');
+            for($i=0;$i<count($investment_projects['project_name']);$i++){
+                $dataList[] = array('fund_id'=>(int)$fund_id,'project_name'=>$investment_projects['project_name'][$i],'project_abstract'=>$investment_projects['project_abstract'][$i],'investment_quota'=>$investment_projects['investment_quota'][$i],'investment_round'=>$investment_projects['investment_round'][$i],'investment_time'=>strtotime($investment_projects['investment_time'][$i]),'project_state_type'=>$investment_projects['project_state_type'][$i]);
+            }
+
+            $result=$Investment_project->addAll($dataList);
+
+            if($result){
+                //设置账号为完成注册
+                $User=M('Lp');
+                $data=array();
+                $data['id']=session('user_id');
+                $data['reg_step']=5;
+                $data['state']=200;
+                $User->save($data);
+                $this->success('Success！保存成功，恭喜完成注册',__APP__.'/Home/Lp/individualProfile');
+            }else{
+                $this->error($Investment_project->getError());
+            }
+        }
+        else{
+            $this->error($Lp_fund_product->getError());
+        }
     }
 
 
     public function membersInfo(){
+      $Senior_executive=M('Senior_executive');
+      $where['institution_type']=session('institution_type');
+      $where['institution_id']=session('user_id');
+      $members=$Senior_executive->where($where)->select();
+
+      $Business_experience=M('Business_experience');
+      foreach($members as $key => $value){
+          $where2['senior_executive_id']=$value['id'];
+          $members[$key]['business_experience']=$Business_experience->where($where2)->select();
+      }
+
+      $this->assign('members',$members);
       $this->display();
     }
 

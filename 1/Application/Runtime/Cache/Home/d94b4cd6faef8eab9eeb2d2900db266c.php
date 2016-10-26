@@ -244,31 +244,28 @@
             <h2 style="margin-left:-40px;">完善账号管理人个人信息</h2>
           </div>
           <div class="panel-body">
-            <form class="form-horizontal" action="/fofs/1/index.php/Home/Register/save_supplierPersonalInfo" enctype="multipart/form-data" method="post" >
+            <form class="form-horizontal" action="/fofs/1/index.php/Home/Register/save_personalInfo" enctype="multipart/form-data" method="post" >
               
               <div class="form-group">
-                <label for="userName" class="col-sm-3 control-label"><span>*</span>机构简称</label>
+                <label for="institution_abbr" class="col-sm-3 control-label"><span>*</span>机构简称</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="userName" name="username" required/>
+                  <input type="text" class="form-control" id="institution_abbr" name="institution_abbr" required/>
                 </div>
               </div><!--机构简称-->
 
 
               <div class="form-group">
-                <label for="language" class="col-sm-3 control-label"><span>*</span>机构类型</label>
+                <label for="institution_type" class="col-sm-3 control-label"><span>*</span>机构类型</label>
                 <div class="col-sm-8">
-                  <select name="language" id="language" class="form-control">
-
-                          <option value ="0">请选择机构类型</option>
-                          <option value ="1">母基金</option>
-                          <option value="2">基金</option>
-                          <option value="3">创业公司</option>
-                          <option value ="4">FA机构</option>
-                          <option value="5">法务机构</option>
-                          <option value="6">财务机构</option>
-                          <option value ="7">众创空间</option>
-                          <option value="8">其它(媒体、政府机构等)</option>
-
+                  <select name="institution_type" id="institution_type" class="form-control" disabled>
+                        <?php switch($institution_type): case "1": ?><option value ="1">母基金</option><?php break;?>
+                            <?php case "2": ?><option value="2">基金</option><?php break;?>
+                            <?php case "3": ?><option value="3">创业公司</option><?php break;?>
+                            <?php case "4": ?><option value ="4">FA机构</option><?php break;?>
+                            <?php case "5": ?><option value="5">法务机构</option><?php break;?>
+                            <?php case "6": ?><option value="6">财务机构</option><?php break;?>
+                            <?php case "7": ?><option value ="7">众创空间</option><?php break;?>
+                            <?php case "8": ?><option value="8">其它(媒体、政府机构等)</option><?php break; endswitch;?>
                   </select>
                 </div>
               </div><!--所属行业-->
@@ -276,54 +273,54 @@
               <div class="form-group">
                 <label for="email" class="col-sm-3 control-label"><span>*</span>公司邮箱账号</label>
                 <div class="col-sm-8">
-                  <input type="email" class="form-control" id="email" disabled="disabled" value="<?php echo ($data['email']); ?>" required/>
+                  <input type="email" class="form-control" id="email" disabled="disabled" value="<?php echo ($user['email']); ?>" required/>
                 </div>
               </div><!--电子邮件-->
             
     
               <div class="form-group">
-                <label for="userName" class="col-sm-3 control-label"><span>*</span>账号管理人姓名</label>
+                <label for="admin_name" class="col-sm-3 control-label"><span>*</span>账号管理人姓名</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="userName" name="username" required/>
+                  <input type="text" class="form-control" id="admin_name" name="admin_name" required/>
                 </div>
               </div><!--姓名-->
 
 
               <div class="form-group">
-                <label for="userName" class="col-sm-3 control-label">公司职务</label>
+                <label for="admin_function" class="col-sm-3 control-label">公司职务</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="userName" name="username" />
+                  <input type="text" class="form-control" id="admin_function" name="admin_function" />
                 </div>
               </div><!--公司职务-->
 
 
               <div class="form-group">
-                <label for="userName" class="col-sm-3 control-label">电话</label>
+                <label for="admin_telephone" class="col-sm-3 control-label">电话</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="userName" name="username" />
+                  <input type="text" class="form-control" id="admin_telephone" name="admin_telephone" />
                 </div>
               </div><!--电话-->
 
               <div class="form-group">
-                <label for="userName" class="col-sm-3 control-label">手机</label>
+                <label for="admin_mobilephone" class="col-sm-3 control-label">手机</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="userName" name="username" />
+                  <input type="text" class="form-control" id="admin_mobilephone" name="admin_mobilephone" />
                 </div>
               </div><!--手机-->
 
 
               <div class="form-group">
-                <label for="userName" class="col-sm-3 control-label">邮箱</label>
+                <label for="admin_email" class="col-sm-3 control-label">邮箱</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="userName" name="username" />
+                  <input type="text" class="form-control" id="admin_email" name="admin_email" />
                 </div>
               </div><!--邮箱-->
               
 
               <div class="form-group">
-                <label for="userName" class="col-sm-3 control-label">身份证号码</label>
+                <label for="admin_idcard" class="col-sm-3 control-label">身份证号码</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="userName" name="username" />
+                  <input type="text" class="form-control" id="admin_idcard" name="admin_idcard" />
                 </div>
               </div><!--身份证号码-->
               
