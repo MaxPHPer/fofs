@@ -329,12 +329,13 @@
           </div>
           <div class="col-md-8">
             <div class="well">
-              <h3>修改成员信息</h3>
+              <h3>添加新成员信息</h3>
               <hr/>
               <form class="form-horizontal" action=""  method="post" name='form1'>
                 <div class="panel-body">
                     <!--已有团队成员-->
-                    <?php if(is_array($members)): foreach($members as $key=>$vo): ?><div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                    
+                        <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
                           <div class="panel-body">
                             <div class="repeat_people ">
                               <div class="borderBottom" style="margin-bottom:20px;">
@@ -348,7 +349,6 @@
                                   <div class="col-sm-4">
 
                                         <input type="text" class="form-control" id="username" name="username" value="<?php echo ($vo['username']); ?>" />
-                                        <input type="hidden" name="id" value="<?php echo ($vo['id']); ?>">
                                   </div>
 
                                 </div>
@@ -398,43 +398,16 @@
                                   </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-sm-3 text_right">
-                                      已有从业经历:
-                                    </div>
-                                </div>
-
-                                <div class="">
-                                  <?php if(is_array($vo['business_experience'])): foreach($vo['business_experience'] as $key=>$business_experience): ?><div class="row" style="margin-top:10px;">
-                                        
-                                        <div class="col-sm-3 text_right">
-                                              <?php echo ($business_experience['company_name']); ?>
-                                        </div>
-                                       
-                                          
-                                        <div class="col-sm-3">
-                                              <?php echo ($business_experience['function']); ?>
-                                        </div>
-
-                                        <div class="col-sm-4">
-                                          <?php echo ($business_experience['start_time']); ?>-<?php echo ($business_experience['end_time']); ?>
-                                        </div>
-
-                                        <div class="col-sm-2 text_right">
-                                            <span class="glyphicon glyphicon-trash"></span><a href="<?php echo U('Home/Lp/deleteExperience');?>?id=<?php echo ($business_experience['id']); ?>">删除</a>
-                                        </div>
-                              
-                                      </div><?php endforeach; endif; ?>
-                                </div>
                               </div>
                             </div>
                             <div class="row">
                                   <div class="col-sm-4">
-                                    <input type="submit" class="btn btn-primary btn-block"  value="保存修改" onclick="form1.action='/fofs/1/index.php/Home/Lp/do_modifyMember';form1.submit();"/>
+                                    <input type="submit" class="btn btn-primary btn-block"  value="保存修改" onclick="form1.action='/fofs/1/index.php/Home/Lp/do_addMember';form1.submit();"/>
                                   </div>
                             </div>
                           </div>
-                        </div><?php endforeach; endif; ?>
+                        </div> 
+                  
                 </div>
               </form>
                &nbsp;

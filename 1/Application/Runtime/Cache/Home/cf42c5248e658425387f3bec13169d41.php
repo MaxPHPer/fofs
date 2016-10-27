@@ -329,114 +329,145 @@
           </div>
           <div class="col-md-8">
             <div class="well">
-              <h3>修改成员信息</h3>
+              <h3>关注我的</h3>
               <hr/>
-              <form class="form-horizontal" action=""  method="post" name='form1'>
-                <div class="panel-body">
-                    <!--已有团队成员-->
-                    <?php if(is_array($members)): foreach($members as $key=>$vo): ?><div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
-                          <div class="panel-body">
-                            <div class="repeat_people ">
-                              <div class="borderBottom" style="margin-bottom:20px;">
-                                <div class="row" >
-                                  <div class="col-sm-3">
-                                    
-                                      <label for="username" class="col-sm-12 control-label"><span>*</span>姓名</label>
-                
-                                  </div>
+              
+              <div class="row margin_top_20">
+                  <div class='col-md-12' >
+                      <!-- Nav tabs -->
+                      <ul class="nav nav-tabs" role="tablist" style="padding-left:15px; padding-right: 15px;">
+                        <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">关注我的个人用户</a></li>
+                        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">关注我的机构用户</a></li>
+                      </ul>
 
-                                  <div class="col-sm-4">
-
-                                        <input type="text" class="form-control" id="username" name="username" value="<?php echo ($vo['username']); ?>" />
-                                        <input type="hidden" name="id" value="<?php echo ($vo['id']); ?>">
-                                  </div>
-
-                                </div>
-
-                                <div class="row" style="margin-top:10px;">
-                                  <div class="col-sm-3">
-                                    
-                                      <label for="function" class="col-sm-12 control-label"><span>*</span>职务</label>
-                
-                                  </div>
-
-                                  <div class="col-sm-4">
-
-                                        <input type="text" class="form-control" id="function" name="function"  value="<?php echo ($vo['function']); ?>"/>
-
-                                  </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-3 ">
-                                      <label for="userName" class="col-sm-12 control-label"><b>从业经历</b></label>
-                                    </div>
-                                </div>
-
-                                <div class="repeat">
-                                  <div class="row" style="margin-top:10px;">
-                                    
-                                    <div class="col-sm-4 ">
-                                      公司名称<input type="text" class="col-sm-12 form-control" name="business_experience[company_name][]"/>
-                                    </div>
-
-                                    <div class="col-sm-4 ">
-                                      职位<input type="text" class="form-control" name="business_experience[function][]"/>
-                                    </div>
-                                   
-                                    <div class="col-sm-4 ">
-                                      任职年月<input type="text" class="form-control" name="business_experience[start_time][]"/>
-                                      至<input type="text" class="form-control" name="business_experience[end_time][]"/>
-                                    </div>
-
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-sm-10"></div>
-                                  <div class="col-sm-2">
-                                    <button type="button" class="btn btn-primary " style="margin-top:10px;" id="addNew2">再添加从业经历</button>
-                                  </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-3 text_right">
-                                      已有从业经历:
-                                    </div>
-                                </div>
-
-                                <div class="">
-                                  <?php if(is_array($vo['business_experience'])): foreach($vo['business_experience'] as $key=>$business_experience): ?><div class="row" style="margin-top:10px;">
-                                        
-                                        <div class="col-sm-3 text_right">
-                                              <?php echo ($business_experience['company_name']); ?>
-                                        </div>
-                                       
-                                          
-                                        <div class="col-sm-3">
-                                              <?php echo ($business_experience['function']); ?>
-                                        </div>
-
-                                        <div class="col-sm-4">
-                                          <?php echo ($business_experience['start_time']); ?>-<?php echo ($business_experience['end_time']); ?>
-                                        </div>
-
-                                        <div class="col-sm-2 text_right">
-                                            <span class="glyphicon glyphicon-trash"></span><a href="<?php echo U('Home/Lp/deleteExperience');?>?id=<?php echo ($business_experience['id']); ?>">删除</a>
-                                        </div>
+                      <!-- Tab panes -->
+                      <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                              <div class="panel-body">
+                                <div class="list-group">
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                          1
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >万剑一</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
                               
-                                      </div><?php endforeach; endif; ?>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                                  <div class="col-sm-4">
-                                    <input type="submit" class="btn btn-primary btn-block"  value="保存修改" onclick="form1.action='/fofs/1/index.php/Home/Lp/do_modifyMember';form1.submit();"/>
                                   </div>
+
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                         2
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >万剑一</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                          3
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >万剑一</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                          4
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >万剑一</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+                                  
+                                
+                                </div>
                             </div>
-                          </div>
-                        </div><?php endforeach; endif; ?>
-                </div>
-              </form>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+
+                              <div class="panel-body">
+                                <div class="list-group">
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                          1
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >歌斐资产</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                         2
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >紫荆资本</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+                                  
+                                
+                                </div>
+                            </div>
+
+
+                        </div>
+                      </div>
+                  </div>
+              </div>
+
                &nbsp;
             </div>
           </div>

@@ -258,7 +258,7 @@
 
                       <p><i class="fa fa-envelope-o fa-md"></i> <?php echo ($user['email']); ?></p>
                       <p><i class="glyphicon glyphicon-th-list"></i>LP</p>
-                      <a class="btn btn-default" href="modifyPersonalInfo" role="button">修改相关信息</a>
+                      <a class="btn btn-default" href="allFunds.html" role="button">修改管理的基金</a>
                     </div>
                   </div>
                 </div>

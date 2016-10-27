@@ -95,84 +95,12 @@ class LpController extends BaseController {
     }
 
 
-    //采购商收件箱
+    //收件箱
     public function inbox(){
 
         $this->display();
         die();
         
-
-        $user=$this->getInfo(session('user_id'));
-        $this->assign('user',$user);
-
-        $Inbox=M('Letter');             //获取邮件
-        $amount=array('receive'=>0,      //计数器
-                      'send'=>0);
-
-        $rec_map=array(array('sender_id'=>$user['id'],     //Rfi查询条件
-                    'sender_type'=>1,
-                    'type'=>1,
-                    'state'=>array('neq',0)),
-                    '_string'=>'recipient_id='.$user['id'].' AND recipient_type=1',                                 //普通信息查询条件
-                    '_logic'=>'OR');                       //OR
-        $send_map=array('sender_id'=>$user['id'],    //发送
-                    'sender_type'=>1);
-
-        $rec_msg=$Inbox->where($rec_map)->order('time desc')->select();
-        $send_msg=$Inbox->where($send_map)->order('time desc')->select();
-
-        foreach ($rec_msg as $key => $value) {      //整理数据---收件箱
-            if($value['type']==2){
-                $rec_msg[$key]['user']=$this->getMsgSender($value['sender_type'],$value['sender_id']);      //获取发送者名称
-                $rec_msg[$key]['time']=date('Y-m-d H:i:s',$value["time"]);
-                                                //处理发送时间
-                $rec_msg[$key]['state']=$value['state']?'已读':'未读';  //处理状态
-            }
-            else if($value['type']==1){
-                $rec_msg[$key]['user']=$this->getMsgSender($value['recipient_type'],$value['recipient_id']);      //获取发送者名称
-                $rec_msg[$key]['time']=date('Y-m-d H:i:s',$value["time"]);
-                                                //处理发送时间
-                switch ($value['state']) {
-                    case '1': $rec_msg[$key]['state']='已同意'; break;
-                    case '2': $rec_msg[$key]['state']='已拒绝'; break;
-                }
-            }
-        }
-
-        $SupCompany=M('Supplier_company');
-        $BuyCompany=M('Buyer_company');
-        $Buyer=M('Buyer');
-        $Supplier=M('Supplier');
-        foreach ($send_msg as $key => $value) {      //整理数据---发件箱
-            $send_msg[$key]['user']=$this->getMsgSender($value['recipient_type'],$value['recipient_id']);      //获取收件人名称
-            $send_msg[$key]['time']=date('Y-m-d H:i:s',$value["time"]);
-                                            //处理发送时间
-            $send_msg[$key]['state']='已发送';  //处理状态
-            if($value['type']=='1'){
-
-                $supcom_id=$Supplier->getFieldById($value['recipient_id'],'supplier_company_id');
-                $send_msg[$key]['supname']=$SupCompany->getFieldById($supcom_id,'name');       //获取供应商公司名
-
-                $send_msg[$key]['servicer']=$Supplier->getFieldById($value['recipient_id'],'username');       //获取供应商客户经理
-
-            }
-        }
-        
-        $amount['receive']=count($rec_msg);
-        $amount['send']=count($send_msg);
-
-        $type=I('get.type');
-        if($type=='2'){
-            $this->assign('msg',$send_msg);
-        }
-        else
-        {
-            $this->assign('msg',$rec_msg);
-        }
-
-        $this->assign('amount',$amount);
-        $this->assign('pgtype',$type);
-        $this->display();
     }
 
 
@@ -307,7 +235,7 @@ class LpController extends BaseController {
 
     //修改成员信息
     public function modifyMember(){
-           //成员信息
+          //成员信息
           $Senior_executive=M('Senior_executive');
           $where['institution_type']=session('institution_type');
           $where['institution_id']=session('user_id');
@@ -339,7 +267,7 @@ class LpController extends BaseController {
             $where['institution_id']=session('user_id');
             //设置第一位为法人或代表
             if($User->where($where)->count()==1){
-                $User->where('id='.(int)$user_id)->setField('is_representative',1);
+                $User->where('id='.(int)I('post.id'))->setField('is_representative',1);
             }
 
             if(I('post.business_experience')){
@@ -348,19 +276,21 @@ class LpController extends BaseController {
                 // 批量添加数据
                 $experience=I('post.business_experience');
                 for($i=0;$i<count($experience['company_name']);$i++){
-                    $dataList[] = array('senior_executive_id'=>(int)$user_id,'company_name'=>$experience['company_name'][$i],'function'=>$experience['function'][$i],'start_time'=>$experience['start_time'][$i],'end_time'=>$experience['end_time'][$i]);
+                    $dataList[] = array('senior_executive_id'=>(int)I('post.id'),'company_name'=>$experience['company_name'][$i],'function'=>$experience['function'][$i],'start_time'=>$experience['start_time'][$i],'end_time'=>$experience['end_time'][$i]);
                 }
 
                 $result=$Business_experience->addAll($dataList);    
                 
                 if($result){
-                    $this->success('Success！保存成功');
+                    $this->success('Success！修改保存成功',__APP__.'/Home/Lp/myCompany');
                 }else{
                     $this->error($Business_experience->getError());
                 }      
             }else{
                 if($user_id){
-                    $this->success('Success！保存成功',__APP__.'/Home/Lp/membersInfo');
+                    $this->success('Success！保存成功',__APP__.'/Home/Lp/myCompany');
+                }else{
+                    $this->error($User->getError());
                 }
             }
 
@@ -374,7 +304,358 @@ class LpController extends BaseController {
 
     //删除成员信息
     public function deleteMember(){
+        $Business_experience=M('Business_experience');
+        $where['senior_executive_id']=I('get.id');
+        $Business_experience->where($where)->delete();
+
+        $Senior_executive=M('Senior_executive');
+        $where2['id']=I('get.id');
+        if($Senior_executive->where($where2)->delete()){
+            $this->success('删除成功');
+        }else{
+            $this->error('删除失败');
+        }
+
+    }
+
+    //删除成员经历
+    public function deleteExperience(){
+        $Business_experience=M('Business_experience');
+        $where['id']=I('get.id');
+        if($Business_experience->where($where)->delete()){
+            $this->success('删除成功');
+        }else{
+            $this->error('删除失败');
+        }
+    }
+
+    //添加新成员
+    public function addMember(){
         $this->display();
+    }
+
+
+    //执行添加新成员
+    public function do_addMember(){
+        $User=M('Senior_executive');
+
+        $data['username']=I('post.username');
+        $data['function']=I('post.function');
+        $data['institution_type']=session('institution_type');
+        $data['institution_id']=session('user_id');
+        $data['reg_time']=time();
+
+        if($User->create($data)){
+            //保存个人基本信息
+            $user_id=$User->add();
+            $where['institution_id']=session('user_id');
+            //设置第一位为法人或代表
+            if($User->where($where)->count()==1){
+                $User->where('id='.(int)$user_id)->setField('is_representative',1);
+            }
+
+            //保存工作经历
+            $Business_experience=M('Business_experience');
+            // 批量添加数据
+            $experience=I('post.business_experience');
+            for($i=0;$i<count($experience['company_name']);$i++){
+                $dataList[] = array('senior_executive_id'=>(int)$user_id,'company_name'=>$experience['company_name'][$i],'function'=>$experience['function'][$i],'start_time'=>$experience['start_time'][$i],'end_time'=>$experience['end_time'][$i]);
+            }
+
+            $result=$Business_experience->addAll($dataList);
+
+            if($result){
+                $this->success('Success！保存成功',__APP__.'/Home/Lp/myCompany');
+            }else{
+                $this->error($Business_experience->getError());
+            }
+        }
+        else{
+            $this->error($User->getError());
+        }
+    }
+
+    //添加新基金
+    public function addFund(){
+      $this->display();
+    }
+
+    //执行添加新基金
+    public function do_addFund(){
+        $Lp_fund_product=M('Lp_fund_product');
+
+        $data['institution_type']=session('institution_type');
+        $data['institution_id']=session('user_id');
+        $data['name']=I('post.name');
+        $data['founded_time']=strtotime(I('post.founded_time'));
+        $data['registered_address']=I('post.registered_address');
+        $data['currency_type_id']=I('post.currency_type_id');
+        $data['fund_size']=I('post.fund_size');
+        switch(I('post.fund_property')){
+            case 1: $data['is_government_guidance']=1; break;
+            case 2: $data['is_private_capital']=1; break;
+            case 3: $data['is_state_owned']=1; break;
+        }
+
+        foreach(I('post.fund_type') as $value){
+            $data[$value]=1;
+        }
+
+        $data['trustee_name']=I('post.trustee_name');
+        $data['investment_field']=I('post.investment_field');
+        $data['is_recruitment_period']=I('post.is_recruitment_period');
+
+        $data['is_recorded']=I('post.is_recorded');
+        $data['fund_number']=I('post.fund_number');
+        $data['recorded_time']=strtotime(I('post.recorded_time'));
+
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     10145728 ;// 设置附件上传大小,10M
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->rootPath  =     './Public/uploads/lp_recruitment/'; // 设置附件上传根目录
+        $upload->savePath  =      ''; // 设置附件上传（子）目录
+        $upload->autoSub   =     false;    //不使用子目录
+        $upload->replace   =     true;      //覆盖文件
+
+        if(!file_exists($upload->rootPath))
+            $test1=mkdir('Public/uploads/lp_recruitment', 0777 ,1);
+
+
+        if($Lp_fund_product->create($data)){
+            //保存个人基本信息
+            $fund_id=$Lp_fund_product->add();
+
+            if($fund_id){
+                /*上传募集方案*/
+                foreach($_FILES as $key =>$file){
+                     if(!empty($file['name'])) {
+                        $upload->saveName  =   $fund_id.'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
+                         // 上传单个文件 
+                         $info   =   $upload->uploadOne($file);
+                         if(!$info) {// 上传错误提示错误信息
+                            $this->error($upload->getError());
+                         }else{// 上传成功 获取上传文件信息
+                            $Lp_fund_product->where('id='.$fund_id)->setField('recruitment_plan_url',$info['savename']);
+                         }
+                     }
+                }
+            }
+
+
+            $where['fund_id']=$fund_id;
+
+            //保存已投项目/基金
+            $Investment_project=M('Investment_project');
+            // 批量添加数据
+            $investment_projects=I('post.investment_project');
+            for($i=0;$i<count($investment_projects['project_name']);$i++){
+              if($investment_projects['project_name'][$i]){
+                $dataList[] = array('fund_id'=>(int)$fund_id,'project_name'=>$investment_projects['project_name'][$i],'project_abstract'=>$investment_projects['project_abstract'][$i],'investment_quota'=>$investment_projects['investment_quota'][$i],'investment_round'=>$investment_projects['investment_round'][$i],'investment_time'=>strtotime($investment_projects['investment_time'][$i]),'project_state_type'=>$investment_projects['project_state_type'][$i]);
+              }
+            }
+
+            if($dataList){
+                $result=$Investment_project->addAll($dataList);
+
+                if($result){
+                    $this->success('Success！添加成功',__APP__.'/Home/Lp/allFunds');
+                }else{
+                    $this->error($Investment_project->getError());
+                }
+            }else{
+                $this->success('Success！添加成功',__APP__.'/Home/Lp/allFunds');
+            }
+            
+        }
+        else{
+            $this->error($Lp_fund_product->getError());
+        }
+    }
+
+    //所有基金
+    public function allFunds(){
+      //基金信息
+      $Lp_fund_product=M('Lp_fund_product');
+      $where['institution_type']=session('institution_type');
+      $where['institution_id']=session('user_id');
+      $funds=$Lp_fund_product->where($where)->select();
+
+      $Investment_project=M('Investment_project');
+      $total_funds_size=0;
+
+      foreach($funds as $key => $value){
+          $where2['fund_id']=$value['id'];
+          $funds[$key]['investment_projects']=$Investment_project->where($where2)->select();
+
+          //计算管理基金总规模
+          $total_funds_size+=$funds[$key]['fund_size'];
+
+      }
+
+      $this->assign('funds',$funds);
+      $this->assign('total_funds_size',$total_funds_size);
+      $this->assign('total_funds_num',count($funds));
+
+      $this->display();
+    }
+
+
+    //修改基金
+    public function modifyFund(){
+      //基金信息
+      $Lp_fund_product=M('Lp_fund_product');
+      $where['institution_type']=session('institution_type');
+      $where['institution_id']=session('user_id');
+      $where['id']=I('get.id');
+      $funds=$Lp_fund_product->where($where)->select();
+
+      $Investment_project=M('Investment_project');
+      $total_funds_size=0;
+
+      foreach($funds as $key => $value){
+          $where2['fund_id']=$value['id'];
+          $funds[$key]['investment_projects']=$Investment_project->where($where2)->select();
+
+          //计算管理基金总规模
+          $total_funds_size+=$funds[$key]['fund_size'];
+
+      }
+
+      $this->assign('funds',$funds);
+      $this->assign('total_funds_size',$total_funds_size);
+      $this->assign('total_funds_num',count($funds));
+
+      $this->display();
+    }
+
+    //保存修改基金
+    public function do_modifyFund(){
+
+        $Lp_fund_product=M('Lp_fund_product');
+
+        $data['id']=I('post.id');
+        $data['name']=I('post.name');
+        $data['founded_time']=strtotime(I('post.founded_time'));
+        $data['registered_address']=I('post.registered_address');
+        $data['currency_type_id']=I('post.currency_type_id');
+        $data['fund_size']=I('post.fund_size');
+        switch(I('post.fund_property')){
+            case 1: $data['is_government_guidance']=1; break;
+            case 2: $data['is_private_capital']=1; break;
+            case 3: $data['is_state_owned']=1; break;
+        }
+
+        foreach(I('post.fund_type') as $value){
+            $data[$value]=1;
+        }
+
+        $data['trustee_name']=I('post.trustee_name');
+        $data['investment_field']=I('post.investment_field');
+        $data['is_recruitment_period']=I('post.is_recruitment_period');
+
+        $data['is_recorded']=I('post.is_recorded');
+        $data['fund_number']=I('post.fund_number');
+        $data['recorded_time']=strtotime(I('post.recorded_time'));
+
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     10145728 ;// 设置附件上传大小,10M
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->rootPath  =     './Public/uploads/lp_recruitment/'; // 设置附件上传根目录
+        $upload->savePath  =      ''; // 设置附件上传（子）目录
+        $upload->autoSub   =     false;    //不使用子目录
+        $upload->replace   =     true;      //覆盖文件
+
+        if(!file_exists($upload->rootPath))
+            $test1=mkdir('Public/uploads/lp_recruitment', 0777 ,1);
+
+
+        if($Lp_fund_product->create($data)){
+            //保存个人基本信息
+            $res=$Lp_fund_product->save();
+
+            if($res!==false){
+
+                /*原募集方案地址*/
+                $img=$Lp_fund_product->getFieldById($data['id'],'recruitment_plan_url');   //文件名
+                $path=__ROOT__.'/Public/uploads/lp_recruitment/';                          //文件路径
+
+                /*上传募集方案*/
+                foreach($_FILES as $key =>$file){
+                     if(!empty($file['name'])) {
+                        $upload->saveName  =   $data['id'].'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
+                         // 上传单个文件 
+                         $info   =   $upload->uploadOne($file);
+                         if(!$info) {// 上传错误提示错误信息
+                            $this->error($upload->getError());
+                         }else{// 上传成功 获取上传文件信息
+                            if($img){
+                              unlink($path.$img);  //删除原文件
+                            }
+                      
+                            $Lp_fund_product->where('id='.$data['id'])->setField('recruitment_plan_url',$info['savename']);
+                         }
+                     }
+                }
+            }
+
+
+            $where['fund_id']=$data['id'];
+
+            //保存已投项目/基金
+            $Investment_project=M('Investment_project');
+            // 批量添加数据
+            $investment_projects=I('post.investment_project');
+            for($i=0;$i<count($investment_projects['project_name']);$i++){
+                if($investment_projects['project_name'][$i]){
+                  $dataList[] = array('fund_id'=>(int)$data['id'],'project_name'=>$investment_projects['project_name'][$i],'project_abstract'=>$investment_projects['project_abstract'][$i],'investment_quota'=>$investment_projects['investment_quota'][$i],'investment_round'=>$investment_projects['investment_round'][$i],'investment_time'=>strtotime($investment_projects['investment_time'][$i]),'project_state_type'=>$investment_projects['project_state_type'][$i]);
+                }
+            }
+            if($dataList){
+                $result=$Investment_project->addAll($dataList);
+
+                if($result){
+                    $this->success('Success！修改成功',__APP__.'/Home/Lp/allFunds');
+                }else{
+                    $this->error($Investment_project->getError());
+                }
+            }else{
+                $this->success('Success！修改成功',__APP__.'/Home/Lp/allFunds');
+            }
+            
+
+        }
+        else{
+            $this->error($Lp_fund_product->getError());
+        }
+    }
+
+    //删除基金
+    public function deleteFund(){
+        //删除该基金下的投资项目
+        $Investment_project=M('Investment_project');
+        $where['fund_id']=I('get.id');
+        $Investment_project->where($where)->delete();
+
+
+        $Lp_fund_product=M('Lp_fund_product');
+        $where2['id']=I('get.id');
+
+        if($Lp_fund_product->where($where2)->delete()){
+            $this->success('删除成功');
+        }else{
+            $this->error('删除失败');
+        }
+    }
+
+    //删除基金投资的项目
+    public function deleteInvestment(){
+        $Investment_project=M('Investment_project');
+        $where['id']=I('get.id');
+        if($Investment_project->where($where)->delete()){
+            $this->success('删除成功');
+        }else{
+            $this->error('删除失败');
+        }
     }
 
 

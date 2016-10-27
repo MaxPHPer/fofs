@@ -258,7 +258,7 @@
 
                       <p><i class="fa fa-envelope-o fa-md"></i> <?php echo ($user['email']); ?></p>
                       <p><i class="glyphicon glyphicon-th-list"></i>LP</p>
-                      <a class="btn btn-default" href="modifyPersonalInfo" role="button">修改相关信息</a>
+                      <a class="btn btn-default" href="allFunds.html" role="button">修改管理的基金</a>
                     </div>
                   </div>
                 </div>
@@ -334,7 +334,7 @@
               
               <div class="row margin_top_20">
                   <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-user"></span>管理团队</h3>
+                    <h3><span class="glyphicon glyphicon-home"></span>管理团队&nbsp;(<a href="<?php echo U('Home/Lp/addMember');?>">添加新成员</a>)</h3>
                     <div class="panel panel-default">
                       <div class="panel-body">
                           <!--已有团队成员-->
@@ -345,7 +345,7 @@
                                       <div class="row" >
                                         <div class="col-sm-3 text_right">
                                           
-                                            姓名:
+                                            <span class="glyphicon glyphicon-user"></span>姓名:
                       
                                         </div>
 
