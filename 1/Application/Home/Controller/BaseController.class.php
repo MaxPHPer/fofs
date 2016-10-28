@@ -10,7 +10,7 @@ class BaseController extends Controller{
 
         //$this->checklogin();
         if(session('institution_type')){
-            $this->assign('username',session('nickname'));
+            $this->assign('username',session('nickname')?session('nickname'):session('username'));
             $this->assign('user_id',session('user_id'));
             $this->assign('institution_type',session('institution_type'));
             switch(session('institution_type')){

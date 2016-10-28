@@ -6,163 +6,101 @@
       <div class="row">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-          <div class="panel panel-default panel1">
-            <div class="panel-heading" role="tab" id="headingOne">
+
+          <div class="panel panel-default panel4" style="margin-top: 20px;">
+            <div class="panel-heading" role="tab" id="headingFour">
               <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> <i class="fa fa-wrench"></i>
-                  完善机构基本信息 <i class="fa fa-angle-down pull-right"></i>
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-sm-10 col-sm-offset-1">
-
-                    <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">
-                        <span>*</span>
-                        全称(中文)
-                      </label>
-                      <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}"  />
-                      </div>
-                    </div>
-                    <!--全称(中文)-->
-
-                    <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">全称(英文)</label>
-                      <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
-                      </div>
-                    </div>
-                    <!--全称(英文)-->
-
-                    <div class="form-group clearfix">
-                      <label for="personalLogo" class="col-sm-3 control-label">公司logo(上传限制:500k)</label>
-                      <div class="col-sm-8">
-                        <a href=""></a>
-                        <input type="file" class="form-control" id="personalLogo" name="personalLogo" ></div>
-                    </div>
-                    <!--公司logo-->
-
-                    <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">成立时间</label>
-                      <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
-                      </div>
-                    </div>
-                    <!--成立时间-->
-
-                    <div class="form-group clearfix">
-                      <label for="userName" class="col-sm-3 control-label">机构简介</label>
-                      <div class="col-sm-8">
-                        <textarea class="form-control" id="userName" name="username" ></textarea>
-                      </div>
-                    </div>
-                    <!--机构简介-->
-
-                    <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">服务地域</label>
-                      <div class="col-sm-8">
-                        <textarea class="form-control"></textarea>
-                      </div>
-                    </div>
-                    <!--服务地域-->
-
-
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--机构基本信息-->
-
-
-          <div class="panel panel-default panel2">
-            <div class="panel-heading" role="tab" id="headingTwo">
-              <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  <i class="fa fa-user"></i>
-                  公司联系方式
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                  <i class="fa fa-globe"></i>
+                  产品或服务
                   <i class="fa fa-angle-down pull-right"></i>
                 </a>
               </h4>
             </div>
-            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
               <div class="panel-body">
-                <div class="row">
-                  <div class="col-sm-10 col-sm-offset-1">
+                <div class="repeat_fund ">
+                  <div class="borderBottom" style="margin-bottom:20px;">
+                    
 
-                    <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">
-                        <span>*</span>
-                        联系人
-                      </label>
-                      <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}"  />
+
+                    <div class="row">
+                        <div class="col-sm-2 ">
+                          <label for="name" class="col-sm-12 control-label"><b>填写产品/服务</b></label>
+                        </div>
+                    </div>
+
+
+                    <div class="repeat">
+                      <div class="row" style="margin-top:10px;">
+                        
+                          <div>
+                              <div class="col-sm-2">
+                                <label for="name" class="col-sm-12 control-label">
+                                  名称
+                                </label>
+                              </div>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="name" name="service[name][]"  />                            
+                              </div>
+
+                          </div>
+
+                      </div>
+                      <div class="row" style="margin-top:10px;">
+                        
+                          <div>
+                              <div class="col-sm-2">
+                                <label for="content" class="col-sm-12 control-label">
+                                  详细内容
+                                </label>
+                              </div>
+                              <div class="col-sm-4">
+                                <textarea class="form-control" id="content" name="service[content][]" ></textarea>
+                              </div>
+
+                          </div>
+
+                      </div>
+                      <div class="row borderBottom" style="margin-top:10px;">
+                        
+                          <div>
+                              <div class="col-sm-2">
+                                <label for="price" class="col-sm-12 control-label">
+                                  价格(元)
+                                </label>
+                              </div>
+                              <div class="col-sm-4">
+                                <input type="number" class="form-control" id="price" name="service[price][]"  />                            
+                              </div>
+
+                          </div>
+
+                      </div>
+                      
+                      
+                      
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-9"></div>
+                      <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" id="addNew4">再添加其它产品/服务</button>
                       </div>
                     </div>
-                    <!--联系人-->
-
-                    <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">传真</label>
-                      <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
-                      </div>
-                    </div>
-                    <!--传真-->
-
-    
-
-                    <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">电话</label>
-                      <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
-                      </div>
-                    </div>
-                    <!--电话-->
-
-                  
-
-                    <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">邮箱</label>
-                      <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
-                      </div>
-                    </div>
-                    <!--邮箱-->
-
-                    <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">机构微信</label>
-                      <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
-                      </div>
-                    </div>
-                    <!--机构微信-->
-
-                    <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">机构网址</label>
-                      <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
-                      </div>
-                    </div>
-                    <!--机构网址-->
                   </div>
                 </div>
-
+    
               </div>
             </div>
           </div>
-          <!--公司联系方式-->
+          <!--主要检测设备-->
 
         </div>
       </div>
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4" style="margin-bottom:30px;">
           <input type="hidden" name='user_id'  value="{$id}"/>
-          <input type="submit" class="btn btn-primary btn-block" id="submit" value="保存并前往完善管理团队信息"/>
+          <input type="submit" class="btn btn-primary btn-block" id="submit" value="{$Think.lang.signup_complete}"/>
         </div>
       </div>
     </form>

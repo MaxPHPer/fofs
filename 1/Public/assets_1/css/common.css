@@ -715,3 +715,7 @@ input:-moz-placeholder {
   margin-left: 20px;
 }
 
+.margin_top_bottom_20{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

@@ -20,44 +20,44 @@
                   <div class="col-sm-10 col-sm-offset-1">
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">
+                      <label for="institution_fullname_cn" class="col-sm-3 control-label">
                         <span>*</span>
                         全称(中文)
                       </label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}"  />
+                        <input type="text" class="form-control" id="institution_fullname_cn"   value="{$data['institution_fullname_cn']}"  name="institution_fullname_cn"/>
                       </div>
                     </div>
                     <!--全称(中文)-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">全称(英文)</label>
+                      <label for="institution_fullname_en" class="col-sm-3 control-label">全称(英文)</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="institution_fullname_en"   value="{$data['institution_fullname_en']}"  name="institution_fullname_en"/>
                       </div>
                     </div>
                     <!--全称(英文)-->
 
                     <div class="form-group clearfix">
-                      <label for="personalLogo" class="col-sm-3 control-label">公司logo(上传限制:500k)</label>
+                      <label for="institution_logo_img" class="col-sm-3 control-label">公司logo(上传限制:500k)</label>
                       <div class="col-sm-8">
                         <a href=""></a>
-                        <input type="file" class="form-control" id="personalLogo" name="personalLogo" ></div>
+                        <input type="file" class="form-control" id="institution_logo_img" name="institution_logo_img" ></div>
                     </div>
                     <!--公司logo-->
 
                     <div class="form-group clearfix">
-                      <label for="userName" class="col-sm-3 control-label">机构简介</label>
+                      <label for="institution_abstract" class="col-sm-3 control-label">机构简介</label>
                       <div class="col-sm-8">
-                        <textarea class="form-control" id="userName" name="username" ></textarea>
+                        <textarea class="form-control" id="institution_abstract" name="institution_abstract" ></textarea>
                       </div>
                     </div>
                     <!--机构简介-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">服务内容和简介</label>
+                      <label for="services_and_fees" class="col-sm-3 control-label">服务内容和简介</label>
                       <div class="col-sm-8">
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control"  name="services_and_fees"></textarea>
                       </div>
                     </div>
                     <!--服务内容和简介-->
@@ -88,20 +88,20 @@
                   <div class="col-sm-10 col-sm-offset-1">
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">
+                      <label for="contact_username" class="col-sm-3 control-label">
                         <span>*</span>
                         联系人
                       </label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}"  />
+                        <input type="text" class="form-control" id="contact_username"   value="{$data['contact_username']}"   name="contact_username"/>
                       </div>
                     </div>
                     <!--联系人-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">传真</label>
+                      <label for="contact_telephone" class="col-sm-3 control-label">传真</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="contact_telephone"   value="{$data['contact_telephone']}"  name="contact_telephone"/>
                       </div>
                     </div>
                     <!--传真-->
@@ -109,9 +109,9 @@
     
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">电话</label>
+                      <label for="contact_mobilephone" class="col-sm-3 control-label">电话</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="contact_mobilephone"   value="{$data['contact_mobilephone']}"  name="contact_mobilephone"/>
                       </div>
                     </div>
                     <!--电话-->
@@ -119,25 +119,25 @@
                   
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">邮箱</label>
+                      <label for="contact_email" class="col-sm-3 control-label">邮箱</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="email" class="form-control" id="contact_email"   value="{$data['contact_email']}"  name="contact_email"/>
                       </div>
                     </div>
                     <!--邮箱-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">机构微信</label>
+                      <label for="company_wechat" class="col-sm-3 control-label">机构微信</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="company_wechat"   value="{$data['company_wechat']}"  name="company_wechat"/>
                       </div>
                     </div>
                     <!--机构微信-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">机构网址</label>
+                      <label for="company_web" class="col-sm-3 control-label">机构网址</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="company_web"   value="{$data['company_web']}"  name="company_web"/>
                       </div>
                     </div>
                     <!--机构网址-->

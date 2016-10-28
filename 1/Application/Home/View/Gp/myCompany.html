@@ -6,53 +6,173 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4 main-content">
-              <include file = "individual:individualBar"/>
+              <include file = "Gp:individualBar"/>
           </div>
           <div class="col-md-8">
             <div class="well">
-              <h3>我的公司</h3>
+              <h3>机构成员</h3>
               <hr/>
               
               <div class="row margin_top_20">
                   <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-home"></span>公司信息</h3>
+                    <h3><span class="glyphicon glyphicon-home"></span>管理团队&nbsp;(<a href="{:U('Home/Gp/addMember')}">添加新成员</a>)</h3>
                     <div class="panel panel-default">
                       <div class="panel-body">
+                          <!--已有团队成员-->
+                          <foreach name="members" item="vo">
+                              <div id="" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="">
+                                <div class="panel-body">
+                                  <div class="repeat_people ">
+                                    <div class="borderBottom" style="margin-bottom:20px;">
+                                      <div class="row" >
+                                        <div class="col-sm-3 text_right">
+                                          
+                                            <span class="glyphicon glyphicon-user"></span>姓名:
+                      
+                                        </div>
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  名称:
-                              </div>
-                              <div class='col-md-8'>
-                                  北京乐享奇迹信息科技有限公司
-                              </div>
-                          </div>
-                          <div class="row">
-                            <div class='col-md-3 text_right'>职位:</div>
-                            <div class='col-md-8'>打杂的</div>
-                          </div>
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  认证情况:
-                              </div>
-                              <div class='col-md-8'>
-                                <span class="label label-default">未认证</span>(<a href='#'>申请认证</a>)
-                              </div>
-                          </div>
+                                        <div class="col-sm-4">
+
+                                              {$vo['username']}
+
+                                        </div>
+
+                                        <div class="col-sm-5 text_right">
+                                            <span class="glyphicon glyphicon-pencil"></span><a href="{:U('Home/Gp/modifyMember')}?id={$vo['id']}">修改</a>&nbsp;<span class="glyphicon glyphicon-trash"></span><a href="{:U('Home/Gp/deleteMember')}?id={$vo['id']}">删除</a>
+                                        </div>
+
+                                      </div>
+
+                                      <div class="row" style="margin-top:10px;">
+                                        <div class="col-sm-3 text_right">
+                                          
+                                            职务:
+                      
+                                        </div>
+
+                                        <div class="col-sm-8">
+
+                                              {$vo['function']}
+
+                                        </div>
+                                      </div>
+
+                                      <div class="row">
+                                          <div class="col-sm-3 text_right">
+                                            从业经历:
+                                          </div>
+                                      </div>
+
+                                      <div class="repeat">
+                                        <foreach name="vo['business_experience']" item="business_experience">
+                                            <div class="row" style="margin-top:10px;">
+                                              
+                                              <div class="col-sm-3 text_right">
+                                                    {$business_experience['company_name']}
+                                              </div>
+                                             
+                                                
+                                              <div class="col-sm-3">
+                                                    {$business_experience['function']}
+                                              </div>
+
+                                              <div class="col-sm-6">
+                                                {$business_experience['start_time']}-{$business_experience['end_time']}
+                                              </div>
+                                    
+                                            </div>
+                                        </foreach>
+                                      </div>
+
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>   
+                          </foreach>
                       </div>
                     </div>
                   </div>
               </div>
 
-
               <div class="row margin_top_20">
                   <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-check"></span>申请认证</h3>
-                    <div class="alert alert-info" role="alert">系统已经检测到你公司已在本网站注册，可发送员工身份请求进行公司认证！<input type="button" class="btn btn-info margin_top_20" value="发送请求验证"/></div>
+                    <h3><span class="glyphicon glyphicon-globe"></span>其它通过认证的公司成员</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                          <!--已有团队成员-->
+                          <foreach name="members" item="vo">
+                              <div id="" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="">
+                                <div class="panel-body">
+                                  <div class="repeat_people ">
+                                    <div class="borderBottom" style="margin-bottom:20px;">
+                                      <div class="row" >
+                                        <div class="col-sm-3 text_right">
+                                          
+                                            姓名:
                       
-                        <div class="alert alert-danger" role="alert">系统尚未检测到你公司在本网站进行注册，请联系公司先在本网站进行注册！</div>
+                                        </div>
+
+                                        <div class="col-sm-8">
+
+                                              {$vo['username']}
+
+                                        </div>
+
+                                      </div>
+
+                                      <div class="row" style="margin-top:10px;">
+                                        <div class="col-sm-3 text_right">
+                                          
+                                            职务:
+                      
+                                        </div>
+
+                                        <div class="col-sm-8">
+
+                                              {$vo['function']}
+
+                                        </div>
+                                      </div>
+
+                                      <div class="row">
+                                          <div class="col-sm-3 text_right">
+                                            从业经历:
+                                          </div>
+                                      </div>
+
+                                      <div class="repeat">
+                                        <foreach name="vo['business_experience']" item="business_experience">
+                                            <div class="row" style="margin-top:10px;">
+                                              
+                                              <div class="col-sm-3 text_right">
+                                                    {$business_experience['company_name']}
+                                              </div>
+                                             
+                                                
+                                              <div class="col-sm-3">
+                                                    {$business_experience['function']}
+                                              </div>
+
+                                              <div class="col-sm-6">
+                                                {$business_experience['start_time']}-{$business_experience['end_time']}
+                                              </div>
+                                    
+                                            </div>
+                                        </foreach>
+                                      </div>
+
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>   
+                          </foreach>
+                      </div>
+                    </div>
                   </div>
               </div>
+
                &nbsp;
             </div>
           </div>

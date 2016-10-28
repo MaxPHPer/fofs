@@ -2,7 +2,7 @@
 <include file = "layout:navbar"/>
 <div class="content supplierCompanyInfo">
   <div class="container">
-    <form action="__APP__/Home/Register/save_supplierCompanyInfo" method="post" enctype="multipart/form-data">
+    <form action="__APP__/Home/Register/save_startupCompanyInfo" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -20,87 +20,95 @@
                   <div class="col-sm-10 col-sm-offset-1">
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">
+                      <label for="institution_vision" class="col-sm-3 control-label">
                         <span>*</span>
                         发展愿景
                       </label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}"  />
+                        <input type="text" class="form-control" id="institution_vision"   value="{$data['institution_vision']}"  name="institution_vision"/>
                       </div>
                     </div>
                     <!--发展愿景-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">公司概述</label>
+                      <label for="institution_abstract" class="col-sm-3 control-label">公司概述</label>
                       <div class="col-sm-8">
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="institution_abstract"></textarea>
                       </div>
                     </div>
                     <!--公司概述-->
 
                     <div class="form-group clearfix">
-                      <label for="personalLogo" class="col-sm-3 control-label">公司logo(上传限制:500k)</label>
+                      <label for="institution_logo_img" class="col-sm-3 control-label">公司logo(上传限制:500k)</label>
                       <div class="col-sm-8">
                         <a href=""></a>
-                        <input type="file" class="form-control" id="personalLogo" name="personalLogo" ></div>
+                        <input type="file" class="form-control" id="institution_logo_img" name="institution_logo_img" ></div>
                     </div>
                     <!--公司logo-->
 
                     <div class="form-group clearfix">
-                      <label for="userName" class="col-sm-3 control-label">用户痛点</label>
+                      <label for="user_pain_points" class="col-sm-3 control-label">用户痛点</label>
                       <div class="col-sm-8">
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="user_pain_points"></textarea>
                       </div>
                     </div>
                     <!--用户痛点-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">解决方案</label>
+                      <label for="solutions" class="col-sm-3 control-label">解决方案</label>
                       <div class="col-sm-8">
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="solutions"></textarea>
                       </div>
                     </div>
                     <!--解决方案-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">核心资源</label>
+                      <label for="core_resources" class="col-sm-3 control-label">核心资源</label>
                       <div class="col-sm-8">
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="core_resources"></textarea>
                       </div>
                     </div>
                     <!--核心资源-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">盈利模式</label>
+                      <label for="profit_model" class="col-sm-3 control-label">盈利模式</label>
                       <div class="col-sm-8">
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="profit_model"></textarea>
                       </div>
                     </div>
                     <!--盈利模式-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">市场现状</label>
+                      <label for="market_situation" class="col-sm-3 control-label">市场现状</label>
                       <div class="col-sm-8">
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="market_situation"></textarea>
                       </div>
                     </div>
                     <!--市场现状-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">竞品分析</label>
+                      <label for="competitive_analysis" class="col-sm-3 control-label">竞品分析</label>
                       <div class="col-sm-8">
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="competitive_analysis"></textarea>
                       </div>
                     </div>
                     <!--竞品分析-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">优势分析</label>
+                      <label for="advantage_analysis" class="col-sm-3 control-label">优势分析</label>
                       <div class="col-sm-8">
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="advantage_analysis"></textarea>
                       </div>
                     </div>
                     <!--优势分析-->
+
+                    <div class="form-group clearfix">
+                      <label for="advantage_analysis" class="col-sm-3 control-label">股权结构</label>
+                      <div class="col-sm-8">
+                        <textarea class="form-control" name="equity_structure"></textarea>
+                      </div>
+                    </div>
+                    <!--股权结构-->
 
                     <div class="form-group clearfix">
                               <label for="userName" class="col-sm-3 control-label">
@@ -109,41 +117,41 @@
              
                             <div class="col-sm-9">
                               <div class="col-sm-2 ">
-                                <input class="icheckbox_flat-blue" id="buyer" type="radio" name="userType" value="buyer" checked>
-                                <label for="buyer">否</label>
+                                <input class="icheckbox_flat-blue" id="is_invested_0" type="radio" name="is_invested" value="0" checked>
+                                <label for="is_invested_0">否</label>
                               </div>
                               <div class="col-sm-2">
-                                <input class="icheckbox_flat-blue" id="supplier" type="radio" name="userType" value="supplier">
-                                <label for="supplier">是</label>
+                                <input class="icheckbox_flat-blue" id="is_invested_1" type="radio" name="is_invested" value="1">
+                                <label for="is_invested_1">是</label>
                               </div>  
                               <div class="col-sm-8 ">
-                                <label for="supplier">(若有则填写下面轮次、额度、投资方)</label>
+                                <label for="is_invested_1">(若有则填写下面轮次、额度、投资方)</label>
                               </div>                       
                             </div>
                     </div>
 
                     <div class="form-group clearfix">
                             <div class="col-sm-2">
-                              <label for="userName" class="col-sm-12 control-label">
+                              <label for="investment_round" class="col-sm-12 control-label">
                                 轮次
                               </label>
                             </div>
                             <div class="col-sm-2 ">
-                                  <input type="text" class="form-control" id="userName" name="username"  />                
+                                  <input type="text" class="form-control" id="userName" name="investment_round"  />                
                             </div>
 
                             <div class="col-sm-2 ">
-                            <label for="supplier">额度<span style="font-size:14px;">(万人民币)</span></label>
+                            <label for="investment_quota">额度<span style="font-size:14px;">(万人民币)</span></label>
                             </div>
                             <div class="col-sm-2 ">
-                                      <input type="number" class="form-control" id="userName" name="username"  />                            
+                                      <input type="number" class="form-control" id="investment_quota" name="investment_quota"  />                            
                             </div>
                             
                             <div class="col-sm-2 ">
-                              <label for="supplier">投资方</label>
+                              <label for="investor">投资方</label>
                             </div>
                             <div class="col-sm-2 ">
-                              <input type="text" class="form-control" id="userName" name="username"  />                
+                              <input type="text" class="form-control" id="userName" name="investor"  />                
                             </div>      
                     </div>
 
@@ -156,60 +164,60 @@
                     <!--轮次-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">轮次</label>
+                      <label for="plan_investment_round" class="col-sm-3 control-label">轮次</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="userName" name="username"  />     
+                        <input type="text" class="form-control" id="plan_investment_round" name="plan_investment_round"  />     
                       </div>
                     </div>
                     <!--轮次-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">额度</label>
+                      <label for="plan_invested_quota" class="col-sm-3 control-label">额度(万人民币)<span style="font-size:14px;">(万人民币)</span></label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="userName" name="username"  />     
+                        <input type="number" class="form-control" id="plan_invested_quota" name="plan_invested_quota"  />     
                       </div>
                     </div>
                     <!--额度-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">出让股份</label>
+                      <label for="plan_transfer_shares" class="col-sm-3 control-label">出让股份(%)</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="userName" name="username"  />     
+                        <input type="number" class="form-control" id="plan_transfer_shares" name="plan_transfer_shares"  />     
                       </div>
                     </div>
                     <!--出让股份-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">融资用途</label>
+                      <label for="plan_to_do" class="col-sm-3 control-label">融资用途</label>
                       <div class="col-sm-8">
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="plan_to_do"></textarea>
                       </div>
                     </div>
                     <!--融资用途-->
 
                     <div class="form-group clearfix">
-                              <label for="userName" class="col-sm-3 control-label">
+                              <label for="accept_joint_investment_1" class="col-sm-3 control-label">
                                 是否接受联投
                               </label>
              
                             <div class="col-sm-9">
                               <div class="col-sm-2 ">
-                                <input class="icheckbox_flat-blue" id="buyer" type="radio" name="userType" value="buyer" checked>
-                                <label for="buyer">否</label>
+                                <input class="icheckbox_flat-blue" id="accept_joint_investment_0" type="radio" name="accept_joint_investment" value="0" checked>
+                                <label for="accept_joint_investment_0">否</label>
                               </div>
                               <div class="col-sm-2">
-                                <input class="icheckbox_flat-blue" id="supplier" type="radio" name="userType" value="supplier">
-                                <label for="supplier">是</label>
+                                <input class="icheckbox_flat-blue" id="accept_joint_investment_1" type="radio" name="accept_joint_investment" value="1">
+                                <label for="accept_joint_investment_1">是</label>
                               </div>  
                                                  
                             </div>
                     </div>
 
                     <div class="form-group clearfix">
-                      <label for="personalLogo" class="col-sm-3 control-label">融资BP</label>
+                      <label for="bp_url" class="col-sm-3 control-label">融资BP</label>
                       <div class="col-sm-8">
                         <a href=""></a>
-                        <input type="file" class="form-control" id="personalLogo" name="personalLogo" ></div>
+                        <input type="file" class="form-control" id="bp_url" name="bp_url" ></div>
                     </div>
                     <!--融资BP-->
 
@@ -238,20 +246,20 @@
                   <div class="col-sm-10 col-sm-offset-1">
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">
+                      <label for="contact_username" class="col-sm-3 control-label">
                         <span>*</span>
                         联系人
                       </label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}"  />
+                        <input type="text" class="form-control" id="contact_username"   value="{$data['contact_username']}"   name="contact_username"/>
                       </div>
                     </div>
                     <!--联系人-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">传真</label>
+                      <label for="contact_telephone" class="col-sm-3 control-label">电话</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="contact_telephone"   value="{$data['contact_telephone']}"  name="contact_telephone"/>
                       </div>
                     </div>
                     <!--传真-->
@@ -259,9 +267,9 @@
     
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">电话</label>
+                      <label for="contact_mobilephone" class="col-sm-3 control-label">手机</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="contact_mobilephone"   value="{$data['contact_mobilephone']}"  name="contact_mobilephone"/>
                       </div>
                     </div>
                     <!--电话-->
@@ -269,25 +277,33 @@
                   
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">邮箱</label>
+                      <label for="contact_email" class="col-sm-3 control-label">邮箱</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="email" class="form-control" id="contact_email"   value="{$data['contact_email']}"  name="contact_email"/>
                       </div>
                     </div>
                     <!--邮箱-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">机构微信</label>
+                      <label for="contact_wechat" class="col-sm-3 control-label">个人微信</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="contact_wechat"   value="{$data['contact_wechat']}"  name="contact_wechat"/>
+                      </div>
+                    </div>
+                    <!--个人微信-->
+
+                    <div class="form-group clearfix">
+                      <label for="company_wechat" class="col-sm-3 control-label">机构微信</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="company_wechat"   value="{$data['company_wechat']}"  name="company_wechat"/>
                       </div>
                     </div>
                     <!--机构微信-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">机构网址</label>
+                      <label for="company_web" class="col-sm-3 control-label">机构网址</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email"   value="{$data['email']}" />
+                        <input type="text" class="form-control" id="company_web"   value="{$data['company_web']}"  name="company_web"/>
                       </div>
                     </div>
                     <!--机构网址-->
@@ -303,7 +319,6 @@
       </div>
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4" style="margin-bottom:30px;">
-          <input type="hidden" name='user_id'  value="{$id}"/>
           <input type="submit" class="btn btn-primary btn-block" id="submit" value="保存并前往完善管理团队信息"/>
         </div>
       </div>

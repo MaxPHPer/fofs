@@ -15,21 +15,7 @@
 
   <link rel="stylesheet" type="text/css" href="/fofs/1/Public/assets_1/css/default.css">
   <link href="/fofs/1/Public/assets_1/css/site.css" rel="stylesheet" type="text/css" />
-  <script type='text/javascript'>
-      var _vds = _vds || [];
-      window._vds = _vds;
-      (function(){
-        _vds.push(['setAccountId', '85dd0477b4e83d27']);
-        (function() {
-          var vds = document.createElement('script');
-          vds.type='text/javascript';
-          vds.async = true;
-          vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
-          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(vds, s);
-        })();
-      })();
-  </script>
+  
 </head>
 <body>
 <header class="header" role="navigation">

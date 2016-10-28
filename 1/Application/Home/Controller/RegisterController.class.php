@@ -781,6 +781,8 @@ class RegisterController extends BaseController{
                     cookie(null);
                     cookie('user_id',$data['user_id']);
                     cookie('institution_type',$data['institution_type']);
+                    session('user_id',$data['user_id']);
+                    session('institution_type',$data['institution_type']);
                     $this->success('邮箱确认成功！请继续填写相关信息',__APP__.'/Home/Register/'.$success_url);
                 }
                 else{
@@ -1029,6 +1031,7 @@ class RegisterController extends BaseController{
             $User->reg_time=time();
             $result=$User->save();
             if($result){
+                session('username',$data['admin_name']);
                 $this->success('Success！保存成功，请继续完善机构信息',__APP__.'/Home'.$second_sign_url);
             }
             else{
@@ -1811,6 +1814,10 @@ class RegisterController extends BaseController{
 
                 $data['id']=session('user_id');
                 $data['reg_step']=4;
+                if(session('institution_type')==3||session('institution_type')==8||session('institution_type')==9){
+                    $data['state']=200;
+                }
+                
                 $User->save($data);
 
                 if(session('institution_type')==3||session('institution_type')==8||session('institution_type')==9){
@@ -2053,14 +2060,388 @@ class RegisterController extends BaseController{
         die();
     }
 
+        //储存lp公司信息
+    public function save_gpCompanyInfo(){
+        //电话与传真的区域代码为用户自行输入，非区域ID
+        $User=M('Gp');
+        $data['institution_fullname_cn']=I('post.institution_fullname_cn');
+        $data['institution_fullname_en']=I('post.institution_fullname_en');
+        $data['institution_abstract']=I('post.institution_abstract');
+        $data['organization_code']=I('post.organization_code');
+        $data['is_fofs_member']=I('post.is_fofs_member');
+        $data['registered_addr']=I('post.registered_addr');
+        $data['office_addr']=I('post.office_addr');
+        $data['registered_capital']=I('post.registered_capital');
+        $data['contributed_capital']=I('post.contributed_capital');
+        switch (I('post.fund_type')) {
+          case '0':
+            $data['is_securities_fund']=1;
+            break;
+          
+          case '1':
+            $data['is_stock_fund']=1;
+            break;
+
+          case '2':
+            $data['is_startup_fund']=1;
+            break;
+
+           case '3':
+            $data['is_other_fund']=1;
+            break;
+        }
+        $data['number_of_employees']=I('post.number_of_employees');
+        $data['contact_username']=I('post.contact_username');
+        $data['contact_fax']=I('post.contact_fax');
+        $data['contact_phone']=I('post.contact_phone');
+        $data['contact_email']=I('post.contact_email');
+        $data['contact_institution_wechat']=I('post.contact_institution_wechat');
+        $data['contact_institution_web']=I('post.contact_institution_web');
+        $data['is_association_registration']=I('post.is_association_registration');
+        $data['association_registration_number']=I('post.association_registration_number');
+        $data['association_registration_time']=strtotime(I('post.association_registration_time'));
+
+        $data['id']=session('user_id');
+        $data['reg_step']=3;
+
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     3145728 ;// 设置附件上传大小
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+        $upload->rootPath  =     './Public/uploads/gp_pic/'; // 设置附件上传根目录
+        $upload->savePath  =      ''; // 设置附件上传（子）目录
+        $upload->autoSub   =     false;    //不使用子目录
+        $upload->replace   =     true;      //覆盖文件
+
+        if(!file_exists($upload->rootPath))
+            $test1=mkdir('Public/uploads/gp_pic', 0777 ,1);
+
+        if($User->create($data)){
+
+            $result=$User->save();
+            if($result){
+                /*上传头像*/
+                foreach($_FILES as $key =>$file){
+                     if(!empty($file['name'])) {
+                        $upload->saveName  =   $result.'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
+                         // 上传单个文件 
+                         $info   =   $upload->uploadOne($file);
+                         if(!$info) {// 上传错误提示错误信息
+                            $this->error($upload->getError());
+                         }else{// 上传成功 获取上传文件信息
+                            $User->where('id='.$data['id'])->setField('institution_logo_img',$info['savename']);
+                         }
+                     }
+                }
+
+                $this->success('Success！保存成功，请继续管理团队信息',__APP__.'/Home/Register/membersInfo');
+            }
+            else{
+                $this->error($User->getError());
+            } 
+        }
+        else{
+            $this->error($User->getError());
+        }
+    }
+
     //gp基金信息
     public function gpFundsInfo(){
+      $Lp_fund_product=M('Gp_fund_product');
+      $where['institution_type']=session('institution_type');
+      $where['institution_id']=session('user_id');
+      $funds=$Lp_fund_product->where($where)->select();
+
+      $Investment_project=M('Gp_investment_project');
+      $total_funds_size=0;
+
+      foreach($funds as $key => $value){
+          $where2['fund_id']=$value['id'];
+          $funds[$key]['investment_projects']=$Investment_project->where($where2)->select();
+
+          //计算管理基金总规模
+          $total_funds_size+=$funds[$key]['fund_size'];
+
+      }
+
+      $this->assign('funds',$funds);
+      $this->assign('total_funds_size',$total_funds_size);
+      $this->assign('total_funds_num',count($funds));
       $this->display();
+    }
+
+
+    //保存gp基金，并再添加
+    public function add_gpFundsInfo(){
+        $Lp_fund_product=M('Gp_fund_product');
+
+        $data['institution_type']=session('institution_type');
+        $data['institution_id']=session('user_id');
+        $data['name']=I('post.name');
+        $data['founded_time']=strtotime(I('post.founded_time'));
+        $data['registered_address']=I('post.registered_address');
+        $data['currency_type_id']=I('post.currency_type_id');
+        $data['fund_size']=I('post.fund_size');
+        switch(I('post.fund_property')){
+            case 1: $data['is_angel_investment']=1; break;
+            case 2: $data['is_vc_investment']=1; break;
+            case 3: $data['is_pe_investment']=1; break;
+            case 4: $data['is_other_investment']=1; break;
+        }
+
+
+        $data['trustee_name']=I('post.trustee_name');
+        $data['investment_field']=I('post.investment_field');
+        $data['investment_region']=I('post.investment_region');
+
+        $data['is_recruitment_period']=I('post.is_recruitment_period');
+
+        $data['is_recorded']=I('post.is_recorded');
+        $data['fund_number']=I('post.fund_number');
+        $data['recorded_time']=strtotime(I('post.recorded_time'));
+
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     10145728 ;// 设置附件上传大小,10M
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->rootPath  =     './Public/uploads/gp_recruitment/'; // 设置附件上传根目录
+        $upload->savePath  =      ''; // 设置附件上传（子）目录
+        $upload->autoSub   =     false;    //不使用子目录
+        $upload->replace   =     true;      //覆盖文件
+
+        if(!file_exists($upload->rootPath))
+            $test1=mkdir('Public/uploads/gp_recruitment', 0777 ,1);
+
+
+        if($Lp_fund_product->create($data)){
+            //保存个人基本信息
+            $fund_id=$Lp_fund_product->add();
+
+            if($fund_id){
+                /*上传募集方案*/
+                foreach($_FILES as $key =>$file){
+                     if(!empty($file['name'])) {
+                        $upload->saveName  =   $fund_id.'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
+                         // 上传单个文件 
+                         $info   =   $upload->uploadOne($file);
+                         if(!$info) {// 上传错误提示错误信息
+                            $this->error($upload->getError());
+                         }else{// 上传成功 获取上传文件信息
+                            $Lp_fund_product->where('id='.$fund_id)->setField('recruitment_plan_url',$info['savename']);
+                         }
+                     }
+                }
+            }
+
+
+            $where['fund_id']=$fund_id;
+
+            //保存已投项目/基金
+            $Investment_project=M('Gp_investment_project');
+            // 批量添加数据
+            $investment_projects=I('post.investment_project');
+            for($i=0;$i<count($investment_projects['project_name']);$i++){
+                $dataList[] = array('fund_id'=>(int)$fund_id,'project_name'=>$investment_projects['project_name'][$i],'project_abstract'=>$investment_projects['project_abstract'][$i],'investment_quota'=>$investment_projects['investment_quota'][$i],'investment_round'=>$investment_projects['investment_round'][$i],'investment_time'=>strtotime($investment_projects['investment_time'][$i]),'project_state_type'=>$investment_projects['project_state_type'][$i]);
+            }
+
+            $result=$Investment_project->addAll($dataList);
+
+            if($result){
+                $this->success('Success！保存成功，请继续添加其它基金产品信息',__APP__.'/Home/Register/gpFundsInfo');
+            }else{
+                $this->error($Investment_project->getError());
+            }
+        }
+        else{
+            $this->error($Lp_fund_product->getError());
+        }
+    }
+
+    //保存gp基金，完成注册
+    public function save_gpFundsInfo(){
+        $Gp_fund_product=M('Gp_fund_product');
+
+        $data['institution_type']=session('institution_type');
+        $data['institution_id']=session('user_id');
+        $data['name']=I('post.name');
+        $data['founded_time']=strtotime(I('post.founded_time'));
+        $data['registered_address']=I('post.registered_address');
+        $data['currency_type_id']=I('post.currency_type_id');
+        $data['fund_size']=I('post.fund_size');
+        switch(I('post.fund_property')){
+            case 1: $data['is_angel_investment']=1; break;
+            case 2: $data['is_vc_investment']=1; break;
+            case 3: $data['is_pe_investment']=1; break;
+            case 4: $data['is_other_investment']=1; break;
+        }
+
+
+        $data['trustee_name']=I('post.trustee_name');
+        $data['investment_field']=I('post.investment_field');
+        $data['investment_region']=I('post.investment_region');
+
+        $data['is_recruitment_period']=I('post.is_recruitment_period');
+
+        $data['is_recorded']=I('post.is_recorded');;
+        $data['fund_number']=I('post.fund_number');
+        $data['recorded_time']=strtotime(I('post.recorded_time'));
+
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     10145728 ;// 设置附件上传大小,10M
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->rootPath  =     './Public/uploads/gp_recruitment/'; // 设置附件上传根目录
+        $upload->savePath  =      ''; // 设置附件上传（子）目录
+        $upload->autoSub   =     false;    //不使用子目录
+        $upload->replace   =     true;      //覆盖文件
+
+        if(!file_exists($upload->rootPath))
+            $test1=mkdir('Public/uploads/gp_recruitment', 0777 ,1);
+
+
+        if($Gp_fund_product->create($data)){
+            //保存个人基本信息
+            $fund_id=$Gp_fund_product->add();
+
+            if($fund_id){
+                /*上传募集方案*/
+                foreach($_FILES as $key =>$file){
+                     if(!empty($file['name'])) {
+                        $upload->saveName  =   $fund_id.'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
+                         // 上传单个文件 
+                         $info   =   $upload->uploadOne($file);
+                         if(!$info) {// 上传错误提示错误信息
+                            $this->error($upload->getError());
+                         }else{// 上传成功 获取上传文件信息
+                            $Gp_fund_product->where('id='.$fund_id)->setField('recruitment_plan_url',$info['savename']);
+                         }
+                     }
+                }
+            }
+
+
+            $where['fund_id']=$fund_id;
+
+            //保存已投项目/基金
+            $Investment_project=M('Gp_investment_project');
+            // 批量添加数据
+            $investment_projects=I('post.investment_project');
+            for($i=0;$i<count($investment_projects['project_name']);$i++){
+                $dataList[] = array('fund_id'=>(int)$fund_id,'project_name'=>$investment_projects['project_name'][$i],'project_abstract'=>$investment_projects['project_abstract'][$i],'investment_quota'=>$investment_projects['investment_quota'][$i],'investment_round'=>$investment_projects['investment_round'][$i],'investment_time'=>strtotime($investment_projects['investment_time'][$i]),'project_state_type'=>$investment_projects['project_state_type'][$i]);
+            }
+
+            $result=$Investment_project->addAll($dataList);
+
+            if($result){
+                //设置账号为完成注册
+                $User=M('Gp');
+                $data=array();
+                $data['id']=session('user_id');
+                $data['reg_step']=5;
+                $data['state']=200;
+                $User->save($data);
+                $this->success('Success！保存成功，恭喜完成注册',__APP__.'/Home/Gp/individualProfile');
+            }else{
+                $this->error($Investment_project->getError());
+            }
+        }
+        else{
+            $this->error($Gp_fund_product->getError());
+        }
     }
 
     //startup公司信息
     public function startupCompanyInfo(){
       $this->display();
+    }
+
+    //储存创业公司信息
+    public function save_startupCompanyInfo(){
+        //电话与传真的区域代码为用户自行输入，非区域ID
+        $User=M('Startup_company');
+        $data['institution_fullname_cn']=I('post.institution_fullname_cn');
+        $data['institution_fullname_en']=I('post.institution_fullname_en');
+        $data['institution_vision']=I('post.institution_vision');
+        $data['institution_abstract']=I('post.institution_abstract');
+        $data['user_pain_points']=I('post.user_pain_points');
+        $data['solutions']=I('post.solutions');
+        $data['core_resources']=I('post.core_resources');
+        $data['profit_model']=I('post.profit_model');
+        $data['market_situation']=I('post.market_situation');
+        $data['competitive_analysis']=I('post.competitive_analysis');
+        $data['advantage_analysis']=I('post.advantage_analysis');
+        $data['equity_structure']=I('post.equity_structure');
+        $data['is_invested']=I('post.is_invested');
+        $data['investment_round']=I('post.investment_round');
+        $data['investment_quota']=I('post.investment_quota');
+        $data['investor']=I('post.investor');
+        $data['plan_investment_round']=I('post.plan_investment_round');
+        $data['plan_invested_quota']=I('post.plan_invested_quota');
+        $data['plan_transfer_shares']=I('post.plan_transfer_shares');
+        $data['plan_to_do']=I('post.plan_to_do');
+        $data['accept_joint_investment']=I('post.accept_joint_investment');
+
+        $data['contact_username']=I('post.contact_username');
+        $data['contact_telephone']=I('post.contact_telephone');
+        $data['contact_mobilephone']=I('post.contact_mobilephone');
+        $data['contact_email']=I('post.contact_email');
+        $data['contact_wechat']=I('post.contact_wechat');
+        $data['company_wechat']=I('post.company_wechat');
+        $data['company_web']=I('post.company_web');
+       
+        $data['id']=session('user_id');
+        $data['reg_step']=3;
+
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     3145728 ;// 设置附件上传大小
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->rootPath  =     './Public/uploads/startup_pic/'; // 设置附件上传根目录
+        $upload->savePath  =      ''; // 设置附件上传（子）目录
+        $upload->autoSub   =     false;    //不使用子目录
+        $upload->replace   =     true;      //覆盖文件
+
+        if(!file_exists($upload->rootPath))
+            $test1=mkdir('Public/uploads/startup_pic', 0777 ,1);
+
+        if($User->create($data)){
+
+            $result=$User->save();
+            if($result){
+                /*上传头像*/
+                foreach($_FILES as $key =>$file){
+                     if($key=='institution_logo_img'){
+                         if(!empty($file['name'])) {
+                            $upload->saveName  =   $result.'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
+                             // 上传单个文件 
+                             $info   =   $upload->uploadOne($file);
+                             if(!$info) {// 上传错误提示错误信息
+                                $this->error($upload->getError());
+                             }else{// 上传成功 获取上传文件信息
+                                $User->where('id='.$data['id'])->setField('institution_logo_img',$info['savename']);
+                             }
+                         }
+                     }else if($key=='bp_url'){
+                        $upload->rootPath  =     './Public/uploads/startup_bp/'; // 设置附件上传根目录
+                        if(!empty($file['name'])) {
+                            $upload->saveName  =   $result.'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
+                             // 上传单个文件 
+                             $info   =   $upload->uploadOne($file);
+                             if(!$info) {// 上传错误提示错误信息
+                                $this->error($upload->getError());
+                             }else{// 上传成功 获取上传文件信息
+                                $User->where('id='.$data['id'])->setField('bp_url',$info['savename']);
+                             }
+                         }
+                     }
+
+                }
+
+                $this->success('Success！保存成功，请继续管理团队信息',__APP__.'/Home/Register/membersInfo');
+            }
+            else{
+                $this->error($User->getError());
+            } 
+        }
+        else{
+            $this->error($User->getError());
+        }
     }
 
     //fa公司信息

@@ -12,7 +12,7 @@
             <div class="well">
               <h3>添加新基金信息</h3>
               <hr/>
-              <form class="form-horizontal" action=""  method="post" name='form1'>
+              <form class="form-horizontal" action=""  method="post" name='form1' enctype="multipart/form-data">
                 <div class="panel-body">
                     <!--已有基金产品-->
 
@@ -242,7 +242,7 @@
                                     上传募集方案
                                   </div>
                                   <div class="col-sm-4 ">
-                                  <a href="__ROOT__/Public/Uploads/lp_recruitment/{$vo['recruitment_plan_url']}" target="_Blank">已传方案</a><input type="file" class="form-control" id="recruitment_plan_url" name="recruitment_plan_url" >
+                                     <input type="file" class="form-control" id="recruitment_plan_url" name="recruitment_plan_url" >
                                   </div>  
 
                                                        
@@ -340,7 +340,7 @@
                                     投资额度
                                   </div>
                                   <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="investment_quota" name="investment_project[investment_quota][]"  />                            
+                                    <input type="number" class="form-control" id="investment_quota" name="investment_project[investment_quota][]"  />                            
                                   </div>
                                   <div class="col-sm-2">
                                     万元
