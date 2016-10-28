@@ -223,7 +223,7 @@
   <!--登录模态框结束-->
 <div class="content supplierCompanyInfo">
   <div class="container">
-    <form action="/fofs/1/index.php/Home/Register/save_supplierCompanyInfo" method="post" enctype="multipart/form-data">
+    <form action="/fofs/1/index.php/Home/Register/save_otherInstitutionInfo" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -270,7 +270,7 @@
                     <div class="form-group clearfix">
                       <label for="founded_time" class="col-sm-3 control-label">注册时间</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="founded_time"   value="<?php echo ($data['founded_time']); ?>" name="founded_time"/>
+                        <input type="date" class="form-control" id="founded_time"   value="<?php echo ($data['founded_time']); ?>" name="founded_time"/>
                       </div>
                     </div>
                     <!--注册时间-->

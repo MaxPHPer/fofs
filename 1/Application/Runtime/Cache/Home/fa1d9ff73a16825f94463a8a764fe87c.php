@@ -244,7 +244,7 @@
 
                       <p><i class="fa fa-envelope-o fa-md"></i> <?php echo ($user['email']); ?></p>
                       <p><i class="glyphicon glyphicon-th-list"></i>创业公司</p>
-                      
+                      <a class="btn btn-default" href="modifyCompanyInfo.html" role="button">修改公司信息</a>
                     </div>
                   </div>
                 </div>

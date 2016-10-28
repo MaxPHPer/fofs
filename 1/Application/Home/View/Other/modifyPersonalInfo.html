@@ -1,0 +1,113 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/>
+  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+
+    <section class="content-wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 main-content">
+              <include file = "Other:individualBar"/>
+          </div>
+          <div class="col-md-8">
+            <div class="well">
+              <h3>修改管理员信息</h3>
+              <hr/>
+          <div class="panel-body">
+            <form class="form-horizontal" action="__APP__/Home/Other/save_personalInfo" enctype="multipart/form-data" method="post" >
+              
+              <div class="form-group">
+                <label for="institution_abbr" class="col-sm-3 control-label"><span>*</span>机构简称</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="institution_abbr" name="institution_abbr" value="{$user['institution_abbr']}" disabled required/>
+                </div>
+              </div><!--机构简称-->
+
+
+              <div class="form-group">
+                <label for="institution_type" class="col-sm-3 control-label"><span>*</span>机构类型</label>
+                <div class="col-sm-8">
+                  <select name="institution_type" id="institution_type" class="form-control" disabled>
+                        <switch name="user['institution_type']">
+                            <case value='1'><option value ="1">母基金</option></case>
+                            <case value='2'><option value="2">基金</option></case>
+                            <case value='3'><option value="3">创业公司</option></case>
+                            <case value='4'><option value ="4">FA机构</option></case>
+                            <case value='5'><option value="5">法务机构</option></case>
+                            <case value='6'><option value="6">财务机构</option></case>
+                            <case value='7'><option value ="7">众创空间</option></case>
+                            <case value='8'><option value="8">其它(媒体、政府机构等)</option></case>
+                        </switch>
+                  </select>
+                </div>
+              </div><!--所属行业-->
+              
+              <div class="form-group">
+                <label for="email" class="col-sm-3 control-label"><span>*</span>公司邮箱账号</label>
+                <div class="col-sm-8">
+                  <input type="email" class="form-control" id="email" disabled="disabled" value="{$user['email']}" required/>
+                </div>
+              </div><!--电子邮件-->
+            
+    
+              <div class="form-group">
+                <label for="admin_name" class="col-sm-3 control-label"><span>*</span>账号管理人姓名</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="admin_name" name="admin_name" value="{$user['admin_name']}" required/>
+                </div>
+              </div><!--姓名-->
+
+
+              <div class="form-group">
+                <label for="admin_function" class="col-sm-3 control-label">公司职务</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="admin_function" name="admin_function" value="{$user['admin_function']}"/>
+                </div>
+              </div><!--公司职务-->
+
+
+              <div class="form-group">
+                <label for="admin_telephone" class="col-sm-3 control-label">电话</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="admin_telephone" name="admin_telephone" value="{$user['admin_telephone']}"/>
+                </div>
+              </div><!--电话-->
+
+              <div class="form-group">
+                <label for="admin_mobilephone" class="col-sm-3 control-label">手机</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="admin_mobilephone" name="admin_mobilephone" value="{$user['admin_mobilephone']}"/>
+                </div>
+              </div><!--手机-->
+
+
+              <div class="form-group">
+                <label for="admin_email" class="col-sm-3 control-label">邮箱</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="admin_email" name="admin_email" value="{$user['admin_email']}"/>
+                </div>
+              </div><!--邮箱-->
+              
+
+              <div class="form-group">
+                <label for="admin_idcard" class="col-sm-3 control-label">身份证号码</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="admin_idcard" name="admin_idcard" value="{$user['admin_idcard']}"/>
+                </div>
+              </div><!--身份证号码-->
+              
+            
+            <div class="alert alert-warning" role="alert">
+              <span>*</span>必填
+            </div>
+            <input type="submit" value="保存修改" class="btn btn-block btn-primary"/>
+          </div>
+          </form>
+               &nbsp;
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<include file = "layout:footer"/>

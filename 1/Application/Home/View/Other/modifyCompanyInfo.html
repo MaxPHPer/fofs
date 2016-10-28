@@ -1,0 +1,331 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/>
+  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+
+    <section class="content-wrap">
+      <div class="container">
+        <div class="row margin_top_bottom_20">
+          <div class="col-md-4 main-content">
+              <include file = "Other:individualBar"/>
+          </div>
+          <div class="col-md-8">
+          <form class="form-horizontal" action="{:U('Home/Other/save_modifyCompanyInfo')}"  method="post" name='form1' enctype="multipart/form-data">
+              <div class="well">
+                <h3>修改公司信息</h3>
+                <hr/>
+                
+                <div class="row">
+                    <div class='col-md-2'>
+                        <a href="#">
+                          <if condition="$user['institution_logo_img'] neq NULL">
+                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/startup_pic/{$user['institution_logo_img']}" alt="头像" height="100" width="100">
+                            <else />
+                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/startup_pic/default.jpg" alt="头像" height="100" width="100"></if>
+                        </a>
+                    </div>
+
+
+                    <div class='col-md-10'>
+                        <div class="row">
+                            <div class='col-md-2 text_right'>
+                                公司名称:
+                            </div>
+                            <div class='col-md-10'>
+                                <input type="text" class="form-control" name="institution_abbr" value="{$user['institution_abbr']}">
+                            </div>
+                        </div>
+                      
+                        <div class="row margin_top_bottom_20">
+                            <div class='col-md-2 text_right'>
+                                公司愿景:
+                            </div>
+                            <div class='col-md-10'>
+                                <input type="text" class="form-control" name="institution_vision" value="{$user['institution_vision']}">
+                            </div>
+                        </div>
+
+                        <div class="row margin_top_bottom_20">
+                            <div class='col-md-2 text_right'>
+                                公司简介:
+                            </div>
+                            <div class='col-md-10'>
+                                <textarea name="institution_abstract" class="form-control">{$user['institution_abstract']}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="row margin_top_bottom_20">
+                              <div class='col-md-2 text_right'>公司logo:</div>
+                              <div class='col-md-10'><a href="__PUBLIC__/uploads/startup_pic/{$user['institution_logo_img']}" target="_Blank" >查看已有logo</a><input type="file" class="form-control" name="institution_logo_img" ></div>
+                              
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="row margin_top_20">
+                    <div class='col-md-12'>
+                      <h3><span class="glyphicon glyphicon-inbox"></span>业务介绍</h3>
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    用户痛点:
+                                </div>
+                                <div class='col-md-8'>
+                                    <textarea name="user_pain_points" class="form-control">{$user['user_pain_points']}</textarea>
+                                </div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                              <div class='col-md-3 text_right'>解决方案:</div>
+                              <div class='col-md-8'><textarea name="solutions" class="form-control">{$user['solutions']}</textarea></div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                              <div class='col-md-3 text_right'>核心资源:</div>
+                              <div class='col-md-8'><textarea name="core_resources" class="form-control">{$user['core_resources']}</textarea></div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                              <div class='col-md-3 text_right'>盈利模式:</div>
+                              <div class='col-md-8'><textarea name="profit_model" class="form-control">{$user['profit_model']}</textarea></div>
+                            </div>
+
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="row margin_top_20">
+                    <div class='col-md-12'>
+                      <h3><span class="glyphicon glyphicon-list-alt"></span>市场分析</h3>
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+
+                    
+
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    市场现状:
+                                </div>
+                                <div class='col-md-8'>
+                                    <textarea name="market_situation" class="form-control">{$user['market_situation']}</textarea>
+                                </div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                              <div class='col-md-3 text_right'>竞品分析:</div>
+                              <div class='col-md-8'><textarea name="competitive_analysis" class="form-control">{$user['competitive_analysis']}</textarea></div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                              <div class='col-md-3 text_right'>优势分析:</div>
+                              <div class='col-md-8'><textarea name="advantage_analysis" class="form-control">{$user['advantage_analysis']}</textarea></div>
+                            </div>
+
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="row margin_top_20">
+                    <div class='col-md-12'>
+                      <h3><span class="glyphicon glyphicon-earphone"></span>联系方式</h3>
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    联系人:
+                                </div>
+                                <div class='col-md-8'>
+                                    <input type="text" class="form-control" name="contact_username" value="{$user['contact_username']}">
+                                </div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    手机:
+                                </div>
+                                <div class='col-md-8'>
+                                    <input type="text" class="form-control" name="contact_mobilephone" value="{$user['contact_mobilephone']}">
+                                </div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    电话:
+                                </div>
+                                <div class='col-md-8'>
+                                    <input type="text" class="form-control" name="contact_telephone" value="{$user['contact_telephone']}">
+                                </div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                              <div class='col-md-3 text_right'>邮箱:</div>
+                              <div class='col-md-8'><input type="email" class="form-control" name="contact_email" value="{$user['contact_email']}"></div>
+                            </div>
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    联系人微信:
+                                </div>
+                                <div class='col-md-8'>
+                                    <input type="text" class="form-control" name="contact_wechat" value="{$user['contact_wechat']}">
+                                </div>
+                            </div>
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    机构微信:
+                                </div>
+                                <div class='col-md-8'>
+                                    <input type="text" class="form-control" name="company_wechat" value="{$user['company_wechat']}">
+                                </div>
+                            </div>
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    机构网站:
+                                </div>
+                                <div class='col-md-8'>
+                                    <input type="text" class="form-control" name="company_web" value="{$user['company_web']}">
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="row margin_top_20">
+                    <div class='col-md-12'>
+                      <h3><span class="glyphicon glyphicon-lock"></span>融资现状</h3>
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    股权结构:
+                                </div>
+                                <div class='col-md-8'>
+                                  <textarea name="equity_structure" class="form-control">{$user['equity_structure']}</textarea>
+                                </div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    是否已完成融资:
+                                </div>
+                                <div class='col-md-8'>
+                                    <if condition="$user['is_invested'] eq 1">
+                                            
+                                            <input class="icheckbox_flat-blue" id="is_invested" type="radio" name="is_invested" value="0" />否&nbsp;&nbsp;&nbsp;
+                                            <input class="icheckbox_flat-blue" id="is_invested" type="radio" name="is_invested" value="1" checked/>是
+                                    <else/>
+                                            
+                                            <input class="icheckbox_flat-blue" id="is_invested" type="radio" name="is_invested" value="0" checked/>否&nbsp;&nbsp;&nbsp;
+                                            <input class="icheckbox_flat-blue" id="is_invested" type="radio" name="is_invested" value="1" />是
+                                    </if>
+                                </div>
+                            </div>
+
+                            <if condition="$user['is_invested'] eq 1">
+                                  <div class="row margin_top_bottom_20">
+                                      <div class='col-md-3 text_right'>
+                                          轮次:
+                                      </div>
+                                      <div class='col-md-8'>
+                                          <input type="text" class="form-control" name="investment_round" value="{$user['investment_round']}">
+                                      </div>
+                                  </div>
+
+                                  <div class="row margin_top_bottom_20">
+                                    <div class='col-md-3 text_right'>额度(万人民币):</div>
+                                    <div class='col-md-8'><input type="number" class="form-control" name="investment_quota" value="{$user['investment_quota']}"></div>
+                                  </div>
+
+                                  <div class="row margin_top_bottom_20">
+                                    <div class='col-md-3 text_right'>投资方:</div>
+                                    <div class='col-md-8'><input type="text" class="form-control" name="investor" value="{$user['investor']}"></div>
+                                  </div>
+                            </if>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="row margin_top_20">
+                    <div class='col-md-12'>
+                      <h3><span class="glyphicon glyphicon-file"></span>计划融资</h3>
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    轮次:
+                                </div>
+                                <div class='col-md-8'>
+                                    <input type="text" class="form-control" name="plan_investment_round" value="{$user['plan_investment_round']}">
+                                </div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                              <div class='col-md-3 text_right'>额度(万人民币):</div>
+                              <div class='col-md-8'><input type="number" class="form-control" name="plan_invested_quota" value="{$user['plan_invested_quota']}"></div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                              <div class='col-md-3 text_right'>出让股份(%):</div>
+                              <div class='col-md-8'><input type="number" class="form-control" name="plan_transfer_shares" value="{$user['plan_transfer_shares']}"></div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                              <div class='col-md-3 text_right'>融资用途:</div>
+                              <div class='col-md-8'><textarea name="plan_to_do" class="form-control">{$user['plan_to_do']}</textarea></div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    是否接受联投:
+                                </div>
+                                <div class='col-md-8'>
+                                    <if condition="$user['accept_joint_investment'] eq 1">
+                                            
+                                            <input class="icheckbox_flat-blue" id="accept_joint_investment" type="radio" name="accept_joint_investment" value="0" />否&nbsp;&nbsp;&nbsp;
+                                            <input class="icheckbox_flat-blue" id="accept_joint_investment" type="radio" name="accept_joint_investment" value="1" checked/>是
+                                    <else/>
+                                            
+                                            <input class="icheckbox_flat-blue" id="accept_joint_investment" type="radio" name="accept_joint_investment" value="0" checked/>否&nbsp;&nbsp;&nbsp;
+                                            <input class="icheckbox_flat-blue" id="accept_joint_investment" type="radio" name="accept_joint_investment" value="1" />是
+                                    </if>
+                          
+                                </div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                              <div class='col-md-3 text_right'>项目BP:</div>
+                              <div class='col-md-8'><a href="__PUBLIC__/uploads/startup_bp/{$user['bp_url']}" target="_Blank" >查看已有bp</a><input type="file" class="form-control" name="bp_url" ></div>
+                              
+                            </div>
+
+                            <div class="row">
+                                  <div class="col-sm-4">
+                                    <input type="submit" class="btn btn-primary btn-block"  value="保存修改"/>
+                                  </div>
+                            </div>
+
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+
+                 &nbsp;
+              </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<include file = "layout:footer"/>

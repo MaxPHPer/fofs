@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 use Home\Controller;
-class StartupsController extends BaseController {
+class OtherController extends BaseController {
     public function _initialize() {
         parent::_initialize();
 
@@ -14,7 +14,7 @@ class StartupsController extends BaseController {
 
     //获取用户信息
     public function getInfo($id){
-        $User=M('Startup_company');
+        $User=M('Other_institution');
         $list=$User->getById($id);
         return $list;
     }
@@ -53,7 +53,7 @@ class StartupsController extends BaseController {
     //更新机构管理员信息
     public function save_personalInfo(){
 
-        $User=M('Startup_company');
+        $User=M('Other_institution');
         $data=I('post.');
         $data['id']=session('user_id');
 
@@ -61,7 +61,7 @@ class StartupsController extends BaseController {
             $res=$User->save();
             if($res){
                 session('username',$data['admin_name']);
-                $this->success('信息更新成功',__APP__.'/Home/Startups/accountSetting');
+                $this->success('信息更新成功',__APP__.'/Home/Other/accountSetting');
             }
             else{
                 $this->error($User->getError());
@@ -260,13 +260,13 @@ class StartupsController extends BaseController {
                 $result=$Business_experience->addAll($dataList);    
                 
                 if($result){
-                    $this->success('Success！修改保存成功',__APP__.'/Home/Startups/myCompany');
+                    $this->success('Success！修改保存成功',__APP__.'/Home/Other/myCompany');
                 }else{
                     $this->error($Business_experience->getError());
                 }      
             }else{
                 if($user_id){
-                    $this->success('Success！保存成功',__APP__.'/Home/Startups/myCompany');
+                    $this->success('Success！保存成功',__APP__.'/Home/Other/myCompany');
                 }else{
                     $this->error($User->getError());
                 }
@@ -343,7 +343,7 @@ class StartupsController extends BaseController {
             $result=$Business_experience->addAll($dataList);
 
             if($result){
-                $this->success('Success！保存成功',__APP__.'/Home/Startups/myCompany');
+                $this->success('Success！保存成功',__APP__.'/Home/Other/myCompany');
             }else{
                 $this->error($Business_experience->getError());
             }
@@ -378,7 +378,7 @@ class StartupsController extends BaseController {
     public function set_password(){
         if(I('post.newpassword')==I('post.renewpassword')){
             //确定用户类型
-            $User=M('Startup_company');
+            $User=M('Other_institution');
 
             $user=$User->getbyId(session('user_id'));    //读取用户数据
 
@@ -415,7 +415,7 @@ class StartupsController extends BaseController {
     public function save_modifyCompanyInfo(){
 
        //电话与传真的区域代码为用户自行输入，非区域ID
-        $User=M('Startup_company');
+        $User=M('Other_institution');
         $data['institution_fullname_cn']=I('post.institution_fullname_cn');
         $data['institution_fullname_en']=I('post.institution_fullname_en');
         $data['institution_vision']=I('post.institution_vision');
@@ -451,13 +451,13 @@ class StartupsController extends BaseController {
         $upload = new \Think\Upload();// 实例化上传类
         $upload->maxSize   =     3145728 ;// 设置附件上传大小
         $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
-        $upload->rootPath  =     './Public/uploads/startup_pic/'; // 设置附件上传根目录
+        $upload->rootPath  =     './Public/uploads/other_pic/'; // 设置附件上传根目录
         $upload->savePath  =      ''; // 设置附件上传（子）目录
         $upload->autoSub   =     false;    //不使用子目录
         $upload->replace   =     true;      //覆盖文件
 
         if(!file_exists($upload->rootPath))
-            $test1=mkdir('Public/uploads/startup_pic', 0777 ,1);
+            $test1=mkdir('Public/uploads/other_pic', 0777 ,1);
 
         if($User->create($data)){
 
@@ -475,7 +475,7 @@ class StartupsController extends BaseController {
                              }else{// 上传成功 获取上传文件信息
                                 /*原图片地址*/
                                 $img=$User->getFieldById($data['id'],'institution_logo_img');   //文件名
-                                $path=__ROOT__.'/Public/uploads/startup_pic/';   //文件路径
+                                $path=__ROOT__.'/Public/uploads/other_pic/';   //文件路径
                                 if($img){
                                   unlink($path.$img);  //删除原文件
                                 }
@@ -483,30 +483,11 @@ class StartupsController extends BaseController {
                                 $User->where('id='.$data['id'])->setField('institution_logo_img',$info['savename']);
                              }
                          }
-                     }else if($key=='bp_url'){
-                        $upload->rootPath  =     './Public/uploads/startup_bp/'; // 设置附件上传根目录
-                        if(!empty($file['name'])) {
-                            $upload->saveName  =   $result.'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
-                             // 上传单个文件 
-                             $info   =   $upload->uploadOne($file);
-                             if(!$info) {// 上传错误提示错误信息
-                                $this->error($upload->getError());
-                             }else{// 上传成功 获取上传文件信息
-
-                                /*原图片地址*/
-                                $img=$User->getFieldById($data['id'],'bp_url');   //文件名
-                                $path=__ROOT__.'/Public/uploads/startup_bp/';   //文件路径
-                                if($img){
-                                  unlink($path.$img);  //删除原文件
-                                }
-                                $User->where('id='.$data['id'])->setField('bp_url',$info['savename']);
-                             }
-                         }
                      }
 
                 }
 
-                $this->success('Success！修改成功',__APP__.'/Home/Startups/individualProfile');
+                $this->success('Success！修改成功',__APP__.'/Home/Other/individualProfile');
             }
             else{
                 $this->error($User->getError());

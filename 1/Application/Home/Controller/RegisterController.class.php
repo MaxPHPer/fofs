@@ -671,7 +671,7 @@ class RegisterController extends BaseController{
                     /*其它机构*/
 
 
-                    default:break;
+                    default: $this->error('请选择机构类型!');break;
                 }              
             }
 
@@ -1797,7 +1797,7 @@ class RegisterController extends BaseController{
 
                     /*其它机构*/
                     case '8':  $User=M('Other_institution');  
-                               $success_url='/Sa/individualProfile'; 
+                               $success_url='/Other/individualProfile'; 
                                $first_sign_url='/Register/personalInfo';
                                $second_sign_url='/Register/otherInstitutionInfo';
                                $third_sign_url='/Register/membersInfo';
@@ -2487,5 +2487,70 @@ class RegisterController extends BaseController{
     //其它机构公司信息
     public function otherInstitutionInfo(){
       $this->display();
+    }
+
+    //保存其它机构公司信息
+    public function save_otherInstitutionInfo(){
+        //电话与传真的区域代码为用户自行输入，非区域ID
+        $User=M('Other_institution');
+        $data['institution_fullname_cn']=I('post.institution_fullname_cn');
+        $data['institution_fullname_en']=I('post.institution_fullname_en');
+        $data['founded_time']=strtotime(I('post.founded_time'));
+        $data['founded_addr']=I('post.founded_addr');
+        $data['profession']=I('post.profession');
+        $data['institution_abstract']=I('post.institution_abstract');
+
+        $data['contact_username']=I('post.contact_username');
+        $data['contact_telephone']=I('post.contact_telephone');
+        $data['contact_mobilephone']=I('post.contact_mobilephone');
+        $data['contact_email']=I('post.contact_email');
+  
+        $data['company_wechat']=I('post.company_wechat');
+        $data['company_web']=I('post.company_web');
+       
+        $data['id']=session('user_id');
+        $data['reg_step']=3;
+
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     3145728 ;// 设置附件上传大小
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->rootPath  =     './Public/uploads/other_pic/'; // 设置附件上传根目录
+        $upload->savePath  =      ''; // 设置附件上传（子）目录
+        $upload->autoSub   =     false;    //不使用子目录
+        $upload->replace   =     true;      //覆盖文件
+
+        if(!file_exists($upload->rootPath))
+            $test1=mkdir('Public/uploads/other_pic', 0777 ,1);
+
+        if($User->create($data)){
+
+            $result=$User->save();
+            if($result){
+                /*上传头像*/
+                foreach($_FILES as $key =>$file){
+                     if($key=='institution_logo_img'){
+                         if(!empty($file['name'])) {
+                            $upload->saveName  =   $result.'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
+                             // 上传单个文件 
+                             $info   =   $upload->uploadOne($file);
+                             if(!$info) {// 上传错误提示错误信息
+                                $this->error($upload->getError());
+                             }else{// 上传成功 获取上传文件信息
+                                $User->where('id='.$data['id'])->setField('institution_logo_img',$info['savename']);
+                             }
+                         }
+                     }
+
+                }
+
+                $this->success('Success！保存成功，请继续管理团队信息',__APP__.'/Home/Register/membersInfo');
+            }
+            else{
+                $this->error($User->getError());
+            } 
+        }
+        else{
+            $this->error($User->getError());
+        }
     }
 }

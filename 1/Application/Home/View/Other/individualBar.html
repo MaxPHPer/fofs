@@ -1,0 +1,89 @@
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span>{$user['institution_abbr']}</div>
+                <div class="panel-body">
+                  <div class="media">
+                    <div class="media-left">
+                      <a href="#">
+                        <if condition="$user['institution_logo_img'] neq NULL">
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/other_pic/{$user['institution_logo_img']}" alt="头像" height="100" width="100">
+                        <else />
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/other_pic/default.jpg" alt="头像" height="100" width="100">
+                        </if>
+                      </a>
+                    </div>
+                    <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+
+                      <p><i class="fa fa-envelope-o fa-md"></i> {$user['email']}</p>
+                      <p><i class="glyphicon glyphicon-th-list"></i>创业公司</p>
+                      <a class="btn btn-default" href="modifyCompanyInfo.html" role="button">修改公司信息</a>
+                    </div>
+                  </div>
+                </div>
+              </div><!--头像-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="{:U('Home/Other/individualProfile')}">
+                      <span class="glyphicon glyphicon-home"></span>机构主页
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--机构主页-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="{:U('Home/Other/myCompany')}">
+                      <span class="glyphicon glyphicon-user"></span>机构成员
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--机构成员-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="{:U('Home/Other/accountSetting')}">
+                      <span class="glyphicon glyphicon-pencil"></span>账号设置
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--账号设置-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="{:U('Home/Other/inbox')}">
+                      <span class="glyphicon glyphicon-envelope"></span>消息
+                      <if condition="$amount['unread'] neq 0">
+                        <span class="badge">{$amount['unread']}</span>
+                      </if>
+                    </a>
+                  </div>
+                </div>
+              </div><!--消息-->
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <span class="glyphicon glyphicon-globe"></span>圈子
+                    </a>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <div class="list-group">
+                      <a href="{:U('Home/Other/myFollows')}" class="list-group-item">关注我的<span class="badge">{$amount['checking']}</span></a>
+                      <a href="{:U('Home/Other/myFollowing')}" class="list-group-item ">我关注的<span class="badge">{$amount['accepted']}</span></a>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div><!--圈子-->
+            </div>
