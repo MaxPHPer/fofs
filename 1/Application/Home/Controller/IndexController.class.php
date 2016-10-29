@@ -52,6 +52,7 @@ class IndexController extends BaseController {
             if($list['password']==$data['password']){
             	session('nickname',$list['nickname']);
                 session('user_id',$list['id']);
+                session('email',$list['email']);
                 session('institution_type',$list['institution_type']);
                 
                 $this->success('登陆成功',__APP__.'/Home/Individual/individualProfile');            
@@ -147,7 +148,7 @@ class IndexController extends BaseController {
 
             /*其它机构*/
             case '8':  $User=M('Other_institution');  
-                       $success_url='/Sa/individualProfile'; 
+                       $success_url='/Other/individualProfile'; 
                        $first_sign_url='/Register/personalInfo';
                        $second_sign_url='/Register/otherInstitutionInfo';
                        $third_sign_url='/Register/membersInfo';
@@ -173,14 +174,14 @@ class IndexController extends BaseController {
                 session('user_id',$list['id']);
                 session('institution_type',$list['institution_type']);
 
-                if($list['state']==200){  //账号已完成注册，且正常
+                if($list['state']==='200'){  //账号已完成注册，且正常
                     $this->success('登陆成功',__APP__.'/Home'.$success_url);
                     
-                }else if($list['state']==2){  //账号死锁
+                }else if($list['state']==='2'){  //账号死锁
                     session(null);
                     cookie(null);
                     $this->success('该账号已被后台锁死，请联系管理员',__APP__.'/Home/Index/index');    
-                }else if($list['state']==1){  //账号正常，未完成全部注册
+                }else if($list['state']==='1'){  //账号正常，未完成全部注册
                     switch($list['reg_step']){
                         case 1: $this->success('登陆成功,你的信息尚未填写完全,请继续填写',__APP__.'/Home'.$first_sign_url); break;
                         case 2: $this->success('登陆成功,你的信息尚未填写完全,请继续填写',__APP__.'/Home'.$second_sign_url); break;

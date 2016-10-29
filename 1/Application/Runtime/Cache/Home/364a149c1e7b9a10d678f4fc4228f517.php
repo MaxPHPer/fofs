@@ -235,7 +235,7 @@
                 <section class="verifyEmail">
                   <h3><?php echo (L("email_verify_to_complete")); ?></h3>
                   <p><?php echo (L("email_verification_send")); ?><span><?php echo ($email); ?></span></p>
-                  <p><?php echo (L("click_email_url")); ?></p>
+                  <p>点击邮件内的链接即可完成注册，并可使用中国母基金联盟官网的全部功能</p>
                   <a href="<?php echo ($link); ?>" target="_Blank" class="btn btn-primary"><?php echo (L("go_emailbox_check")); ?></a>
                 </section>
               </div>

@@ -6,10 +6,10 @@
       <div class="container">
         <div class="row margin_top_bottom_20">
           <div class="col-md-4 main-content">
-              <include file = "Other:individualBar"/>
+              <include file = "Sa:individualBar"/>
           </div>
           <div class="col-md-8">
-          <form class="form-horizontal" action="{:U('Home/Other/save_modifyCompanyInfo')}"  method="post" name='form1' enctype="multipart/form-data">
+          <form class="form-horizontal" action="{:U('Home/Sa/save_modifyCompanyInfo')}"  method="post" name='form1' enctype="multipart/form-data">
               <div class="well">
                 <h3>修改机构信息</h3>
                 <hr/>
@@ -18,9 +18,9 @@
                     <div class='col-md-2'>
                         <a href="#">
                           <if condition="$user['institution_logo_img'] neq NULL">
-                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/other_pic/{$user['institution_logo_img']}" alt="头像" height="100" width="100">
+                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/{$user['institution_logo_img']}" alt="头像" height="100" width="100">
                             <else />
-                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/other_pic/default.jpg" alt="头像" height="100" width="100"></if>
+                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/default.jpg" alt="头像" height="100" width="100"></if>
                         </a>
                     </div>
 
@@ -55,7 +55,7 @@
 
                         <div class="row margin_top_bottom_20">
                               <div class='col-md-2 text_right'>公司logo:</div>
-                              <div class='col-md-10'><a href="__PUBLIC__/uploads/startup_pic/{$user['institution_logo_img']}" target="_Blank" >查看已有logo</a><input type="file" class="form-control" name="institution_logo_img" ></div>
+                              <div class='col-md-10'><a href="__PUBLIC__/uploads/{$user['institution_logo_img']}" target="_Blank" >查看已有logo</a><input type="file" class="form-control" name="institution_logo_img" ></div>
                               
                         </div>
 
@@ -63,35 +63,57 @@
                     </div>
                 </div>
 
-                <div class="row margin_top_20">
-                    <div class='col-md-12'>
-                      <h3><span class="glyphicon glyphicon-inbox"></span>基本信息</h3>
-                      <div class="panel panel-default">
-                        <div class="panel-body">
+                <if condition="$user['institution_type'] eq 4">
+                    <div class="row margin_top_20">
+                        <div class='col-md-12'>
+                          <h3><span class="glyphicon glyphicon-inbox"></span>服务内容和费用</h3>
+                          <div class="panel panel-default">
+                            <div class="panel-body">
 
-                            <div class="row margin_top_bottom_20">
+                                <div class="row">
+                            
+                                    <div class='col-md-12'>
+                                      <textarea name="services_and_fees" class="form-control">{$user['services_and_fees']}</textarea>
+                                       
+                                    </div>
+                        
+                                </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                <else/>
+                    <div class="row margin_top_20">
+                        <div class='col-md-12'>
+                          <h3><span class="glyphicon glyphicon-inbox"></span>基本信息</h3>
+                          <div class="panel panel-default">
+                            <div class="panel-body">
+
+                              <div class="row margin_top_bottom_20">
                                 <div class='col-md-3 text_right'>
                                     成立时间:
                                 </div>
                                 <div class='col-md-8'>
-                                   <input name="founded_time" class="form-control" value="<php>echo date('Y-m-d',$user['founded_time']);</php>"/>
+                                  <input type="date" class="form-control" name="founded_time" value="<php>echo date('Y-m-d',$user['founded_time']);</php>">
                                 </div>
-                            </div>
+                              </div>
 
-                            <div class="row margin_top_bottom_20">
-                              <div class='col-md-3 text_right'>成立地点:</div>
-                              <div class='col-md-8'><textarea name="founded_addr" class="form-control">{$user['founded_addr']}</textarea></div>
-                            </div>
+                              <div class="row margin_top_bottom_20">
+                                  <div class='col-md-3 text_right'>
+                                      服务地域:
+                                  </div>
+                                  <div class='col-md-8'>
+                                      <input type="text" class="form-control" name="service_area" value="{$user['service_area']}">
+                                  </div>
+                              </div>
 
-                            <div class="row margin_top_bottom_20">
-                              <div class='col-md-3 text_right'>行业:</div>
-                              <div class='col-md-8'><textarea name="profession" class="form-control">{$user['profession']}</textarea></div>
                             </div>
-
+                          </div>
                         </div>
-                      </div>
                     </div>
-                </div>
+                </if>
+
 
                 <div class="row margin_top_20">
                     <div class='col-md-12'>

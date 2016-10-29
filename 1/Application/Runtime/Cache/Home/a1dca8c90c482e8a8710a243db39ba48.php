@@ -225,7 +225,7 @@
 
     <section class="content-wrap">
       <div class="container">
-        <div class="row">
+        <div class="row margin_top_bottom_20">
           <div class="col-md-4 main-content">
                           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
@@ -314,216 +314,158 @@
             </div>
           </div>
           <div class="col-md-8">
-            <div class="well">
-              <h3>机构主页<a href="#"><span class="label label-info margin_left_20">+关注</span></a></h3>
-              <hr/>
-              
-              <div class="row">
-                  <div class='col-md-2'>
-                      <a href="#">
-                        <?php if($user['institution_logo_img'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/other_pic/<?php echo ($user['institution_logo_img']); ?>" alt="头像" height="100" width="100">
-                          <?php else: ?>
-                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/other_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
-                      </a>
-                  </div>
-
-
-                  <div class='col-md-10'>
-                      <div class="row">
-                          <div class='col-md-2 text_right'>
-                              中文名称:
-                          </div>
-                          <div class='col-md-10'>
-                              <?php echo ($user['institution_fullname_cn']); ?>
-                          </div>
-                      </div>
-                    
-                      <div class="row">
-                          <div class='col-md-2 text_right'>
-                              英文名称:
-                          </div>
-                          <div class='col-md-10'>
-                              <?php echo ($user['institution_fullname_en']); ?>
-                          </div>
-                      </div>
-
-                      <div class="row">
-                          <div class='col-md-2 text_right'>
-                              公司简介:
-                          </div>
-                          <div class='col-md-10'>
-                              <?php echo ($user['institution_abstract']); ?>
-                          </div>
-                      </div>
-
-                  </div>
-              </div>
-
-              <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-inbox"></span>基本信息</h3>
-                    <div class="panel panel-default">
-                      <div class="panel-body">
-
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  注册时间:
-                              </div>
-                              <div class='col-md-8'>
-                                <?php echo date('Y-m-d',$user['founded_time']); ?>
-                              </div>
-                          </div>
-
-                          <div class="row">
-                            <div class='col-md-3 text_right'>注册地址:</div>
-                            <div class='col-md-8'><?php echo ($user['founded_addr']); ?></div>
-                          </div>
-
-                          <div class="row">
-                            <div class='col-md-3 text_right'>所属行业:</div>
-                            <div class='col-md-8'><?php echo ($user['profession']); ?></div>
-                          </div>
-
-                      </div>
+          <form class="form-horizontal" action="<?php echo U('Home/Other/save_modifyCompanyInfo');?>"  method="post" name='form1' enctype="multipart/form-data">
+              <div class="well">
+                <h3>修改机构信息</h3>
+                <hr/>
+                
+                <div class="row">
+                    <div class='col-md-2'>
+                        <a href="#">
+                          <?php if($user['institution_logo_img'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/other_pic/<?php echo ($user['institution_logo_img']); ?>" alt="头像" height="100" width="100">
+                            <?php else: ?>
+                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/other_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
+                        </a>
                     </div>
-                  </div>
-              </div>
 
-              <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-earphone"></span>联系方式</h3>
-                    <div class="panel panel-default">
-                      <div class="panel-body">
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  联系人:
-                              </div>
-                              <div class='col-md-8'>
-                                  <?php echo ($user['contact_username']); ?>
-                              </div>
-                          </div>
+                    <div class='col-md-10'>
+                        <div class="row">
+                            <div class='col-md-2 text_right'>
+                                中文名称:
+                            </div>
+                            <div class='col-md-10'>
+                                <input type="text" class="form-control" name="institution_fullname_cn" value="<?php echo ($user['institution_fullname_cn']); ?>">
+                            </div>
+                        </div>
+                      
+                        <div class="row margin_top_bottom_20">
+                            <div class='col-md-2 text_right'>
+                                英文名称:
+                            </div>
+                            <div class='col-md-10'>
+                                <input type="text" class="form-control" name="institution_fullname_en" value="<?php echo ($user['institution_fullname_en']); ?>">
+                            </div>
+                        </div>
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  手机:
-                              </div>
-                              <div class='col-md-8'>
-                                  <?php echo ($user['contact_mobilephone']); ?>
-                              </div>
-                          </div>
+                        <div class="row margin_top_bottom_20">
+                            <div class='col-md-2 text_right'>
+                                公司简介:
+                            </div>
+                            <div class='col-md-10'>
+                                <textarea name="institution_abstract" class="form-control"><?php echo ($user['institution_abstract']); ?></textarea>
+                            </div>
+                        </div>
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  电话:
-                              </div>
-                              <div class='col-md-8'>
-                                  <?php echo ($user['contact_telephone']); ?>
-                              </div>
-                          </div>
+                        <div class="row margin_top_bottom_20">
+                              <div class='col-md-2 text_right'>公司logo:</div>
+                              <div class='col-md-10'><a href="/fofs/1/Public/uploads/startup_pic/<?php echo ($user['institution_logo_img']); ?>" target="_Blank" >查看已有logo</a><input type="file" class="form-control" name="institution_logo_img" ></div>
+                              
+                        </div>
 
-                          <div class="row">
-                            <div class='col-md-3 text_right'>邮箱:</div>
-                            <div class='col-md-8'><?php echo ($user['contact_email']); ?></div>
-                          </div>
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  机构微信:
-                              </div>
-                              <div class='col-md-8'>
-                                  <?php echo ($user['company_wechat']); ?>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  机构网站:
-                              </div>
-                              <div class='col-md-8'>
-                                  <?php echo ($user['company_web']); ?>
-                              </div>
-                          </div>
-                      </div>
                     </div>
-                  </div>
-              </div>
+                </div>
 
-              <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-user"></span>管理团队</h3>
-                    <div class="panel panel-default">
-                      <div class="panel-body">
-                          <!--已有团队成员-->
-                          <?php if(is_array($members)): foreach($members as $key=>$vo): ?><div id="" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="">
-                                <div class="panel-body">
-                                  <div class="repeat_people ">
-                                    <div class="borderBottom" style="margin-bottom:20px;">
-                                      <div class="row" >
-                                        <div class="col-sm-3 text_right">
-                                          
-                                            姓名:
-                      
-                                        </div>
+                <div class="row margin_top_20">
+                    <div class='col-md-12'>
+                      <h3><span class="glyphicon glyphicon-inbox"></span>基本信息</h3>
+                      <div class="panel panel-default">
+                        <div class="panel-body">
 
-                                        <div class="col-sm-8">
-
-                                              <?php echo ($vo['username']); ?>
-
-                                        </div>
-
-                                      </div>
-
-                                      <div class="row" style="margin-top:10px;">
-                                        <div class="col-sm-3 text_right">
-                                          
-                                            职务:
-                      
-                                        </div>
-
-                                        <div class="col-sm-8">
-
-                                              <?php echo ($vo['function']); ?>
-
-                                        </div>
-                                      </div>
-
-                                      <div class="row">
-                                          <div class="col-sm-3 text_right">
-                                            从业经历:
-                                          </div>
-                                      </div>
-
-                                      <div class="repeat">
-                                        <?php if(is_array($vo['business_experience'])): foreach($vo['business_experience'] as $key=>$business_experience): ?><div class="row" style="margin-top:10px;">
-                                              
-                                              <div class="col-sm-3 text_right">
-                                                    <?php echo ($business_experience['company_name']); ?>
-                                              </div>
-                                             
-                                                
-                                              <div class="col-sm-3">
-                                                    <?php echo ($business_experience['function']); ?>
-                                              </div>
-
-                                              <div class="col-sm-6">
-                                                <?php echo ($business_experience['start_time']); ?>-<?php echo ($business_experience['end_time']); ?>
-                                              </div>
-                                    
-                                            </div><?php endforeach; endif; ?>
-                                      </div>
-
-                                    </div>
-                                  </div>
-
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    成立时间:
                                 </div>
-                              </div><?php endforeach; endif; ?>
+                                <div class='col-md-8'>
+                                   <input name="founded_time" class="form-control" value="<?php echo date('Y-m-d',$user['founded_time']); ?>"/>
+                                </div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                              <div class='col-md-3 text_right'>成立地点:</div>
+                              <div class='col-md-8'><textarea name="founded_addr" class="form-control"><?php echo ($user['founded_addr']); ?></textarea></div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                              <div class='col-md-3 text_right'>行业:</div>
+                              <div class='col-md-8'><textarea name="profession" class="form-control"><?php echo ($user['profession']); ?></textarea></div>
+                            </div>
+
+                        </div>
                       </div>
                     </div>
-                  </div>
-              </div>
+                </div>
 
-               &nbsp;
-            </div>
+                <div class="row margin_top_20">
+                    <div class='col-md-12'>
+                      <h3><span class="glyphicon glyphicon-earphone"></span>联系方式</h3>
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    联系人:
+                                </div>
+                                <div class='col-md-8'>
+                                    <input type="text" class="form-control" name="contact_username" value="<?php echo ($user['contact_username']); ?>">
+                                </div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    手机:
+                                </div>
+                                <div class='col-md-8'>
+                                    <input type="text" class="form-control" name="contact_mobilephone" value="<?php echo ($user['contact_mobilephone']); ?>">
+                                </div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    电话:
+                                </div>
+                                <div class='col-md-8'>
+                                    <input type="text" class="form-control" name="contact_telephone" value="<?php echo ($user['contact_telephone']); ?>">
+                                </div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                              <div class='col-md-3 text_right'>邮箱:</div>
+                              <div class='col-md-8'><input type="email" class="form-control" name="contact_email" value="<?php echo ($user['contact_email']); ?>"></div>
+                            </div>
+
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    机构微信:
+                                </div>
+                                <div class='col-md-8'>
+                                    <input type="text" class="form-control" name="company_wechat" value="<?php echo ($user['company_wechat']); ?>">
+                                </div>
+                            </div>
+                            <div class="row margin_top_bottom_20">
+                                <div class='col-md-3 text_right'>
+                                    机构网站:
+                                </div>
+                                <div class='col-md-8'>
+                                    <input type="text" class="form-control" name="company_web" value="<?php echo ($user['company_web']); ?>">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                  <div class="col-sm-4">
+                                    <input type="submit" class="btn btn-primary btn-block"  value="保存修改"/>
+                                  </div>
+                            </div>
+
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                 &nbsp;
+              </div>
+          </form>
           </div>
         </div>
       </div>

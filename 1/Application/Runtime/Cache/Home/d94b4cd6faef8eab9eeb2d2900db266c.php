@@ -298,7 +298,7 @@
               <div class="form-group">
                 <label for="admin_email" class="col-sm-3 control-label">邮箱</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="admin_email" name="admin_email" />
+                  <input type="email" class="form-control" id="admin_email" name="admin_email" />
                 </div>
               </div><!--邮箱-->
               

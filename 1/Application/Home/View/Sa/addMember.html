@@ -1,0 +1,102 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/>
+  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+
+    <section class="content-wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 main-content">
+              <include file = "Sa:individualBar"/>
+          </div>
+          <div class="col-md-8">
+            <div class="well">
+              <h3>添加新成员信息</h3>
+              <hr/>
+              <form class="form-horizontal" action=""  method="post" name='form1'>
+                <div class="panel-body">
+                    <!--已有团队成员-->
+                    
+                        <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                          <div class="panel-body">
+                            <div class="repeat_people ">
+                              <div class="borderBottom" style="margin-bottom:20px;">
+                                <div class="row" >
+                                  <div class="col-sm-3">
+                                    
+                                      <label for="username" class="col-sm-12 control-label"><span>*</span>姓名</label>
+                
+                                  </div>
+
+                                  <div class="col-sm-4">
+
+                                        <input type="text" class="form-control" id="username" name="username" value="{$vo['username']}" />
+                                  </div>
+
+                                </div>
+
+                                <div class="row" style="margin-top:10px;">
+                                  <div class="col-sm-3">
+                                    
+                                      <label for="function" class="col-sm-12 control-label"><span>*</span>职务</label>
+                
+                                  </div>
+
+                                  <div class="col-sm-4">
+
+                                        <input type="text" class="form-control" id="function" name="function"  value="{$vo['function']}"/>
+
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-3 ">
+                                      <label for="userName" class="col-sm-12 control-label"><b>从业经历</b></label>
+                                    </div>
+                                </div>
+
+                                <div class="repeat">
+                                  <div class="row" style="margin-top:10px;">
+                                    
+                                    <div class="col-sm-4 ">
+                                      公司名称<input type="text" class="col-sm-12 form-control" name="business_experience[company_name][]"/>
+                                    </div>
+
+                                    <div class="col-sm-4 ">
+                                      职位<input type="text" class="form-control" name="business_experience[function][]"/>
+                                    </div>
+                                   
+                                    <div class="col-sm-4 ">
+                                      任职年月<input type="text" class="form-control" name="business_experience[start_time][]"/>
+                                      至<input type="text" class="form-control" name="business_experience[end_time][]"/>
+                                    </div>
+
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-sm-10"></div>
+                                  <div class="col-sm-2">
+                                    <button type="button" class="btn btn-primary " style="margin-top:10px;" id="addNew2">再添加从业经历</button>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                            <div class="row">
+                                  <div class="col-sm-4">
+                                    <input type="submit" class="btn btn-primary btn-block"  value="保存修改" onclick="form1.action='__APP__/Home/Sa/do_addMember';form1.submit();"/>
+                                  </div>
+                            </div>
+                          </div>
+                        </div> 
+                  
+                </div>
+              </form>
+               &nbsp;
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<include file = "layout:footer"/>

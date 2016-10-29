@@ -15,21 +15,7 @@
 
   <link rel="stylesheet" type="text/css" href="/fofs/1/Public/assets_1/css/default.css">
   <link href="/fofs/1/Public/assets_1/css/site.css" rel="stylesheet" type="text/css" />
-  <script type='text/javascript'>
-      var _vds = _vds || [];
-      window._vds = _vds;
-      (function(){
-        _vds.push(['setAccountId', '85dd0477b4e83d27']);
-        (function() {
-          var vds = document.createElement('script');
-          vds.type='text/javascript';
-          vds.async = true;
-          vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
-          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(vds, s);
-        })();
-      })();
-  </script>
+  
 </head>
 <body>
 <header class="header" role="navigation">
@@ -331,7 +317,7 @@
             <div class="well">
               <h3>添加新基金信息</h3>
               <hr/>
-              <form class="form-horizontal" action=""  method="post" name='form1'>
+              <form class="form-horizontal" action=""  method="post" name='form1' enctype="multipart/form-data">
                 <div class="panel-body">
                     <!--已有基金产品-->
 
@@ -553,7 +539,7 @@
                                     上传募集方案
                                   </div>
                                   <div class="col-sm-4 ">
-                                  <a href="/fofs/1/Public/Uploads/lp_recruitment/<?php echo ($vo['recruitment_plan_url']); ?>" target="_Blank">已传方案</a><input type="file" class="form-control" id="recruitment_plan_url" name="recruitment_plan_url" >
+                                     <input type="file" class="form-control" id="recruitment_plan_url" name="recruitment_plan_url" >
                                   </div>  
 
                                                        
@@ -651,7 +637,7 @@
                                     投资额度
                                   </div>
                                   <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="investment_quota" name="investment_project[investment_quota][]"  />                            
+                                    <input type="number" class="form-control" id="investment_quota" name="investment_project[investment_quota][]"  />                            
                                   </div>
                                   <div class="col-sm-2">
                                     万元

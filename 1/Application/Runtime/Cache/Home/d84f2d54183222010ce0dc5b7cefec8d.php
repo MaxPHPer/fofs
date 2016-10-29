@@ -223,7 +223,7 @@
   <!--登录模态框结束-->
 <div class="content supplierCompanyInfo">
   <div class="container">
-    <form action="/fofs/1/index.php/Home/Register/save_supplierCompanyInfo" method="post" enctype="multipart/form-data">
+    <form action="/fofs/1/index.php/Home/Register/save_faCompanyInfo" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
