@@ -10,7 +10,7 @@ class BaseController extends Controller{
 
         //$this->checklogin();
         if(session('institution_type')){
-            $this->assign('username',session('nickname')?session('nickname'):session('username'));
+            $this->assign('username',session('nickname')?session('nickname'):(session('username')?session('username'):session('email')));
             $this->assign('user_id',session('user_id'));
             $this->assign('institution_type',session('institution_type'));
             switch(session('institution_type')){
@@ -55,5 +55,140 @@ class BaseController extends Controller{
         
         
 
+    }
+
+    //收件箱
+    public function inbox(){
+
+        $this->display();
+        
+    }
+
+
+    //发送消息
+    public function sendmessage(){
+        
+
+        $Letter=M('Letter');
+        $data=I('post.');
+        $data['sender_id']=session('user_id');
+        $data['sender_type']=1;
+        $data['recipient_type']=2;
+        $data['type']=2;
+        $data['time']=time();
+
+        if($Letter->create($data)){
+            $res=$Letter->add();
+            if($res){
+                $this->success('发送成功');
+            }
+            else{
+                $this->error($Letter->getError());
+            }
+        }
+        else{
+            $this->error($Letter->getError());
+        }
+    }
+
+    //回复消息
+    public function replyletter(){
+        
+
+        $Letter=M('Letter');
+        $data=I('post.');
+        $data['sender_id']=session('user_id');
+        $data['sender_type']=1;
+        $data['recipient_type']=2;
+        $data['type']=2;
+        $data['time']=time();
+        if($Letter->create($data)){
+            $res=$Letter->add();
+            if($res){
+                $setRead=$Letter->where('id='.$data['letterid'])->setField('state',1);
+                $this->success('发送成功');
+            }
+            else{
+                $this->error($Letter->getError());
+            }
+        }
+        else{
+            $this->error($Letter->getError());
+        }
+    }
+    //设置已读
+    public function setRead(){
+        
+
+        $id=I('get.id');
+        if(!$id)    $this->error('非法访问',__APP__.'/Home/Index');
+
+        $Letter=M('Letter');
+        $res=$Letter->where('id='.$id)->setField('state',1);
+        redirect(__APP__.'/Home/Buyer/inbox');
+    }
+
+    //根据id得到消息的内容
+    public function get_letter_by_id(){
+        $id=I('id');
+        if($id){
+            $table=M('Letter');
+            $letter=$table->getById($id);
+            $data['status']=1;
+            $data['letter']=$letter;
+
+            if($letter['sender_type']==2){
+                $Supplier=M('Supplier');        //得到发件人姓名
+                $data['letter']['reciver']=$Supplier->getFieldById($letter['sender_id'],'username');
+            }
+
+            $this->ajaxReturn($data);
+        }
+
+        $data['status']=0;
+        $this->ajaxReturn($data);
+    }
+
+    //根据id得到RFI的内容
+    public function get_rfiletter_by_id(){
+        $id=I('id');
+        if($id){
+            $type=session('lang')=='en'?'name_en':'name';
+            $table=M('Letter');
+            $letter=$table->where('id='.$id.' AND type=1')->find();
+            $data['status']=1;
+            $data['letter']=$letter;
+
+            $Buyer=M('Buyer');
+            $data['letter']['username']=$Buyer->getFieldById(session('user_id'),'username');
+
+            $Supplier=M('Supplier');
+            $Sup_company=M('Supplier_company');
+            $com_id=$Supplier->getFieldById($letter['recipient_id'],'supplier_company_id');
+            $data['letter']['companyname']=$Sup_company->getFieldById($com_id,$type);
+
+            $data['letter']['servicer']=$Supplier->getFieldById($letter['recipient_id'],'username');
+
+            $this->ajaxReturn($data);
+        }
+
+        $data['status']=0;
+        $this->ajaxReturn($data);
+    }
+
+    //我的粉丝
+    public function myFollows(){
+        $this->display();
+    }
+
+
+    //我关注的
+    public function myFollowing(){
+        $this->display();
+    }
+
+    //发送信件
+    public function sendLetter(){
+        $this->display();
     }
 }

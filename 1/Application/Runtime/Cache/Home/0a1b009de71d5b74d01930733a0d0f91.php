@@ -221,40 +221,222 @@
   </div>
 </div>
   <!--登录模态框结束-->
-<div class="content registerEmailCheck">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 col-sm-offset-2">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h1><?php echo (L("email_verification")); ?></h1>
-          </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-sm-8">
-                <section class="verifyEmail">
-                  <h3><?php echo (L("email_verify_to_complete")); ?></h3>
-                  <p><?php echo (L("email_verification_send")); ?><span><?php echo ($email); ?></span></p>
-                  <p>点击邮件内的链接即可完成注册，并可使用中国母基金联盟官网的全部功能</p>
-                  <a href="<?php echo ($link); ?>" target="_Blank" class="btn btn-primary"><?php echo (L("go_emailbox_check")); ?></a>
-                </section>
-              </div>
-              <duv class="col-sm-4">
-                <section class="noVerify">
-                  <h4><?php echo (L("not_receive_email")); ?></h4>
-                  <p><?php echo (L("wrong_email")); ?><a href="/fofs/1/index.php/Home/Register/email"><?php echo (L("change_a_emailbox")); ?></a></p>
-                  <p><?php echo (L("check_junk_folder")); ?></p>
-                  <p><?php echo (L("wait_for_seconds")); ?><a href="/fofs/1/index.php/Home/Register/resend_email"><?php echo (L("send_check_email_again")); ?></a></p>
-                </section>
-              </duv>
+  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+
+    <section class="content-wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 main-content">
+                          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span><?php echo ($user['institution_fullname_cn']); ?></div>
+                <div class="panel-body">
+                  <div class="media">
+                    <div class="media-left">
+                      <a href="#">
+                        <?php if($user['institution_logo_img'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/<?php echo ($user['institution_logo_img']); ?>" alt="头像" height="100" width="100">
+                        <?php else: ?>
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
+                      </a>
+                    </div>
+                    <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+
+                      <p><i class="fa fa-envelope-o fa-md"></i> <?php echo ($user['email']); ?></p>
+                      <p><i class="glyphicon glyphicon-th-list"></i>
+                          <?php switch($user['institution_type']): case "4": ?>FA<?php break;?>
+                            <?php case "5": ?>法务机构<?php break;?>
+                            <?php case "6": ?>财务机构<?php break;?>
+                            <?php case "7": ?>众创空间(孵化器)<?php break; endswitch;?>
+                      </p>
+                      <a class="btn btn-default" href="modifyCompanyInfo.html" role="button">修改机构信息</a><a class="btn btn-default" href="allCases.html" role="button" style="margin-left:10px;"><?php if($user['institution_type'] == 4): ?>成功案例<?php else: ?>产品服务<?php endif; ?></a>
+                    </div>
+                  </div>
+                </div>
+              </div><!--头像-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Sa/individualProfile');?>">
+                      <span class="glyphicon glyphicon-home"></span>机构主页
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--机构主页-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Sa/myCompany');?>">
+                      <span class="glyphicon glyphicon-user"></span>机构成员
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--机构成员-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Sa/accountSetting');?>">
+                      <span class="glyphicon glyphicon-pencil"></span>账号设置
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--账号设置-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Sa/inbox');?>">
+                      <span class="glyphicon glyphicon-envelope"></span>消息
+                      <?php if($amount['unread'] != 0): ?><span class="badge"><?php echo ($amount['unread']); ?></span><?php endif; ?>
+                    </a>
+                  </div>
+                </div>
+              </div><!--消息-->
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <span class="glyphicon glyphicon-globe"></span>圈子
+                    </a>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <div class="list-group">
+                      <a href="<?php echo U('Home/Sa/myFollows');?>" class="list-group-item">关注我的<span class="badge"><?php echo ($amount['checking']); ?></span></a>
+                      <a href="<?php echo U('Home/Sa/myFollowing');?>" class="list-group-item ">我关注的<span class="badge"><?php echo ($amount['accepted']); ?></span></a>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div><!--圈子-->
             </div>
           </div>
+          <div class="col-md-8">
+            <div class="well">
+              <h3>所有消息</h3>
+              <hr/>
+              
+              <div class="row margin_top_20">
+                  <div class='col-md-12' >
+                      <!-- Nav tabs -->
+                      <ul class="nav nav-tabs" role="tablist" style="padding-left:15px; padding-right: 15px;">
+                        <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">已收件</a></li>
+                        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">已发件</a></li>
+                      </ul>
 
+                      <!-- Tab panes -->
+                      <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                              <div class="panel-body">
+                                <div class="list-group">
+
+                                  <div class="list-group-item row form-group">
+   
+                                      <div class="col-sm-2">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >万剑一</a>
+                                      </div>
+                                      <div class="col-sm-5 margin_top_13" >
+                                           <a href="#" data-toggle="modal" data-target="#myModal">请问能给我一下你们公司联系方式吗</a>
+                                           <!-- Modal -->
+                                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                    <h4 class="modal-title " id="myModalLabel" style="  padding-left: 28px;margin: 0;">发信人:张小凡</h4>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <span class="label label-info">主题</span>&nbsp;&nbsp;吃饭
+                                                    <br/>
+                                                    <br/>
+                                                    <span class="label label-info">内容</span>&nbsp;&nbsp;明天去不去吃饭呢，风渡嘉荷
+                                                    <br/>
+                                                    <div class="text_right">2016年10月7日 10:30</div>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    <a href="<?php echo U('Home/Individual/sendLetter');?>"><button type="button" class="btn btn-primary">回复</button></a>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                      </div>
+                                      <div class="col-sm-3 text_right margin_top_13 font_14">
+                                          2016年10月7日<span class="label label-default">已读</span>
+                                      </div>
+                              
+                                  </div>
+                                  <div class="list-group-item row form-group">
+   
+                                      <div class="col-sm-2">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >万剑一</a>
+                                      </div>
+                                      <div class="col-sm-5 margin_top_13">
+                                           <a href="#" >请问能给我一下你们公司联系方式吗</a>
+                                      </div>
+                                      <div class="col-sm-3 text_right margin_top_13 font_14">
+                                          2016年10月7日<span class="label label-default">已读</span>
+                                      </div>
+                              
+                                  </div>
+
+                                  
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+
+                              <div class="panel-body">
+                                <div class="list-group">
+                                  <div class="list-group-item row form-group">
+   
+                                      <div class="col-sm-2">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >万剑一</a>
+                                      </div>
+                                      <div class="col-sm-5 margin_top_13">
+                                           <a href="#" >请问能给我一下你们公司联系方式吗</a>
+                                      </div>
+                                      <div class="col-sm-3 text_right margin_top_13 font_14">
+                                          2016年10月7日<span class="label label-default">已读</span>
+                                      </div>
+                              
+                                  </div>
+
+                                  
+                                
+                                </div>
+                            </div>
+
+
+                        </div>
+                      </div>
+                  </div>
+              </div>
+
+               &nbsp;
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
-</div>
 
 <footer class="footer">
   <div class="footerLink">

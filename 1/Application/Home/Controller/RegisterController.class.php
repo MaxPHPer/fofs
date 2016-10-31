@@ -782,6 +782,7 @@ class RegisterController extends BaseController{
                     cookie('user_id',$data['user_id']);
                     cookie('institution_type',$data['institution_type']);
                     session('user_id',$data['user_id']);
+                    session('email',$email);
                     session('institution_type',$data['institution_type']);
                     $this->success('邮箱确认成功！请继续填写相关信息',__APP__.'/Home/Register/'.$success_url);
                 }

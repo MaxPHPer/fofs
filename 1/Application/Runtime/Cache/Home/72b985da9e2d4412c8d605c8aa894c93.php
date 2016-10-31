@@ -221,40 +221,80 @@
   </div>
 </div>
   <!--登录模态框结束-->
-<div class="content registerEmailCheck">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 col-sm-offset-2">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h1><?php echo (L("email_verification")); ?></h1>
-          </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-sm-8">
-                <section class="verifyEmail">
-                  <h3><?php echo (L("email_verify_to_complete")); ?></h3>
-                  <p><?php echo (L("email_verification_send")); ?><span><?php echo ($email); ?></span></p>
-                  <p>点击邮件内的链接即可完成注册，并可使用中国母基金联盟官网的全部功能</p>
-                  <a href="<?php echo ($link); ?>" target="_Blank" class="btn btn-primary"><?php echo (L("go_emailbox_check")); ?></a>
-                </section>
-              </div>
-              <duv class="col-sm-4">
-                <section class="noVerify">
-                  <h4><?php echo (L("not_receive_email")); ?></h4>
-                  <p><?php echo (L("wrong_email")); ?><a href="/fofs/1/index.php/Home/Register/email"><?php echo (L("change_a_emailbox")); ?></a></p>
-                  <p><?php echo (L("check_junk_folder")); ?></p>
-                  <p><?php echo (L("wait_for_seconds")); ?><a href="/fofs/1/index.php/Home/Register/resend_email"><?php echo (L("send_check_email_again")); ?></a></p>
-                </section>
-              </duv>
-            </div>
-          </div>
+  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
 
+    <section class="content-wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 main-content">
+        
+                          <div class="list-group">
+                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=9" class="list-group-item"><span class="glyphicon glyphicon-globe"></span>联盟简介</a>
+                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=10" class="list-group-item"><span class="glyphicon glyphicon-sort-by-attributes"></span>组织架构</a>
+                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=11" class="list-group-item "><span class="glyphicon glyphicon-user"></span>联盟成员</a>
+                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=12" class="list-group-item"><span class="glyphicon glyphicon-list-alt"></span>秘书长</a>
+                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=13" class="list-group-item"><span class="glyphicon glyphicon-globe"></span>合作伙伴</a>
+                <a href="<?php echo U('Home/Index/aboutAllianceNews?article_type=1');?>" class="list-group-item"><span class="glyphicon glyphicon-paperclip"></span>相关新闻</a>
+                <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=14" class="list-group-item"><span class="glyphicon glyphicon-check"></span>加入联盟</a>
+              </div>
+  
+          </div>
+          <div class="col-md-9">
+            <div class="well">
+              <h3>相关新闻</h3>
+              <hr/>
+
+              <div class="panel-body" style="padding:0;">
+                <div class="list-group">
+                      <?php if(is_array($news)): foreach($news as $key=>$vo): ?><div class="list-group-item">
+                          <a href="<?php echo U('Home/Index/articleDetail');?>?article_id=<?php echo ($vo['id']); ?>" >
+                            <?php echo ($vo['title']); ?>
+                          </a>
+                            <div style="float: right;">
+                              
+                              <div style="float: right; margin-right:25px;">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                                <?php echo date('Y-m-d H:i:s',$vo['pub_time']) ?>
+                              </div>
+                              <div style="float: right; margin-right:25px;">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <?php switch($vo['institution_type']): case "1": ?>LP<?php break;?>
+                                    <?php case "2": ?>GP<?php break;?>
+                                    <?php case "3": ?>创业公司<?php break;?>
+                                    <?php case "4": ?>FA<?php break;?>
+                                    <?php case "5": ?>法务服务机构<?php break;?>
+                                    <?php case "6": ?>财务服务机构<?php break;?>
+                                    <?php case "7": ?>众创空间<?php break;?>
+                                    <?php case "8": ?>其它机构<?php break;?>
+                                    <?php case "9": ?>个人<?php break;?>
+                                    <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
+                                &nbsp;&nbsp;
+                                <?php echo ($vo['author_name']); ?>
+                     
+                              </div>
+
+                            </div>
+
+                   
+                          </div><?php endforeach; endif; ?>
+                  
+
+                </div>
+              </div>
+
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body center">
+                    
+                      <?php echo ($page); ?>
+                 
+                  </div>
+                </div>
+          </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
-</div>
 
 <footer class="footer">
   <div class="footerLink">
@@ -273,7 +313,10 @@
 <script src="/fofs/1/Public/assets_1/js/jquery.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/common.js"></script>
-
+<script src="/fofs/1/Public/assets_2/public/bootstrap/js/Chart.min.js"></script>
+<script src="/fofs/1/Public/assets_2/js/Chart.js"></script>
+<script src="/fofs/1/Public/assets_1/js/buyer_letter.js"></script>
+<script src="/fofs/1/Public/assets_1/js/supplier_letter.js"></script>
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>

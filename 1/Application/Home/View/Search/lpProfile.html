@@ -5,10 +5,8 @@
     <section class="content-wrap">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 main-content">
-              <include file = "Gp:individualBar"/>
-          </div>
-          <div class="col-md-8">
+
+          <div class="col-md-8 col-md-offset-2">
             <div class="well">
               <h3>机构主页<a href="#"><span class="label label-info margin_left_20">+关注</span></a></h3>
               <hr/>
@@ -17,9 +15,9 @@
                   <div class='col-md-2'>
                       <a href="#">
                         <if condition="$user['institution_logo_img'] neq NULL">
-                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/gp_pic/{$user['institution_logo_img']}" alt="头像" height="100" width="100">
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/{$user['institution_logo_img']}" alt="头像" height="100" width="100">
                           <else />
-                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/gp_pic/default.jpg" alt="头像" height="100" width="100"></if>
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/default.jpg" alt="头像" height="100" width="100"></if>
                       </a>
                   </div>
 
@@ -316,7 +314,7 @@
                           <foreach name="funds" item='vo'>
                             <div class="row">
                                 <div class="col-sm-3 text_right">
-                                  <span class="glyphicon glyphicon-file"></span><label for="userName" ><b>基金产品 {$key+1}:</b></label>
+                                  <label for="userName" ><b>基金产品 {$key+1}:</b></label>
                                 </div>
                             </div>
 
@@ -436,10 +434,9 @@
                                         <select name="fund_property" id="fund_property" class="form-control" disabled>
 
 
-                                          <if condition="$vo['is_angel_investment'] eq 1"><option value ="1">天使投资基金</option></if>
-                                          <if condition="$vo['is_vc_investment'] eq 1"><option value ="2">VC基金</option></if>
-                                          <if condition="$vo['is_pe_investment'] eq 1"><option value ="3">PE基金</option></if>
-                                          <if condition="$vo['is_other_investment'] eq 1"><option value ="4">其它基金</option></if>
+                                          <if condition="$vo['is_government_guidance'] eq 1"><option value ="1">政府引导基金</option></if>
+                                          <if condition="$vo['is_private_capital'] eq 1"><option value ="2">民营资本市场化运作基金</option></if>
+                                          <if condition="$vo['is_state_owned'] eq 1"><option value ="3">国企参与市场化基金</option></if>
 
                                         </select>                           
                                     </div>
@@ -448,6 +445,34 @@
 
                             </div>
 
+                            <div class="row" style="margin-top:10px;">
+                                
+                                <div>
+                                    <div class="col-sm-3 text_right">
+                                      基金投资类型
+                                    </div>
+                                    <div class="col-sm-8">
+                                      <div class="col-sm-3 ">
+                                      <input class="icheckbox_flat-blue" id="is_investment_security" type="checkbox" name="fund_type[]" value="is_investment_security" <php> if($vo['is_investment_security']==1) echo' checked';</php> />
+                                        证券投资基金
+                                      </div>
+                                      <div class="col-sm-3 ">
+                                        <input class="icheckbox_flat-blue" id="is_equity_investment" type="checkbox" name="fund_type[]" value="is_equity_investment" <php> if($vo['is_equity_investment']==1) echo' checked';</php> />
+                                        股权投资基金
+                                      </div>
+                                      <div class="col-sm-3 ">
+                                        <input class="icheckbox_flat-blue" id="is_venture_investment" type="checkbox" name="fund_type[]" value="is_venture_investment" <php> if($vo['is_venture_investment']==1) echo' checked';</php> />
+                                        创业投资基金
+                                      </div>
+                                      <div class="col-sm-3 ">
+                                        <input class="icheckbox_flat-blue" id="is_other_investment" type="checkbox" name="fund_type[]" value="is_other_investment" <php> if($vo['is_other_investment']==1) echo' checked';</php> />
+                                        其它投资基金
+                                      </div>                        
+                                    </div>
+
+                                </div>
+
+                            </div>
 
                             <div class="row" style="margin-top:10px;">
                                 
@@ -481,20 +506,6 @@
                                 
                                 <div>
                                     <div class="col-sm-3 text_right">
-                                      投资地域
-                                    </div>
-                                    <div class="col-sm-4">
-                                      {$vo['investment_region']}
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="row" style="margin-top:10px;">
-                                
-                                <div>
-                                    <div class="col-sm-3 text_right">
                                       运作状态
                                     </div>
                                     <div class="col-sm-8">
@@ -510,7 +521,7 @@
                                         募集方案
                                       </div>
                                       <div class="col-sm-4 ">
-                                          <a href="__ROOT__/Public/uploads/gp_recruitment/{$vo['recruitment_plan_url']}" >{$vo['recruitment_plan_url']}</a>
+                                          <a href="__ROOT__/Public/uploads/lp_recruitment/{$vo['recruitment_plan_url']}" >{$vo['recruitment_plan_url']}</a>
                                       </div>  
 
                                                            
@@ -580,7 +591,7 @@
                                       <div class="row" style="margin-top:10px;">
                                           <div>
                                               <div class="col-sm-3 text_right">
-                                                <span class="glyphicon glyphicon-tree-deciduous"></span>基金项目{$project_key+1}名称
+                                                基金项目{$project_key+1}名称
                                               </div>
                                               <div class="col-sm-8">
                                                 {$investment_project['project_name']}                          

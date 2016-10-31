@@ -223,198 +223,263 @@
   <!--登录模态框结束-->
 <div class="content supplierCompanyInfo">
   <div class="container">
-
+    <form action="/fofs/1/index.php/Home/Register/save_lpCompanyInfo" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-          <div class="panel panel-default panel3" style="margin-top: 20px;">
-            <div class="panel-heading" role="tab" id="headingThree">
+          <div class="panel panel-default panel1">
+            <div class="panel-heading" role="tab" id="headingOne">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <i class="fa fa-check"></i>
-                  管理团队信息
-                  <i class="fa fa-angle-down pull-right"></i>
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> <i class="fa fa-wrench"></i>
+                  完善机构基本信息 <i class="fa fa-angle-down pull-right"></i>
                 </a>
               </h4>
             </div>
-            <!--已有团队成员-->
-            <?php if(is_array($members)): foreach($members as $key=>$vo): ?><div id="" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="">
-                  <div class="panel-body">
-                    <div class="repeat_people ">
-                      <div class="borderBottom" style="margin-bottom:20px;">
-                        <div class="row" >
-                          <div class="col-sm-2">
-                            
-                              <label for="username" class="col-sm-12 control-label"><span>*</span>姓名</label>
-        
-                          </div>
-
-                          <div class="col-sm-4">
-
-                                <input type="text" class="form-control" id="username" name="username" value="<?php echo ($vo['username']); ?>" disabled/>
-
-                          </div>
-
-                        </div>
-
-                        <div class="row" style="margin-top:10px;">
-                          <div class="col-sm-2">
-                            
-                              <label for="function" class="col-sm-12 control-label"><span>*</span>职务</label>
-        
-                          </div>
-
-                          <div class="col-sm-4">
-
-                                <input type="text" class="form-control" id="function" name="function" value="<?php echo ($vo['function']); ?>" disabled/>
-
-                          </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-2 ">
-                              <label for="userName" class="col-sm-12 control-label"><b>从业经历</b></label>
-                            </div>
-                        </div>
-
-                        <div class="repeat">
-                          <?php if(is_array($vo['business_experience'])): foreach($vo['business_experience'] as $key=>$business_experience): ?><div class="row" style="margin-top:10px;">
-                                
-                                <div class="col-sm-2 ">
-                                  <label for="" class="col-sm-12 control-label">公司名称</label>
-                                </div>
-                                <div class="col-sm-2">
-                                      <input type="text" class="col-sm-12 form-control" name="business_experience[company_name][]" value="<?php echo ($business_experience['company_name']); ?>" disabled/>
-                                    </div>
-                                <div class="col-sm-8">
-                                    
-                                    <div class="col-sm-2 ">
-                                      <label for="" class="col-sm-12 control-label">职位</label>
-                                    </div>
-                                    <div class="col-sm-2">
-                                      <input type="text" class="form-control" name="business_experience[function][]" value="<?php echo ($business_experience['function']); ?>" disabled/>
-                                    </div>
-                                    <div class="col-sm-3 ">
-                                      <label for="" class="col-sm-12 control-label">任职年月</label>
-                                    </div>
-                                    <div class="col-sm-2">
-                                      <input type="text" class="form-control" name="business_experience[start_time][]" value="<?php echo ($business_experience['start_time']); ?>" disabled/>
-                                    </div>
-
-                                    <div class="col-sm-1 ">
-                                      <label for="" class="col-sm-12 control-label">至</label>
-                                    </div>
-                                    <div class="col-sm-2">
-                                      <input type="text" class="form-control" name="business_experience[end_time][]" value="<?php echo ($business_experience['end_time']); ?>" disabled/>
-                                    </div>
-                                </div>
-
-                              </div><?php endforeach; endif; ?>
-                        </div>
-
-                      </div>
-                    </div>
-
-                  </div>
-                </div><?php endforeach; endif; ?>
-
-    <form action="" method="post" enctype="multipart/form-data" name='form1'>
-            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
               <div class="panel-body">
-                <div class="repeat_people ">
-                  <div class="borderBottom" style="margin-bottom:20px;">
-                    <div class="row" >
-                      <div class="col-sm-2">
-                        
-                          <label for="username" class="col-sm-12 control-label"><span>*</span>姓名</label>
-    
-                      </div>
-
-                      <div class="col-sm-4">
-
-                            <input type="text" class="form-control" id="username" name="username"  />
-
-                      </div>
-
-                    </div>
-
-                    <div class="row" style="margin-top:10px;">
-                      <div class="col-sm-2">
-                        
-                          <label for="function" class="col-sm-12 control-label"><span>*</span>职务</label>
-    
-                      </div>
-
-                      <div class="col-sm-4">
-
-                            <input type="text" class="form-control" id="function" name="function"  />
-
-                      </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-2 ">
-                          <label for="userName" class="col-sm-12 control-label"><b>从业经历</b></label>
-                        </div>
-                    </div>
-
-                    <div class="repeat">
-                      <div class="row" style="margin-top:10px;">
-                        
-                        <div class="col-sm-2 ">
-                          <label for="" class="col-sm-12 control-label">公司名称</label>
-                        </div>
-                        <div class="col-sm-2">
-                              <input type="text" class="col-sm-12 form-control" name="business_experience[company_name][]"/>
-                            </div>
-                        <div class="col-sm-8">
-                            
-                            <div class="col-sm-2 ">
-                              <label for="" class="col-sm-12 control-label">职位</label>
-                            </div>
-                            <div class="col-sm-2">
-                              <input type="text" class="form-control" name="business_experience[function][]"/>
-                            </div>
-                            <div class="col-sm-3 ">
-                              <label for="" class="col-sm-12 control-label">任职年月</label>
-                            </div>
-                            <div class="col-sm-2">
-                              <input type="text" class="form-control" name="business_experience[start_time][]"/>
-                            </div>
-
-                            <div class="col-sm-1 ">
-                              <label for="" class="col-sm-12 control-label">至</label>
-                            </div>
-                            <div class="col-sm-2">
-                              <input type="text" class="form-control" name="business_experience[end_time][]"/>
-                            </div>
-                        </div>
-
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-10"></div>
-                      <div class="col-sm-2">
-                        <button type="button" class="btn btn-primary" id="addNew2">再添加从业经历</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <div class="row">
-                      <div class="col-sm-2">
-                        <input type="submit" class="btn btn-primary btn-block"  value="添加其它高管" onclick="form1.action='/fofs/1/index.php/Home/Register/add_membersInfo';form1.submit();"/>
+                  <div class="col-sm-10 col-sm-offset-1">
+
+                    <div class="form-group clearfix">
+                      <label for="institution_fullname_cn" class="col-sm-3 control-label">
+                        <span>*</span>
+                        全称(中文)
+                      </label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="institution_fullname_cn" name="institution_fullname_cn"  value="<?php echo ($data['institution_fullname_cn']); ?>"  />
                       </div>
+                    </div>
+                    <!--全称(中文)-->
+
+                    <div class="form-group clearfix">
+                      <label for="institution_fullname_en" class="col-sm-3 control-label">全称(英文)</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="institution_fullname_en"  name="institution_fullname_en" value="<?php echo ($data['institution_fullname_en']); ?>" />
+                      </div>
+                    </div>
+                    <!--全称(英文)-->
+
+                    <div class="form-group clearfix">
+                      <label for="institution_logo_img" class="col-sm-3 control-label">公司logo(上传限制:500k)</label>
+                      <div class="col-sm-8">
+                        <a href=""></a>
+                        <input type="file" class="form-control" id="institution_logo_img" name="institution_logo_img" ></div>
+                    </div>
+                    <!--公司logo-->
+
+                    <div class="form-group clearfix">
+                      <label for="institution_abstract" class="col-sm-3 control-label">机构简介</label>
+                      <div class="col-sm-8">
+                        <textarea class="form-control" id="institution_abstract" name="institution_abstract" ></textarea>
+                      </div>
+                    </div>
+                    <!--机构简介-->
+
+                    <div class="form-group clearfix">
+                      <label for="organization_code" class="col-sm-3 control-label">组织机构代码</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="organization_code"  name="organization_code"  value="<?php echo ($data['organization_code']); ?>" />
+                      </div>
+                    </div>
+                    <!--组织机构代码-->
+
+                    <div class="form-group clearfix">
+                      <label for="is_fofs_member" class="col-sm-3 control-label">
+                        <span>*</span>
+                        是否为母基金联盟成员单位
+                      </label>
+                      <div class="col-sm-8">
+                        <select name="is_fofs_member" id="is_fofs_member" class="form-control">
+
+                          <option value ="0">否</option>
+                          <option value ="1">是</option>
+
+                        </select>
+                      </div>
+                    </div>
+                    <!--是否为母基金联盟成员单位-->
+
+                    <div class="form-group clearfix">
+                      <label for="registered_addr" class="col-sm-3 control-label">注册地址</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="registered_addr" name="registered_addr"  value="<?php echo ($data['registered_addr']); ?>" />
+                      </div>
+                    </div>
+                    <!--注册地址-->
+
+                    <div class="form-group clearfix">
+                      <label for="office_addr" class="col-sm-3 control-label">办公地址</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="office_addr"  name="office_addr" value="<?php echo ($data['office_addr']); ?>" />
+                      </div>
+                    </div>
+                    <!--注册地址-->
+
+                    <div class="form-group clearfix">
+                      <label for="registered_capital" class="col-sm-3 control-label">注册资本(万元)</label>
+                      <div class="col-sm-8">
+                        <input type="number" class="form-control" id="registered_capital" name="registered_capital"  value="<?php echo ($data['registered_capital']); ?>" />
+                      </div>
+                    </div>
+                    <!--注册资本-->
+
+                    <div class="form-group clearfix">
+                      <label for="contributed_capital" class="col-sm-3 control-label">实缴资本(万元)</label>
+                      <div class="col-sm-8">
+                        <input type="number" class="form-control" id="contributed_capital"  name="contributed_capital" value="<?php echo ($data['contributed_capital']); ?>" />
+                      </div>
+                    </div>
+                    <!--实缴资本-->
+
+                    <div class="form-group clearfix">
+                      <label for="fund_type" class="col-sm-3 control-label">
+                        <span>*</span>
+                        管理基金类型
+                      </label>
+                      <div class="col-sm-8">
+                        <select name="fund_type" id="fund_type" class="form-control">
+
+                          <option value ="0">证券投资基金</option>
+                          <option value ="1">股权投资基金</option>
+                          <option value="2">创业投资基金</option>
+                          <option value="3">其他投资基金</option>
+
+                        </select>
+                      </div>
+                    </div>
+                    <!--管理基金类型-->
+
+                    <div class="form-group clearfix">
+                      <label for="number_of_employees" class="col-sm-3 control-label">员工人数</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="number_of_employees" name="number_of_employees"  value="<?php echo ($data['number_of_employees']); ?>" />
+                      </div>
+                    </div>
+                    <!--员工人数--> 
+
+                    <div class="form-group clearfix">
+                      <label for="is_association_registration" class="col-sm-3 control-label">是否在中国证券投资基金行业协会登记信息</label>
+                      <div class="col-sm-8">
+                          <div class="col-sm-4 col-sm-offset-1">
+                            <input class="icheckbox_flat-blue" id="is_association_registration" type="radio" name="is_association_registration" value="0" checked>                                          
+                            <label for="buyer">否</label>
+                          </div>
+                          <div class="col-sm-4 col-sm-offset-1">
+                            <input class="icheckbox_flat-blue" id="is_association_registration" type="radio" name="is_association_registration" value="1">                                          
+                            <label for="supplier">是</label>
+                          </div>
+                      </div>
+                    </div>
+                    <!--是否在中国证券投资基金行业协会登记信息--> 
+
+
+                    <div class="form-group clearfix">
+                      <label for="association_registration_number" class="col-sm-3 control-label">登记编号</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="association_registration_number" name="association_registration_number"  value="<?php echo ($data['association_registration_number']); ?>" />
+                      </div>
+                    </div>
+                    <!--登记编号--> 
+
+                    <div class="form-group clearfix">
+                      <label for="association_registration_time" class="col-sm-3 control-label">登记时间</label>
+                      <div class="col-sm-8">
+                        <input type="date" class="form-control" id="association_registration_time"  name="association_registration_time" value="<?php echo ($data['association_registration_time']); ?>" />
+                      </div>
+                    </div>
+                    <!--登记时间--> 
+
+                  </div>
+
                 </div>
               </div>
             </div>
           </div>
-          <!--高管团队-->
+          <!--机构基本信息-->
+
+
+          <div class="panel panel-default panel2">
+            <div class="panel-heading" role="tab" id="headingTwo">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <i class="fa fa-user"></i>
+                  公司联系方式
+                  <i class="fa fa-angle-down pull-right"></i>
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-sm-10 col-sm-offset-1">
+
+                    <div class="form-group clearfix">
+                      <label for="contact_username" class="col-sm-3 control-label">
+                        <span>*</span>
+                        联系人
+                      </label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="contact_username" name="contact_username"  value="<?php echo ($data['contact_username']); ?>"  />
+                      </div>
+                    </div>
+                    <!--联系人-->
+
+                    <div class="form-group clearfix">
+                      <label for="contact_fax" class="col-sm-3 control-label">传真</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="contact_fax" name="contact_fax"  value="<?php echo ($data['contact_fax']); ?>" />
+                      </div>
+                    </div>
+                    <!--传真-->
+
+    
+
+                    <div class="form-group clearfix">
+                      <label for="contact_phone" class="col-sm-3 control-label">电话</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="contact_phone"  name="contact_phone" value="<?php echo ($data['contact_phone']); ?>" />
+                      </div>
+                    </div>
+                    <!--电话-->
+
+                  
+
+                    <div class="form-group clearfix">
+                      <label for="contact_email" class="col-sm-3 control-label">邮箱</label>
+                      <div class="col-sm-8">
+                        <input type="email" class="form-control" id="contact_email" name="contact_email"  value="<?php echo ($data['contact_email']); ?>" />
+                      </div>
+                    </div>
+                    <!--邮箱-->
+
+                    <div class="form-group clearfix">
+                      <label for="contact_institution_wechat" class="col-sm-3 control-label">机构微信</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="contact_institution_wechat"  name="contact_institution_wechat" value="<?php echo ($data['contact_institution_wechat']); ?>" />
+                      </div>
+                    </div>
+                    <!--机构微信-->
+
+                    <div class="form-group clearfix">
+                      <label for="contact_institution_web" class="col-sm-3 control-label">机构网址</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="contact_institution_web"  name="contact_institution_web" value="<?php echo ($data['contact_institution_web']); ?>" />
+                      </div>
+                    </div>
+                    <!--机构网址-->
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!--公司联系方式-->
 
         </div>
       </div>
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4" style="margin-bottom:30px;">
-          <input type="submit" class="btn btn-primary btn-block"  value="保存并前往下一步" onclick="form1.action='/fofs/1/index.php/Home/Register/save_membersInfo';form1.submit();"/>
+          <input type="submit" class="btn btn-primary btn-block" id="submit" value="保存并前往完善管理团队信息"/>
         </div>
       </div>
     </form>

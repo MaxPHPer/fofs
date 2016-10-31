@@ -225,98 +225,265 @@
 
     <section class="content-wrap">
       <div class="container">
-        <div class="row">
-          <div class="col-md-4 main-content">
-                          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span><?php echo ($user['institution_fullname_cn']); ?></div>
-                <div class="panel-body">
-                  <div class="media">
-                    <div class="media-left">
-                      <a href="#">
-                        <?php if($user['institution_logo_img'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/<?php echo ($user['institution_logo_img']); ?>" alt="头像" height="100" width="100">
-                        <?php else: ?>
-                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
-                      </a>
-                    </div>
-                    <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
 
-                      <p><i class="fa fa-envelope-o fa-md"></i> <?php echo ($user['email']); ?></p>
-                      <p><i class="glyphicon glyphicon-th-list"></i>LP</p>
-                      <a class="btn btn-default" href="allFunds.html" role="button">修改管理的基金</a>
-                    </div>
-                  </div>
-                </div>
-              </div><!--头像-->
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="<?php echo U('Home/Lp/individualProfile');?>">
-                      <span class="glyphicon glyphicon-home"></span>机构主页
-                      
-                    </a>
-                  </div>
-                </div>
-              </div><!--机构主页-->
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="<?php echo U('Home/Lp/myCompany');?>">
-                      <span class="glyphicon glyphicon-user"></span>机构成员
-                      
-                    </a>
-                  </div>
-                </div>
-              </div><!--机构成员-->
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="<?php echo U('Home/Lp/accountSetting');?>">
-                      <span class="glyphicon glyphicon-pencil"></span>账号设置
-                      
-                    </a>
-                  </div>
-                </div>
-              </div><!--账号设置-->
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                  <div class="panel-title">
-                    <a href="<?php echo U('Home/Lp/inbox');?>">
-                      <span class="glyphicon glyphicon-envelope"></span>消息
-                      <?php if($amount['unread'] != 0): ?><span class="badge"><?php echo ($amount['unread']); ?></span><?php endif; ?>
-                    </a>
-                  </div>
-                </div>
-              </div><!--消息-->
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <div class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      <span class="glyphicon glyphicon-globe"></span>圈子
-                    </a>
-                  </div>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body">
-                    <div class="list-group">
-                      <a href="<?php echo U('Home/Lp/myFollows');?>" class="list-group-item">关注我的<span class="badge"><?php echo ($amount['checking']); ?></span></a>
-                      <a href="<?php echo U('Home/Lp/myFollowing');?>" class="list-group-item ">我关注的<span class="badge"><?php echo ($amount['accepted']); ?></span></a>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div><!--圈子-->
-            </div>
-          </div>
-          <div class="col-md-8">
+          <div class="col-md-8 col-md-offset-2">
             <div class="well">
-              <h3>所有基金&nbsp;(<a href="<?php echo U('Home/Lp/addFund');?>">添加新基金</a>)</h3>
+              <h3>机构主页<a href="#"><span class="label label-info margin_left_20">+关注</span></a></h3>
               <hr/>
+              
+              <div class="row">
+                  <div class='col-md-2'>
+                      <a href="#">
+                        <?php if($user['institution_logo_img'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/gp_pic/<?php echo ($user['institution_logo_img']); ?>" alt="头像" height="100" width="100">
+                          <?php else: ?>
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/gp_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
+                      </a>
+                  </div>
+
+
+                  <div class='col-md-10'>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              中文全称:
+                          </div>
+                          <div class='col-md-10'>
+                              <?php echo ($user['institution_fullname_cn']); ?>(<?php echo ($user['institution_abbr']); ?>)
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              英文全称:
+                          </div>
+                          <div class='col-md-10'>
+                              <?php echo ($user['institution_fullname_en']); ?>(<?php echo ($user['institution_fullname_en']); ?>)
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              简介:
+                          </div>
+                          <div class='col-md-10'>
+                              <?php echo ($user['institution_abstract']); ?>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-home"></span>机构基本信息</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  是否联盟成员:
+                              </div>
+                              <div class='col-md-8'>
+                              <?php switch($user['is_fofs_member']): case "1": ?><span class="label label-info">是</span><?php break;?>
+                                  <?php default: ?><span class="label label-default">不是</span>(<a href='#'>申请认证</a>)<?php endswitch;?>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  组织机构代码:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['organization_code']); ?>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>注册地址:</div>
+                            <div class='col-md-8'><?php echo ($user['registered_addr']); ?></div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>办公地址:</div>
+                            <div class='col-md-8'><?php echo ($user['office_addr']); ?></div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>注册资本:</div>
+                            <div class='col-md-8'><?php echo ($user['registered_capital']); ?></div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>实缴资本:</div>
+                            <div class='col-md-8'><?php echo ($user['contributed_capital']); ?></div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  管理基金类型:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php if($user['is_securities_fund'] == 1): ?>证券投资基金<?php endif; ?>
+                                  <?php if($user['is_stock_fund'] == 1): ?>股权投资基金<?php endif; ?>
+                                  <?php if($user['is_startup_fund'] == 1): ?>创业投资基金<?php endif; ?>
+                                  <?php if($user['is_other_fund'] == 1): ?>其它投资基金<?php endif; ?>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>员工数量:</div>
+                            <div class='col-md-8'><?php echo ($user['number_of_employees']); ?></div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  中国证券投资基金协会登记:
+                              </div>
+                              <?php switch($user['is_association_registration']): case "1": ?><div class="col-md-2">
+                                        <span class="label label-info">已登记</span>
+                                      </div>
+                                      <div class="col-md-4">
+                                        编号 :<?php echo ($user['association_registration_number']); ?>
+                                      </div>
+                                      <div class="col-md-3">
+                                        时间 :<?php echo date('Y-m-d',$user['association_registration_time']); ?>
+                                      </div><?php break;?>
+                                  <?php default: ?><span class="label label-default">尚未登记</span><?php endswitch;?>
+                          </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-earphone"></span>联系方式</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  联系人:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['contact_username']); ?>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  手机:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['contact_phone']); ?>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class='col-md-3 text_right'>邮箱:</div>
+                            <div class='col-md-8'><?php echo ($user['contact_email']); ?></div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  传真:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['contact_fax']); ?>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  机构微信:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['contact_institution_wechat']); ?>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  机构网站:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['contact_institution_web']); ?>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-user"></span>管理团队</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                          <!--已有团队成员-->
+                          <?php if(is_array($members)): foreach($members as $key=>$vo): ?><div id="" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="">
+                                <div class="panel-body">
+                                  <div class="repeat_people ">
+                                    <div class="borderBottom" style="margin-bottom:20px;">
+                                      <div class="row" >
+                                        <div class="col-sm-3 text_right">
+                                          
+                                            姓名:
+                      
+                                        </div>
+
+                                        <div class="col-sm-8">
+
+                                              <?php echo ($vo['username']); ?>
+
+                                        </div>
+
+                                      </div>
+
+                                      <div class="row" style="margin-top:10px;">
+                                        <div class="col-sm-3 text_right">
+                                          
+                                            职务:
+                      
+                                        </div>
+
+                                        <div class="col-sm-8">
+
+                                              <?php echo ($vo['function']); ?>
+
+                                        </div>
+                                      </div>
+
+                                      <div class="row">
+                                          <div class="col-sm-3 text_right">
+                                            从业经历:
+                                          </div>
+                                      </div>
+
+                                      <div class="repeat">
+                                        <?php if(is_array($vo['business_experience'])): foreach($vo['business_experience'] as $key=>$business_experience): ?><div class="row" style="margin-top:10px;">
+                                              
+                                              <div class="col-sm-3 text_right">
+                                                    <?php echo ($business_experience['company_name']); ?>
+                                              </div>
+                                             
+                                                
+                                              <div class="col-sm-3">
+                                                    <?php echo ($business_experience['function']); ?>
+                                              </div>
+
+                                              <div class="col-sm-6">
+                                                <?php echo ($business_experience['start_time']); ?>-<?php echo ($business_experience['end_time']); ?>
+                                              </div>
+                                    
+                                            </div><?php endforeach; endif; ?>
+                                      </div>
+
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div><?php endforeach; endif; ?>
+                      </div>
+                    </div>
+                  </div>
+              </div>
 
               <div class="row margin_top_20">
                   <div class='col-md-12'>
@@ -355,10 +522,7 @@
                           </div>
                           <?php if(is_array($funds)): foreach($funds as $key=>$vo): ?><div class="row">
                                 <div class="col-sm-3 text_right">
-                                  <label for="userName" ><b>基金产品 <?php echo ($key+1); ?>:</b></label>
-                                </div>
-                                <div class="col-sm-9 text_right">
-                                            <span class="glyphicon glyphicon-pencil"></span><a href="<?php echo U('Home/Lp/modifyFund');?>?id=<?php echo ($vo['id']); ?>">修改</a>&nbsp;<span class="glyphicon glyphicon-trash"></span><a href="<?php echo U('Home/Lp/deleteFund');?>?id=<?php echo ($vo['id']); ?>">删除</a>
+                                  <span class="glyphicon glyphicon-file"></span><label for="userName" ><b>基金产品 <?php echo ($key+1); ?>:</b></label>
                                 </div>
                             </div>
 
@@ -366,7 +530,7 @@
                                 
                                 <div>
                                     <div class="col-sm-3 text_right">
-                                      <span class="glyphicon glyphicon-th-list"></span>基金名称
+                                      基金名称
                                     </div>
                                     <div class="col-sm-8">
                                       <?php echo ($vo['name']); ?>                            
@@ -475,9 +639,10 @@
                                         <select name="fund_property" id="fund_property" class="form-control" disabled>
 
 
-                                          <?php if($vo['is_government_guidance'] == 1): ?><option value ="1">政府引导基金</option><?php endif; ?>
-                                          <?php if($vo['is_private_capital'] == 1): ?><option value ="2">民营资本市场化运作基金</option><?php endif; ?>
-                                          <?php if($vo['is_state_owned'] == 1): ?><option value ="3">国企参与市场化基金</option><?php endif; ?>
+                                          <?php if($vo['is_angel_investment'] == 1): ?><option value ="1">天使投资基金</option><?php endif; ?>
+                                          <?php if($vo['is_vc_investment'] == 1): ?><option value ="2">VC基金</option><?php endif; ?>
+                                          <?php if($vo['is_pe_investment'] == 1): ?><option value ="3">PE基金</option><?php endif; ?>
+                                          <?php if($vo['is_other_investment'] == 1): ?><option value ="4">其它基金</option><?php endif; ?>
 
                                         </select>                           
                                     </div>
@@ -486,34 +651,6 @@
 
                             </div>
 
-                            <div class="row" style="margin-top:10px;">
-                                
-                                <div>
-                                    <div class="col-sm-3 text_right">
-                                      基金投资类型
-                                    </div>
-                                    <div class="col-sm-8">
-                                      <div class="col-sm-3 ">
-                                      <input class="icheckbox_flat-blue" id="is_investment_security" type="checkbox" name="fund_type[]" value="is_investment_security" <?php if($vo['is_investment_security']==1) echo' checked'; ?> />
-                                        证券投资基金
-                                      </div>
-                                      <div class="col-sm-3 ">
-                                        <input class="icheckbox_flat-blue" id="is_equity_investment" type="checkbox" name="fund_type[]" value="is_equity_investment" <?php if($vo['is_equity_investment']==1) echo' checked'; ?> />
-                                        股权投资基金
-                                      </div>
-                                      <div class="col-sm-3 ">
-                                        <input class="icheckbox_flat-blue" id="is_venture_investment" type="checkbox" name="fund_type[]" value="is_venture_investment" <?php if($vo['is_venture_investment']==1) echo' checked'; ?> />
-                                        创业投资基金
-                                      </div>
-                                      <div class="col-sm-3 ">
-                                        <input class="icheckbox_flat-blue" id="is_other_investment" type="checkbox" name="fund_type[]" value="is_other_investment" <?php if($vo['is_other_investment']==1) echo' checked'; ?> />
-                                        其它投资基金
-                                      </div>                        
-                                    </div>
-
-                                </div>
-
-                            </div>
 
                             <div class="row" style="margin-top:10px;">
                                 
@@ -547,6 +684,20 @@
                                 
                                 <div>
                                     <div class="col-sm-3 text_right">
+                                      投资地域
+                                    </div>
+                                    <div class="col-sm-4">
+                                      <?php echo ($vo['investment_region']); ?>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row" style="margin-top:10px;">
+                                
+                                <div>
+                                    <div class="col-sm-3 text_right">
                                       运作状态
                                     </div>
                                     <div class="col-sm-8">
@@ -562,7 +713,7 @@
                                         募集方案
                                       </div>
                                       <div class="col-sm-4 ">
-                                          <a href="/fofs/1/Public/uploads/lp_recruitment/<?php echo ($vo['recruitment_plan_url']); ?>" ><?php echo ($vo['recruitment_plan_url']); ?></a>
+                                          <a href="/fofs/1/Public/uploads/gp_recruitment/<?php echo ($vo['recruitment_plan_url']); ?>" ><?php echo ($vo['recruitment_plan_url']); ?></a>
                                       </div>  
 
                                                            
@@ -622,13 +773,13 @@
 
                             <div class="row">
                                 <div class="col-sm-6  ">
-                                  <label for="userName" class="col-sm-12 control-label" style="margin-top:20px;"><b>该基金已投基金/项目</b></label>
+                                  <label for="userName" class="col-sm-12 control-label"><b>该基金已投基金/项目</b></label>
                                 </div>
                             </div>
 
 
                             <div class="">
-                            <?php if(is_array($vo['investment_projects'])): foreach($vo['investment_projects'] as $project_key=>$investment_project): ?><div class="row" style="margin-top:20px;">
+                            <?php if(is_array($vo['investment_projects'])): foreach($vo['investment_projects'] as $project_key=>$investment_project): ?><div class="row" style="margin-top:10px;">
                                           <div>
                                               <div class="col-sm-3 text_right">
                                                 <span class="glyphicon glyphicon-tree-deciduous"></span>基金项目<?php echo ($project_key+1); ?>名称
@@ -746,9 +897,6 @@
 
 <script src="/fofs/1/Public/assets_1/js/common.js"></script>
 <script src="/fofs/1/Public/assets_2/public/bootstrap/js/Chart.min.js"></script>
-<script src="/fofs/1/Public/assets_2/js/Chart.js"></script>
-<script src="/fofs/1/Public/assets_1/js/buyer_letter.js"></script>
-<script src="/fofs/1/Public/assets_1/js/supplier_letter.js"></script>
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>

@@ -15,21 +15,7 @@
 
   <link rel="stylesheet" type="text/css" href="/fofs/1/Public/assets_1/css/default.css">
   <link href="/fofs/1/Public/assets_1/css/site.css" rel="stylesheet" type="text/css" />
-  <script type='text/javascript'>
-      var _vds = _vds || [];
-      window._vds = _vds;
-      (function(){
-        _vds.push(['setAccountId', '85dd0477b4e83d27']);
-        (function() {
-          var vds = document.createElement('script');
-          vds.type='text/javascript';
-          vds.async = true;
-          vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
-          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(vds, s);
-        })();
-      })();
-  </script>
+  
 </head>
 <body>
 <header class="header" role="navigation">
@@ -364,7 +350,7 @@
                               简介:
                           </div>
                           <div class='col-md-10'>
-                              <?php echo ($user['institution_abbr']); ?>
+                              <?php echo ($user['institution_abstract']); ?>
                           </div>
                       </div>
 
@@ -1011,9 +997,6 @@
 
 <script src="/fofs/1/Public/assets_1/js/common.js"></script>
 <script src="/fofs/1/Public/assets_2/public/bootstrap/js/Chart.min.js"></script>
-<script src="/fofs/1/Public/assets_2/js/Chart.js"></script>
-<script src="/fofs/1/Public/assets_1/js/buyer_letter.js"></script>
-<script src="/fofs/1/Public/assets_1/js/supplier_letter.js"></script>
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>

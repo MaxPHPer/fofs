@@ -221,40 +221,94 @@
   </div>
 </div>
   <!--登录模态框结束-->
-<div class="content registerEmailCheck">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 col-sm-offset-2">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h1><?php echo (L("email_verification")); ?></h1>
-          </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-sm-8">
-                <section class="verifyEmail">
-                  <h3><?php echo (L("email_verify_to_complete")); ?></h3>
-                  <p><?php echo (L("email_verification_send")); ?><span><?php echo ($email); ?></span></p>
-                  <p>点击邮件内的链接即可完成注册，并可使用中国母基金联盟官网的全部功能</p>
-                  <a href="<?php echo ($link); ?>" target="_Blank" class="btn btn-primary"><?php echo (L("go_emailbox_check")); ?></a>
-                </section>
-              </div>
-              <duv class="col-sm-4">
-                <section class="noVerify">
-                  <h4><?php echo (L("not_receive_email")); ?></h4>
-                  <p><?php echo (L("wrong_email")); ?><a href="/fofs/1/index.php/Home/Register/email"><?php echo (L("change_a_emailbox")); ?></a></p>
-                  <p><?php echo (L("check_junk_folder")); ?></p>
-                  <p><?php echo (L("wait_for_seconds")); ?><a href="/fofs/1/index.php/Home/Register/resend_email"><?php echo (L("send_check_email_again")); ?></a></p>
-                </section>
-              </duv>
+ <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+
+    <section class="content-wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 main-content col-md-offset-1">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                    <div class="collapsed">
+                      所有
+                      <?php switch($article_type): case "1": ?>新闻资讯<?php break;?>
+                                <?php case "2": ?>政策法规<?php break;?>
+                                <?php case "3": ?>投资事件<?php break;?>
+                                <?php case "4": ?>联盟活动<?php break;?>
+                                <?php case "5": ?>关于我们<?php break;?>
+                                <?php case "6": ?>法律声明<?php break;?>
+                                <?php case "7": ?>联系我们<?php break;?>
+                                <?php case "8": ?>加入我们<?php break;?>
+                                <?php case "9": ?>联盟介绍<?php break;?>
+                                <?php case "10": ?>组织架构<?php break;?>
+                                <?php case "11": ?>联盟成员<?php break;?>
+                                <?php case "12": ?>秘书长<?php break;?>
+                                <?php case "13": ?>合作伙伴<?php break;?>
+                                <?php case "14": ?>加入联盟<?php break;?>
+                                <?php case "15": ?>合作<?php break; endswitch;?>
+                    </div>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <div class="list-group">
+
+                                            <?php if(is_array($news)): foreach($news as $key=>$vo): ?><div class="list-group-item">
+                          <a href="<?php echo U('Home/Index/articleDetail');?>?article_id=<?php echo ($vo['id']); ?>" >
+                            <?php echo ($vo['title']); ?>
+                          </a>
+                            <div style="float: right;">
+                              
+                              
+                              <div style="float: right; margin-right:25px;">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                                <?php echo date('Y-m-d H:i:s',$vo['pub_time']) ?>
+                              </div>
+                              <div style="float: right; margin-right:25px;">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <?php switch($vo['institution_type']): case "1": ?>LP<?php break;?>
+                                    <?php case "2": ?>GP<?php break;?>
+                                    <?php case "3": ?>创业公司<?php break;?>
+                                    <?php case "4": ?>FA<?php break;?>
+                                    <?php case "5": ?>法务服务机构<?php break;?>
+                                    <?php case "6": ?>财务服务机构<?php break;?>
+                                    <?php case "7": ?>众创空间<?php break;?>
+                                    <?php case "8": ?>其它机构<?php break;?>
+                                    <?php case "9": ?>个人<?php break;?>
+                                    <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
+                                &nbsp;&nbsp;
+                                <?php echo ($vo['author_name']); ?>
+                     
+                              </div>
+
+                            </div>
+
+                   
+                          </div><?php endforeach; endif; ?>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body center">
+                    
+                      <?php echo ($page); ?>
+                 
+                  </div>
+                </div>
+              </div><!--新闻列表-->
+
+
             </div>
           </div>
 
         </div>
       </div>
-    </div>
+    </section>
   </div>
-</div>
 
 <footer class="footer">
   <div class="footerLink">
@@ -273,7 +327,10 @@
 <script src="/fofs/1/Public/assets_1/js/jquery.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/common.js"></script>
-
+<script src="/fofs/1/Public/assets_2/public/bootstrap/js/Chart.min.js"></script>
+<script src="/fofs/1/Public/assets_2/js/Chart.js"></script>
+<script src="/fofs/1/Public/assets_1/js/buyer_letter.js"></script>
+<script src="/fofs/1/Public/assets_1/js/supplier_letter.js"></script>
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>

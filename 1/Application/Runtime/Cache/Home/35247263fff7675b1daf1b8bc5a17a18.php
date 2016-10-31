@@ -221,40 +221,246 @@
   </div>
 </div>
   <!--登录模态框结束-->
-<div class="content registerEmailCheck">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 col-sm-offset-2">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h1><?php echo (L("email_verification")); ?></h1>
-          </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-sm-8">
-                <section class="verifyEmail">
-                  <h3><?php echo (L("email_verify_to_complete")); ?></h3>
-                  <p><?php echo (L("email_verification_send")); ?><span><?php echo ($email); ?></span></p>
-                  <p>点击邮件内的链接即可完成注册，并可使用中国母基金联盟官网的全部功能</p>
-                  <a href="<?php echo ($link); ?>" target="_Blank" class="btn btn-primary"><?php echo (L("go_emailbox_check")); ?></a>
-                </section>
-              </div>
-              <duv class="col-sm-4">
-                <section class="noVerify">
-                  <h4><?php echo (L("not_receive_email")); ?></h4>
-                  <p><?php echo (L("wrong_email")); ?><a href="/fofs/1/index.php/Home/Register/email"><?php echo (L("change_a_emailbox")); ?></a></p>
-                  <p><?php echo (L("check_junk_folder")); ?></p>
-                  <p><?php echo (L("wait_for_seconds")); ?><a href="/fofs/1/index.php/Home/Register/resend_email"><?php echo (L("send_check_email_again")); ?></a></p>
-                </section>
-              </duv>
+  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+
+    <section class="content-wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 main-content">
+                          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span><?php echo ($user['institution_fullname_cn']); ?></div>
+                <div class="panel-body">
+                  <div class="media">
+                    <div class="media-left">
+                      <a href="#">
+                        <?php if($user['institution_logo_img'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/<?php echo ($user['institution_logo_img']); ?>" alt="头像" height="100" width="100">
+                        <?php else: ?>
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
+                      </a>
+                    </div>
+                    <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+
+                      <p><i class="fa fa-envelope-o fa-md"></i> <?php echo ($user['email']); ?></p>
+                      <p><i class="glyphicon glyphicon-th-list"></i>LP</p>
+                      <a class="btn btn-default" href="allFunds.html" role="button">修改管理的基金</a>
+                    </div>
+                  </div>
+                </div>
+              </div><!--头像-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/individualProfile');?>">
+                      <span class="glyphicon glyphicon-home"></span>机构主页
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--机构主页-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/myCompany');?>">
+                      <span class="glyphicon glyphicon-user"></span>机构成员
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--机构成员-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/accountSetting');?>">
+                      <span class="glyphicon glyphicon-pencil"></span>账号设置
+                      
+                    </a>
+                  </div>
+                </div>
+              </div><!--账号设置-->
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-title">
+                    <a href="<?php echo U('Home/Lp/inbox');?>">
+                      <span class="glyphicon glyphicon-envelope"></span>消息
+                      <?php if($amount['unread'] != 0): ?><span class="badge"><?php echo ($amount['unread']); ?></span><?php endif; ?>
+                    </a>
+                  </div>
+                </div>
+              </div><!--消息-->
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <span class="glyphicon glyphicon-globe"></span>圈子
+                    </a>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <div class="list-group">
+                      <a href="<?php echo U('Home/Lp/myFollows');?>" class="list-group-item">关注我的<span class="badge"><?php echo ($amount['checking']); ?></span></a>
+                      <a href="<?php echo U('Home/Lp/myFollowing');?>" class="list-group-item ">我关注的<span class="badge"><?php echo ($amount['accepted']); ?></span></a>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div><!--圈子-->
             </div>
           </div>
+          <div class="col-md-8">
+            <div class="well">
+              <h3>我关注的</h3>
+              <hr/>
+              
+              <div class="row margin_top_20">
+                  <div class='col-md-12' >
+                      <!-- Nav tabs -->
+                      <ul class="nav nav-tabs" role="tablist" style="padding-left:15px; padding-right: 15px;">
+                        <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">我关注的个人用户</a></li>
+                        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">我关注的机构用户</a></li>
+                      </ul>
 
+                      <!-- Tab panes -->
+                      <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                              <div class="panel-body">
+                                <div class="list-group">
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                          1
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >万剑一</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                         2
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >万剑一</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                          3
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >万剑一</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                          4
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >万剑一</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+                                  
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+
+                              <div class="panel-body">
+                                <div class="list-group">
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                          1
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >歌斐资产</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+                                  <div class="list-group-item row form-group">
+                                      <div class="col-sm-2 margin_top_13">
+                                         2
+                                      </div>
+                                 
+                                      <div class="col-sm-3">
+                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
+                                      </div>
+                                      <div class="col-sm-2 margin_top_13">
+                                           <a href="#" >紫荆资本</a>
+                                      </div>
+                                      <div class="col-sm-5 text_right margin_top_13">
+                                          2016年10月7日关注
+                                      </div>
+                              
+                                  </div>
+
+                                  
+                                
+                                </div>
+                            </div>
+
+
+                        </div>
+                      </div>
+                  </div>
+              </div>
+
+               &nbsp;
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
-</div>
 
 <footer class="footer">
   <div class="footerLink">
@@ -273,7 +479,10 @@
 <script src="/fofs/1/Public/assets_1/js/jquery.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/common.js"></script>
-
+<script src="/fofs/1/Public/assets_2/public/bootstrap/js/Chart.min.js"></script>
+<script src="/fofs/1/Public/assets_2/js/Chart.js"></script>
+<script src="/fofs/1/Public/assets_1/js/buyer_letter.js"></script>
+<script src="/fofs/1/Public/assets_1/js/supplier_letter.js"></script>
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>

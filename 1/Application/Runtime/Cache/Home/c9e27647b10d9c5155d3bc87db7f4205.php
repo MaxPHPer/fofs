@@ -350,7 +350,7 @@
                               简介:
                           </div>
                           <div class='col-md-10'>
-                              <?php echo ($user['institution_abbr']); ?>
+                              <?php echo ($user['institution_abstract']); ?>
                           </div>
                       </div>
 
@@ -609,7 +609,7 @@
                           </div>
                           <?php if(is_array($funds)): foreach($funds as $key=>$vo): ?><div class="row">
                                 <div class="col-sm-3 text_right">
-                                  <label for="userName" ><b>基金产品 <?php echo ($key+1); ?>:</b></label>
+                                  <span class="glyphicon glyphicon-file"></span><label for="userName" ><b>基金产品 <?php echo ($key+1); ?>:</b></label>
                                 </div>
                             </div>
 
@@ -726,9 +726,10 @@
                                         <select name="fund_property" id="fund_property" class="form-control" disabled>
 
 
-                                          <?php if($vo['is_government_guidance'] == 1): ?><option value ="1">政府引导基金</option><?php endif; ?>
-                                          <?php if($vo['is_private_capital'] == 1): ?><option value ="2">民营资本市场化运作基金</option><?php endif; ?>
-                                          <?php if($vo['is_state_owned'] == 1): ?><option value ="3">国企参与市场化基金</option><?php endif; ?>
+                                          <?php if($vo['is_angel_investment'] == 1): ?><option value ="1">天使投资基金</option><?php endif; ?>
+                                          <?php if($vo['is_vc_investment'] == 1): ?><option value ="2">VC基金</option><?php endif; ?>
+                                          <?php if($vo['is_pe_investment'] == 1): ?><option value ="3">PE基金</option><?php endif; ?>
+                                          <?php if($vo['is_other_investment'] == 1): ?><option value ="4">其它基金</option><?php endif; ?>
 
                                         </select>                           
                                     </div>
@@ -737,34 +738,6 @@
 
                             </div>
 
-                            <div class="row" style="margin-top:10px;">
-                                
-                                <div>
-                                    <div class="col-sm-3 text_right">
-                                      基金投资类型
-                                    </div>
-                                    <div class="col-sm-8">
-                                      <div class="col-sm-3 ">
-                                      <input class="icheckbox_flat-blue" id="is_investment_security" type="checkbox" name="fund_type[]" value="is_investment_security" <?php if($vo['is_investment_security']==1) echo' checked'; ?> />
-                                        证券投资基金
-                                      </div>
-                                      <div class="col-sm-3 ">
-                                        <input class="icheckbox_flat-blue" id="is_equity_investment" type="checkbox" name="fund_type[]" value="is_equity_investment" <?php if($vo['is_equity_investment']==1) echo' checked'; ?> />
-                                        股权投资基金
-                                      </div>
-                                      <div class="col-sm-3 ">
-                                        <input class="icheckbox_flat-blue" id="is_venture_investment" type="checkbox" name="fund_type[]" value="is_venture_investment" <?php if($vo['is_venture_investment']==1) echo' checked'; ?> />
-                                        创业投资基金
-                                      </div>
-                                      <div class="col-sm-3 ">
-                                        <input class="icheckbox_flat-blue" id="is_other_investment" type="checkbox" name="fund_type[]" value="is_other_investment" <?php if($vo['is_other_investment']==1) echo' checked'; ?> />
-                                        其它投资基金
-                                      </div>                        
-                                    </div>
-
-                                </div>
-
-                            </div>
 
                             <div class="row" style="margin-top:10px;">
                                 
@@ -788,6 +761,20 @@
                                     </div>
                                     <div class="col-sm-4">
                                       <?php echo ($vo['investment_field']); ?>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row" style="margin-top:10px;">
+                                
+                                <div>
+                                    <div class="col-sm-3 text_right">
+                                      投资地域
+                                    </div>
+                                    <div class="col-sm-4">
+                                      <?php echo ($vo['investment_region']); ?>
                                     </div>
 
                                 </div>
@@ -882,7 +869,7 @@
                             <?php if(is_array($vo['investment_projects'])): foreach($vo['investment_projects'] as $project_key=>$investment_project): ?><div class="row" style="margin-top:10px;">
                                           <div>
                                               <div class="col-sm-3 text_right">
-                                                基金项目<?php echo ($project_key+1); ?>名称
+                                                <span class="glyphicon glyphicon-tree-deciduous"></span>基金项目<?php echo ($project_key+1); ?>名称
                                               </div>
                                               <div class="col-sm-8">
                                                 <?php echo ($investment_project['project_name']); ?>                          
@@ -997,9 +984,6 @@
 
 <script src="/fofs/1/Public/assets_1/js/common.js"></script>
 <script src="/fofs/1/Public/assets_2/public/bootstrap/js/Chart.min.js"></script>
-<script src="/fofs/1/Public/assets_2/js/Chart.js"></script>
-<script src="/fofs/1/Public/assets_1/js/buyer_letter.js"></script>
-<script src="/fofs/1/Public/assets_1/js/supplier_letter.js"></script>
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>
