@@ -347,7 +347,7 @@
                               英文全称:
                           </div>
                           <div class='col-md-10'>
-                              <?php echo ($user['institution_fullname_en']); ?>(<?php echo ($user['institution_fullname_en']); ?>)
+                              <?php echo ($user['institution_fullname_en']); ?>
                           </div>
                       </div>
                       <div class="row">
@@ -361,23 +361,52 @@
 
                   </div>
               </div>
+              
+              <?php if($user['institution_type'] == 4): ?><div class="row margin_top_20">
+                    <div class='col-md-12'>
+                      <h3><span class="glyphicon glyphicon-home"></span>服务内容和费用</h3>
+                      <div class="panel panel-default">
+                        <div class="panel-body">
 
-              <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-home"></span>服务内容和费用</h3>
-                    <div class="panel panel-default">
-                      <div class="panel-body">
+                            <div class="row">
+                                <div class='col-md-12'>
+                                   <?php echo ($user['services_and_fees']); ?>
+                                </div>
+                            </div>
 
-                          <div class="row">
-                              <div class='col-md-12'>
-                                 <?php echo ($user['services_and_fees']); ?>
-                              </div>
-                          </div>
-
+                        </div>
                       </div>
                     </div>
-                  </div>
-              </div>
+                </div>
+              <?php else: ?>
+                <div class="row margin_top_20">
+                    <div class='col-md-12'>
+                      <h3><span class="glyphicon glyphicon-home"></span>基本信息</h3>
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+
+                            <div class="row">
+                                <div class='col-md-3 text_right'>
+                                    服务地域:
+                                </div>
+                                <div class='col-md-8'>
+                                    <?php echo ($user['service_area']); ?>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class='col-md-3 text_right'>
+                                    成立时间:
+                                </div>
+                                <div class='col-md-8'>
+                                  <?php echo date('Y-m-d',$user['founded_time']); ?>
+                                </div>
+                            </div>
+
+                        </div>
+                      </div>
+                    </div>
+                </div><?php endif; ?>
 
 
               <div class="row margin_top_20">
@@ -513,130 +542,184 @@
                   </div>
               </div>
 
-              <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-saved"></span>成功案例</h3>
-                    <div class="panel panel-default">
-                      <div class="panel-body">
-                         
-                        <?php if(is_array($products)): foreach($products as $key=>$vo): ?><div class="repeat">
-                              <div class="row" style="margin-top:10px;">
-                                
-                                  <div>
-                                      <div class="col-sm-3 text_right">
-                                        <span class="glyphicon glyphicon-tree-deciduous" style="color:black;"></span>(<?php echo ($key+1); ?>)融资公司
-                                      </div>
-                                      <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="invested_company" name="invested_company"  value="<?php echo ($vo['invested_company']); ?>" disabled />                            
-                                      </div>
-
-                                  </div>
-
-                              </div>
-                              <div class="row" style="margin-top:10px;">
-                                
-                                  <div>
-                                      <div class="col-sm-3 text_right">
-                                        投资人
-                                      </div>
-                                      <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="investor" name="investor"  value="<?php echo ($vo['investor']); ?>" disabled/>
-                                      </div>
-
-                                  </div>
-
-                              </div>
-                              <div class="row" style="margin-top:10px;">
-                                  
-                                  <div>
-                                      <div class="col-sm-3 text_right">
-                                        币种
-                                      </div>
-                                      <div class="col-sm-4">
-                                        <select class="form-control" id="currency_type_id" name="currency_type_id" disabled>
-                                        <?php switch($vo['currency_type_id']): case "0": ?><option value='0'>人民币RMB</option><?php break;?>
-                                          <?php case "1": ?><option value='1'>美元USD</option><?php break;?> 
-                                          <?php case "2": ?><option value='2'>日元JPY</option><?php break;?> 
-                                          <?php case "3": ?><option value='3'>欧元EUR</option><?php break;?> 
-                                          <?php case "4": ?><option value='4'>英镑GBP</option><?php break;?> 
-                                          <?php case "5": ?><option value='5'>德国马克DEM</option><?php break;?> 
-                                          <?php case "6": ?><option value='6'>瑞士法郎CHF</option><?php break;?> 
-                                          <?php case "7": ?><option value='7'>法国法郎FRF</option><?php break;?> 
-                                          <?php case "8": ?><option value='8'>加拿大元CAD</option><?php break;?> 
-                                          <?php case "9": ?><option value='9'>澳大利亚元AUD</option><?php break;?> 
-                                          <?php case "10": ?><option value='10'>港币HKD</option><?php break;?> 
-                                          <?php case "11": ?><option value='11'>俄罗斯卢布SUR</option><?php break;?> 
-                                          <?php case "12": ?><option value='12'>新加坡元SGD</option><?php break;?> 
-                                          <?php case "13": ?><option value='13'>韩国元KRW</option><?php break;?> 
-                                          <?php case "14": ?><option value='14'>泰铢THB</option><?php break;?> 
-                                          <?php case "15": ?><option value='15'>奥地利先令ATS</option><?php break;?> 
-                                          <?php case "16": ?><option value='16'>芬兰马克FIM</option><?php break;?> 
-                                          <?php case "17": ?><option value='17'>比利时法郎BEF</option><?php break;?> 
-                                          <?php case "18": ?><option value='18'>爱尔兰镑IEP</option><?php break;?> 
-                                          <?php case "19": ?><option value='19'>意大利里拉ITL</option><?php break;?> 
-                                          <?php case "20": ?><option value='20'>卢森堡法郎LUF</option><?php break;?> 
-                                          <?php case "21": ?><option value='21'>荷兰盾NLG</option><?php break;?> 
-                                          <?php case "22": ?><option value='22'>葡萄牙埃斯库多PTE</option><?php break;?> 
-                                          <?php case "23": ?><option value='23'>西班牙比塞塔ESP</option><?php break;?> 
-                                          <?php case "24": ?><option value='24'>印尼盾IDR</option><?php break;?> 
-                                          <?php case "25": ?><option value='25'>马来西亚林吉特MYR</option><?php break;?> 
-                                          <?php case "26": ?><option value='26'>新西兰元NZD</option><?php break;?> 
-                                          <?php case "27": ?><option value='27'>菲律宾比索PHP</option><?php break; endswitch;?>
-                                          
-
-
-                                        </select>
-                    
-                                      </div>
-
-                                  </div>
-
-                              </div>
-                              <div class="row" style="margin-top:10px;">
-                                
-                                  <div>
-                                      <div class="col-sm-3 text_right">
-                                        投资额度
-                                      </div>
-                                      <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="investment_quota" name="investment_quota"  value="<?php echo ($vo['investment_quota']); ?>" disabled/>                            
-                                      </div>
-
-                                  </div>
-
-                              </div>
-                              <div class="row" style="margin-top:10px;">
-                                
-                                  <div>
-                                      <div class="col-sm-3 text_right">
-                                        投资轮次
-                                      </div>
-                                      <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="investment_round" name="investment_round"  value="<?php echo ($vo['investment_round']); ?>" disabled/> 
-                                      </div>
-
-                                  </div>
-
-                              </div>
-                              <div class="row borderBottom" style="margin-top:10px;">
+              <?php if($user['institution_type'] == 4): ?><div class="row margin_top_20">
+                    <div class='col-md-12'>
+                      <h3><span class="glyphicon glyphicon-saved"></span>成功案例</h3>
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+                           
+                          <?php if(is_array($products)): foreach($products as $key=>$vo): ?><div class="repeat">
+                                <div class="row" style="margin-top:10px;">
                                   
                                     <div>
                                         <div class="col-sm-3 text_right">
-                                          投资时间
+                                          <span class="glyphicon glyphicon-tree-deciduous" style="color:black;"></span>(<?php echo ($key+1); ?>)融资公司
                                         </div>
                                         <div class="col-sm-4">
-                                          <input type="date" class="form-control" id="founded_time" name="founded_time"  value="<?php echo date('Y-m-d',$vo['founded_time']); ?>" disabled/> 
+                                          <input type="text" class="form-control" id="invested_company" name="invested_company"  value="<?php echo ($vo['invested_company']); ?>" disabled />                            
                                         </div>
 
                                     </div>
 
-                                </div>  
-                              
-                            </div><?php endforeach; endif; ?>
+                                </div>
+                                <div class="row" style="margin-top:10px;">
+                                  
+                                    <div>
+                                        <div class="col-sm-3 text_right">
+                                          投资人
+                                        </div>
+                                        <div class="col-sm-4">
+                                          <input type="text" class="form-control" id="investor" name="investor"  value="<?php echo ($vo['investor']); ?>" disabled/>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="row" style="margin-top:10px;">
+                                    
+                                    <div>
+                                        <div class="col-sm-3 text_right">
+                                          币种
+                                        </div>
+                                        <div class="col-sm-4">
+                                          <select class="form-control" id="currency_type_id" name="currency_type_id" disabled>
+                                          <?php switch($vo['currency_type_id']): case "0": ?><option value='0'>人民币RMB</option><?php break;?>
+                                            <?php case "1": ?><option value='1'>美元USD</option><?php break;?> 
+                                            <?php case "2": ?><option value='2'>日元JPY</option><?php break;?> 
+                                            <?php case "3": ?><option value='3'>欧元EUR</option><?php break;?> 
+                                            <?php case "4": ?><option value='4'>英镑GBP</option><?php break;?> 
+                                            <?php case "5": ?><option value='5'>德国马克DEM</option><?php break;?> 
+                                            <?php case "6": ?><option value='6'>瑞士法郎CHF</option><?php break;?> 
+                                            <?php case "7": ?><option value='7'>法国法郎FRF</option><?php break;?> 
+                                            <?php case "8": ?><option value='8'>加拿大元CAD</option><?php break;?> 
+                                            <?php case "9": ?><option value='9'>澳大利亚元AUD</option><?php break;?> 
+                                            <?php case "10": ?><option value='10'>港币HKD</option><?php break;?> 
+                                            <?php case "11": ?><option value='11'>俄罗斯卢布SUR</option><?php break;?> 
+                                            <?php case "12": ?><option value='12'>新加坡元SGD</option><?php break;?> 
+                                            <?php case "13": ?><option value='13'>韩国元KRW</option><?php break;?> 
+                                            <?php case "14": ?><option value='14'>泰铢THB</option><?php break;?> 
+                                            <?php case "15": ?><option value='15'>奥地利先令ATS</option><?php break;?> 
+                                            <?php case "16": ?><option value='16'>芬兰马克FIM</option><?php break;?> 
+                                            <?php case "17": ?><option value='17'>比利时法郎BEF</option><?php break;?> 
+                                            <?php case "18": ?><option value='18'>爱尔兰镑IEP</option><?php break;?> 
+                                            <?php case "19": ?><option value='19'>意大利里拉ITL</option><?php break;?> 
+                                            <?php case "20": ?><option value='20'>卢森堡法郎LUF</option><?php break;?> 
+                                            <?php case "21": ?><option value='21'>荷兰盾NLG</option><?php break;?> 
+                                            <?php case "22": ?><option value='22'>葡萄牙埃斯库多PTE</option><?php break;?> 
+                                            <?php case "23": ?><option value='23'>西班牙比塞塔ESP</option><?php break;?> 
+                                            <?php case "24": ?><option value='24'>印尼盾IDR</option><?php break;?> 
+                                            <?php case "25": ?><option value='25'>马来西亚林吉特MYR</option><?php break;?> 
+                                            <?php case "26": ?><option value='26'>新西兰元NZD</option><?php break;?> 
+                                            <?php case "27": ?><option value='27'>菲律宾比索PHP</option><?php break; endswitch;?>
+                                            
+
+
+                                          </select>
+                      
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="row" style="margin-top:10px;">
+                                  
+                                    <div>
+                                        <div class="col-sm-3 text_right">
+                                          投资额度
+                                        </div>
+                                        <div class="col-sm-4">
+                                          <input type="text" class="form-control" id="investment_quota" name="investment_quota"  value="<?php echo ($vo['investment_quota']); ?>" disabled/>                            
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="row" style="margin-top:10px;">
+                                  
+                                    <div>
+                                        <div class="col-sm-3 text_right">
+                                          投资轮次
+                                        </div>
+                                        <div class="col-sm-4">
+                                          <input type="text" class="form-control" id="investment_round" name="investment_round"  value="<?php echo ($vo['investment_round']); ?>" disabled/> 
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="row borderBottom" style="margin-top:10px;">
+                                    
+                                      <div>
+                                          <div class="col-sm-3 text_right">
+                                            投资时间
+                                          </div>
+                                          <div class="col-sm-4">
+                                            <input type="date" class="form-control" id="founded_time" name="founded_time"  value="<?php echo date('Y-m-d',$vo['founded_time']); ?>" disabled/> 
+                                          </div>
+
+                                      </div>
+
+                                  </div>  
+                                
+                              </div><?php endforeach; endif; ?>
+                        </div>
                       </div>
                     </div>
-                  </div>
-              </div>
+                </div>
+              <?php else: ?>
+                <div class="row margin_top_20">
+                    <div class='col-md-12'>
+                      <h3><span class="glyphicon glyphicon-saved"></span>服务/产品</h3>
+                      <div class="panel panel-default">
+                        <div class="panel-body">
+                           
+                          <?php if(is_array($products)): foreach($products as $key=>$vo): ?><div class="repeat">
+                                <div class="row" style="margin-top:10px;">
+                                  
+                                    <div>
+                                        <div class="col-sm-3 text_right">
+                                          <span class="glyphicon glyphicon-tree-deciduous" style="color:black;"></span>(<?php echo ($key+1); ?>)名称
+                                        </div>
+                                        <div class="col-sm-4">
+                                          <input type="text" class="form-control" id="name" name="name"  value="<?php echo ($vo['name']); ?>" disabled />                            
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="row" style="margin-top:10px;">
+                                  
+                                    <div>
+                                        <div class="col-sm-3 text_right">
+                                          详细内容
+                                        </div>
+                                        <div class="col-sm-4">
+                                          <input type="text" class="form-control" id="content" name="content"  value="<?php echo ($vo['content']); ?>" disabled/>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="row" style="margin-top:10px;">
+                                  
+                                    <div>
+                                        <div class="col-sm-3 text_right">
+                                          价格(元)
+                                        </div>
+                                        <div class="col-sm-4">
+                                          <input type="text" class="form-control" id="price" name="price"  value="<?php echo ($vo['price']); ?>" disabled/>                            
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                
+                              </div><?php endforeach; endif; ?>
+                        </div>
+                      </div>
+                    </div>
+                </div><?php endif; ?>
                &nbsp;
             </div>
           </div>
@@ -662,7 +745,7 @@
 <script src="/fofs/1/Public/assets_1/js/jquery.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/common.js"></script>
-
+<script src="/fofs/1/Public/assets_2/public/bootstrap/js/Chart.min.js"></script>
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>

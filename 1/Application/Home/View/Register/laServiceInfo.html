@@ -2,7 +2,7 @@
 <include file = "layout:navbar"/>
 <div class="content supplierCompanyInfo">
   <div class="container">
-    <form action="__APP__/Home/Register/save_supplierCompanyInfo" method="post" enctype="multipart/form-data">
+    <form action="" method="post" name="form1">
       <div class="row">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -30,6 +30,61 @@
                         </div>
                     </div>
 
+                    <foreach name="services" item="vo">
+                        <div class="repeat">
+                          <div class="row" style="margin-top:10px;">
+                            
+                              <div>
+                                  <div class="col-sm-2">
+                                    <label for="name" class="col-sm-12 control-label">
+                                    <span class="glyphicon glyphicon-tree-deciduous" style="color:black;"></span>名称
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="name" name="name"  value="{$vo['name']}" disabled />                            
+                                  </div>
+
+                              </div>
+
+                          </div>
+                          <div class="row" style="margin-top:10px;">
+                            
+                              <div>
+                                  <div class="col-sm-2">
+                                    <label for="content" class="col-sm-12 control-label">
+                                      详细内容
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-4">
+                                    <textarea class="form-control" id="content" name="content" disabled>{$vo['content']}</textarea>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                          <div class="row borderBottom" style="margin-top:10px;">
+                            
+                              <div>
+                                  <div class="col-sm-2">
+                                    <label for="price" class="col-sm-12 control-label">
+                                      价格(元)
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-4">
+                                    <input type="number" class="form-control" id="price" name="price" value="{$vo['price']}" disabled/>                            
+                                  </div>
+
+                              </div>
+
+                          </div>
+                          
+                          
+                          
+                        </div>
+
+                    </foreach>
+
+
 
                     <div class="repeat">
                       <div class="row" style="margin-top:10px;">
@@ -37,11 +92,11 @@
                           <div>
                               <div class="col-sm-2">
                                 <label for="name" class="col-sm-12 control-label">
-                                  名称
+                                  <span class="glyphicon glyphicon-tree-deciduous" style="color:black;"></span>名称
                                 </label>
                               </div>
                               <div class="col-sm-4">
-                                <input type="text" class="form-control" id="name" name="service[name][]"  />                            
+                                <input type="text" class="form-control" id="name" name="name"  />                            
                               </div>
 
                           </div>
@@ -56,7 +111,7 @@
                                 </label>
                               </div>
                               <div class="col-sm-4">
-                                <textarea class="form-control" id="content" name="service[content][]" ></textarea>
+                                <textarea class="form-control" id="content" name="content" ></textarea>
                               </div>
 
                           </div>
@@ -71,7 +126,7 @@
                                 </label>
                               </div>
                               <div class="col-sm-4">
-                                <input type="number" class="form-control" id="price" name="service[price][]"  />                            
+                                <input type="number" class="form-control" id="price" name="price"  />                            
                               </div>
 
                           </div>
@@ -84,7 +139,7 @@
                     <div class="row">
                       <div class="col-sm-9"></div>
                       <div class="col-sm-3">
-                        <button type="button" class="btn btn-primary" id="addNew4">再添加其它产品/服务</button>
+                        <button type="submit" class="btn btn-primary" id="" onclick="form1.action='__APP__/Home/Register/add_serviceInfo';form1.submit();">再添加其它产品/服务</button>
                       </div>
                     </div>
                   </div>
@@ -100,7 +155,7 @@
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4" style="margin-bottom:30px;">
           <input type="hidden" name='user_id'  value="{$id}"/>
-          <input type="submit" class="btn btn-primary btn-block" id="submit" value="{$Think.lang.signup_complete}"/>
+          <input type="submit" class="btn btn-primary btn-block" id="submit" value="{$Think.lang.signup_complete}" onclick="form1.action='__APP__/Home/Register/save_serviceInfo';form1.submit();"/>
         </div>
       </div>
     </form>

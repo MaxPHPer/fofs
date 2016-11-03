@@ -249,7 +249,7 @@
                             <?php case "6": ?>财务机构<?php break;?>
                             <?php case "7": ?>众创空间(孵化器)<?php break; endswitch;?>
                       </p>
-                      <a class="btn btn-default" href="modifyCompanyInfo.html" role="button">修改机构信息</a>
+                      <a class="btn btn-default" href="modifyCompanyInfo.html" role="button">修改机构信息</a><a class="btn btn-default" href="allCases.html" role="button" style="margin-left:10px;"><?php if($user['institution_type'] == 4): ?>成功案例<?php else: ?>产品服务<?php endif; ?></a>
                     </div>
                   </div>
                 </div>
@@ -449,9 +449,6 @@
 
 <script src="/fofs/1/Public/assets_1/js/common.js"></script>
 <script src="/fofs/1/Public/assets_2/public/bootstrap/js/Chart.min.js"></script>
-<script src="/fofs/1/Public/assets_2/js/Chart.js"></script>
-<script src="/fofs/1/Public/assets_1/js/buyer_letter.js"></script>
-<script src="/fofs/1/Public/assets_1/js/supplier_letter.js"></script>
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>

@@ -444,9 +444,6 @@
 
 <script src="/fofs/1/Public/assets_1/js/common.js"></script>
 <script src="/fofs/1/Public/assets_2/public/bootstrap/js/Chart.min.js"></script>
-<script src="/fofs/1/Public/assets_2/js/Chart.js"></script>
-<script src="/fofs/1/Public/assets_1/js/buyer_letter.js"></script>
-<script src="/fofs/1/Public/assets_1/js/supplier_letter.js"></script>
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>

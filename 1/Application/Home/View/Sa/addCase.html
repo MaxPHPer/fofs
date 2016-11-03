@@ -20,7 +20,7 @@
                     <div class="panel panel-default">
                       <div class="panel-body">
                         <!--已有服务产品-->
-                        
+                        <if condition="$user['institution_type'] eq 4">
                             <div class="repeat">
                               <div class="row" style="margin-top:10px;">
                                 
@@ -137,7 +137,53 @@
                                 </div>  
                               
                             </div>
-                       
+                       <else/>
+                            <div class="repeat">
+                              <div class="row" style="margin-top:10px;">
+                                
+                                  <div>
+                                      <div class="col-sm-2">
+                                         <span class="glyphicon glyphicon-tree-deciduous" style="color:black;"></span>名称
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="name" name="name"  />                            
+                                      </div>
+
+                                  </div>
+
+                              </div>
+                              <div class="row" style="margin-top:10px;">
+                                
+                                  <div>
+                                      <div class="col-sm-2">
+                                        详细内容
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <textarea class="form-control" id="content" name="content" ></textarea>
+                                      </div>
+
+                                  </div>
+
+                              </div>
+                              <div class="row borderBottom" style="margin-top:10px;">
+                                
+                                  <div>
+                                      <div class="col-sm-2">
+                                        价格(元)
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <input type="number" class="form-control" id="price" name="price"  />                            
+                                      </div>
+
+                                  </div>
+
+                              </div>
+                              
+                              
+                              
+                            </div>
+
+                       </if>
 
                       </div>
                     </div>

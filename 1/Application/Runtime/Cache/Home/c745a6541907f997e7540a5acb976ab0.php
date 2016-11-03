@@ -223,7 +223,7 @@
   <!--登录模态框结束-->
 <div class="content supplierCompanyInfo">
   <div class="container">
-    <form action="/fofs/1/index.php/Home/Register/save_supplierCompanyInfo" method="post" enctype="multipart/form-data">
+    <form action="" method="post" name="form1">
       <div class="row">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -251,6 +251,58 @@
                         </div>
                     </div>
 
+                    <?php if(is_array($services)): foreach($services as $key=>$vo): ?><div class="repeat">
+                          <div class="row" style="margin-top:10px;">
+                            
+                              <div>
+                                  <div class="col-sm-2">
+                                    <label for="name" class="col-sm-12 control-label">
+                                    <span class="glyphicon glyphicon-tree-deciduous" style="color:black;"></span>名称
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="name" name="name"  value="<?php echo ($vo['name']); ?>" disabled />                            
+                                  </div>
+
+                              </div>
+
+                          </div>
+                          <div class="row" style="margin-top:10px;">
+                            
+                              <div>
+                                  <div class="col-sm-2">
+                                    <label for="content" class="col-sm-12 control-label">
+                                      详细内容
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-4">
+                                    <textarea class="form-control" id="content" name="content" disabled><?php echo ($vo['content']); ?></textarea>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                          <div class="row borderBottom" style="margin-top:10px;">
+                            
+                              <div>
+                                  <div class="col-sm-2">
+                                    <label for="price" class="col-sm-12 control-label">
+                                      价格(元)
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-4">
+                                    <input type="number" class="form-control" id="price" name="price" value="<?php echo ($vo['price']); ?>" disabled/>                            
+                                  </div>
+
+                              </div>
+
+                          </div>
+                          
+                          
+                          
+                        </div><?php endforeach; endif; ?>
+
+
 
                     <div class="repeat">
                       <div class="row" style="margin-top:10px;">
@@ -258,11 +310,11 @@
                           <div>
                               <div class="col-sm-2">
                                 <label for="name" class="col-sm-12 control-label">
-                                  名称
+                                  <span class="glyphicon glyphicon-tree-deciduous" style="color:black;"></span>名称
                                 </label>
                               </div>
                               <div class="col-sm-4">
-                                <input type="text" class="form-control" id="name" name="service[name][]"  />                            
+                                <input type="text" class="form-control" id="name" name="name"  />                            
                               </div>
 
                           </div>
@@ -277,7 +329,7 @@
                                 </label>
                               </div>
                               <div class="col-sm-4">
-                                <textarea class="form-control" id="content" name="service[content][]" ></textarea>
+                                <textarea class="form-control" id="content" name="content" ></textarea>
                               </div>
 
                           </div>
@@ -292,7 +344,7 @@
                                 </label>
                               </div>
                               <div class="col-sm-4">
-                                <input type="number" class="form-control" id="price" name="service[price][]"  />                            
+                                <input type="number" class="form-control" id="price" name="price"  />                            
                               </div>
 
                           </div>
@@ -305,7 +357,7 @@
                     <div class="row">
                       <div class="col-sm-9"></div>
                       <div class="col-sm-3">
-                        <button type="button" class="btn btn-primary" id="addNew4">再添加其它产品/服务</button>
+                        <button type="submit" class="btn btn-primary" id="" onclick="form1.action='/fofs/1/index.php/Home/Register/add_serviceInfo';form1.submit();">再添加其它产品/服务</button>
                       </div>
                     </div>
                   </div>
@@ -321,7 +373,7 @@
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4" style="margin-bottom:30px;">
           <input type="hidden" name='user_id'  value="<?php echo ($id); ?>"/>
-          <input type="submit" class="btn btn-primary btn-block" id="submit" value="<?php echo (L("signup_complete")); ?>"/>
+          <input type="submit" class="btn btn-primary btn-block" id="submit" value="<?php echo (L("signup_complete")); ?>" onclick="form1.action='/fofs/1/index.php/Home/Register/save_serviceInfo';form1.submit();"/>
         </div>
       </div>
     </form>
@@ -346,9 +398,6 @@
 
 <script src="/fofs/1/Public/assets_1/js/common.js"></script>
 <script src="/fofs/1/Public/assets_2/public/bootstrap/js/Chart.min.js"></script>
-<script src="/fofs/1/Public/assets_2/js/Chart.js"></script>
-<script src="/fofs/1/Public/assets_1/js/buyer_letter.js"></script>
-<script src="/fofs/1/Public/assets_1/js/supplier_letter.js"></script>
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>

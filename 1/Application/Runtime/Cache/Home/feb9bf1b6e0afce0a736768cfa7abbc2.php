@@ -223,7 +223,7 @@
   <!--登录模态框结束-->
 <div class="content supplierCompanyInfo">
   <div class="container">
-    <form action="/fofs/1/index.php/Home/Register/save_supplierCompanyInfo" method="post" enctype="multipart/form-data">
+    <form action="/fofs/1/index.php/Home/Register/save_laCompanyInfo" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -246,7 +246,7 @@
                         全称(中文)
                       </label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="institution_fullname_cn"   value="<?php echo ($data['institution_fullname_cn']); ?>"  />
+                        <input type="text" class="form-control" id="institution_fullname_cn"  name="institution_fullname_cn" value="<?php echo ($data['institution_fullname_cn']); ?>"  />
                       </div>
                     </div>
                     <!--全称(中文)-->
@@ -254,7 +254,7 @@
                     <div class="form-group clearfix">
                       <label for="institution_fullname_en" class="col-sm-3 control-label">全称(英文)</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="institution_fullname_en"   value="<?php echo ($data['institution_fullname_en']); ?>" />
+                        <input type="text" class="form-control" id="institution_fullname_en" name="institution_fullname_en"  value="<?php echo ($data['institution_fullname_en']); ?>" />
                       </div>
                     </div>
                     <!--全称(英文)-->
@@ -268,9 +268,9 @@
                     <!--公司logo-->
 
                     <div class="form-group clearfix">
-                      <label for="association_registration_time" class="col-sm-3 control-label">成立时间</label>
+                      <label for="founded_time" class="col-sm-3 control-label">成立时间</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="association_registration_time"   value="<?php echo ($data['association_registration_time']); ?>" />
+                        <input type="date" class="form-control" id="founded_time"   name="founded_time" value="<?php echo ($data['founded_time']); ?>" />
                       </div>
                     </div>
                     <!--成立时间-->
@@ -284,9 +284,9 @@
                     <!--机构简介-->
 
                     <div class="form-group clearfix">
-                      <label for="email" class="col-sm-3 control-label">服务地域</label>
+                      <label for="service_area" class="col-sm-3 control-label">服务地域</label>
                       <div class="col-sm-8">
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="service_area"></textarea>
                       </div>
                     </div>
                     <!--服务地域-->
@@ -322,25 +322,25 @@
                         联系人
                       </label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="contact_username"   value="<?php echo ($data['contact_username']); ?>"  />
+                        <input type="text" class="form-control" id="contact_username"   value="<?php echo ($data['contact_username']); ?>"  name="contact_username"/>
                       </div>
                     </div>
                     <!--联系人-->
 
                     <div class="form-group clearfix">
-                      <label for="contact_fax" class="col-sm-3 control-label">传真</label>
+                      <label for="contact_mobilephone" class="col-sm-3 control-label">手机</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="contact_fax"   value="<?php echo ($data['contact_fax']); ?>" />
+                        <input type="text" class="form-control" id="contact_mobilephone"   value="<?php echo ($data['contact_mobilephone']); ?>" name="contact_mobilephone"/>
                       </div>
                     </div>
-                    <!--传真-->
+                    <!--手机 -->
 
     
 
                     <div class="form-group clearfix">
-                      <label for="contact_phone" class="col-sm-3 control-label">电话</label>
+                      <label for="contact_telephone" class="col-sm-3 control-label">电话</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="contact_phone"   value="<?php echo ($data['contact_phone']); ?>" />
+                        <input type="text" class="form-control" id="contact_telephone"   value="<?php echo ($data['contact_telephone']); ?>" name="contact_telephone" />
                       </div>
                     </div>
                     <!--电话-->
@@ -350,23 +350,23 @@
                     <div class="form-group clearfix">
                       <label for="contact_email" class="col-sm-3 control-label">邮箱</label>
                       <div class="col-sm-8">
-                        <input type="email" class="form-control" id="contact_email"   value="<?php echo ($data['contact_email']); ?>" />
+                        <input type="email" class="form-control" id="contact_email"   value="<?php echo ($data['contact_email']); ?>" name="contact_email"/>
                       </div>
                     </div>
                     <!--邮箱-->
 
                     <div class="form-group clearfix">
-                      <label for="contact_institution_wechat" class="col-sm-3 control-label">机构微信</label>
+                      <label for="company_wechat" class="col-sm-3 control-label">机构微信</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="contact_institution_wechat"   value="<?php echo ($data['contact_institution_wechat']); ?>" />
+                        <input type="text" class="form-control" id="company_wechat"   value="<?php echo ($data['company_wechat']); ?>" name="company_wechat"/>
                       </div>
                     </div>
                     <!--机构微信-->
 
                     <div class="form-group clearfix">
-                      <label for="contact_institution_web" class="col-sm-3 control-label">机构网址</label>
+                      <label for="company_web" class="col-sm-3 control-label">机构网址</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="contact_institution_web"   value="<?php echo ($data['contact_institution_web']); ?>" />
+                        <input type="text" class="form-control" id="company_web"   value="<?php echo ($data['company_web']); ?>" name="company_web"/>
                       </div>
                     </div>
                     <!--机构网址-->
@@ -408,9 +408,6 @@
 
 <script src="/fofs/1/Public/assets_1/js/common.js"></script>
 <script src="/fofs/1/Public/assets_2/public/bootstrap/js/Chart.min.js"></script>
-<script src="/fofs/1/Public/assets_2/js/Chart.js"></script>
-<script src="/fofs/1/Public/assets_1/js/buyer_letter.js"></script>
-<script src="/fofs/1/Public/assets_1/js/supplier_letter.js"></script>
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>

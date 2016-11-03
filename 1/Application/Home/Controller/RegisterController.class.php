@@ -2594,12 +2594,161 @@ class RegisterController extends BaseController{
 
     //法务公司信息
     public function laCompanyInfo(){
-      $this->display();
+        $this->display();
+    }
+
+    //保存法务公司信息
+    public function save_laCompanyInfo(){
+        //电话与传真的区域代码为用户自行输入，非区域ID
+        $User=M('Legal_agency');
+        $data['institution_fullname_cn']=I('post.institution_fullname_cn');
+        $data['institution_fullname_en']=I('post.institution_fullname_en');
+        $data['institution_abstract']=I('post.institution_abstract');
+        $data['founded_time']=strtotime(I('post.founded_time'));
+        $data['service_area']=I('post.service_area');
+       
+        $data['contact_username']=I('post.contact_username');
+        $data['contact_telephone']=I('post.contact_telephone');
+        $data['contact_mobilephone']=I('post.contact_mobilephone');
+        $data['contact_email']=I('post.contact_email');
+
+        $data['company_wechat']=I('post.company_wechat');
+        $data['company_web']=I('post.company_web');
+       
+        $data['id']=session('user_id');
+        $data['reg_step']=3;
+
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     3145728 ;// 设置附件上传大小
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->rootPath  =     './Public/uploads/la_pic/'; // 设置附件上传根目录
+        $upload->savePath  =      ''; // 设置附件上传（子）目录
+        $upload->autoSub   =     false;    //不使用子目录
+        $upload->replace   =     true;      //覆盖文件
+
+        if(!file_exists($upload->rootPath))
+            $test1=mkdir('Public/uploads/la_pic', 0777 ,1);
+
+        if($User->create($data)){
+
+            $result=$User->save();
+            if($result){
+                /*上传头像*/
+                foreach($_FILES as $key =>$file){
+                     if($key=='institution_logo_img'){
+                         if(!empty($file['name'])) {
+                            $upload->saveName  =   $result.'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
+                             // 上传单个文件 
+                             $info   =   $upload->uploadOne($file);
+                             if(!$info) {// 上传错误提示错误信息
+                                $this->error($upload->getError());
+                             }else{// 上传成功 获取上传文件信息
+                                $User->where('id='.$data['id'])->setField('institution_logo_img',$info['savename']);
+                             }
+                         }
+                     }
+                }
+
+                $this->success('Success！保存成功，请继续管理团队信息',__APP__.'/Home/Register/membersInfo');
+            }
+            else{
+                $this->error($User->getError());
+            } 
+        }
+        else{
+            $this->error($User->getError());
+        }
     }
 
     //法务公司产品、服务信息
     public function laServiceInfo(){
+      $Server_product=M('Server_product');
+      $where['institution_type']=session('institution_type');
+      $where['institution_id']=session('user_id');
+      $services=$Server_product->where($where)->select();
+
+      $this->assign('services',$services);
+
       $this->display();
+    }
+
+    //添加la产品/服务，并继续添加
+    public function add_serviceInfo(){
+        $Server_product=M('Server_product');
+
+        $data['institution_type']=session('institution_type');
+        $data['institution_id']=session('user_id');
+        $data['name']=I('post.name');
+        $data['content']=I('post.content');
+        $data['price']=I('post.price');
+        $data['reg_time']=time();
+
+        
+        if($Server_product->create($data)){
+            //保存个人基本信息
+            $result=$Server_product->add();
+
+           
+            if($result){
+                $this->success('Success！保存成功，继续添加其它产品/服务');
+            }else{
+                $this->error($Server_product->getError());
+            }
+        }
+        else{
+            $this->error($Server_product->getError());
+        }
+    }
+
+    //保存la产品/服务，完成注册
+    public function save_serviceInfo(){
+        $Server_product=M('Server_product');
+
+        $data['institution_type']=session('institution_type');
+        $data['institution_id']=session('user_id');
+        $data['name']=I('post.name');
+        $data['content']=I('post.content');
+        $data['price']=I('post.price');
+        $data['reg_time']=time();
+
+        
+        if($Server_product->create($data)){
+            //保存个人基本信息
+            $result=$Server_product->add();
+
+           
+            if($result){
+                //设置账号为完成注册
+                switch (session('institution_type')) {
+                  case 4: 
+                    $User=M('Fa');
+                    break;
+                  
+                  case 5: 
+                    $User=M('Legal_agency');
+                    break;
+
+                  case 6: 
+                    $User=M('Financial_institution');
+                    break;
+
+                  case 7: 
+                    $User=M('Business_incubator');
+                    break;
+                }
+                $data=array();
+                $data['id']=session('user_id');
+                $data['reg_step']=5;
+                $data['state']=200;
+                $User->save($data);
+                $this->success('Success！保存成功，恭喜完成注册',__APP__.'/Home/Sa/individualProfile');
+            }else{
+                $this->error($Server_product->getError());
+            }
+        }
+        else{
+            $this->error($Server_product->getError());
+        }
     }
 
     //财务公司信息
@@ -2607,8 +2756,78 @@ class RegisterController extends BaseController{
       $this->display();
     }
 
+    //保存财务公司信息
+    public function save_fiCompanyInfo(){
+        //电话与传真的区域代码为用户自行输入，非区域ID
+        $User=M('Financial_institution');
+        $data['institution_fullname_cn']=I('post.institution_fullname_cn');
+        $data['institution_fullname_en']=I('post.institution_fullname_en');
+        $data['institution_abstract']=I('post.institution_abstract');
+        $data['founded_time']=strtotime(I('post.founded_time'));
+        $data['service_area']=I('post.service_area');
+       
+        $data['contact_username']=I('post.contact_username');
+        $data['contact_telephone']=I('post.contact_telephone');
+        $data['contact_mobilephone']=I('post.contact_mobilephone');
+        $data['contact_email']=I('post.contact_email');
+
+        $data['company_wechat']=I('post.company_wechat');
+        $data['company_web']=I('post.company_web');
+       
+        $data['id']=session('user_id');
+        $data['reg_step']=3;
+
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     3145728 ;// 设置附件上传大小
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->rootPath  =     './Public/uploads/fi_pic/'; // 设置附件上传根目录
+        $upload->savePath  =      ''; // 设置附件上传（子）目录
+        $upload->autoSub   =     false;    //不使用子目录
+        $upload->replace   =     true;      //覆盖文件
+
+        if(!file_exists($upload->rootPath))
+            $test1=mkdir('Public/uploads/fi_pic', 0777 ,1);
+
+        if($User->create($data)){
+
+            $result=$User->save();
+            if($result){
+                /*上传头像*/
+                foreach($_FILES as $key =>$file){
+                     if($key=='institution_logo_img'){
+                         if(!empty($file['name'])) {
+                            $upload->saveName  =   $result.'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
+                             // 上传单个文件 
+                             $info   =   $upload->uploadOne($file);
+                             if(!$info) {// 上传错误提示错误信息
+                                $this->error($upload->getError());
+                             }else{// 上传成功 获取上传文件信息
+                                $User->where('id='.$data['id'])->setField('institution_logo_img',$info['savename']);
+                             }
+                         }
+                     }
+                }
+
+                $this->success('Success！保存成功，请继续管理团队信息',__APP__.'/Home/Register/membersInfo');
+            }
+            else{
+                $this->error($User->getError());
+            } 
+        }
+        else{
+            $this->error($User->getError());
+        }
+    }
+
     //财务公司产品、服务信息
     public function fiServiceInfo(){
+      $Server_product=M('Server_product');
+      $where['institution_type']=session('institution_type');
+      $where['institution_id']=session('user_id');
+      $services=$Server_product->where($where)->select();
+
+      $this->assign('services',$services);
+
       $this->display();
     }
 
@@ -2617,8 +2836,78 @@ class RegisterController extends BaseController{
       $this->display();
     }
 
+    //保存众创空间信息
+    public function save_biCompanyInfo(){
+        //电话与传真的区域代码为用户自行输入，非区域ID
+        $User=M('Business_incubator');
+        $data['institution_fullname_cn']=I('post.institution_fullname_cn');
+        $data['institution_fullname_en']=I('post.institution_fullname_en');
+        $data['institution_abstract']=I('post.institution_abstract');
+        $data['founded_time']=strtotime(I('post.founded_time'));
+        $data['service_area']=I('post.service_area');
+       
+        $data['contact_username']=I('post.contact_username');
+        $data['contact_telephone']=I('post.contact_telephone');
+        $data['contact_mobilephone']=I('post.contact_mobilephone');
+        $data['contact_email']=I('post.contact_email');
+
+        $data['company_wechat']=I('post.company_wechat');
+        $data['company_web']=I('post.company_web');
+       
+        $data['id']=session('user_id');
+        $data['reg_step']=3;
+
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     3145728 ;// 设置附件上传大小
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->rootPath  =     './Public/uploads/bi_pic/'; // 设置附件上传根目录
+        $upload->savePath  =      ''; // 设置附件上传（子）目录
+        $upload->autoSub   =     false;    //不使用子目录
+        $upload->replace   =     true;      //覆盖文件
+
+        if(!file_exists($upload->rootPath))
+            $test1=mkdir('Public/uploads/bi_pic', 0777 ,1);
+
+        if($User->create($data)){
+
+            $result=$User->save();
+            if($result){
+                /*上传头像*/
+                foreach($_FILES as $key =>$file){
+                     if($key=='institution_logo_img'){
+                         if(!empty($file['name'])) {
+                            $upload->saveName  =   $result.'_'.substr(md5_file($file['tmp_name']),0,10);    //上传文件名
+                             // 上传单个文件 
+                             $info   =   $upload->uploadOne($file);
+                             if(!$info) {// 上传错误提示错误信息
+                                $this->error($upload->getError());
+                             }else{// 上传成功 获取上传文件信息
+                                $User->where('id='.$data['id'])->setField('institution_logo_img',$info['savename']);
+                             }
+                         }
+                     }
+                }
+
+                $this->success('Success！保存成功，请继续管理团队信息',__APP__.'/Home/Register/membersInfo');
+            }
+            else{
+                $this->error($User->getError());
+            } 
+        }
+        else{
+            $this->error($User->getError());
+        }
+    }
+
     //众创空间产品、服务信息
     public function biServiceInfo(){
+      $Server_product=M('Server_product');
+      $where['institution_type']=session('institution_type');
+      $where['institution_id']=session('user_id');
+      $services=$Server_product->where($where)->select();
+
+      $this->assign('services',$services);
+
       $this->display();
     }
 

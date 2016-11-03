@@ -1,0 +1,708 @@
+[ 2016-11-03T00:00:00+08:00 ] ::1 /fofs/1/index.php/Home/Register/save_membersInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000520s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000926s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003599s ]
+SQL: SHOW COLUMNS FROM `fofs_senior_executive` [ RunTime:0.0068s ]
+SQL: INSERT INTO `fofs_senior_executive` (`username`,`function`,`institution_type`,`institution_id`,`reg_time`) VALUES ('shijianfeng','恩恩','6','1','1478102400') [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_senior_executive` WHERE `institution_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `fofs_business_experience` [ RunTime:0.0049s ]
+SQL: INSERT INTO `fofs_business_experience` (`senior_executive_id`,`company_name`,`function`,`start_time`,`end_time`) VALUES ('47','北大','打电话','2014年12月','2013年12月') [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0063s ]
+SQL: UPDATE `fofs_financial_institution` SET `institution_type`='6',`reg_time`='1478102400',`reg_step`='4' WHERE `id` = 1 [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008268s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008409s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001035s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001194s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001137s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001225s ]
+
+[ 2016-11-03T00:00:01+08:00 ] ::1 /fofs/1/index.php/Home/Register/fiServiceInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000231s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001700s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002721s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008706s ]
+SQL: SHOW COLUMNS FROM `fofs_server_product` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `fofs_server_product` WHERE `institution_type` = 6 AND `institution_id` = 1  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000257s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000390s ]
+NOTIC: [8] Undefined variable: id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\92f4912f7f29b6cd7ac5abe5530f0352.php 第 375 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022850s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023030s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001048s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001151s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001533s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001668s ]
+
+[ 2016-11-03T00:00:41+08:00 ] ::1 /fofs/1/index.php/Home/Register/add_serviceInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001419s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004968s ]
+SQL: SHOW COLUMNS FROM `fofs_server_product` [ RunTime:0.0422s ]
+SQL: INSERT INTO `fofs_server_product` (`institution_type`,`institution_id`,`name`,`content`,`price`,`reg_time`) VALUES ('6','1','双人间','发给谁发给','2342','1478102441') [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000330s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012062s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012271s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002495s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002745s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004498s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004763s ]
+
+[ 2016-11-03T00:00:42+08:00 ] ::1 /fofs/1/index.php/Home/Register/fiServiceInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000863s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001320s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006533s ]
+SQL: SHOW COLUMNS FROM `fofs_server_product` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `fofs_server_product` WHERE `institution_type` = 6 AND `institution_id` = 1  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000373s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000540s ]
+NOTIC: [8] Undefined variable: id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\92f4912f7f29b6cd7ac5abe5530f0352.php 第 375 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025021s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025123s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001114s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001209s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003998s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004301s ]
+
+[ 2016-11-03T00:01:14+08:00 ] ::1 /fofs/1/index.php/Home/Register/save_serviceInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001047s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003018s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004205s ]
+SQL: SHOW COLUMNS FROM `fofs_server_product` [ RunTime:0.0054s ]
+SQL: INSERT INTO `fofs_server_product` (`institution_type`,`institution_id`,`name`,`content`,`price`,`reg_time`) VALUES ('6','1','施建锋','返回的啥地方','234','1478102474') [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0058s ]
+SQL: UPDATE `fofs_financial_institution` SET `reg_step`='5',`state`='200' WHERE `id` = 1 [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000126s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009058s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009150s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000765s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000833s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001146s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001233s ]
+
+[ 2016-11-03T00:01:16+08:00 ] ::1 /fofs/1/index.php/Home/Sa/individualProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000076s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001851s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002193s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005856s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008323s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0169s ]
+SQL: SELECT * FROM `fofs_financial_institution` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `fofs_senior_executive` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `fofs_senior_executive` WHERE `institution_type` = 6 AND `institution_id` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fofs_business_experience` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 46  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 47  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_server_product` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `fofs_server_product` WHERE `institution_type` = 6 AND `institution_id` = 1  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000360s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000479s ]
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\8a025e7e5f400958d62163f1badfaf80.php 第 296 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\8a025e7e5f400958d62163f1badfaf80.php 第 312 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\8a025e7e5f400958d62163f1badfaf80.php 第 313 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052435s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052580s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001220s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002055s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002252s ]
+
+[ 2016-11-03T00:01:49+08:00 ] ::1 /fofs/1/index.php/Home/Sa/modifyCompanyInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000681s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001220s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002940s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004411s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `fofs_financial_institution` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000543s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000734s ]
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\ffaff01d9de6918a1a6b53e8b20c8fda.php 第 296 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\ffaff01d9de6918a1a6b53e8b20c8fda.php 第 312 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\ffaff01d9de6918a1a6b53e8b20c8fda.php 第 313 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.102058s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.102236s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002105s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002292s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006667s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006974s ]
+
+[ 2016-11-03T00:02:25+08:00 ] ::1 /fofs/1/index.php/Home/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000843s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001080s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002794s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010084s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010175s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000878s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001125s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001198s ]
+
+[ 2016-11-03T00:02:26+08:00 ] ::1 /fofs/1/index.php/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002382s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.006212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008961s ]
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0172s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 1 ORDER BY id desc LIMIT 1,10   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 2 ORDER BY id desc LIMIT 10   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 3 ORDER BY id desc LIMIT 10   [ RunTime:0.0018s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 4 ORDER BY id desc LIMIT 10   [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000292s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000413s ]
+NOTIC: [8] Undefined variable: user_id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 49 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 247 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 264 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 281 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047732s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047967s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001178s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001288s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001648s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001802s ]
+
+[ 2016-11-03T00:03:12+08:00 ] ::1 /fofs/1/index.php/Home/Index/institution_login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000668s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001111s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002860s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004158s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0341s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `email` = '896776703@qq.com' LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000126s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009521s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009686s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000782s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000853s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001107s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001177s ]
+
+[ 2016-11-03T00:03:13+08:00 ] ::1 /fofs/1/index.php/Home/Register/personalInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002829s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.006042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009194s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000353s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000596s ]
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\d94b4cd6faef8eab9eeb2d2900db266c.php 第 313 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027930s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028062s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001214s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001344s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001823s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001994s ]
+
+[ 2016-11-03T00:04:00+08:00 ] ::1 /fofs/1/index.php/Home/Register/save_personalInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000713s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000933s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003834s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0065s ]
+SQL: UPDATE `fofs_business_incubator` SET `institution_abbr`='等哈等哈',`admin_name`='张小凡',`admin_function`='CEO',`admin_telephone`='54252341',`admin_mobilephone`='234234',`admin_email`='444443@qq.com',`admin_idcard`='555555',`reg_step`='2',`reg_time`='1478102640' WHERE `id` = 1 [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000127s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009445s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009529s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000706s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000857s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000925s ]
+
+[ 2016-11-03T00:04:01+08:00 ] ::1 /fofs/1/index.php/Home/Register/biCompanyInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000953s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001489s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005421s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000233s ]
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\b648083e92eabe09ab33366e74527189.php 第 249 行.
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\b648083e92eabe09ab33366e74527189.php 第 257 行.
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\b648083e92eabe09ab33366e74527189.php 第 273 行.
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\b648083e92eabe09ab33366e74527189.php 第 325 行.
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\b648083e92eabe09ab33366e74527189.php 第 333 行.
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\b648083e92eabe09ab33366e74527189.php 第 343 行.
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\b648083e92eabe09ab33366e74527189.php 第 353 行.
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\b648083e92eabe09ab33366e74527189.php 第 361 行.
+NOTIC: [8] Undefined variable: data D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\b648083e92eabe09ab33366e74527189.php 第 369 行.
+NOTIC: [8] Undefined variable: id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\b648083e92eabe09ab33366e74527189.php 第 385 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021132s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021242s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001293s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001393s ]
+
+[ 2016-11-03T00:04:51+08:00 ] ::1 /fofs/1/index.php/Home/Register/save_biCompanyInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001946s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007745s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0117s ]
+SQL: UPDATE `fofs_business_incubator` SET `institution_fullname_cn`='百度',`institution_fullname_en`='enlgish',`institution_abstract`='分公司分公司',`founded_time`='1478707200',`service_area`='发给谁发给',`contact_username`='打电话111',`contact_telephone`='3423423',`contact_mobilephone`='dfgsfgsfg',`contact_email`='896776703@qq.com',`company_wechat`='sfgsfgsg',`company_web`='的风格社会公德',`reg_step`='3' WHERE `id` = 1 [ RunTime:0.0016s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\phpStudy\WWW\fofs\1\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: UPDATE `fofs_business_incubator` SET `institution_logo_img`='1_0f86098253.jpg' WHERE ( id=1 ) [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000298s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019438s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019685s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002097s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002295s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002286s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002470s ]
+
+[ 2016-11-03T00:04:53+08:00 ] ::1 /fofs/1/index.php/Home/Register/membersInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000821s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001923s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003117s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005291s ]
+SQL: SHOW COLUMNS FROM `fofs_senior_executive` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `fofs_senior_executive` WHERE `institution_type` = 7 AND `institution_id` = 1  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `fofs_business_experience` [ RunTime:0.0051s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000216s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017521s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017597s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000619s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001121s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001224s ]
+
+[ 2016-11-03T00:06:16+08:00 ] ::1 /fofs/1/index.php/Home/Register/add_membersInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000967s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003620s ]
+SQL: SHOW COLUMNS FROM `fofs_senior_executive` [ RunTime:0.0058s ]
+SQL: INSERT INTO `fofs_senior_executive` (`username`,`function`,`institution_type`,`institution_id`,`reg_time`) VALUES ('18811593392','恩恩','7','1','1478102776') [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_senior_executive` WHERE `institution_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `fofs_business_experience` [ RunTime:0.0050s ]
+SQL: INSERT INTO `fofs_business_experience` (`senior_executive_id`,`company_name`,`function`,`start_time`,`end_time`) VALUES ('48','北邮','助理研究员','2014年12月','2013年12月'),('48','北大','助理教授','2014年12月','2013年12月') [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008989s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009081s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000849s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001005s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001072s ]
+
+[ 2016-11-03T00:06:18+08:00 ] ::1 /fofs/1/index.php/Home/Register/membersInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000893s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001290s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005016s ]
+SQL: SHOW COLUMNS FROM `fofs_senior_executive` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `fofs_senior_executive` WHERE `institution_type` = 7 AND `institution_id` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fofs_business_experience` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 48  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000452s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000638s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030352s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030530s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001348s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001464s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001281s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001393s ]
+
+[ 2016-11-03T00:06:52+08:00 ] ::1 /fofs/1/index.php/Home/Register/save_membersInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001232s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002705s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004106s ]
+SQL: SHOW COLUMNS FROM `fofs_senior_executive` [ RunTime:0.0052s ]
+SQL: INSERT INTO `fofs_senior_executive` (`username`,`function`,`institution_type`,`institution_id`,`reg_time`) VALUES ('shijianfeng','恩恩dfa','7','1','1478102812') [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_senior_executive` WHERE `institution_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `fofs_business_experience` [ RunTime:0.0047s ]
+SQL: INSERT INTO `fofs_business_experience` (`senior_executive_id`,`company_name`,`function`,`start_time`,`end_time`) VALUES ('49','北邮','打电话','2012年12月','2015年12月') [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0059s ]
+SQL: UPDATE `fofs_business_incubator` SET `institution_type`='7',`reg_time`='1478102812',`reg_step`='4' WHERE `id` = 1 [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009023s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009113s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000816s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001007s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001079s ]
+
+[ 2016-11-03T00:06:53+08:00 ] ::1 /fofs/1/index.php/Home/Register/biServiceInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001760s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001971s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007688s ]
+SQL: SHOW COLUMNS FROM `fofs_server_product` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `fofs_server_product` WHERE `institution_type` = 7 AND `institution_id` = 1  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000357s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000525s ]
+NOTIC: [8] Undefined variable: id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\9c6631cb41a79d6b7a4e5433473aa18d.php 第 375 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048711s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049040s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001484s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001632s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002837s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003065s ]
+
+[ 2016-11-03T00:07:22+08:00 ] ::1 /fofs/1/index.php/Home/Register/add_serviceInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000923s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000823s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002153s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003086s ]
+SQL: SHOW COLUMNS FROM `fofs_server_product` [ RunTime:0.0046s ]
+SQL: INSERT INTO `fofs_server_product` (`institution_type`,`institution_id`,`name`,`content`,`price`,`reg_time`) VALUES ('7','1','双人间','打算发电和','234','1478102842') [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007220s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007322s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000745s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000802s ]
+
+[ 2016-11-03T00:07:23+08:00 ] ::1 /fofs/1/index.php/Home/Register/biServiceInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000918s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001223s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005152s ]
+SQL: SHOW COLUMNS FROM `fofs_server_product` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `fofs_server_product` WHERE `institution_type` = 7 AND `institution_id` = 1  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000217s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000330s ]
+NOTIC: [8] Undefined variable: id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\9c6631cb41a79d6b7a4e5433473aa18d.php 第 375 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015770s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015869s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000746s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000839s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001222s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001355s ]
+
+[ 2016-11-03T00:07:55+08:00 ] ::1 /fofs/1/index.php/Home/Register/save_serviceInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000738s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001934s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002782s ]
+SQL: SHOW COLUMNS FROM `fofs_server_product` [ RunTime:0.0056s ]
+SQL: INSERT INTO `fofs_server_product` (`institution_type`,`institution_id`,`name`,`content`,`price`,`reg_time`) VALUES ('7','1','施建锋','打电话','345','1478102875') [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0054s ]
+SQL: UPDATE `fofs_business_incubator` SET `reg_step`='5',`state`='200' WHERE `id` = 1 [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007595s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007678s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000763s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000832s ]
+
+[ 2016-11-03T00:07:56+08:00 ] ::1 /fofs/1/index.php/Home/Sa/individualProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000747s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001169s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004640s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_senior_executive` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `fofs_senior_executive` WHERE `institution_type` = 7 AND `institution_id` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fofs_business_experience` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 48  [ RunTime:0.0009s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 49  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `fofs_server_product` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `fofs_server_product` WHERE `institution_type` = 7 AND `institution_id` = 1  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000247s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000325s ]
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\8a025e7e5f400958d62163f1badfaf80.php 第 296 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\8a025e7e5f400958d62163f1badfaf80.php 第 312 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\8a025e7e5f400958d62163f1badfaf80.php 第 313 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032994s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033081s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000698s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001081s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001206s ]
+
+[ 2016-11-03T00:08:50+08:00 ] ::1 /fofs/1/index.php/Home/Sa/allCases.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000914s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003711s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `fofs_server_product` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `fofs_server_product` WHERE `institution_type` = 7 AND `institution_id` = 1  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000300s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000428s ]
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\1d2eb3b5859ff1df2bb11df3669476ca.php 第 296 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\1d2eb3b5859ff1df2bb11df3669476ca.php 第 312 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\1d2eb3b5859ff1df2bb11df3669476ca.php 第 313 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.131543s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.131640s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000986s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001969s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002131s ]
+
+[ 2016-11-03T00:09:21+08:00 ] ::1 /fofs/1/index.php/Home/Sa/modifyCase.html?id=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000920s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002971s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004058s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `fofs_server_product` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `fofs_server_product` WHERE `institution_type` = 7 AND `institution_id` = 1 AND `id` = 9  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000489s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000666s ]
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\1a2ae16e9361b05ae8b11cbd456e9597.php 第 296 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\1a2ae16e9361b05ae8b11cbd456e9597.php 第 312 行.
+NOTIC: [8] Undefined variable: amount D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\1a2ae16e9361b05ae8b11cbd456e9597.php 第 313 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.087142s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.087236s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000877s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000962s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002013s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002180s ]
+
+[ 2016-11-03T08:01:45+08:00 ] ::1 /fofs/1/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001734s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002672s ]
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 1 ORDER BY id desc LIMIT 1,10   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 2 ORDER BY id desc LIMIT 10   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 3 ORDER BY id desc LIMIT 10   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 4 ORDER BY id desc LIMIT 10   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000265s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000338s ]
+NOTIC: [8] Undefined variable: user_id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 49 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 247 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 264 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 281 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024833s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024901s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000763s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000852s ]
+
+[ 2016-11-03T08:01:46+08:00 ] ::1 /fofs/1/index.php?l=zh-cn
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001937s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002812s ]
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 1 ORDER BY id desc LIMIT 1,10   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 2 ORDER BY id desc LIMIT 10   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 3 ORDER BY id desc LIMIT 10   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 4 ORDER BY id desc LIMIT 10   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000246s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000370s ]
+NOTIC: [8] Undefined variable: user_id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 49 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 247 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 264 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 281 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024178s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000934s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001016s ]
+

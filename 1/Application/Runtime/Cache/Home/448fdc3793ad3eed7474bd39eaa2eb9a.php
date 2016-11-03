@@ -330,8 +330,7 @@
                     <div class="panel panel-default">
                       <div class="panel-body">
                         <!--已有服务产品-->
-                        
-                            <div class="repeat">
+                        <?php if($user['institution_type'] == 4): ?><div class="repeat">
                               <div class="row" style="margin-top:10px;">
                                 
                                   <div>
@@ -447,7 +446,51 @@
                                 </div>  
                               
                             </div>
-                       
+                       <?php else: ?>
+                            <div class="repeat">
+                              <div class="row" style="margin-top:10px;">
+                                
+                                  <div>
+                                      <div class="col-sm-2">
+                                         <span class="glyphicon glyphicon-tree-deciduous" style="color:black;"></span>名称
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="name" name="name"  />                            
+                                      </div>
+
+                                  </div>
+
+                              </div>
+                              <div class="row" style="margin-top:10px;">
+                                
+                                  <div>
+                                      <div class="col-sm-2">
+                                        详细内容
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <textarea class="form-control" id="content" name="content" ></textarea>
+                                      </div>
+
+                                  </div>
+
+                              </div>
+                              <div class="row borderBottom" style="margin-top:10px;">
+                                
+                                  <div>
+                                      <div class="col-sm-2">
+                                        价格(元)
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <input type="number" class="form-control" id="price" name="price"  />                            
+                                      </div>
+
+                                  </div>
+
+                              </div>
+                              
+                              
+                              
+                            </div><?php endif; ?>
 
                       </div>
                     </div>
@@ -486,9 +529,6 @@
 
 <script src="/fofs/1/Public/assets_1/js/common.js"></script>
 <script src="/fofs/1/Public/assets_2/public/bootstrap/js/Chart.min.js"></script>
-<script src="/fofs/1/Public/assets_2/js/Chart.js"></script>
-<script src="/fofs/1/Public/assets_1/js/buyer_letter.js"></script>
-<script src="/fofs/1/Public/assets_1/js/supplier_letter.js"></script>
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>

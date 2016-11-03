@@ -20,124 +20,172 @@
                     <div class="panel panel-default">
                       <div class="panel-body">
                         <!--已有服务产品-->
-                        <foreach name="products" item="vo">
-                            <div class="repeat">
-                              <div class="row" style="margin-top:10px;">
-                                
-                                  <div>
-                                      <div class="col-sm-3 text_right">
-                                        <span class="glyphicon glyphicon-tree-deciduous" style="color:black;"></span>({$key+1})融资公司
+                        <if condition="$user['institution_type'] eq 4">
+                            <foreach name="products" item="vo">
+                                <div class="repeat">
+                                  <div class="row" style="margin-top:10px;">
+                                    
+                                      <div>
+                                          <div class="col-sm-3 text_right">
+                                            <span class="glyphicon glyphicon-tree-deciduous" style="color:black;"></span>({$key+1})融资公司
+                                          </div>
+                                          <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="invested_company" name="invested_company"  value="{$vo['invested_company']}"   />
+                                            <input type="hidden" class="form-control"  name="id"  value="{$vo['id']}"   />                            
+                                          </div>
+                                          
                                       </div>
-                                      <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="invested_company" name="invested_company"  value="{$vo['invested_company']}"   />
-                                        <input type="hidden" class="form-control"  name="id"  value="{$vo['id']}"   />                            
+
+                                  </div>
+                                  <div class="row" style="margin-top:10px;">
+                                    
+                                      <div>
+                                          <div class="col-sm-3 text_right">
+                                            投资人
+                                          </div>
+                                          <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="investor" name="investor"  value="{$vo['investor']}"  />
+                                          </div>
+
                                       </div>
+
+                                  </div>
+                                  <div class="row" style="margin-top:10px;">
                                       
+                                      <div>
+                                          <div class="col-sm-3 text_right">
+                                            币种
+                                          </div>
+                                          <div class="col-sm-4">
+                                            <select class="form-control" id="currency_type_id" name="currency_type_id">
+                                            
+                                              <option value='0' <if condition="$vo['currency_type_id'] eq 0">selected = "selected" </if> >人民币RMB</option>
+                                              <option value='1' <if condition="$vo['currency_type_id'] eq 1">selected = "selected" </if> >美元USD</option>
+                                              <option value='2' <if condition="$vo['currency_type_id'] eq 2">selected = "selected" </if> >日元JPY</option>
+                                              <option value='3' <if condition="$vo['currency_type_id'] eq 3">selected = "selected" </if> >欧元EUR</option>
+                                              <option value='4' <if condition="$vo['currency_type_id'] eq 4">selected = "selected" </if> >英镑GBP</option>
+                                              <option value='5' <if condition="$vo['currency_type_id'] eq 5">selected = "selected" </if> >德国马克DEM</option>
+                                              <option value='6' <if condition="$vo['currency_type_id'] eq 6">selected = "selected" </if> >瑞士法郎CHF</option>
+                                              <option value='7' <if condition="$vo['currency_type_id'] eq 7">selected = "selected" </if> >法国法郎FRF</option>
+                                              <option value='8' <if condition="$vo['currency_type_id'] eq 8">selected = "selected" </if> >加拿大元CAD</option>
+                                              <option value='9' <if condition="$vo['currency_type_id'] eq 9">selected = "selected" </if> >澳大利亚元AUD</option>
+                                              <option value='10' <if condition="$vo['currency_type_id'] eq 10">selected = "selected" </if> >港币HKD</option>
+                                              <option value='11' <if condition="$vo['currency_type_id'] eq 11">selected = "selected" </if> >俄罗斯卢布SUR</option>
+                                              <option value='12' <if condition="$vo['currency_type_id'] eq 12">selected = "selected" </if> >新加坡元SGD</option>
+                                              <option value='13' <if condition="$vo['currency_type_id'] eq 13">selected = "selected" </if> >韩国元KRW</option>
+                                              <option value='14' <if condition="$vo['currency_type_id'] eq 14">selected = "selected" </if> >泰铢THB</option>
+                                              <option value='15' <if condition="$vo['currency_type_id'] eq 15">selected = "selected" </if> >奥地利先令ATS</option>
+                                              <option value='16' <if condition="$vo['currency_type_id'] eq 16">selected = "selected" </if> >芬兰马克FIM</option>
+                                              <option value='17' <if condition="$vo['currency_type_id'] eq 17">selected = "selected" </if> >比利时法郎BEF</option>
+                                              <option value='18' <if condition="$vo['currency_type_id'] eq 18">selected = "selected" </if> >爱尔兰镑IEP</option>
+                                              <option value='19' <if condition="$vo['currency_type_id'] eq 19">selected = "selected" </if> >意大利里拉ITL</option>
+                                              <option value='20' <if condition="$vo['currency_type_id'] eq 20">selected = "selected" </if> >卢森堡法郎LUF</option>
+                                              <option value='21' <if condition="$vo['currency_type_id'] eq 21">selected = "selected" </if> >荷兰盾NLG</option>
+                                              <option value='22' <if condition="$vo['currency_type_id'] eq 22">selected = "selected" </if> >葡萄牙埃斯库多PTE</option>
+                                              <option value='23' <if condition="$vo['currency_type_id'] eq 23">selected = "selected" </if> >西班牙比塞塔ESP</option>
+                                              <option value='24' <if condition="$vo['currency_type_id'] eq 24">selected = "selected" </if> >印尼盾IDR</option>
+                                              <option value='25' <if condition="$vo['currency_type_id'] eq 25">selected = "selected" </if> >马来西亚林吉特MYR</option>
+                                              <option value='26' <if condition="$vo['currency_type_id'] eq 26">selected = "selected" </if> >新西兰元NZD</option>
+                                              <option value='27' <if condition="$vo['currency_type_id'] eq 27">selected = "selected" </if> >菲律宾比索PHP</option>
+
+                                          
+
+                                            </select>
+                        
+                                          </div>
+
+                                      </div>
+
                                   </div>
+                                  <div class="row" style="margin-top:10px;">
+                                    
+                                      <div>
+                                          <div class="col-sm-3 text_right">
+                                            投资额度
+                                          </div>
+                                          <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="investment_quota" name="investment_quota"  value="{$vo['investment_quota']}"  />                            
+                                          </div>
 
-                              </div>
-                              <div class="row" style="margin-top:10px;">
-                                
-                                  <div>
-                                      <div class="col-sm-3 text_right">
-                                        投资人
-                                      </div>
-                                      <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="investor" name="investor"  value="{$vo['investor']}"  />
                                       </div>
 
                                   </div>
+                                  <div class="row" style="margin-top:10px;">
+                                    
+                                      <div>
+                                          <div class="col-sm-3 text_right">
+                                            投资轮次
+                                          </div>
+                                          <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="investment_round" name="investment_round"  value="{$vo['investment_round']}"  /> 
+                                          </div>
 
-                              </div>
-                              <div class="row" style="margin-top:10px;">
-                                  
-                                  <div>
-                                      <div class="col-sm-3 text_right">
-                                        币种
                                       </div>
-                                      <div class="col-sm-4">
-                                        <select class="form-control" id="currency_type_id" name="currency_type_id">
-                                        
-                                          <option value='0' <if condition="$vo['currency_type_id'] eq 0">selected = "selected" </if> >人民币RMB</option>
-                                          <option value='1' <if condition="$vo['currency_type_id'] eq 1">selected = "selected" </if> >美元USD</option>
-                                          <option value='2' <if condition="$vo['currency_type_id'] eq 2">selected = "selected" </if> >日元JPY</option>
-                                          <option value='3' <if condition="$vo['currency_type_id'] eq 3">selected = "selected" </if> >欧元EUR</option>
-                                          <option value='4' <if condition="$vo['currency_type_id'] eq 4">selected = "selected" </if> >英镑GBP</option>
-                                          <option value='5' <if condition="$vo['currency_type_id'] eq 5">selected = "selected" </if> >德国马克DEM</option>
-                                          <option value='6' <if condition="$vo['currency_type_id'] eq 6">selected = "selected" </if> >瑞士法郎CHF</option>
-                                          <option value='7' <if condition="$vo['currency_type_id'] eq 7">selected = "selected" </if> >法国法郎FRF</option>
-                                          <option value='8' <if condition="$vo['currency_type_id'] eq 8">selected = "selected" </if> >加拿大元CAD</option>
-                                          <option value='9' <if condition="$vo['currency_type_id'] eq 9">selected = "selected" </if> >澳大利亚元AUD</option>
-                                          <option value='10' <if condition="$vo['currency_type_id'] eq 10">selected = "selected" </if> >港币HKD</option>
-                                          <option value='11' <if condition="$vo['currency_type_id'] eq 11">selected = "selected" </if> >俄罗斯卢布SUR</option>
-                                          <option value='12' <if condition="$vo['currency_type_id'] eq 12">selected = "selected" </if> >新加坡元SGD</option>
-                                          <option value='13' <if condition="$vo['currency_type_id'] eq 13">selected = "selected" </if> >韩国元KRW</option>
-                                          <option value='14' <if condition="$vo['currency_type_id'] eq 14">selected = "selected" </if> >泰铢THB</option>
-                                          <option value='15' <if condition="$vo['currency_type_id'] eq 15">selected = "selected" </if> >奥地利先令ATS</option>
-                                          <option value='16' <if condition="$vo['currency_type_id'] eq 16">selected = "selected" </if> >芬兰马克FIM</option>
-                                          <option value='17' <if condition="$vo['currency_type_id'] eq 17">selected = "selected" </if> >比利时法郎BEF</option>
-                                          <option value='18' <if condition="$vo['currency_type_id'] eq 18">selected = "selected" </if> >爱尔兰镑IEP</option>
-                                          <option value='19' <if condition="$vo['currency_type_id'] eq 19">selected = "selected" </if> >意大利里拉ITL</option>
-                                          <option value='20' <if condition="$vo['currency_type_id'] eq 20">selected = "selected" </if> >卢森堡法郎LUF</option>
-                                          <option value='21' <if condition="$vo['currency_type_id'] eq 21">selected = "selected" </if> >荷兰盾NLG</option>
-                                          <option value='22' <if condition="$vo['currency_type_id'] eq 22">selected = "selected" </if> >葡萄牙埃斯库多PTE</option>
-                                          <option value='23' <if condition="$vo['currency_type_id'] eq 23">selected = "selected" </if> >西班牙比塞塔ESP</option>
-                                          <option value='24' <if condition="$vo['currency_type_id'] eq 24">selected = "selected" </if> >印尼盾IDR</option>
-                                          <option value='25' <if condition="$vo['currency_type_id'] eq 25">selected = "selected" </if> >马来西亚林吉特MYR</option>
-                                          <option value='26' <if condition="$vo['currency_type_id'] eq 26">selected = "selected" </if> >新西兰元NZD</option>
-                                          <option value='27' <if condition="$vo['currency_type_id'] eq 27">selected = "selected" </if> >菲律宾比索PHP</option>
 
+                                  </div>
+                                  <div class="row borderBottom" style="margin-top:10px;">
                                       
+                                        <div>
+                                            <div class="col-sm-3 text_right">
+                                              投资时间
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <input type="date" class="form-control" id="founded_time" name="founded_time"  value="<php> echo date('Y-m-d',$vo['founded_time']);</php>"  /> 
+                                            </div>
 
-                                        </select>
-                    
-                                      </div>
+                                        </div>
 
-                                  </div>
-
-                              </div>
-                              <div class="row" style="margin-top:10px;">
-                                
-                                  <div>
-                                      <div class="col-sm-3 text_right">
-                                        投资额度
-                                      </div>
-                                      <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="investment_quota" name="investment_quota"  value="{$vo['investment_quota']}"  />                            
-                                      </div>
-
-                                  </div>
-
-                              </div>
-                              <div class="row" style="margin-top:10px;">
-                                
-                                  <div>
-                                      <div class="col-sm-3 text_right">
-                                        投资轮次
-                                      </div>
-                                      <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="investment_round" name="investment_round"  value="{$vo['investment_round']}"  /> 
-                                      </div>
-
-                                  </div>
-
-                              </div>
-                              <div class="row borderBottom" style="margin-top:10px;">
+                                    </div>  
                                   
-                                    <div>
-                                        <div class="col-sm-3 text_right">
-                                          投资时间
-                                        </div>
-                                        <div class="col-sm-4">
-                                          <input type="date" class="form-control" id="founded_time" name="founded_time"  value="<php> echo date('Y-m-d',$vo['founded_time']);</php>"  /> 
-                                        </div>
+                                </div>
+                            </foreach>
+                        <else/>
+                            <foreach name="products" item="vo">
+                                <div class="repeat">
+                                  <div class="row" style="margin-top:10px;">
+                                    
+                                      <div>
+                                          <div class="col-sm-3 text_right">
+                                            <span class="glyphicon glyphicon-tree-deciduous" style="color:black;"></span>({$key+1})名称
+                                          </div>
+                                          <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="name" name="name"  value="{$vo['name']}"  />
+                                            <input type="hidden" class="form-control"  name="id"  value="{$vo['id']}"   />                            
+                                          </div>
+                                      </div>
 
-                                    </div>
+                                  </div>
+                                  <div class="row" style="margin-top:10px;">
+                                    
+                                      <div>
+                                          <div class="col-sm-3 text_right">
+                                            内容
+                                          </div>
+                                          <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="content" name="content"  value="{$vo['content']}" />
+                                          </div>
 
-                                </div>  
-                              
-                            </div>
-                        </foreach>
+                                      </div>
+
+                                  </div>
+
+                                  <div class="row" style="margin-top:10px;">
+                                    
+                                      <div>
+                                          <div class="col-sm-3 text_right">
+                                            价格
+                                          </div>
+                                          <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="price" name="price"  value="{$vo['price']}" />                            
+                                          </div>
+
+                                      </div>
+
+                                  </div>
+                                </div>
+                            </foreach>
+
+                        </if>
 
                       </div>
                     </div>

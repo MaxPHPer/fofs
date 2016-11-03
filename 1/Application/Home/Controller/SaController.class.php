@@ -22,17 +22,17 @@ class SaController extends BaseController {
           
           case 5: 
             $User=M('Legal_agency');
-            $img_url='legal_agency_pic/';
+            $img_url='la_pic/';
             break;
 
           case 6: 
             $User=M('Financial_institution');
-            $img_url='financial_institution_pic/';
+            $img_url='fi_pic/';
             break;
 
           case 7: 
             $User=M('Business_incubator');
-            $img_url='business_incubator_pic/';
+            $img_url='bi_pic/';
             break;
         }
         
@@ -311,35 +311,54 @@ class SaController extends BaseController {
 
     //执行添加新项目
     public function do_addCase(){
-         //确定用户类型
+        //确定用户类型
         switch (session('institution_type')) {
           case 4: 
             $Server_product=M('Fa_successful_case');
+            $data['institution_type']=session('institution_type');
+            $data['institution_id']=session('user_id');
+            $data['invested_company']=I('post.invested_company');
+            $data['investor']=I('post.investor');
+            $data['currency_type_id']=I('post.currency_type_id');
+            $data['investment_quota']=I('post.investment_quota');
+            $data['investment_round']=I('post.investment_round');
+            $data['founded_time']=strtotime(I('post.founded_time'));
+            $data['reg_time']=time();
             break;
           
           case 5: 
             $Server_product=M('Server_product');
+            $data['institution_type']=session('institution_type');
+            $data['institution_id']=session('user_id');
+            $data['name']=I('post.name');
+            $data['content']=I('post.content');
+            $data['price']=I('post.price');
+            $data['reg_time']=time();
             break;
 
           case 6: 
             $Server_product=M('Server_product');
+            $data['institution_type']=session('institution_type');
+            $data['institution_id']=session('user_id');
+            $data['name']=I('post.name');
+            $data['content']=I('post.content');
+            $data['price']=I('post.price');
+            $data['reg_time']=time();
             break;
 
           case 7: 
             $Server_product=M('Server_product');
+            $data['institution_type']=session('institution_type');
+            $data['institution_id']=session('user_id');
+            $data['name']=I('post.name');
+            $data['content']=I('post.content');
+            $data['price']=I('post.price');
+            $data['reg_time']=time();
             break;
         }
 
 
-        $data['institution_type']=session('institution_type');
-        $data['institution_id']=session('user_id');
-        $data['invested_company']=I('post.invested_company');
-        $data['investor']=I('post.investor');
-        $data['currency_type_id']=I('post.currency_type_id');
-        $data['investment_quota']=I('post.investment_quota');
-        $data['investment_round']=I('post.investment_round');
-        $data['founded_time']=strtotime(I('post.founded_time'));
-        $data['reg_time']=time();
+
 
         if($Server_product->create($data)){
             //保存个人基本信息
@@ -397,30 +416,40 @@ class SaController extends BaseController {
         switch (session('institution_type')) {
           case 4: 
             $Server_product=M('Fa_successful_case');
+            $data['id']=I('post.id');
+            $data['invested_company']=I('post.invested_company');
+            $data['investor']=I('post.investor');
+            $data['currency_type_id']=I('post.currency_type_id');
+            $data['investment_quota']=I('post.investment_quota');
+            $data['investment_round']=I('post.investment_round');
+            $data['founded_time']=strtotime(I('post.founded_time'));
             break;
           
           case 5: 
             $Server_product=M('Server_product');
+            $data['id']=I('post.id');
+            $data['name']=I('post.name');
+            $data['content']=I('post.content');
+            $data['price']=I('post.price');
+
             break;
 
           case 6: 
             $Server_product=M('Server_product');
+            $data['id']=I('post.id');
+            $data['name']=I('post.name');
+            $data['content']=I('post.content');
+            $data['price']=I('post.price');
             break;
 
           case 7: 
             $Server_product=M('Server_product');
+            $data['id']=I('post.id');
+            $data['name']=I('post.name');
+            $data['content']=I('post.content');
+            $data['price']=I('post.price');
             break;
         }
-
-        $data['id']=I('post.id');
-
-        $data['invested_company']=I('post.invested_company');
-        $data['investor']=I('post.investor');
-        $data['currency_type_id']=I('post.currency_type_id');
-        $data['investment_quota']=I('post.investment_quota');
-        $data['investment_round']=I('post.investment_round');
-        $data['founded_time']=strtotime(I('post.founded_time'));
-
 
         if($Server_product->create($data)){
             //保存个人基本信息
