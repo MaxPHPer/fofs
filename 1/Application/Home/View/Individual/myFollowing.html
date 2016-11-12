@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4 main-content">
-              <include file = "individual:individualBar"/>
+              <include file = "Lp:individualBar"/>
           </div>
           <div class="col-md-8">
             <div class="well">
@@ -26,74 +26,27 @@
                         <div role="tabpanel" class="tab-pane active" id="home">
                               <div class="panel-body">
                                 <div class="list-group">
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          1
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                         2
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          3
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          4
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
+                                    <foreach name="personal_followings" item="vo">
+                                        <div class="list-group-item row form-group">
+                                            <div class="col-sm-2 margin_top_13">
+                                                {$key+1}
+                                            </div>
+                                       
+                                            <div class="col-sm-3">
+                                              <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/{$vo['head_portrait_url']}" alt="头像" height="50" width="50"/>
+                                            </div>
+                                            <div class="col-sm-2 margin_top_13">
+                                                 <a href="#" >{$vo['nickname']}</a>
+                                            </div>
+                                            <div class="col-sm-3 text_right margin_top_13">
+                                              <php>echo date('Y-m-d',$vo['time']);</php>关注
+                                            </div>
+                                            <div class="col-sm-2 text_right margin_top_13">
+                                                <span class="glyphicon glyphicon-envelope"></span><a href="{:U('Home/Lp/sendLetter')}?user_id={$vo['host_id']}&institution_type={$vo['host_type']}&username={$vo['nickname']}">发信</a>
+                                            </div>
+                                    
+                                        </div>
+                                    </foreach>
 
                                   
                                 
@@ -104,39 +57,27 @@
 
                               <div class="panel-body">
                                 <div class="list-group">
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                          1
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >歌斐资产</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
-
-                                  <div class="list-group-item row form-group">
-                                      <div class="col-sm-2 margin_top_13">
-                                         2
-                                      </div>
-                                 
-                                      <div class="col-sm-3">
-                                        <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >紫荆资本</a>
-                                      </div>
-                                      <div class="col-sm-5 text_right margin_top_13">
-                                          2016年10月7日关注
-                                      </div>
-                              
-                                  </div>
+                                    <foreach name="institution_followings" item="vo">
+                                        <div class="list-group-item row form-group">
+                                            <div class="col-sm-2 margin_top_13">
+                                                {$key+1}
+                                            </div>
+                                       
+                                            <div class="col-sm-3">
+                                              <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/{$vo['institution_logo_img']}" alt="头像" height="50" width="50"/>
+                                            </div>
+                                            <div class="col-sm-2 margin_top_13">
+                                                 <a href="#" >{$vo['institution_abbr']}</a>
+                                            </div>
+                                            <div class="col-sm-3 text_right margin_top_13">
+                                              <php>echo date('Y-m-d',$vo['time']);</php>关注
+                                            </div>
+                                            <div class="col-sm-2 text_right margin_top_13">
+                                                <span class="glyphicon glyphicon-envelope"></span><a href="{:U('Home/Lp/sendLetter')}?user_id={$vo['host_id']}&institution_type={$vo['host_type']}&username={$vo['institution_abbr']}">发信</a>
+                                            </div>
+                                    
+                                        </div>
+                                    </foreach>
 
                                   
                                 
