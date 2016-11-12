@@ -19,205 +19,124 @@
                       <div class='col-md-12' >
                           <!-- Nav tabs -->
                           <ul class="nav nav-tabs" role="tablist" style="padding-left:15px; padding-right: 15px;">
-                            <li role="presentation" class="active"><a href="#all" role="tab" data-toggle="tab">所有</a></li>
-                            <li role="presentation"><a href="#home" role="tab" data-toggle="tab">文章</a></li>
-                            <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">机构</a></li>
-                            <li role="presentation"><a href="#users" role="tab" data-toggle="tab">用户</a></li>
+                            <li role="presentation" class="<php>if($search_type==1) echo 'active';</php>"><a href="{:U('Home/Search/search?search_type=1')}" >所有</a></li>
+                            <li role="presentation" class="<php>if($search_type==2) echo 'active';</php>"><a href="{:U('Home/Search/search?search_type=2')}" >文章</a></li>
+                            <li role="presentation" class="<php>if($search_type==3) echo 'active';</php>"><a href="{:U('Home/Search/search?search_type=3')}" >机构</a></li>
+                            <li role="presentation" class="<php>if($search_type==4) echo 'active';</php>"><a href="{:U('Home/Search/search?search_type=4')}" >用户</a></li>
                           </ul>
 
                           <!-- Tab panes -->
                           <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="all">
+                            <div role="tabpanel" class="tab-pane <php>if($search_type==1) echo 'active';</php>" id="all">
                                   <div class="panel-body">
                                     <div class="list-group">
-                                      <div class="list-group-item row form-group">
-                                          <div class="col-sm-2 margin_top_13">
-                                              1
+                                        <foreach name="articles" item="vo">
+                                          <div class="list-group-item row form-group">
+                                            <div class="col-sm-2">
+                                                 <span class="glyphicon glyphicon-file"></span>文章-{$key+1}
+                                            </div>
+                                            <div class='col-md-6'>
+                                                {$vo['title']}
+                                            </div> 
+                                            <div class='col-md-4 text_right'>
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                <php>echo date('Y-m-d H:i:s',$vo['pub_time'])</php>
+                                          
+                                                <a href="{:U('Home/Index/articleDetail')}?article_id={$vo['id']}" target="_blank">详情</a>
+                                            </div>
                                           </div>
-                                     
-                                          <div class="col-sm-3">
-                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                          </div>
-                                          <div class="col-sm-2 margin_top_13">
-                                               <a href="#" >万剑一</a>
-                                          </div>
-                                          <div class="col-sm-5 text_right margin_top_13">
-                                              2016年10月7日关注
-                                          </div>
-                                  
-                                      </div>
+                                        </foreach>
 
-                                      <div class="list-group-item row form-group">
-                                          <div class="col-sm-2 margin_top_13">
-                                             2
-                                          </div>
-                                     
-                                          <div class="col-sm-3">
-                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                          </div>
-                                          <div class="col-sm-2 margin_top_13">
-                                               <a href="#" >万剑一</a>
-                                          </div>
-                                          <div class="col-sm-5 text_right margin_top_13">
-                                              2016年10月7日关注
-                                          </div>
-                                  
-                                      </div>
+                                        <foreach name="institutions" item="vo">
+                                                <div class="list-group-item row form-group">
+                                                    <div class="col-sm-2 margin_top_13">
+                                                         <span class="glyphicon glyphicon-tower"></span>机构-{$key+1}
+                                                    </div>
+                                               
+                                                    <div class="col-sm-3">
+                                                      <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/{$vo['institution_logo_img']}" alt="头像" height="50" width="50"/>
+                                                    </div>
+                                                    <div class="col-sm-3 margin_top_13">
+                                                         <a href="#" >{$vo['institution_abbr']}</a>
+                                                    </div>
+                                                    <div class="col-sm-4 text_right margin_top_13">
+                                                        <a href="__APP__/Home/Search/{$vo['detail_url']}" target='_blank'>详情</a>
+                                                        
+                                                    </div>
+                                                    
+                                            
+                                                </div>
+                                        </foreach>
 
+                                        <foreach name="users" item="vo">
+                                                <div class="list-group-item row form-group">
+                                                    <div class="col-sm-2 margin_top_13">
+                                                      <span class="glyphicon glyphicon-user"></span>用户-{$key+1}
+                                                    </div>
+                                               
+                                                    <div class="col-sm-3">
+                                                      <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/{$vo['institution_logo_img']}" alt="头像" height="50" width="50"/>
+                                                    </div>
+                                                    <div class="col-sm-3 margin_top_13">
+                                                         <a href="#" >{$vo['institution_abbr']}</a>
+                                                    </div>
+                                                    <div class="col-sm-4 text_right margin_top_13">
+                                                        <a href="__APP__/Home/Search/{$vo['detail_url']}" target='_blank'>详情</a>
+                                                    </div>
+                                                    
+                                            
+                                                </div>
+                                        </foreach>
 
-                                      <div class="list-group-item row form-group">
-                                          <div class="col-sm-2 margin_top_13">
-                                              3
-                                          </div>
-                                     
-                                          <div class="col-sm-3">
-                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                          </div>
-                                          <div class="col-sm-2 margin_top_13">
-                                               <a href="#" >万剑一</a>
-                                          </div>
-                                          <div class="col-sm-5 text_right margin_top_13">
-                                              2016年10月7日关注
-                                          </div>
-                                  
-                                      </div>
-
-                                      <div class="list-group-item row form-group">
-                                          <div class="col-sm-2 margin_top_13">
-                                              4
-                                          </div>
-                                     
-                                          <div class="col-sm-3">
-                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                          </div>
-                                          <div class="col-sm-2 margin_top_13">
-                                               <a href="#" >万剑一</a>
-                                          </div>
-                                          <div class="col-sm-5 text_right margin_top_13">
-                                              2016年10月7日关注
-                                          </div>
-                                  
-                                      </div>
-
-                                      
-                                    
                                     </div>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="home">
+                            <div role="tabpanel" class="tab-pane <php>if($search_type==2) echo 'active';</php>" id="articles">
                                   <div class="panel-body">
                                     <div class="list-group">
-                                      <div class="list-group-item row form-group">
-                                          <div class="col-sm-2 margin_top_13">
-                                              1
+                                        <foreach name="articles" item="vo">
+                                          <div class="list-group-item row form-group">
+                                            <div class="col-sm-1">
+                                                 <span class="glyphicon glyphicon-file"></span>{$key+1}
+                                            </div>
+                                            <div class='col-md-7'>
+                                                {$vo['title']}
+                                            </div> 
+                                            <div class='col-md-4 text_right'>
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                <php>echo date('Y-m-d H:i:s',$vo['pub_time'])</php>
+                                          
+                                                <a href="{:U('Home/Index/articleDetail')}?article_id={$vo['id']}" target="_blank">详情</a>
+                                            </div>
                                           </div>
-                                     
-                                          <div class="col-sm-3">
-                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                          </div>
-                                          <div class="col-sm-2 margin_top_13">
-                                               <a href="#" >万剑一</a>
-                                          </div>
-                                          <div class="col-sm-5 text_right margin_top_13">
-                                              2016年10月7日关注
-                                          </div>
-                                  
-                                      </div>
-
-                                      <div class="list-group-item row form-group">
-                                          <div class="col-sm-2 margin_top_13">
-                                             2
-                                          </div>
-                                     
-                                          <div class="col-sm-3">
-                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                          </div>
-                                          <div class="col-sm-2 margin_top_13">
-                                               <a href="#" >万剑一</a>
-                                          </div>
-                                          <div class="col-sm-5 text_right margin_top_13">
-                                              2016年10月7日关注
-                                          </div>
-                                  
-                                      </div>
-
-
-                                      <div class="list-group-item row form-group">
-                                          <div class="col-sm-2 margin_top_13">
-                                              3
-                                          </div>
-                                     
-                                          <div class="col-sm-3">
-                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                          </div>
-                                          <div class="col-sm-2 margin_top_13">
-                                               <a href="#" >万剑一</a>
-                                          </div>
-                                          <div class="col-sm-5 text_right margin_top_13">
-                                              2016年10月7日关注
-                                          </div>
-                                  
-                                      </div>
-
-                                      <div class="list-group-item row form-group">
-                                          <div class="col-sm-2 margin_top_13">
-                                              4
-                                          </div>
-                                     
-                                          <div class="col-sm-3">
-                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                          </div>
-                                          <div class="col-sm-2 margin_top_13">
-                                               <a href="#" >万剑一</a>
-                                          </div>
-                                          <div class="col-sm-5 text_right margin_top_13">
-                                              2016年10月7日关注
-                                          </div>
-                                  
-                                      </div>
-
-                                      
-                                    
+                                        </foreach>
                                     </div>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="profile">
+                            <div role="tabpanel" class="tab-pane <php>if($search_type==3) echo 'active';</php>" id="institutions">
 
                                   <div class="panel-body">
                                     <div class="list-group">
-                                      <div class="list-group-item row form-group">
-                                          <div class="col-sm-2 margin_top_13">
-                                              1
-                                          </div>
-                                     
-                                          <div class="col-sm-3">
-                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                          </div>
-                                          <div class="col-sm-2 margin_top_13">
-                                               <a href="#" >歌斐资产</a>
-                                          </div>
-                                          <div class="col-sm-5 text_right margin_top_13">
-                                              2016年10月7日关注
-                                          </div>
-                                  
-                                      </div>
-
-                                      <div class="list-group-item row form-group">
-                                          <div class="col-sm-2 margin_top_13">
-                                             2
-                                          </div>
-                                     
-                                          <div class="col-sm-3">
-                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                          </div>
-                                          <div class="col-sm-2 margin_top_13">
-                                               <a href="#" >紫荆资本</a>
-                                          </div>
-                                          <div class="col-sm-5 text_right margin_top_13">
-                                              2016年10月7日关注
-                                          </div>
-                                  
-                                      </div>
+                                      <foreach name="institutions" item="vo">
+                                                <div class="list-group-item row form-group">
+                                                    <div class="col-sm-2 margin_top_13">
+                                                         <span class="glyphicon glyphicon-tower"></span>{$key+1}
+                                                    </div>
+                                               
+                                                    <div class="col-sm-3">
+                                                      <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/{$vo['institution_logo_img']}" alt="头像" height="50" width="50"/>
+                                                    </div>
+                                                    <div class="col-sm-3 margin_top_13">
+                                                         <a href="#" >{$vo['institution_abbr']}</a>
+                                                    </div>
+                                                    <div class="col-sm-4 text_right margin_top_13">
+                                                        <a href="__APP__/Home/Search/{$vo['detail_url']}" target='_blank'>详情</a>
+                                                        
+                                                    </div>
+                                                    
+                                            
+                                                </div>
+                                        </foreach>
 
                                       
                                     
@@ -227,44 +146,30 @@
 
                             </div>
 
-                            <div role="tabpanel" class="tab-pane" id="users">
+                            <div role="tabpanel" class="tab-pane <php>if($search_type==4) echo 'active';</php>" id="users">
 
                                   <div class="panel-body">
                                     <div class="list-group">
-                                      <div class="list-group-item row form-group">
-                                          <div class="col-sm-2 margin_top_13">
-                                              1
-                                          </div>
-                                     
-                                          <div class="col-sm-3">
-                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                          </div>
-                                          <div class="col-sm-2 margin_top_13">
-                                               <a href="#" >歌斐资产</a>
-                                          </div>
-                                          <div class="col-sm-5 text_right margin_top_13">
-                                              2016年10月7日关注
-                                          </div>
-                                  
-                                      </div>
-
-                                      <div class="list-group-item row form-group">
-                                          <div class="col-sm-2 margin_top_13">
-                                             2
-                                          </div>
-                                     
-                                          <div class="col-sm-3">
-                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                          </div>
-                                          <div class="col-sm-2 margin_top_13">
-                                               <a href="#" >紫荆资本</a>
-                                          </div>
-                                          <div class="col-sm-5 text_right margin_top_13">
-                                              2016年10月7日关注
-                                          </div>
-                                  
-                                      </div>
-
+                                      
+                                        <foreach name="users" item="vo">
+                                                <div class="list-group-item row form-group">
+                                                    <div class="col-sm-2 margin_top_13">
+                                                         <span class="glyphicon glyphicon-user"></span>{$key+1}
+                                                    </div>
+                                               
+                                                    <div class="col-sm-3">
+                                                      <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/{$vo['institution_logo_img']}" alt="头像" height="50" width="50"/>
+                                                    </div>
+                                                    <div class="col-sm-3 margin_top_13">
+                                                         <a href="#" >{$vo['institution_abbr']}</a>
+                                                    </div>
+                                                    <div class="col-sm-4 text_right margin_top_13">
+                                                        <a href="__APP__/Home/Search/{$vo['detail_url']}" target='_blank'>详情</a>
+                                                    </div>
+                                                    
+                                            
+                                                </div>
+                                        </foreach>
                                       
                                     
                                     </div>
@@ -278,53 +183,7 @@
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body center">
-                    <ul class="pagination">
-                      <li class="disabled">
-                        <a href="#">上一页</a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          1
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          2
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li class="active">
-                        <a href="#">
-                          3
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          4
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          5
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          6
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          下一页
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                    </ul>
+
                   </div>
                 </div>
               </div><!--新闻列表-->

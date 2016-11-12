@@ -1,0 +1,82 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/>
+ <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+
+    <section class="content-wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 main-content col-md-offset-1">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                     所有创业公司
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+
+
+                      <div class='col-md-12' >
+                                <div class="panel-body">
+                                    <div class="list-group">
+                                    <foreach name="results" item="vo">
+                                      <div class="list-group-item row form-group">
+                                          <div class="col-sm-1 " style="margin-top:18px;">
+                                              {$key+1}
+                                          </div>
+                                     
+                                          <div class="col-sm-2">
+                                            <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/startup_pic/<php> echo $vo['institution_logo_img']?$vo['institution_logo_img']:'default.jpg';</php>" alt="头像"  width="100"/>
+                                          </div>
+                                          <div class="col-sm-5" style="margin-top:18px;">
+                                               <a href="{:U('Home/Search/startUpProfile')}?id={$vo['id']}&institution_type={$vo['institution_type']}" target="_blank">{$vo['institution_abbr']}</a>
+                                          </div>
+
+                                          <div class="col-sm-3" style="margin-top:18px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+                                               {$vo['institution_abstract']}
+                                          </div>
+
+
+                                          <div class="col-sm-1 " style="margin-top:18px;">
+                                              <if condition="(session('user_id') eq $vo['id']) AND (session('institution_type') eq $vo['institution_type'])">
+
+                                              <else/>
+                                                  <if condition="$vo['is_by_followed'] eq 1">
+                                                      <span class="label label-warning">已关注</span>
+                                                  <else/>
+
+                                                      <span class="label label-info" onclick="add_follow({$vo['id']},{$vo['institution_type']},this);">+关注</span>
+
+                                                  </if>
+                                                  
+                                              </if>
+                                              
+                                          </div>
+                                                                            
+                                  
+                                      </div>
+                                    </foreach>
+                                    </div>
+                                </div>
+                      </div>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body center">
+                    {$page}
+                  </div>
+                </div>
+              </div><!--新闻列表-->
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+<include file = "layout:footer"/>

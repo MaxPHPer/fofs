@@ -58,7 +58,7 @@
             </li>
 
             <li>
-              <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
+              <a href="http://weibo.com/u/5938414174?refer_flag=1001030201_&is_hot=1"  target="_Blank">微博</a>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -230,7 +230,7 @@
                           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span><?php echo ($user['institution_abbr']); ?></div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span><?php echo ($user['institution_fullname_cn']); ?></div>
                 <div class="panel-body">
                   <div class="media">
                     <div class="media-left">
@@ -331,65 +331,46 @@
                         <div role="tabpanel" class="tab-pane active" id="home">
                               <div class="panel-body">
                                 <div class="list-group">
-
-                                  <div class="list-group-item row form-group">
-   
-                                      <div class="col-sm-2">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 margin_top_13" >
-                                           <a href="#" data-toggle="modal" data-target="#myModal">请问能给我一下你们公司联系方式吗</a>
-                                           <!-- Modal -->
-                                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                              <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                  <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                    <h4 class="modal-title " id="myModalLabel" style="  padding-left: 28px;margin: 0;">发信人:张小凡</h4>
-                                                  </div>
-                                                  <div class="modal-body">
-                                                    <span class="label label-info">主题</span>&nbsp;&nbsp;吃饭
-                                                    <br/>
-                                                    <br/>
-                                                    <span class="label label-info">内容</span>&nbsp;&nbsp;明天去不去吃饭呢，风渡嘉荷
-                                                    <br/>
-                                                    <div class="text_right">2016年10月7日 10:30</div>
-                                                  </div>
-                                                  <div class="modal-footer">
-                                                    <a href="<?php echo U('Home/Individual/sendLetter');?>"><button type="button" class="btn btn-primary">回复</button></a>
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                  <?php if(is_array($received_mails)): foreach($received_mails as $key=>$vo): ?><div class="list-group-item row form-group">
+       
+                                          <div class="col-sm-2">
+                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/<?php echo ($vo['institution_logo_img']); ?>" alt="头像" height="50" width="50"/>
+                                          </div>
+                                          <div class="col-sm-2 margin_top_13">
+                                               <a href="#" ><?php echo ($vo['sender_name']); ?></a>
+                                          </div>
+                                          <div class="col-sm-5 margin_top_13" >
+                                               <a href="#" data-toggle="modal" data-target="#myModal_se_<?php echo ($vo['id']); ?>"><?php echo ($vo['title']); ?></a>
+                                               <!-- Modal -->
+                                                <div class="modal fade" id="myModal_se_<?php echo ($vo['id']); ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                        <h4 class="modal-title " id="myModalLabel" style="  padding-left: 28px;margin: 0;">发信人:<?php echo ($vo['sender_name']); ?></h4>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <span class="label label-info">主题</span>&nbsp;&nbsp;<?php echo ($vo['title']); ?>
+                                                        <br/>
+                                                        <br/>
+                                                        <span class="label label-info">内容</span>&nbsp;&nbsp;<?php echo ($vo['content']); ?>
+                                                        <br/>
+                                                        <div class="text_right"><?php echo date('Y-m-d H:i:s',$vo['time']); ?></div>
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                        <a href="<?php echo U('Home/Other/sendLetter');?>?user_id=<?php echo ($vo['sender_id']); ?>&institution_type=<?php echo ($vo['sender_type']); ?>&username=<?php echo ($vo['sender_name']); ?>"><button type="button" class="btn btn-primary">回复</button></a>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                      </div>
+                                                    </div>
                                                   </div>
                                                 </div>
-                                              </div>
-                                            </div>
-                                      </div>
-                                      <div class="col-sm-3 text_right margin_top_13 font_14">
-                                          2016年10月7日<span class="label label-default">已读</span>
-                                      </div>
-                              
-                                  </div>
-                                  <div class="list-group-item row form-group">
-   
-                                      <div class="col-sm-2">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 margin_top_13">
-                                           <a href="#" >请问能给我一下你们公司联系方式吗</a>
-                                      </div>
-                                      <div class="col-sm-3 text_right margin_top_13 font_14">
-                                          2016年10月7日<span class="label label-default">已读</span>
-                                      </div>
-                              
-                                  </div>
-
+                                          </div>
+                                          <div class="col-sm-3 text_right margin_top_13 font_14">
+                                             <?php echo date('Y-m-d H:i:s',$vo['time']); ?><!-- <span class="label label-default">已读</span> -->
+                                          </div>
                                   
-                                
+                                      </div><?php endforeach; endif; ?>
+                                  
                                 </div>
                             </div>
                         </div>
@@ -397,25 +378,46 @@
 
                               <div class="panel-body">
                                 <div class="list-group">
-                                  <div class="list-group-item row form-group">
-   
-                                      <div class="col-sm-2">
-                                        <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="50" width="50"/>
-                                      </div>
-                                      <div class="col-sm-2 margin_top_13">
-                                           <a href="#" >万剑一</a>
-                                      </div>
-                                      <div class="col-sm-5 margin_top_13">
-                                           <a href="#" >请问能给我一下你们公司联系方式吗</a>
-                                      </div>
-                                      <div class="col-sm-3 text_right margin_top_13 font_14">
-                                          2016年10月7日<span class="label label-default">已读</span>
-                                      </div>
-                              
-                                  </div>
-
+                                  <?php if(is_array($sended_mails)): foreach($sended_mails as $key=>$vo): ?><div class="list-group-item row form-group">
+       
+                                          <div class="col-sm-2">
+                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/<?php echo ($vo['institution_logo_img']); ?>" alt="头像" height="50" width="50"/>
+                                          </div>
+                                          <div class="col-sm-2 margin_top_13">
+                                               <a href="#" ><?php echo ($vo['recipient_name']); ?></a>
+                                          </div>
+                                          <div class="col-sm-5 margin_top_13" >
+                                               <a href="#" data-toggle="modal" data-target="#myModal_re_<?php echo ($vo['id']); ?>"><?php echo ($vo['title']); ?></a>
+                                               <!-- Modal -->
+                                                <div class="modal fade" id="myModal_re_<?php echo ($vo['id']); ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                      <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                        <h4 class="modal-title " id="myModalLabel" style="  padding-left: 28px;margin: 0;">收信人:<?php echo ($vo['recipient_name']); ?></h4>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        <span class="label label-info">主题</span>&nbsp;&nbsp;<?php echo ($vo['title']); ?>
+                                                        <br/>
+                                                        <br/>
+                                                        <span class="label label-info">内容</span>&nbsp;&nbsp;<?php echo ($vo['content']); ?>
+                                                        <br/>
+                                                        <div class="text_right"><?php echo date('Y-m-d H:i:s',$vo['time']); ?></div>
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                        
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                          </div>
+                                          <div class="col-sm-3 text_right margin_top_13 font_14">
+                                             <?php echo date('Y-m-d H:i:s',$vo['time']); ?><!-- <span class="label label-default">已读</span> -->
+                                          </div>
                                   
-                                
+                                      </div><?php endforeach; endif; ?>
+                                  
                                 </div>
                             </div>
 
@@ -451,9 +453,6 @@
 
 <script src="/fofs/1/Public/assets_1/js/common.js"></script>
 <script src="/fofs/1/Public/assets_2/public/bootstrap/js/Chart.min.js"></script>
-<script src="/fofs/1/Public/assets_2/js/Chart.js"></script>
-<script src="/fofs/1/Public/assets_1/js/buyer_letter.js"></script>
-<script src="/fofs/1/Public/assets_1/js/supplier_letter.js"></script>
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>

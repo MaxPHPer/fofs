@@ -40,7 +40,7 @@
           <li>
             <div id="search_box">
               <form id="search_form" method="post" action="<?php echo U('Home/Search/search');?>">
-                <input type="text" id="s" placeholder="文章/机构/用户" class="swap_value" />
+                <input type="text" id="s" placeholder="文章/机构/用户" class="swap_value" name="keywords"/>
                 <input type="image" src="/fofs/1/Public/assets_1/img/search.png" width="20" height="20" id="go" alt="Search" title="Search" />
               </form>
             </div>
@@ -58,7 +58,7 @@
             </li>
 
             <li>
-              <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
+              <a href="http://weibo.com/u/5938414174?refer_flag=1001030201_&is_hot=1"  target="_Blank">微博</a>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -227,9 +227,17 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-md-8 col-md-offset-2">
+          <div class="col-md-10 col-md-offset-1">
             <div class="well">
-              <h3>机构主页<a href="#"><span class="label label-info margin_left_20">+关注</span></a></h3>
+              <h3>机构主页
+                    <a href="#">
+                        <?php if($user['has_followed'] == 2): else: ?>
+                            <?php if($user['has_followed'] == 1): ?><span class="label label-warning">已关注</span>
+                            <?php else: ?>
+
+                                <span class="label label-info" onclick="add_follow(<?php echo ($user['id']); ?>,<?php echo ($user['institution_type']); ?>,this);">+关注</span><?php endif; endif; ?>
+                    </a>
+              </h3>
               <hr/>
               
               <div class="row">

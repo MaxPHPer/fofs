@@ -99,3 +99,47 @@ $("#institution_login_title").click(function() {
     $("#institution_login_title").css("color","white");
 });
 /*切换登录注册的小标题end*/
+
+/*添加关注*/
+function add_follow(host_id,host_type,obj){
+    var objectModel = {};
+    objectModel['host_id'] =host_id;
+    objectModel['host_type'] =host_type;
+
+    console.log(objectModel);
+
+    var domain=document.domain;
+    if(domain=='localhost'){
+        domain+='/fofs/1';
+    }
+
+    var toUrl='http://'+domain+"/index.php/Home/Base/add_follow";
+
+    $.ajax({
+        cache:false,
+        type:"POST",
+        url :toUrl,
+        dataType:"json",
+        data:objectModel,
+        timeout:30000,
+
+
+        error:function(){
+            console.log(toUrl);
+        },
+        success:function(data){
+            console.log(data);
+            if(data['state']==1){
+                var a=$(obj).parent();
+                a.empty();
+                a.append("<span class='label label-warning' >已关注</span>");
+                alert("关注成功，可在机构主页查看我的所有关注");
+            }else if(data['state']==2){
+                alert("你尚未登录，登录后才能关注");
+            }else{
+                alert("操作失败，请重试");
+            }
+
+        },
+    });
+}

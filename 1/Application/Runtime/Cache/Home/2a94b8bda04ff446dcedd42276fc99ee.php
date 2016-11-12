@@ -40,7 +40,7 @@
           <li>
             <div id="search_box">
               <form id="search_form" method="post" action="<?php echo U('Home/Search/search');?>">
-                <input type="text" id="s" placeholder="文章/机构/用户" class="swap_value" />
+                <input type="text" id="s" placeholder="文章/机构/用户" value="<?php echo ($keywords); ?>" class="swap_value" name="keywords"/>
                 <input type="image" src="/fofs/1/Public/assets_1/img/search.png" width="20" height="20" id="go" alt="Search" title="Search" />
               </form>
             </div>
@@ -58,7 +58,7 @@
             </li>
 
             <li>
-              <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
+              <a href="http://weibo.com/u/5938414174?refer_flag=1001030201_&is_hot=1"  target="_Blank">微博</a>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -235,7 +235,7 @@
         <div class="item active">
           <img src="/fofs/1/Public/assets_1/img/main_picture_1.jpg" alt="carousel1">
           <div class="carousel-caption">
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-sm-8">
                 <h1 class="title">
                   <img src="/fofs/1/Public/assets_1/img/logo.png" alt="logo"/>
@@ -246,13 +246,13 @@
               <div class=" col-sm-4 action">
                 <a href="/fofs/1/index.php/<?php echo ($link); ?>" class="btn btn-lg"><?php echo (L("start_app")); ?></a>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="item">
           <img src="/fofs/1/Public/assets_1/img/main_picture_2.jpg" alt="carousel2">
           <div class="carousel-caption">
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-sm-8">
                 <h1 class="title">
                   <img src="/fofs/1/Public/assets_1/img/logo.png" alt="logo"/>
@@ -263,13 +263,13 @@
               <div class=" col-sm-4 action">
                 <a href="/fofs/1/index.php/<?php echo ($link); ?>" class="btn btn-lg"><?php echo (L("start_app")); ?></a>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="item">
           <img src="/fofs/1/Public/assets_1/img/main_picture_3.jpg" alt="carousel3">
           <div class="carousel-caption">
-            <div class="row">
+<!--             <div class="row">
               <div class="col-sm-8">
                 <h1 class="title">
                   <img src="/fofs/1/Public/assets_1/img/logo.png" alt="logo"/>
@@ -280,7 +280,7 @@
               <div class=" col-sm-4 action">
                 <a href="/fofs/1/index.php/<?php echo ($link); ?>" class="btn btn-lg"><?php echo (L("start_app")); ?></a>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -322,12 +322,13 @@
                     <div class='news_title'>
                         <?php echo ($vo['title']); ?>
                     </div> 
-
+                    &nbsp;
+                    <div style="float:right;">
                     <span class="glyphicon glyphicon-calendar"></span>
                     <?php echo date('Y-m-d H:i:s',$vo['pub_time']) ?>
               
                  
-                    <span class="glyphicon glyphicon-user"></span>
+                    <!-- <span class="glyphicon glyphicon-user"></span>
                     <?php switch($vo['institution_type']): case "1": ?>LP<?php break;?>
                         <?php case "2": ?>GP<?php break;?>
                         <?php case "3": ?>创业公司<?php break;?>
@@ -339,9 +340,10 @@
                         <?php case "9": ?>个人<?php break;?>
                         <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
                     &nbsp;&nbsp;
-                    <?php echo ($vo['author_name']); ?>
+                    <?php echo ($vo['author_name']); ?> -->
 
-                    <a href="<?php echo U('Home/Index/ArticleDetail');?>?article_id=<?php echo ($vo['id']); ?>">详情</a>
+                    <a href="<?php echo U('Home/Index/articleDetail');?>?article_id=<?php echo ($vo['id']); ?>">详情</a>
+                  </div>
                   </li><?php endforeach; endif; ?>
 
 
@@ -378,26 +380,28 @@
                     <div class='news_title'>
                         <?php echo ($vo['title']); ?>
                     </div> 
+                    &nbsp;
+                    <div style="float:right;">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        <?php echo date('Y-m-d H:i:s',$vo['pub_time']) ?>
+                  
+                     
+                        <!-- <span class="glyphicon glyphicon-user"></span>
+                        <?php switch($vo['institution_type']): case "1": ?>LP<?php break;?>
+                            <?php case "2": ?>GP<?php break;?>
+                            <?php case "3": ?>创业公司<?php break;?>
+                            <?php case "4": ?>FA<?php break;?>
+                            <?php case "5": ?>法务服务机构<?php break;?>
+                            <?php case "6": ?>财务服务机构<?php break;?>
+                            <?php case "7": ?>众创空间<?php break;?>
+                            <?php case "8": ?>其它机构<?php break;?>
+                            <?php case "9": ?>个人<?php break;?>
+                            <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
+                        &nbsp;&nbsp;
+                        <?php echo ($vo['author_name']); ?> -->
 
-                    <span class="glyphicon glyphicon-calendar"></span>
-                    <?php echo date('Y-m-d H:i:s',$vo['pub_time']) ?>
-              
-                 
-                    <span class="glyphicon glyphicon-user"></span>
-                    <?php switch($vo['institution_type']): case "1": ?>LP<?php break;?>
-                        <?php case "2": ?>GP<?php break;?>
-                        <?php case "3": ?>创业公司<?php break;?>
-                        <?php case "4": ?>FA<?php break;?>
-                        <?php case "5": ?>法务服务机构<?php break;?>
-                        <?php case "6": ?>财务服务机构<?php break;?>
-                        <?php case "7": ?>众创空间<?php break;?>
-                        <?php case "8": ?>其它机构<?php break;?>
-                        <?php case "9": ?>个人<?php break;?>
-                        <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
-                    &nbsp;&nbsp;
-                    <?php echo ($vo['author_name']); ?>
-
-                    <a href="<?php echo U('Home/Index/ArticleDetail');?>?article_id=<?php echo ($vo['id']); ?>">详情</a>
+                        <a href="<?php echo U('Home/Index/articleDetail');?>?article_id=<?php echo ($vo['id']); ?>">详情</a>
+                      </div>
                   </li><?php endforeach; endif; ?>
 
                 </ul>
@@ -436,25 +440,28 @@
                         <?php echo ($vo['title']); ?>
                     </div> 
 
-                    <span class="glyphicon glyphicon-calendar"></span>
-                    <?php echo date('Y-m-d H:i:s',$vo['pub_time']) ?>
-              
-                 
-                    <span class="glyphicon glyphicon-user"></span>
-                    <?php switch($vo['institution_type']): case "1": ?>LP<?php break;?>
-                        <?php case "2": ?>GP<?php break;?>
-                        <?php case "3": ?>创业公司<?php break;?>
-                        <?php case "4": ?>FA<?php break;?>
-                        <?php case "5": ?>法务服务机构<?php break;?>
-                        <?php case "6": ?>财务服务机构<?php break;?>
-                        <?php case "7": ?>众创空间<?php break;?>
-                        <?php case "8": ?>其它机构<?php break;?>
-                        <?php case "9": ?>个人<?php break;?>
-                        <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
-                    &nbsp;&nbsp;
-                    <?php echo ($vo['author_name']); ?>
+                    &nbsp;
+                    <div style="float:right;">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        <?php echo date('Y-m-d H:i:s',$vo['pub_time']) ?>
+                  
+                     
+                        <!-- <span class="glyphicon glyphicon-user"></span>
+                        <?php switch($vo['institution_type']): case "1": ?>LP<?php break;?>
+                            <?php case "2": ?>GP<?php break;?>
+                            <?php case "3": ?>创业公司<?php break;?>
+                            <?php case "4": ?>FA<?php break;?>
+                            <?php case "5": ?>法务服务机构<?php break;?>
+                            <?php case "6": ?>财务服务机构<?php break;?>
+                            <?php case "7": ?>众创空间<?php break;?>
+                            <?php case "8": ?>其它机构<?php break;?>
+                            <?php case "9": ?>个人<?php break;?>
+                            <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
+                        &nbsp;&nbsp;
+                        <?php echo ($vo['author_name']); ?> -->
 
-                    <a href="<?php echo U('Home/Index/ArticleDetail');?>?article_id=<?php echo ($vo['id']); ?>">详情</a>
+                        <a href="<?php echo U('Home/Index/articleDetail');?>?article_id=<?php echo ($vo['id']); ?>">详情</a>
+                    </div>
                   </li><?php endforeach; endif; ?>
 
                 </ul>
@@ -491,25 +498,28 @@
                         <?php echo ($vo['title']); ?>
                     </div> 
 
-                    <span class="glyphicon glyphicon-calendar"></span>
-                    <?php echo date('Y-m-d H:i:s',$vo['pub_time']) ?>
-              
-                 
-                    <span class="glyphicon glyphicon-user"></span>
-                    <?php switch($vo['institution_type']): case "1": ?>LP<?php break;?>
-                        <?php case "2": ?>GP<?php break;?>
-                        <?php case "3": ?>创业公司<?php break;?>
-                        <?php case "4": ?>FA<?php break;?>
-                        <?php case "5": ?>法务服务机构<?php break;?>
-                        <?php case "6": ?>财务服务机构<?php break;?>
-                        <?php case "7": ?>众创空间<?php break;?>
-                        <?php case "8": ?>其它机构<?php break;?>
-                        <?php case "9": ?>个人<?php break;?>
-                        <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
-                    &nbsp;&nbsp;
-                    <?php echo ($vo['author_name']); ?>
+                    &nbsp;
+                    <div style="float:right;">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        <?php echo date('Y-m-d H:i:s',$vo['pub_time']) ?>
+                  
+                     
+                        <!-- <span class="glyphicon glyphicon-user"></span>
+                        <?php switch($vo['institution_type']): case "1": ?>LP<?php break;?>
+                            <?php case "2": ?>GP<?php break;?>
+                            <?php case "3": ?>创业公司<?php break;?>
+                            <?php case "4": ?>FA<?php break;?>
+                            <?php case "5": ?>法务服务机构<?php break;?>
+                            <?php case "6": ?>财务服务机构<?php break;?>
+                            <?php case "7": ?>众创空间<?php break;?>
+                            <?php case "8": ?>其它机构<?php break;?>
+                            <?php case "9": ?>个人<?php break;?>
+                            <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
+                        &nbsp;&nbsp;
+                        <?php echo ($vo['author_name']); ?> -->
 
-                    <a href="<?php echo U('Home/Index/ArticleDetail');?>?article_id=<?php echo ($vo['id']); ?>">详情</a>
+                        <a href="<?php echo U('Home/Index/articleDetail');?>?article_id=<?php echo ($vo['id']); ?>">详情</a>
+                      </div>
                   </li><?php endforeach; endif; ?>
 
                 </ul>

@@ -1,0 +1,396 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/>
+  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+
+    <section class="content-wrap">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-10 col-md-offset-1">
+            <div class="well">
+              <h3>机构主页
+                    <a href="#">
+                        <if condition="$user['has_followed'] eq 2">
+
+                        <else/>
+                            <if condition="$user['has_followed'] eq 1">
+                                <span class="label label-warning">已关注</span>
+                            <else/>
+
+                                <span class="label label-info" onclick="add_follow({$user['id']},{$user['institution_type']},this);">+关注</span>
+
+                            </if>                 
+                        </if>
+                    </a>
+              </h3>
+              <hr/>
+              
+              <div class="row">
+                  <div class='col-md-2'>
+                      <a href="#">
+                        <if condition="$user['institution_logo_img'] neq NULL">
+                          <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/startup_pic/{$user['institution_logo_img']}" alt="头像" height="100" width="100">
+                          <else />
+                          <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/startup_pic/default.jpg" alt="头像" height="100" width="100"></if>
+                      </a>
+                  </div>
+
+
+                  <div class='col-md-10'>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              公司名称:
+                          </div>
+                          <div class='col-md-10'>
+                              {$user['institution_abbr']}
+                          </div>
+                      </div>
+                    
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              公司愿景:
+                          </div>
+                          <div class='col-md-10'>
+                              {$user['institution_vision']}
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              公司简介:
+                          </div>
+                          <div class='col-md-10'>
+                              {$user['institution_abstract']}
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-inbox"></span>业务介绍</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  用户痛点:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['user_pain_points']}
+                              </div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>解决方案:</div>
+                            <div class='col-md-8'>{$user['solutions']}</div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>核心资源:</div>
+                            <div class='col-md-8'>{$user['core_resources']}</div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>盈利模式:</div>
+                            <div class='col-md-8'>{$user['profit_model']}</div>
+                          </div>
+
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-list-alt"></span>市场分析</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                  
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  市场现状:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['market_situation']}
+                              </div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>竞品分析:</div>
+                            <div class='col-md-8'>{$user['competitive_analysis']}</div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>优势分析:</div>
+                            <div class='col-md-8'>{$user['advantage_analysis']}</div>
+                          </div>
+
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-earphone"></span>联系方式</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  联系人:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['contact_username']}
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  手机:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['contact_mobilephone']}
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  电话:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['contact_telephone']}
+                              </div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>邮箱:</div>
+                            <div class='col-md-8'>{$user['contact_email']}</div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  联系人微信:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['contact_wechat']}
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  机构微信:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['company_wechat']}
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  机构网站:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['company_web']}
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-user"></span>管理团队</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                          <!--已有团队成员-->
+                          <foreach name="members" item="vo">
+                              <div id="" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="">
+                                <div class="panel-body">
+                                  <div class="repeat_people ">
+                                    <div class="borderBottom" style="margin-bottom:20px;">
+                                      <div class="row" >
+                                        <div class="col-sm-3 text_right">
+                                          
+                                            姓名:
+                      
+                                        </div>
+
+                                        <div class="col-sm-8">
+
+                                              {$vo['username']}
+
+                                        </div>
+
+                                      </div>
+
+                                      <div class="row" style="margin-top:10px;">
+                                        <div class="col-sm-3 text_right">
+                                          
+                                            职务:
+                      
+                                        </div>
+
+                                        <div class="col-sm-8">
+
+                                              {$vo['function']}
+
+                                        </div>
+                                      </div>
+
+                                      <div class="row">
+                                          <div class="col-sm-3 text_right">
+                                            从业经历:
+                                          </div>
+                                      </div>
+
+                                      <div class="repeat">
+                                        <foreach name="vo['business_experience']" item="business_experience">
+                                            <div class="row" style="margin-top:10px;">
+                                              
+                                              <div class="col-sm-3 text_right">
+                                                    {$business_experience['company_name']}
+                                              </div>
+                                             
+                                                
+                                              <div class="col-sm-3">
+                                                    {$business_experience['function']}
+                                              </div>
+
+                                              <div class="col-sm-6">
+                                                {$business_experience['start_time']}-{$business_experience['end_time']}
+                                              </div>
+                                    
+                                            </div>
+                                        </foreach>
+                                      </div>
+
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>   
+                          </foreach>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-lock"></span>融资现状</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  股权结构:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['equity_structure']}
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  是否已完成融资:
+                              </div>
+                              <div class='col-md-8'>
+                              <switch name="user['is_invested']">
+                                  <case value ="1"><span class="label label-info">是</span></case>
+                                  <default/><span class="label label-default">不是</span>
+                              </switch>
+                              </div>
+                          </div>
+
+                          <if condition="$user['is_invested'] eq 1">
+                                <div class="row">
+                                    <div class='col-md-3 text_right'>
+                                        轮次:
+                                    </div>
+                                    <div class='col-md-8'>
+                                        {$user['investment_round']}
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class='col-md-3 text_right'>额度:</div>
+                                  <div class='col-md-8'>{$user['investment_quota']}</div>
+                                </div>
+
+                                <div class="row">
+                                  <div class='col-md-3 text_right'>投资方:</div>
+                                  <div class='col-md-8'>{$user['investor']}</div>
+                                </div>
+                          </if>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-file"></span>计划融资</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  轮次:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['plan_investment_round']}
+                              </div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>额度:</div>
+                            <div class='col-md-8'>{$user['plan_invested_quota']}</div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>出让股份:</div>
+                            <div class='col-md-8'>{$user['plan_transfer_shares']}</div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>融资用途:</div>
+                            <div class='col-md-8'>{$user['plan_to_do']}</div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  是否接受联投:
+                              </div>
+                              <div class='col-md-8'>
+                              <switch name="user['accept_joint_investment']">
+                                  <case value ="1"><span class="label label-info">是</span></case>
+                                  <default/><span class="label label-default">不是</span>
+                              </switch>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>项目BP:</div>
+                            <div class='col-md-8'><a href="__PUBLIC__/uploads/startup_bp/{$user['bp_url']}" target="_Blank" >查看bp</a></div>
+                          </div>
+
+
+
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+
+               &nbsp;
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<include file = "layout:footer"/>

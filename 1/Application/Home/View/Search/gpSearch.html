@@ -26,10 +26,11 @@
                                       <div class='col-md-3 ' >
                                           <select name="fund_type" id="fund_type" class="form-control">
 
-                                            <option value ="0">证券投资基金</option>
-                                            <option value ="1">股权投资基金</option>
-                                            <option value="2">创业投资基金</option>
-                                            <option value="3">其他投资基金</option>
+                                            <option value ="1">天使投资基金</option>
+                                            <option value="2">VC基金</option>
+                                            <option value="3">PE基金</option>
+                                            <option value ="4">其它基金</option>
+
 
                                           </select>
                                       </div>
@@ -62,36 +63,29 @@
                               </div>
 
                               <div class="row margin_top_13">
-                                  <div class='col-md-2 text_right'>
-                                      成立时间
+                                  <div class="col-md-2 text_right">
+                                    投资领域
                                   </div>
                                   <div class="col-md-10">
-                                      <div class="col-md-2">
-                                        <input class="icheckbox_flat-blue" id="start_sign_0" type="checkbox" name="start_sign_0" value="0"/>
-                                          不限
-                                      </div>
-                                      <div class='col-md-3 ' >
-
-                                          <input type="date" name="start_sign" value="" class="form-control">
-                                          
-                                      </div>
-                                      <div class='col-md-2 text_center' >
-
-                                          至
-                                          
-                                      </div>
-                                      <div class="col-md-2">
-                                        <input class="icheckbox_flat-blue" id="end_sign_0" type="checkbox" name="end_sign_0" value="0"/>
-                                          不限
-                                      </div>
-                                      <div class='col-md-3 ' >
-
-                                          <input type="date" name="end_sign" value="" class="form-control">
-                                          
-                                      </div>
+                                      <div class="col-md-8">
+                                        <input class="form-control" name="invested_filed"/>  
+                                      </div>         
                                   </div>
 
                               </div>
+
+                              <div class="row margin_top_13">
+                                  <div class="col-md-2 text_right">
+                                    投资地域
+                                  </div>
+                                  <div class="col-md-10">
+                                      <div class="col-md-8">
+                                        <input class="form-control" name="invested_region" placeholder="海外/全国范围/某省某市"/>  
+                                      </div>         
+                                  </div>
+
+                              </div>
+
 
                               <div class="row margin_top_13">
                                   <div class='col-md-2 text_right' style="margin-top:6px;">
@@ -119,7 +113,7 @@
                                           </div>
                                      
                                           <div class="col-sm-2">
-                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/gp_pic/<php> echo $vo['institution_logo_img']?$vo['institution_logo_img']:'default.jpg';</php>" alt="头像"  width="100"/>
+                                            <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/gp_pic/<php> echo $vo['institution_logo_img']?$vo['institution_logo_img']:'default.jpg';</php>" alt="头像"  width="100"/>
                                           </div>
                                           <div class="col-sm-5" style="margin-top:18px;">
                                                <a href="{:U('Home/Search/gpProfile')}?id={$vo['id']}&institution_type={$vo['institution_type']}" target="_blank">{$vo['institution_fullname_cn']}</a>
@@ -134,7 +128,19 @@
 
 
                                           <div class="col-sm-1 " style="margin-top:18px;">
-                                              <span class="label label-info" onclick="alert({$vo['id']});">+关注</span>
+                                              <if condition="(session('user_id') eq $vo['id']) AND (session('institution_type') eq $vo['institution_type'])">
+
+                                              <else/>
+                                                  <if condition="$vo['is_by_followed'] eq 1">
+                                                      <span class="label label-warning">已关注</span>
+                                                  <else/>
+
+                                                      <span class="label label-info" onclick="add_follow({$vo['id']},{$vo['institution_type']},this);">+关注</span>
+
+                                                  </if>
+                                                  
+                                              </if>
+                                              
                                           </div>
                                                                             
                                   
@@ -147,53 +153,7 @@
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body center">
-                    <ul class="pagination">
-                      <li class="disabled">
-                        <a href="#">上一页</a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          1
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          2
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li class="active">
-                        <a href="#">
-                          3
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          4
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          5
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          6
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          下一页
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                    </ul>
+                    {$page}
                   </div>
                 </div>
               </div><!--新闻列表-->

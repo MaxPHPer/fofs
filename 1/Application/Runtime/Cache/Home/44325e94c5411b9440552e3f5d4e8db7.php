@@ -58,7 +58,7 @@
             </li>
 
             <li>
-              <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
+              <a href="http://weibo.com/u/5938414174?refer_flag=1001030201_&is_hot=1"  target="_Blank">微博</a>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -230,7 +230,7 @@
                           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span><?php echo ($user['institution_abbr']); ?></div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span><?php echo ($user['institution_fullname_cn']); ?></div>
                 <div class="panel-body">
                   <div class="media">
                     <div class="media-left">
@@ -444,9 +444,6 @@
 
 <script src="/fofs/1/Public/assets_1/js/common.js"></script>
 <script src="/fofs/1/Public/assets_2/public/bootstrap/js/Chart.min.js"></script>
-<script src="/fofs/1/Public/assets_2/js/Chart.js"></script>
-<script src="/fofs/1/Public/assets_1/js/buyer_letter.js"></script>
-<script src="/fofs/1/Public/assets_1/js/supplier_letter.js"></script>
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>

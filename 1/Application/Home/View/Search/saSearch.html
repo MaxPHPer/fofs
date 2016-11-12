@@ -1,0 +1,306 @@
+<include file = "layout:header"/>
+<include file = "layout:navbar"/>
+ <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+
+    <section class="content-wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 main-content col-md-offset-1">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                     所有服务机构
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+
+                      <div class='col-md-12' >
+                          <!-- Nav tabs -->
+                          <ul class="nav nav-tabs" role="tablist" style="padding-left:15px; padding-right: 15px;">
+                            <li role="presentation" class="<php>if($institution_type==4) echo 'active';</php>" ><a href="{:U('Home/Search/saSearch?institution_type=4')}" >Fa机构</a></li>
+                            <li role="presentation" class="<php>if($institution_type==5) echo 'active';</php>"><a href="{:U('Home/Search/saSearch?institution_type=5')}" >法务机构</a></li>
+                            <li role="presentation" class="<php>if($institution_type==6) echo 'active';</php>"><a href="{:U('Home/Search/saSearch?institution_type=6')}" >财务机构</a></li>
+                            <li role="presentation" class="<php>if($institution_type==7) echo 'active';</php>"><a href="{:U('Home/Search/saSearch?institution_type=7')}" >众创空间</a></li>
+                            <li role="presentation" class="<php>if($institution_type==8) echo 'active';</php>"><a href="{:U('Home/Search/saSearch?institution_type=8')}" >其它机构</a></li>
+                          </ul>
+
+                          <!-- Tab panes -->
+                          <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane <php>if($institution_type==4) echo 'active';</php>" id="all">
+                                <div class="panel-body">
+                                    <div class="list-group">
+                                    <foreach name="results1" item="vo">
+                                      <div class="list-group-item row form-group">
+                                          <div class="col-sm-1 " style="margin-top:18px;">
+                                              {$key+1}
+                                          </div>
+                                     
+                                          <div class="col-sm-2">
+                                            <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/fa_pic/<php> echo $vo['institution_logo_img']?$vo['institution_logo_img']:'default.jpg';</php>" alt="头像"  width="100"/>
+                                          </div>
+                                          <div class="col-sm-5" style="margin-top:18px;">
+                                               <a href="{:U('Home/Search/saProfile')}?id={$vo['id']}&institution_type={$vo['institution_type']}" target="_blank">{$vo['institution_fullname_cn']}</a>
+                                          </div>
+
+                                          <div class="col-sm-3" style="margin-top:18px;">
+                                              <if condition="$vo['institution_type'] eq 4">Fa机构</if>
+                                              <if condition="$vo['institution_type'] eq 5">法务服务机构</if>
+                                              <if condition="$vo['institution_type'] eq 6">财务服务机构</if>
+                                              <if condition="$vo['institution_type'] eq 7">众创空间(孵化器)</if>
+                                              <if condition="$vo['institution_type'] eq 8">其它机构</if>
+                                          </div>
+
+
+                                          <div class="col-sm-1 " style="margin-top:18px;">
+                                              <if condition="(session('user_id') eq $vo['id']) AND (session('institution_type') eq $vo['institution_type'])">
+
+                                              <else/>
+                                                  <if condition="$vo['is_by_followed'] eq 1">
+                                                      <span class="label label-warning">已关注</span>
+                                                  <else/>
+
+                                                      <span class="label label-info" onclick="add_follow({$vo['id']},{$vo['institution_type']},this);">+关注</span>
+
+                                                  </if>
+                                                  
+                                              </if>
+                                              
+                                          </div>
+                                                                            
+                                  
+                                      </div>
+                                    </foreach>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane <php>if($institution_type==5) echo 'active';</php>" id="home">
+                                <div class="panel-body">
+                                    <div class="list-group">
+                                    <foreach name="results2" item="vo">
+                                      <div class="list-group-item row form-group">
+                                          <div class="col-sm-1 " style="margin-top:18px;">
+                                              {$key+1}
+                                          </div>
+                                     
+                                          <div class="col-sm-2">
+                                            <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/la_pic/<php> echo $vo['institution_logo_img']?$vo['institution_logo_img']:'default.jpg';</php>" alt="头像"  width="100"/>
+                                          </div>
+                                          <div class="col-sm-5" style="margin-top:18px;">
+                                               <a href="{:U('Home/Search/saProfile')}?id={$vo['id']}&institution_type={$vo['institution_type']}" target="_blank">{$vo['institution_fullname_cn']}</a>
+                                          </div>
+
+                                          <div class="col-sm-3" style="margin-top:18px;">
+                                              <if condition="$vo['institution_type'] eq 4">Fa机构</if>
+                                              <if condition="$vo['institution_type'] eq 5">法务服务机构</if>
+                                              <if condition="$vo['institution_type'] eq 6">财务服务机构</if>
+                                              <if condition="$vo['institution_type'] eq 7">众创空间(孵化器)</if>
+                                              <if condition="$vo['institution_type'] eq 8">其它机构</if>
+                                          </div>
+
+
+                                          <div class="col-sm-1 " style="margin-top:18px;">
+                                              <if condition="(session('user_id') eq $vo['id']) AND (session('institution_type') eq $vo['institution_type'])">
+
+                                              <else/>
+                                                  <if condition="$vo['is_by_followed'] eq 1">
+                                                      <span class="label label-warning">已关注</span>
+                                                  <else/>
+
+                                                      <span class="label label-info" onclick="add_follow({$vo['id']},{$vo['institution_type']},this);">+关注</span>
+
+                                                  </if>
+                                                  
+                                              </if>
+                                              
+                                          </div>
+                                                                            
+                                  
+                                      </div>
+                                    </foreach>
+                                    </div>
+                                </div>
+                                <div class="panel-body center">
+                                  {$page}
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane <php>if($institution_type==6) echo 'active';</php>" id="profile">
+
+                                <div class="panel-body">
+                                    <div class="list-group">
+                                    <foreach name="results3" item="vo">
+                                      <div class="list-group-item row form-group">
+                                          <div class="col-sm-1 " style="margin-top:18px;">
+                                              {$key+1}
+                                          </div>
+                                     
+                                          <div class="col-sm-2">
+                                            <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/fi_pic/<php> echo $vo['institution_logo_img']?$vo['institution_logo_img']:'default.jpg';</php>" alt="头像"  width="100"/>
+                                          </div>
+                                          <div class="col-sm-5" style="margin-top:18px;">
+                                               <a href="{:U('Home/Search/saProfile')}?id={$vo['id']}&institution_type={$vo['institution_type']}" target="_blank">{$vo['institution_fullname_cn']}</a>
+                                          </div>
+
+                                          <div class="col-sm-3" style="margin-top:18px;">
+                                              <if condition="$vo['institution_type'] eq 4">Fa机构</if>
+                                              <if condition="$vo['institution_type'] eq 5">法务服务机构</if>
+                                              <if condition="$vo['institution_type'] eq 6">财务服务机构</if>
+                                              <if condition="$vo['institution_type'] eq 7">众创空间(孵化器)</if>
+                                              <if condition="$vo['institution_type'] eq 8">其它机构</if>
+                                          </div>
+
+
+                                          <div class="col-sm-1 " style="margin-top:18px;">
+                                              <if condition="(session('user_id') eq $vo['id']) AND (session('institution_type') eq $vo['institution_type'])">
+
+                                              <else/>
+                                                  <if condition="$vo['is_by_followed'] eq 1">
+                                                      <span class="label label-warning">已关注</span>
+                                                  <else/>
+
+                                                      <span class="label label-info" onclick="add_follow({$vo['id']},{$vo['institution_type']},this);">+关注</span>
+
+                                                  </if>
+                                                  
+                                              </if>
+                                              
+                                          </div>
+                                                                            
+                                  
+                                      </div>
+                                    </foreach>
+                                    </div>
+                                </div>
+
+                                <div class="panel-body center">
+                                  {$page}
+                                </div>
+
+
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane <php>if($institution_type==7) echo 'active';</php>" id="users">
+
+                                <div class="panel-body">
+                                    <div class="list-group">
+                                    <foreach name="results4" item="vo">
+                                      <div class="list-group-item row form-group">
+                                          <div class="col-sm-1 " style="margin-top:18px;">
+                                              {$key+1}
+                                          </div>
+                                     
+                                          <div class="col-sm-2">
+                                            <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/bi_pic/<php> echo $vo['institution_logo_img']?$vo['institution_logo_img']:'default.jpg';</php>" alt="头像"  width="100"/>
+                                          </div>
+                                          <div class="col-sm-5" style="margin-top:18px;">
+                                               <a href="{:U('Home/Search/saProfile')}?id={$vo['id']}&institution_type={$vo['institution_type']}" target="_blank">{$vo['institution_fullname_cn']}</a>
+                                          </div>
+
+                                          <div class="col-sm-3" style="margin-top:18px;">
+                                              <if condition="$vo['institution_type'] eq 4">Fa机构</if>
+                                              <if condition="$vo['institution_type'] eq 5">法务服务机构</if>
+                                              <if condition="$vo['institution_type'] eq 6">财务服务机构</if>
+                                              <if condition="$vo['institution_type'] eq 7">众创空间(孵化器)</if>
+                                              <if condition="$vo['institution_type'] eq 8">其它机构</if>
+                                          </div>
+
+
+                                          <div class="col-sm-1 " style="margin-top:18px;">
+                                              <if condition="(session('user_id') eq $vo['id']) AND (session('institution_type') eq $vo['institution_type'])">
+
+                                              <else/>
+                                                  <if condition="$vo['is_by_followed'] eq 1">
+                                                      <span class="label label-warning">已关注</span>
+                                                  <else/>
+
+                                                      <span class="label label-info" onclick="add_follow({$vo['id']},{$vo['institution_type']},this);">+关注</span>
+
+                                                  </if>
+                                                  
+                                              </if>
+                                              
+                                          </div>
+                                                                            
+                                  
+                                      </div>
+                                    </foreach>
+                                    </div>
+                                </div>
+
+                                <div class="panel-body center">
+                                  {$page}
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane <php>if($institution_type==8) echo 'active';</php>" id="other">
+
+                                <div class="panel-body">
+                                    <div class="list-group">
+                                    <foreach name="results5" item="vo">
+                                      <div class="list-group-item row form-group">
+                                          <div class="col-sm-1 " style="margin-top:18px;">
+                                              {$key+1}
+                                          </div>
+                                     
+                                          <div class="col-sm-2">
+                                            <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/other_pic/<php> echo $vo['institution_logo_img']?$vo['institution_logo_img']:'default.jpg';</php>" alt="头像"  width="100"/>
+                                          </div>
+                                          <div class="col-sm-5" style="margin-top:18px;">
+                                               <a href="{:U('Home/Search/otherProfile')}?id={$vo['id']}&institution_type={$vo['institution_type']}" target="_blank">{$vo['institution_fullname_cn']}</a>
+                                          </div>
+
+                                          <div class="col-sm-3" style="margin-top:18px;">
+                                              <if condition="$vo['institution_type'] eq 4">Fa机构</if>
+                                              <if condition="$vo['institution_type'] eq 5">法务服务机构</if>
+                                              <if condition="$vo['institution_type'] eq 6">财务服务机构</if>
+                                              <if condition="$vo['institution_type'] eq 7">众创空间(孵化器)</if>
+                                              <if condition="$vo['institution_type'] eq 8">其它机构</if>
+                                          </div>
+
+
+                                          <div class="col-sm-1 " style="margin-top:18px;">
+                                              <if condition="(session('user_id') eq $vo['id']) AND (session('institution_type') eq $vo['institution_type'])">
+
+                                              <else/>
+                                                  <if condition="$vo['is_by_followed'] eq 1">
+                                                      <span class="label label-warning">已关注</span>
+                                                  <else/>
+
+                                                      <span class="label label-info" onclick="add_follow({$vo['id']},{$vo['institution_type']},this);">+关注</span>
+
+                                                  </if>
+                                                  
+                                              </if>
+                                              
+                                          </div>
+                                                                            
+                                  
+                                      </div>
+                                    </foreach>
+                                    </div>
+                                </div>
+
+                                <div class="panel-body center">
+                                  {$page}
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+
+              </div><!--新闻列表-->
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+<include file = "layout:footer"/>

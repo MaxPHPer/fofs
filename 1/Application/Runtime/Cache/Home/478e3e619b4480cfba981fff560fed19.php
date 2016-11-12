@@ -40,7 +40,7 @@
           <li>
             <div id="search_box">
               <form id="search_form" method="post" action="<?php echo U('Home/Search/search');?>">
-                <input type="text" id="s" placeholder="文章/机构/用户" class="swap_value" />
+                <input type="text" id="s" placeholder="文章/机构/用户" value="<?php echo ($keywords); ?>" class="swap_value" name="keywords"/>
                 <input type="image" src="/fofs/1/Public/assets_1/img/search.png" width="20" height="20" id="go" alt="Search" title="Search" />
               </form>
             </div>
@@ -58,7 +58,7 @@
             </li>
 
             <li>
-              <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
+              <a href="http://weibo.com/u/5938414174?refer_flag=1001030201_&is_hot=1"  target="_Blank">微博</a>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -233,7 +233,7 @@
               </div>
               <div style="float: right;">
                 <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-calendar"></span><?php echo date('Y-m-d H:i:s',$article['pub_time']) ?></div>
-                <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-user"></span>
+                <!-- <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-user"></span>
                     <?php switch($article['institution_type']): case "1": ?>LP<?php break;?>
                       <?php case "2": ?>GP<?php break;?>
                       <?php case "3": ?>创业公司<?php break;?>
@@ -247,7 +247,7 @@
                     &nbsp;&nbsp;
                     <?php echo ($article['author_name']); ?>
 
-                </div>
+                </div> -->
               </div>
               
               <hr/>

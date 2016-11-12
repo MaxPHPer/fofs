@@ -40,7 +40,7 @@
           <li>
             <div id="search_box">
               <form id="search_form" method="post" action="<?php echo U('Home/Search/search');?>">
-                <input type="text" id="s" placeholder="文章/机构/用户" class="swap_value" />
+                <input type="text" id="s" placeholder="文章/机构/用户" value="<?php echo ($keywords); ?>" class="swap_value" name="keywords"/>
                 <input type="image" src="/fofs/1/Public/assets_1/img/search.png" width="20" height="20" id="go" alt="Search" title="Search" />
               </form>
             </div>
@@ -58,7 +58,7 @@
             </li>
 
             <li>
-              <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
+              <a href="http://weibo.com/u/5938414174?refer_flag=1001030201_&is_hot=1"  target="_Blank">微博</a>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -247,11 +247,10 @@
                                       <div class='col-md-3 ' >
                                           <select name="fund_type" id="fund_type" class="form-control">
 
-                                            <option value ="0">证券投资基金</option>
-                                            <option value ="1">股权投资基金</option>
-                                            <option value="2">创业投资基金</option>
-                                            <option value="3">其他投资基金</option>
-
+                                            <option value ="1">政府引导基金</option>
+                                            <option value ="2">民营资本市场化运作基金</option>
+                                            <option value="3">国企参与市场化基金</option>
+                                            
                                           </select>
                                       </div>
                                   </div>
@@ -278,6 +277,18 @@
                                       <input class="icheckbox_flat-blue" id="is_other_investment" type="checkbox" name="fund_type[]" value="is_other_investment" <?php if($vo['is_other_investment']==1) echo' checked'; ?> />
                                       其它投资基金
                                     </div>                        
+                                  </div>
+
+                              </div>
+
+                              <div class="row margin_top_13">
+                                  <div class="col-md-2 text_right">
+                                    投资领域
+                                  </div>
+                                  <div class="col-md-10">
+                                      <div class="col-md-8">
+                                        <input class="form-control" name="invested_filed"/>  
+                                      </div>         
                                   </div>
 
                               </div>
@@ -354,7 +365,12 @@
 
 
                                           <div class="col-sm-1 " style="margin-top:18px;">
-                                              <span class="label label-info" onclick="alert(<?php echo ($vo['id']); ?>);">+关注</span>
+                                              <?php if((session('user_id') == $vo['id']) AND (session('institution_type') == $vo['institution_type'])): else: ?>
+                                                  <?php if($vo['is_by_followed'] == 1): ?><span class="label label-warning">已关注</span>
+                                                  <?php else: ?>
+
+                                                      <span class="label label-info" onclick="add_follow(<?php echo ($vo['id']); ?>,<?php echo ($vo['institution_type']); ?>,this);">+关注</span><?php endif; endif; ?>
+                                              
                                           </div>
                                                                             
                                   
@@ -366,53 +382,7 @@
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body center">
-                    <ul class="pagination">
-                      <li class="disabled">
-                        <a href="#">上一页</a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          1
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          2
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li class="active">
-                        <a href="#">
-                          3
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          4
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          5
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          6
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                      <li >
-                        <a href="#">
-                          下一页
-                          <span class="sr-only">(current)</span>
-                        </a>
-                      </li>
-                    </ul>
+                    <?php echo ($page); ?>
                   </div>
                 </div>
               </div><!--新闻列表-->

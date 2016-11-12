@@ -238,21 +238,6 @@ class StartupsController extends BaseController {
         $this->display();
     }
 
-    //我的粉丝
-    public function myFollows(){
-        $this->display();
-    }
-
-
-    //我关注的
-    public function myFollowing(){
-        $this->display();
-    }
-
-    //发送信件
-    public function sendLetter(){
-        $this->display();
-    }
 
     //修改密码
     public function set_password(){
@@ -296,6 +281,7 @@ class StartupsController extends BaseController {
 
        //电话与传真的区域代码为用户自行输入，非区域ID
         $User=M('Startup_company');
+        $data['institution_abbr']=I('post.institution_abbr');
         $data['institution_fullname_cn']=I('post.institution_fullname_cn');
         $data['institution_fullname_en']=I('post.institution_fullname_en');
         $data['institution_vision']=I('post.institution_vision');

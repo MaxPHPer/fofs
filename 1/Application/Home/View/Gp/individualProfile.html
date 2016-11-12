@@ -10,16 +10,16 @@
           </div>
           <div class="col-md-8">
             <div class="well">
-              <h3>机构主页<a href="#"><span class="label label-info margin_left_20">+关注</span></a></h3>
+              <h3>机构主页</h3>
               <hr/>
               
               <div class="row">
                   <div class='col-md-2'>
                       <a href="#">
                         <if condition="$user['institution_logo_img'] neq NULL">
-                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/gp_pic/{$user['institution_logo_img']}" alt="头像" height="100" width="100">
+                          <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/gp_pic/{$user['institution_logo_img']}" alt="头像" height="100" width="100">
                           <else />
-                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/gp_pic/default.jpg" alt="头像" height="100" width="100"></if>
+                          <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/gp_pic/default.jpg" alt="头像" height="100" width="100"></if>
                       </a>
                   </div>
 

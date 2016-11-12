@@ -53,7 +53,7 @@ a.thumbnail:hover{
 .navbar{
   height: 60px;
   margin-bottom: 0;
-  background-color: #148CCA;
+  background-color: #030200;
 }
 #logo img{
   display: inline-block;
@@ -227,7 +227,7 @@ a.thumbnail:hover{
   border-radius: 0;
 }
 .modal-header{
-  background-color: #148CCA;
+  background-color: #030200;
   color: #fff;
 }
 .modal-header h4{
@@ -258,7 +258,7 @@ a.thumbnail:hover{
 .modal-body .btnLogin input{
   border-radius: 0;
   border: none;
-  background-color: #148CCA;
+  background-color: #030200;
   font-size: 16px;
   height: 38px;
 }
