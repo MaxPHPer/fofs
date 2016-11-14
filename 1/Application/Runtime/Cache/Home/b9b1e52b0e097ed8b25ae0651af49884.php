@@ -221,165 +221,80 @@
   </div>
 </div>
   <!--登录模态框结束-->
- <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
-
-    <section class="content-wrap">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10 main-content col-md-offset-1">
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <div class="panel-title">
-                     GP条件搜索
-                  </div>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body">
-                      <div class='col-md-12 ' >
-                        <form action="<?php echo U('Home/Search/gpSearch');?>" method="post">
-                          <div class="panel-body well">
-                              <div class="row">
-                                  <div class='col-md-2 text_right' class="form-control" style="margin-top:6px;">
-                                      基金类型
-                                  </div>
-                                  <div class="col-md-10">
-                                      <div class='col-md-3 ' >
-                                          <select name="fund_type" id="fund_type" class="form-control">
-                                            <option value ="0" >任意</option>
-                                            <option value ="is_angel_investment" <?php if($is_angel_investment == 1) echo 'selected'; ?> >天使投资基金</option>
-                                            <option value="is_vc_investment" <?php if($is_vc_investment == 1) echo 'selected'; ?> >VC基金</option>
-                                            <option value="is_pe_investment" <?php if($is_pe_investment == 1) echo 'selected'; ?> >PE基金</option>
-                                            <option value ="is_other_investment" <?php if($is_other_investment == 1) echo 'selected'; ?> >其它基金</option>
-
-
-                                          </select>
-                                      </div>
-                                  </div>
-                              </div>
-
-                              <div class="row margin_top_13">
-                                    <div class="col-md-2 text_right">
-                                      投资类型
-                                    </div>
-                                    <div class="col-md-10">
-                                        <div class="col-md-3 ">
-                                        <input class="icheckbox_flat-blue" id="is_securities_fund" type="checkbox" name="investment_type[]" value="is_securities_fund=1" <?php if($is_securities_fund==1) echo 'checked'; ?> />
-                                          证券投资基金
-                                        </div>
-                                        <div class="col-md-3 ">
-                                          <input class="icheckbox_flat-blue" id="is_stock_fund" type="checkbox" name="investment_type[]" value="is_stock_fund=1" <?php if($is_stock_fund==1) echo 'checked'; ?> />
-                                          股权投资基金
-                                        </div>
-                                        <div class="col-md-3 ">
-                                          <input class="icheckbox_flat-blue" id="is_startup_fund" type="checkbox" name="investment_type[]" value="is_startup_fund=1" <?php if($is_startup_fund==1) echo 'checked'; ?> />
-                                          创业投资基金
-                                        </div>
-                                        <div class="col-md-3 ">
-                                          <input class="icheckbox_flat-blue" id="is_other_fund" type="checkbox" name="investment_type[]" value="is_other_fund=1" <?php if($is_other_fund==1) echo 'checked'; ?> />
-                                          其它投资基金
-                                        </div>                        
-                                     </div>
-                              </div>
-
-                              <div class="row margin_top_13">
-                                  <div class="col-md-2 text_right">
-                                    投资领域
-                                  </div>
-                                  <div class="col-md-10">
-                                      <div class="col-md-8">
-                                        <input class="form-control" name="investment_field" value="<?php echo ($investment_field); ?>" />  
-                                      </div>         
-                                  </div>
-
-                              </div>
-
-                              <div class="row margin_top_13">
-                                  <div class="col-md-2 text_right">
-                                    投资地域
-                                  </div>
-                                  <div class="col-md-10">
-                                      <div class="col-md-8">
-                                        <input class="form-control" name="investment_region" placeholder="海外/全国范围/某省某市" value="<?php echo ($investment_region); ?>"/>  
-                                      </div>         
-                                  </div>
-
-                              </div>
-
-
-                              <div class="row margin_top_13">
-                                  <div class='col-md-2 text_right' style="margin-top:6px;">
-                                      
-                                 
-                                      
-                                  </div>
-                                  <div class='col-md-9 text_right' >
-
-                                      <input type="submit" name="end_sign" value="一键搜索" class="btn btn-info">
-                                      
-                                  </div>
-                              </div>
-
-                          </div>
-                        </form>
-                      </div>
-
-                      <div class='col-md-12' >
-                                <div class="panel-body">
-                                    <div class="list-group">
-                                    <?php if(is_array($results)): foreach($results as $key=>$vo): ?><div class="list-group-item row form-group">
-                                          <div class="col-sm-1 " style="margin-top:18px;">
-                                              <?php echo ($key+1); ?>
-                                          </div>
-                                     
-                                          <div class="col-sm-2">
-                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/gp_pic/<?php echo $vo['institution_logo_img']?$vo['institution_logo_img']:'default.jpg'; ?>" alt="头像"  width="100"/>
-                                          </div>
-                                          <div class="col-sm-5" style="margin-top:18px;">
-                                               <a href="<?php echo U('Home/Search/gpProfile');?>?id=<?php echo ($vo['id']); ?>&institution_type=<?php echo ($vo['institution_type']); ?>" target="_blank"><?php echo ($vo['institution_fullname_cn']); ?></a>
-                                          </div>
-
-                                          <div class="col-sm-3" style="margin-top:18px;">
-                                              <?php if($vo['is_securities_fund'] == 1): ?>证券投资基金<?php endif; ?>
-                                              <?php if($vo['is_stock_fund'] == 1): ?>股权投资基金<?php endif; ?>
-                                              <?php if($vo['is_startup_fund'] == 1): ?>创业投资基金<?php endif; ?>
-                                              <?php if($vo['is_other_fund'] == 1): ?>其它投资基金<?php endif; ?>
-                                          </div>
-
-
-                                          <div class="col-sm-1 " style="margin-top:18px;">
-                                              <?php if((session('user_id') == $vo['id']) AND (session('institution_type') == $vo['institution_type'])): else: ?>
-                                                  <?php if($vo['is_by_followed'] == 1): ?><span class="label label-warning">已关注</span>
-                                                  <?php else: ?>
-
-                                                      <span class="label label-info" onclick="add_follow(<?php echo ($vo['id']); ?>,<?php echo ($vo['institution_type']); ?>,this);">+关注</span><?php endif; endif; ?>
-                                              
-                                          </div>
-                                                                            
-                                  
-                                      </div><?php endforeach; endif; ?>
-                                    <h3><?php echo ($tip); ?></h3>
-                                    </div>
-                                </div>
-                      </div>
-                  </div>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-                  <div class="panel-body center">
-                    <?php echo ($page); ?>
-                  </div>
-                </div>
-              </div><!--新闻列表-->
-
-
+<div class="content forget">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="col-sm-6">
+              <h1>
+                <a href="#personal_forgetpassword" id="personal_forget" data-toggle="tab" style="color:black;text-decoration:none;">个人找回</a>
+                |
+                <a href="#institution_forgetpassword" id="institution_forget" data-toggle="tab" style="color:#AFACAC;text-decoration:none;">机构找回</a>
+                密码
+              </h1>
+            </div>
+            <div class="col-sm-2">
+              <div class="step active">
+                01
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="step">
+                02
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="step">
+                03
+              </div>
             </div>
           </div>
-
+          <div class="panel-body">
+            
+            <div id="myTabContent" class="tab-content">
+            <form action="/fofs/1/index.php/Home/Password/send_mail_person" method="post">
+              <div class="tab-pane fade in active" id="personal_forgetpassword">
+                  <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="<?php echo (L("enter_your_registered_email_address")); ?>"/>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-block" name="submit" value="个人找回密码"/>
+                  </div>
+              </div>
+            </form>
+            <form action="/fofs/1/index.php/Home/Password/send_mail_institution" method="post">
+              <div class="tab-pane fade" id="institution_forgetpassword">
+                  <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="<?php echo (L("enter_your_registered_email_address")); ?>"/>
+                  </div>
+                  <div class="form-group">
+                    <select style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;" name="institution_type">
+                      <option value ="0">请选择机构类型</option>
+                      <option value ="1">LP</option>
+                      <option value="2">GP</option>
+                      <option value="3">创业公司</option>
+                      <option value ="4">FA机构</option>
+                      <option value="5">法务机构</option>
+                      <option value="6">财务机构</option>
+                      <option value ="7">众创空间</option>
+                      <option value="8">其它(媒体、政府机构等)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-block" name="submit" value="机构找回密码"/>
+                  </div>
+              </div>
+            </form>
+            </div>
+            
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
+</div>
 
 <footer class="footer">
   <div class="footerLink">

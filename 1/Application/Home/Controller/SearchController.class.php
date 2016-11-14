@@ -135,8 +135,41 @@ class SearchController extends BaseController {
 
     //lp搜索
     public function lpSearch(){
+
+      //根据lpproduct的条件求出所有的LP的id
+      if(I('post.fund_type')){
+        $where[I('post.fund_type')]=1;
+        $this->assign(I('post.fund_type'),1);
+      }
+
+      if(I('post.investment_type')){
+        $where['_string']=implode(' OR ',I('post.investment_type'));
+        foreach(I('post.investment_type') as $investment_type){
+          $this->assign(preg_replace('/[=1]+/i','',$investment_type),1);
+        }
+      }
+      if(I('post.investment_field')){
+        $where['investment_field']  = array('like', '%'.I('post.investment_field').'%');
+        $this->assign('investment_field',I('post.investment_field'));
+      }
+      
+      $Product=M('Lp_fund_product');
+      $products=$Product->where($where)->distinct(true)->field('institution_id')->select();
+
+      $Lp_ids=array();
+      foreach($products as $product){
+        $Lp_ids[]=$product['institution_id'];
+      }
+
+      if(empty($Lp_ids)){ //如果没有数据
+        $this->assign('tip','暂无数据~');
+        $this->display();
+      }
+
     	$User=M('Lp');
-	
+      $where=array();
+	    $where['id']=array('in',$Lp_ids);
+
       //查询满足要求的总的记录数
       $count=$User->where($where)->count();
       //实例化分页类传入总记录数和煤业显示的记录数
@@ -286,10 +319,58 @@ class SearchController extends BaseController {
 
     //gp搜索
     public function gpSearch(){
+      //根据gpproduct的条件求出所有的LP的id
+      
+      if(I('post.fund_type')){
+        $where[I('post.fund_type')]=1;
+        $this->assign(I('post.fund_type'),1);
+      }
+      
+      if(I('post.investment_field')){
+        $where['investment_field']  = array('like', '%'.I('post.investment_field').'%');
+        $this->assign('investment_field',I('post.investment_field'));
+      }
+
+      if(I('post.investment_region')){
+        $where['investment_region']  = array('like', '%'.I('post.investment_region').'%');
+        $this->assign('investment_region',I('post.investment_region'));
+      }
+      
+      $Product=M('Gp_fund_product');
+      $products=$Product->where($where)->distinct(true)->field('institution_id')->select();
+
+      $Gp_ids=array();
+      foreach($products as $product){
+        $Gp_ids[]=$product['institution_id'];
+      }
+
+      if(empty($Gp_ids)){ //如果没有数据
+        $this->assign('tip','暂无数据~');
+        
+        if(I('post.investment_type')){
+          
+          foreach(I('post.investment_type') as $investment_type){
+            $this->assign(preg_replace('/[=1]+/i','',$investment_type),1);
+          }
+        }
+        $this->display();
+        die();
+      }
+
     	$User=M('Gp');
-    	 
+      $where=array();
+    	
+      if(I('post.investment_type')){
+        $where['_string']=implode(' OR ',I('post.investment_type'));
+        foreach(I('post.investment_type') as $investment_type){
+          $this->assign(preg_replace('/[=1]+/i','',$investment_type),1);
+        }
+      }
+      $where['id']=array('in',$Gp_ids);
+
       //查询满足要求的总的记录数
       $count=$User->where($where)->count();
+      
       //实例化分页类传入总记录数和煤业显示的记录数
       $Page=new \Think\Page($count,2);
       //分页显示输出

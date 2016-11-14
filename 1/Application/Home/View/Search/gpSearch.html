@@ -17,6 +17,7 @@
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
                       <div class='col-md-12 ' >
+                        <form action="{:U('Home/Search/gpSearch')}" method="post">
                           <div class="panel-body well">
                               <div class="row">
                                   <div class='col-md-2 text_right' class="form-control" style="margin-top:6px;">
@@ -25,11 +26,11 @@
                                   <div class="col-md-10">
                                       <div class='col-md-3 ' >
                                           <select name="fund_type" id="fund_type" class="form-control">
-
-                                            <option value ="1">天使投资基金</option>
-                                            <option value="2">VC基金</option>
-                                            <option value="3">PE基金</option>
-                                            <option value ="4">其它基金</option>
+                                            <option value ="0" >任意</option>
+                                            <option value ="is_angel_investment" <php>if($is_angel_investment == 1) echo 'selected';</php> >天使投资基金</option>
+                                            <option value="is_vc_investment" <php>if($is_vc_investment == 1) echo 'selected';</php> >VC基金</option>
+                                            <option value="is_pe_investment" <php>if($is_pe_investment == 1) echo 'selected';</php> >PE基金</option>
+                                            <option value ="is_other_investment" <php>if($is_other_investment == 1) echo 'selected';</php> >其它基金</option>
 
 
                                           </select>
@@ -38,28 +39,27 @@
                               </div>
 
                               <div class="row margin_top_13">
-                                  <div class="col-md-2 text_right">
-                                    投资类型
-                                  </div>
-                                  <div class="col-md-10">
-                                    <div class="col-md-3 ">
-                                    <input class="icheckbox_flat-blue" id="is_investment_security" type="checkbox" name="fund_type[]" value="is_investment_security" <php> if($vo['is_investment_security']==1) echo' checked';</php> />
-                                      证券投资基金
+                                    <div class="col-md-2 text_right">
+                                      投资类型
                                     </div>
-                                    <div class="col-md-3 ">
-                                      <input class="icheckbox_flat-blue" id="is_equity_investment" type="checkbox" name="fund_type[]" value="is_equity_investment" <php> if($vo['is_equity_investment']==1) echo' checked';</php> />
-                                      股权投资基金
-                                    </div>
-                                    <div class="col-md-3 ">
-                                      <input class="icheckbox_flat-blue" id="is_venture_investment" type="checkbox" name="fund_type[]" value="is_venture_investment" <php> if($vo['is_venture_investment']==1) echo' checked';</php> />
-                                      创业投资基金
-                                    </div>
-                                    <div class="col-md-3 ">
-                                      <input class="icheckbox_flat-blue" id="is_other_investment" type="checkbox" name="fund_type[]" value="is_other_investment" <php> if($vo['is_other_investment']==1) echo' checked';</php> />
-                                      其它投资基金
-                                    </div>                        
-                                  </div>
-
+                                    <div class="col-md-10">
+                                        <div class="col-md-3 ">
+                                        <input class="icheckbox_flat-blue" id="is_securities_fund" type="checkbox" name="investment_type[]" value="is_securities_fund=1" <php> if($is_securities_fund==1) echo 'checked';</php> />
+                                          证券投资基金
+                                        </div>
+                                        <div class="col-md-3 ">
+                                          <input class="icheckbox_flat-blue" id="is_stock_fund" type="checkbox" name="investment_type[]" value="is_stock_fund=1" <php> if($is_stock_fund==1) echo 'checked';</php> />
+                                          股权投资基金
+                                        </div>
+                                        <div class="col-md-3 ">
+                                          <input class="icheckbox_flat-blue" id="is_startup_fund" type="checkbox" name="investment_type[]" value="is_startup_fund=1" <php> if($is_startup_fund==1) echo 'checked';</php> />
+                                          创业投资基金
+                                        </div>
+                                        <div class="col-md-3 ">
+                                          <input class="icheckbox_flat-blue" id="is_other_fund" type="checkbox" name="investment_type[]" value="is_other_fund=1" <php> if($is_other_fund==1) echo 'checked';</php> />
+                                          其它投资基金
+                                        </div>                        
+                                     </div>
                               </div>
 
                               <div class="row margin_top_13">
@@ -68,7 +68,7 @@
                                   </div>
                                   <div class="col-md-10">
                                       <div class="col-md-8">
-                                        <input class="form-control" name="invested_filed"/>  
+                                        <input class="form-control" name="investment_field" value="{$investment_field}" />  
                                       </div>         
                                   </div>
 
@@ -80,7 +80,7 @@
                                   </div>
                                   <div class="col-md-10">
                                       <div class="col-md-8">
-                                        <input class="form-control" name="invested_region" placeholder="海外/全国范围/某省某市"/>  
+                                        <input class="form-control" name="investment_region" placeholder="海外/全国范围/某省某市" value="{$investment_region}"/>  
                                       </div>         
                                   </div>
 
@@ -101,6 +101,7 @@
                               </div>
 
                           </div>
+                        </form>
                       </div>
 
                       <div class='col-md-12' >
@@ -146,6 +147,7 @@
                                   
                                       </div>
                                     </foreach>
+                                    <h3>{$tip}</h3>
                                     </div>
                                 </div>
                       </div>

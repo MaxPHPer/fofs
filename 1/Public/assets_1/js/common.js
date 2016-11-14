@@ -98,6 +98,17 @@ $("#institution_login_title").click(function() {
     $("#personal_login_title").css("color","#AFACAC");
     $("#institution_login_title").css("color","white");
 });
+
+$("#personal_forget").click(function() {
+    $("#personal_forget").css("color","black");
+    $("#institution_forget").css("color","#AFACAC");
+});
+
+
+$("#institution_forget").click(function() {
+    $("#personal_forget").css("color","#AFACAC");
+    $("#institution_forget").css("color","black");
+});
 /*切换登录注册的小标题end*/
 
 /*添加关注*/
