@@ -221,48 +221,51 @@
   </div>
 </div>
   <!--登录模态框结束-->
-  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
-
-    <section class="content-wrap">
-      <div class="container">
-
-          <div class="col-md-10 col-md-offset-1">
-            <div class="well">
-              <div style="margin-left: auto;margin-right: auto; display: table;">
-                  <h2><?php echo ($article['title']); ?></h2>
+<div class="content forget">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="col-sm-6">
+              <h1>
+                <a href="#personal_forgetpassword" data-toggle="tab" style="color:black;text-decoration:none;">个人找回</a>
+                |
+                <a href="#institution_forgetpassword" data-toggle="tab" style="color:black;text-decoration:none;">机构找回</a>
+                密码
+              </h1>
+            </div>
+            <div class="col-sm-2">
+              <div class="step ">
+                01
               </div>
-              <div style="float: right;">
-                <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-calendar"></span><?php echo date('Y-m-d H:i:s',$article['pub_time']) ?></div>
-                <!-- <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-user"></span>
-                    <?php switch($article['institution_type']): case "1": ?>LP<?php break;?>
-                      <?php case "2": ?>GP<?php break;?>
-                      <?php case "3": ?>创业公司<?php break;?>
-                      <?php case "4": ?>FA<?php break;?>
-                      <?php case "5": ?>法务服务机构<?php break;?>
-                      <?php case "6": ?>财务服务机构<?php break;?>
-                      <?php case "7": ?>众创空间<?php break;?>
-                      <?php case "8": ?>其它机构<?php break;?>
-                      <?php case "9": ?>个人<?php break;?>
-                      <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
-                    &nbsp;&nbsp;
-                    <?php echo ($article['author_name']); ?>
-
-                </div> -->
+            </div>
+            <div class="col-sm-2">
+              <div class="step active">
+                02
               </div>
-              
-              <hr/>
-              <div class="row panel-body">
-                <div class='col-md-10 col-md-offset-1'>
-                    <?php echo ($article['content']); ?>
-                </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="step">
+                03
               </div>
             </div>
           </div>
-
+          <div class="panel-body">
+            <h4>密码重置邮件已发送至你的邮箱：</h4>
+            <p><?php echo ($email); ?></p>
+            <p>请在1小时内登录你的邮箱接收邮件，连接激活后可重置密码。</p>
+            <div class="form-group">
+              <a href="#" target="_Blank">
+                <input type="button" class="btn btn-block btn-primary" value="去邮箱确认邮件"/>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   </div>
-
+</div>
 <footer class="footer">
   <div class="footerLink">
     <a href="<?php echo U('Home/Index/aboutUs');?>">关于我们</a>

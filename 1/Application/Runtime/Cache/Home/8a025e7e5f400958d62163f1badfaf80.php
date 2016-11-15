@@ -40,7 +40,7 @@
           <li>
             <div id="search_box">
               <form id="search_form" method="post" action="<?php echo U('Home/Search/search');?>">
-                <input type="text" id="s" placeholder="文章/机构/用户" class="swap_value" />
+                <input type="text" id="s" placeholder="文章/机构/用户" value="<?php echo ($keywords); ?>" class="swap_value" name="keywords"/>
                 <input type="image" src="/fofs/1/Public/assets_1/img/search.png" width="20" height="20" id="go" alt="Search" title="Search" />
               </form>
             </div>
@@ -320,7 +320,7 @@
           </div>
           <div class="col-md-8">
             <div class="well">
-              <h3>机构主页<a href="#"><span class="label label-info margin_left_20">+关注</span></a></h3>
+              <h3>机构主页</h3>
               <hr/>
               
               <div class="row">

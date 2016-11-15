@@ -233,7 +233,7 @@ class PasswordController extends BaseController {
       <div class="media logoEmial">
         <div class="media-left">
           <a href="#">
-            <img class="media-object " src="http://selectin.applinzi.com/Public/assets/img/logo.jpg" height="20" alt="...">
+            <img class="media-object " src="#" height="20" alt="...">
           </a>
         </div>
         <div class="media-body">
@@ -244,7 +244,7 @@ class PasswordController extends BaseController {
     <div class="modal-body">        
       <h4><i class="fa fa-circle "></i>主题：忘记密码</h4>
       <div class="mailContent">
-        <p>尊敬的<span class="name" id="name">'.$username.'</span>，您好<br/>您会收到这份邮件是由于selectedin.com收到找回登陆密码申请。如不是您本人行为，请忽略此邮件。如是您本人申请找回密码，请点击以下链接重置登录密码。</p>  
+        <p>尊敬的<span class="name" id="name">'.$username.'</span>，您好<br/>您会收到这份邮件是由于www.china-fof.com收到找回登陆密码申请。如不是您本人行为，请忽略此邮件。如是您本人申请找回密码，请点击以下链接重置登录密码。</p>  
         <div class="row">  
           <div class="col-md-4">
             <a href="'.$link.'"><button type="button" class="btn btn-primary  btn-block">重置登录密码</button>
@@ -255,7 +255,7 @@ class PasswordController extends BaseController {
       </div>
     </div>
     <div class="modal-footer">
-      <p>如有任何问题，请与<a href="#">support@seletedin.com</a>联系。<br/>您的selectedin团队。</p>
+      <p>如有任何问题，请与<a href="#">shiningworld@foxmail.com</a>联系。<br/>您的中国母基金联盟技术支持团队。</p>
     </div>
   </div>
 </body>
@@ -490,7 +490,7 @@ class PasswordController extends BaseController {
       <div class="media logoEmial">
         <div class="media-left">
           <a href="#">
-            <img class="media-object " src="http://selectin.applinzi.com/Public/assets/img/logo.jpg" height="20" alt="...">
+            <img class="media-object " src="#" height="20" alt="...">
           </a>
         </div>
         <div class="media-body">
@@ -501,7 +501,7 @@ class PasswordController extends BaseController {
     <div class="modal-body">        
       <h4><i class="fa fa-circle "></i>Subject: Forget Password</h4>
       <div class="mailContent">
-        <p>Dear<span class="name" id="name">'.$username.'</span><br/>The reason why you received this email is that we got the request on resetting password in selectedin.com. If this request is not initiated from you, please ignore this email. Otherwise, please click the below link to reset the password for Login.</p>  
+        <p>Dear<span class="name" id="name">'.$username.'</span><br/>The reason why you received this email is that we got the request on resetting password in www.china-fof.com. If this request is not initiated from you, please ignore this email. Otherwise, please click the below link to reset the password for Login.</p>  
         <div class="row">
           <div class="col-md-4">
             <a href="'.$link.'"><button type="button" class="btn btn-primary  btn-block">Reset Password</button></a>
@@ -511,7 +511,7 @@ class PasswordController extends BaseController {
       </div>
     </div>
     <div class="modal-footer">
-       <p>In case of any questions, do not hesitate to contact us at <a href="#">support@seletedin.com</a>.<br/>Your Selectedin Team.</p>
+       <p>In case of any questions, do not hesitate to contact us at <a href="#">shiningworld@foxmail.com</a>.<br/>Your Selectedin Team.</p>
     </div>
   </div>
 </body>
@@ -527,54 +527,125 @@ class PasswordController extends BaseController {
     }
 
     //发送邮件
-    public function do_send_mail($type,$id,$state){
+    public function do_send_mail($institution_type,$id,$state){
         $email=cookie('email');
-        $title=session('lang')=='en'?"Selectin Forget Password":"Selectin 忘记密码";
-        switch ($type) {
-            case 1: //采购商
-                $link=U('Home/Password/buyer_inf_confirm',array('user_id'=>$id,'state'=>$state),'',true);
-                $User=M('Buyer');
-            break;
+        $title=session('lang')=='en'?"China-fof Forget Password":"中国母基金联盟 忘记密码";
+        switch ($institution_type) {
+        
+            /*LP(母基金管理机构)*/
+            case '1':  $User=M('Lp');
+                       $username=$User->getFieldByEmail($email,'institution_abbr');  
+                       break;
+            /*LP(母基金管理机构)end*/
 
-            case 2: //供应商
-                $link=U('Home/Password/supplier_inf_confirm',array('user_id'=>$id,'state'=>$state),'',true);
-                $User=M('Supplier');
-            break;
+            /*GP(私募股权基金管理机构)*/
+            case '2':  $User=M('Gp');
+                       $username=$User->getFieldByEmail($email,'institution_abbr');  
+                       break;
+            /*GP(私募股权基金管理机构)end*/
+
+            /*创业公司*/
+            case '3':  $User=M('Startup_company');
+                       $username=$User->getFieldByEmail($email,'institution_abbr');  
+                       break;
+            /*创业公司end*/
+
+            /*fa服务机构*/
+            case '4':  $User=M('Fa');
+                       $username=$User->getFieldByEmail($email,'institution_abbr');  
+                       break;
+            /*fa服务机构end*/
+
+            /*法务服务机构*/
+            case '5':  $User=M('Legal_agency');
+                       $username=$User->getFieldByEmail($email,'institution_abbr');  
+                       break;
+            /*法务服务机构end*/
+
+            /*财务服务机构*/
+            case '6':  $User=M('Financial_institution');
+                       $username=$User->getFieldByEmail($email,'institution_abbr');  
+                       break;
+            /*财务服务机构end*/
+
+            /*众创空间*/
+            case '7':  $User=M('Business_incubator');
+                       $username=$User->getFieldByEmail($email,'institution_abbr');  
+                       break;
+            /*众创空间end*/
+
+            /*其它机构*/
+            case '8':  $User=M('Other_institution');
+                       $username=$User->getFieldByEmail($email,'institution_abbr');  
+                       break;
+            /*其它机构*/
+
+            /*个人用户*/
+            case '9':  $User=M('User');
+                       $username=$User->getFieldByEmail($email,'nickname');  
+                       break;
+            /*个人用户*/
 
             default:
                 $this->error('参数非法',__APP__.'/Home/Index');
             break;
         }
 
-        $username=$User->getFieldByEmail($email,'username');
+        
+
+        $link=U('Home/Password/inf_confirm',array('user_id'=>$id,'institution_type'=>$institution_type,'state'=>$state),'',true);
         $content=$this->mailcontent($username,$link);           //生产HTML邮件
 
         if(SUPPORTsendMail($email,$title,$content)) {
-            cookie('type',null);
-            cookie('type',$type);
+            cookie('institution_type',null);
+            cookie('institution_type',$institution_type);
             return 1;
         }
         else return 0;
     }
 
     //账户检索
-    public function send_mail(){
+    public function send_mail_institution(){
         $data=I('post.');
-        $type=null;
-        switch ($data['userType']) {
-            case 'buyer':   //采购商
-                $User=M('Buyer');
-                $type=1;
-                break;
+        switch ($data['institution_type']) {
+                /*LP(母基金管理机构)*/
+                case '1':  $User=M('Lp');   break;
+                /*LP(母基金管理机构)end*/
 
-            case 'supplier':    //供应商
-                $User=M('Supplier');
-                $type=2;
-                break;
+                /*GP(私募股权基金管理机构)*/
+                case '2':  $User=M('Gp');   break;
+                /*GP(私募股权基金管理机构)end*/
 
-            default:
-                $this->error('参数非法',__APP__.'/Home/Index');
-                break;
+                /*创业公司*/
+                case '3':  $User=M('Startup_company');  break;
+                /*创业公司end*/
+
+                /*fa服务机构*/
+                case '4':  $User=M('Fa');  break;
+                /*fa服务机构end*/
+
+                /*法务服务机构*/
+                case '5':  $User=M('Legal_agency');   break;
+                /*法务服务机构end*/
+
+                /*财务服务机构*/
+                case '6':  $User=M('Financial_institution');   break;
+                /*财务服务机构end*/
+
+                /*众创空间*/
+                case '7':  $User=M('Business_incubator');   break;
+                /*众创空间end*/
+
+                /*其它机构*/
+                case '8':  $User=M('Other_institution');   break;
+                /*其它机构*/
+
+                /*其它机构*/
+                case '9':  $User=M('User');   break;
+                /*其它机构*/
+
+
+                default:break;
         }
 
         $res=$User->getbyEmail($data['email']); //获得用户
@@ -588,7 +659,7 @@ class PasswordController extends BaseController {
             if($new!==false){
                 cookie(null);
                 cookie('email',$res['email']);
-                $send=$this->do_send_mail($type,$res['id'],$state); //发送邮件
+                $send=$this->do_send_mail($data['institution_type'],$res['id'],$state); //发送邮件
                 if($send){
                     $this->redirect("second",0);
                 }
@@ -615,57 +686,182 @@ class PasswordController extends BaseController {
         $this->display();
     }
 
-    //采购商验证
-    public function buyer_inf_confirm(){
-        $data=I('get.');
-        if(empty($data)) $this->error('非法访问',__APP__.'/Home/Index');
-        $User=M('Buyer');
-        $res=$User->getbyId($data['user_id']);
+    //忘记密码第三步
+    public function third(){
 
-        if($res){
-            if($res['state']==1){
-                $this->success('该用户已激活',__APP__."/Home/Index");
-            }
-            else if($res['state']==2){
-                $this->error('该用户已停用',__APP__."/Home/Index");
-            }
-            else{
-                if($res['state']==$data['state']){
-                    $User->state='-1';
-                    $save=$User->save();    //更新字段
-                    if($save){
-                        cookie(null);
-                        cookie('user_id',$data['user_id']);
-                        cookie('type',1);
-                        $this->success('邮箱确认成功！请填写新密码',__APP__."/Home/Password/third");
-                    }
-                    else{
-                        $this->error($User->getError());
-                    }
-                }
-                else {
-                    $check=md5(time().$email);  //创建验证码
-                    $state=substr($check,0,20);
-                    $save=$User->where('id='.$data['user_id'])->setField('state',$state);
-                    if($save){
-                        cookie(null);
-                        cookie('email',$data['email']);
-                        $this->do_send_mail(1,$data['user_id'],$state);
-                        $this->error('邮箱验证有误！请重新验证',__APP__."/Home/Password/second");
-                    }
-                }
-            }
+        $id=cookie('user_id');
+        $institution_type=cookie('institution_type');
+        switch ($institution_type) {
+                /*LP(母基金管理机构)*/
+                case '1':  $User=M('Lp');   break;
+                /*LP(母基金管理机构)end*/
+
+                /*GP(私募股权基金管理机构)*/
+                case '2':  $User=M('Gp');   break;
+                /*GP(私募股权基金管理机构)end*/
+
+                /*创业公司*/
+                case '3':  $User=M('Startup_company');  break;
+                /*创业公司end*/
+
+                /*fa服务机构*/
+                case '4':  $User=M('Fa');  break;
+                /*fa服务机构end*/
+
+                /*法务服务机构*/
+                case '5':  $User=M('Legal_agency');   break;
+                /*法务服务机构end*/
+
+                /*财务服务机构*/
+                case '6':  $User=M('Financial_institution');   break;
+                /*财务服务机构end*/
+
+                /*众创空间*/
+                case '7':  $User=M('Business_incubator');   break;
+                /*众创空间end*/
+
+                /*其它机构*/
+                case '8':  $User=M('Other_institution');   break;
+                /*其它机构*/
+
+                /*其它机构*/
+                case '9':  $User=M('User');   break;
+                /*其它机构*/
+
+
+                default:break;
+        }
+
+        $res=$User->getbyId($id);   //获取用户
+
+        if($res['state']=='-1'){
+            $this->assign('id',$id);
+            $this->assign('institution_type',$institution_type);
+            $this->display();
         }
         else{
-            $this->error('没有此用户',__APP__."/Home/Index");
+            $this->error('非法访问',__APP__.'/Home/Index');
         }
     }
 
+    //保存修改
+    public function save_change(){
+        $data=I('post.');
+
+        if(!$data['password']||!$data['passwordTwice'])
+            $this->error('填写信息不完整');
+
+        if(md5($data['password'])!=md5($data['passwordTwice']))
+            $this->error('两次密码不一致!');
+        else{
+            switch ($data['institution_type']) {
+                /*LP(母基金管理机构)*/
+                case '1':  $User=M('Lp');   break;
+                /*LP(母基金管理机构)end*/
+
+                /*GP(私募股权基金管理机构)*/
+                case '2':  $User=M('Gp');   break;
+                /*GP(私募股权基金管理机构)end*/
+
+                /*创业公司*/
+                case '3':  $User=M('Startup_company');  break;
+                /*创业公司end*/
+
+                /*fa服务机构*/
+                case '4':  $User=M('Fa');  break;
+                /*fa服务机构end*/
+
+                /*法务服务机构*/
+                case '5':  $User=M('Legal_agency');   break;
+                /*法务服务机构end*/
+
+                /*财务服务机构*/
+                case '6':  $User=M('Financial_institution');   break;
+                /*财务服务机构end*/
+
+                /*众创空间*/
+                case '7':  $User=M('Business_incubator');   break;
+                /*众创空间end*/
+
+                /*其它机构*/
+                case '8':  $User=M('Other_institution');   break;
+                /*其它机构*/
+
+                /*其它机构*/
+                case '9':  $User=M('User');   break;
+                /*其它机构*/
+
+
+                default:break;
+            }
+
+            $res=$User->getbyId($data['id']);   //获取用户
+
+            if($res['state']=="-1"){
+                $User->password=md5($data['password']);
+                $User->state=200;
+                $save=$User->save();
+                if($save){
+                    cookie(null);
+                    $this->success('密码修改成功，请使用新密码登陆',__APP__.'/Home/Index');
+                }
+                else{
+                    $this->error($User->getError());
+                }
+            }
+            else{
+                $this->error('非法访问',__APP__.'/Home/Index');
+            }
+        }
+    }
+
+
     //供应商验证
-    public function supplier_inf_confirm(){
+    public function inf_confirm(){
         $data=I('get.');
         if(empty($data)) $this->error('非法访问',__APP__.'/Home/Index');
-        $User=M('Supplier');
+        
+        switch ($data['institution_type']) {
+                /*LP(母基金管理机构)*/
+                case '1':  $User=M('Lp');   break;
+                /*LP(母基金管理机构)end*/
+
+                /*GP(私募股权基金管理机构)*/
+                case '2':  $User=M('Gp');   break;
+                /*GP(私募股权基金管理机构)end*/
+
+                /*创业公司*/
+                case '3':  $User=M('Startup_company');  break;
+                /*创业公司end*/
+
+                /*fa服务机构*/
+                case '4':  $User=M('Fa');  break;
+                /*fa服务机构end*/
+
+                /*法务服务机构*/
+                case '5':  $User=M('Legal_agency');   break;
+                /*法务服务机构end*/
+
+                /*财务服务机构*/
+                case '6':  $User=M('Financial_institution');   break;
+                /*财务服务机构end*/
+
+                /*众创空间*/
+                case '7':  $User=M('Business_incubator');   break;
+                /*众创空间end*/
+
+                /*其它机构*/
+                case '8':  $User=M('Other_institution');   break;
+                /*其它机构*/
+
+                /*其它机构*/
+                case '9':  $User=M('User');   break;
+                /*其它机构*/
+
+
+                default:break;
+        }
+
         $res=$User->getbyId($data['user_id']);
 
         if($res){
@@ -677,12 +873,12 @@ class PasswordController extends BaseController {
             }
             else{
                 if($res['state']==$data['state']){
-                    $User->state='-1';
+                    $User->state='-1';      //表示处于更新密码状态
                     $save=$User->save();    //更新字段
                     if($save){
                         cookie(null);
                         cookie('user_id',$data['user_id']);
-                        cookie('type',2);
+                        cookie('institution_type',$data['institution_type']);
                         $this->success('邮箱确认成功！请填写新密码',__APP__."/Home/Password/third");
                     }
                     else{
@@ -704,80 +900,6 @@ class PasswordController extends BaseController {
         }
         else{
             $this->error('没有此用户',__APP__."/Home/Index");
-        }
-    }
-
-    //忘记密码第三步
-    public function third(){
-        $this->display();
-        die();
-        $id=cookie('user_id');
-        $type=cookie('type');
-        switch ($type) {
-            case 1: //采购商
-                $User=M('Buyer');
-                break;
-            
-            case 2: //供应商
-                $User=M('Supplier');
-                break;
-            default:
-                $this->error('参数非法',__APP__.'/Home/Index');
-                break;
-        }
-
-        $res=$User->getbyId($id);   //获取用户
-
-        if($res['state']=='-1'){
-            $this->assign('id',$id);
-            $this->assign('type',$type);
-            $this->display();
-        }
-        else{
-            $this->error('非法访问',__APP__.'/Home/Index');
-        }
-    }
-
-    //保存修改
-    public function save_change(){
-        $data=I('post.');
-
-        if(!$data['password']||!$data['passwordTwice'])
-            $this->error('填写信息不完整');
-
-        if(md5($data['password'])!=md5($data['passwordTwice']))
-            $this->error('两次密码不一致!');
-        else{
-            switch ($data['type']) {
-                case 1: //采购商
-                    $User=M('Buyer');
-                    break;
-                
-                case 2: //供应商
-                    $User=M('Supplier');
-                    break;
-                default:
-                    $this->error('参数非法',__APP__.'/Home/Index');
-                    break;
-            }
-
-            $res=$User->getbyId($data['id']);   //获取用户
-
-            if($res['state']=="-1"){
-                $User->password=md5($data['password']);
-                $User->state=1;
-                $save=$User->save();
-                if($save){
-                    cookie(null);
-                    $this->success('密码修改成功，请使用新密码登陆',__APP__.'/Home/Index');
-                }
-                else{
-                    $this->error($User->getError());
-                }
-            }
-            else{
-                $this->error('非法访问',__APP__.'/Home/Index');
-            }
         }
     }
 }
