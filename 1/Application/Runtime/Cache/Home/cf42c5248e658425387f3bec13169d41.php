@@ -346,7 +346,7 @@
                                               <?php echo date('Y-m-d',$vo['time']); ?>关注
                                             </div>
                                             <div class="col-sm-2 text_right margin_top_13">
-                                                <span class="glyphicon glyphicon-envelope"></span><a href="<?php echo U('Home/Lp/sendLetter');?>?user_id=<?php echo ($vo['host_id']); ?>&institution_type=<?php echo ($vo['host_type']); ?>&username=<?php echo ($vo['nickname']); ?>">发信</a>
+                                                <span class="glyphicon glyphicon-envelope"></span><a href="<?php echo U('Home/Lp/sendLetter');?>?user_id=<?php echo ($vo['fan_id']); ?>&institution_type=<?php echo ($vo['fan_type']); ?>&username=<?php echo ($vo['nickname']); ?>">发信</a>
                                             </div>
                                     
                                         </div><?php endforeach; endif; ?>
@@ -375,7 +375,7 @@
                                               <?php echo date('Y-m-d',$vo['time']); ?>关注
                                             </div>
                                             <div class="col-sm-2 text_right margin_top_13">
-                                                <span class="glyphicon glyphicon-envelope"></span><a href="<?php echo U('Home/Lp/sendLetter');?>?user_id=<?php echo ($vo['host_id']); ?>&institution_type=<?php echo ($vo['host_type']); ?>&username=<?php echo ($vo['institution_abbr']); ?>">发信</a>
+                                                <span class="glyphicon glyphicon-envelope"></span><a href="<?php echo U('Home/Lp/sendLetter');?>?user_id=<?php echo ($vo['fan_id']); ?>&institution_type=<?php echo ($vo['fan_type']); ?>&username=<?php echo ($vo['institution_abbr']); ?>">发信</a>
                                             </div>
                                     
                                         </div><?php endforeach; endif; ?>

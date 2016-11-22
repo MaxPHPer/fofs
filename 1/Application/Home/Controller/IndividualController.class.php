@@ -23,6 +23,13 @@ class IndividualController extends BaseController {
     //个人主页
     public function individualProfile(){
 
+        //检查认证情况
+        $Staff_auth=M('Staff_auth');
+        $where=array();
+        $where['user_id']=session('user_id');
+        $where['user_name']=session('nickname');
+        $staff_auths=$Staff_auth->where($where)->order('req_time desc')->limit(1)->select();
+        $this->assign('staff_auth',$staff_auths[0]);
 
         $this->display();
     }
@@ -91,6 +98,66 @@ class IndividualController extends BaseController {
 
     //我的公司
     public function myCompany(){
+        if($_POST['institution_type']&&$_POST['institution_name']){
+             switch ($_POST['institution_type']) {
+                    /*LP(母基金管理机构)*/
+                    case '1':  $User=M('Lp');   break;
+                    /*LP(母基金管理机构)end*/
+
+                    /*GP(私募股权基金管理机构)*/
+                    case '2':  $User=M('Gp');   break;
+                    /*GP(私募股权基金管理机构)end*/
+
+                    /*创业公司*/
+                    case '3':  $User=M('Startup_company');  break;
+                    /*创业公司end*/
+
+                    /*fa服务机构*/
+                    case '4':  $User=M('Fa');  break;
+                    /*fa服务机构end*/
+
+                    /*法务服务机构*/
+                    case '5':  $User=M('Legal_agency');   break;
+                    /*法务服务机构end*/
+
+                    /*财务服务机构*/
+                    case '6':  $User=M('Financial_institution');   break;
+                    /*财务服务机构end*/
+
+                    /*众创空间*/
+                    case '7':  $User=M('Business_incubator');   break;
+                    /*众创空间end*/
+
+                    /*其它机构*/
+                    case '8':  $User=M('Other_institution');   break;
+                    /*其它机构*/
+
+                    /*其它机构*/
+                    case '9':  $User=M('User');   break;
+                    /*其它机构*/
+
+
+                    default:break;
+            }
+            $where['_string'] = ' (institution_abbr like "%'.$_POST['institution_name'].'%")  OR ( institution_fullname_cn like "'.$_POST['institution_name'].'") ';
+            $results=$User->where($where)->field('id,institution_type,institution_abbr,institution_fullname_cn')->select();
+            if($results){
+                $search_result['has_result']=1;
+                $search_result['institution_id']=$results[0]['id'];
+                $search_result['institution_name']=$results[0]['institution_abbr'];
+                $search_result['institution_type']=$results[0]['institution_type'];
+                $this->assign('search_result',$search_result);
+            }           
+        }
+
+        //检查认证情况
+        $Staff_auth=M('Staff_auth');
+        $where=array();
+        $where['user_id']=session('user_id');
+        $where['user_name']=session('nickname');
+        $staff_auths=$Staff_auth->where($where)->order('req_time desc')->limit(1)->select();
+        $this->assign('staff_auth',$staff_auths[0]);
+
         $this->display();
     }
 
@@ -130,6 +197,28 @@ class IndividualController extends BaseController {
         }else{
             $this->error('新密码两次输入不一致');
         }
+    }
+
+    //发送公司认证请求
+    public function send_auth_req(){
+        if(I('institution_id')&&I('institution_type')&&I('institution_name')){
+            $Staff_auth=M('Staff_auth');
+            $data['user_id']=session('user_id');
+            $data['user_name']=session('nickname');
+            $data['institution_id']=I('institution_id');
+            $data['institution_type']=I('institution_type');
+            $data['institution_name']=I('institution_name');
+            $data['req_time']=time();
+            $data['state']=-1; //-1代表未审核，1代表审核通过，2代表拒绝
+            if($Staff_auth->add($data)){
+                $this->success('认证请求发送成功，待对方审核');
+            }else{
+                $this->error('认证请求发送失败');
+            }
+        }else{
+            $this->error('参数不完整');
+        }
+        
     }
 
 }

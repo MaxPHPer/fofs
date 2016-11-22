@@ -115,9 +115,11 @@
                                   认证情况:
                               </div>
                               <div class='col-md-8'>
-                              <switch name="user['is_authenticated']">
-                                  <case value ="1"><span class="label label-info">已认证</span></case>
-                                  <default/><span class="label label-default">未认证</span>(<a href='#'>申请认证</a>)
+                              <switch name="staff_auth['state']">
+                                  <case value ="-1"><span class="label label-info">审核中({$staff_auth['institution_name']})</span></case>
+                                  <case value ="1"><span class="label label-info">已认证({$staff_auth['institution_name']})</span></case>
+                                  <case value ="2"><span class="label label-warning">被拒绝({$staff_auth['institution_name']})</span><a href="{:U('Home/Individual/myCompany')}">(申请认证)</a></case>
+                                  <default/><span class="label label-default">未认证</span><a href="{:U('Home/Individual/myCompany')}">(申请认证)</a>
                               </switch>
                               </div>
                           </div>

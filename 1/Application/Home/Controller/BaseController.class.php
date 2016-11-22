@@ -168,7 +168,25 @@ class BaseController extends Controller{
         }
 
         $this->assign('received_mails',$received_mails);
+
+
+        //检查认证情况
+        $Staff_auth=M('Staff_auth');
+        $where=array();
+        $where['institution_type']=session('institution_type');
+        $where['institution_id']=session('user_id');
+        $staff_auths=$Staff_auth->where($where)->order('req_time desc')->select();
         
+        foreach($staff_auths as $key => $value){
+            $User=M('User');  
+            $base_url='individual_pic/';
+
+            $where5['id']=$value['user_id'];
+            $img_url=$User->where($where5)->getField('head_portrait_url');
+            $staff_auths[$key]['institution_logo_img']=$base_url.($img_url?$img_url:'default.jpg');
+        }
+        $this->assign('staff_auths',$staff_auths);
+
         $this->display();
         
     }
@@ -326,7 +344,7 @@ class BaseController extends Controller{
     }
 
     //执行发送信件
-    public function do_sendLetter(){
+    public function do_sendLetter($letter_type=1){
         if(I('post.title')&&I('post.content')){
             $letter['sender_id']=session('user_id');
             $letter['sender_type']=session('institution_type');
@@ -336,6 +354,7 @@ class BaseController extends Controller{
             $letter['recipient_name']=I('post.recipient_name');
             $letter['title']=I('post.title');
             $letter['content']=I('post.content');
+            $letter['letter_type']=$letter_type;    //1表示普通信件，2表示个人用户申请认证信件
             $letter['time']=time();
 
             $Letter=M('Letter');
@@ -463,4 +482,37 @@ class BaseController extends Controller{
 
         return $User->getById($user_id);
     }
+
+    //认证通过员工申请认证
+    public function auth_approve(){
+        $Staff_auth=M('Staff_auth');
+        $where['id']=I('get.auth_id');
+        $where['institution_type']=session('institution_type');
+        $where['institution_id']=session('user_id');
+
+        $data['id']=I('get.auth_id');
+        $data['state']=1;
+        if($Staff_auth->where($where)->save($data)){
+            $this->success('认证成功');
+        }else{
+            $this->error('认证失败');
+        }
+    }
+
+    //认证通过员工申请认证
+    public function auth_deny(){
+        $Staff_auth=M('Staff_auth');
+        $where['id']=I('get.auth_id');
+        $where['institution_type']=session('institution_type');
+        $where['institution_id']=session('user_id');
+        
+        $data['id']=I('get.auth_id');
+        $data['state']=2;
+        if($Staff_auth->where($where)->save($data)){
+            $this->success('拒绝成功');
+        }else{
+            $this->error('拒绝失败');
+        }
+    }
+
 }

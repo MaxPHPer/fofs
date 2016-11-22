@@ -324,6 +324,7 @@
                       <ul class="nav nav-tabs" role="tablist" style="padding-left:15px; padding-right: 15px;">
                         <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">已收件</a></li>
                         <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">已发件</a></li>
+                        <li role="presentation"><a href="#staff_auths" role="tab" data-toggle="tab">待认证请求</a></li>
                       </ul>
 
                       <!-- Tab panes -->
@@ -358,7 +359,7 @@
                                                         <div class="text_right"><?php echo date('Y-m-d H:i:s',$vo['time']); ?></div>
                                                       </div>
                                                       <div class="modal-footer">
-                                                        <a href="<?php echo U('Home/Lp/sendLetter');?>?user_id=<?php echo ($vo['sender_id']); ?>&institution_type=<?php echo ($vo['sender_type']); ?>&username=<?php echo ($vo['sender_name']); ?>"><button type="button" class="btn btn-primary">回复</button></a>
+                                                        <a href="<?php echo U('Home/Gp/sendLetter');?>?user_id=<?php echo ($vo['sender_id']); ?>&institution_type=<?php echo ($vo['sender_type']); ?>&username=<?php echo ($vo['sender_name']); ?>"><button type="button" class="btn btn-primary">回复</button></a>
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                                                       </div>
                                                     </div>
@@ -414,6 +415,35 @@
                                           </div>
                                           <div class="col-sm-3 text_right margin_top_13 font_14">
                                              <?php echo date('Y-m-d H:i:s',$vo['time']); ?><!-- <span class="label label-default">已读</span> -->
+                                          </div>
+                                  
+                                      </div><?php endforeach; endif; ?>
+                                  
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="staff_auths">
+
+                              <div class="panel-body">
+                                <div class="list-group">
+                                  <?php if(is_array($staff_auths)): foreach($staff_auths as $key=>$vo): ?><div class="list-group-item row form-group">
+      
+                                          <div class="col-sm-2 ">
+                                               <a href="#" ><?php echo ($vo['user_name']); ?></a>
+                                          </div>
+                                          <div class="col-sm-4 " >
+                                               <a href="#" data-toggle="modal" data-target="#myModal_re_<?php echo ($vo['id']); ?>">请求认证为本公司成员</a>
+                                          </div>
+                                          <div class="col-sm-2 text_right font_14">
+                                             <?php echo date('Y-m-d',$vo['req_time']); ?><!-- <span class="label label-default">已读</span> -->
+                                          </div>
+                                          <div class="col-sm-4 ">
+                                            <?php switch($vo['state']): case "-1": ?><a href="<?php echo U('Home/Lp/auth_approve',array('auth_id'=>$vo['id']));?>"><span class="label label-info">通过</span></a>
+                                                  <a href="<?php echo U('Home/Lp/auth_deny',array('auth_id'=>$vo['id']));?>"><span class="label label-danger">拒绝</span></a><?php break;?>
+                                                <?php case "1": ?><span class="label label-info">已认证</span><?php break;?>
+                                                <?php case "2": ?><span class="label label-danger">已拒绝</span><?php break; endswitch;?>
                                           </div>
                                   
                                       </div><?php endforeach; endif; ?>

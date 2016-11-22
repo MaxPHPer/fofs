@@ -415,8 +415,10 @@
                                   认证情况:
                               </div>
                               <div class='col-md-8'>
-                              <?php switch($user['is_authenticated']): case "1": ?><span class="label label-info">已认证</span><?php break;?>
-                                  <?php default: ?><span class="label label-default">未认证</span>(<a href='#'>申请认证</a>)<?php endswitch;?>
+                              <?php switch($staff_auth['state']): case "-1": ?><span class="label label-info">审核中(<?php echo ($staff_auth['institution_name']); ?>)</span><?php break;?>
+                                  <?php case "1": ?><span class="label label-info">已认证(<?php echo ($staff_auth['institution_name']); ?>)</span><?php break;?>
+                                  <?php case "2": ?><span class="label label-warning">被拒绝(<?php echo ($staff_auth['institution_name']); ?>)</span><a href="<?php echo U('Home/Individual/myCompany');?>">(申请认证)</a><?php break;?>
+                                  <?php default: ?><span class="label label-default">未认证</span><a href="<?php echo U('Home/Individual/myCompany');?>">(申请认证)</a><?php endswitch;?>
                               </div>
                           </div>
                       </div>

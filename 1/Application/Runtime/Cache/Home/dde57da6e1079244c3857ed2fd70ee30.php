@@ -230,21 +230,21 @@
                           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span><?php echo ($user['institution_fullname_cn']); ?></div>
+                <div class="panel-heading"><span class="glyphicon glyphicon-home"></span><?php echo ($user['company_name']); ?></div>
                 <div class="panel-body">
                   <div class="media">
                     <div class="media-left">
                       <a href="#">
-                        <?php if($user['institution_logo_img'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/<?php echo ($user['institution_logo_img']); ?>" alt="头像" height="100" width="100">
+                        <?php if($user['head_portrait_url'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/<?php echo ($user['head_portrait_url']); ?>" alt="头像" height="100" width="100">
                         <?php else: ?>
-                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/lp_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
                       </a>
                     </div>
                     <div class="media-body" style=" overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-
+                      <h5 class="media-heading"><?php echo ($user['username']); ?></h5>
                       <p><i class="fa fa-envelope-o fa-md"></i> <?php echo ($user['email']); ?></p>
-                      <p><i class="glyphicon glyphicon-th-list"></i>LP</p>
-                      <a class="btn btn-default" href="allFunds.html" role="button">修改管理的基金</a>
+                      <p><i class="fa fa-phone fa-md"></i> <?php echo ($user['phone']); ?></p>
+                      <a class="btn btn-default" href="modifyPersonalInfo" role="button"><?php echo (L("edit_personal_profile")); ?></a>
                     </div>
                   </div>
                 </div>
@@ -253,29 +253,29 @@
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <div class="panel-title">
-                    <a href="<?php echo U('Home/Lp/individualProfile');?>">
-                      <span class="glyphicon glyphicon-home"></span>机构主页
+                    <a href="<?php echo U('Home/Individual/individualProfile');?>">
+                      <span class="glyphicon glyphicon-user"></span>个人主页
                       
                     </a>
                   </div>
                 </div>
-              </div><!--机构主页-->
+              </div><!--个人主页-->
 
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <div class="panel-title">
-                    <a href="<?php echo U('Home/Lp/myCompany');?>">
-                      <span class="glyphicon glyphicon-user"></span>机构成员
+                    <a href="<?php echo U('Home/Individual/myCompany');?>">
+                      <span class="glyphicon glyphicon-home"></span>我的公司
                       
                     </a>
                   </div>
                 </div>
-              </div><!--机构成员-->
+              </div><!--我的公司-->
 
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <div class="panel-title">
-                    <a href="<?php echo U('Home/Lp/accountSetting');?>">
+                    <a href="<?php echo U('Home/Individual/accountSetting');?>">
                       <span class="glyphicon glyphicon-pencil"></span>账号设置
                       
                     </a>
@@ -286,7 +286,7 @@
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <div class="panel-title">
-                    <a href="<?php echo U('Home/Lp/inbox');?>">
+                    <a href="<?php echo U('Home/Individual/inbox');?>">
                       <span class="glyphicon glyphicon-envelope"></span>消息
                       <?php if($amount['unread'] != 0): ?><span class="badge"><?php echo ($amount['unread']); ?></span><?php endif; ?>
                     </a>
@@ -304,8 +304,8 @@
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
                     <div class="list-group">
-                      <a href="<?php echo U('Home/Lp/myFollows');?>" class="list-group-item">关注我的<span class="badge"><?php echo ($amount['checking']); ?></span></a>
-                      <a href="<?php echo U('Home/Lp/myFollowing');?>" class="list-group-item ">我关注的<span class="badge"><?php echo ($amount['accepted']); ?></span></a>
+                      <a href="<?php echo U('Home/Individual/myFollows');?>" class="list-group-item">关注我的<span class="badge"><?php echo ($amount['checking']); ?></span></a>
+                      <a href="<?php echo U('Home/Individual/myFollowing');?>" class="list-group-item ">我关注的<span class="badge"><?php echo ($amount['accepted']); ?></span></a>
                       
                     </div>
                   </div>

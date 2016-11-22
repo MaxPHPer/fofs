@@ -341,8 +341,10 @@
                                   认证情况:
                               </div>
                               <div class='col-md-8'>
-                              <?php switch($user['is_authenticated']): case "1": ?><span class="label label-info">已认证</span><?php break;?>
-                                  <?php default: ?><span class="label label-default">未认证</span>(<a href='#'>申请认证</a>)<?php endswitch;?>
+                              <?php switch($staff_auth['state']): case "-1": ?><span class="label label-info">审核中(<?php echo ($staff_auth['institution_name']); ?>)</span><?php break;?>
+                                  <?php case "1": ?><span class="label label-info">已认证(<?php echo ($staff_auth['institution_name']); ?>)</span><?php break;?>
+                                  <?php case "2": ?><span class="label label-warning">被拒绝(<?php echo ($staff_auth['institution_name']); ?>)</span><?php break;?>
+                                  <?php default: ?><span class="label label-default">未认证</span><?php endswitch;?>
                               </div>
                           </div>
                       </div>
@@ -350,11 +352,88 @@
                   </div>
               </div>
 
-              <?php if($user['is_authenticated'] == 0): ?><div class="row margin_top_20">
+              <?php if(($staff_auth['state'] != -1) AND ($staff_auth['state'] != 1)): ?><div class="row margin_top_20">
                     <div class='col-md-12'>
                       <h3><span class="glyphicon glyphicon-check"></span>申请认证</h3>
-                      <?php switch($user['my_company_exist']): case "1": ?><div class="alert alert-info" role="alert">系统已经检测到你公司已在本网站注册，可发送员工身份请求进行公司认证！<input type="button" class="btn btn-info margin_top_20" value="发送请求验证"/></div><?php break;?>
-                        <?php default: ?><div class="alert alert-danger" role="alert">系统尚未检测到你公司在本网站进行注册，请联系公司先在本网站进行注册！</div><?php endswitch;?>
+
+                      <div class="row">
+                            
+                            <form action="<?php echo U('Home/Individual/myCompany');?>" method="post">
+                            <div class="panel-body well">
+                                搜索机构名称进行认证
+                                <div class="row">
+                                    <div class='col-md-2 text_right' class="form-control" style="margin-top:6px;">
+                                        机构类型
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class='col-md-8 ' >
+                                            <select name='institution_type' style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
+                                              <option value ="0">请选择机构类型</option>
+                                              <option value ="1">LP</option>
+                                              <option value="2">GP</option>
+                                              <option value="3">创业公司</option>
+                                              <option value ="4">FA机构</option>
+                                              <option value="5">法务机构</option>
+                                              <option value="6">财务机构</option>
+                                              <option value ="7">众创空间</option>
+                                              <option value="8">其它(媒体、政府机构等)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row margin_top_13">
+                                    <div class="col-md-2 text_right">
+                                      机构名称
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="col-md-8">
+                                          <input class="form-control" name="institution_name" />  
+                                        </div>         
+                                    </div>
+                                </div>
+
+                                <div class="row margin_top_13">
+                                    <div class='col-md-2 text_right' style="margin-top:6px;">
+                                        
+                                   
+                                        
+                                    </div>
+                                    <div class='col-md-9 text_right' >
+
+                                        <input type="submit" value="一键搜索" class="btn btn-info">
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+                         </form>
+                      </div>
+
+                      <?php if(($search_result['has_result']) == "1"): ?><div class="alert alert-info">
+                            系统已经检测到你公司已在本网站注册，可发送员工身份请求进行公司认证！
+                            <div class="row margin_top_13">
+                                
+                                <div class="col-md-5">
+                                  <span class="glyphicon glyphicon-ok-sign"></span><?php echo ($search_result['institution_name']); ?>
+                                </div>
+                                <div class="col-md-3">
+                                    <?php if($search_result['institution_type'] == 1): ?>LP<?php endif; ?>
+                                    <?php if($search_result['institution_type'] == 2): ?>GP<?php endif; ?>
+                                    <?php if($search_result['institution_type'] == 3): ?>创业公司<?php endif; ?>
+                                    <?php if($search_result['institution_type'] == 4): ?>Fa机构<?php endif; ?>
+                                    <?php if($search_result['institution_type'] == 5): ?>法务服务机构<?php endif; ?>
+                                    <?php if($search_result['institution_type'] == 6): ?>财务服务机构<?php endif; ?>
+                                    <?php if($search_result['institution_type'] == 7): ?>众创空间(孵化器)<?php endif; ?>
+                                    <?php if($search_result['institution_type'] == 8): ?>其它机构<?php endif; ?>
+                                </div>
+                                <div class="col-md-4">
+                                  <a href="<?php echo U('Home/Individual/send_auth_req',array('institution_type'=>$search_result['institution_type'],'institution_id'=>$search_result['institution_id'],'institution_name'=>$search_result['institution_name']));?>"><input type="button" class="btn btn-info" value="发送请求验证"/></a>
+                                </div>
+                            </div>
+                          </div>
+                      <?php else: ?>
+                          <div class="alert alert-danger" role="alert">系统尚未检测到你公司在本网站进行注册，请联系公司先在本网站进行注册！</div><?php endif; ?>
                     </div>
                 </div><?php endif; ?>
                &nbsp;
