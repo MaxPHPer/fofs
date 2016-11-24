@@ -10,6 +10,8 @@ class BaseController extends Controller{
         $username=session('username');
         $this->assign('username',$username);
 
+        $is_admim=session('is_admim');
+        $this->assign('is_admim',$is_admin);
     }
 
     public function checklogin() {

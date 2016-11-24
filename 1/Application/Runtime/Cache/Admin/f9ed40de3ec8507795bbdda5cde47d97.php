@@ -35,15 +35,16 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link href="/fofs/1/Public/assets/css/common.css" rel="stylesheet">
+
 </head>
 <body>
 
 
 
-<div id="wrapper">
 
-  
+    <div id="wrapper">
+
+        
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
   <div class="navbar-header">
@@ -53,7 +54,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/fofs/1/index.php/Admin/Index/index" style="font-size:30px;">中国母基金联盟后台管理系统</a>
+    <a class="navbar-brand" href="/fofs/1/index.php/Admin/Index/index">中国母基金联盟后台管理系统</a>
   </div>
   <!-- /.navbar-header -->
 
@@ -79,49 +80,53 @@
 
   <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse">
-      <ul class="nav" id="side-menu" style="padding-bottom: 300px;">
-        <?php if($is_admin == 2): ?><li>
-            <a href="#"><i class="fa fa-dashboard fa-fw"></i> 系统管理<span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-              <li>
-                <a href="/fofs/1/index.php/Admin/Manager/modify_manager">查看管理员</a>
-              </li>
-              <li>
-                <a href="/fofs/1/index.php/Admin/Manager/new_manager">新增管理员</a>
-              </li>
-            </ul>
-            <!-- /.nav-second-level -->
-          </li><?php endif; ?>
+      <ul class="nav" id="side-menu">
 
+        <li>
+          <a href="#"><i class="fa fa-dashboard fa-fw"></i> 系统管理<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Manager/modify_manager">查看管理员</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Manager/new_manager">新增管理员</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i> 业务相关<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Business/modify_question">业务合规问题</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Business/modify_choice">问题选项</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>推荐码管理<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/RefferalCode/product_code">生成推荐码</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/RefferalCode/code_manage">已存在的二维码</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
         <li>
           <a href="#"><i class="fa fa-edit fa-fw"></i>用户管理<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
             <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=1">LP</a>
+              <a href="/fofs/1/index.php/Admin/User/modify_buyer">采购商</a>
             </li>
             <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=2">GP</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=3">创业公司</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=4">Fa</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=5">法务服务机构</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=6">财务服务结构</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=7">众创空间</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=8">其它机构</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=9">个人用户</a>
+              <a href="/fofs/1/index.php/Admin/User/modify_supplier">供应商</a>
             </li>
           </ul>
           <!-- /.nav-second-level -->
@@ -360,109 +365,83 @@
   <!-- /.navbar-static-side -->
 </nav>
 
-  <div id="page-wrapper">
-    <div class="row">
-      <div class="col-lg-12">
-        <h1 class="page-header">Dashboard</h1>
-      </div>
-      <!-- /.col-lg-12 -->
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">查看管理员</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+                        <div class="panel-body">
+                            <div class="row">
+                                <div>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>邮箱</th>
+                                                    <th>姓名</th>
+                                                    <th>电话</th>
+                                                    <th>性别</th>
+                                                    <th>管理组别</th>
+                                                    <th>职称</th>
+                                                    <th>注册时间</th>
+                                                    <th>编辑</th>
+                                                    <th>删除</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                              <?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
+                                                  <td><?php echo ($vo['id']); ?></td>
+                                                  <td><?php echo ($vo['email']); ?></td>
+                                                  <td><?php echo ($vo['username']); ?></td>
+                                                  <td><?php echo ($vo['phone']); ?></td>
+                                                  <td>
+                                                      <?php switch($vo["sex"]): case "male": ?>男<?php break;?>
+                                                          <?php case "female": ?>女<?php break;?>
+                                                          <?php case "secret": ?>保密<?php break; endswitch;?>
+                                                  </td>
+                                                  <td>
+                                                      <?php switch($vo["is_admin"]): case "2": ?>超级管理员<?php break;?>
+                                                          <?php case "1": ?>普通管理员<?php break;?>
+                                                          <?php default: ?>default<?php endswitch;?>
+                                                  </td>
+                                                  <td><?php echo ($vo["function"]); ?></td>
+                                                  <td><?php echo ($vo["reg_time"]); ?></td>
+                                                  <td>
+                                                    <a class='btn btn-primary' href="/fofs/1/index.php/Admin/Manager/edit_manager/id/<?php echo ($vo['id']); ?>">编辑</a>
+                                                  </td>
+                                                  <?php if($vo['is_admin'] == 1): ?><td>
+                                                        <a class='btn btn-primary' href="/fofs/1/index.php/Admin/Manager/delete_manager/id/<?php echo ($vo['id']); ?>">删除</a>
+                                                      </td>
+                                                  <?php else: ?>
+                                                      <td>
+                                                        不能删除
+                                                      </td><?php endif; ?>
+                                                  
+                                                </tr><?php endforeach; endif; ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.table-responsive -->
+                                </div>
+                                <!-- /.col-lg-4 (nested) -->
+                                <div class="col-lg-8">
+                                    <div id="morris-bar-chart"></div>
+                                </div>
+                                <!-- /.col-lg-8 (nested) -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.panel-body -->
+            
+        </div>
+        <!-- /#page-wrapper -->
     </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-comments fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">26</div>
-                <div>New Comments!</div>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-green">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-tasks fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">12</div>
-                <div>New Tasks!</div>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-yellow">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-shopping-cart fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">124</div>
-                <div>New Orders!</div>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-red">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-support fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">13</div>
-                <div>Support Tickets!</div>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /#page-wrapper -->
-</div>
-<!-- /#wrapper -->
+    <!-- /#wrapper -->
 
 
     <!-- jQuery -->

@@ -1,0 +1,241 @@
+<include file = "Common:header"/>
+
+
+    <div id="wrapper">
+
+        <include file = "Common:navbar"/>
+
+
+        <div id="page-wrapper">
+                <section class="content-wrap" style="margin-top:30px;">
+                  <div class="container">
+                    <div class="row">
+
+                      <div class="col-md-10">
+                        <div class="well">
+              <h3>机构主页
+
+              </h3>
+              <hr/>
+              
+              <div class="row">
+                  <div class='col-md-2'>
+                      <a href="#">
+                        <if condition="$user['institution_logo_img'] neq NULL">
+                          <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/other_pic/{$user['institution_logo_img']}" alt="头像" height="100" width="100">
+                          <else />
+                          <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/other_pic/default.jpg" alt="头像" height="100" width="100"></if>
+                      </a>
+                  </div>
+
+
+                  <div class='col-md-10'>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              中文名称:
+                          </div>
+                          <div class='col-md-10'>
+                              {$user['institution_fullname_cn']}
+                          </div>
+                      </div>
+                    
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              英文名称:
+                          </div>
+                          <div class='col-md-10'>
+                              {$user['institution_fullname_en']}
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              公司简介:
+                          </div>
+                          <div class='col-md-10'>
+                              {$user['institution_abstract']}
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-inbox"></span>基本信息</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  注册时间:
+                              </div>
+                              <div class='col-md-8'>
+                                <php>echo date('Y-m-d',$user['founded_time']);</php>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>注册地址:</div>
+                            <div class='col-md-8'>{$user['founded_addr']}</div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>所属行业:</div>
+                            <div class='col-md-8'>{$user['profession']}</div>
+                          </div>
+
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-earphone"></span>联系方式</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  联系人:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['contact_username']}
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  手机:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['contact_mobilephone']}
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  电话:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['contact_telephone']}
+                              </div>
+                          </div>
+
+                          <div class="row">
+                            <div class='col-md-3 text_right'>邮箱:</div>
+                            <div class='col-md-8'>{$user['contact_email']}</div>
+                          </div>
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  机构微信:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['company_wechat']}
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  机构网站:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['company_web']}
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-user"></span>管理团队</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                          <!--已有团队成员-->
+                          <foreach name="members" item="vo">
+                              <div id="" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="">
+                                <div class="panel-body">
+                                  <div class="repeat_people ">
+                                    <div class="borderBottom" style="margin-bottom:20px;">
+                                      <div class="row" >
+                                        <div class="col-sm-3 text_right">
+                                          
+                                            姓名:
+                      
+                                        </div>
+
+                                        <div class="col-sm-8">
+
+                                              {$vo['username']}
+
+                                        </div>
+
+                                      </div>
+
+                                      <div class="row" style="margin-top:10px;">
+                                        <div class="col-sm-3 text_right">
+                                          
+                                            职务:
+                      
+                                        </div>
+
+                                        <div class="col-sm-8">
+
+                                              {$vo['function']}
+
+                                        </div>
+                                      </div>
+
+                                      <div class="row">
+                                          <div class="col-sm-3 text_right">
+                                            从业经历:
+                                          </div>
+                                      </div>
+
+                                      <div class="repeat">
+                                        <foreach name="vo['business_experience']" item="business_experience">
+                                            <div class="row" style="margin-top:10px;">
+                                              
+                                              <div class="col-sm-3 text_right">
+                                                    {$business_experience['company_name']}
+                                              </div>
+                                             
+                                                
+                                              <div class="col-sm-3">
+                                                    {$business_experience['function']}
+                                              </div>
+
+                                              <div class="col-sm-6">
+                                                {$business_experience['start_time']}-{$business_experience['end_time']}
+                                              </div>
+                                    
+                                            </div>
+                                        </foreach>
+                                      </div>
+
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>   
+                          </foreach>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+               &nbsp;
+            </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+<include file = "Common:footer"/>

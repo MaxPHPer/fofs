@@ -41,9 +41,10 @@
 
 
 
-<div id="wrapper">
 
-  
+    <div id="wrapper">
+
+        
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
   <div class="navbar-header">
@@ -360,110 +361,80 @@
   <!-- /.navbar-static-side -->
 </nav>
 
-  <div id="page-wrapper">
-    <div class="row">
-      <div class="col-lg-12">
-        <h1 class="page-header">Dashboard</h1>
-      </div>
-      <!-- /.col-lg-12 -->
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-comments fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">26</div>
-                <div>New Comments!</div>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-green">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-tasks fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">12</div>
-                <div>New Tasks!</div>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-yellow">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-shopping-cart fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">124</div>
-                <div>New Orders!</div>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-red">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-support fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">13</div>
-                <div>Support Tickets!</div>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /#page-wrapper -->
-</div>
-<!-- /#wrapper -->
 
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">查看所有&nbsp;
+                        <?php if($institution_type == 1): ?>LP<?php endif; ?>
+                        <?php if($institution_type == 2): ?>GP<?php endif; ?>
+                        <?php if($institution_type == 3): ?>创业公司<?php endif; ?>
+                        <?php if($institution_type == 4): ?>Fa机构<?php endif; ?>
+                        <?php if($institution_type == 5): ?>法务服务机构<?php endif; ?>
+                        <?php if($institution_type == 6): ?>财务服务机构<?php endif; ?>
+                        <?php if($institution_type == 7): ?>众创空间(孵化器)<?php endif; ?>
+                        <?php if($institution_type == 8): ?>其它机构<?php endif; ?>
+                        <?php if($institution_type == 9): ?>个人用户<?php endif; ?>
+                    </h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+                        <div class="panel-body">
+                            <div class="row">
+                                <div>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>头像</th>
+                                                    <th>名称</th>
+                                                    <th>账号</th>
+                                                    <th>注册时间</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                              <?php if(is_array($results)): foreach($results as $key=>$vo): ?><tr>
+                                                  <td><?php echo ($vo['id']); ?></td>
+                                                  <td><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/<?php echo ($vo['institution_logo_img']); ?>" alt="头像" height="50" width="50"/></td>
+                                                  <td><?php echo ($vo['institution_abbr']); ?></td>
+                                                  <td><?php echo ($vo['email']); ?></td>
+                                                  <td><?php echo date('Y-m-d H:i:s',$vo['reg_time']); ?></td>
+                                                  <td>
+                                                      <a class='btn btn-primary' href="/fofs/1/index.php/Admin/User/<?php echo ($vo['detail_url']); ?>" target="_blank">详细</a>
+                                                      <a class='btn btn-danger' href="/fofs/1/index.php/Admin/User/delete/institution_id/<?php echo ($vo['id']); ?>/institution_type/<?php echo ($vo['institution_type']); ?>" onclick="return del()">删除</a>
+                                                  </td>
+                                                </tr><?php endforeach; endif; ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.table-responsive -->
+                                </div>
+                                <!-- /.col-lg-4 (nested) -->
+                                <div class="col-lg-8">
+                                    <div id="morris-bar-chart"></div>
+                                </div>
+                                <!-- /.col-lg-8 (nested) -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.panel-body -->
+            <div class="row" style="float:right; margin:0 auto;">
+                <?php echo ($page); ?>
+            </div>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+<script type="text/javascript"> 
+function del(){ 
+    if(!confirm("确认要删除？")){ 
+        window.event.returnValue = false; 
+    } 
+}
+</script>
 
     <!-- jQuery -->
     <script src="/fofs/1/Public/assets/bower_components/jquery/dist/jquery.min.js"></script>

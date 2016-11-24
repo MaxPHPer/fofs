@@ -35,10 +35,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link href="/fofs/1/Public/assets/css/common.css" rel="stylesheet">
+
 </head>
 <body>
-
 
 
 <div id="wrapper">
@@ -53,7 +52,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/fofs/1/index.php/Admin/Index/index" style="font-size:30px;">中国母基金联盟后台管理系统</a>
+    <a class="navbar-brand" href="/fofs/1/index.php/Admin/Index/index">中国母基金联盟后台管理系统</a>
   </div>
   <!-- /.navbar-header -->
 
@@ -79,7 +78,7 @@
 
   <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse">
-      <ul class="nav" id="side-menu" style="padding-bottom: 300px;">
+      <ul class="nav" id="side-menu" style="margin-bottom: 300px;">
         <?php if($is_admin == 2): ?><li>
             <a href="#"><i class="fa fa-dashboard fa-fw"></i> 系统管理<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
@@ -94,34 +93,37 @@
           </li><?php endif; ?>
 
         <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i> 业务相关<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Business/modify_question">业务合规问题</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Business/modify_choice">问题选项</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>推荐码管理<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/RefferalCode/product_code">生成推荐码</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/RefferalCode/code_manage">已存在的二维码</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <li>
           <a href="#"><i class="fa fa-edit fa-fw"></i>用户管理<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
             <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=1">LP</a>
+              <a href="/fofs/1/index.php/Admin/User/modify_buyer">采购商</a>
             </li>
             <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=2">GP</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=3">创业公司</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=4">Fa</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=5">法务服务机构</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=6">财务服务结构</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=7">众创空间</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=8">其它机构</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=9">个人用户</a>
+              <a href="/fofs/1/index.php/Admin/User/modify_supplier">供应商</a>
             </li>
           </ul>
           <!-- /.nav-second-level -->
@@ -361,102 +363,98 @@
 </nav>
 
   <div id="page-wrapper">
+
     <div class="row">
-      <div class="col-lg-12">
-        <h1 class="page-header">Dashboard</h1>
-      </div>
-      <!-- /.col-lg-12 -->
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-comments fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">26</div>
-                <div>New Comments!</div>
-              </div>
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="margin-top: 20px;">
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                    <div class="collapsed">
+                      所有
+                      <?php switch($article_type): case "1": ?>新闻资讯<?php break;?>
+                                <?php case "2": ?>政策法规<?php break;?>
+                                <?php case "3": ?>投资事件<?php break;?>
+                                <?php case "4": ?>联盟活动<?php break;?>
+                                <?php case "5": ?>关于我们<?php break;?>
+                                <?php case "6": ?>法律声明<?php break;?>
+                                <?php case "7": ?>联系我们<?php break;?>
+                                <?php case "8": ?>加入我们<?php break;?>
+                                <?php case "9": ?>联盟介绍<?php break;?>
+                                <?php case "10": ?>组织架构<?php break;?>
+                                <?php case "11": ?>联盟成员<?php break;?>
+                                <?php case "12": ?>秘书长<?php break;?>
+                                <?php case "13": ?>合作伙伴<?php break;?>
+                                <?php case "14": ?>加入联盟<?php break;?>
+                                <?php case "15": ?>合作<?php break;?>
+                                <?php case "16": ?>用户协议<?php break; endswitch;?>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <div class="list-group">
+                      <?php if(is_array($news)): foreach($news as $key=>$vo): ?><div class="list-group-item">
+                          <a href="<?php echo U('Admin/Article/article_detail');?>?article_id=<?php echo ($vo['id']); ?>" >
+                            <?php echo ($vo['title']); ?>
+                          </a>
+                            <div style="float: right;">
+                              <div style="float: right; margin-right:25px;">
+                                <a href="<?php echo U('Admin/Article/delete_article');?>?article_id=<?php echo ($vo['id']); ?>&article_type=<?php echo ($article_type); ?>" >
+                                  <span class="glyphicon glyphicon-remove"></span>
+                                  删除
+                                </a>
+                              </div>
+                              <div style="float: right; margin-right:25px;">
+                                <a href="<?php echo U('Admin/Article/edit_article');?>?article_id=<?php echo ($vo['id']); ?>&article_type=<?php echo ($article_type); ?>" >
+                                  <span class="glyphicon glyphicon-pencil"></span>
+                                  修改
+                                </a>
+                              </div>
+                              
+                              <div style="float: right; margin-right:25px;">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                                <?php echo date('Y-m-d H:i:s',$vo['pub_time']) ?>
+                              </div>
+                              <div style="float: right; margin-right:25px;">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <?php switch($vo['institution_type']): case "1": ?>LP<?php break;?>
+                                    <?php case "2": ?>GP<?php break;?>
+                                    <?php case "3": ?>创业公司<?php break;?>
+                                    <?php case "4": ?>FA<?php break;?>
+                                    <?php case "5": ?>法务服务机构<?php break;?>
+                                    <?php case "6": ?>财务服务机构<?php break;?>
+                                    <?php case "7": ?>众创空间<?php break;?>
+                                    <?php case "8": ?>其它机构<?php break;?>
+                                    <?php case "9": ?>个人<?php break;?>
+                                    <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
+                                &nbsp;&nbsp;
+                                <?php echo ($vo['author_name']); ?>
+                     
+                              </div>
+
+                            </div>
+
+                   
+                          </div><?php endforeach; endif; ?>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body center">
+                    
+                      <?php echo ($page); ?>
+                 
+                  </div>
+                </div>
+              </div><!--新闻列表-->
+
+
             </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-green">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-tasks fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">12</div>
-                <div>New Tasks!</div>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-yellow">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-shopping-cart fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">124</div>
-                <div>New Orders!</div>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-red">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-support fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">13</div>
-                <div>Support Tickets!</div>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
     </div>
     <!-- /.row -->
   </div>

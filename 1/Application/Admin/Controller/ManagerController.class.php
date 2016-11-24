@@ -124,37 +124,29 @@ class ManagerController extends BaseController {
 
         $img = $User->where('id='.$data['id'])->getField('face_url');      //读取原头像
 
-        if($User->create()){
-      		if(!$data['password'])	$User->field('password',ture);	//如未输入密码保持不变
-	      	if(!$data['email'])
-	        		$this->error('表单不完整！');
-	        else{
-		        	if(md5($data['password'])==md5($data['repassword'])){
-						/*上传头像*/
-		        		foreach($_FILES as $key =>$file){
-				             if(!empty($file['name'])) {
-				                 // 上传单个文件 
-				                 $info   =   $upload->uploadOne($file);
-				                 if(!$info) {// 上传错误提示错误信息
-				                    $this->error($upload->getError());
-				                 }else{// 上传成功 获取上传文件信息
-				                 	unlink('./Public/uploads/admin_pic/'.$img);  //删除原文件
-				                    $User->face_url=$info['savename'];
-				                 }
-				             }
-				        }
+        if($User->create($data)){
 
-			        	$User->password=md5($data['password']);		        		
-
-			            if($insertid=$User->save()){
-			                $this->success('更新成功','modify_manager');
-			            }
-			            else{
-			                $this->error($User->getError());
-			            }
-			        }
-			        else $this->error('两次密码不一致！');
-			    }
+			/*上传头像*/
+    		foreach($_FILES as $key =>$file){
+	             if(!empty($file['name'])) {
+	                 // 上传单个文件 
+	                 $info   =   $upload->uploadOne($file);
+	                 if(!$info) {// 上传错误提示错误信息
+	                    $this->error($upload->getError());
+	                 }else{// 上传成功 获取上传文件信息
+	                 	unlink('./Public/uploads/admin_pic/'.$img);  //删除原文件
+	                    $User->face_url=$info['savename'];
+	                 }
+	             }
+	        }
+    		
+            if($insertid=$User->save()){
+                $this->success('更新成功','modify_manager');
+            }
+            else{
+                $this->error($User->getError());
+            }
+			   
         }
         else{
             $this->error($User->getError());

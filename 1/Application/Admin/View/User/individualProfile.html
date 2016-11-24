@@ -1,0 +1,192 @@
+<include file = "Common:header"/>
+
+
+    <div id="wrapper">
+
+        <include file = "Common:navbar"/>
+
+
+        <div id="page-wrapper">
+                <section class="content-wrap" style="margin-top:30px;">
+                  <div class="container">
+                    <div class="row">
+
+                      <div class="col-md-10">
+                        <div class="well">
+              <h3>用户主页
+
+              </h3>
+              <hr/>
+              
+              <div class="row">
+                  <div class='col-md-2'>
+                      <a href="#">
+                        <if condition="$user['head_portrait_url'] neq NULL">
+                          <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/individual_pic/{$user['head_portrait_url']}" alt="头像" height="100" width="100">
+                          <else />
+                          <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100"></if>
+                      </a>
+                  </div>
+
+
+                  <div class='col-md-10'>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              姓名:
+                          </div>
+                          <div class='col-md-10'>
+                              {$user['username']}({$user['nickname']})
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              性别:
+                          </div>
+                          <div class='col-md-10'>
+                            <switch name="user['sex']" >
+                              <case value="male">男</case>
+                              <case value="female">女</case>
+                              <default/>保密
+                            </switch>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              简介:
+                          </div>
+                          <div class='col-md-10'>
+                              {$user['abstract']}
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              行业:
+                          </div>
+                          <div class='col-md-10'>
+                             
+                              <switch name="user['profession']">
+                                <case value ="0">请选择机构类型</case>
+                                <case value ="1">母基金</case>
+                                <case value="2">基金</case>
+                                <case value="3">创业公司</case>
+                                <case value ="4">FA机构</case>
+                                <case value="5">法务机构</case>
+                                <case value="6">财务机构</case>
+                                <case value ="7">众创空间</case>
+                                <case value="8">其它(媒体、政府机构等)</case>
+                              </switch>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-tags"></span>从业简历</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="col-md-12">
+                             
+                                  {$user['business_experience']}
+                             
+                          </div>
+                          
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-home"></span>公司信息</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  名称:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['company_name']}
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class='col-md-3 text_right'>职位:</div>
+                            <div class='col-md-8'>{$user['company_function']}</div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  认证情况:
+                              </div>
+                              <div class='col-md-8'>
+                              <switch name="user['is_authenticated']">
+                                  <case value ="1"><span class="label label-info">已认证</span></case>
+                                  <default/><span class="label label-default">未认证</span>
+                              </switch>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-earphone"></span>联系方式</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  手机:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['phone']}
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class='col-md-3 text_right'>邮箱:</div>
+                            <div class='col-md-8'>{$user['email']}</div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  LinkedIn:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['linkedin']}
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  新浪微博:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['weibo']}
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  微信:
+                              </div>
+                              <div class='col-md-8'>
+                                  {$user['wechat']}
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+               &nbsp;
+            </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+<include file = "Common:footer"/>

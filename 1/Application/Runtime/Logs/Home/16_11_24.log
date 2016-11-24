@@ -1,0 +1,975 @@
+[ 2016-11-24T00:06:27+08:00 ] ::1 /fofs/1/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000902s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001061s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003880s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0939s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 1 ORDER BY id desc LIMIT 1,10   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 2 ORDER BY id desc LIMIT 10   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 3 ORDER BY id desc LIMIT 10   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 4 ORDER BY id desc LIMIT 10   [ RunTime:0.0023s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000215s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000305s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 43 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 247 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 264 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 281 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.066235s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066505s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000941s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001147s ]
+
+[ 2016-11-24T00:06:28+08:00 ] ::1 /fofs/1/index.php?l=zh-cn
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000841s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001632s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002700s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004559s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0197s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 1 ORDER BY id desc LIMIT 1,10   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 2 ORDER BY id desc LIMIT 10   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 3 ORDER BY id desc LIMIT 10   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 4 ORDER BY id desc LIMIT 10   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000373s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000608s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 43 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 247 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 264 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 281 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053098s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053222s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000748s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001294s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001432s ]
+
+[ 2016-11-24T00:06:32+08:00 ] ::1 /fofs/1/index.php/Home//individualProfile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002142s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003068s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009404s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009503s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000477s ]
+
+[ 2016-11-24T00:06:35+08:00 ] ::1 /fofs/1/index.php/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000740s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000938s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003994s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005109s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0168s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 1 ORDER BY id desc LIMIT 1,10   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 2 ORDER BY id desc LIMIT 10   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 3 ORDER BY id desc LIMIT 10   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 4 ORDER BY id desc LIMIT 10   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000271s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000385s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 43 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 247 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 264 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 281 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038681s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038790s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000739s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000831s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001081s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001263s ]
+
+[ 2016-11-24T00:06:37+08:00 ] ::1 /fofs/1/index.php/Home/Search/lpSearch.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003498s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_lp_fund_product` [ RunTime:0.1257s ]
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\fofs\1\Application\Home\Controller\SearchController.class.php 第 157 行.
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_lp_fund_product`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0152s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_lp` WHERE `id` IN ('3','4') LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `id`,`institution_type`,`institution_fullname_cn`,`institution_logo_img`,`is_securities_fund`,`is_stock_fund`,`is_startup_fund`,`is_other_fund` FROM `fofs_lp` WHERE `id` IN ('3','4') ORDER BY id desc LIMIT 0,2   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `fofs_interest_list` [ RunTime:0.0598s ]
+SQL: SELECT * FROM `fofs_interest_list` WHERE `id` IN ('3','4') AND `fan_id` = 4 AND `fan_type` = 10 AND `host_id` = 4 AND `host_type` = 1  [ RunTime:0.0009s ]
+SQL: SELECT * FROM `fofs_interest_list` WHERE `id` IN ('3','4') AND `fan_id` = 4 AND `fan_type` = 10 AND `host_id` = 3 AND `host_type` = 1  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000217s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000320s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\46ffef79ff36275cb149efd05d9222a4.php 第 43 行.
+NOTIC: [8] Undefined variable: is_government_guidance D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\46ffef79ff36275cb149efd05d9222a4.php 第 251 行.
+NOTIC: [8] Undefined variable: is_private_capital D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\46ffef79ff36275cb149efd05d9222a4.php 第 252 行.
+NOTIC: [8] Undefined variable: is_state_owned D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\46ffef79ff36275cb149efd05d9222a4.php 第 253 行.
+NOTIC: [8] Undefined variable: is_investment_security D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\46ffef79ff36275cb149efd05d9222a4.php 第 266 行.
+NOTIC: [8] Undefined variable: is_equity_investment D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\46ffef79ff36275cb149efd05d9222a4.php 第 270 行.
+NOTIC: [8] Undefined variable: is_venture_investment D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\46ffef79ff36275cb149efd05d9222a4.php 第 274 行.
+NOTIC: [8] Undefined variable: is_other_investment D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\46ffef79ff36275cb149efd05d9222a4.php 第 278 行.
+NOTIC: [8] Undefined variable: investment_field D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\46ffef79ff36275cb149efd05d9222a4.php 第 291 行.
+NOTIC: [8] Undefined index: is_by_followed D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\46ffef79ff36275cb149efd05d9222a4.php 第 371 行.
+NOTIC: [8] Undefined index: is_by_followed D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\46ffef79ff36275cb149efd05d9222a4.php 第 371 行.
+NOTIC: [8] Undefined variable: tip D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\46ffef79ff36275cb149efd05d9222a4.php 第 380 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038864s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038987s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000752s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001047s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001175s ]
+
+[ 2016-11-24T07:45:17+08:00 ] ::1 /fofs/1/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000816s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.030914s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.031861s ]
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0406s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 1 ORDER BY id desc LIMIT 1,10   [ RunTime:0.0334s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 2 ORDER BY id desc LIMIT 10   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 3 ORDER BY id desc LIMIT 10   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 4 ORDER BY id desc LIMIT 10   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000360s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000621s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 43 行.
+NOTIC: [8] Undefined variable: user_id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 49 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 247 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 264 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 281 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.114999s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.115108s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000975s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001074s ]
+
+[ 2016-11-24T07:45:19+08:00 ] ::1 /fofs/1/index.php?l=zh-cn
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000997s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002803s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004086s ]
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 1 ORDER BY id desc LIMIT 1,10   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 2 ORDER BY id desc LIMIT 10   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 3 ORDER BY id desc LIMIT 10   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 4 ORDER BY id desc LIMIT 10   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000171s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000248s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 43 行.
+NOTIC: [8] Undefined variable: user_id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 49 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 247 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 264 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 281 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025297s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025389s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000575s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000907s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001029s ]
+
+[ 2016-11-24T23:21:58+08:00 ] ::1 /fofs/1/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000881s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001389s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004639s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0828s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 1 ORDER BY id desc LIMIT 1,10   [ RunTime:0.0022s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 2 ORDER BY id desc LIMIT 10   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 3 ORDER BY id desc LIMIT 10   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 4 ORDER BY id desc LIMIT 10   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000425s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000601s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 43 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 247 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 264 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 281 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.059668s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059850s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001336s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001486s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001939s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002114s ]
+
+[ 2016-11-24T23:22:03+08:00 ] ::1 /fofs/1/index.php/Home/Search/search.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000927s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001304s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005188s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `fofs_article` WHERE `title` LIKE '%机构%' ORDER BY pub_time desc  [ RunTime:0.0211s ]
+SQL: SHOW COLUMNS FROM `fofs_user` [ RunTime:0.1494s ]
+SQL: SELECT * FROM `fofs_user` WHERE `nickname` LIKE '%机构%'  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0147s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `fofs_gp` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `fofs_startup_company` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `fofs_startup_company` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `fofs_fa` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `fofs_fa` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `fofs_legal_agency` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `fofs_legal_agency` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `fofs_financial_institution` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `fofs_other_institution` [ RunTime:0.0528s ]
+SQL: SELECT * FROM `fofs_other_institution` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0018s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000438s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000651s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.064957s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065219s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001703s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001991s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002582s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002804s ]
+
+[ 2016-11-24T23:22:05+08:00 ] ::1 /fofs/1/index.php/Home/Search/search/search_type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001081s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001564s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002980s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004821s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `fofs_article` WHERE `title` LIKE '%机构%' ORDER BY pub_time desc  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_user` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `fofs_user` WHERE `nickname` LIKE '%机构%'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0102s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `fofs_gp` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `fofs_startup_company` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `fofs_startup_company` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `fofs_fa` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `fofs_fa` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_legal_agency` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `fofs_legal_agency` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `fofs_financial_institution` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_other_institution` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `fofs_other_institution` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000298s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000422s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036863s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036986s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000746s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000847s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001246s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001376s ]
+
+[ 2016-11-24T23:22:05+08:00 ] ::1 /fofs/1/index.php/Home/Search/search/search_type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001135s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001128s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004424s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `fofs_article` WHERE `title` LIKE '%机构%' ORDER BY pub_time desc  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_user` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `fofs_user` WHERE `nickname` LIKE '%机构%'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `fofs_gp` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_startup_company` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `fofs_startup_company` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `fofs_fa` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `fofs_fa` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_legal_agency` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `fofs_legal_agency` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `fofs_financial_institution` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_other_institution` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `fofs_other_institution` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000306s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000437s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034054s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034255s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000739s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000841s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001518s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001693s ]
+
+[ 2016-11-24T23:22:09+08:00 ] ::1 /fofs/1/index.php/Home/Search/search.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000892s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001246s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004929s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `fofs_article` WHERE `title` LIKE '%资本%' ORDER BY pub_time desc  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_user` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `fofs_user` WHERE `nickname` LIKE '%资本%'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `fofs_gp` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_startup_company` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `fofs_startup_company` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `fofs_fa` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `fofs_fa` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_legal_agency` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `fofs_legal_agency` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `fofs_financial_institution` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_other_institution` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `fofs_other_institution` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000306s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000430s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034746s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034912s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000832s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000938s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001350s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001539s ]
+
+[ 2016-11-24T23:40:33+08:00 ] ::1 /fofs/1/index.php/Home/Search/search/search_type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000913s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001711s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005203s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `fofs_article` WHERE `title` LIKE '%资本%' ORDER BY pub_time desc  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_user` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `fofs_user` WHERE `nickname` LIKE '%资本%'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `fofs_gp` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_startup_company` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fofs_startup_company` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_fa` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `fofs_fa` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_legal_agency` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `fofs_legal_agency` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `fofs_financial_institution` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_other_institution` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `fofs_other_institution` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000327s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000458s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036525s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036683s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001081s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001185s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001812s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002039s ]
+
+[ 2016-11-24T23:40:42+08:00 ] ::1 /fofs/1/index.php/Home/Search/search.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000919s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001096s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003131s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004423s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `fofs_article` WHERE `title` LIKE '%笨小孩%' ORDER BY pub_time desc  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_user` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `fofs_user` WHERE `nickname` LIKE '%笨小孩%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `fofs_gp` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_startup_company` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `fofs_startup_company` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `fofs_fa` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `fofs_fa` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_legal_agency` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `fofs_legal_agency` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `fofs_financial_institution` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_other_institution` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `fofs_other_institution` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000310s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000474s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036610s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036748s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001194s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001320s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001352s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001499s ]
+
+[ 2016-11-24T23:40:47+08:00 ] ::1 /fofs/1/index.php/Home/Search/search/search_type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000872s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001244s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003349s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004790s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `fofs_article` WHERE `title` LIKE '%笨小孩%' ORDER BY pub_time desc  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_user` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `fofs_user` WHERE `nickname` LIKE '%笨小孩%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `fofs_gp` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_startup_company` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `fofs_startup_company` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `fofs_fa` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `fofs_fa` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_legal_agency` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `fofs_legal_agency` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `fofs_financial_institution` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_other_institution` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `fofs_other_institution` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000422s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000554s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041637s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041817s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001161s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001270s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001435s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001667s ]
+
+[ 2016-11-24T23:40:48+08:00 ] ::1 /fofs/1/index.php/Home/Search/search/search_type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001116s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001665s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004399s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006419s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `fofs_article` WHERE `title` LIKE '%笨小孩%' ORDER BY pub_time desc  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_user` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `fofs_user` WHERE `nickname` LIKE '%笨小孩%'  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `fofs_gp` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `fofs_startup_company` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `fofs_startup_company` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `fofs_fa` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `fofs_fa` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `fofs_legal_agency` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `fofs_legal_agency` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `fofs_financial_institution` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_other_institution` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `fofs_other_institution` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000493s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000721s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043646s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043802s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001139s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001733s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001949s ]
+
+[ 2016-11-24T23:40:49+08:00 ] ::1 /fofs/1/index.php/Home/Search/search/search_type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001318s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006546s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fofs_article` WHERE `title` LIKE '%笨小孩%' ORDER BY pub_time desc  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_user` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `fofs_user` WHERE `nickname` LIKE '%笨小孩%'  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `fofs_gp` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_startup_company` [ RunTime:0.0104s ]
+SQL: SELECT * FROM `fofs_startup_company` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_fa` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `fofs_fa` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fofs_legal_agency` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fofs_legal_agency` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `fofs_financial_institution` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_other_institution` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `fofs_other_institution` WHERE `institution_abbr` LIKE '%笨小孩%'  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000304s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000423s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036549s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036691s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001118s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001224s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001305s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001445s ]
+
+[ 2016-11-24T23:40:51+08:00 ] ::1 /fofs/1/index.php/Home/Search/individualProfile.html?id=4&institution_type=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001569s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.006300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008249s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_user` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `fofs_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `fofs_interest_list` [ RunTime:0.0764s ]
+SQL: SELECT * FROM `fofs_interest_list` WHERE `fan_id` = 4 AND `fan_type` = 10 AND `host_id` = 4 AND `host_type` = 9  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000257s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000376s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\4c06ff39f8875c2e6328da415ea334fd.php 第 43 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043292s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043466s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001182s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001338s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002429s ]
+
+[ 2016-11-24T23:40:58+08:00 ] ::1 /fofs/1/index.php/Home/Search/search.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000930s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000992s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004220s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `fofs_article` WHERE `title` LIKE '%文章%' ORDER BY pub_time desc  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_user` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `fofs_user` WHERE `nickname` LIKE '%文章%'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `institution_abbr` LIKE '%文章%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `fofs_gp` WHERE `institution_abbr` LIKE '%文章%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_startup_company` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `fofs_startup_company` WHERE `institution_abbr` LIKE '%文章%'  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `fofs_fa` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `fofs_fa` WHERE `institution_abbr` LIKE '%文章%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_legal_agency` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `fofs_legal_agency` WHERE `institution_abbr` LIKE '%文章%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `fofs_financial_institution` WHERE `institution_abbr` LIKE '%文章%'  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `institution_abbr` LIKE '%文章%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_other_institution` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `fofs_other_institution` WHERE `institution_abbr` LIKE '%文章%'  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000313s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000432s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038852s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001405s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001512s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001266s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001587s ]
+
+[ 2016-11-24T23:41:03+08:00 ] ::1 /fofs/1/index.php/Home/Search/search.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000826s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001364s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004983s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `fofs_article` WHERE `title` LIKE '%机构%' ORDER BY pub_time desc  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_user` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `fofs_user` WHERE `nickname` LIKE '%机构%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `fofs_gp` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `fofs_startup_company` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `fofs_startup_company` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `fofs_fa` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `fofs_fa` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_legal_agency` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `fofs_legal_agency` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `fofs_financial_institution` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_other_institution` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `fofs_other_institution` WHERE `institution_abbr` LIKE '%机构%'  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000487s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000688s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040474s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001006s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001108s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001794s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001961s ]
+
+[ 2016-11-24T23:41:08+08:00 ] ::1 /fofs/1/index.php/Home/Search/search.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000842s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001084s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002966s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004251s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `fofs_article` WHERE `title` LIKE '%资本%' ORDER BY pub_time desc  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_user` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `fofs_user` WHERE `nickname` LIKE '%资本%'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `fofs_gp` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_startup_company` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `fofs_startup_company` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `fofs_fa` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `fofs_fa` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fofs_legal_agency` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `fofs_legal_agency` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `fofs_financial_institution` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_other_institution` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `fofs_other_institution` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000297s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000430s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035936s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036087s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000958s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001060s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001273s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001419s ]
+
+[ 2016-11-24T23:41:11+08:00 ] ::1 /fofs/1/index.php/Home/Search/lpProfile.html?id=3&institution_type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000077s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001960s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001845s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006536s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `fofs_interest_list` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `fofs_interest_list` WHERE `fan_id` = 4 AND `fan_type` = 10 AND `host_id` = 3 AND `host_type` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fofs_senior_executive` [ RunTime:0.1070s ]
+SQL: SELECT * FROM `fofs_senior_executive` WHERE `institution_type` = 1 AND `institution_id` = 3  [ RunTime:0.0124s ]
+SQL: SHOW COLUMNS FROM `fofs_business_experience` [ RunTime:0.0624s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 18  [ RunTime:0.0147s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 17  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 16  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fofs_lp_fund_product` [ RunTime:0.1258s ]
+SQL: SELECT * FROM `fofs_lp_fund_product` WHERE `institution_type` = 1 AND `institution_id` = 3  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `fofs_investment_project` [ RunTime:0.0796s ]
+SQL: SELECT * FROM `fofs_investment_project` WHERE `fund_id` = 1  [ RunTime:0.0016s ]
+SQL: SELECT * FROM `fofs_investment_project` WHERE `fund_id` = 2  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000689s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000858s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\e25a7a6766f073ff0dd8356030c2865b.php 第 43 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.104570s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.104757s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001753s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001940s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002434s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003274s ]
+
+[ 2016-11-24T23:41:23+08:00 ] ::1 /fofs/1/index.php/Home/Search/gpProfile.html?id=2&institution_type=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000109s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001481s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005617s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `fofs_gp` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `fofs_interest_list` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `fofs_interest_list` WHERE `fan_id` = 4 AND `fan_type` = 10 AND `host_id` = 2 AND `host_type` = 2  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_senior_executive` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `fofs_senior_executive` WHERE `institution_type` = 2 AND `institution_id` = 2  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fofs_business_experience` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 21  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 22  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 23  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0828s ]
+SQL: SELECT * FROM `fofs_gp_fund_product` WHERE `institution_type` = 2 AND `institution_id` = 2  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `fofs_gp_investment_project` [ RunTime:0.0401s ]
+SQL: SELECT * FROM `fofs_gp_investment_project` WHERE `fund_id` = 1  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `fofs_gp_investment_project` WHERE `fund_id` = 2  [ RunTime:0.0009s ]
+SQL: SELECT * FROM `fofs_gp_investment_project` WHERE `fund_id` = 9  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000630s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000767s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\13cb32060392bb78a7c8f02ecf9a0ec0.php 第 43 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\13cb32060392bb78a7c8f02ecf9a0ec0.php 第 854 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\13cb32060392bb78a7c8f02ecf9a0ec0.php 第 854 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.073008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.073123s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001262s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001377s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001803s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001965s ]
+
+[ 2016-11-24T23:41:29+08:00 ] ::1 /fofs/1/index.php/Home/Search/lpProfile.html?id=4&institution_type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001146s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002979s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007792s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `fofs_interest_list` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `fofs_interest_list` WHERE `fan_id` = 4 AND `fan_type` = 10 AND `host_id` = 4 AND `host_type` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_senior_executive` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `fofs_senior_executive` WHERE `institution_type` = 1 AND `institution_id` = 4  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fofs_business_experience` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 37  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 38  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_lp_fund_product` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `fofs_lp_fund_product` WHERE `institution_type` = 1 AND `institution_id` = 4  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_investment_project` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `fofs_investment_project` WHERE `fund_id` = 6  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `fofs_investment_project` WHERE `fund_id` = 7  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000488s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000614s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\e25a7a6766f073ff0dd8356030c2865b.php 第 43 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.069960s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.070080s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001020s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001126s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001562s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001766s ]
+
+[ 2016-11-24T23:41:44+08:00 ] ::1 /fofs/1/index.php/Home/Search/search/search_type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000871s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001022s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003985s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `fofs_article` WHERE `title` LIKE '%资本%' ORDER BY pub_time desc  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_user` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `fofs_user` WHERE `nickname` LIKE '%资本%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `fofs_gp` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `fofs_startup_company` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `fofs_startup_company` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `fofs_fa` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `fofs_fa` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_legal_agency` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `fofs_legal_agency` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_financial_institution` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `fofs_financial_institution` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_business_incubator` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `fofs_business_incubator` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_other_institution` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `fofs_other_institution` WHERE `institution_abbr` LIKE '%资本%'  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000301s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000424s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035588s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035736s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001091s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001198s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001668s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001833s ]
+
+[ 2016-11-24T23:41:48+08:00 ] ::1 /fofs/1/index.php/Home/Search/lpProfile.html?id=3&institution_type=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002051s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.006149s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009220s ]
+NOTIC: [8] Undefined variable: base_url D:\phpStudy\WWW\fofs\1\Application\Home\Controller\BaseController.class.php 第 27 行.
+SQL: SHOW COLUMNS FROM `fofs_lp` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `fofs_lp` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `fofs_interest_list` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `fofs_interest_list` WHERE `fan_id` = 4 AND `fan_type` = 10 AND `host_id` = 3 AND `host_type` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fofs_senior_executive` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `fofs_senior_executive` WHERE `institution_type` = 1 AND `institution_id` = 3  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_business_experience` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 18  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 17  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fofs_business_experience` WHERE `senior_executive_id` = 16  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `fofs_lp_fund_product` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `fofs_lp_fund_product` WHERE `institution_type` = 1 AND `institution_id` = 3  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_investment_project` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `fofs_investment_project` WHERE `fund_id` = 1  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `fofs_investment_project` WHERE `fund_id` = 2  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000465s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000586s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\e25a7a6766f073ff0dd8356030c2865b.php 第 43 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062357s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062473s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000924s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001350s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001537s ]
+

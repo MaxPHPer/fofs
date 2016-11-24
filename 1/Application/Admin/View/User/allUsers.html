@@ -9,7 +9,17 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">查看所有供应商</h1>
+                    <h1 class="page-header">查看所有&nbsp;
+                        <if condition="$institution_type eq 1">LP</if>
+                        <if condition="$institution_type eq 2">GP</if>
+                        <if condition="$institution_type eq 3">创业公司</if>
+                        <if condition="$institution_type eq 4">Fa机构</if>
+                        <if condition="$institution_type eq 5">法务服务机构</if>
+                        <if condition="$institution_type eq 6">财务服务机构</if>
+                        <if condition="$institution_type eq 7">众创空间(孵化器)</if>
+                        <if condition="$institution_type eq 8">其它机构</if>
+                        <if condition="$institution_type eq 9">个人用户</if>
+                    </h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -22,34 +32,24 @@
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
+                                                    <th>头像</th>
+                                                    <th>名称</th>
                                                     <th>账号</th>
-                                                    <th>用户名</th>
-                                                    <th>公司名</th>
-                                                    <th>状态</th>
-                                                    <th>创建时间</th>
+                                                    <th>注册时间</th>
                                                     <th>操作</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                              <foreach name='list' item='vo'>
+                                              <foreach name='results' item='vo'>
                                                 <tr>
                                                   <td>{$vo['id']}</td>
+                                                  <td><img class="media-object img-thumbnail" src="__PUBLIC__/uploads/{$vo['institution_logo_img']}" alt="头像" height="50" width="50"/></td>
+                                                  <td>{$vo['institution_abbr']}</td>
                                                   <td>{$vo['email']}</td>
-                                                  <td>{$vo['username']}</td>
-                                                  <td><php>echo $comlist[$vo['supplier_company_id']]?$comlist[$vo['supplier_company_id']]:'未填写公司信息';</php></td>
-                                                  <td>
-                                                      <switch name="vo[state]">
-                                                        <case value='1'>正常</case>
-                                                        <case value='2'>停用</case>
-                                                        <case value='-1'>丢失</case>
-                                                        <default />未验证
-                                                      </switch>
-                                                  </td>
                                                   <td><php>echo date('Y-m-d H:i:s',$vo['reg_time']);</php></td>
                                                   <td>
-                                                    <if condition='($vo[state] eq 1) OR ($vo[state] eq 2) OR ($vo[state] eq -1)'>
-                                                        <a class='btn btn-primary' href="__APP__/Admin/User/viewsupplierPersonalInfo/id/{$vo['id']}">查看详细信息</a>
-                                                    </if>
+                                                      <a class='btn btn-primary' href="__APP__/Admin/User/{$vo['detail_url']}" target="_blank">详细</a>
+                                                      <a class='btn btn-danger' href="__APP__/Admin/User/delete/institution_id/{$vo['id']}/institution_type/{$vo['institution_type']}" onclick="return del()">删除</a>
                                                   </td>
                                                 </tr>   
                                               </foreach>
@@ -67,10 +67,18 @@
                             <!-- /.row -->
                         </div>
                         <!-- /.panel-body -->
-            
+            <div class="row" style="float:right; margin:0 auto;">
+                {$page}
+            </div>
         </div>
         <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
-
+<script type="text/javascript"> 
+function del(){ 
+    if(!confirm("确认要删除？")){ 
+        window.event.returnValue = false; 
+    } 
+}
+</script>
 <include file = "Common:footer"/>

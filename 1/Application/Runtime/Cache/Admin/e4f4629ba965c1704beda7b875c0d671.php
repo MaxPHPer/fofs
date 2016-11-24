@@ -1,241 +1,376 @@
-<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
-<html lang="zh-cn">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>中国母基金联盟</title>
-  <!--bootstrap3-->
-  <link rel="stylesheet" href="/fofs/1/Public/assets_1/public/bootstrap/css/bootstrap.min.css"/>
-  <!--font-awesome-->
-  <link rel="stylesheet" href="/fofs/1/Public/assets_1/public/font-awesome/css/font-awesome.min.css"/>
-  <!--i-check-->
-  <link rel="stylesheet" href="/fofs/1/Public/assets_1/public/icheck/skins/flat/blue.css"/>
 
-  <link rel="stylesheet" href="/fofs/1/Public/assets_1/css/common.css"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <link rel="stylesheet" type="text/css" href="/fofs/1/Public/assets_1/css/default.css">
-  <link href="/fofs/1/Public/assets_1/css/site.css" rel="stylesheet" type="text/css" />
-  
+    <title>中国母基金联盟</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/fofs/1/Public/assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/fofs/1/Public/assets/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="/fofs/1/Public/assets/dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/fofs/1/Public/assets/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="/fofs/1/Public/assets/bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/fofs/1/Public/assets/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="/fofs/1/Public/assets/css/common.css" rel="stylesheet">
 </head>
 <body>
-<header class="header" role="navigation">
-  <nav class="navbar navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
-          <span class="sr-only">中国母基金联盟</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a href="/fofs/1/index.php/Home" id="logo">
-          <img src="/fofs/1/Public/assets_1/img/logo.png" alt="select_in"/>
-        </a>
 
-      </div>
 
-      <div class="collapse navbar-collapse" id="collapse">
 
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <div id="search_box">
-              <form id="search_form" method="post" action="<?php echo U('Home/Search/search');?>">
-                <input type="text" id="s" placeholder="文章/机构/用户" value="<?php echo ($keywords); ?>" class="swap_value" name="keywords"/>
-                <input type="image" src="/fofs/1/Public/assets_1/img/search.png" width="20" height="20" id="go" alt="Search" title="Search" />
-              </form>
-            </div>
-          </li>
-          <!--未登录-->
-          <?php if(($user_id) == ""): ?><li>
-              <a href="#login" data-toggle="modal"> <i class="fa fa-sign-in"></i>
-                登录
-              </a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Home/Register/email.html"> <i class="fa fa-plus-square"></i>
-                注册
-              </a>
-            </li>
 
-            <li>
-              <a href="http://weibo.com/u/5938414174?refer_flag=1001030201_&is_hot=1"  target="_Blank">微博</a>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                微信
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="?l=zh-cn">
-                    <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
-                  </a>
-                </li>
-              </ul>
-            </li>
-          <?php else: ?>
-            <!--已登录之后的-->
+    <div id="wrapper">
 
-            <li>
-              <a href="http://weibo.com/u/1923830340/home?wvr=5"  target="_Blank">微博</a>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                微信
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="?l=zh-cn">
-                    <img src="/fofs/1/Public/assets_1/img/wechat.jpg" alt="cn" style="height:116px;" />
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Home/<?php echo ($base_url); ?>/inbox">新消息</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Home/<?php echo ($base_url); ?>/individualProfile"><?php echo ($username); ?></a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Home/Index/logout">登出</a>
-            </li><?php endif; ?>
-        </ul>
-      </div>
-      <!-- /.navbar-collapse --> </div>
-    <!-- /.container-fluid --> </nav>
-
-</header>
-<div id='nav_bar'>
-  <ul class="nav nav-tabs nav-justified" role="tablist">
-    <li role="presentation" >
-      <a href="<?php echo U('Home/Index/index');?>">首页</a>
-    </li>
-    <li role="presentation">
-      <a href="<?php echo U('Home/Index/aboutAlliance');?>?article_type=9">关于联盟</a>
-    </li>
-    <li role="presentation">
-      <a href="<?php echo U('Home/Search/lpSearch');?>">LP</a>
-    </li>
-    <li role="presentation">
-      <a href="<?php echo U('Home/Search/gpSearch');?>">GP</a>
-    </li>
-    <li role="presentation">
-      <a href="<?php echo U('Home/Search/startUpSearch');?>">创业公司</a>
-    </li>
-    <li role="presentation">
-      <a href="<?php echo U('Home/Search/saSearch');?>">服务机构</a>
-    </li>
-    <li role="presentation">
-      <a href="<?php echo U('Home/Cooperations/cooperations');?>">合作</a>
-    </li>
-  </ul>
-</div>
-
-<!--登录模态框-->
-<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-
-        <h4 class="modal-title">
-          <a href="#personal_login" data-toggle="tab" id="personal_login_title" style="color:white;text-decoration:none;">个人登录</a>
-          |
-          <a href="#institution_login" data-toggle="tab" id="institution_login_title" style="color:#AFACAC;text-decoration:none;">机构登录</a>
-        </h4>
-      </div>
-      <div class="modal-body">
-        <div class="container-fluid">
-          <div class="row">
-
-            <div id="myTabContent" class="tab-content">
-              <div class="tab-pane fade in active" id="personal_login">
-                <div class="col-sm-8">
-                  <form action="/fofs/1/index.php/Home/Index/personal_login" method="post">
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="user" placeholder="<?php echo (L("enter_email_address")); ?>"/>
-                    </div>
-                    <div class="form-group">
-                      <input type="password" class="form-control" name="password" placeholder="<?php echo (L("enter_password")); ?>"/>
-                    </div>
-                    <a href="/fofs/1/index.php/Home/Password/first.html" class="pull-right">忘记密码</a>
-                    <div class="row btnLogin">
-                      <div class="col-sm-6"></div>
-                      <div class="col-sm-6">
-                        <input type="submit" name='buyer' value="个人登录" class="btn btn-block btn-primary"/>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="institution_login">
-                <div class="col-sm-8">
-                  <form action="/fofs/1/index.php/Home/Index/institution_login" method="post">
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="email" placeholder="<?php echo (L("enter_email_address")); ?>"/>
-                    </div>
-                    <div class="form-group">
-                      <input type="password" class="form-control" name="password" placeholder="<?php echo (L("enter_password")); ?>"/>
-                    </div>
-                    <div class="form-group">
-                        <select name="institution_type" style="width:100%;height:40px;font-size:14px;color:#999;padding:6px 8px;">
-                          <option value ="0">请选择机构类型</option>
-                          <option value ="1">LP</option>
-                          <option value="2">GP</option>
-                          <option value="3">创业公司</option>
-                          <option value ="4">FA机构</option>
-                          <option value="5">法务机构</option>
-                          <option value="6">财务机构</option>
-                          <option value ="7">众创空间</option>
-                          <option value="8">其它(媒体、政府机构等)</option>
-                        </select>
-                    </div>
-
-                    <a href="/fofs/1/index.php/Home/Password/first.html" class="pull-right">忘记密码</a>
-                    <div class="row btnLogin">
-                      <div class="col-sm-6"></div>
-                      <div class="col-sm-6">
-                        <input type="submit" name='supplier' value="机构登录" class="btn btn-block btn-primary"/>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-
-              <div class="col-sm-4">
-                <div class="indexText">
-                  <h5>中国母基金联盟</h5>
-                  <p>还没有账号</p>
-                  <a href="/fofs/1/index.php/Home/Register/email.html">立即注册</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/fofs/1/index.php/Admin/Index/index" style="font-size:30px;">中国母基金联盟后台管理系统</a>
   </div>
-</div>
-  <!--登录模态框结束-->
-  <div class="buyProfile content" style="margin-top:30px;    background-color: #F9F7F6;">
+  <!-- /.navbar-header -->
 
-    <section class="content-wrap">
-      <div class="container">
+  <ul class="nav navbar-top-links navbar-right">
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-user fa-fw"></i>欢迎你,<?php echo ($username); ?><i class="fa fa-caret-down"></i>
+      </a>
+      <ul class="dropdown-menu dropdown-user">
+<!--         <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+        </li>
+        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+        </li>
+        <li class="divider"></li> -->
+        <li><a href="/fofs/1/index.php/Admin/Index/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+        </li>
+      </ul>
+      <!-- /.dropdown-user -->
+    </li>
+    <!-- /.dropdown -->
+  </ul>
+  <!-- /.navbar-top-links -->
 
-          <div class="col-md-10 col-md-offset-1">
-            <div class="well">
+  <div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+      <ul class="nav" id="side-menu" style="padding-bottom: 300px;">
+        <?php if($is_admin == 2): ?><li>
+            <a href="#"><i class="fa fa-dashboard fa-fw"></i> 系统管理<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+              <li>
+                <a href="/fofs/1/index.php/Admin/Manager/modify_manager">查看管理员</a>
+              </li>
+              <li>
+                <a href="/fofs/1/index.php/Admin/Manager/new_manager">新增管理员</a>
+              </li>
+            </ul>
+            <!-- /.nav-second-level -->
+          </li><?php endif; ?>
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>用户管理<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=1">LP</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=2">GP</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=3">创业公司</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=4">Fa</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=5">法务服务机构</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=6">财务服务结构</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=7">众创空间</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=8">其它机构</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=9">个人用户</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>新闻资讯<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=1">新添新闻</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=1">查看所有新闻</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>政策法规<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=2">新添政策法规</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=2">查看所有政策法规</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>投资事件<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=3">新添投资事件</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=3">查看所有投资事件</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>联盟活动<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=4">新添联盟活动</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=4">查看所有联盟活动</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>关于我们<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=5">新添关于我们</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=5">查看所有关于我们</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>法律声明<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=6">新添法律声明</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=6">查看所有法律声明</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>联系我们<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=7">新添联系我们</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=7">查看所有联系我们</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>加入我们<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=8">新添加入我们</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=8">查看所有加入我们</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>联盟介绍<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=9">新添联盟介绍</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=9">查看所有联盟介绍</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>组织架构<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=10">新添组织架构</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=10">查看所有组织架构</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>联盟成员<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=11">新添联盟成员</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=11">查看所有联盟成员</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>秘书长<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=12">新添秘书长</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=12">查看所有秘书长</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>合作伙伴<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=13">新添合作伙伴</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=13">查看所有合作伙伴</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>加入联盟<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=14">新添加入联盟</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=14">查看所有加入联盟</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>合作<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=15">新添合作</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=15">查看所有合作</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+        <li>
+          <a href="#"><i class="fa fa-edit fa-fw"></i>用户协议<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/add_article?article_type=16">新添用户协议</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/Article/all_articles?article_type=16">查看所有用户协议</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <!--文章管理-->
+
+
+
+      </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+  </div>
+  <!-- /.navbar-static-side -->
+</nav>
+
+
+        <div id="page-wrapper">
+                <section class="content-wrap" style="margin-top:30px;">
+                  <div class="container">
+                    <div class="row">
+
+                      <div class="col-md-10">
+                        <div class="well">
               <h3>机构主页
-                    <a href="#">
-                        <?php if($user['has_followed'] == 2): else: ?>
-                            <?php if($user['has_followed'] == 1): ?><span class="label label-warning">已关注</span>
-                            <?php else: ?>
 
-                                <span class="label label-info" onclick="add_follow(<?php echo ($user['id']); ?>,<?php echo ($user['institution_type']); ?>,this);">+关注</span><?php endif; endif; ?>
-                    </a>
               </h3>
               <hr/>
               
@@ -881,160 +1016,28 @@
               </div>
                &nbsp;
             </div>
-          </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
         </div>
-      </div>
-    </section>
-  </div>
-
-<footer class="footer">
-  <div class="footerLink">
-    <a href="<?php echo U('Home/Index/aboutUs');?>">关于我们</a>
-    <a href="<?php echo U('Home/Index/notices');?>">法律声明</a>
-    <a href="<?php echo U('Home/Index/contactUs');?>">联系我们</a>
-    <a href="<?php echo U('Home/Index/links');?>">加入我们</a>
-  </div>
-</footer>
-<!--jquery-->
-<script src="/fofs/1/Public/assets_1/public/jquery/jquery.min.js"></script>
-<!--bootstrap3-->
-<script src="/fofs/1/Public/assets_1/public/bootstrap/js/bootstrap.min.js"></script>
-<!--icheck-->
-<script src="/fofs/1/Public/assets_1/public/icheck/icheck.min.js"></script>
-<script src="/fofs/1/Public/assets_1/js/jquery.cookie.js"></script>
-
-<script src="/fofs/1/Public/assets_1/js/common.js"></script>
-<script src="/fofs/1/Public/assets_2/public/bootstrap/js/Chart.min.js"></script>
-<script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
-
-<script src="/fofs/1/Public/assets_1/js/store.js"></script>
-<script src="/fofs/1/Public/assets_1/js/search.js"></script>
-
-<script src="/fofs/1/Public/assets_1/js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
-<script type="text/javascript">
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
 
 
-$(document).ready(function(){ 
-    if($.cookie('lang')){
-      //alert($.cookie('lang'));
-    }else{
-      
-      var type=navigator.appName
-      if (type=="Netscape"){
-        var lang = navigator.language
-      }
-      else{
-        var lang = navigator.userLanguage
-      }
+    <!-- jQuery -->
+    <script src="/fofs/1/Public/assets/bower_components/jquery/dist/jquery.min.js"></script>
 
-      //取得浏览器语言的前两个字母
-      var lang = lang.substr(0,2)
-      // 英语
-      if (lang == "en"){
-        $.cookie('lang', lang); //设置cookie的值 
-        window.location.href="?l=en-us"
-      }
-      // 中文 - 不分繁体和简体
-      else if (lang == "zh"){
-        $.cookie('lang', lang); //设置cookie的值 
-        window.location.href="?l=zh-cn"
-        
-      }
-      // 除上面所列的语言
-      else{
-        $.cookie('lang', lang); //设置cookie的值 
-        window.location.href="?l=en-us"
-      }
-    }
-}); 
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/fofs/1/Public/assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/fofs/1/Public/assets/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
-/*新闻列表*/
+    <!-- Custom Theme JavaScript -->
+    <script src="/fofs/1/Public/assets/dist/js/sb-admin-2.js"></script>
 
-$("#demo1").bootstrapNews({
-
-            newsPerPage: 4,
-
-            autoplay: true,
-
-      pauseOnHover: true,
-
-      navigation: true,
-
-            direction: 'up',
-
-            newsTickerInterval: 2500,
-
-            onToDo: function () {
-
-                //console.log(this);
-
-            }
-
-});
-$("#demo2").bootstrapNews({
-
-            newsPerPage: 4,
-
-            autoplay: true,
-
-      pauseOnHover: true,
-
-      navigation: true,
-
-            direction: 'up',
-
-            newsTickerInterval: 2500,
-
-            onToDo: function () {
-
-                //console.log(this);
-
-            }
-
-});
-$("#demo3").bootstrapNews({
-
-            newsPerPage: 4,
-
-            autoplay: true,
-
-      pauseOnHover: true,
-
-      navigation: true,
-
-            direction: 'up',
-
-            newsTickerInterval: 2500,
-
-            onToDo: function () {
-
-                //console.log(this);
-
-            }
-
-});
-$("#demo4").bootstrapNews({
-
-            newsPerPage: 4,
-
-            autoplay: true,
-
-      pauseOnHover: true,
-
-      navigation: true,
-
-            direction: 'up',
-
-            newsTickerInterval: 2500,
-
-            onToDo: function () {
-
-                //console.log(this);
-
-            }
-
-});
-</script>
 </body>
+
 </html>

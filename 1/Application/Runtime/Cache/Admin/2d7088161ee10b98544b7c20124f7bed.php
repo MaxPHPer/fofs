@@ -41,9 +41,10 @@
 
 
 
-<div id="wrapper">
 
-  
+    <div id="wrapper">
+
+        
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
   <div class="navbar-header">
@@ -360,109 +361,182 @@
   <!-- /.navbar-static-side -->
 </nav>
 
-  <div id="page-wrapper">
-    <div class="row">
-      <div class="col-lg-12">
-        <h1 class="page-header">Dashboard</h1>
-      </div>
-      <!-- /.col-lg-12 -->
+
+        <div id="page-wrapper">
+                <section class="content-wrap" style="margin-top:30px;">
+                  <div class="container">
+                    <div class="row">
+
+                      <div class="col-md-10">
+                        <div class="well">
+              <h3>用户主页
+
+              </h3>
+              <hr/>
+              
+              <div class="row">
+                  <div class='col-md-2'>
+                      <a href="#">
+                        <?php if($user['head_portrait_url'] != NULL): ?><img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/<?php echo ($user['head_portrait_url']); ?>" alt="头像" height="100" width="100">
+                          <?php else: ?>
+                          <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/individual_pic/default.jpg" alt="头像" height="100" width="100"><?php endif; ?>
+                      </a>
+                  </div>
+
+
+                  <div class='col-md-10'>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              姓名:
+                          </div>
+                          <div class='col-md-10'>
+                              <?php echo ($user['username']); ?>(<?php echo ($user['nickname']); ?>)
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              性别:
+                          </div>
+                          <div class='col-md-10'>
+                            <?php switch($user['sex']): case "male": ?>男<?php break;?>
+                              <?php case "female": ?>女<?php break;?>
+                              <?php default: ?>保密<?php endswitch;?>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              简介:
+                          </div>
+                          <div class='col-md-10'>
+                              <?php echo ($user['abstract']); ?>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class='col-md-2 text_right'>
+                              行业:
+                          </div>
+                          <div class='col-md-10'>
+                             
+                              <?php switch($user['profession']): case "0": ?>请选择机构类型<?php break;?>
+                                <?php case "1": ?>母基金<?php break;?>
+                                <?php case "2": ?>基金<?php break;?>
+                                <?php case "3": ?>创业公司<?php break;?>
+                                <?php case "4": ?>FA机构<?php break;?>
+                                <?php case "5": ?>法务机构<?php break;?>
+                                <?php case "6": ?>财务机构<?php break;?>
+                                <?php case "7": ?>众创空间<?php break;?>
+                                <?php case "8": ?>其它(媒体、政府机构等)<?php break; endswitch;?>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-tags"></span>从业简历</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="col-md-12">
+                             
+                                  <?php echo ($user['business_experience']); ?>
+                             
+                          </div>
+                          
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-home"></span>公司信息</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  名称:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['company_name']); ?>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class='col-md-3 text_right'>职位:</div>
+                            <div class='col-md-8'><?php echo ($user['company_function']); ?></div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  认证情况:
+                              </div>
+                              <div class='col-md-8'>
+                              <?php switch($user['is_authenticated']): case "1": ?><span class="label label-info">已认证</span><?php break;?>
+                                  <?php default: ?><span class="label label-default">未认证</span><?php endswitch;?>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+
+              <div class="row margin_top_20">
+                  <div class='col-md-12'>
+                    <h3><span class="glyphicon glyphicon-earphone"></span>联系方式</h3>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  手机:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['phone']); ?>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class='col-md-3 text_right'>邮箱:</div>
+                            <div class='col-md-8'><?php echo ($user['email']); ?></div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  LinkedIn:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['linkedin']); ?>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  新浪微博:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['weibo']); ?>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class='col-md-3 text_right'>
+                                  微信:
+                              </div>
+                              <div class='col-md-8'>
+                                  <?php echo ($user['wechat']); ?>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+               &nbsp;
+            </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+        </div>
+        <!-- /#page-wrapper -->
     </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-comments fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">26</div>
-                <div>New Comments!</div>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-green">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-tasks fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">12</div>
-                <div>New Tasks!</div>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-yellow">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-shopping-cart fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">124</div>
-                <div>New Orders!</div>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-red">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-support fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge">13</div>
-                <div>Support Tickets!</div>
-              </div>
-            </div>
-          </div>
-          <a href="#">
-            <div class="panel-footer">
-              <span class="pull-left">View Details</span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /#page-wrapper -->
-</div>
-<!-- /#wrapper -->
+    <!-- /#wrapper -->
 
 
     <!-- jQuery -->

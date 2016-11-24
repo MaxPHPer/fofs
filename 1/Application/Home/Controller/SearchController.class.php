@@ -120,7 +120,7 @@ class SearchController extends BaseController {
           $results=$Table->where($where)->select();
           foreach($results as $key=>$value){
             $results[$key]['institution_logo_img']='other_pic/'.($value['institution_logo_img']?$value['institution_logo_img']:'default.jpg');
-            $results[$key]['detail_url']='saProfile.html?id='.$value['id'].'&institution_type=8';
+            $results[$key]['detail_url']='otherProfile.html?id='.$value['id'].'&institution_type=8';
           }
           $institutions=array_merge($institutions,$results);
 
@@ -173,7 +173,7 @@ class SearchController extends BaseController {
       //查询满足要求的总的记录数
       $count=$User->where($where)->count();
       //实例化分页类传入总记录数和煤业显示的记录数
-      $Page=new \Think\Page($count,2);
+      $Page=new \Think\Page($count,10);
       //分页显示输出
       $show=$Page->show();
       // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
@@ -721,6 +721,7 @@ class SearchController extends BaseController {
       $this->display();
     }
 
+    //其它机构详情
     public function otherProfile(){
       //获取用户信息
       $user_id=I('get.id');
