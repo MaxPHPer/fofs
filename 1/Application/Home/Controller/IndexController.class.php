@@ -50,6 +50,10 @@ class IndexController extends BaseController {
 
         if($list){
             if($list['password']==$data['password']){
+                //此账号是否被管理员删除
+                if($list['state']==400){
+                    $this->error('此账号已被删除');
+                }
             	session('nickname',$list['nickname']);
                 session('user_id',$list['id']);
                 session('email',$list['email']);
@@ -169,6 +173,11 @@ class IndexController extends BaseController {
 
         if($list){
             if($list['password']==$data['password']){
+                //此账号是否被管理员删除
+                if($list['state']==400){
+                    $this->error('此账号已被删除');
+                }
+
                 session('nickname',$list['admin_name']?$list['admin_name']:$list['email']);
                 session('institution_abbr',$list['institution_abbr']);
                 session('email',$list['email']);

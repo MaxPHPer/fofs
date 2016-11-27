@@ -35,7 +35,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <link href="/fofs/1/Public/assets/css/common.css" rel="stylesheet">
 </head>
 <body>
 
@@ -52,7 +52,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/fofs/1/index.php/Admin/Index/index">中国母基金联盟后台管理系统</a>
+    <a class="navbar-brand" href="/fofs/1/index.php/Admin/Index/index" style="font-size:30px;">中国母基金联盟后台管理系统</a>
   </div>
   <!-- /.navbar-header -->
 
@@ -78,7 +78,7 @@
 
   <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse">
-      <ul class="nav" id="side-menu" style="margin-bottom: 300px;">
+      <ul class="nav" id="side-menu" style="padding-bottom: 300px;">
         <?php if($is_admin == 2): ?><li>
             <a href="#"><i class="fa fa-dashboard fa-fw"></i> 系统管理<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
@@ -93,37 +93,34 @@
           </li><?php endif; ?>
 
         <li>
-          <a href="#"><i class="fa fa-edit fa-fw"></i> 业务相关<span class="fa arrow"></span></a>
-          <ul class="nav nav-second-level">
-            <li>
-              <a href="/fofs/1/index.php/Admin/Business/modify_question">业务合规问题</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/Business/modify_choice">问题选项</a>
-            </li>
-          </ul>
-          <!-- /.nav-second-level -->
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-edit fa-fw"></i>推荐码管理<span class="fa arrow"></span></a>
-          <ul class="nav nav-second-level">
-            <li>
-              <a href="/fofs/1/index.php/Admin/RefferalCode/product_code">生成推荐码</a>
-            </li>
-            <li>
-              <a href="/fofs/1/index.php/Admin/RefferalCode/code_manage">已存在的二维码</a>
-            </li>
-          </ul>
-          <!-- /.nav-second-level -->
-        </li>
-        <li>
           <a href="#"><i class="fa fa-edit fa-fw"></i>用户管理<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
             <li>
-              <a href="/fofs/1/index.php/Admin/User/modify_buyer">采购商</a>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=1">LP</a>
             </li>
             <li>
-              <a href="/fofs/1/index.php/Admin/User/modify_supplier">供应商</a>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=2">GP</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=3">创业公司</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=4">Fa</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=5">法务服务机构</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=6">财务服务结构</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=7">众创空间</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=8">其它机构</a>
+            </li>
+            <li>
+              <a href="/fofs/1/index.php/Admin/User/allUsers?institution_type=9">个人用户</a>
             </li>
           </ul>
           <!-- /.nav-second-level -->

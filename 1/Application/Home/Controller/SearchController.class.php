@@ -25,6 +25,7 @@ class SearchController extends BaseController {
           //搜索用户
           $Table=M('User');
           $where=array();
+          $where['state']=array('neq',400); //排除被删除的
           $where['nickname']=array('like',"%".$keywords."%");
           $users=$Table->where($where)->select();
           foreach($users as $key=>$value){
@@ -39,6 +40,7 @@ class SearchController extends BaseController {
           //搜索Lp机构
           $Table=M('Lp');
           $where=array();
+          $where['state']=array('neq',400); //排除被删除的
           $where['institution_abbr']=array('like',"%".$keywords."%");
           $results=$Table->where($where)->select();
           foreach($results as $key=>$value){
@@ -50,6 +52,7 @@ class SearchController extends BaseController {
           //搜索Gp机构
           $Table=M('Gp');
           $where=array();
+          $where['state']=array('neq',400); //排除被删除的
           $where['institution_abbr']=array('like',"%".$keywords."%");
           $results=$Table->where($where)->select();
           foreach($results as $key=>$value){
@@ -61,6 +64,7 @@ class SearchController extends BaseController {
           //搜索startup_company
           $Table=M('Startup_company');
           $where=array();
+          $where['state']=array('neq',400); //排除被删除的
           $where['institution_abbr']=array('like',"%".$keywords."%");
           $results=$Table->where($where)->select();
           foreach($results as $key=>$value){
@@ -72,6 +76,7 @@ class SearchController extends BaseController {
           //搜索Fa机构
           $Table=M('Fa');
           $where=array();
+          $where['state']=array('neq',400); //排除被删除的
           $where['institution_abbr']=array('like',"%".$keywords."%");
           $results=$Table->where($where)->select();
           foreach($results as $key=>$value){
@@ -83,6 +88,7 @@ class SearchController extends BaseController {
           //搜索法务
           $Table=M('Legal_agency');
           $where=array();
+          $where['state']=array('neq',400); //排除被删除的
           $where['institution_abbr']=array('like',"%".$keywords."%");
           $results=$Table->where($where)->select();
           foreach($results as $key=>$value){
@@ -94,6 +100,7 @@ class SearchController extends BaseController {
           //搜索财务机构
           $Table=M('Financial_institution');
           $where=array();
+          $where['state']=array('neq',400); //排除被删除的
           $where['institution_abbr']=array('like',"%".$keywords."%");
           $results=$Table->where($where)->select();
           foreach($results as $key=>$value){
@@ -105,6 +112,7 @@ class SearchController extends BaseController {
           //搜索众创空间
           $Table=M('Business_incubator');
           $where=array();
+          $where['state']=array('neq',400); //排除被删除的
           $where['institution_abbr']=array('like',"%".$keywords."%");
           $results=$Table->where($where)->select();
           foreach($results as $key=>$value){
@@ -116,6 +124,7 @@ class SearchController extends BaseController {
           //搜索其它机构
           $Table=M('Other_institution');
           $where=array();
+          $where['state']=array('neq',400); //排除被删除的
           $where['institution_abbr']=array('like',"%".$keywords."%");
           $results=$Table->where($where)->select();
           foreach($results as $key=>$value){
@@ -168,6 +177,7 @@ class SearchController extends BaseController {
 
     	$User=M('Lp');
       $where=array();
+      $where['state']=array('neq',400); //排除被删除的
 	    $where['id']=array('in',$Lp_ids);
 
       //查询满足要求的总的记录数
@@ -359,6 +369,7 @@ class SearchController extends BaseController {
 
     	$User=M('Gp');
       $where=array();
+      $where['state']=array('neq',400); //排除被删除的
     	
       if(I('post.investment_type')){
         $where['_string']=implode(' OR ',I('post.investment_type'));
@@ -474,7 +485,9 @@ class SearchController extends BaseController {
     //startUp搜索
     public function startUpSearch(){
       $User=M('Startup_company');
-      
+      $where=array();
+      $where['state']=array('neq',400); //排除被删除的
+
       //查询满足要求的总的记录数
       $count=$User->where($where)->count();
       //实例化分页类传入总记录数和煤业显示的记录数
@@ -582,7 +595,9 @@ class SearchController extends BaseController {
           $User=M('Fa');
           break;
       }
-      
+
+      $where=array();
+      $where['state']=array('neq',400); //排除被删除的
       //查询满足要求的总的记录数
       $count=$User->where($where)->count();
       //实例化分页类传入总记录数和煤业显示的记录数

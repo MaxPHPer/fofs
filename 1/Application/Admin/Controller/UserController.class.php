@@ -49,6 +49,8 @@ class UserController extends BaseController {
       }
       
       //查询满足要求的总的记录数
+      $where=array();
+      $where['state']=array('neq',400); //排除被删除的
       $count=$User->where($where)->count();
       //实例化分页类传入总记录数和煤业显示的记录数
       $Page=new \Think\Page($count,10);
@@ -88,22 +90,130 @@ class UserController extends BaseController {
     //删除用户
     public function delete(){
         if(I('get.institution_id')&&I('get.institution_type')){
-            //删除采购商
-            $Buyer = M("Buyer"); // 实例化User对象
-            $where['id']=$_GET['id'];
-            $Buyer->where($where)->delete(); // 删除id为5的用户数据
+            //区分是哪一个机构类型
+            switch (I('get.institution_type')) {
+                  /*LP(母基金管理机构)*/
+                  case '1':  
+                              $User=M('Lp'); 
+                              break;
+                  /*LP(母基金管理机构)end*/
 
-            //删除采购商公司信息(此处将来需要修改逻辑)
-            $Buyer_company = M("Buyer_company"); // 实例化User对象
-            $where1['creator_id']=$_GET['id'];
-            $Buyer_company->where($where1)->delete(); // 删除id为5的用户数据
+                  /*GP(私募股权基金管理机构)*/
+                  case '2':  
+                              $User=M('Gp');
+                              break;
+                  /*GP(私募股权基金管理机构)end*/
 
-            $this->success('删除成功',__APP__.'/Admin/User/modify_buyer');
+                  /*创业公司*/
+                  case '3':  
+                              $User=M('Startup_company'); 
+                              break;
+                  /*创业公司end*/
+
+                  /*fa服务机构*/
+                  case '4':  
+                              $User=M('Fa');
+                              break;
+                  /*fa服务机构end*/
+
+                  /*法务服务机构*/
+                  case '5':  $User=M('Legal_agency');  $base_url='la_pic/'; $profile_base_url='saProfile'; $logo_img_name='institution_logo_img'; break;
+                  /*法务服务机构end*/
+
+                  /*财务服务机构*/
+                  case '6':  $User=M('Financial_institution');  $base_url='fi_pic/'; $profile_base_url='saProfile'; $logo_img_name='institution_logo_img'; break;
+                  /*财务服务机构end*/
+
+                  /*众创空间*/
+                  case '7':  $User=M('Business_incubator');  $base_url='bi_pic/'; $profile_base_url='saProfile'; $logo_img_name='institution_logo_img'; break;
+                  /*众创空间end*/
+
+                  /*其它机构*/
+                  case '8':  $User=M('Other_institution');  $base_url='other_pic/'; $profile_base_url='otherProfile'; $logo_img_name='institution_logo_img'; break;
+                  /*其它机构*/
+
+                  /*个人*/
+                  case '9':  $User=M('User');  $base_url='individual_pic/'; $profile_base_url='individualProfile'; $logo_img_name='head_portrait_url'; break;
+                  /*个人*/
+
+                  default:break;
+            }
+
+            $data['id']=I('get.institution_id');
+            $data['state']=400; //代表被系统删除
+            $result=$User->save($data);
+            if($result){
+              $this->success('删除成功');
+            }else{
+              $this->error('删除失败');
+            }
+
         }else{
-            $this->success('操作失败',__APP__.'/Admin/User/modify_buyer');
+            $this->success('操作失败');
         }
 
     }
+
+    //删除图片
+    protected function delete_logo_img($User,$base_url,$institution_id,$logo_img_name){
+        //删除图片
+        $institution_logo_img=$User->getFieldById($institution_id,$logo_img_name);
+        if($institution_logo_img){
+            $institution_logo_img=__ROOT__.'/Public/uploads/'.$base_url.$institution_logo_img;
+            unlink($institution_logo_img);
+        }
+    }
+
+    //删除团队成员
+    protected function delete_team($institution_type,$institution_id){
+
+        $Senior_executive=M('Senior_executive');
+        $where['institution_type']=$institution_type;
+        $where['institution_id']=$institution_id;
+
+        $results=$Senior_executive->where($where)->select();
+
+        //删除所有从业经历
+        $Business_experience=M('Business_experience');
+        foreach ($results as $key=>$value) {
+          $where2['senior_executive_id']=$value['id'];
+          $Business_experience->where($where2)->delete();
+        }
+        
+        return $Senior_executive->where($where)->delete();
+    }
+
+    //删除基金
+    protected function delete_funds($institution_type,$institution_id){
+        switch ($institution_type) {
+          case 1:
+            $Fund_product=M('Lp_fund_product');
+            $Investment_project=M('Investment_project');
+            break;
+
+          case 2:
+            $Fund_product=M('Gp_fund_product');
+            $Investment_project=M('Gp_investment_project');
+            break;
+          
+          default:
+            # code...
+            break;
+        }
+        $where['institution_type']=$institution_type;
+        $where['institution_id']=$institution_id;
+
+        $results=$Fund_product->where($where)->select();
+
+        //删除所有投资的产品
+        foreach ($results as $key=>$value) {
+          $where2['fund_id']=$value['id'];
+          $Investment_project->where($where2)->delete();
+        }
+        
+        return $Fund_product->where($where)->delete();
+    }
+
 
     //lp详情
     public function lpProfile(){
