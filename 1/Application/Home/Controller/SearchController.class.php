@@ -242,17 +242,7 @@ class SearchController extends BaseController {
   	  $this->assign('user',$user);
 
       //成员信息
-      $Senior_executive=M('Senior_executive');
-      $where['institution_type']=$institution_type;
-      $where['institution_id']=$user_id;
-      $members=$Senior_executive->where($where)->select();
-
-      $Business_experience=M('Business_experience');
-      foreach($members as $key => $value){
-          $where2['senior_executive_id']=$value['id'];
-          $members[$key]['business_experience']=$Business_experience->where($where2)->select();
-      }
-
+      $members = $this->get_senior_executives($institution_type, $user_id);
       $this->assign('members',$members);
 
       //基金信息
@@ -277,6 +267,8 @@ class SearchController extends BaseController {
       $this->assign('total_funds_size',$total_funds_size);
       $this->assign('total_funds_num',count($funds));
 
+      // 检查访客对Lp的查看权限
+      $this->lp_check_read_right($institution_type, $user_id);
 
       $this->display();
     }
@@ -443,17 +435,7 @@ class SearchController extends BaseController {
   	  $this->assign('user',$user);
 
       //成员信息
-      $Senior_executive=M('Senior_executive');
-      $where['institution_type']=$institution_type;
-      $where['institution_id']=$user_id;
-      $members=$Senior_executive->where($where)->select();
-
-      $Business_experience=M('Business_experience');
-      foreach($members as $key => $value){
-          $where2['senior_executive_id']=$value['id'];
-          $members[$key]['business_experience']=$Business_experience->where($where2)->select();
-      }
-
+      $members = $this->get_senior_executives($institution_type, $user_id);
       $this->assign('members',$members);
 
       //基金信息
@@ -548,17 +530,7 @@ class SearchController extends BaseController {
       $this->assign('user',$user);
 
       //成员信息
-      $Senior_executive=M('Senior_executive');
-      $where['institution_type']=$institution_type;
-      $where['institution_id']=$user_id;
-      $members=$Senior_executive->where($where)->select();
-
-      $Business_experience=M('Business_experience');
-      foreach($members as $key => $value){
-          $where2['senior_executive_id']=$value['id'];
-          $members[$key]['business_experience']=$Business_experience->where($where2)->select();
-      }
-
+      $members = $this->get_senior_executives($institution_type, $user_id);
       $this->assign('members',$members);
 
       $this->display();
@@ -705,17 +677,7 @@ class SearchController extends BaseController {
       $this->assign('user',$user);
 
       //成员信息
-      $Senior_executive=M('Senior_executive');
-      $where['institution_type']=$institution_type;
-      $where['institution_id']=$user_id;
-      $members=$Senior_executive->where($where)->select();
-
-      $Business_experience=M('Business_experience');
-      foreach($members as $key => $value){
-          $where2['senior_executive_id']=$value['id'];
-          $members[$key]['business_experience']=$Business_experience->where($where2)->select();
-      }
-
+      $members = $this->get_senior_executives($institution_type, $user_id);
       $this->assign('members',$members);
 
 
@@ -764,17 +726,7 @@ class SearchController extends BaseController {
 
 
       //成员信息
-      $Senior_executive=M('Senior_executive');
-      $where['institution_type']=$institution_type;
-      $where['institution_id']=$user_id;
-      $members=$Senior_executive->where($where)->select();
-
-      $Business_experience=M('Business_experience');
-      foreach($members as $key => $value){
-          $where2['senior_executive_id']=$value['id'];
-          $members[$key]['business_experience']=$Business_experience->where($where2)->select();
-      }
-
+      $members = $this->get_senior_executives($institution_type, $user_id);
       $this->assign('members',$members);
 
 

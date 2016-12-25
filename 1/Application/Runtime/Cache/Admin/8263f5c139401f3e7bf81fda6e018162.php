@@ -35,7 +35,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <link href="/fofs/1/Public/assets/css/common.css" rel="stylesheet">
 </head>
 <body>
 
@@ -65,7 +65,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/fofs/1/index.php/Admin/Index/index">中国母基金联盟后台管理系统</a>
+    <a class="navbar-brand" href="/fofs/1/index.php/Admin/Index/index" style="font-size:30px;">中国母基金联盟后台管理系统</a>
   </div>
   <!-- /.navbar-header -->
 
@@ -91,7 +91,7 @@
 
   <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse">
-      <ul class="nav" id="side-menu" style="margin-bottom: 300px;">
+      <ul class="nav" id="side-menu" style="padding-bottom: 300px;">
         <?php if($is_admin == 2): ?><li>
             <a href="#"><i class="fa fa-dashboard fa-fw"></i> 系统管理<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">

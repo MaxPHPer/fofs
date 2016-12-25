@@ -31,4 +31,21 @@ class BaseController extends Controller{
             $this->error("你没有该权限，非法越界");
         }
     }
+
+    // 得到管理团队信息
+    protected function get_senior_executives($institution_type, $user_id){
+        $Senior_executive=M('Senior_executive');
+        $where['institution_type']=$institution_type;
+        $where['institution_id']=$user_id;
+        $members=$Senior_executive->where($where)->select();
+
+        $Business_experience=M('Business_experience');
+        foreach($members as $key => $value){
+          $where2['senior_executive_id']=$value['id'];
+          $members[$key]['business_experience']=$Business_experience->where($where2)->select();
+        }
+
+        // 将法人代表排在前面
+        return array_sort($members,'is_representative','desc');
+    }
 }

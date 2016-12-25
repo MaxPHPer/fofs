@@ -9,7 +9,7 @@ class IndexController extends BaseController {
         
         //新闻
         $where['article_type']=1;
-        $news=$Article->where($where)->order('id desc')->limit(1,10)->select();
+        $news=$Article->where($where)->order('id desc')->limit(10)->select();
         //赋值数据集
         $this->assign('news',$news);
 
@@ -32,7 +32,9 @@ class IndexController extends BaseController {
         //赋值数据集
         $this->assign('allianceActivities',$allianceActivities);
 
-
+        //访问量
+        $this->add_one_view();
+        
         $this->display();
     }
 
@@ -56,6 +58,7 @@ class IndexController extends BaseController {
                 }
             	session('nickname',$list['nickname']);
                 session('user_id',$list['id']);
+                session('institution_id',$list['id']);
                 session('email',$list['email']);
                 session('institution_type',$list['institution_type']);
                 
@@ -182,6 +185,7 @@ class IndexController extends BaseController {
                 session('institution_abbr',$list['institution_abbr']);
                 session('email',$list['email']);
                 session('user_id',$list['id']);
+                session('institution_id',$list['id']);
                 session('institution_type',$list['institution_type']);
 
                 if($list['state']==='200'){  //账号已完成注册，且正常
@@ -338,5 +342,32 @@ class IndexController extends BaseController {
         $this->assign('article',$article);
 
         $this->display();
+    }
+
+    //统计访问的函数
+    protected function add_one_view(){
+        $Record=M('Record');
+        //今日记录增1
+        $today_view=$Record->getByName('today_view_'.date('Y_m_d',time()));
+        if($today_view['value']){
+            $today_view['value']++;
+            $Record->save($today_view);
+        }else{
+            $today_view['name']='today_view_'.date('Y_m_d',time());
+            $today_view['value']=1;
+            $Record->add($today_view);
+        }
+
+        //历史记录增1
+        $total_view=$Record->getByName('total_view');
+        if($total_view['value']){
+            $total_view['value']++;
+            $Record->save($total_view);
+        }else{
+            $total_view['name']='total_view';
+            $total_view['value']=1;
+            $Record->add($total_view);
+        }
+
     }
 }

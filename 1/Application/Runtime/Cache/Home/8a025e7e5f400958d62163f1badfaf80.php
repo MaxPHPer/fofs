@@ -488,6 +488,7 @@
                                         <div class="col-sm-8">
 
                                               <?php echo ($vo['username']); ?>
+                                              <?php if($vo['is_representative'] == 1): ?>&nbsp;&nbsp;法定代表人/执行事务合伙人（委派代表）<?php endif; ?>
 
                                         </div>
 

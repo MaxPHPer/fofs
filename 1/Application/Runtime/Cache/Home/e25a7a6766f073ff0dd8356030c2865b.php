@@ -291,38 +291,37 @@
                               </div>
                               <div class='col-md-8'>
                               <?php switch($user['is_fofs_member']): case "1": ?><span class="label label-info">是</span><?php break;?>
-                                  <?php default: ?><span class="label label-default">不是</span>(<a href='#'>申请认证</a>)<?php endswitch;?>
+                                  <?php default: ?><span class="label label-default">不是</span><?php endswitch;?>
                               </div>
                           </div>
+                          <?php if($right['is_allow_read_organization_code'] == 1): ?><div class="row">
+                                <div class='col-md-3 text_right'>
+                                    组织机构代码:
+                                </div>
+                                <div class='col-md-8'>
+                                    <?php echo ($user['organization_code']); ?>
+                                </div>
+                            </div><?php endif; ?>
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  组织机构代码:
-                              </div>
-                              <div class='col-md-8'>
-                                  <?php echo ($user['organization_code']); ?>
-                              </div>
-                          </div>
+                          <?php if($right['is_allow_read_addr_and_capital'] == 1): ?><div class="row">
+                              <div class='col-md-3 text_right'>注册地址:</div>
+                              <div class='col-md-8'><?php echo ($user['registered_addr']); ?></div>
+                            </div>
 
-                          <div class="row">
-                            <div class='col-md-3 text_right'>注册地址:</div>
-                            <div class='col-md-8'><?php echo ($user['registered_addr']); ?></div>
-                          </div>
+                            <div class="row">
+                              <div class='col-md-3 text_right'>办公地址:</div>
+                              <div class='col-md-8'><?php echo ($user['office_addr']); ?></div>
+                            </div>
 
-                          <div class="row">
-                            <div class='col-md-3 text_right'>办公地址:</div>
-                            <div class='col-md-8'><?php echo ($user['office_addr']); ?></div>
-                          </div>
+                            <div class="row">
+                              <div class='col-md-3 text_right'>注册资本:</div>
+                              <div class='col-md-8'><?php echo ($user['registered_capital']); ?></div>
+                            </div><?php endif; ?>
 
-                          <div class="row">
-                            <div class='col-md-3 text_right'>注册资本:</div>
-                            <div class='col-md-8'><?php echo ($user['registered_capital']); ?></div>
-                          </div>
-
-                          <div class="row">
-                            <div class='col-md-3 text_right'>实缴资本:</div>
-                            <div class='col-md-8'><?php echo ($user['contributed_capital']); ?></div>
-                          </div>
+                          <?php if($right['is_allow_read_contributed_capital'] == 1): ?><div class="row">
+                              <div class='col-md-3 text_right'>实缴资本:</div>
+                              <div class='col-md-8'><?php echo ($user['contributed_capital']); ?></div>
+                            </div><?php endif; ?>
 
                           <div class="row">
                               <div class='col-md-3 text_right'>
@@ -335,27 +334,27 @@
                                   <?php if($user['is_other_fund'] == 1): ?>其它投资基金<?php endif; ?>
                               </div>
                           </div>
+                          
+                          <?php if($right['is_allow_read_number_of_employees'] == 1): ?><div class="row">
+                              <div class='col-md-3 text_right'>员工数量:</div>
+                              <div class='col-md-8'><?php echo ($user['number_of_employees']); ?></div>
+                            </div><?php endif; ?>
 
-                          <div class="row">
-                            <div class='col-md-3 text_right'>员工数量:</div>
-                            <div class='col-md-8'><?php echo ($user['number_of_employees']); ?></div>
-                          </div>
-
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  中国证券投资基金协会登记:
-                              </div>
-                              <?php switch($user['is_association_registration']): case "1": ?><div class="col-md-2">
-                                        <span class="label label-info">已登记</span>
-                                      </div>
-                                      <div class="col-md-4">
-                                        编号 :<?php echo ($user['association_registration_number']); ?>
-                                      </div>
-                                      <div class="col-md-3">
-                                        时间 :<?php echo date('Y-m-d',$user['association_registration_time']); ?>
-                                      </div><?php break;?>
-                                  <?php default: ?><span class="label label-default">尚未登记</span><?php endswitch;?>
-                          </div>
+                          <?php if($right['is_allow_read_association_registration'] == 1): ?><div class="row">
+                                <div class='col-md-3 text_right'>
+                                    中国证券投资基金协会登记:
+                                </div>
+                                <?php switch($user['is_association_registration']): case "1": ?><div class="col-md-2">
+                                          <span class="label label-info">已登记</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                          编号 :<?php echo ($user['association_registration_number']); ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                          时间 :<?php echo date('Y-m-d',$user['association_registration_time']); ?>
+                                        </div><?php break;?>
+                                    <?php default: ?><span class="label label-default">尚未登记</span><?php endswitch;?>
+                            </div><?php endif; ?>
 
 
                       </div>
@@ -369,36 +368,38 @@
                     <h3><span class="glyphicon glyphicon-earphone"></span>联系方式</h3>
                     <div class="panel panel-default">
                       <div class="panel-body">
+                          <?php if($right['is_allow_read_contact_username'] == 1): ?><div class="row">
+                                <div class='col-md-3 text_right'>
+                                    联系人:
+                                </div>
+                                <div class='col-md-8'>
+                                    <?php echo ($user['contact_username']); ?>
+                                </div>
+                            </div><?php endif; ?>
+                          
+                          <?php if($right['is_allow_read_contact_phone'] == 1): ?><div class="row">
+                                <div class='col-md-3 text_right'>
+                                    手机:
+                                </div>
+                                <div class='col-md-8'>
+                                    <?php echo ($user['contact_phone']); ?>
+                                </div>
+                            </div><?php endif; ?>
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  联系人:
-                              </div>
-                              <div class='col-md-8'>
-                                  <?php echo ($user['contact_username']); ?>
-                              </div>
-                          </div>
+                          <?php if($right['is_allow_read_contact_email'] == 1): ?><div class="row">
+                              <div class='col-md-3 text_right'>邮箱:</div>
+                              <div class='col-md-8'><?php echo ($user['contact_email']); ?></div>
+                            </div><?php endif; ?>
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  手机:
-                              </div>
-                              <div class='col-md-8'>
-                                  <?php echo ($user['contact_phone']); ?>
-                              </div>
-                          </div>
-                          <div class="row">
-                            <div class='col-md-3 text_right'>邮箱:</div>
-                            <div class='col-md-8'><?php echo ($user['contact_email']); ?></div>
-                          </div>
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  传真:
-                              </div>
-                              <div class='col-md-8'>
-                                  <?php echo ($user['contact_fax']); ?>
-                              </div>
-                          </div>
+                          <?php if($right['is_allow_read_contact_fax'] == 1): ?><div class="row">
+                                <div class='col-md-3 text_right'>
+                                    传真:
+                                </div>
+                                <div class='col-md-8'>
+                                    <?php echo ($user['contact_fax']); ?>
+                                </div>
+                            </div><?php endif; ?>
+
                           <div class="row">
                               <div class='col-md-3 text_right'>
                                   机构微信:
@@ -420,79 +421,113 @@
                   </div>
               </div>
 
-              <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-user"></span>管理团队</h3>
-                    <div class="panel panel-default">
-                      <div class="panel-body">
-                          <!--已有团队成员-->
-                          <?php if(is_array($members)): foreach($members as $key=>$vo): ?><div id="" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="">
-                                <div class="panel-body">
-                                  <div class="repeat_people ">
-                                    <div class="borderBottom" style="margin-bottom:20px;">
-                                      <div class="row" >
-                                        <div class="col-sm-3 text_right">
-                                          
-                                            姓名:
-                      
-                                        </div>
+              <?php if($right['is_allow_read_representative_baseinfo'] == 1): ?><div class="row margin_top_20">
+                      <div class='col-md-12'>
+                        <h3><span class="glyphicon glyphicon-user"></span>管理团队</h3>
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+                              <!--已有团队成员-->
+                              <?php if(is_array($members)): foreach($members as $key=>$vo): ?><div id="" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="">
+                                      <div class="panel-body">
+                                        <div class="repeat_people ">
+                                          <div class="borderBottom" style="margin-bottom:20px;">
 
-                                        <div class="col-sm-8">
-
-                                              <?php echo ($vo['username']); ?>
-
-                                        </div>
-
-                                      </div>
-
-                                      <div class="row" style="margin-top:10px;">
-                                        <div class="col-sm-3 text_right">
-                                          
-                                            职务:
-                      
-                                        </div>
-
-                                        <div class="col-sm-8">
-
-                                              <?php echo ($vo['function']); ?>
-
-                                        </div>
-                                      </div>
-
-                                      <div class="row">
-                                          <div class="col-sm-3 text_right">
-                                            从业经历:
-                                          </div>
-                                      </div>
-
-                                      <div class="repeat">
-                                        <?php if(is_array($vo['business_experience'])): foreach($vo['business_experience'] as $key=>$business_experience): ?><div class="row" style="margin-top:10px;">
-                                              
-                                              <div class="col-sm-3 text_right">
-                                                    <?php echo ($business_experience['company_name']); ?>
-                                              </div>
-                                             
-                                                
-                                              <div class="col-sm-3">
-                                                    <?php echo ($business_experience['function']); ?>
-                                              </div>
-
-                                              <div class="col-sm-6">
-                                                <?php echo ($business_experience['start_time']); ?>-<?php echo ($business_experience['end_time']); ?>
-                                              </div>
+                                            <?php switch($vo['is_representative']): case "1": ?><div class="row" >
+                                                      <div class="col-sm-3 text_right">
+                                                        
+                                                          姓名:
                                     
-                                            </div><?php endforeach; endif; ?>
+                                                      </div>
+
+                                                      <div class="col-sm-8">
+
+                                                            <?php echo ($vo['username']); ?>
+                                                            
+                                                                &nbsp;&nbsp;法定代表人/执行事务合伙人（委派代表）
+                                                            
+
+                                                      </div>
+
+                                                    </div>
+
+                                                    <div class="row" style="margin-top:10px;">
+                                                      <div class="col-sm-3 text_right">
+                                                        
+                                                          职务:
+                                    
+                                                      </div>
+
+                                                      <div class="col-sm-8">
+
+                                                            <?php echo ($vo['function']); ?>
+
+                                                      </div>
+                                                   </div><?php break;?>
+                                               <?php default: ?>
+                                                    <?php if($right['is_allow_read_senior_executive_baseinfo'] == 1): ?><div class="row" >
+                                                          <div class="col-sm-3 text_right">
+                                                            
+                                                              姓名:
+                                        
+                                                          </div>
+
+                                                          <div class="col-sm-8">
+
+                                                                <?php echo ($vo['username']); ?>
+
+                                                          </div>
+
+                                                        </div>
+
+                                                        <div class="row" style="margin-top:10px;">
+                                                          <div class="col-sm-3 text_right">
+                                                            
+                                                              职务:
+                                        
+                                                          </div>
+
+                                                          <div class="col-sm-8">
+
+                                                                <?php echo ($vo['function']); ?>
+
+                                                          </div>
+                                                       </div><?php endif; endswitch;?>
+                                               
+                                            
+                                            <?php if($right['is_allow_read_business_experience'] == 1): ?><div class="row">
+                                                    <div class="col-sm-3 text_right">
+                                                      从业经历:
+                                                    </div>
+                                                </div>
+
+                                                <div class="repeat">
+                                                  <?php if(is_array($vo['business_experience'])): foreach($vo['business_experience'] as $key=>$business_experience): ?><div class="row" style="margin-top:10px;">
+                                                        
+                                                        <div class="col-sm-3 text_right">
+                                                              <?php echo ($business_experience['company_name']); ?>
+                                                        </div>
+                                                       
+                                                          
+                                                        <div class="col-sm-3">
+                                                              <?php echo ($business_experience['function']); ?>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                          <?php echo ($business_experience['start_time']); ?>-<?php echo ($business_experience['end_time']); ?>
+                                                        </div>
+                                              
+                                                      </div><?php endforeach; endif; ?>
+                                                </div><?php endif; ?>
+
+                                          </div>
+                                        </div>
+
                                       </div>
-
-                                    </div>
-                                  </div>
-
-                                </div>
-                              </div><?php endforeach; endif; ?>
+                                  </div><?php endforeach; endif; ?>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-              </div>
+                  </div><?php endif; ?>
 
               <div class="row margin_top_20">
                   <div class='col-md-12'>
@@ -688,19 +723,19 @@
 
                             </div>
 
-                            <div class="row" style="margin-top:10px;">
-                                
-                                <div>
-                                    <div class="col-sm-3 text_right">
-                                      托管人名称
-                                    </div>
-                                    <div class="col-sm-8">
-                                      <?php echo ($vo['trustee_name']); ?>                          
-                                    </div>
+                            <?php if($right['is_allow_read_trustee_name'] == 1): ?><div class="row" style="margin-top:10px;">
+                                  
+                                  <div>
+                                      <div class="col-sm-3 text_right">
+                                        托管人名称
+                                      </div>
+                                      <div class="col-sm-8">
+                                        <?php echo ($vo['trustee_name']); ?>                          
+                                      </div>
 
-                                </div>
+                                  </div>
 
-                            </div>
+                              </div><?php endif; ?>
 
                             <div class="row" style="margin-top:10px;">
                                 
@@ -716,61 +751,59 @@
 
                             </div>
 
-                            <div class="row" style="margin-top:10px;">
-                                
-                                <div>
-                                    <div class="col-sm-3 text_right">
-                                      运作状态
-                                    </div>
-                                    <div class="col-sm-8">
-                                      <div class="col-sm-3 ">
-                                        <input class="icheckbox_flat-blue"  type="radio"  <?php if($vo['is_recruitment_period']==0) echo' checked'; ?>/>
-                                        封闭
+                            <?php if($right['is_allow_read_run_state'] == 1): ?><div class="row" style="margin-top:10px;">
+                                  
+                                  <div>
+                                      <div class="col-sm-3 text_right">
+                                        运作状态
                                       </div>
-                                      <div class="col-sm-3 ">
-                                        <input class="icheckbox_flat-blue"  type="radio"  <?php if($vo['is_recruitment_period']==1) echo' checked'; ?>/>
-                                        募集期
-                                      </div>      
-                                      <div class="col-sm-2 ">
-                                        募集方案
+                                      <div class="col-sm-8">
+                                        <div class="col-sm-3 ">
+                                          <input class="icheckbox_flat-blue"  type="radio"  <?php if($vo['is_recruitment_period']==0) echo' checked'; ?>/>
+                                          封闭
+                                        </div>
+                                        <div class="col-sm-3 ">
+                                          <input class="icheckbox_flat-blue"  type="radio"  <?php if($vo['is_recruitment_period']==1) echo' checked'; ?>/>
+                                          募集期
+                                        </div>
+                                        <?php if($right['is_allow_read_recruitment_plan_url'] == 1): ?><div class="col-sm-2 ">
+                                              募集方案
+                                            </div>
+                                            <div class="col-sm-4 ">
+                                                <a href="/fofs/1/Public/uploads/lp_recruitment/<?php echo ($vo['recruitment_plan_url']); ?>" ><?php echo ($vo['recruitment_plan_url']); ?></a>
+                                            </div><?php endif; ?>  
+
+                                                             
                                       </div>
-                                      <div class="col-sm-4 ">
-                                          <a href="/fofs/1/Public/uploads/lp_recruitment/<?php echo ($vo['recruitment_plan_url']); ?>" ><?php echo ($vo['recruitment_plan_url']); ?></a>
-                                      </div>  
 
-                                                           
-                                    </div>
+                                  </div>
 
-                                </div>
+                              </div><?php endif; ?>
 
-                            </div>
-
-
-                            <div class="row" style="margin-top:10px;">
-                                
-                                <div>
-                                    <div class="col-sm-3 text_right">
-                                      中基协备案状况
-                                    </div>
-                                    <div class="col-sm-8">
-                                      <div class="col-sm-3 ">
-                                        <input class="icheckbox_flat-blue"  type="radio"  <?php if($vo['is_recorded']==0) echo' checked'; ?>/>
-                                        未备案
+                            <?php if($right['is_allow_read_recorded'] == 1): ?><div class="row" style="margin-top:10px;">
+                                  
+                                  <div>
+                                      <div class="col-sm-3 text_right">
+                                        中基协备案状况
                                       </div>
-                                      <div class="col-sm-3 ">
-                                        <input class="icheckbox_flat-blue"  type="radio"  <?php if($vo['is_recorded']==1) echo' checked'; ?>/>
-                                        已备案
-                                      </div>  
-                                      <div class="col-sm-6 ">
-                                        (若已备案则填写下面基金编号、备案时间)
-                                      </div>                       
-                                    </div>
+                                      <div class="col-sm-8">
+                                        <div class="col-sm-3 ">
+                                          <input class="icheckbox_flat-blue"  type="radio"  <?php if($vo['is_recorded']==0) echo' checked'; ?>/>
+                                          未备案
+                                        </div>
+                                        <div class="col-sm-3 ">
+                                          <input class="icheckbox_flat-blue"  type="radio"  <?php if($vo['is_recorded']==1) echo' checked'; ?>/>
+                                          已备案
+                                        </div>  
+                                        <div class="col-sm-6 ">
+                                          (若已备案则填写下面基金编号、备案时间)
+                                        </div>                       
+                                      </div>
 
-                                </div>
+                                  </div>
 
-                            </div>
-
-                            <div class="row" style="margin-top:10px;">
+                              </div>
+                              <div class="row" style="margin-top:10px;">
                                 
                                 <div>
                                     <div class="col-sm-2 text_right">
@@ -790,105 +823,104 @@
 
                                 </div>
 
-                            </div>
+                              </div><?php endif; ?>
 
 
-                            <div class="row">
-                                <div class="col-sm-6  ">
-                                  <label for="userName" class="col-sm-12 control-label"><b>该基金已投基金/项目</b></label>
+
+                            <?php if($right['is_allow_read_investment_project'] == 1): ?><div class="row">
+                                    <div class="col-sm-6  ">
+                                      <label for="userName" class="col-sm-12 control-label"><b>该基金已投基金/项目</b></label>
+                                    </div>
                                 </div>
-                            </div>
+                                <?php if(is_array($vo['investment_projects'])): foreach($vo['investment_projects'] as $project_key=>$investment_project): ?><div class="row" style="margin-top:10px;">
+                                              <div>
+                                                  <div class="col-sm-3 text_right">
+                                                    基金项目<?php echo ($project_key+1); ?>名称
+                                                  </div>
+                                                  <div class="col-sm-8">
+                                                    <?php echo ($investment_project['project_name']); ?>                          
+                                                  </div>
 
-
-                            <div class="">
-                            <?php if(is_array($vo['investment_projects'])): foreach($vo['investment_projects'] as $project_key=>$investment_project): ?><div class="row" style="margin-top:10px;">
-                                          <div>
-                                              <div class="col-sm-3 text_right">
-                                                基金项目<?php echo ($project_key+1); ?>名称
                                               </div>
-                                              <div class="col-sm-8">
-                                                <?php echo ($investment_project['project_name']); ?>                          
+
+                                          </div>
+                                          <div class="row" style="margin-top:10px;">
+                                            
+                                              <div>
+                                                  <div class="col-sm-3 text_right">
+                                                    基金项目简介
+                                                  </div>
+                                                  <div class="col-sm-8">
+                                                    <textarea class="form-control" id="project_abstract" name="investment_project[project_abstract][]"  disabled><?php echo ($investment_project['project_abstract']); ?></textarea>
+                                                  </div>
+
                                               </div>
 
                                           </div>
 
-                                      </div>
-                                      <div class="row" style="margin-top:10px;">
-                                        
-                                          <div>
-                                              <div class="col-sm-3 text_right">
-                                                基金项目简介
-                                              </div>
-                                              <div class="col-sm-8">
-                                                <textarea class="form-control" id="project_abstract" name="investment_project[project_abstract][]"  disabled><?php echo ($investment_project['project_abstract']); ?></textarea>
-                                              </div>
+                                          <?php if($right['is_allow_read_investment_project_detail'] == 1): ?><div class="row" style="margin-top:10px;">
+                                                
+                                                  <div>
+                                                      <div class="col-sm-3 text_right">
+                                                        投资额度
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                          <?php echo ($investment_project['investment_quota']); ?>                         
+                                                      </div>
+                                                      <div class="col-sm-2">
+                                                        万元
+                                                      </div>
 
-                                          </div>
+                                                  </div>
 
-                                      </div>
-                                      <div class="row" style="margin-top:10px;">
-                                        
-                                          <div>
-                                              <div class="col-sm-3 text_right">
-                                                投资额度
                                               </div>
-                                              <div class="col-sm-4">
-                                                  <?php echo ($investment_project['investment_quota']); ?>                         
-                                              </div>
-                                              <div class="col-sm-2">
-                                                万元
-                                              </div>
+                                              <div class="row" style="margin-top:10px;">
+                                                
+                                                  <div>
+                                                      <div class="col-sm-3 text_right">
+                                                        项目投资轮次
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                        <?php echo ($investment_project['investment_round']); ?>
+                                                      </div>
+                                                      <div class="col-sm-2">
+                                                        (基金无)
+                                                      </div>
 
-                                          </div>
+                                                  </div>
 
-                                      </div>
-                                      <div class="row" style="margin-top:10px;">
-                                        
-                                          <div>
-                                              <div class="col-sm-3 text_right">
-                                                项目投资轮次
                                               </div>
-                                              <div class="col-sm-4">
-                                                <?php echo ($investment_project['investment_round']); ?>
-                                              </div>
-                                              <div class="col-sm-2">
-                                                (基金无)
-                                              </div>
+                                              <div class="row" style="margin-top:10px;">
+                                                
+                                                  <div>
+                                                      <div class="col-sm-3 text_right">
+                                                        投资时间
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                        <?php echo date('Y-m-d',$investment_project['investment_time']); ?>                  
+                                                      </div>
 
-                                          </div>
+                                                  </div>
 
-                                      </div>
-                                      <div class="row" style="margin-top:10px;">
-                                        
-                                          <div>
-                                              <div class="col-sm-3 text_right">
-                                                投资时间
                                               </div>
-                                              <div class="col-sm-4">
-                                                <?php echo date('Y-m-d',$investment_project['investment_time']); ?>                  
-                                              </div>
+                                              <div class="row borderBottom" style="margin-top:10px;">
+                                                
+                                                  <div>
+                                                      <div class="col-sm-3 text_right">
+                                                        项目现状
+                                                      </div>
+                                                      <div class="col-sm-4">
+                                                          <select name="investment_project[project_state_type][]" id="project_state_type" class="form-control" disabled>
+                                                                <?php switch($investment_project['project_state_type']): case "1": ?><option value ="1">死亡</option><?php break;?>
+                                                                      <?php case "2": ?><option value ="2">Pre-IPO</option><?php break;?>
+                                                                      <?php case "3": ?><option value ="3">M&A</option><?php break;?>
+                                                                      <?php case "4": ?><option value ="4">上市</option><?php break; endswitch;?>
+                                                          </select>  
+                                                      </div>
 
-                                          </div>
+                                                  </div>
 
-                                      </div>
-                                      <div class="row borderBottom" style="margin-top:10px;">
-                                        
-                                          <div>
-                                              <div class="col-sm-3 text_right">
-                                                项目现状
-                                              </div>
-                                              <div class="col-sm-4">
-                                                  <select name="investment_project[project_state_type][]" id="project_state_type" class="form-control" disabled>
-                                                        <?php switch($investment_project['project_state_type']): case "1": ?><option value ="1">死亡</option><?php break;?>
-                                                              <?php case "2": ?><option value ="2">Pre-IPO</option><?php break;?>
-                                                              <?php case "3": ?><option value ="3">M&A</option><?php break;?>
-                                                              <?php case "4": ?><option value ="4">上市</option><?php break; endswitch;?>
-                                                  </select>  
-                                              </div>
-
-                                          </div>
-
-                                      </div><?php endforeach; endif; endforeach; endif; ?>
+                                              </div><?php endif; endforeach; endif; endif; endforeach; endif; ?>
                       </div>
                     </div>
                   </div>

@@ -42,5 +42,19 @@ return array(
     'LANG_AUTO_DETECT' => true, // 自动侦测语言 开启多语言功能后有效
     'LANG_LIST'        => 'zh-cn,en-us', // 允许切换的语言列表 用逗号分隔
     'VAR_LANGUAGE'     => 'l', // 默认语言切换变量
-    'DEFAULT_LANG'     => 'en-us'
+    'DEFAULT_LANG'     => 'en-us',
+
+    //Auth配置
+    'AUTH_CONFIG' => array(
+        // 用户组数据表名
+        //'AUTH_GROUP' => 'tp_group',
+        // 用户-用户组关系表
+        //'AUTH_GROUP_ACCESS' => 'tp_group_access',
+        // 权限规则表
+        //'AUTH_RULE' => 'tp_rule',
+        // 用户信息表
+        'AUTH_USER' => '自定义吧'
+    ),
+ 
+
 );

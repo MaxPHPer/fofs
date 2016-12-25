@@ -854,7 +854,7 @@ class RegisterController extends BaseController{
                              if(!$info) {// 上传错误提示错误信息
                                 $this->error($upload->getError());
                              }else{// 上传成功 获取上传文件信息
-                                $User->where('id='.$data['id'])->setField('face_url',$info['savename']);
+                                $User->where('id='.$data['id'])->setField('head_portrait_url',$info['savename']);
                              }
                          }
                     }

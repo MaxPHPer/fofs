@@ -110,40 +110,81 @@ substr($result, 10, 16) == substr(md5(substr($result, 26).$keyb), 0, 16)) {
     }  
 
 } 
-    function str_hex($string){ 
-        $hex="";
-        for($i = 0; $i < strlen($string); $i++)
-        $hex .= dechex(ord($string[$i]));
-        $hex = strtoupper($hex);
-        return $hex;
-    }   
-     
-    function hex_str($hex){   
-        $string = ""; 
-        for($i = 0; $i < strlen($hex) - 1; $i += 2)
-        $string .= chr(hexdec($hex[$i].$hex[$i + 1]));
-        return $string;
-    } 
+function str_hex($string){ 
+    $hex="";
+    for($i = 0; $i < strlen($string); $i++)
+    $hex .= dechex(ord($string[$i]));
+    $hex = strtoupper($hex);
+    return $hex;
+}   
+ 
+function hex_str($hex){   
+    $string = ""; 
+    for($i = 0; $i < strlen($hex) - 1; $i += 2)
+    $string .= chr(hexdec($hex[$i].$hex[$i + 1]));
+    return $string;
+} 
 
-    //将中文变成英文(数组)
-    function zh_to_en($arr,$name='name',$name_en='name_en'){
+//将中文变成英文(数组)
+function zh_to_en($arr,$name='name',$name_en='name_en'){
 
-        for($i=0;$i<count($arr);$i++){
-            $arr[$i][$name]=$arr[$i][$name_en];
+    for($i=0;$i<count($arr);$i++){
+        $arr[$i][$name]=$arr[$i][$name_en];
+    }
+
+    return $arr;
+
+}
+
+//将中文变成英文(个体)
+function zh_to_en_single($vo,$name='name',$name_en='name_en'){
+    $vo[$name]=$vo[$name_en];
+    return $vo;
+}
+
+//格式化打印
+function p($arr){
+    print_r("<pre>");
+    print_r($arr);
+    print_r("</pre>");
+}
+
+/*
+function:二维数组按指定的键值排序
+author:www.111cn.net
+*/
+function array_sort($array,$keys,$type='asc'){
+    if(!isset($array) || !is_array($array) || empty($array)){
+        return '';
+    }
+    if(!isset($keys) || trim($keys)==''){
+        return '';
+    }
+    if(!isset($type) || $type=='' || !in_array(strtolower($type),array('asc','desc'))){
+        return '';
+    }
+    $keysvalue=array();
+    foreach($array as $key=>$val){
+        $val[$keys] = str_replace('-','',$val[$keys]);
+        $val[$keys] = str_replace(' ','',$val[$keys]);
+        $val[$keys] = str_replace(':','',$val[$keys]);
+        $keysvalue[] =$val[$keys];
+    }
+    asort($keysvalue); //key值排序
+    reset($keysvalue); //指针重新指向数组第一个
+    foreach($keysvalue as $key=>$vals) {
+        $keysort[] = $key;
+    }
+    $keysvalue = array();
+    $count=count($keysort);
+    if(strtolower($type) != 'asc'){
+        for($i=$count-1; $i>=0; $i--) {
+            $keysvalue[] = $array[$keysort[$i]];
         }
-
-        return $arr;
-
+    }else{
+        for($i=0; $i<$count; $i++){
+            $keysvalue[] = $array[$keysort[$i]];
+        }
     }
-
-    //将中文变成英文(个体)
-    function zh_to_en_single($vo,$name='name',$name_en='name_en'){
-        $vo[$name]=$vo[$name_en];
-        return $vo;
-    }
-
-    //格式化打印
-    function p($arr){
-        print_r("<pre>");
-        print_r($arr);
-    }
+    return $keysvalue;
+}

@@ -361,75 +361,62 @@
 </nav>
 
   <div id="page-wrapper">
+
     <div class="row">
-      <div class="col-lg-12">
-        <h1 class="page-header">控制面板</h1>
-      </div>
-      <!-- /.col-lg-12 -->
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-comments fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge"><?php echo ($today_view); ?></div>
-                <div>今日访问总数</div>
-              </div>
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="margin-top: 20px;">
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <div class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      文章详情
+                    </a>
+                  </div>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <div class="col-md-12">
+                      <div class="well">
+                        <div style="margin-left: auto;margin-right: auto; display: table;">
+                            <h2><?php echo ($article['title']); ?></h2>
+                        </div>
+                        <div style="float: right;">
+                          <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-calendar"></span><?php echo date('Y-m-d H:i:s',$article['pub_time']) ?></div>
+                          <div style="float: right; margin-right:25px;"><span class="glyphicon glyphicon-user"></span>
+                            <?php switch($article['institution_type']): case "1": ?>LP<?php break;?>
+                                    <?php case "2": ?>GP<?php break;?>
+                                    <?php case "3": ?>创业公司<?php break;?>
+                                    <?php case "4": ?>FA<?php break;?>
+                                    <?php case "5": ?>法务服务机构<?php break;?>
+                                    <?php case "6": ?>财务服务机构<?php break;?>
+                                    <?php case "7": ?>众创空间<?php break;?>
+                                    <?php case "8": ?>其它机构<?php break;?>
+                                    <?php case "9": ?>个人<?php break;?>
+                                    <?php case "10": ?>中国母基金联盟<?php break; endswitch;?>
+                              &nbsp;&nbsp;
+                              <?php echo ($article['author_name']); ?>
+
+                          </div>
+                        </div>
+                        
+                        <hr/>
+                        <div class="row panel-body">
+                          <div class='col-md-10 col-md-offset-1'>
+                            <div id="content">
+                                <?php echo ($article['content']); ?>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div><!--新闻列表-->
+
+
             </div>
-          </div>
-          
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-green">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-tasks fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge"><?php echo ($total_view); ?></div>
-                <div>历史访问总数</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-yellow">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-shopping-cart fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge"><?php echo ($count_individual); ?></div>
-                <div>总注册个人用户</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="panel panel-red">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-support fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge"><?php echo ($count_institution); ?></div>
-                <div>总注册机构用户</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <!-- /.row -->
   </div>

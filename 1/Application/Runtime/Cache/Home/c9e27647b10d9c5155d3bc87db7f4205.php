@@ -40,7 +40,7 @@
           <li>
             <div id="search_box">
               <form id="search_form" method="post" action="<?php echo U('Home/Search/search');?>">
-                <input type="text" id="s" placeholder="文章/机构/用户" class="swap_value" name="keywords"/>
+                <input type="text" id="s" placeholder="文章/机构/用户" value="<?php echo ($keywords); ?>" class="swap_value" name="keywords"/>
                 <input type="image" src="/fofs/1/Public/assets_1/img/search.png" width="20" height="20" id="go" alt="Search" title="Search" />
               </form>
             </div>
@@ -518,6 +518,7 @@
                                         <div class="col-sm-8">
 
                                               <?php echo ($vo['username']); ?>
+                                              <?php if($vo['is_representative'] == 1): ?>&nbsp;&nbsp;法定代表人/执行事务合伙人（委派代表）<?php endif; ?>
 
                                         </div>
 
