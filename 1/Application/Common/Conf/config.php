@@ -25,13 +25,13 @@ return array(
 	// 配置邮件发送服务器
     'MAIL_HOST' =>'smtp.163.com',//smtp服务器的名称
     'MAIL_SMTPAUTH' =>TRUE, //启用smtp认证
-    'MAIL_SUPPORT_USERNAME' =>'wzb707@163.com',			//SUPPORT的邮箱名
-    'MAIL_SUPPORT_FROM' =>'wzb707@163.com',				//发件人地址
-    'MAIL_SUPPORT_PASSWORD' =>'mmxch123',					//邮箱密码
+    'MAIL_SUPPORT_USERNAME' =>'joy_miracle@163.com',			//SUPPORT的邮箱名
+    'MAIL_SUPPORT_FROM' =>'joy_miracle@163.com',				//发件人地址
+    'MAIL_SUPPORT_PASSWORD' =>'shijianfeng01',					//邮箱密码
 
-    'MAIL_INFO_USERNAME' =>'wzb707@163.com',				//INFO的邮箱名
-    'MAIL_INFO_FROM' =>'wzb707@163.com',					//发件人地址
-	'MAIL_INFO_PASSWORD' =>'mmxch123',						//邮箱密码
+    'MAIL_INFO_USERNAME' =>'joy_miracle@163.com',				//INFO的邮箱名
+    'MAIL_INFO_FROM' =>'joy_miracle@163.com',					//发件人地址
+	'MAIL_INFO_PASSWORD' =>'shijianfeng01',						//邮箱密码
 
 	'MAIL_FROMNAME'=>'中国母基金联盟',//发件人姓名
     'MAIL_CHARSET' =>'utf-8',//设置邮件编码
@@ -53,8 +53,10 @@ return array(
         // 权限规则表
         //'AUTH_RULE' => 'tp_rule',
         // 用户信息表
-        'AUTH_USER' => '自定义吧'
+        'AUTH_USER' => '自定义吧',
     ),
- 
 
+    // 分页的数目
+    'PAGE_SIZE' => 2,
+ 
 );

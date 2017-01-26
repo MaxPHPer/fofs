@@ -238,7 +238,7 @@
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
                       <div class='col-md-12 ' >
-                        <form action="<?php echo U('Home/Search/gpSearch');?>" method="post">
+                        
                           <div class="panel-body well">
                               <div class="row">
                                   <div class='col-md-2 text_right' class="form-control" style="margin-top:6px;">
@@ -248,12 +248,10 @@
                                       <div class='col-md-3 ' >
                                           <select name="fund_type" id="fund_type" class="form-control">
                                             <option value ="0" >任意</option>
-                                            <option value ="is_angel_investment" <?php if($is_angel_investment == 1) echo 'selected'; ?> >天使投资基金</option>
-                                            <option value="is_vc_investment" <?php if($is_vc_investment == 1) echo 'selected'; ?> >VC基金</option>
-                                            <option value="is_pe_investment" <?php if($is_pe_investment == 1) echo 'selected'; ?> >PE基金</option>
-                                            <option value ="is_other_investment" <?php if($is_other_investment == 1) echo 'selected'; ?> >其它基金</option>
-
-
+                                            <option value ="is_angel_investment" >天使投资基金</option>
+                                            <option value="is_vc_investment" >VC基金</option>
+                                            <option value="is_pe_investment" >PE基金</option>
+                                            <option value ="is_other_investment" >其它基金</option>
                                           </select>
                                       </div>
                                   </div>
@@ -265,19 +263,19 @@
                                     </div>
                                     <div class="col-md-10">
                                         <div class="col-md-3 ">
-                                        <input class="icheckbox_flat-blue" id="is_securities_fund" type="checkbox" name="investment_type[]" value="is_securities_fund=1" <?php if($is_securities_fund==1) echo 'checked'; ?> />
+                                        <input class="icheckbox_flat-blue" id="is_securities_fund" type="checkbox" name="is_securities_fund"/>
                                           证券投资基金
                                         </div>
                                         <div class="col-md-3 ">
-                                          <input class="icheckbox_flat-blue" id="is_stock_fund" type="checkbox" name="investment_type[]" value="is_stock_fund=1" <?php if($is_stock_fund==1) echo 'checked'; ?> />
+                                          <input class="icheckbox_flat-blue" id="is_stock_fund" type="checkbox" name="is_stock_fund"/>
                                           股权投资基金
                                         </div>
                                         <div class="col-md-3 ">
-                                          <input class="icheckbox_flat-blue" id="is_startup_fund" type="checkbox" name="investment_type[]" value="is_startup_fund=1" <?php if($is_startup_fund==1) echo 'checked'; ?> />
+                                          <input class="icheckbox_flat-blue" id="is_startup_fund" type="checkbox" name="is_startup_fund"/>
                                           创业投资基金
                                         </div>
                                         <div class="col-md-3 ">
-                                          <input class="icheckbox_flat-blue" id="is_other_fund" type="checkbox" name="investment_type[]" value="is_other_fund=1" <?php if($is_other_fund==1) echo 'checked'; ?> />
+                                          <input class="icheckbox_flat-blue" id="is_other_fund" type="checkbox" name="is_other_fund"/>
                                           其它投资基金
                                         </div>                        
                                      </div>
@@ -289,7 +287,7 @@
                                   </div>
                                   <div class="col-md-10">
                                       <div class="col-md-8">
-                                        <input class="form-control" name="investment_field" value="<?php echo ($investment_field); ?>" />  
+                                        <input class="form-control" id='investment_field' name="investment_field"  />  
                                       </div>         
                                   </div>
 
@@ -301,7 +299,7 @@
                                   </div>
                                   <div class="col-md-10">
                                       <div class="col-md-8">
-                                        <input class="form-control" name="investment_region" placeholder="海外/全国范围/某省某市" value="<?php echo ($investment_region); ?>"/>  
+                                        <input class="form-control" id='investment_region' name="investment_region" placeholder="海外/全国范围/某省某市" />  
                                       </div>         
                                   </div>
 
@@ -316,50 +314,19 @@
                                   </div>
                                   <div class='col-md-9 text_right' >
 
-                                      <input type="submit" name="end_sign" value="一键搜索" class="btn btn-info">
+                                      <input type="submit" name="end_sign" id='gp_search' value="一键搜索" class="btn btn-info">
                                       
                                   </div>
                               </div>
 
                           </div>
-                        </form>
+
                       </div>
 
                       <div class='col-md-12' >
                                 <div class="panel-body">
-                                    <div class="list-group">
-                                    <?php if(is_array($results)): foreach($results as $key=>$vo): ?><div class="list-group-item row form-group">
-                                          <div class="col-sm-1 " style="margin-top:18px;">
-                                              <?php echo ($key+1); ?>
-                                          </div>
-                                     
-                                          <div class="col-sm-2">
-                                            <img class="media-object img-thumbnail" src="/fofs/1/Public/uploads/gp_pic/<?php echo $vo['institution_logo_img']?$vo['institution_logo_img']:'default.jpg'; ?>" alt="头像"  width="100"/>
-                                          </div>
-                                          <div class="col-sm-5" style="margin-top:18px;">
-                                               <a href="<?php echo U('Home/Search/gpProfile');?>?id=<?php echo ($vo['id']); ?>&institution_type=<?php echo ($vo['institution_type']); ?>" target="_blank"><?php echo ($vo['institution_fullname_cn']); ?></a>
-                                          </div>
-
-                                          <div class="col-sm-3" style="margin-top:18px;">
-                                              <?php if($vo['is_securities_fund'] == 1): ?>证券投资基金<?php endif; ?>
-                                              <?php if($vo['is_stock_fund'] == 1): ?>股权投资基金<?php endif; ?>
-                                              <?php if($vo['is_startup_fund'] == 1): ?>创业投资基金<?php endif; ?>
-                                              <?php if($vo['is_other_fund'] == 1): ?>其它投资基金<?php endif; ?>
-                                          </div>
-
-
-                                          <div class="col-sm-1 " style="margin-top:18px;">
-                                              <?php if((session('user_id') == $vo['id']) AND (session('institution_type') == $vo['institution_type'])): else: ?>
-                                                  <?php if($vo['is_by_followed'] == 1): ?><span class="label label-warning">已关注</span>
-                                                  <?php else: ?>
-
-                                                      <span class="label label-info" onclick="add_follow(<?php echo ($vo['id']); ?>,<?php echo ($vo['institution_type']); ?>,this);">+关注</span><?php endif; endif; ?>
-                                              
-                                          </div>
-                                                                            
-                                  
-                                      </div><?php endforeach; endif; ?>
-                                    <h3><?php echo ($tip); ?></h3>
+                                    <div class="list-group" id='gp_results'>
+                                      
                                     </div>
                                 </div>
                       </div>
@@ -367,9 +334,15 @@
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body center">
-                    <?php echo ($page); ?>
+                    <ul class="pagination" id='pages'>
+
+                    </ul>
                   </div>
                 </div>
+                <input type="hidden" id='gp_img_url_index' value="/fofs/1/Public/uploads/gp_pic/">
+                <input type="hidden" id='gp_profile_url_index' value="/fofs/1/index.php/Home/Search/gpProfile">
+                <input type="hidden" id='user_id' value="<?php echo session('user_id'); ?>">
+                <input type="hidden" id='institution_type' value="<?php echo session('institution_type'); ?>">
               </div><!--新闻列表-->
 
 
@@ -402,7 +375,8 @@
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>
-<script src="/fofs/1/Public/assets_1/js/search.js"></script>
+<script src="/fofs/1/Public/assets_1/js/gp_search.js"></script>
+<script src="/fofs/1/Public/assets_1/js/lp_search.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
 <script type="text/javascript">

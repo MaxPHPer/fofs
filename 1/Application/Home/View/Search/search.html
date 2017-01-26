@@ -96,15 +96,15 @@
                                     <div class="list-group">
                                         <foreach name="articles" item="vo">
                                           <div class="list-group-item row form-group">
-                                            <div class="col-sm-1">
+                                            <div class="col-sm-2">
                                                  <span class="glyphicon glyphicon-file"></span>{$key+1}
                                             </div>
-                                            <div class='col-md-7'>
+                                            <div class='col-md-6'>
                                                 {$vo['title']}
                                             </div> 
                                             <div class='col-md-4 text_right'>
                                                 <span class="glyphicon glyphicon-calendar"></span>
-                                                <php>echo date('Y-m-d H:i:s',$vo['pub_time'])</php>
+                                                <php>echo date('Y-m-d',$vo['pub_time'])</php>
                                           
                                                 <a href="{:U('Home/Index/articleDetail')}?article_id={$vo['id']}" target="_blank">详情</a>
                                             </div>

@@ -17,7 +17,7 @@
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
                       <div class='col-md-12 ' >
-                        <form action="{:U('Home/Search/lpSearch')}" method="post">
+
                             <div class="panel-body well">
                                 <div class="row">
                                     <div class='col-md-2 text_right' class="form-control" style="margin-top:6px;">
@@ -25,11 +25,11 @@
                                     </div>
                                     <div class="col-md-10">
                                         <div class='col-md-3 ' >
-                                            <select name="fund_type" id="fund_type" class="form-control">
+                                            <select name="lp_fund_type" id="lp_fund_type" class="form-control">
                                               <option value ="0" >任意</option>
-                                              <option value ="is_government_guidance" <php>if($is_government_guidance == 1) echo 'selected';</php> >政府引导基金</option>
-                                              <option value ="is_private_capital" <php>if($is_private_capital == 1) echo 'selected';</php> >民营资本市场化运作基金</option>
-                                              <option value="is_state_owned" <php>if($is_state_owned == 1) echo 'selected';</php> >国企参与市场化基金</option>
+                                              <option value ="is_government_guidance"  >政府引导基金</option>
+                                              <option value ="is_private_capital"  >民营资本市场化运作基金</option>
+                                              <option value="is_state_owned"  >国企参与市场化基金</option>
                                               
                                             </select>
                                         </div>
@@ -41,35 +41,34 @@
                                       投资类型
                                     </div>
                                     <div class="col-md-10">
-                                      <div class="col-md-3 ">
-                                      <input class="icheckbox_flat-blue" id="is_investment_security" type="checkbox" name="investment_type[]" value="is_investment_security=1" <php> if($is_investment_security==1) echo 'checked';</php> />
-                                        证券投资基金
-                                      </div>
-                                      <div class="col-md-3 ">
-                                        <input class="icheckbox_flat-blue" id="is_equity_investment" type="checkbox" name="investment_type[]" value="is_equity_investment=1" <php> if($is_equity_investment==1) echo 'checked';</php> />
-                                        股权投资基金
-                                      </div>
-                                      <div class="col-md-3 ">
-                                        <input class="icheckbox_flat-blue" id="is_venture_investment" type="checkbox" name="investment_type[]" value="is_venture_investment=1" <php> if($is_venture_investment==1) echo 'checked';</php> />
-                                        创业投资基金
-                                      </div>
-                                      <div class="col-md-3 ">
-                                        <input class="icheckbox_flat-blue" id="is_other_investment" type="checkbox" name="investment_type[]" value="is_other_investment=1" <php> if($is_other_investment==1) echo 'checked';</php> />
-                                        其它投资基金
-                                      </div>                        
-                                    </div>
-
+                                        <div class="col-md-3 ">
+                                        <input class="icheckbox_flat-blue" id="lp_is_securities_fund" type="checkbox" name="is_securities_fund"/>
+                                          证券投资基金
+                                        </div>
+                                        <div class="col-md-3 ">
+                                          <input class="icheckbox_flat-blue" id="lp_is_stock_fund" type="checkbox" name="is_stock_fund"/>
+                                          股权投资基金
+                                        </div>
+                                        <div class="col-md-3 ">
+                                          <input class="icheckbox_flat-blue" id="lp_is_startup_fund" type="checkbox" name="is_startup_fund"/>
+                                          创业投资基金
+                                        </div>
+                                        <div class="col-md-3 ">
+                                          <input class="icheckbox_flat-blue" id="lp_is_other_fund" type="checkbox" name="is_other_fund"/>
+                                          其它投资基金
+                                        </div>                        
+                                     </div>
                                 </div>
 
                                 <div class="row margin_top_13">
-                                    <div class="col-md-2 text_right">
-                                      投资领域
-                                    </div>
-                                    <div class="col-md-10">
-                                        <div class="col-md-8">
-                                          <input class="form-control" name="investment_field" value="{$investment_field}" />  
-                                        </div>         
-                                    </div>
+                                  <div class="col-md-2 text_right">
+                                    投资领域
+                                  </div>
+                                  <div class="col-md-10">
+                                      <div class="col-md-8">
+                                        <input class="form-control" id='lp_investment_field' name="investment_field"  />  
+                                      </div>         
+                                  </div>
 
                                 </div>
 
@@ -113,59 +112,19 @@
                                     </div>
                                     <div class='col-md-9 text_right' >
 
-                                        <input type="submit" value="一键搜索" class="btn btn-info">
-                                        
-                                    </div>
+                                      <input type="submit" name="end_sign" id='lp_search' value="一键搜索" class="btn btn-info">
+                                      
+                                  </div>
                                 </div>
 
                             </div>
-                         </form>
+
                       </div>
 
                       <div class='col-md-12' >
                                 <div class="panel-body">
-                                    <div class="list-group">
-                                    <foreach name="results" item="vo">
-                                      <div class="list-group-item row form-group">
-                                          <div class="col-sm-1 " style="margin-top:18px;">
-                                              {$key+1}
-                                          </div>
-                                     
-                                          <div class="col-sm-2">
-                                            <img class="media-object img-thumbnail" src="__PUBLIC__/uploads/lp_pic/<php> echo $vo['institution_logo_img']?$vo['institution_logo_img']:'default.jpg';</php>" alt="头像"  width="100"/>
-                                          </div>
-                                          <div class="col-sm-5" style="margin-top:18px;">
-                                               <a href="{:U('Home/Search/lpProfile')}?id={$vo['id']}&institution_type={$vo['institution_type']}" target="_blank">{$vo['institution_fullname_cn']}</a>
-                                          </div>
-
-                                          <div class="col-sm-3" style="margin-top:18px;">
-                                              <if condition="$vo['is_securities_fund'] eq 1">证券投资基金</if>
-                                              <if condition="$vo['is_stock_fund'] eq 1">股权投资基金</if>
-                                              <if condition="$vo['is_startup_fund'] eq 1">创业投资基金</if>
-                                              <if condition="$vo['is_other_fund'] eq 1">其它投资基金</if>
-                                          </div>
-
-
-                                          <div class="col-sm-1 " style="margin-top:18px;">
-                                              <if condition="(session('user_id') eq $vo['id']) AND (session('institution_type') eq $vo['institution_type'])">
-
-                                              <else/>
-                                                  <if condition="$vo['is_by_followed'] eq 1">
-                                                      <span class="label label-warning">已关注</span>
-                                                  <else/>
-
-                                                      <span class="label label-info" onclick="add_follow({$vo['id']},{$vo['institution_type']},this);">+关注</span>
-
-                                                  </if>
-                                                  
-                                              </if>
-                                              
-                                          </div>
-                                                                            
-                                  
-                                      </div>
-                                    </foreach>
-                                    <h3>{$tip}</h3>
+                                    <div class="list-group" id='lp_results'>
+                                      
                                     </div>
                                 </div>
                       </div>
@@ -173,9 +132,15 @@
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body center">
-                    {$page}
+                    <ul class="pagination" id='lp_pages'>
+
+                    </ul>
                   </div>
                 </div>
+                <input type="hidden" id='lp_img_url_index' value="__PUBLIC__/uploads/lp_pic/">
+                <input type="hidden" id='lp_profile_url_index' value="__APP__/Home/Search/lpProfile">
+                <input type="hidden" id='lp_user_id' value="<php> echo session('user_id');</php>">
+                <input type="hidden" id='lp_institution_type' value="<php> echo session('institution_type');</php>">
               </div><!--新闻列表-->
 
 

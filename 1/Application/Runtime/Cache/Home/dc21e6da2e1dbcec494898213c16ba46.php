@@ -310,15 +310,15 @@
                                   <div class="panel-body">
                                     <div class="list-group">
                                         <?php if(is_array($articles)): foreach($articles as $key=>$vo): ?><div class="list-group-item row form-group">
-                                            <div class="col-sm-1">
+                                            <div class="col-sm-2">
                                                  <span class="glyphicon glyphicon-file"></span><?php echo ($key+1); ?>
                                             </div>
-                                            <div class='col-md-7'>
+                                            <div class='col-md-6'>
                                                 <?php echo ($vo['title']); ?>
                                             </div> 
                                             <div class='col-md-4 text_right'>
                                                 <span class="glyphicon glyphicon-calendar"></span>
-                                                <?php echo date('Y-m-d H:i:s',$vo['pub_time']) ?>
+                                                <?php echo date('Y-m-d',$vo['pub_time']) ?>
                                           
                                                 <a href="<?php echo U('Home/Index/articleDetail');?>?article_id=<?php echo ($vo['id']); ?>" target="_blank">详情</a>
                                             </div>
@@ -427,7 +427,8 @@
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>
-<script src="/fofs/1/Public/assets_1/js/search.js"></script>
+<script src="/fofs/1/Public/assets_1/js/gp_search.js"></script>
+<script src="/fofs/1/Public/assets_1/js/lp_search.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
 <script type="text/javascript">

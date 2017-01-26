@@ -528,7 +528,7 @@ class RegisterController extends BaseController{
     }
 
 
-	  //注册页
+    //注册页
     public function email(){
         $this->display();
     }
@@ -704,7 +704,7 @@ class RegisterController extends BaseController{
         }   
     }
 
-	  //注册后验证邮箱提示页
+    //注册后验证邮箱提示页
     public function emailCheck(){
         $email=cookie('email');
         $this->assign('email',$email);
@@ -1892,7 +1892,7 @@ class RegisterController extends BaseController{
 
         $upload = new \Think\Upload();// 实例化上传类
         $upload->maxSize   =     10145728 ;// 设置附件上传大小,10M
-        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt','doc');// 设置附件上传类型
         $upload->rootPath  =     './Public/uploads/lp_recruitment/'; // 设置附件上传根目录
         $upload->savePath  =      ''; // 设置附件上传（子）目录
         $upload->autoSub   =     false;    //不使用子目录
@@ -1977,7 +1977,7 @@ class RegisterController extends BaseController{
 
         $upload = new \Think\Upload();// 实例化上传类
         $upload->maxSize   =     10145728 ;// 设置附件上传大小,10M
-        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt','doc');// 设置附件上传类型
         $upload->rootPath  =     './Public/uploads/lp_recruitment/'; // 设置附件上传根目录
         $upload->savePath  =      ''; // 设置附件上传（子）目录
         $upload->autoSub   =     false;    //不使用子目录
@@ -2202,7 +2202,7 @@ class RegisterController extends BaseController{
 
         $upload = new \Think\Upload();// 实例化上传类
         $upload->maxSize   =     10145728 ;// 设置附件上传大小,10M
-        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt','doc');// 设置附件上传类型
         $upload->rootPath  =     './Public/uploads/gp_recruitment/'; // 设置附件上传根目录
         $upload->savePath  =      ''; // 设置附件上传（子）目录
         $upload->autoSub   =     false;    //不使用子目录
@@ -2287,7 +2287,7 @@ class RegisterController extends BaseController{
 
         $upload = new \Think\Upload();// 实例化上传类
         $upload->maxSize   =     10145728 ;// 设置附件上传大小,10M
-        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt','doc');// 设置附件上传类型
         $upload->rootPath  =     './Public/uploads/gp_recruitment/'; // 设置附件上传根目录
         $upload->savePath  =      ''; // 设置附件上传（子）目录
         $upload->autoSub   =     false;    //不使用子目录
@@ -2392,7 +2392,7 @@ class RegisterController extends BaseController{
 
         $upload = new \Think\Upload();// 实例化上传类
         $upload->maxSize   =     3145728 ;// 设置附件上传大小
-        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt','doc');// 设置附件上传类型
         $upload->rootPath  =     './Public/uploads/startup_pic/'; // 设置附件上传根目录
         $upload->savePath  =      ''; // 设置附件上传（子）目录
         $upload->autoSub   =     false;    //不使用子目录
@@ -2472,7 +2472,7 @@ class RegisterController extends BaseController{
 
         $upload = new \Think\Upload();// 实例化上传类
         $upload->maxSize   =     3145728 ;// 设置附件上传大小
-        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt','doc');// 设置附件上传类型
         $upload->rootPath  =     './Public/uploads/fa_pic/'; // 设置附件上传根目录
         $upload->savePath  =      ''; // 设置附件上传（子）目录
         $upload->autoSub   =     false;    //不使用子目录
@@ -2620,7 +2620,7 @@ class RegisterController extends BaseController{
 
         $upload = new \Think\Upload();// 实例化上传类
         $upload->maxSize   =     3145728 ;// 设置附件上传大小
-        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt','doc');// 设置附件上传类型
         $upload->rootPath  =     './Public/uploads/la_pic/'; // 设置附件上传根目录
         $upload->savePath  =      ''; // 设置附件上传（子）目录
         $upload->autoSub   =     false;    //不使用子目录
@@ -2779,7 +2779,7 @@ class RegisterController extends BaseController{
 
         $upload = new \Think\Upload();// 实例化上传类
         $upload->maxSize   =     3145728 ;// 设置附件上传大小
-        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt','doc');// 设置附件上传类型
         $upload->rootPath  =     './Public/uploads/fi_pic/'; // 设置附件上传根目录
         $upload->savePath  =      ''; // 设置附件上传（子）目录
         $upload->autoSub   =     false;    //不使用子目录
@@ -2859,7 +2859,7 @@ class RegisterController extends BaseController{
 
         $upload = new \Think\Upload();// 实例化上传类
         $upload->maxSize   =     3145728 ;// 设置附件上传大小
-        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt','doc');// 设置附件上传类型
         $upload->rootPath  =     './Public/uploads/bi_pic/'; // 设置附件上传根目录
         $upload->savePath  =      ''; // 设置附件上传（子）目录
         $upload->autoSub   =     false;    //不使用子目录
@@ -2940,7 +2940,7 @@ class RegisterController extends BaseController{
 
         $upload = new \Think\Upload();// 实例化上传类
         $upload->maxSize   =     3145728 ;// 设置附件上传大小
-        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt');// 设置附件上传类型
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg','pdf','pptx','docx','ppt','doc');// 设置附件上传类型
         $upload->rootPath  =     './Public/uploads/other_pic/'; // 设置附件上传根目录
         $upload->savePath  =      ''; // 设置附件上传（子）目录
         $upload->autoSub   =     false;    //不使用子目录

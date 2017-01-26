@@ -1,0 +1,464 @@
+[ 2017-01-25T22:51:36+08:00 ] ::1 /fofs/1/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000802s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004024s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007567s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_article` [ RunTime:0.1216s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 1 ORDER BY id desc LIMIT 10   [ RunTime:0.0288s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 2 ORDER BY id desc LIMIT 10   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 3 ORDER BY id desc LIMIT 10   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `fofs_article` WHERE `article_type` = 4 ORDER BY id desc LIMIT 10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `fofs_record` [ RunTime:0.0723s ]
+SQL: SELECT * FROM `fofs_record` WHERE `name` = 'today_view_2017_01_25' LIMIT 1   [ RunTime:0.0012s ]
+SQL: INSERT INTO `fofs_record` (`name`,`value`) VALUES ('today_view_2017_01_25','1') [ RunTime:0.2599s ]
+SQL: SELECT * FROM `fofs_record` WHERE `name` = 'total_view' LIMIT 1   [ RunTime:0.0009s ]
+SQL: UPDATE `fofs_record` SET `name`='total_view',`value`='3992' WHERE `id` = 2 [ RunTime:0.0266s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000258s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000332s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 43 行.
+NOTIC: [8] Undefined variable: user_id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 49 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 247 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 264 行.
+NOTIC: [8] Undefined variable: link D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 281 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053820s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053886s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000910s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000978s ]
+
+[ 2017-01-25T22:51:41+08:00 ] ::1 /fofs/1/index.php/Home/Search/gpSearch.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000901s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001283s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004198s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000231s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000293s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 43 行.
+NOTIC: [8] Undefined variable: user_id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 49 行.
+NOTIC: [8] Undefined variable: results D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 329 行.
+NOTIC: [8] Undefined variable: tip D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 360 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055617s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055697s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000471s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000894s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000962s ]
+
+[ 2017-01-25T22:51:57+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001685s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002522s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.1195s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product` WHERE `is_vc_investment` = 1 AND `investment_field` LIKE '%科技%' AND `investment_region` LIKE '%法师打发打发打发%'  [ RunTime:0.0592s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.1761s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_gp` WHERE `state` <> 400 AND `id` IN ('2') LIMIT 1   [ RunTime:0.0428s ]
+SQL: SELECT `id`,`institution_type`,`institution_fullname_cn`,`institution_logo_img`,`is_securities_fund`,`is_stock_fund`,`is_startup_fund`,`is_other_fund` FROM `fofs_gp` WHERE `state` <> 400 AND `id` IN ('2') ORDER BY id desc LIMIT 0,2   [ RunTime:0.0010s ]
+ERR: 模板不存在:./Application/Home/View/Search/do_gpSearch.html
+
+[ 2017-01-25T22:52:18+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001425s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002010s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0073s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product` WHERE `is_vc_investment` = 1 AND `investment_field` LIKE '%科技%' AND `investment_region` LIKE '%法师打发打发打发%'  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0075s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_gp` WHERE `state` <> 400 AND `id` IN ('2') LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `id`,`institution_type`,`institution_fullname_cn`,`institution_logo_img`,`is_securities_fund`,`is_stock_fund`,`is_startup_fund`,`is_other_fund` FROM `fofs_gp` WHERE `state` <> 400 AND `id` IN ('2') ORDER BY id desc LIMIT 0,2   [ RunTime:0.0009s ]
+ERR: 模板不存在:./Application/Home/View/Search/do_gpSearch.html
+
+[ 2017-01-25T22:59:57+08:00 ] ::1 /fofs/1/index.php/Home/Search/gpSearch.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000816s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000953s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003542s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000313s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000377s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 43 行.
+NOTIC: [8] Undefined variable: user_id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 49 行.
+NOTIC: [8] Undefined variable: results D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 329 行.
+NOTIC: [8] Undefined variable: tip D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 360 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039805s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040069s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001832s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001905s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000905s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000959s ]
+
+[ 2017-01-25T23:00:01+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000896s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001227s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003889s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0088s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product`  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0092s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_gp` WHERE `state` <> 400 AND `id` IN ('2','3','4','6','7','9') LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT `id`,`institution_type`,`institution_fullname_cn`,`institution_logo_img`,`is_securities_fund`,`is_stock_fund`,`is_startup_fund`,`is_other_fund` FROM `fofs_gp` WHERE `state` <> 400 AND `id` IN ('2','3','4','6','7','9') ORDER BY id desc LIMIT 0,2   [ RunTime:0.0010s ]
+ERR: 模板不存在:./Application/Home/View/Search/do_gpSearch.html
+
+[ 2017-01-25T23:00:14+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003555s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0070s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product` WHERE `is_vc_investment` = 1 AND `investment_field` LIKE '%热热热发给谁发给%' AND `investment_region` LIKE '%法师打发打发打发%'  [ RunTime:0.0009s ]
+
+[ 2017-01-25T23:02:22+08:00 ] ::1 /fofs/1/index.php/Home/Search/gpSearch.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000747s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003101s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004249s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000173s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000232s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 43 行.
+NOTIC: [8] Undefined variable: user_id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 49 行.
+NOTIC: [8] Undefined variable: results D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 329 行.
+NOTIC: [8] Undefined variable: tip D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 360 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020230s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020377s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000942s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001021s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001096s ]
+
+[ 2017-01-25T23:02:28+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001097s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002503s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005173s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0254s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product` WHERE `is_vc_investment` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0071s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_gp` WHERE `state` <> 400 AND `id` IN ('2','6','7') LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `id`,`institution_type`,`institution_fullname_cn`,`institution_logo_img`,`is_securities_fund`,`is_stock_fund`,`is_startup_fund`,`is_other_fund` FROM `fofs_gp` WHERE `state` <> 400 AND `id` IN ('2','6','7') ORDER BY id desc LIMIT 0,2   [ RunTime:0.0010s ]
+ERR: 模板不存在:./Application/Home/View/Search/do_gpSearch.html
+
+[ 2017-01-25T23:02:37+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000725s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001212s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004561s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0066s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product` WHERE `is_vc_investment` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0069s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_gp` WHERE `state` <> 400 AND `id` IN ('2','6','7') LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT `id`,`institution_type`,`institution_fullname_cn`,`institution_logo_img`,`is_securities_fund`,`is_stock_fund`,`is_startup_fund`,`is_other_fund` FROM `fofs_gp` WHERE `state` <> 400 AND `id` IN ('2','6','7') ORDER BY id desc LIMIT 0,2   [ RunTime:0.0012s ]
+ERR: 模板不存在:./Application/Home/View/Search/do_gpSearch.html
+
+[ 2017-01-25T23:02:40+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001195s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003729s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0053s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product` WHERE `is_vc_investment` = 1  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0066s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_gp` WHERE `state` <> 400 AND `id` IN ('2','6','7') LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `id`,`institution_type`,`institution_fullname_cn`,`institution_logo_img`,`is_securities_fund`,`is_stock_fund`,`is_startup_fund`,`is_other_fund` FROM `fofs_gp` WHERE `state` <> 400 AND `id` IN ('2','6','7') ORDER BY id desc LIMIT 0,2   [ RunTime:0.0010s ]
+ERR: 模板不存在:./Application/Home/View/Search/do_gpSearch.html
+
+[ 2017-01-25T23:03:40+08:00 ] ::1 /fofs/1/index.php/Home/Search/gpSearch.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002367s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000169s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000224s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 43 行.
+NOTIC: [8] Undefined variable: user_id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 49 行.
+NOTIC: [8] Undefined variable: results D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 329 行.
+NOTIC: [8] Undefined variable: tip D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 360 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018062s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018122s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000755s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000811s ]
+
+[ 2017-01-25T23:03:41+08:00 ] ::1 /fofs/1/index.php/Home/Search/startUpSearch.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000703s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000831s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003520s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_startup_company` [ RunTime:0.0873s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_startup_company` WHERE `state` <> 400 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `id`,`institution_type`,`institution_abbr`,`institution_logo_img`,`institution_abstract` FROM `fofs_startup_company` WHERE `state` <> 400 ORDER BY id desc LIMIT 0,2   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000269s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\fd14eb71e03cf537c69feac2cf21ba1d.php 第 43 行.
+NOTIC: [8] Undefined variable: user_id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\fd14eb71e03cf537c69feac2cf21ba1d.php 第 49 行.
+NOTIC: [8] Undefined index: is_by_followed D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\fd14eb71e03cf537c69feac2cf21ba1d.php 第 264 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052696s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000429s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000847s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000913s ]
+
+[ 2017-01-25T23:05:49+08:00 ] ::1 /fofs/1/index.php/Home/Search/startUpSearch.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000807s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000939s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003782s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_startup_company` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_startup_company` WHERE `state` <> 400 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `id`,`institution_type`,`institution_abbr`,`institution_logo_img`,`institution_abstract` FROM `fofs_startup_company` WHERE `state` <> 400 ORDER BY id desc LIMIT 0,2   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000251s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\fd14eb71e03cf537c69feac2cf21ba1d.php 第 43 行.
+NOTIC: [8] Undefined variable: user_id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\fd14eb71e03cf537c69feac2cf21ba1d.php 第 49 行.
+NOTIC: [8] Undefined index: is_by_followed D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\fd14eb71e03cf537c69feac2cf21ba1d.php 第 264 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017361s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017418s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000825s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000880s ]
+
+[ 2017-01-25T23:05:52+08:00 ] ::1 /fofs/1/index.php/Home/Search/gpSearch.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001088s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003452s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000223s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000298s ]
+NOTIC: [8] Undefined variable: keywords D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 43 行.
+NOTIC: [8] Undefined variable: user_id D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 49 行.
+NOTIC: [8] Undefined variable: results D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 329 行.
+NOTIC: [8] Undefined variable: tip D:\phpStudy\WWW\fofs\1\Application\Runtime\Cache\Home\bc5dfa4b95e7bea426908244e271d3cb.php 第 360 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020026s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020093s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000792s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000854s ]
+
+[ 2017-01-25T23:06:41+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000197s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000856s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.006510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007475s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0065s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product` WHERE `is_vc_investment` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_gp` WHERE `state` <> 400 AND ( 1 ) AND `id` IN ('2','6','7') LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `id`,`institution_type`,`institution_fullname_cn`,`institution_logo_img`,`is_securities_fund`,`is_stock_fund`,`is_startup_fund`,`is_other_fund` FROM `fofs_gp` WHERE `state` <> 400 AND ( 1 ) AND `id` IN ('2','6','7') ORDER BY id desc LIMIT 0,2   [ RunTime:0.0010s ]
+ERR: 模板不存在:./Application/Home/View/Search/do_gpSearch.html
+
+[ 2017-01-25T23:06:53+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000967s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001013s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003694s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0053s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product` WHERE `is_vc_investment` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0079s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_gp` WHERE `state` <> 400 AND ( 1 OR 1 ) AND `id` IN ('2','6','7') LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `id`,`institution_type`,`institution_fullname_cn`,`institution_logo_img`,`is_securities_fund`,`is_stock_fund`,`is_startup_fund`,`is_other_fund` FROM `fofs_gp` WHERE `state` <> 400 AND ( 1 OR 1 ) AND `id` IN ('2','6','7') ORDER BY id desc LIMIT 0,2   [ RunTime:0.0010s ]
+ERR: 模板不存在:./Application/Home/View/Search/do_gpSearch.html
+
+[ 2017-01-25T23:07:02+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000887s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003013s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004048s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0053s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product` WHERE `is_vc_investment` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0069s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_gp` WHERE `state` <> 400 AND ( 0 OR 1 ) AND `id` IN ('2','6','7') LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `id`,`institution_type`,`institution_fullname_cn`,`institution_logo_img`,`is_securities_fund`,`is_stock_fund`,`is_startup_fund`,`is_other_fund` FROM `fofs_gp` WHERE `state` <> 400 AND ( 0 OR 1 ) AND `id` IN ('2','6','7') ORDER BY id desc LIMIT 0,2   [ RunTime:0.0010s ]
+ERR: 模板不存在:./Application/Home/View/Search/do_gpSearch.html
+
+[ 2017-01-25T23:07:41+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000774s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001100s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004014s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0069s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product` WHERE `is_vc_investment` = 1  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_gp` WHERE `state` <> 400 AND ( 1 OR 1 OR 1 ) AND `id` IN ('2','6','7') LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `id`,`institution_type`,`institution_fullname_cn`,`institution_logo_img`,`is_securities_fund`,`is_stock_fund`,`is_startup_fund`,`is_other_fund` FROM `fofs_gp` WHERE `state` <> 400 AND ( 1 OR 1 OR 1 ) AND `id` IN ('2','6','7') ORDER BY id desc LIMIT 0,2   [ RunTime:0.0012s ]
+ERR: 模板不存在:./Application/Home/View/Search/do_gpSearch.html
+
+[ 2017-01-25T23:07:49+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001238s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001517s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004339s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0073s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product` WHERE `is_vc_investment` = 1  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0073s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_gp` WHERE `state` <> 400 AND ( 1 OR 1 OR 1 OR 1 ) AND `id` IN ('2','6','7') LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `id`,`institution_type`,`institution_fullname_cn`,`institution_logo_img`,`is_securities_fund`,`is_stock_fund`,`is_startup_fund`,`is_other_fund` FROM `fofs_gp` WHERE `state` <> 400 AND ( 1 OR 1 OR 1 OR 1 ) AND `id` IN ('2','6','7') ORDER BY id desc LIMIT 0,2   [ RunTime:0.0011s ]
+ERR: 模板不存在:./Application/Home/View/Search/do_gpSearch.html
+
+[ 2017-01-25T23:07:57+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000905s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004343s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0076s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product` WHERE `is_vc_investment` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0068s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `fofs_gp` WHERE `state` <> 400 AND ( 1 OR 0 OR 0 OR 1 ) AND `id` IN ('2','6','7') LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `id`,`institution_type`,`institution_fullname_cn`,`institution_logo_img`,`is_securities_fund`,`is_stock_fund`,`is_startup_fund`,`is_other_fund` FROM `fofs_gp` WHERE `state` <> 400 AND ( 1 OR 0 OR 0 OR 1 ) AND `id` IN ('2','6','7') ORDER BY id desc LIMIT 0,2   [ RunTime:0.0010s ]
+ERR: 模板不存在:./Application/Home/View/Search/do_gpSearch.html
+
+[ 2017-01-25T23:08:59+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000938s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001109s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003896s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0080s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product` WHERE `is_vc_investment` = 1 AND `investment_field` LIKE '%高科技%' AND `investment_region` LIKE '%44444444%'  [ RunTime:0.0011s ]
+
+[ 2017-01-25T23:09:13+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000855s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002833s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003831s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0067s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product` WHERE `is_vc_investment` = 1 AND `investment_field` LIKE '%高科技%' AND `investment_region` LIKE '%44444444%'  [ RunTime:0.0010s ]
+
+[ 2017-01-25T23:09:22+08:00 ] ::1 /fofs/1/index.php/Home/Search/do_gpSearch
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000077s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001099s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002577s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\phpStudy\WWW\fofs\1\ThinkPHP\Common\functions.php 第 1263 行.
+SQL: SHOW COLUMNS FROM `fofs_gp_fund_product` [ RunTime:0.0062s ]
+SQL: SELECT DISTINCT  `institution_id` FROM `fofs_gp_fund_product` WHERE `is_vc_investment` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fofs_gp` [ RunTime:0.0052s ]
+

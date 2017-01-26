@@ -144,24 +144,26 @@ class SearchController extends BaseController {
 
     //lp搜索
     public function lpSearch(){
+      $this->display();
+    }
+
+    // 执行lp搜索
+    public function do_lpSearch(){
 
       //根据lpproduct的条件求出所有的LP的id
+      $where = array();
       if(I('post.fund_type')){
+        // 基金类型
         $where[I('post.fund_type')]=1;
-        $this->assign(I('post.fund_type'),1);
+        
       }
 
-      if(I('post.investment_type')){
-        $where['_string']=implode(' OR ',I('post.investment_type'));
-        foreach(I('post.investment_type') as $investment_type){
-          $this->assign(preg_replace('/[=1]+/i','',$investment_type),1);
-        }
-      }
       if(I('post.investment_field')){
+        // 投资领域
         $where['investment_field']  = array('like', '%'.I('post.investment_field').'%');
-        $this->assign('investment_field',I('post.investment_field'));
       }
       
+      // 根据lp产品类型登出lp的ids
       $Product=M('Lp_fund_product');
       $products=$Product->where($where)->distinct(true)->field('institution_id')->select();
 
@@ -170,31 +172,64 @@ class SearchController extends BaseController {
         $Lp_ids[]=$product['institution_id'];
       }
 
-      if(empty($Lp_ids)){ //如果没有数据
-        $this->assign('tip','暂无数据~');
-        $this->display();
+      // 如果没有数据
+      if(empty($Lp_ids)){ 
+        $data = array();
+        $data['total_page'] = 0;
+        $data['now_page'] = 0;
+        $data['lps'] = null;
+        $this->ajaxReturn($data);
       }
 
-    	$User=M('Lp');
+      // 根据id查出所有的LP
+      $User=M('Lp');
       $where=array();
-      $where['state']=array('neq',400); //排除被删除的
-	    $where['id']=array('in',$Lp_ids);
+      $where['state'] = '200'; // 只要正常状态的
+      
+      // gp的投资类型
+      if(I('post.investment_type')){
+        $investment_type = I('post.investment_type');
+        $temp = array();
+        foreach ($investment_type as $key => $value){
+          if($value){
+            $temp[] = '`' . $key . '` = '.$value;
+          }        
+        }
+        if($temp){
+          $where['_string']=implode(' OR ',$temp);
+        }
+      }
+      $where['id']=array('in',$Lp_ids);
 
       //查询满足要求的总的记录数
       $count=$User->where($where)->count();
-      //实例化分页类传入总记录数和煤业显示的记录数
-      $Page=new \Think\Page($count,10);
-      //分页显示输出
-      $show=$Page->show();
-      // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
-      $results=$User->where($where)->order('id desc')->field('id,institution_type,institution_fullname_cn,institution_logo_img,is_securities_fund,is_stock_fund,is_startup_fund,is_other_fund')->limit($Page->firstRow.','.$Page->listRows)->select();
 
-      //赋值分页输出
-      $this->assign('page',$show);
+      // 每页要展示的数量
+      $page_size = C('PAGE_SIZE');
+      // 总页数
+      $total_page = ceil($count / $page_size);
+      // 如果没有指定页数则默认为第一页
+      $page = 1;
+      // 查询范围
+      if(I('page') < 1){
+        $page = 1;
+      }
+      else if(I('page') > $total_page){
+        $page = $total_page;
+      }
+      else {
+        $page = I('page');
+      }
+
+      // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
+      $results=$User->where($where)->order('id desc')
+                    ->field('id,institution_type,institution_fullname_cn,institution_logo_img,is_securities_fund,is_stock_fund,is_startup_fund,is_other_fund')
+                    ->limit( ($page - 1) * $page_size, $page_size )->select();
 
       //如果登录了，则检测是否已经关注了该用户
       if(session('user_id')&&session('institution_type')){
           $Interest_list=M('Interest_list');
+          $where = array();
           $where['fan_id']=session('user_id');
           $where['fan_type']=session('institution_type');
 
@@ -207,10 +242,12 @@ class SearchController extends BaseController {
           }
       }
 
-      //赋值数据集
-      $this->assign('results',$results);
-
-      $this->display();
+      // 返回结果
+      $data = array();
+      $data['total_page'] = $total_page;
+      $data['now_page'] = $page;
+      $data['lps'] = $results;
+      $this->ajaxReturn($data);
     }
 
     //lp详情
@@ -321,86 +358,118 @@ class SearchController extends BaseController {
 
     //gp搜索
     public function gpSearch(){
+
+        $this->display();
+
+    }
+
+    // 执行gp搜索
+    public function do_gpSearch(){
+
       //根据gpproduct的条件求出所有的LP的id
-      
+      $where = array();
       if(I('post.fund_type')){
-        $where[I('post.fund_type')]=1;
-        $this->assign(I('post.fund_type'),1);
+        // 基金类型
+        $where[I('post.fund_type')] = 1;
       }
       
       if(I('post.investment_field')){
+        // 投资领域
         $where['investment_field']  = array('like', '%'.I('post.investment_field').'%');
-        $this->assign('investment_field',I('post.investment_field'));
       }
 
       if(I('post.investment_region')){
+        // 投资地域
         $where['investment_region']  = array('like', '%'.I('post.investment_region').'%');
-        $this->assign('investment_region',I('post.investment_region'));
       }
-      
+
+      // 根据gp产品类型登出gp的ids
       $Product=M('Gp_fund_product');
       $products=$Product->where($where)->distinct(true)->field('institution_id')->select();
 
       $Gp_ids=array();
       foreach($products as $product){
-        $Gp_ids[]=$product['institution_id'];
+        $Gp_ids[] = (int)$product['institution_id'];
       }
 
-      if(empty($Gp_ids)){ //如果没有数据
-        $this->assign('tip','暂无数据~');
-        
-        if(I('post.investment_type')){
-          
-          foreach(I('post.investment_type') as $investment_type){
-            $this->assign(preg_replace('/[=1]+/i','',$investment_type),1);
-          }
-        }
-        $this->display();
-        die();
+      // 如果没有数据
+      if(empty($Gp_ids)){ 
+        $data = array();
+        $data['total_page'] = 0;
+        $data['now_page'] = 0;
+        $data['gps'] = null;
+        $this->ajaxReturn($data);
       }
 
-    	$User=M('Gp');
+      // 根据id查出所有的GP
+      $User=M('Gp');
       $where=array();
-      $where['state']=array('neq',400); //排除被删除的
-    	
+      $where['state'] = '200'; // 只要正常状态的
+      
+      // gp的投资类型
       if(I('post.investment_type')){
-        $where['_string']=implode(' OR ',I('post.investment_type'));
-        foreach(I('post.investment_type') as $investment_type){
-          $this->assign(preg_replace('/[=1]+/i','',$investment_type),1);
+        $investment_type = I('post.investment_type');
+        $temp = array();
+        foreach ($investment_type as $key => $value){
+          if($value){
+            $temp[] = '`' . $key . '` = '.$value;
+          }        
+        }
+        if($temp){
+          $where['_string']=implode(' OR ',$temp);
         }
       }
       $where['id']=array('in',$Gp_ids);
 
       //查询满足要求的总的记录数
       $count=$User->where($where)->count();
-      
-      //实例化分页类传入总记录数和煤业显示的记录数
-      $Page=new \Think\Page($count,2);
-      //分页显示输出
-      $show=$Page->show();
-      // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
-      $results=$User->where($where)->order('id desc')->field('id,institution_type,institution_fullname_cn,institution_logo_img,is_securities_fund,is_stock_fund,is_startup_fund,is_other_fund')->limit($Page->firstRow.','.$Page->listRows)->select();
 
-      //赋值分页输出
-      $this->assign('page',$show);
+      // 每页要展示的数量
+      $page_size = C('PAGE_SIZE');
+      // 总页数
+      $total_page = ceil($count / $page_size);
+      // 如果没有指定页数则默认为第一页
+      $page = 1;
+      // 查询范围
+      if(I('page') < 1){
+        $page = 1;
+      }
+      else if(I('page') > $total_page){
+        $page = $total_page;
+      }
+      else {
+        $page = I('page');
+      }
+
+      // 进行分页数据查询 注意limit方法的参数
+      $results=$User->where($where)->order('id desc')
+                    ->field('id,institution_type,institution_fullname_cn,institution_logo_img,is_securities_fund,is_stock_fund,is_startup_fund,is_other_fund')
+                    ->limit( ($page - 1) * $page_size, $page_size )->select();
+
 
       //如果登录了，则检测是否已经关注了该用户
-      if(session('user_id')&&session('institution_type')){
+      if(session('user_id') && session('institution_type')){
           $Interest_list=M('Interest_list');
+          $where = array();
           $where['fan_id']=session('user_id');
           $where['fan_type']=session('institution_type');
 
           foreach($results as $key=>$value){
-            $where['host_id']=$value['id'];
-            $where['host_type']=$value['institution_type'];
-            if($Interest_list->where($where)->select()){
-              $results[$key]['is_by_followed']=1;
-            }
+              $where['host_id']=$value['id'];
+              $where['host_type']=$value['institution_type'];
+              if($Interest_list->where($where)->select()){
+                $results[$key]['is_by_followed']=1;
+              }
           }
       }
-    	$this->assign('results',$results);
+      
+      // 返回结果
+      $data = array();
+      $data['total_page'] = $total_page;
+      $data['now_page'] = $page;
+      $data['gps'] = $results;
+      $this->ajaxReturn($data);
 
-      $this->display();
     }
 
     //gp详情
@@ -460,6 +529,8 @@ class SearchController extends BaseController {
       $this->assign('total_funds_size',$total_funds_size);
       $this->assign('total_funds_num',count($funds));
 
+      // 检查访客对Gp的查看权限
+      $this->gp_check_read_right($institution_type, $user_id);
 
       $this->display();
     }
@@ -485,6 +556,7 @@ class SearchController extends BaseController {
       //如果登录了，则检测是否已经关注了该用户
       if(session('user_id')&&session('institution_type')){
           $Interest_list=M('Interest_list');
+          $where = array();
           $where['fan_id']=session('user_id');
           $where['fan_type']=session('institution_type');
 
@@ -532,6 +604,9 @@ class SearchController extends BaseController {
       //成员信息
       $members = $this->get_senior_executives($institution_type, $user_id);
       $this->assign('members',$members);
+
+      // 检查访客对创业公司的查看权限
+      $this->startup_company_check_read_right($institution_type, $user_id);
 
       $this->display();
     }
@@ -583,6 +658,7 @@ class SearchController extends BaseController {
       //如果登录了，则检测是否已经关注了该用户
       if(session('user_id')&&session('institution_type')){
           $Interest_list=M('Interest_list');
+          $where = array();
           $where['fan_id']=session('user_id');
           $where['fan_type']=session('institution_type');
 
@@ -695,6 +771,26 @@ class SearchController extends BaseController {
 
       $this->assign('products',$products);
 
+
+      switch($institution_type){
+        case 4: 
+                // 检查访客对Fa的查看权限
+                $this->fa_company_check_read_right($institution_type, $user_id);
+                break;
+        case 5:  
+                // 检查访客对法务机构的查看权限
+                $this->legal_agency_company_check_read_right($institution_type, $user_id);
+                break;
+        case 6:  
+                // 检查访客对财务机构的查看权限
+                $this->financial_institution_check_read_right($institution_type, $user_id);
+                break;
+        case 7:  
+                // 检查访客对众创空间的查看权限
+                $this->business_incubator_check_read_right($institution_type, $user_id);
+                break;
+      }
+
       $this->display();
     }
 
@@ -724,11 +820,12 @@ class SearchController extends BaseController {
 
       $this->assign('user',$user);
 
-
       //成员信息
       $members = $this->get_senior_executives($institution_type, $user_id);
       $this->assign('members',$members);
 
+      // 检查访客对其它机构的查看权限
+      $this->other_institution_check_read_right($institution_type, $user_id);
 
       $this->display();
     }

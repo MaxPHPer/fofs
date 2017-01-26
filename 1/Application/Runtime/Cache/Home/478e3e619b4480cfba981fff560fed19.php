@@ -284,7 +284,8 @@
 <script src="/fofs/1/Public/assets_1/js/js.cookie.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/store.js"></script>
-<script src="/fofs/1/Public/assets_1/js/search.js"></script>
+<script src="/fofs/1/Public/assets_1/js/gp_search.js"></script>
+<script src="/fofs/1/Public/assets_1/js/lp_search.js"></script>
 
 <script src="/fofs/1/Public/assets_1/js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
 <script type="text/javascript">

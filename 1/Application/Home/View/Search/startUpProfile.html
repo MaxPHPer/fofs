@@ -67,118 +67,125 @@
                   </div>
               </div>
 
-              <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-inbox"></span>业务介绍</h3>
-                    <div class="panel panel-default">
-                      <div class="panel-body">
+              <if condition="$right['is_allow_read_business_market'] eq 1">
+                  <div class="row margin_top_20">
+                      <div class='col-md-12'>
+                        <h3><span class="glyphicon glyphicon-inbox"></span>业务介绍</h3>
+                        <div class="panel panel-default">
+                          <div class="panel-body">
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  用户痛点:
+                              <div class="row">
+                                  <div class='col-md-3 text_right'>
+                                      用户痛点:
+                                  </div>
+                                  <div class='col-md-8'>
+                                      {$user['user_pain_points']}
+                                  </div>
                               </div>
-                              <div class='col-md-8'>
-                                  {$user['user_pain_points']}
+
+                              <div class="row">
+                                <div class='col-md-3 text_right'>解决方案:</div>
+                                <div class='col-md-8'>{$user['solutions']}</div>
                               </div>
-                          </div>
 
-                          <div class="row">
-                            <div class='col-md-3 text_right'>解决方案:</div>
-                            <div class='col-md-8'>{$user['solutions']}</div>
-                          </div>
+                              <div class="row">
+                                <div class='col-md-3 text_right'>核心资源:</div>
+                                <div class='col-md-8'>{$user['core_resources']}</div>
+                              </div>
 
-                          <div class="row">
-                            <div class='col-md-3 text_right'>核心资源:</div>
-                            <div class='col-md-8'>{$user['core_resources']}</div>
-                          </div>
+                              <div class="row">
+                                <div class='col-md-3 text_right'>盈利模式:</div>
+                                <div class='col-md-8'>{$user['profit_model']}</div>
+                              </div>
 
-                          <div class="row">
-                            <div class='col-md-3 text_right'>盈利模式:</div>
-                            <div class='col-md-8'>{$user['profit_model']}</div>
                           </div>
-
+                        </div>
                       </div>
-                    </div>
                   </div>
-              </div>
 
-              <div class="row margin_top_20">
-                  <div class='col-md-12'>
-                    <h3><span class="glyphicon glyphicon-list-alt"></span>市场分析</h3>
-                    <div class="panel panel-default">
-                      <div class="panel-body">
+                  <div class="row margin_top_20">
+                      <div class='col-md-12'>
+                        <h3><span class="glyphicon glyphicon-list-alt"></span>市场分析</h3>
+                        <div class="panel panel-default">
+                          <div class="panel-body">
 
-                  
+                      
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  市场现状:
+                              <div class="row">
+                                  <div class='col-md-3 text_right'>
+                                      市场现状:
+                                  </div>
+                                  <div class='col-md-8'>
+                                      {$user['market_situation']}
+                                  </div>
                               </div>
-                              <div class='col-md-8'>
-                                  {$user['market_situation']}
+
+                              <div class="row">
+                                <div class='col-md-3 text_right'>竞品分析:</div>
+                                <div class='col-md-8'>{$user['competitive_analysis']}</div>
                               </div>
-                          </div>
 
-                          <div class="row">
-                            <div class='col-md-3 text_right'>竞品分析:</div>
-                            <div class='col-md-8'>{$user['competitive_analysis']}</div>
-                          </div>
+                              <div class="row">
+                                <div class='col-md-3 text_right'>优势分析:</div>
+                                <div class='col-md-8'>{$user['advantage_analysis']}</div>
+                              </div>
 
-                          <div class="row">
-                            <div class='col-md-3 text_right'>优势分析:</div>
-                            <div class='col-md-8'>{$user['advantage_analysis']}</div>
                           </div>
-
+                        </div>
                       </div>
-                    </div>
                   </div>
-              </div>
-
+              </if>
               <div class="row margin_top_20">
                   <div class='col-md-12'>
                     <h3><span class="glyphicon glyphicon-earphone"></span>联系方式</h3>
                     <div class="panel panel-default">
                       <div class="panel-body">
+                          <if condition="$right['is_allow_read_contact_username_tel_email'] eq 1">
+                              <div class="row">
+                                  <div class='col-md-3 text_right'>
+                                      联系人:
+                                  </div>
+                                  <div class='col-md-8'>
+                                      {$user['contact_username']}
+                                  </div>
+                              </div>
+                              
+                              <if condition="$right['is_allow_read_contact_phone_wechat'] eq 1">
+                                  <div class="row">
+                                      <div class='col-md-3 text_right'>
+                                          手机:
+                                      </div>
+                                      <div class='col-md-8'>
+                                          {$user['contact_mobilephone']}
+                                      </div>
+                                  </div>
+                              </if>
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  联系人:
+                              <div class="row">
+                                  <div class='col-md-3 text_right'>
+                                      电话:
+                                  </div>
+                                  <div class='col-md-8'>
+                                      {$user['contact_telephone']}
+                                  </div>
                               </div>
-                              <div class='col-md-8'>
-                                  {$user['contact_username']}
-                              </div>
-                          </div>
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  手机:
+                              <div class="row">
+                                <div class='col-md-3 text_right'>邮箱:</div>
+                                <div class='col-md-8'>{$user['contact_email']}</div>
                               </div>
-                              <div class='col-md-8'>
-                                  {$user['contact_mobilephone']}
-                              </div>
-                          </div>
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  电话:
-                              </div>
-                              <div class='col-md-8'>
-                                  {$user['contact_telephone']}
-                              </div>
-                          </div>
-
-                          <div class="row">
-                            <div class='col-md-3 text_right'>邮箱:</div>
-                            <div class='col-md-8'>{$user['contact_email']}</div>
-                          </div>
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  联系人微信:
-                              </div>
-                              <div class='col-md-8'>
-                                  {$user['contact_wechat']}
-                              </div>
-                          </div>
+                              <if condition="$right['is_allow_read_contact_phone_wechat'] eq 1">
+                                  <div class="row">
+                                      <div class='col-md-3 text_right'>
+                                          联系人微信:
+                                      </div>
+                                      <div class='col-md-8'>
+                                          {$user['contact_wechat']}
+                                      </div>
+                                  </div>
+                              </if>
+                          </if>
                           <div class="row">
                               <div class='col-md-3 text_right'>
                                   机构微信:
@@ -243,33 +250,34 @@
                                         </div>
                                       </div>
 
-                                      <div class="row">
-                                          <div class="col-sm-3 text_right">
-                                            从业经历:
-                                          </div>
-                                      </div>
-
-                                      <div class="repeat">
-                                        <foreach name="vo['business_experience']" item="business_experience">
-                                            <div class="row" style="margin-top:10px;">
-                                              
+                                      <if condition="$right['is_allow_read_business_experience'] eq 1">
+                                          <div class="row">
                                               <div class="col-sm-3 text_right">
-                                                    {$business_experience['company_name']}
+                                                从业经历:
                                               </div>
-                                             
-                                                
-                                              <div class="col-sm-3">
-                                                    {$business_experience['function']}
-                                              </div>
+                                          </div>
 
-                                              <div class="col-sm-6">
-                                                {$business_experience['start_time']}-{$business_experience['end_time']}
-                                              </div>
-                                    
-                                            </div>
-                                        </foreach>
-                                      </div>
+                                          <div class="repeat">
+                                            <foreach name="vo['business_experience']" item="business_experience">
+                                                <div class="row" style="margin-top:10px;">
+                                                  
+                                                  <div class="col-sm-3 text_right">
+                                                        {$business_experience['company_name']}
+                                                  </div>
+                                                 
+                                                    
+                                                  <div class="col-sm-3">
+                                                        {$business_experience['function']}
+                                                  </div>
 
+                                                  <div class="col-sm-6">
+                                                    {$business_experience['start_time']}-{$business_experience['end_time']}
+                                                  </div>
+                                        
+                                                </div>
+                                            </foreach>
+                                          </div>
+                                      </if>
                                     </div>
                                   </div>
 
@@ -286,102 +294,114 @@
                     <h3><span class="glyphicon glyphicon-lock"></span>融资现状</h3>
                     <div class="panel panel-default">
                       <div class="panel-body">
+                          <if condition="$right['is_allow_read_equity_structure'] eq 1">
+                              <div class="row">
+                                  <div class='col-md-3 text_right'>
+                                      股权结构:
+                                  </div>
+                                  <div class='col-md-8'>
+                                      {$user['equity_structure']}
+                                  </div>
+                              </div>
+                          </if>
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  股权结构:
+                          <if condition="$right['is_allow_read_has_investment'] eq 1">
+                              <div class="row">
+                                  <div class='col-md-3 text_right'>
+                                      是否已完成融资:
+                                  </div>
+                                  <div class='col-md-8'>
+                                  <switch name="user['is_invested']">
+                                      <case value ="1"><span class="label label-info">是</span></case>
+                                      <default/><span class="label label-default">不是</span>
+                                  </switch>
+                                  </div>
                               </div>
-                              <div class='col-md-8'>
-                                  {$user['equity_structure']}
-                              </div>
-                          </div>
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  是否已完成融资:
-                              </div>
-                              <div class='col-md-8'>
-                              <switch name="user['is_invested']">
-                                  <case value ="1"><span class="label label-info">是</span></case>
-                                  <default/><span class="label label-default">不是</span>
-                              </switch>
-                              </div>
-                          </div>
-
-                          <if condition="$user['is_invested'] eq 1">
-                                <div class="row">
-                                    <div class='col-md-3 text_right'>
-                                        轮次:
+                              <if condition="$user['is_invested'] eq 1">
+                                    <div class="row">
+                                        <div class='col-md-3 text_right'>
+                                            轮次:
+                                        </div>
+                                        <div class='col-md-8'>
+                                            {$user['investment_round']}
+                                        </div>
                                     </div>
-                                    <div class='col-md-8'>
-                                        {$user['investment_round']}
+                                    
+                                    
+                                    <php>
+                                        if($right['is_allow_read_investment_quota']){
+
+                                            echo "<div class='row'>
+                                                    <div class='col-md-3 text_right'>额度:</div>
+                                                    <div class='col-md-8'>".$user['investment_quota']."</div>
+                                                  </div>";
+                                        }
+                                    </php>
+
+                                    <div class="row">
+                                      <div class='col-md-3 text_right'>投资方:</div>
+                                      <div class='col-md-8'>{$user['investor']}</div>
                                     </div>
-                                </div>
-
-                                <div class="row">
-                                  <div class='col-md-3 text_right'>额度:</div>
-                                  <div class='col-md-8'>{$user['investment_quota']}</div>
-                                </div>
-
-                                <div class="row">
-                                  <div class='col-md-3 text_right'>投资方:</div>
-                                  <div class='col-md-8'>{$user['investor']}</div>
-                                </div>
+                              </if>
                           </if>
                       </div>
                     </div>
                   </div>
               </div>
 
+
+              
               <div class="row margin_top_20">
                   <div class='col-md-12'>
                     <h3><span class="glyphicon glyphicon-file"></span>计划融资</h3>
                     <div class="panel panel-default">
                       <div class="panel-body">
+                          
+                          <if condition="$right['is_allow_read_plan_investment_round'] eq 1">
+                            <div class="row">
+                                <div class='col-md-3 text_right'>
+                                    轮次:
+                                </div>
+                                <div class='col-md-8'>
+                                    {$user['plan_investment_round']}
+                                </div>
+                            </div>
+                          </if>
 
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  轮次:
+                          <if condition="$right['is_allow_read_plan_investment_detail'] eq 1">
+                              <div class="row">
+                                <div class='col-md-3 text_right'>额度:</div>
+                                <div class='col-md-8'>{$user['plan_invested_quota']}</div>
                               </div>
-                              <div class='col-md-8'>
-                                  {$user['plan_investment_round']}
+
+                              <div class="row">
+                                <div class='col-md-3 text_right'>出让股份:</div>
+                                <div class='col-md-8'>{$user['plan_transfer_shares']}</div>
                               </div>
-                          </div>
 
-                          <div class="row">
-                            <div class='col-md-3 text_right'>额度:</div>
-                            <div class='col-md-8'>{$user['plan_invested_quota']}</div>
-                          </div>
-
-                          <div class="row">
-                            <div class='col-md-3 text_right'>出让股份:</div>
-                            <div class='col-md-8'>{$user['plan_transfer_shares']}</div>
-                          </div>
-
-                          <div class="row">
-                            <div class='col-md-3 text_right'>融资用途:</div>
-                            <div class='col-md-8'>{$user['plan_to_do']}</div>
-                          </div>
-
-                          <div class="row">
-                              <div class='col-md-3 text_right'>
-                                  是否接受联投:
+                              <div class="row">
+                                <div class='col-md-3 text_right'>融资用途:</div>
+                                <div class='col-md-8'>{$user['plan_to_do']}</div>
                               </div>
-                              <div class='col-md-8'>
-                              <switch name="user['accept_joint_investment']">
-                                  <case value ="1"><span class="label label-info">是</span></case>
-                                  <default/><span class="label label-default">不是</span>
-                              </switch>
+
+                              <div class="row">
+                                  <div class='col-md-3 text_right'>
+                                      是否接受联投:
+                                  </div>
+                                  <div class='col-md-8'>
+                                  <switch name="user['accept_joint_investment']">
+                                      <case value ="1"><span class="label label-info">是</span></case>
+                                      <default/><span class="label label-default">不是</span>
+                                  </switch>
+                                  </div>
                               </div>
-                          </div>
 
-                          <div class="row">
-                            <div class='col-md-3 text_right'>项目BP:</div>
-                            <div class='col-md-8'><a href="__PUBLIC__/uploads/startup_bp/{$user['bp_url']}" target="_Blank" >查看bp</a></div>
-                          </div>
-
-
-
+                              <div class="row">
+                                <div class='col-md-3 text_right'>项目BP:</div>
+                                <div class='col-md-8'><a href="__PUBLIC__/uploads/startup_bp/{$user['bp_url']}" target="_Blank" >查看bp</a></div>
+                              </div>
+                          </if>
                       </div>
                     </div>
                   </div>

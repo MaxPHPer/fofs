@@ -501,7 +501,7 @@ class BaseController extends Controller{
         }
     }
 
-    //认证通过员工申请认证
+    //拒绝通过员工申请认证
     public function auth_deny(){
         $Staff_auth=M('Staff_auth');
         $where['id']=I('get.auth_id');
@@ -579,10 +579,10 @@ class BaseController extends Controller{
 
             $auth = new \Think\Auth();
 
-            var_dump($watcher_table_name.'_'.$right_name.'_'.$observed_table_name);
-            echo '<br/>';
-            var_dump($watcher_table_name);
-            echo '<br/>';
+            // var_dump($watcher_table_name.'_'.$right_name.'_'.$observed_table_name);
+            // echo '<br/>';
+            // var_dump($watcher_table_name);
+            // echo '<br/>';
             $result = $auth->check($watcher_table_name.'_'.$right_name.'_'.$observed_table_name, $watcher_table_name);
             if($result){
                 return 1;
@@ -748,5 +748,199 @@ class BaseController extends Controller{
 
         // 将法人代表排在前面
         return array_sort($members,'is_representative','desc');
+    }
+
+    // 检查用户对GP的查看权限
+    protected function gp_check_read_right($observed_type = 0,$observed_id = 0){
+        // 检查对 组织机构代码 的查看权限
+        $right['is_allow_read_organization_code'] = $this->check_right_item('organization_code',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+        
+        // 检查对 注册地址、办公地址、注册资本 的查看权限
+        $right['is_allow_read_addr_and_capital'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 实缴资本 的查看权限
+        $right['is_allow_read_contributed_capital'] = $this->check_right_item('contributed_capital',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 员工人数 的查看权限
+        $right['is_allow_read_number_of_employees'] = $this->check_right_item('number_of_employees',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 联系人姓名 的查看权限
+        $right['is_allow_read_contact_username'] = $this->check_right_item('contact_username',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 联系传真 的查看权限
+        $right['is_allow_read_contact_fax'] = $this->check_right_item('contact_fax',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 联系电话 的查看权限
+        $right['is_allow_read_contact_phone'] = $this->check_right_item('contact_phone',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 联系邮箱 的查看权限
+        $right['is_allow_read_contact_email'] = $this->check_right_item('contact_email',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 法人代表姓名职务 的查看权限
+        $right['is_allow_read_representative_baseinfo'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 从业经历 的查看权限
+        $right['is_allow_read_business_experience'] = $this->check_right_item('business_experience',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 其它高管姓名职务 的查看权限
+        $right['is_allow_read_senior_executive_baseinfo'] = $this->check_right_item('senior_executive',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 协会登记信息 的查看权限
+        $right['is_allow_read_association_registration'] = $this->check_right_item('association_registration',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 中基协备案状况 的查看权限
+        $right['is_allow_read_recorded'] = $this->check_right_item('recorded',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 托管人名称 的查看权限
+        $right['is_allow_read_trustee_name'] = $this->check_right_item('trustee_name',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 运作状态 的查看权限
+        $right['is_allow_read_run_state'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 募集方案 的查看权限
+        $right['is_allow_read_recruitment_plan_url'] = $this->check_right_item('recruitment_plan_url',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 已投项目基本信息 的查看权限
+        $right['is_allow_read_investment_project'] = $this->check_right_item('investment_project',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 已投项目详细信息 的查看权限
+        $right['is_allow_read_investment_project_detail'] = $this->check_right_item('investment_project_detail',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        $this->assign('right', $right);
+    }
+
+    // 检查用户对创业公司的查看权限
+    protected function startup_company_check_read_right($observed_type = 0,$observed_id = 0){
+        // 检查对 业务介绍、市场分析 的查看权限
+        $right['is_allow_read_business_market'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+        
+        // 检查对 从业经历 的查看权限
+        $right['is_allow_read_business_experience'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 股权结构 的查看权限
+        $right['is_allow_read_equity_structure'] = $this->check_right_item('equity_structure',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 已融资情况 的查看权限
+        $right['is_allow_read_has_investment'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 已融资额度 的查看权限
+        $right['is_allow_read_investment_quota'] = $this->check_right_item('investment_quota',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 计划融资轮次 的查看权限
+        $right['is_allow_read_plan_investment_round'] = $this->check_right_item('plan_investment_round',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 计划融资详细信息 的查看权限
+        $right['is_allow_read_plan_investment_detail'] = $this->check_right_item('plan_investment_detail',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 联系人姓名，电话，邮箱 的查看权限
+        $right['is_allow_read_contact_username_tel_email'] = $this->check_right_item('contact_username_tel_email',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 联系人的手机和微信 的查看权限
+        $right['is_allow_read_contact_phone_wechat'] = $this->check_right_item('contact_phone_wechat',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        $this->assign('right', $right);
+    }
+
+    // 检查用户对Fa的查看权限
+    protected function fa_company_check_read_right($observed_type = 0,$observed_id = 0){
+        // 检查对 服务内容和费用 的查看权限
+        $right['is_allow_read_service_and_fee'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+        
+        // 检查对 管理团队 的查看权限
+        $right['is_allow_read_senior_executive'] = $this->check_right_item('senior_executive',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 成功案例 的查看权限
+        $right['is_allow_read_success_case'] = $this->check_right_item('success_case',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 成功案例详细信息 的查看权限
+        $right['is_allow_read_success_case_detail'] = $this->check_right_item('success_case_detail',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 联系人姓名和邮箱 的查看权限
+        $right['is_allow_read_contact_username'] = $this->check_right_item('contact_username_email',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+        $right['is_allow_read_contact_email'] = $this->check_right_item('contact_username_email',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 联系人电话 的查看权限
+        $right['is_allow_read_contact_tel'] = $this->check_right_item('contact_tel',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+        $right['is_allow_read_contact_phone'] = 0;
+        $right['is_allow_read_contact_wechat'] = 0;
+
+        $this->assign('right', $right);
+    }
+
+    // 检查用户对法务机构的查看权限
+    protected function legal_agency_company_check_read_right($observed_type = 0,$observed_id = 0){
+
+        // 检查对 管理团队 的查看权限
+        $right['is_allow_read_senior_executive'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 产品或服务 的查看权限
+        $right['is_allow_read_service_and_fee'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+ 
+        // 检查对 联系人姓名和邮箱 的查看权限
+        $right['is_allow_read_contact_username'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+        $right['is_allow_read_contact_email'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 联系人手机 的查看权限
+        $right['is_allow_read_contact_phone'] = $this->check_right_item('contact_phone',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        $this->assign('right', $right);
+    }
+
+    // 检查用户对财务机构的查看权限
+    protected function financial_institution_check_read_right($observed_type = 0,$observed_id = 0){
+
+        // 检查对 管理团队 的查看权限
+        $right['is_allow_read_senior_executive'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 产品或服务 的查看权限
+        $right['is_allow_read_service_and_fee'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+ 
+        // 检查对 联系人姓名和邮箱 的查看权限
+        $right['is_allow_read_contact_username'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+        $right['is_allow_read_contact_email'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 联系人手机 的查看权限
+        $right['is_allow_read_contact_phone'] = $this->check_right_item('contact_phone',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        $this->assign('right', $right);
+    }
+
+    // 检查用户对众创空间机构的查看权限
+    protected function business_incubator_check_read_right($observed_type = 0,$observed_id = 0){
+
+        // 检查对 管理团队 的查看权限
+        $right['is_allow_read_senior_executive'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 产品或服务 的查看权限
+        $right['is_allow_read_service_and_fee'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+ 
+        // 检查对 联系人姓名和邮箱 的查看权限
+        $right['is_allow_read_contact_username'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+        $right['is_allow_read_contact_email'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 联系人手机 的查看权限
+        $right['is_allow_read_contact_phone'] = $this->check_right_item('contact_phone',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        $this->assign('right', $right);
+    }
+
+    // 检查用户对其它机构的查看权限
+    protected function other_institution_check_read_right($observed_type = 0,$observed_id = 0){
+        
+        // 检查对 注册时间、地址 的查看权限
+        $right['is_allow_read_register_time_addr'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+ 
+        // 检查对 管理团队 的查看权限
+        $right['is_allow_read_senior_executive'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 联系人姓名和邮箱 的查看权限
+        $right['is_allow_read_contact_username'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+        $right['is_allow_read_contact_email'] = $this->check_right_item('已登录',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        // 检查对 联系人手机 的查看权限
+        $right['is_allow_read_contact_phone'] = $this->check_right_item('contact_tel_phone',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+        $right['is_allow_read_contact_tel'] = $this->check_right_item('contact_tel_phone',session('institution_type'),session('institution_id'),$observed_type,$observed_id);
+
+        $this->assign('right', $right);
     }
 }
